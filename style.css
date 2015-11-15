@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Theme Name: Blank Genesis Child Theme
  * Description: This is a blank child theme created for ****** using the Genesis Framework, by StudioPress. The <a href="http://studiopress.com/themes/genesis/" target="_blank">Genesis Theme</a> must be installed for this theme to work. Genesis should already be installed and a copy is avaiable in the site archive files delivered to you.
  * Author: Patrick Boehner
@@ -17,6 +18,7 @@
  * 	- Gallery
  * 	- Forms
  * 	- Tables
+ * - Screen Reader
  * - Structure and Layout
  * 	- Site Containers
  * 	- Column Widths and Positions
@@ -250,8 +252,7 @@ input[type="search"] {
   content: " ";
   display: table; }
 
-/* ## Typographical Elements
---------------------------------------------- */
+/* ## Typographical Elements */
 body {
   background-color: #f5f5f5;
   color: #333;
@@ -317,7 +318,7 @@ blockquote {
   margin: 40px; }
 
 blockquote::before {
-  content: "\201C";
+  content: "“";
   display: block;
   font-size: 30px;
   height: 0;
@@ -325,8 +326,7 @@ blockquote::before {
   position: relative;
   top: -10px; }
 
-/* ## Headings
---------------------------------------------- */
+/* ## Headings */
 h1,
 h2,
 h3,
@@ -357,8 +357,7 @@ h5 {
 h6 {
   font-size: 16px; }
 
-/* ## Objects
---------------------------------------------- */
+/* ## Objects */
 embed,
 iframe,
 img,
@@ -374,8 +373,7 @@ img {
 .gallery img {
   width: auto; }
 
-/* ## Gallery
---------------------------------------------- */
+/* ## Gallery */
 .gallery {
   overflow: hidden; }
 
@@ -416,8 +414,7 @@ img {
 .gallery img:hover {
   border: 1px solid #999; }
 
-/* ## Forms
---------------------------------------------- */
+/* ## Forms */
 input,
 select,
 textarea {
@@ -497,8 +494,7 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button {
   display: none; }
 
-/* ## Tables
---------------------------------------------- */
+/* ## Tables */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -520,8 +516,44 @@ td {
 th {
   font-weight: 400; }
 
-/* ## Site Containers
---------------------------------------------- */
+/* ## Screen reader text */
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+  color: #333;
+  background: #fff; }
+
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus,
+.genesis-nav-menu .search input[type="submit"]:focus,
+.widget_search input[type="submit"]:focus {
+  clip: auto !important;
+  height: auto;
+  width: auto;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 15px 23px 14px;
+  z-index: 100000;
+  text-decoration: none;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
+
+.more-link {
+  position: relative; }
+
+/* # Skip Links */
+.genesis-skip-link li {
+  height: 0;
+  width: 0;
+  list-style: none; }
+
+/* ## Site Containers */
 .site-inner,
 .wrap {
   margin: 0 auto;
@@ -531,8 +563,7 @@ th {
   clear: both;
   padding-top: 40px; }
 
-/* ## Column Widths and Positions
---------------------------------------------- */
+/* ## Column Widths and Positions */
 /* ### Wrapping div for .content and .sidebar-primary */
 .content-sidebar-sidebar .content-sidebar-wrap,
 .sidebar-content-sidebar .content-sidebar-wrap,
@@ -581,8 +612,7 @@ th {
 .content-sidebar-sidebar .sidebar-secondary {
   float: right; }
 
-/* ## Column Classes
---------------------------------------------- */
+/* ## Column Classes */
 /* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
 .five-sixths,
 .four-sixths,
@@ -596,41 +626,39 @@ th {
 .two-sixths,
 .two-thirds {
   float: left;
-  margin-left: 2.564102564102564%; }
+  margin-left: 2.5641025641%; }
 
 .one-half,
 .three-sixths,
 .two-fourths {
-  width: 48.717948717948715%; }
+  width: 48.7179487179%; }
 
 .one-third,
 .two-sixths {
-  width: 31.623931623931625%; }
+  width: 31.6239316239%; }
 
 .four-sixths,
 .two-thirds {
-  width: 65.81196581196582%; }
+  width: 65.811965812%; }
 
 .one-fourth {
-  width: 23.076923076923077%; }
+  width: 23.0769230769%; }
 
 .three-fourths {
-  width: 74.35897435897436%; }
+  width: 74.358974359%; }
 
 .one-sixth {
-  width: 14.52991452991453%; }
+  width: 14.5299145299%; }
 
 .five-sixths {
-  width: 82.90598290598291%; }
+  width: 82.905982906%; }
 
 .first {
   clear: both;
   margin-left: 0; }
 
-/* # Common Classes
----------------------------------------------------------------------------------------------------- */
-/* ## Avatar
---------------------------------------------- */
+/* # Common Classes */
+/* ## Avatar */
 .avatar {
   float: left; }
 
@@ -644,8 +672,7 @@ th {
 .comment .avatar {
   margin: 0 16px 24px 0; }
 
-/* ## Genesis
---------------------------------------------- */
+/* ## Genesis */
 .breadcrumb {
   margin-bottom: 20px; }
 
@@ -664,8 +691,7 @@ th {
 .author-box p:last-child {
   margin-bottom: 0; }
 
-/* ## Search Form
---------------------------------------------- */
+/* ## Search Form */
 .search-form {
   overflow: hidden; }
 
@@ -687,23 +713,7 @@ th {
   position: absolute;
   width: 1px; }
 
-input:focus::-webkit-input-placeholder {
-  color: transparent; }
-
-input:focus:-moz-placeholder {
-  color: transparent; }
-
-/* Firefox 18- */
-input:focus::-moz-placeholder {
-  color: transparent; }
-
-/* Firefox 19+ */
-input:focus:-ms-input-placeholder {
-  color: transparent; }
-
-/* oldIE ;) */
-/* ## Titles
---------------------------------------------- */
+/* ## Titles */
 .archive-title {
   font-size: 20px; }
 
@@ -724,8 +734,7 @@ input:focus:-ms-input-placeholder {
 .footer-widgets .widget-title {
   color: #fff; }
 
-/* ## WordPress
---------------------------------------------- */
+/* ## WordPress */
 a.aligncenter img {
   display: block;
   margin: 0 auto; }
@@ -794,8 +803,7 @@ img.alignright,
 .widget_calendar th {
   text-align: center; }
 
-/* ## Featured Content
---------------------------------------------- */
+/* ## Featured Content */
 .featured-content .entry {
   border-bottom: 2px solid #f5f5f5;
   margin-bottom: 20px;
@@ -807,8 +815,7 @@ img.alignright,
 .featured-content .entry-title {
   font-size: 20px; }
 
-/* ## Genesis eNews Extended
---------------------------------------------- */
+/* ## Genesis eNews Extended */
 .enews-widget,
 .enews-widget .widget-title {
   color: #fff; }
@@ -837,8 +844,7 @@ img.alignright,
 .enews form + p {
   margin-top: 24px; }
 
-/* ## Jetpack
---------------------------------------------- */
+/* ## Jetpack */
 #wpstats {
   display: none; }
 
@@ -849,8 +855,7 @@ img.alignright,
 .site-header .wrap {
   padding: 40px 0; }
 
-/* ## Title Area
---------------------------------------------- */
+/* ## Title Area */
 .title-area {
   float: left;
   padding: 10px 0;
@@ -888,8 +893,7 @@ img.alignright,
   display: block;
   text-indent: -9999px; }
 
-/* ## Widget Area
---------------------------------------------- */
+/* ## Widget Area */
 .site-header .widget-area {
   float: right;
   text-align: right;
@@ -919,11 +923,11 @@ img.alignright,
   left: -9999px;
   opacity: 0;
   position: absolute;
-  -webkit-transition: opacity .4s ease-in-out;
-  -moz-transition: opacity .4s ease-in-out;
-  -ms-transition: opacity .4s ease-in-out;
-  -o-transition: opacity .4s ease-in-out;
-  transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
   width: 200px;
   z-index: 99; }
 
@@ -968,8 +972,7 @@ img.alignright,
 .genesis-nav-menu > .search {
   padding: 10px 0 0; }
 
-/* ## Primary Navigation
---------------------------------------------- */
+/* ## Primary Navigation */
 .nav-primary {
   background-color: #333; }
 
@@ -984,13 +987,11 @@ img.alignright,
 .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
   color: #e5554e; }
 
-/* ## Secondary Navigation
---------------------------------------------- */
+/* ## Secondary Navigation */
 .nav-secondary {
   background-color: #fff; }
 
-/* ## Responsive Menu
---------------------------------------------- */
+/* ## Responsive Menu */
 .responsive-menu-icon {
   cursor: pointer;
   display: none;
@@ -998,17 +999,16 @@ img.alignright,
   text-align: center; }
 
 .responsive-menu-icon::before {
-  content: "\f333";
+  content: "";
   display: inline-block;
-  font: normal 20px/1 'dashicons';
+  font: normal 20px/1 "dashicons";
   margin: 0 auto;
   padding: 10px; }
 
 .nav-primary .responsive-menu-icon::before {
   color: #fff; }
 
-/* ## Entries
---------------------------------------------- */
+/* ## Entries */
 .entry {
   margin-bottom: 40px;
   padding: 50px 60px; }
@@ -1035,8 +1035,7 @@ img.alignright,
   background-color: #333;
   color: #ddd; }
 
-/* ## Entry Meta
---------------------------------------------- */
+/* ## Entry Meta */
 p.entry-meta {
   font-size: 16px;
   margin-bottom: 0; }
@@ -1053,11 +1052,10 @@ p.entry-meta {
   display: block; }
 
 .entry-comments-link::before {
-  content: "\2014";
+  content: "—";
   margin: 0 6px 0 2px; }
 
-/* ## Pagination
---------------------------------------------- */
+/* ## Pagination */
 .pagination {
   clear: both;
   margin: 40px 0; }
@@ -1080,8 +1078,7 @@ p.entry-meta {
 .archive-pagination .active a {
   background-color: #e5554e; }
 
-/* ## Comments
---------------------------------------------- */
+/* ## Comments */
 .comment-respond,
 .entry-comments,
 .entry-pings {
@@ -1374,9 +1371,9 @@ li.comment {
     margin-right: 60px; }
 
   .genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
-    content: "\f347";
+    content: "";
     float: right;
-    font: normal 16px/1 'dashicons';
+    font: normal 16px/1 "dashicons";
     height: 16px;
     padding: 16px 20px;
     right: 0;
@@ -1387,7 +1384,7 @@ li.comment {
     color: #fff; }
 
   .genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before {
-    content: "\f343"; }
+    content: ""; }
 
   .genesis-nav-menu.responsive-menu .sub-menu {
     border: none;
@@ -1395,11 +1392,11 @@ li.comment {
     opacity: 1;
     padding-left: 25px;
     position: relative;
-    -moz-transition: opacity .4s ease-in-out;
-    -ms-transition: opacity .4s ease-in-out;
-    -o-transition: opacity .4s ease-in-out;
-    -webkit-transition: opacity .4s ease-in-out;
-    transition: opacity .4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -ms-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
     width: 100%;
     z-index: 99; }
 

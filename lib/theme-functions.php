@@ -36,7 +36,7 @@ function pb_login_styles() {
 
 //* Load Google Web Fonts
 function pb_google_fonts() {
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:300,700', array(), CHILD_THEME_VERSION );
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700', array(), CHILD_THEME_VERSION );
 }
 
 //* Mobile Responsive Menu

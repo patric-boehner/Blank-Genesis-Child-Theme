@@ -82,6 +82,9 @@ function pb_child_theme_setup() {
    //* Files found in the lib directory /functions-backend.php
    // https://codex.wordpress.org/Function_Reference/wp_enqueue_script
 
+	//* Editor Styles
+	add_editor_style( '/css/editor-style.min.css' );
+
    //* Login Styles
    add_action( 'login_enqueue_scripts', 'pb_login_styles', 10 );
 
@@ -252,13 +255,13 @@ function pb_child_theme_setup() {
 
    //* Accessibility
    //**********************
-   // add_theme_support( 'genesis-accessibility', array(
-   //    'headings',
-   //    'drop-down-menu',
-   //    'search-form',
-   //    'skip-links',
-   //    'rems',
-   // ) );
+   add_theme_support( 'genesis-accessibility', array(
+      'headings',
+      // 'drop-down-menu',
+      'search-form',
+      'skip-links',
+      'rems',
+   ) );
 
 
    //* Modify Head
