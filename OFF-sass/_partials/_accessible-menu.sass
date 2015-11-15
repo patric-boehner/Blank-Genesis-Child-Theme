@@ -1,0 +1,197 @@
+// ## Accessible Menu
+// ---------------------------------------------
+
+.menu .menu-item:focus
+	position: static
+
+.menu .menu-item > a:focus + ul.sub-menu,
+.menu .menu-item.sfHover > ul.sub-menu
+	left: auto
+	opacity: 1
+
+
+// ## Responsive Menu
+// ---------------------------------------------
+
+.sub-menu-toggle,
+.menu-toggle
+	display: none
+	visibility: hidden
+
+
+// @media only screen and (max-width: 960px)
+
+	.header-image .nav-primary:not(button)
+		margin-top: 0
+		padding-bottom: 20px
+
+
+	.nav-primary,
+	.title-area
+		float: none
+
+
+	.nav-primary li.highlight > a,
+	.nav-primary li.highlight > a:hover,
+	.nav-primary li.highlight > a:focus,
+	.js .nav-primary .sub-menu a
+		background: none
+		border: none
+
+
+	.nav-primary li.highlight > a
+		margin-left: 0
+		padding-left: 10px
+		padding-right: 10px
+
+
+	.nav-primary li.highlight > a:hover,
+	.nav-primary li.highlight > a:focus
+		color: $primary-link-color
+
+
+	.nav-primary .genesis-nav-menu li.highlight > a:hover,
+	.nav-primary .genesis-nav-menu li.highlight > a:focus
+		background-color: #fff
+
+
+	.js nav
+		display: none
+		position: relative
+
+
+	.js nav .wrap
+		padding: 0
+
+
+	.js nav.pagination
+		display: block
+
+
+	.menu-toggle,
+	.sub-menu-toggle
+		border-width: 0
+		background-color: #fff
+		display: block
+		margin: 0 auto
+		overflow: hidden
+		text-align: center
+		visibility: visible
+
+
+	.menu-toggle:hover,
+	.menu-toggle:focus,
+	.sub-menu-toggle:hover,
+	.sub-menu-toggle:focus
+		border-width: 0
+
+
+	.menu-toggle
+		// margin-top: 10px
+		position: relative
+		right: 0
+		z-index: 1000
+		width: 100%
+
+
+	.menu-toggle:before,
+	.menu-toggle.activated:before
+		color: $white
+		content: "\f333"
+		display: inline-block
+		font: normal 20px/1 $icon-font
+		margin: 0 auto
+		padding-right: 10px
+		text-rendering: auto
+		-webkit-transform: translate(0, 0)
+		-ms-transform:     translate(0, 0)
+		transform:         translate(0, 0)
+		vertical-align: bottom
+
+
+	.sub-menu-toggle
+		float: right
+		padding: 8px 18px
+		position: absolute
+		right: 0
+		top: 0
+		z-index: 100
+
+
+	.sub-menu-toggle:before
+		content: "\f3d0"
+		display: inline-block
+		font: normal 16px/1 'ionicons'
+		text-rendering: auto
+		-webkit-transform: translate(0, 0)
+		-ms-transform:     translate(0, 0)
+		transform:         translate(0, 0)
+
+
+	.sub-menu-toggle.activated:before
+		content: "\f3d8"
+
+
+	.js .genesis-nav-menu .menu-item
+		display: block
+		float: none
+		margin-top: 1px
+		margin-bottom: 1px
+		position: relative
+		text-align: left
+
+
+	.js .genesis-nav-menu .menu-item:hover
+		position: relative
+
+
+	.js .genesis-nav-menu .menu-item a
+		border: none
+		padding: 10px
+		width: 100%
+
+
+	.js .genesis-nav-menu .menu-item a:hover,
+	.js .genesis-nav-menu .sub-menu
+		border: none
+
+
+	.js .genesis-nav-menu .menu-item > a:focus ul.sub-menu,
+	.js .genesis-nav-menu .menu-item > a:focus ul.sub-menu .sub-menu
+		left: 0
+		margin-left: 0
+
+
+	.js .genesis-nav-menu > .menu-item-has-children > a:after
+		content: none
+
+
+	.js .genesis-nav-menu .sub-menu
+		clear: both
+		display: none
+		margin: 0
+		opacity: 1
+		padding-left: 15px
+		position: static
+		width: 100%
+
+
+	.js .genesis-nav-menu .sub-menu .sub-menu
+		margin: 0
+
+
+	.js .genesis-nav-menu .sub-menu a
+		border: none
+
+
+	.js nav button:hover,
+	.js .menu-toggle:hover,
+	.js .nav-primary
+		background-color: $primary-color
+		color: $white
+
+
+	.js nav button:focus,
+	.js .menu-toggle:focus
+		background-color: $primary-color
+		color: $primary-link-color

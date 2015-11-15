@@ -26,24 +26,295 @@ if( !defined( 'ABSPATH' ) ) exit;
 //**********************************************
 //* Add Site Library Files & Scripts
 //**********************************************
-//* http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
-//* https://codex.wordpress.org/Function_Reference/wp_enqueue_style
-
+// http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
+// https://codex.wordpress.org/Function_Reference/wp_enqueue_style
 
 //* Load Login Style
 function pb_login_styles() {
-	wp_enqueue_style( 'login_styles.min', get_stylesheet_directory_uri() . '/css/login.min.css', false );
+	wp_enqueue_style( 'login_styles.min', get_stylesheet_directory_uri() . '/css/login.min.css', false, pb_version_id() );
 }
-
 
 //* Load Google Web Fonts
 function pb_google_fonts() {
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:300,700', array(), CHILD_THEME_VERSION );
 }
 
-
 //* Mobile Responsive Menu
 function pb_mobile_responsive_menu() {
-   // Add needed conditional statement
-	wp_enqueue_script( 'responsive-menu.min', get_stylesheet_directory_uri() . '/js/min/responsive-menu.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'beautiful-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.min.js', array( 'jquery' ), pb_version_id(), true );
+	wp_enqueue_style( 'dashicons' );
+}
+
+//* Accessible Responsive Menu
+// function pb_accessible_responsive_menu() {
+// 	wp_enqueue_script( 'accessible-responsive-menu.min', get_stylesheet_directory_uri() . '/js/accessible-responsive-menu.min.js', array( 'jquery' ), pb_version_id(), true );
+// 	$output = array(
+// 		'mainMenu' => __( 'Menu', 'pbaccessibility' ),
+// 		'subMenu'  => __( 'Menu', 'pbaccessibility' ),
+// 	);
+// 	wp_localize_script( 'accessible-responsive-menu.min', 'pbaccessibilityL10n', $output );
+// }
+
+
+//**********************************************
+//* Backend
+//**********************************************
+
+//* Stop WordPress from Guessing Urls
+function pb_stop_guessing($url) {
+ if (is_404()) {
+   return false;
+ }
+ return $url;
+}
+
+
+//* Admin Screen
+//**********************
+
+//* Hide Admin Areas that are not used
+// https://codex.wordpress.org/Function_Reference/remove_menu_page
+function pb_remove_menu_pages() {
+	// remove_menu_page( 'index.php' );                  //Dashboard
+	// remove_menu_page( 'edit.php' );                   //Posts
+	// remove_menu_page( 'upload.php' );                 //Media
+	// remove_menu_page( 'edit.php?post_type=page' );    //Pages
+	remove_menu_page( 'edit-comments.php' );          //Comments
+	// remove_menu_page( 'themes.php' );                 //Appearance
+	// remove_menu_page( 'plugins.php' );                //Plugins
+	// remove_menu_page( 'users.php' );                  //Users
+	// remove_menu_page( 'tools.php' );                  //Tools
+	// remove_menu_page( 'options-general.php' );        //Settings
+}
+
+//* Hide Admin Bar options not in user
+function pb_remove_admin_bar_options() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+
+//* Change Admin Menu Order
+function pb_custom_menu_order( $menu_order ) {
+	if ( !$menu_order ) return true;
+	return array(
+		'index.php', // Dashboard
+		'separator1', // First separator
+		'edit.php', // Posts
+		'edit.php?post_type=page', // Pages
+		// 'edit.php?post_type=.....' // Add Custom Post Type
+		'upload.php', // Media
+		// 'genesis', // Genesis
+		// 'edit-comments.php', // Comments
+		// 'separator2', // Second separator
+		// 'themes.php', // Appearance
+		// 'plugins.php', // Plugins
+		// 'users.php', // Users
+		// 'tools.php', // Tools
+		// 'options-general.php', // Settings
+		// 'separator-last', // Last separator
+	);
+}
+
+//* Remove Dashboard Meta Boxes
+function pb_remove_dashboard_widgets() {
+	global $wp_meta_boxes;
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+	// unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	// unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+}
+
+
+//* Genesis Theme Settings
+//**********************
+
+//* Remove Genesis Theme Settings Metaboxes
+// Remove from the Theme Settings and SEO Settings pages.
+function pb_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
+	// remove_meta_box( 'genesis-theme-settings-feeds',      $_genesis_theme_settings_pagehook, 'main' );
+	// remove_meta_box( 'genesis-theme-settings-header',     $_genesis_theme_settings_pagehook, 'main' );
+	// remove_meta_box( 'genesis-theme-settings-nav',        $_genesis_theme_settings_pagehook, 'main' );
+	// remove_meta_box( 'genesis-theme-settings-breadcrumb', $_genesis_theme_settings_pagehook, 'main' );
+	// remove_meta_box( 'genesis-theme-settings-comments',   $_genesis_theme_settings_pagehook, 'main' );
+	// remove_meta_box( 'genesis-theme-settings-posts',      $_genesis_theme_settings_pagehook, 'main' );
+	// remove_meta_box( 'genesis-theme-settings-blogpage',   $_genesis_theme_settings_pagehook, 'main' );
+	// remove_meta_box( 'genesis-theme-settings-scripts',    $_genesis_theme_settings_pagehook, 'main' );
+}
+
+
+//* In Post Settings
+//**********************
+
+//* Remove Genesis Page Templates
+// http://www.billerickson.net/remove-genesis-page-templates
+// If we need the functionality these page templates provide we should build them into page templates named for there use.
+
+function pb_remove_genesis_page_templates( $page_templates ) {
+	unset( $page_templates['page_archive.php'] );
+	unset( $page_templates['page_blog.php'] );
+	return $page_templates;
+}
+
+
+//* Widgets
+//**********************
+
+//* Remove Genesis Widgets
+function pb_unregister_genesis_widgets() {
+	unregister_widget( 'Genesis_eNews_Updates' );
+	// unregister_widget( 'Genesis_Featured_Page' );
+	// unregister_widget( 'Genesis_Featured_Post' );
+	unregister_widget( 'Genesis_Latest_Tweets_Widget' );
+	// unregister_widget( 'Genesis_Menu_Pages_Widget' );
+	unregister_widget( 'Genesis_User_Profile_Widget' );
+	// unregister_widget( 'Genesis_Widget_Menu_Categories' );
+}
+
+
+//* Media
+//**********************
+
+//* Change default link style for images
+// http://www.wpbeginner.com/wp-tutorials/automatically-remove-default-image-links-wordpress/
+function pb_default_attachment_display_settings() {
+		update_option( 'image_default_link_type', 'none' );
+		// Set link type (file, post, custom, none)
+		update_option( 'image_default_align', 'center' );
+		// Set image alignment (left, right, center, none)
+		update_option( 'image_default_size', 'large' );
+		// Set image size (thumbnail, medium, large, full)
+}
+
+
+//**********************************************
+//* Frontend
+//**********************************************
+
+//* Modify Head
+//**********************
+
+//* Strip out Comments RSS feed
+// This function will reinsert the main RSS feed *after* the others have been removed
+function pb_reinsert_rss_feed() {
+   echo '<link rel="alternate" type="application/rss+xml" title="' . get_bloginfo('sitename') . ' &raquo; RSS Feed" href="' . get_bloginfo('rss2_url') . '" />';
+}
+
+//* Load apple touch icon in header
+function pb_apple_touch_icon() {
+	echo '<link rel="apple-touch-icon" href="' . get_stylesheet_directory_uri() . '/images/apple-touch-icon.png" />' . "\n";
+}
+
+//* Remove Query Strings From Static Resources
+function pb_remove_script_version( $src ){
+	$parts = explode( '?ver', $src );
+	return $parts[0];
+}
+
+
+//* Footer
+//**********************
+
+//* Customize Footer Credits
+function pb_footer_creds_text() {
+	echo "Custom Footer Goes Here";
+}
+
+// * Scoll Back to The Button
+function pb_scroll_to_top() {
+	echo '<a href="#0" class="to-top" title="Return To Top of Page">^</a>';
+}
+
+
+//* Breadcrumbs
+//**********************
+
+//* Add Blog to Breadcrumbs, and remove category
+// https://bitbucket.org/snippets/patrick_boehner/pknje/
+function pb_add_blog_crumb( $crumb, $args ) {
+	if( is_singular( 'post' ) )
+		$crumb = get_the_title();
+	if ( is_singular( 'post' ) || is_category() || is_date() )
+		return '<a href="' . get_permalink( get_option( 'page_for_posts' ) ) . '">' . get_the_title( get_option( 'page_for_posts' ) ) .'</a> ' . $args['sep'] . ' ' . $crumb;
+	else
+		return $crumb;
+}
+
+
+//* Comments
+//**********************
+
+//* Remove comments entirely from frontend
+function pb_remove_genesis_comments() {
+remove_action( 'genesis_after_post', 'genesis_get_comments_template' );
+}
+
+//* Remove comment form allowed tags
+function pb_remove_comment_form_allowed_tags( $defaults ) {
+	$defaults['comment_notes_after'] = '';
+	return $defaults;
+}
+
+
+//**********************************************
+//* WP Admin - Login
+//**********************************************
+
+//* Change Loging URL
+function pb_login_logo_url() {
+    return home_url();
+}
+
+//* Change Logo Title
+function pb_login_logo_url_title() {
+    return get_bloginfo( 'name' );
+}
+
+
+//**********************************************
+//* Misc Theme Functions
+//**********************************************
+
+//* Unregister the superfish scripts
+function pb_unregister_superfish() {
+	wp_deregister_script( 'superfish' );
+	wp_deregister_script( 'superfish-args' );
+}
+
+//* Disable Emojie Scripts
+//* @link https://gist.github.com/Otto42/b79ff5428993fcff45bb
+function pb_disable_wp_emojicons() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	add_filter( 'tiny_mce_plugins', 'disable_tinymce_emoji' );
+}
+
+//* Filter function used to remove the tinymce emoji plugin
+function disable_tinymce_emoji( $plugins ) {
+  if ( is_array( $plugins ) ) {
+    return array_diff( $plugins, array( 'wpemoji' ) );
+  } else {
+    return array();
+  }
+}
+
+// Remove jQuery Migrate script
+function pb_unregister_jquery_migrate( &$scripts){
+	if(!is_admin()){
+		$scripts->remove( 'jquery');
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+	}
+}
+
+// Filter Yoast SEO Metabox Priority
+function pb_filter_yoast_seo_metabox() {
+	return 'low';
 }

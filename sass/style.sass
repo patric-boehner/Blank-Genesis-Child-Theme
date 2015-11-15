@@ -1,71 +1,70 @@
-/*
- * Theme Name: [Blank Genesis Child Theme]
- * Description: This is a blank child theme created for [Client Name] using the Genesis Framework, by StudioPress. The <a href="http://studiopress.com/themes/genesis/" target="_blank">Genesis Theme</a> must be installed for this theme to work. Genesis should already be installed and a copy is avaiable in the site archive files delivered to you.
- * Version: 1.0
- *
- * Author: Patrick Boehner
- * Author URI: http://www.patrickboehner.com/
- *
- * Template: genesis
- * Template Version: 2.2.3
- */
-
+/*Theme Name: Blank Genesis Child Theme
+	Description: This is a blank child theme created for ****** using the Genesis Framework, by StudioPress. The <a href="http://studiopress.com/themes/genesis/" target="_blank">Genesis Theme</a> must be installed for this theme to work. Genesis should already be installed and a copy is avaiable in the site archive files delivered to you.
+	Author: Patrick Boehner
+	Author URI: http://www.patrickboehner.com/
+	Template: genesis
+	Version: 1.0 */
 
 /* # Table of Contents
-   - HTML5 Reset
-      - Baseline Normalize
-      - Box Sizing
-      - Clear Floats
-   - Defaults
-      - Typographical Elements & Headings
-      - Headings
-   	- Objects
-   	- Gallery
-   	- Forms
-   	- Tables
-   	- Screen Reader Text
-   - Structure and Layout
-      - Site Containers
-      - Column Widths and Positions
-      - Column Classes
-   - Common Classes
-      - Avatar
-      - Genesis
-      - Search Form
-      - Titles
-      - WordPress
-   - Widgets
-      - Featured Content
-   - Site Header
-      - Title Area
-      - Widget Area
-   - Site Navigation
-      - Accessible Menu
-      - Site Header Navigation
-      - Primary Navigation
-      - Secondary Navigation
-      - Skip Links
-   - Content Area
-      - Entries
-      - Entry Meta
-      - Pagination
-      - Comments
-   - Sidebars
-   - Site Footer
-   - Media Queries
-   - Print Styles
-   */
+	- Imports
+	- HTML5 Reset
+		- Baseline Normalize
+		- Box Sizing
+		- Float Clearing
+	- Defaults
+		- Typographical Elements
+		- Headings
+		- Objects
+		- Gallery
+		- Forms
+		- Tables
+	- Structure and Layout
+		- Site Containers
+		- Column Widths and Positions
+		- Column Classes
+	- Bookmarks
+		- Collapsible Menu
+	- Common Classes
+		- Avatar
+		- Genesis
+		- Search Form
+		- Titles
+		- WordPress
+	- Widgets
+		- Featured Content
+	- Plugins
+		- Genesis eNews Extended (REMOVE)
+		- Jetpack (REMOVE)
+		- LazyLoad
+	- Site Header
+		- Title Area
+		- Widget Area
+	- Site Navigation
+		- Header Navigation
+		- Primary Navigation
+			- Stick Nav
+		- Secondary Navigation
+	- Mobile Menu
+	- Content Area
+		- Entries
+		- Entry Meta
+		- Pagination
+		- Comments
+	- Sidebars
+	- Footer Widgets
+	- Site Footer
+		- Scroll To Top
+	- Media Queries
+		- Retina Display
+		- Max-width: 1200px
+		- Max-width: 960px
+		- Max-width: 800px
 
+		*/
 
 //* Refrance:
 //* http://sass-lang.com/guide
-//* http://pxtoem.com/
-//* http://cssfontstack.com/
 
-// Buron Mixins
-// @import "bourbon"
-// Mixins
-@import "mixins"
 // Variabless
 @import "variables"
 
@@ -75,144 +74,122 @@
 //**********************************************
 
 // HTML5 Rest _reset.scss
-@import "_partials/reset"
+@import "assets/reset"
 
 
 //**********************************************
 //* Defaults
 //**********************************************
 
-// Typographical Elements | _typographical.sass
-@import "_partials/typographical"
-// Objects | _objects.sass
-@import "_partials/objects"
-// Gallery | _gallery.sass
-@import "_partials/gallery"
-// Forms | _forms.sass
-@import "_partials/forms"
-// Tables | _tables.sass
-@import "_partials/tables"
-// Screen Teader | _screenreader.sass
-@import "_partials/screenreader"
+// Typographical Elements | _general.scss
+@import "assets/general"
+// Headings | _headings.scss
+@import "assets/headings"
+// Objects | _objects.scss
+@import "assets/objects"
+// Gallery | _gallery.scss
+@import "assets/gallery"
+// Forms | _forms.scss
+@import "assets/forms"
+// Tables | _tables.scss
+@import "assets/tables"
 
 
 //**********************************************
 //* Structure and Layout
 //**********************************************
 
-// Site Containers | _site-containers.sass
-@import "_partials/site-containers"
-// Column Widths and Positions | _columns.sass
-@import "_partials/columns"
-// Column Classes | _column-classes.sass
-@import "_partials/column-classes"
-
-
-//**********************************************
-//* Common Classes
-//**********************************************
-
-// Avatar | _avatar.sass
-@import "_partials/avatar"
-// Genesis | _genesis.sass
-@import "_partials/genesis"
-// Search Form | _search-form.sass
-@import "_partials/search-form"
-// Titles | _titles.sass
-@import "_partials/titles"
-// WordPress | _wordpress.sass
-@import "_partials/wordpress"
+// Site Containers | _site-containers.scss
+@import "assets/site-containers"
+// Columns | _columns.scss
+@import "assets/columns"
+// Common Classes | _common-classes.scss
+@import "assets/common-classes"
 
 
 //**********************************************
 //* Widgets
 //**********************************************
 
-// Widgets | _widgets.sass
-@import "_partials/widgets"
-// Featured Content | _featured-content.sass
-@import "_partials/featured-content"
+// Widgets | _widgets.scss
+@import "assets/widgets"
+//Featured Content | _featured-content.scss
+@import "assets/featured-content"
 
 
 //**********************************************
 //* Plugins
 //**********************************************
 
-// Genesis eNews Extended | _plugin-enews.sass
-@import "_partials/plugin-enews"
-// Jetpack | _plugin-jetpack.sass
-@import "_partials/plugin-jetpack"
+// Plugins | _plugins.scss
+@import "assets/plugins"
 
 
 //**********************************************
 //* Site Header
 //**********************************************
 
-// Site Header | _site-header.sass
-@import "_partials/site-header"
-// Title Area | _title-area.sass
-@import "_partials/title-area"
-// Widget Area | _widget-area.sass
-@import "_partials/widget-area"
+// Site Header | _site-header.scss
+@import "assets/site-header"
+// Title Area | _title-area.scss
+@import "assets/title-area"
+// Widget Area | _widget-area.scss
+@import "assets/widget-area"
 
 
 //**********************************************
 //* Site Navigation
 //**********************************************
 
-// Site Navigation | _site-navigation.sass
-@import "_partials/site-navigation"
-// Accessible Menu | _accessible-menu.sass
-@import "_partials/accessible-menu"
-// Site Header Navigation | _site-header-nav.sass
-@import "_partials/site-header-nav"
-// Primary Navigation | _primary-navigation.sass
-@import "_partials/primary-navigation"
-// Secondary Navigation | _secondary-navigation.sass
-@import "_partials/secondary-navigation"
+// Site Navigation | _site-navigation.scss
+@import "assets/site-navigation"
+// Responsive Menu | _responsive-menu.scss
+@import "assets/responsive-menu"
 
 
 //**********************************************
 //* Content Area
 //**********************************************
 
-// Entries | _entries.sass
-@import "_partials/entries"
-// Entry Meta | _entry-meta.sass
-@import "_partials/entry-meta"
-// Pagination | _pagination.sass
-@import "_partials/pagination"
-// Comments | _comments.sass
-@import "_partials/comments"
+// Entries | _entries.scss
+@import "assets/entries"
+// Entry Meta | _entry-meta.scss
+@import "assets/entry-meta"
+// Pagination | _pagination.scss
+@import "assets/pagination"
+// Comments | _comments.scss
+@import "assets/comments"
+// Sidebars | _sidebars.scss
+@import "assets/sidebars"
 
 
 //**********************************************
 //* Sidebars
 //**********************************************
 
-// Sidebars | _sidebars.sass
-@import "_partials/sidebars"
+// Sidebars | _sidebars.scss
+@import "assets/sidebars"
+
+
+//**********************************************
+//* Footer Widgets
+//**********************************************
+
+// Footer Widgets | _footer-widgets.scss
+@import "assets/footer-widgets"
 
 
 //**********************************************
 //* Site Footer
 //**********************************************
 
-// Site Footer | _site-footer.sass
-@import "_partials/site-footer"
+// Site Footer | _site-footer.scss
+@import "assets/site-footer"
 
 
 //**********************************************
 //* Media Queries
 //**********************************************
 
-// Media Queries | _media-queries.sass
-@import "_partials/media-queries"
-
-
-//**********************************************
-//* Print Styles
-//**********************************************
-
-// Print Styles | _print-styles.sass
-@import "_partials/print-styles"
+// Media Queries | _media-queries.scss
+@import "assets/media-queries"

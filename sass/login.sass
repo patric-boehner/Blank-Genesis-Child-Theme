@@ -1,0 +1,161 @@
+/* Theme Name: Blank Genesis Child Theme
+  Author: Patrick Boehner
+  Author URI: http://www.patrickboehner.com/
+  Template: genesis
+  Version: 1.0
+
+  Stylesheet: Login Stylesheet
+
+  This stylesheet is loaded on the login page. This way the login page can be styled. It won't affect any other page, admin or front-end.
+
+  For more info, check out the codex:
+  https://codex.wordpress.org/Customizing_the_Login_Form
+
+  The concept to serpatate the login style into a seperate file rather then as part of the theme-functions.php was barrowed from Eddie Machado's "Bones" development theme.
+  http://themble.com/bones/
+
+  */
+
+//**********************************************
+//* Variables
+//**********************************************
+
+//* Background Color
+$login-bk-color: #f1f1f1
+
+//* Text
+$label-color: #777
+$input-text-color: #32373c
+
+//* Form Field & Link Highlight Color
+$highlight-color: #00a0d2
+$accent-color: #0073aa
+
+//* Form Structure
+$form-bk-color: #fff
+$border-color: #E5E5E5
+
+
+//**********************************************
+//* Structure
+//**********************************************
+
+body
+  background-color: $login-bk-color
+
+
+//**********************************************
+//* Message Box
+//**********************************************
+
+.login
+  .message
+    border-left: 4px solid $highlight-color
+    background-color: $form-bk-color
+
+
+//**********************************************
+//* Form Box
+//**********************************************
+
+.login
+  h1
+    a
+      background: url(../images/login-logo.png) no-repeat top center
+      // Adjust width and height to fit logo
+      width: 170px
+      height: 170px
+      text-indent: -9999px
+      overflow: hidden
+      padding-bottom: 15px
+      display: block
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)
+      background: url(../images/login-logo@2x.png) no-repeat top center
+
+  // Form sturcture
+  form
+    margin-left: 8px
+    padding: 26px 24px
+    font-weight: normal
+    background: $form-bk-color
+    border: 1px solid $border-color
+    border-radius: 3px
+    box-shadow: none
+
+  label
+    color: $label-color
+
+  // Input form fields
+  form .input
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif
+    font-weight: 200
+    font-size: 24px
+    width: 97%
+    padding: 3px
+    margin-top: 2px
+    margin-right: 6px
+    margin-bottom: 16px
+    border: 1px solid $border-color
+    background: #FBFBFB
+    outline: none
+    box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2)
+
+  // Input form fields
+  input[type=text], input[type=password]
+    color: $input-text-color
+    &:focus
+      border-color: $highlight-color
+      box-shadow: $accent-color
+
+
+//**********************************************
+//* Checkbox & Submit
+//**********************************************
+
+//* Remember me checkbox
+input[type=checkbox]
+  &:focus
+    border-color: $accent-color
+    box-shadow: none
+  &:checked:before
+    color: $highlight-color
+
+//* Submit Button
+.wp-core-ui
+  .button-primary
+    background: $highlight-color
+    border-color: $accent-color
+    box-shadow: none
+
+    &:hover
+      background: $accent-color
+      border-color: $accent-color
+
+    &:focus
+      box-shadow: none
+      border-color: none
+
+//* Submit Button - size
+#wp-submit
+  width: 100%
+  height: auto
+  margin-top: 20px
+  padding: 10px 0
+  font-size: 16px
+
+
+//**********************************************
+//* Navigation
+//**********************************************
+
+.login
+  #nav,
+  #backtoblog
+    text-align: center
+
+    a
+      color: $label-color
+
+      &:hover
+        color: $accent-color

@@ -3,6 +3,9 @@ sitemap.xml
 sitemap.xml.gz
 *.log
 
+# ignore codekit
+.codekit-cache
+
 # ignore mac files
 .DS_Store
 
