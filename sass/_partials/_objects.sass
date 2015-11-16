@@ -1,19 +1,104 @@
-/* ## Objects
-// ---------------------------------------------
+// ## Objects
+//**********************************************
 
 embed,
 iframe,
 img,
 object,
 video,
-.wp-caption 
+.wp-caption
 	max-width: 100%
 
 
-img 
+img
 	height: auto
 
 
 .featured-content img,
-.gallery img 
+.gallery img
 	width: auto
+
+
+// ## Gallery
+//**********************************************
+
+.gallery
+	overflow: hidden
+
+
+.gallery-item
+	float: left
+	margin: 0 0 28px
+	text-align: center
+
+
+.gallery-columns-2 .gallery-item
+	width: 50%
+
+
+.gallery-columns-3 .gallery-item
+	width: 33%
+
+
+.gallery-columns-4 .gallery-item
+	width: 25%
+
+
+.gallery-columns-5 .gallery-item
+	width: 20%
+
+
+.gallery-columns-6 .gallery-item
+	width: 16.6666%
+
+
+.gallery-columns-7 .gallery-item
+	width: 14.2857%
+
+
+.gallery-columns-8 .gallery-item
+	width: 12.5%
+
+
+.gallery-columns-9 .gallery-item
+	width: 11.1111%
+
+
+.gallery img
+	border: 1px solid $border-color
+	height: auto
+	padding: 4px
+
+
+.gallery img:hover
+.gallery img:focus
+	border: 1px solid $border-color
+
+
+// ## Tables
+//**********************************************
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+	line-height: 2
+	margin-bottom: 40px
+	width: 100%
+
+
+tbody
+	border-bottom: 1px solid $border-color
+
+
+td,
+th
+	text-align: left
+
+
+td
+	border-top: 1px solid $border-color
+	padding: 6px 0
+
+
+th
+	font-weight: 400

@@ -1,8 +1,8 @@
-/* # Common Classes
-// ----------------------------------------------------------------------------------------------------
+// # Common Classes
+//**********************************************-------------------------------------------------------
 
-/* ## Avatar
-// ---------------------------------------------
+// ## Avatar
+//**********************************************
 
 .avatar
 	float: left
@@ -21,8 +21,8 @@
 	margin: 0 16px 24px 0
 
 
-/* ## Genesis
-// ---------------------------------------------
+// ## Genesis
+//**********************************************
 
 .breadcrumb
 	margin-bottom: 20px
@@ -30,14 +30,16 @@
 
 .archive-description,
 .author-box
-	background-color: #fff
+	background-color: $white
 	font-size: 16px
+	font-size: 1.6rem
 	margin-bottom: 40px
 	padding: 40px
 
 
 .author-box-title
 	font-size: 16px
+	font-size: 1.6rem
 	margin-bottom: 4px
 
 
@@ -46,8 +48,8 @@
 	margin-bottom: 0
 
 
-/* ## Search Form
-// ---------------------------------------------
+// ## Search Form
+//**********************************************
 
 .search-form
 	overflow: hidden
@@ -74,42 +76,36 @@
 	width: 1px
 
 
-input:focus::-webkit-input-placeholder  color:transparent
-input:focus:-moz-placeholder  color:transparent  /* Firefox 18- */
-input:focus::-moz-placeholder  color:transparent  /* Firefox 19+ */
-input:focus:-ms-input-placeholder  color:transparent  /* oldIE ) */
-
-/* ## Titles
-// ---------------------------------------------
+// ## Titles
+//**********************************************
 
 .archive-title
 	font-size: 20px
+	font-size: 2rem
 
 
 .entry-title
 	font-size: 36px
+	font-size: 3.6rem
 
 
 .entry-title a,
 .sidebar .widget-title a
-	color: #333
+	color: $primary-color
 
 
 .entry-title a:hover
-	color: #e5554e
+	color: $accent-color
 
 
 .widget-title
 	font-size: 18px
+	font-size: 1.8em
 	margin-bottom: 20px
 
 
-.footer-widgets .widget-title
-	color: #fff
-
-
-/* ## WordPress
-// ---------------------------------------------
+// ## WordPress
+//**********************************************
 
 a.aligncenter img
 	display: block
@@ -161,6 +157,7 @@ img.alignright,
 
 .wp-caption-text
 	font-size: 14px
+	font-size: 1.4rem
 	font-weight: 700
 	text-align: center
 
@@ -170,3 +167,9 @@ img.alignright,
 
 
 .sticky
+
+
+.entry-content .wp-audio-shortcode,
+.entry-content .wp-playlist,
+.entry-content .wp-video
+	margin: 0 0 28px

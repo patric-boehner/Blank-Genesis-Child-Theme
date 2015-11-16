@@ -1,9 +1,12 @@
-/*Theme Name: Blank Genesis Child Theme
+/*
+	Theme Name: [Blank Genesis Child Theme]
 	Description: This is a blank child theme created for ****** using the Genesis Framework, by StudioPress. The <a href="http://studiopress.com/themes/genesis/" target="_blank">Genesis Theme</a> must be installed for this theme to work. Genesis should already be installed and a copy is avaiable in the site archive files delivered to you.
 	Author: Patrick Boehner
 	Author URI: http://www.patrickboehner.com/
 	Template: genesis
-	Version: 1.0 */
+	Version: 1.0
+
+	*/
 
 /* # Table of Contents
 	- Imports
@@ -11,20 +14,18 @@
 		- Baseline Normalize
 		- Box Sizing
 		- Float Clearing
-	- Defaults
-		- Typographical Elements
+	- Typographical Elements
 		- Headings
-		- Objects
+	- Objects
 		- Gallery
-		- Forms
 		- Tables
+	- Forms
 	- Screen Reader
+		- Skip Links
 	- Structure and Layout
 		- Site Containers
 		- Column Widths and Positions
 		- Column Classes
-	- Bookmarks
-		- Collapsible Menu
 	- Common Classes
 		- Avatar
 		- Genesis
@@ -34,38 +35,38 @@
 	- Widgets
 		- Featured Content
 	- Plugins
-		- Genesis eNews Extended (REMOVE)
-		- Jetpack (REMOVE)
-		- LazyLoad
+		- Genesis eNews Extended
+		- Jetpack
 	- Site Header
 		- Title Area
 		- Widget Area
 	- Site Navigation
+		- Accessible Menu
 		- Header Navigation
 		- Primary Navigation
-			- Stick Nav
 		- Secondary Navigation
-	- Mobile Menu
+		- Responsive Menu
 	- Content Area
 		- Entries
 		- Entry Meta
-		- Pagination
 		- Comments
 	- Sidebars
-	- Footer Widgets
+	- Pagination
 	- Site Footer
-		- Scroll To Top
 	- Media Queries
 		- Retina Display
 		- Max-width: 1200px
 		- Max-width: 960px
 		- Max-width: 800px
-
+	- Print
 		*/
 
 //* Refrance:
 //* http://sass-lang.com/guide
 
+// Bourbon Mixins
+// http://bourbon.io/docs/
+// @import "bourbon"
 // Variabless
 @import "variables"
 // Mixins
@@ -81,21 +82,27 @@
 
 
 //**********************************************
-//* Defaults
+//* Typographical Elements
 //**********************************************
 
-// Typographical Elements | _general.sass
-@import "_partials/general"
-// Headings | _headings.sass
-@import "_partials/headings"
+// Typographical Elements | _typographical-elements.sass
+@import "_partials/typographical-elements"
+
+
+//**********************************************
+//* Objects
+//**********************************************
+
 // Objects | _objects.sass
 @import "_partials/objects"
-// Gallery | _gallery.sass
-@import "_partials/gallery"
+
+
+//**********************************************
+//* Forms
+//**********************************************
+
 // Forms | _forms.sass
 @import "_partials/forms"
-// Tables | _tables.sass
-@import "_partials/tables"
 
 
 //**********************************************
@@ -105,17 +112,21 @@
 // Screen Reader Text | _screen-readers.sass
 @import "_partials/screen-readers"
 
+
 //**********************************************
 //* Structure and Layout
 //**********************************************
 
-// Site Containers | _site-containers.sass
-@import "_partials/site-containers"
-// Columns | _columns.sass
-@import "_partials/columns"
+// Site Containers | _structure-and-layout.sass
+@import "_partials/structure-and-layout"
+
+
+//**********************************************
+//* Common Classes
+//**********************************************
+
 // Common Classes | _common-classes.sass
 @import "_partials/common-classes"
-
 
 //**********************************************
 //* Widgets
@@ -123,8 +134,6 @@
 
 // Widgets | _widgets.sass
 @import "_partials/widgets"
-//Featured Content | _featured-content.sass
-@import "_partials/featured-content"
 
 
 //**********************************************
@@ -141,10 +150,6 @@
 
 // Site Header | _site-header.sass
 @import "_partials/site-header"
-// Title Area | _title-area.sass
-@import "_partials/title-area"
-// Widget Area | _widget-area.sass
-@import "_partials/widget-area"
 
 
 //**********************************************
@@ -153,24 +158,14 @@
 
 // Site Navigation | _site-navigation.sass
 @import "_partials/site-navigation"
-// Responsive Menu | _responsive-menu.sass
-@import "_partials/responsive-menu"
 
 
 //**********************************************
 //* Content Area
 //**********************************************
 
-// Entries | _entries.sass
-@import "_partials/entries"
-// Entry Meta | _entry-meta.sass
-@import "_partials/entry-meta"
-// Pagination | _pagination.sass
-@import "_partials/pagination"
-// Comments | _comments.sass
-@import "_partials/comments"
-// Sidebars | _sidebars.sass
-@import "_partials/sidebars"
+// Entries | _content-area.sass
+@import "_partials/content-area"
 
 
 //**********************************************
@@ -182,11 +177,11 @@
 
 
 //**********************************************
-//* Footer Widgets
+//* Pagination
 //**********************************************
 
-// Footer Widgets | _footer-widgets.sass
-@import "_partials/footer-widgets"
+// Pagination | _pagination.sass
+@import "_partials/pagination"
 
 
 //**********************************************
@@ -203,3 +198,19 @@
 
 // Media Queries | _media-queries.sass
 @import "_partials/media-queries"
+
+
+//**********************************************
+//* Print Styles
+//**********************************************
+
+// Print Styles | _print.sass
+@import "_partials/print"
+
+
+//**********************************************
+//* Test Styles
+//**********************************************
+
+// Test Styles | _test.sass
+@import "_partials/test"

@@ -1,5 +1,5 @@
-/* ## Screen reader text
-// ---------------------------------------------
+// ## Screen reader text
+//**********************************************
 
 .screen-reader-text,
 .screen-reader-text span,
@@ -10,8 +10,8 @@
 	width: 1px
 	border: 0
 	overflow: hidden
-	color: #333
-	background: #fff
+	color: $primary-color
+	background: $white
 
 
 .screen-reader-text:focus,
@@ -34,9 +34,19 @@
 	position: relative
 
 
-/* # Skip Links
-// ----------------------------------------------------------------------------------------------------
+// # Skip Links
+//**********************************************-------------------------------------------------------
+.genesis-skip-link
+	margin: 0
+
+
 .genesis-skip-link li
 	height: 0
 	width: 0
 	list-style: none
+
+
+/* Display outline on focus */
+*:focus
+	color: $primary-color
+	outline: $primary-color solid 1px

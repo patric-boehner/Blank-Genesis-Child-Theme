@@ -1,31 +1,5 @@
-$desktop-width: 1200px
-$smalldesktop-width: 960px
-$tablet-width: 800px
-$phone-width: 768px
-
-@mixin desktop
-   @media only screen and (max-width: $desktop-width)
-      @content
-
-
-
-@mixin smalldesktop
-   @media only screen and (max-width: $smalldesktop-width)
-      @content
-
-
-
-@mixin tablet
-   @media only screen and (max-width: $tablet-width)
-      @content
-
-
-
-@mixin phone
-   @media only screen and (max-width: $phone-width)
-      @content
-
-
+// # Media Queries
+//**********************************************-------------------------------------------------------
 
 @include desktop
 
@@ -51,18 +25,9 @@ $phone-width: 768px
       width: 400px
 
 
-   .footer-widgets-1,
-   .footer-widgets-2,
-   .footer-widgets-3,
    .sidebar-primary,
    .title-area
       width: 300px
-
-
-   .footer-widgets-1
-      margin-right: 30px
-
-
 
 
 @include smalldesktop
@@ -93,7 +58,7 @@ $phone-width: 768px
       padding: 20px 5%
 
 
-   .header-image .title-area
+   .header-image .site-title > a
       background-position: center top
 
 
@@ -125,17 +90,12 @@ $phone-width: 768px
       display: none
 
 
-   .footer-widgets-1
-      margin-right: 0
-
-
-
-
 @include tablet
 
    body
-      background-color: #fff
+      background-color: $white
       font-size: 16px
+      font-size: 1.6rem
 
 
    .site-inner,
@@ -212,7 +172,7 @@ $phone-width: 768px
    .nav-primary .genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
    .nav-primary .genesis-nav-menu.responsive-menu a,
    .nav-primary .genesis-nav-menu.responsive-menu a:hover
-      color: #fff
+      color: $white
 
 
    .genesis-nav-menu.responsive-menu .menu-item-has-children
@@ -226,7 +186,7 @@ $phone-width: 768px
    .genesis-nav-menu.responsive-menu > .menu-item-has-children:before
       content: "\f347"
       float: right
-      font: normal 16px/1 'dashicons'
+      font: normal 1.6rem/1 $icon-font
       height: 16px
       padding: 16px 20px
       right: 0
@@ -235,7 +195,7 @@ $phone-width: 768px
 
 
    .nav-primary .genesis-nav-menu.responsive-menu > .menu-item-has-children:before
-      color: #fff
+      color: $white
 
 
    .genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before

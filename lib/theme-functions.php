@@ -40,20 +40,15 @@ function pb_google_fonts() {
 }
 
 //* Mobile Responsive Menu
-function pb_mobile_responsive_menu() {
-	wp_enqueue_script( 'beautiful-responsive-menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.min.js', array( 'jquery' ), pb_version_id(), true );
+function pb_mobile_responsive_menu_script() {
+	wp_enqueue_script( 'beautiful-responsive-menu.min', get_stylesheet_directory_uri() . '/js/responsive-menu.min.js', array( 'jquery' ), pb_version_id(), true );
 	wp_enqueue_style( 'dashicons' );
 }
 
-//* Accessible Responsive Menu
-// function pb_accessible_responsive_menu() {
-// 	wp_enqueue_script( 'accessible-responsive-menu.min', get_stylesheet_directory_uri() . '/js/accessible-responsive-menu.min.js', array( 'jquery' ), pb_version_id(), true );
-// 	$output = array(
-// 		'mainMenu' => __( 'Menu', 'pbaccessibility' ),
-// 		'subMenu'  => __( 'Menu', 'pbaccessibility' ),
-// 	);
-// 	wp_localize_script( 'accessible-responsive-menu.min', 'pbaccessibilityL10n', $output );
-// }
+//* Scroll To Top Script
+function pb_scroll_to_top_script() {
+	wp_enqueue_script( 'scroll-to-top.min', get_stylesheet_directory_uri() . '/js/scroll-to-top.min.js', array( 'jquery' ), pb_version_id(), true );
+}
 
 
 //**********************************************
@@ -79,7 +74,7 @@ function pb_remove_menu_pages() {
 	// remove_menu_page( 'edit.php' );                   //Posts
 	// remove_menu_page( 'upload.php' );                 //Media
 	// remove_menu_page( 'edit.php?post_type=page' );    //Pages
-	remove_menu_page( 'edit-comments.php' );          //Comments
+	// remove_menu_page( 'edit-comments.php' );          //Comments
 	// remove_menu_page( 'themes.php' );                 //Appearance
 	// remove_menu_page( 'plugins.php' );                //Plugins
 	// remove_menu_page( 'users.php' );                  //Users
@@ -123,7 +118,7 @@ function pb_remove_dashboard_widgets() {
 	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
 	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
 	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
 	// unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
 	// unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
 }
@@ -180,6 +175,8 @@ function pb_unregister_genesis_widgets() {
 
 //* Change default link style for images
 // http://www.wpbeginner.com/wp-tutorials/automatically-remove-default-image-links-wordpress/
+// https://codex.wordpress.org/Function_Reference/update_option
+
 function pb_default_attachment_display_settings() {
 		update_option( 'image_default_link_type', 'none' );
 		// Set link type (file, post, custom, none)
@@ -203,11 +200,6 @@ function pb_reinsert_rss_feed() {
    echo '<link rel="alternate" type="application/rss+xml" title="' . get_bloginfo('sitename') . ' &raquo; RSS Feed" href="' . get_bloginfo('rss2_url') . '" />';
 }
 
-//* Load apple touch icon in header
-function pb_apple_touch_icon() {
-	echo '<link rel="apple-touch-icon" href="' . get_stylesheet_directory_uri() . '/images/apple-touch-icon.png" />' . "\n";
-}
-
 //* Remove Query Strings From Static Resources
 function pb_remove_script_version( $src ){
 	$parts = explode( '?ver', $src );
@@ -220,12 +212,23 @@ function pb_remove_script_version( $src ){
 
 //* Customize Footer Credits
 function pb_footer_creds_text() {
-	echo "Custom Footer Goes Here";
+
+	$back_totop = 'Return To Top of Page';
+
+	echo '<div class="creds"><p>';
+	echo 'Copyright &copy; ';
+	echo date('Y');
+	echo ' &middot; <a href="' .home_url(). '">' .get_bloginfo( 'name' ). '</a>';
+	echo ' &middot <a href="#" class="to-top">' .$back_totop. '</a>';
+	echo '</p></div>';
 }
 
 // * Scoll Back to The Button
 function pb_scroll_to_top() {
-	echo '<a href="#0" class="to-top" title="Return To Top of Page">^</a>';
+
+	$back_totop = 'Return To Top of Page';
+
+	echo '<a href="#0" class="to-top" title="' .$back_totop. '">^</a>';
 }
 
 

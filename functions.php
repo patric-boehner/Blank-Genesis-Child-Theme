@@ -35,17 +35,23 @@ define ( 'DISALLOW_FILE_EDIT', true );
 
 
 //**********************************************
-//* Local Development Cache Busting
+//* Local Development
 //**********************************************
 
-// If debug is on return the time, otherwsie return static number
+// If debug is on return version number as time, otherwsie return static number
 define ('VERSION', '1.0.1');
 
+//* Cache Busting
 function pb_version_id() {
 	if ( WP_DEBUG )
 	return time();
 	return VERSION;
 }
+
+//* Test File
+// Remove before deployment
+require_once( dirname(__FILE__)."/lib/test.php" );
+
 
 //**********************************************
 //* Define the Child theme
@@ -83,7 +89,7 @@ function pb_child_theme_setup() {
    // https://codex.wordpress.org/Function_Reference/wp_enqueue_script
 
 	//* Editor Styles
-	add_editor_style( '/css/editor-style.min.css' );
+	// add_editor_style( '/css/editor-style.min.css' );
 
    //* Login Styles
    add_action( 'login_enqueue_scripts', 'pb_login_styles', 10 );
@@ -92,10 +98,10 @@ function pb_child_theme_setup() {
    add_action( 'wp_enqueue_scripts', 'pb_google_fonts' );
 
 	//* Mobile Responsive Menu
-	add_action( 'wp_enqueue_scripts', 'pb_mobile_responsive_menu' );
+	add_action( 'wp_enqueue_scripts', 'pb_mobile_responsive_menu_script' );
 
-	//* Accessible Responsive Menu
-	// add_action( 'wp_enqueue_scripts', 'pb_accessible_responsive_menu', 15 );
+	//* Scroll To Top Script
+	add_action( 'wp_enqueue_scripts', 'pb_scroll_to_top_script' );
 
 
    //**********************************************
@@ -192,7 +198,7 @@ function pb_child_theme_setup() {
    // add_theme_support( 'genesis-menus', array( 'secondary' => __( 'Secondary Navigation Menu', 'genesis' ) ) );
 
    //* Unregister secondary navigation menu
-   add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );
+   // add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );
 
 
    //* Widgets
@@ -208,7 +214,7 @@ function pb_child_theme_setup() {
    // unregister_sidebar( 'header-right' );
 
    //* Add support for 3-column footer widgets
-   add_theme_support( 'genesis-footer-widgets', 3 );
+   // add_theme_support( 'genesis-footer-widgets', 3 );
 
    //* Execute shortcodes in widgets
    add_filter( 'widget_text', 'do_shortcode' );
@@ -281,9 +287,6 @@ function pb_child_theme_setup() {
    remove_action( 'wp_head','feed_links_extra', 3 );
    add_action( 'wp_head', 'pb_reinsert_rss_feed', 1 );
 
-   //* Load Apple touch icon in header
-   add_action( 'wp_head', 'pb_apple_touch_icon', 9 );
-
    // Remove Query Strings From Static Resources
    // add_filter( 'script_loader_src', 'pb_remove_script_version', 15, 1 );
    // add_filter( 'style_loader_src', 'pb_remove_script_version', 15, 1 );
@@ -301,7 +304,7 @@ function pb_child_theme_setup() {
    //**********************
 
    //* Customize footer credits
-   // add_filter( 'genesis_footer_creds_text', 'pb_footer_creds_text' );
+   add_filter( 'genesis_footer_creds_text', 'pb_footer_creds_text' );
 
    //* Scoll Back to The Button
    // add_action( 'genesis_after', 'pb_scroll_to_top');
