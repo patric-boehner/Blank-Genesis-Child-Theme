@@ -23,7 +23,7 @@ The theme uses sass (sass over scss) for styling and the compiling is handling v
 
 #### Cleanup
 
-The theme contains two test files, one for css and one for codekit. It can be nice to have a place to work when before finally organizing changes. Before deploying remember to remove or at least empty out these two files.
+The theme contains two test files, one for css and one for php. It can be nice to have a place to work before finally organizing changes. Before deploying remember to remove or at least empty out these two files.
 
 ## License
 
