@@ -174,16 +174,23 @@ function pb_unregister_genesis_widgets() {
 //**********************
 
 //* Change default link style for images
-// http://www.wpbeginner.com/wp-tutorials/automatically-remove-default-image-links-wordpress/
+// https://gist.github.com/norcross/3815527#file-image-link-default-php
 // https://codex.wordpress.org/Function_Reference/update_option
 
 function pb_default_attachment_display_settings() {
+	$image_link_setting  = get_option( 'image_default_link_type' );
+	$image_align_setting = get_option( 'image_default_align' );
+	$image_size_setting  = get_option( 'image_default_size' );
+
+	// Avoid the option being set every time, and instead only do it if not allready set.
+	if ( $image_link_setting && $image_align_setting && $image_size_setting  !== 'none' ) {
 		update_option( 'image_default_link_type', 'none' );
 		// Set link type (file, post, custom, none)
 		update_option( 'image_default_align', 'center' );
 		// Set image alignment (left, right, center, none)
 		update_option( 'image_default_size', 'large' );
 		// Set image size (thumbnail, medium, large, full)
+	}
 }
 
 
