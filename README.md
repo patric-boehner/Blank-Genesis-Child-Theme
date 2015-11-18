@@ -20,8 +20,15 @@ The theme uses sass (sass over scss) for styling and the compiling is handling v
 **JS**
 - js/src/responsive-menu.js -> js/responsive-menu.min.js
 - js/src/scroll-to-top.js -> js/scroll-to-top.min.js
+- js/src/fitvids.combined.js -> js/fitvids.combined.min.js
 
 #### Cleanup
+
+**Concatenate & Conditionally Load**  
+
+Not all the js and css files have been concatenated. Those file with ```combined``` in the name have some degree of concatenation already handled by codkit via in-file statements. The rest are being enqueued individually. I tend to leave this till the end of a project, after establishing that everything is working as desired, then I will concatenate and conditionally include my js and css files where needed.
+
+**Remove Unnecessary Files**  
 
 The theme contains two test files, one for css and one for php. It can be nice to have a place to work before finally organizing changes. Before deploying remember to remove or at least empty out these two files.
 
@@ -43,6 +50,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 #### Accessibility
 - http://robincornett.com/genesis-responsive-menu/#genesis-footer-widgets
+
+#### JS & CSS/SASS Libraries  
+- https://github.com/davatron5000/FitVids.js
 
 #### Other
 - http://briangardner.com/code/  

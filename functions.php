@@ -104,6 +104,10 @@ function pb_child_theme_setup() {
 	add_action( 'wp_enqueue_scripts', 'pb_scroll_to_top_script' );
 
 
+	//* Fitvid Script
+	add_action( 'wp_enqueue_scripts', 'pb_enqueue_fitvid_scripts' );
+
+
    //**********************************************
    //* Backend
    //**********************************************

@@ -50,6 +50,11 @@ function pb_scroll_to_top_script() {
 	wp_enqueue_script( 'scroll-to-top.min', get_stylesheet_directory_uri() . '/js/scroll-to-top.min.js', array( 'jquery' ), pb_version_id(), true );
 }
 
+//* Fitvid Script
+function pb_enqueue_fitvid_scripts() {
+	wp_enqueue_script( 'fitvids.combined.min', get_stylesheet_directory_uri() . '/js/fitvids.combined.min.js', array( 'jquery' ), pb_version_id(), true );
+}
+
 
 //**********************************************
 //* Backend
