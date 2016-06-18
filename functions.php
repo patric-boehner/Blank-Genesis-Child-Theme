@@ -172,8 +172,9 @@ function pb_child_theme_setup() {
    //**********************
 
    // Remove Unused User Settings
-   remove_action( 'show_user_profile', 'genesis_user_options_fields' );
-   remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
+	//* These first two options will end up hiding the main Genesis Settings Menu is turned on.
+   // remove_action( 'show_user_profile', 'genesis_user_options_fields' );
+   // remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
    // remove_action( 'show_user_profile', 'genesis_user_archive_fields' );
    // remove_action( 'edit_user_profile', 'genesis_user_archive_fields' );
    // remove_action( 'show_user_profile', 'genesis_user_seo_fields' );
