@@ -8,6 +8,6 @@
 /**
 * @package		[Blank Genesis Child Theme]
 * @author		Patrick Boehner
-* @copyright	Copyright (c) 2015, Patrick Boehner
+* @copyright	Copyright (c) 2016, Patrick Boehner
 * @license		GPL-2.0+
 */
