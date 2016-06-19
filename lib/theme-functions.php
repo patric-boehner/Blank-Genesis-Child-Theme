@@ -6,7 +6,7 @@
 /**
 * @package		[Blank Genesis Child Theme]
 * @author		Patrick Boehner
-* @copyright	Copyright (c) 2015, Patrick Boehner
+* @copyright	Copyright (c) 2016, Patrick Boehner
 * @license		GPL-2.0+
 */
 
@@ -29,30 +29,37 @@ if( !defined( 'ABSPATH' ) ) exit;
 // http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 // https://codex.wordpress.org/Function_Reference/wp_enqueue_style
 
+//* Add Child Theme styles and scripts
+function pb_child_theme_script_enqueue() {
+
+	//* Load Google Web Fonts
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
+
+	//* Load Primary Stylesheet
+	wp_enqueue_style( 'primary-style.min', get_stylesheet_directory_uri() . '/primary-style.min.css', false, pb_version_id() );
+
+	//* Icon Font
+	wp_enqueue_style( 'dashicons' );
+
+	//* Mobile Responsive Menu
+	wp_enqueue_script( 'responsive-menu.min', get_stylesheet_directory_uri() . '/js/responsive-menu.min.js', array( 'jquery' ), pb_version_id(), true );
+	$output = array(
+		'mainMenu' => __( 'Menu', 'genesis-sample' ),
+		'subMenu'  => __( 'Menu', 'genesis-sample' ),
+	);
+	wp_localize_script( 'responsive-menu.min', 'genesisChildL10n', $output );
+
+	//* Scroll To Top Script
+	wp_enqueue_script( 'scroll-to-top.min', get_stylesheet_directory_uri() . '/js/scroll-to-top.min.js', array( 'jquery' ), pb_version_id(), true );
+
+	//* Fitvid Script
+	wp_enqueue_script( 'fitvids.combined.min', get_stylesheet_directory_uri() . '/js/fitvids.combined.min.js', array( 'jquery' ), pb_version_id(), true );
+
+}
+
 //* Load Login Style
 function pb_login_styles() {
 	wp_enqueue_style( 'login_styles.min', get_stylesheet_directory_uri() . '/css/login.min.css', false, pb_version_id() );
-}
-
-//* Load Google Web Fonts
-function pb_google_fonts() {
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700', array(), CHILD_THEME_VERSION );
-}
-
-//* Mobile Responsive Menu
-function pb_mobile_responsive_menu_script() {
-	wp_enqueue_script( 'beautiful-responsive-menu.min', get_stylesheet_directory_uri() . '/js/responsive-menu.min.js', array( 'jquery' ), pb_version_id(), true );
-	wp_enqueue_style( 'dashicons' );
-}
-
-//* Scroll To Top Script
-function pb_scroll_to_top_script() {
-	wp_enqueue_script( 'scroll-to-top.min', get_stylesheet_directory_uri() . '/js/scroll-to-top.min.js', array( 'jquery' ), pb_version_id(), true );
-}
-
-//* Fitvid Script
-function pb_enqueue_fitvid_scripts() {
-	wp_enqueue_script( 'fitvids.combined.min', get_stylesheet_directory_uri() . '/js/fitvids.combined.min.js', array( 'jquery' ), pb_version_id(), true );
 }
 
 
@@ -118,8 +125,8 @@ function pb_custom_menu_order( $menu_order ) {
 //* Remove Dashboard Meta Boxes
 function pb_remove_dashboard_widgets() {
 	global $wp_meta_boxes;
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+	// unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
 	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
 	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
 	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
@@ -160,17 +167,34 @@ function pb_remove_genesis_page_templates( $page_templates ) {
 }
 
 
+//* Menus
+//**********************
+
+//* Reduce the secondary navigation menu to one level depth
+function pb_secondary_menu_args( $args ) {
+
+	if ( 'secondary' != $args['theme_location'] ) {
+		return $args;
+	}
+
+	$args['depth'] = 1;
+
+	return $args;
+
+}
+
+
 //* Widgets
 //**********************
 
 //* Remove Genesis Widgets
 function pb_unregister_genesis_widgets() {
-	unregister_widget( 'Genesis_eNews_Updates' );
+	// unregister_widget( 'Genesis_eNews_Updates' );
 	// unregister_widget( 'Genesis_Featured_Page' );
 	// unregister_widget( 'Genesis_Featured_Post' );
-	unregister_widget( 'Genesis_Latest_Tweets_Widget' );
+	// unregister_widget( 'Genesis_Latest_Tweets_Widget' );
 	// unregister_widget( 'Genesis_Menu_Pages_Widget' );
-	unregister_widget( 'Genesis_User_Profile_Widget' );
+	// unregister_widget( 'Genesis_User_Profile_Widget' );
 	// unregister_widget( 'Genesis_Widget_Menu_Categories' );
 }
 
