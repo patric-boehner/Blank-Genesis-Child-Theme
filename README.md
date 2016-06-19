@@ -1,10 +1,6 @@
 # Blank Genesis Child Theme
 
-This is my personal blank starter theme for use as a child theme of the [Genesis Framework](http://www.studiopress.com/). I use it to build my custom Wordpress themes. It uses [sass](http://sass-lang.com/) and [CodeKit](https://incident57.com/codekit/) to compile, minify and handle dependancies (none at the moment thought the markup is there for [bourbon](http://bourbon.io/)). Tested up to WordPress version 4.3.1 and Genesis version 2.2.3.
-
-## Genesis V 2.2.3
-
-This blank stater theme was redone for version 2.2.3 of genesis. Many of the accessibility features have been added with the exception of the menu markup and the needed changes to the responsive menu javascript and css. At the moment, this starter theme is using the old menu markup, js and css. All the other css changes have been applied.
+This is my personal blank starter theme for use as a child theme of the [Genesis Framework](http://www.studiopress.com/). I use it to build my custom Wordpress themes. It uses [sass](http://sass-lang.com/) and [CodeKit](https://incident57.com/codekit/) to compile, minify and handle dependancies (none at the moment thought the markup is there for [bourbon](http://bourbon.io/)). Tested up to WordPress version 4.5.2 and Genesis version 2.3.0.
 
 ## Usage
 
@@ -14,6 +10,7 @@ The theme uses sass (sass over scss) for styling and the compiling is handling v
 
 **CSS**
 - sass/style.sass -> /style.css
+- sass/primary-style.sass -> /primary-style.min.css
 - sass/login.sass -> /css/login.min.css
 - sass/editory-style -> /css/editor-style.min.css
 
