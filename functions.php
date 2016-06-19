@@ -6,7 +6,7 @@
 /**
 * @package		[Blank Genesis Child Theme]
 * @author		Patrick Boehner
-* @copyright	Copyright (c) 2015, Patrick Boehner
+* @copyright	Copyright (c) 2016, Patrick Boehner
 * @license		GPL-2.0+
 */
 
@@ -22,24 +22,13 @@
 //* Block Direct Acess
 if( !defined( 'ABSPATH' ) ) exit;
 
-//* Prevent File Modifications
-define ( 'DISALLOW_FILE_EDIT', true );
-
-
-//**********************************************
-//* Maintance Mode
-//**********************************************
-
-//* Comment out to turn off
-// include_once( CHILD_DIR . '/lib/maintenace-mode.php' );
-
 
 //**********************************************
 //* Local Development
 //**********************************************
 
 // If debug is on return version number as time, otherwsie return static number
-define ('VERSION', '1.0.1');
+define ('VERSION', '06.18.2016');
 
 //* Cache Busting
 function pb_version_id() {
@@ -47,6 +36,9 @@ function pb_version_id() {
 	return time();
 	return VERSION;
 }
+
+//* Development Tools
+require_once( dirname(__FILE__) . "/lib/dev-tools.php" );
 
 //* Test File
 // Remove before deployment
@@ -81,6 +73,9 @@ function pb_child_theme_setup() {
    // Clean up and organize all our changes
    include_once( CHILD_DIR . '/lib/theme-functions.php' );
 
+	// Theme Defaults
+	include_once( CHILD_DIR . '/lib/theme-defaults.php' );
+
 
    //**********************************************
    //* Load Site Library Files & Scripts
@@ -88,24 +83,17 @@ function pb_child_theme_setup() {
    //* Files found in the lib directory /functions-backend.php
    // https://codex.wordpress.org/Function_Reference/wp_enqueue_script
 
+	//* Remove primary stylesheet
+	remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+
+	//* Add Child Theme styles and scripts
+	add_action( 'wp_enqueue_scripts', 'pb_child_theme_script_enqueue' );
+
 	//* Editor Styles
-	// add_editor_style( '/css/editor-style.min.css' );
+	add_editor_style( '/css/editor-style.min.css' );
 
    //* Login Styles
    add_action( 'login_enqueue_scripts', 'pb_login_styles', 10 );
-
-   //* Load Google Web Fonts
-   add_action( 'wp_enqueue_scripts', 'pb_google_fonts' );
-
-	//* Mobile Responsive Menu
-	add_action( 'wp_enqueue_scripts', 'pb_mobile_responsive_menu_script' );
-
-	//* Scroll To Top Script
-	add_action( 'wp_enqueue_scripts', 'pb_scroll_to_top_script' );
-
-
-	//* Fitvid Script
-	add_action( 'wp_enqueue_scripts', 'pb_enqueue_fitvid_scripts' );
 
 
    //**********************************************
@@ -150,7 +138,7 @@ function pb_child_theme_setup() {
    // genesis_unregister_layout( 'content-sidebar' );
 
    //* Unregister sidebar/content layout setting
-   genesis_unregister_layout( 'sidebar-content' );
+   // genesis_unregister_layout( 'sidebar-content' );
 
    //* Unregister content/sidebar/sidebar layout setting
    genesis_unregister_layout( 'content-sidebar-sidebar' );
@@ -179,8 +167,8 @@ function pb_child_theme_setup() {
    // remove_action( 'edit_user_profile', 'genesis_user_archive_fields' );
    // remove_action( 'show_user_profile', 'genesis_user_seo_fields' );
    // remove_action( 'edit_user_profile', 'genesis_user_seo_fields' );
-   remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
-   remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
+   // remove_action( 'show_user_profile', 'genesis_user_layout_fields' );
+   // remove_action( 'edit_user_profile', 'genesis_user_layout_fields' );
 
 
    //* In Post Settings
@@ -205,6 +193,9 @@ function pb_child_theme_setup() {
    //* Unregister secondary navigation menu
    // add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );
 
+	//* Reduce the secondary navigation menu to one level depth
+	// add_filter( 'wp_nav_menu_args', 'pb_secondary_menu_args' );
+
 
    //* Widgets
    //**********************
@@ -219,7 +210,10 @@ function pb_child_theme_setup() {
    // unregister_sidebar( 'header-right' );
 
    //* Add support for 3-column footer widgets
-   // add_theme_support( 'genesis-footer-widgets', 3 );
+   add_theme_support( 'genesis-footer-widgets', 3 );
+
+	//* Add support for after entry widget
+	// add_theme_support( 'genesis-after-entry-widget-area' );
 
    //* Execute shortcodes in widgets
    add_filter( 'widget_text', 'do_shortcode' );
@@ -268,15 +262,19 @@ function pb_child_theme_setup() {
    //**********************
    add_theme_support( 'genesis-accessibility', array(
       'headings',
-      // 'drop-down-menu',
+      'drop-down-menu',
       'search-form',
       'skip-links',
       'rems',
+		'404-page',
    ) );
 
 
    //* Modify Head
    //**********************
+
+	//* Add viewport meta tag for mobile browsers
+	add_theme_support( 'genesis-responsive-viewport' );
 
    //* Remove Meta Tags
    // remove_action( 'wp_head', 'rsd_link' );   // really simple discovery link
@@ -363,7 +361,7 @@ add_filter( 'login_headerurl', 'pb_login_logo_url' );
 add_filter( 'login_headertitle', 'pb_login_logo_url_title' );
 
 //* Modify WordPress Login Errors Message for Better Security
-add_filter('login_errors', create_function('$a', "return '<b>Error:</b> Invalid Username or Password';"));
+add_filter('login_errors', create_function('$a', "return '<b>Error:</b> Invalid Username/Email or Password';"));
 
 
 //**********************************************
@@ -377,7 +375,10 @@ add_action( 'custom_disable_superfish', 'pb_unregister_superfish' );
 add_action( 'init', 'pb_disable_wp_emojicons', 1 );
 
 // Remove jQuery Migrate script
-add_filter( 'wp_default_scripts', 'pb_unregister_jquery_migrate' );
+// add_filter( 'wp_default_scripts', 'pb_unregister_jquery_migrate' );
 
 // Filter Yoast SEO Metabox Priority
 add_filter( 'wpseo_metabox_prio', 'pb_filter_yoast_seo_metabox' );
+
+// Tell Yoast Google Analytics plugin not to be at the top of the WP admin menu
+add_filter( 'wpga_menu_on_top', '__return_false' );
