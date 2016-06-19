@@ -67,6 +67,10 @@
 //* Media Quiery Variables
 //**********************************************
 
+@mixin largedesktop
+   @media only screen and (max-width: $largedesktop)
+      @content
+
 @mixin desktop
    @media only screen and (max-width: $desktop)
       @content
@@ -79,6 +83,6 @@
    @media only screen and (max-width: $tablet)
       @content
 
-@mixin phone
-   @media only screen and (max-width: $phone)
-      @content
+// @mixin phone
+//    @media only screen and (max-width: $phone)
+//       @content

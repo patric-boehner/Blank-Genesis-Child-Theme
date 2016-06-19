@@ -14,9 +14,8 @@ img
 	height: auto
 
 
-.featured-content img,
-.gallery img
-	width: auto
+figure
+	margin: 0
 
 
 // ## Gallery
@@ -30,6 +29,10 @@ img
 	float: left
 	margin: 0 0 28px
 	text-align: center
+
+
+.gallery-columns-1 .gallery-item
+	width: 100%
 
 
 .gallery-columns-2 .gallery-item
@@ -64,6 +67,17 @@ img
 	width: 11.1111%
 
 
+.gallery-columns-2 .gallery-item:nth-child(2n+1),
+.gallery-columns-3 .gallery-item:nth-child(3n+1),
+.gallery-columns-4 .gallery-item:nth-child(4n+1),
+.gallery-columns-5 .gallery-item:nth-child(5n+1),
+.gallery-columns-6 .gallery-item:nth-child(6n+1),
+.gallery-columns-7 .gallery-item:nth-child(7n+1),
+.gallery-columns-8 .gallery-item:nth-child(8n+1),
+.gallery-columns-9 .gallery-item:nth-child(9n+1)
+	clear: left
+
+
 .gallery img
 	border: 1px solid $border-color
 	height: auto
@@ -84,6 +98,7 @@ table
 	line-height: 2
 	margin-bottom: 40px
 	width: 100%
+	word-break: break-word
 
 
 tbody
@@ -101,4 +116,10 @@ td
 
 
 th
-	font-weight: 400
+	font-weight: $normal
+	padding: 0 6px
+
+
+td:first-child,
+th:first-child
+	padding-left: 0

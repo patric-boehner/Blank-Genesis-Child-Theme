@@ -5,6 +5,7 @@
 //**********************************************
 
 .avatar
+	border-radius: 50%
 	float: left
 
 
@@ -25,22 +26,21 @@
 //**********************************************
 
 .breadcrumb
-	margin-bottom: 20px
-
-
-.archive-description,
-.author-box
 	background-color: $white
 	font-size: 16px
 	font-size: 1.6rem
+	margin-bottom: 1px
+	padding: 12px 30px
+
+
+.after-entry,
+.archive-description,
+.author-box
+	background-color: $white
+	font-size: 18px
+	font-size: 1.8rem
 	margin-bottom: 40px
-	padding: 40px
-
-
-.author-box-title
-	font-size: 16px
-	font-size: 1.6rem
-	margin-bottom: 4px
+	padding: 60px
 
 
 .archive-description p:last-child,
@@ -55,14 +55,20 @@
 	overflow: hidden
 
 
-.site-header .search-form
-	float: right
-	margin-top: 12px
-
-
 .entry-content .search-form,
 .site-header .search-form
+	margin-bottom: 40px
 	width: 50%
+
+
+.site-header .search-form
+	float: right
+	margin: 12px auto 0
+
+
+.post-password-form input[type="submit"],
+.search-form input[type="submit"]
+	margin-top: 10px
 
 
 .genesis-nav-menu .search input[type="submit"],
@@ -79,7 +85,9 @@
 // ## Titles
 //**********************************************
 
-.archive-title
+.archive-description .entry-title,
+.archive-title,
+.author-box-title
 	font-size: 20px
 	font-size: 2rem
 
@@ -92,15 +100,17 @@
 .entry-title a,
 .sidebar .widget-title a
 	color: $primary-color
+	text-decoration: none
 
 
-.entry-title a:hover
+.entry-title a:hover,
+.entry-title a:focus
 	color: $accent-color
 
 
 .widget-title
 	font-size: 18px
-	font-size: 1.8em
+	font-size: 1.8rem
 	margin-bottom: 20px
 
 
@@ -158,15 +168,13 @@ img.alignright,
 .wp-caption-text
 	font-size: 14px
 	font-size: 1.4rem
-	font-weight: 700
+	font-weight: $strong
+	margin: 0
 	text-align: center
 
 
 .entry-content p.wp-caption-text
 	margin-bottom: 0
-
-
-.sticky
 
 
 .entry-content .wp-audio-shortcode,

@@ -3,11 +3,10 @@
 
 .site-header
 	background-color: $white
-	min-height: 160px
 
 
-.site-header .wrap
-	padding: 40px 0
+.site-header > .wrap
+	padding: 20px 0
 
 
 // ## Title Area
@@ -16,35 +15,46 @@
 .title-area
 	float: left
 	padding: 10px 0
-	width: 360px
+	width: 300px
+
+
+.header-image .title-area
+	margin: 0 auto
+	max-width: 300px
+	padding: 0
 
 
 .header-full-width .title-area
+	float: none
 	width: 100%
 
 
 .site-title
-	font-size: 32px
-	font-weight: 400
+	font-size: 30px
+	font-size: 3.0rem
+	font-weight: $strong
 	line-height: 1.2
 
 
 .site-title a,
-.site-title a:hover
+.site-title a:hover,
+.site-title a:focus
 	color: $primary-link-hover-color
+	text-decoration: none
 
 
 .header-image .site-title > a
-	background: url(images/logo.png) no-repeat left
+	background-position: center
+	background-size: contain
 	float: left
-	min-height: 60px
+	min-height: 80px
 	width: 100%
 
 
 .site-description
 	font-size: 16px
 	font-size: 1.6rem
-	font-weight: 300
+	font-weight: $normal
 	line-height: 1.5
 
 

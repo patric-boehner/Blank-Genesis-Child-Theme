@@ -5,28 +5,36 @@
 	clear: both
 	font-size: 16px
 	font-size: 1.6rem
+	font-weight: $bold
 	line-height: 1
 	width: 100%
 
 
 .genesis-nav-menu .menu-item
 	display: inline-block
+	margin-bottom: 0
+	padding-bottom: 0
 	text-align: left
 
 
 .genesis-nav-menu a
-	color: $primary-link-color
+	color: $primary-color
+	text-decoration: none
 	display: block
-	padding: 30px 24px
+	padding: 32px 24px
 
 
 .genesis-nav-menu a:hover,
+.genesis-nav-menu a:focus,
 .genesis-nav-menu .current-menu-item > a,
-.genesis-nav-menu .sub-menu .current-menu-item > a:hover
+.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+.genesis-nav-menu .sub-menu .current-menu-item > a:focus
 	color: $primary-link-hover-color
+	text-decoration: underline
 
 
 .genesis-nav-menu .sub-menu
+	border-top: 1px solid $white
 	left: -9999px
 	opacity: 0
 	position: absolute
@@ -42,11 +50,13 @@
 .genesis-nav-menu .sub-menu a
 	background-color: $white
 	border: 1px solid $border-color
-	border-top: none
+	border-top: 0
 	font-size: 14px
+	font-size: 1.4rem
 	padding: 20px
 	position: relative
 	width: 200px
+	word-wrap: break-word
 
 
 .genesis-nav-menu .sub-menu .sub-menu
@@ -71,23 +81,7 @@
 
 
 .genesis-nav-menu > .right
-	color: $white
 	float: right
-	list-style-type: none
-	padding: 30px 0
-
-
-.genesis-nav-menu > .right > a
-	display: inline
-	padding: 0
-
-
-.genesis-nav-menu > .rss > a
-	margin-left: 48px
-
-
-.genesis-nav-menu > .search
-	padding: 10px 0 0
 
 
 // ## Accessible Menu
@@ -101,6 +95,12 @@
 .menu .menu-item.sfHover > ul.sub-menu
 	left: auto
 	opacity: 1
+
+
+.sub-menu-toggle,
+.menu-toggle
+	display: none
+	visibility: hidden
 
 
 // ## Site Header Navigation
@@ -122,11 +122,12 @@
 //**********************************************
 
 .nav-primary
-	background-color: $primary-color
+	background-color: $white
+	border-top: 1px solid $light-gray
 
 
 .nav-primary .genesis-nav-menu a
-	color: $white
+	color: $primary-color
 
 
 .nav-primary .genesis-nav-menu .sub-menu a
@@ -150,27 +151,27 @@
 //**********************************************
 // https://gist.github.com/patric-boehner/b0be33647da893ddc709
 
-.responsive-menu-icon
-	cursor: pointer
-	display: none
-	margin-bottom: -1px
-	text-align: center
-
-	&:before
-		content: "\f333"
-		display: inline-block
-		font: normal 2rem/1 $icon-font
-		margin: 0 auto
-		padding: 10px
-		color: $white
-
-
-.nav-secondary
-	.responsive-menu-icon
-		&:before
-			color: $primary-color
-
-
-.menu-open
-	&::before
-		content: "\f335"
+// .responsive-menu-icon
+// 	cursor: pointer
+// 	display: none
+// 	margin-bottom: -1px
+// 	text-align: center
+//
+// 	&:before
+// 		content: "\f333"
+// 		display: inline-block
+// 		font: normal 2rem/1 $icon-font
+// 		margin: 0 auto
+// 		padding: 10px
+// 		color: $white
+//
+//
+// .nav-secondary
+// 	.responsive-menu-icon
+// 		&:before
+// 			color: $primary-color
+//
+//
+// .menu-open
+// 	&::before
+// 		content: "\f335"

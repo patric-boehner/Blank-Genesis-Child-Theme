@@ -8,7 +8,8 @@ textarea
 	border: 1px solid $border-color
 	color: $primary-color
 	font-size: 18px
-	font-weight: 300
+	font-size: 1.8rem
+	font-weight: $normal
 	padding: 16px
 	width: 100%
 
@@ -27,13 +28,11 @@ input[type="radio"]
 
 ::-moz-placeholder
 	color: $primary-color
-	font-weight: 300
 	opacity: 1
 
 
 ::-webkit-input-placeholder
 	color: $primary-color
-	font-weight: 300
 
 
 button,
@@ -46,9 +45,11 @@ input[type="submit"],
 	color: $white
 	cursor: pointer
 	font-size: 16px
-	font-weight: 300
+	font-size: 1.6rem
+	font-weight: $strong
 	padding: 16px 24px
-	text-transform: uppercase
+	text-decoration: none
+	white-space: normal
 	width: auto
 
 
@@ -71,17 +72,32 @@ input:focus[type="submit"],
 	color: $white
 
 
-.footer-widgets button:hover,
-.footer-widgets input:hover[type="button"],
-.footer-widgets input:hover[type="reset"],
-.footer-widgets input:hover[type="submit"],
-.footer-widgets .button:hover
-	background-color: $white
-	color: $primary-color
-
-
 .button
 	display: inline-block
+
+
+a.button.small,
+button.small,
+input[type="button"].small,
+input[type="reset"].small,
+input[type="submit"].small
+	padding: 8px 16px
+
+
+.site-container button:disabled,
+.site-container button:disabled:hover,
+.site-container input:disabled,
+.site-container input:disabled:hover,
+.site-container input[type="button"]:disabled,
+.site-container input[type="button"]:disabled:hover,
+.site-container input[type="reset"]:disabled,
+.site-container input[type="reset"]:disabled:hover,
+.site-container input[type="submit"]:disabled,
+.site-container input[type="submit"]:disabled:hover
+	background-color: $white
+	border-width: 0
+	color: #777
+	cursor: not-allowed
 
 
 input[type="search"]::-webkit-search-cancel-button,

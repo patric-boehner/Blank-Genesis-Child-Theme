@@ -5,12 +5,9 @@
 //**********************************************
 
 .entry
+	background-color: #fff
 	margin-bottom: 40px
-	padding: 50px 60px
-
-
-.content .entry
-	background-color: $white
+	padding: 70px 80px
 
 
 .entry-content ol,
@@ -51,7 +48,7 @@ p.entry-meta
 
 
 .entry-footer .entry-meta
-	border-top: 2px solid $border-color
+	border-top: 1px solid $border-color
 	padding-top: 24px
 
 
@@ -72,41 +69,38 @@ p.entry-meta
 .entry-comments,
 .entry-pings
 	background-color: $white
+	font-size: 16px
+	font-size: 1.6rem
 	margin-bottom: 40px
 
 
 .comment-respond,
 .entry-pings
-	padding: 40px 40px 16px
+	padding: 60px 60px 32px
 
 
 .entry-comments
-	padding: 40px
+	padding: 60px
+
+
+.comment-list li
+	padding: 40px 0 0 30px
+
+
+.comment-list .depth-1
+	padding-left: 0
 
 
 .comment-header
-	font-size: 16px
-	font-size: 1.6rem
-
-
-li.comment
-	background-color: $light-gray
-	border: 2px solid $white
-	border-right: 0
+	margin-bottom: 30px
 
 
 .comment-content
 	clear: both
-	word-wrap: break-word
 
 
-.comment-list li
-	margin-top: 24px
-	padding: 32px
-
-
-.comment-list li li
-	margin-right: -32px
+.comment-content ul > li
+	list-style-type: disc
 
 
 .comment-respond input[type="email"],
@@ -120,19 +114,9 @@ li.comment
 	margin-right: 12px
 
 
-.entry-comments .comment-author
+.comment-header p
 	margin-bottom: 0
 
 
 .entry-pings .reply
 	display: none
-
-
-.bypostauthor
-
-
-.form-allowed-tags
-	background-color: $light-gray
-	font-size: 16px
-	font-size: 1.6rem
-	padding: 24px

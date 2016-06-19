@@ -22,92 +22,158 @@
 //* Variables
 //**********************************************
 
+// $login-accent: #0073aa
+$login-accent: #FF9D33
+
 //* Background Color
-$login-bk-color: #f1f1f1
+$login-bk-color: $primary-bk-color
 
 //* Text
-$label-color: #777
-$input-text-color: #32373c
+$label-color: $primary-color
+$login-text-color: $primary-color
+$input-text-color: $primary-color
 
 //* Form Field & Link Highlight Color
-$highlight-color: #00a0d2
-$accent-color: #0073aa
+$highlight-color: lighten($login-accent, 10%)
+$login-accent-color: $login-accent
+$focus-color: darken($login-accent, 10%)
+$error-color: $accent-color
 
 //* Form Structure
-$form-bk-color: #fff
-$border-color: #E5E5E5
+$form-bk-color: $white
+$border-color: $border-color
 
 
 //**********************************************
 //* Structure
 //**********************************************
 
+html
+   // 10px browser default
+   font-size: 72.5%
+
+// Chrome fix
+body > div
+   font-size: 2rem
+
 body
-  background-color: $login-bk-color
+   background-color: $login-bk-color
+   color: $login-text-color
+   font-family: $primary-font
+   font-size: 13px
+   font-size: 1.3rem
+   line-height: 1.4em
+
+a
+   color: $login-accent-color
+   outline: 0
+   transition-property: border, background, color
+   transition-duration: .05s
+   transition-timing-function: ease-in-out
+
+   &:hover,
+   &:active
+      color: $highlight-color
+
+   &:focus
+      color: $focus-color
+      box-shadow: 0 0 0 1px $highlight-color, 0 0 2px 1px rgba($highlight-color, .8)
+
+.ie8 a:focus
+   outline: $focus-color solid 1px
+
+p
+   line-height: 1.5
 
 
 //**********************************************
 //* Message Box
 //**********************************************
 
-.login
-  .message
-    border-left: 4px solid $highlight-color
-    background-color: $form-bk-color
+.login .message,
+.login #login_error
+   border-left: 4px solid $highlight-color
+   background-color: $form-bk-color
+   padding: 12px
+   margin-left: 0
+   box-shadow: 0 1px 1px 0 rgba($primary-color,0.1)
+
+.login #login_error
+   border-left: 4px solid $error-color
+   font-size: 13px
+   font-size: 1.3rem
 
 
 //**********************************************
-//* Form Box
+//* Form Structure
 //**********************************************
 
 .login
-  h1
-    a
-      @include hide-text
-      background: url(../images/login-logo.png) no-repeat top center
-      // Adjust width and height to fit logo
-      width: 170px
-      height: 170px
-      padding-bottom: 15px
-      display: block
+   h1
+      text-align: center
 
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)
-      background: url(../images/login-logo@2x.png) no-repeat top center
+      a
+         @include hide-text
+         background: url(../images/login-logo.png) no-repeat top center
+         // background-image: url(../images/logo.svg), linear-gradient(transparent, transparent), none
+         // Adjust width and height to fit logo
+         width: 170px
+         height: 170px
+         padding-bottom: 15px
+         display: block
 
-  // Form sturcture
-  form
-    margin-left: 8px
-    padding: 26px 24px
-    font-weight: normal
-    background: $form-bk-color
-    border: 1px solid $border-color
-    border-radius: 3px
-    box-shadow: none
+         @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)
+            background: url(../images/login-logo@2x.png) no-repeat top center
 
-  label
-    color: $label-color
+   // Form sturcture
+   form
+      margin-left: 20px
+      padding: 26px 24px 46px
+      font-weight: normal
+      background: $form-bk-color
+      border: 1px solid $border-color
+      border-radius: 3px
+      box-shadow: 0 1px 3px rgba($primary-color, 0.13)
 
-  // Input form fields
-  form .input
-    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif
-    font-weight: 200
-    font-size: 24px
-    width: 97%
-    padding: 3px
-    margin-top: 2px
-    margin-right: 6px
-    margin-bottom: 16px
-    border: 1px solid $border-color
-    background: #FBFBFB
-    outline: none
-    box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2)
+   .forgetmenot
+      font-weight: normal
+      float: left
+      margin-bottom: 0
 
-  // Input form fields
-  input[type=text], input[type=password]
-    color: $input-text-color
-    &:focus
-      border-color: $highlight-color
-      box-shadow: $accent-color
+      label
+         font-size: 12px
+         font-size: 1.2rem
+         line-height: 19px
+
+   .button-primary
+      float: right
+
+   label
+      color: $label-color
+      font-size: 14px
+      font-size: 1.4rem
+
+   // Input form fields
+   form .input
+      font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif
+      font-weight: 200
+      font-size: 24px
+      width: 97%
+      padding: 3px
+      margin-top: 2px
+      margin-right: 6px
+      margin-bottom: 16px
+      border: 1px solid $border-color
+      background: #FBFBFB
+      outline: none
+      box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2)
+
+   // Input form fields
+   input[type=text], input[type=password]
+      color: $input-text-color
+      &:focus
+         border-color: $highlight-color
+         box-shadow: $login-accent-color
 
 
 //**********************************************
@@ -116,34 +182,38 @@ body
 
 //* Remember me checkbox
 input[type=checkbox]
-  &:focus
-    border-color: $accent-color
-    box-shadow: none
-  &:checked:before
-    color: $highlight-color
+   &:focus
+      border-color: $login-accent-color
+      box-shadow: none
+   &:checked:before
+      color: $highlight-color
 
 //* Submit Button
 .wp-core-ui
-  .button-primary
-    background: $highlight-color
-    border-color: $accent-color
-    box-shadow: none
+   .button-primary
+      background: $highlight-color
+      border-color: $login-accent-color
+      box-shadow: 0 1px 0 $highlight-color
+      color: $white
+      text-shadow: none
 
-    &:hover
-      background: $accent-color
-      border-color: $accent-color
+      &:hover
+         background: $login-accent-color
+         border-color: $login-accent-color
 
-    &:focus
-      box-shadow: none
-      border-color: none
+      &:focus
+         background-color: $focus-color
+         box-shadow: none
+         border-color: none
+
 
 //* Submit Button - size
 #wp-submit
-  width: 100%
-  height: auto
-  margin-top: 20px
-  padding: 10px 0
-  font-size: 16px
+   width: 100%
+   height: auto
+   margin-top: 20px
+   padding: 10px 0
+   font-size: 16px
 
 
 //**********************************************
@@ -151,12 +221,12 @@ input[type=checkbox]
 //**********************************************
 
 .login
-  #nav,
-  #backtoblog
-    text-align: center
+   #nav,
+   #backtoblog
+      text-align: center
 
-    a
-      color: $label-color
+      a
+         color: $label-color
 
-      &:hover
-        color: $accent-color
+         &:hover
+            color: $login-accent-color

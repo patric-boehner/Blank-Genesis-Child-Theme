@@ -1,5 +1,43 @@
 // # Media Queries
-//**********************************************-------------------------------------------------------
+//**********************************************
+
+@include largedesktop
+
+   .site-inner,
+   .wrap
+      max-width: 1140px
+
+
+   .content-sidebar-sidebar .content-sidebar-wrap,
+   .sidebar-content-sidebar .content-sidebar-wrap,
+   .sidebar-sidebar-content .content-sidebar-wrap
+      width: 920px
+
+
+   .content,
+   .site-header .widget-area
+      width: 800px
+
+
+   .sidebar-content-sidebar .content,
+   .sidebar-sidebar-content .content,
+   .content-sidebar-sidebar .content
+      width: 580px
+
+
+   .sidebar-primary
+      width: 300px
+
+
+   .footer-widgets-1,
+   .footer-widgets-2,
+   .footer-widgets-3
+      width: 340px
+
+
+   .footer-widgets-1
+      margin-right: 60px
+
 
 @include desktop
 
@@ -25,9 +63,14 @@
       width: 400px
 
 
-   .sidebar-primary,
-   .title-area
+   .footer-widgets-1,
+   .footer-widgets-2,
+   .footer-widgets-3
       width: 300px
+
+
+   .footer-widgets-1
+      margin-right: 30px
 
 
 @include smalldesktop
@@ -43,6 +86,8 @@
    .footer-widgets-1,
    .footer-widgets-2,
    .footer-widgets-3,
+   .js .genesis-nav-menu .sub-menu a,
+   .js .genesis-nav-menu .sub-menu,
    .sidebar-content-sidebar .content,
    .sidebar-content-sidebar .content-sidebar-wrap,
    .sidebar-primary,
@@ -55,14 +100,12 @@
 
 
    .site-header .wrap
-      padding: 20px 5%
-
-
-   .header-image .site-title > a
-      background-position: center top
+      padding-left: 5%
+      padding-right: 5%
 
 
    .genesis-nav-menu li,
+   .header-image .title-area,
    .site-header ul.genesis-nav-menu,
    .site-header .search-form
       float: none
@@ -71,48 +114,193 @@
    .genesis-nav-menu,
    .site-description,
    .site-header .title-area,
-   .site-header .search-form,
+   .site-header .widget-area,
    .site-title
       text-align: center
-
-
-   .genesis-nav-menu a,
-   .genesis-nav-menu > .first > a,
-   .genesis-nav-menu > .last > a
-      padding: 20px 16px
 
 
    .site-header .search-form
       margin: 16px auto
 
 
-   .genesis-nav-menu li.right
+   .js nav.nav-primary,
+   .js .site-header nav
       display: none
+      position: relative
+
+
+   .js .site-header nav .wrap
+      padding: 0
+
+
+   .js nav.pagination
+      display: block
+
+
+   .menu-toggle,
+   .sub-menu-toggle
+      border-width: 0
+      background-color: $white
+      color: #333
+      display: block
+      margin: 0 auto
+      overflow: hidden
+      text-align: center
+      visibility: visible
+
+
+   .sub-menu-toggle:hover,
+   .sub-menu-toggle:focus
+      border-width: 0
+
+
+   .menu-toggle
+      border-top: 1px solid $light-gray
+      line-height: 20px
+      position: relative
+      right: 0
+      z-index: 1000
+      width: 100%
+
+
+   .site-header .menu-toggle
+      border: 0
+
+
+   .menu-toggle:before,
+   .menu-toggle.activated:before
+      margin-right: 10px
+      text-rendering: auto
+      -webkit-transform: translate(0, 0)
+      -ms-transform:     translate(0, 0)
+      transform:         translate(0, 0)
+
+
+   .sub-menu-toggle
+      float: right
+      padding: 10px
+      position: absolute
+      right: 0
+      top: 0
+      z-index: 100
+
+
+   .sub-menu-toggle:before
+      display: inline-block
+      text-rendering: auto
+      -webkit-transform: translate(0, 0)
+      -ms-transform:     translate(0, 0)
+      transform:         translate(0, 0)
+
+
+   .sub-menu-toggle.activated:before
+      content: "\f142"
+
+
+   .js .nav-primary .genesis-nav-menu .menu-item,
+   .js .site-header .genesis-nav-menu .menu-item
+      display: block
+      float: none
+      margin: 1px 0
+      position: relative
+      text-align: left
+
+
+   .js .genesis-nav-menu .menu-item:hover
+      position: relative
+
+
+   .js .nav-primary .genesis-nav-menu .menu-item a,
+   .js .site-header .genesis-nav-menu .menu-item a
+      border: none
+      padding: 12px 0
+      width: 100%
+
+
+   .js .genesis-nav-menu .sub-menu
+      border: none
+
+
+   .js .genesis-nav-menu .menu-item > a:focus ul.sub-menu,
+   .js .genesis-nav-menu .menu-item > a:focus ul.sub-menu .sub-menu
+      left: 0
+      margin-left: 0
+
+
+   .js .genesis-nav-menu > .menu-item-has-children > a:after
+      content: none
+
+
+   .js .genesis-nav-menu .sub-menu
+      clear: both
+      display: none
+      margin: 0
+      opacity: 1
+      padding-left: 15px
+      position: static
+      width: 100%
+
+
+   .js .genesis-nav-menu .sub-menu .sub-menu
+      margin: 0
+
+
+   .js nav button:hover,
+   .js .menu-toggle:hover,
+   .js .nav-primary
+      background-color: $white
+      color: $primary-color
+
+
+   .js nav button:focus,
+   .js .menu-toggle:focus
+      background-color: $white
+      color: $accent-color
+
+
+   .footer-widgets-1,
+   .footer-widgets-2
+      margin: 0 auto 40px
 
 
 @include tablet
 
+   body > div
+      font-size: 1.8rem
+
+
    body
-      background-color: $white
-      font-size: 16px
-      font-size: 1.6rem
+      font-size: 18px
+      font-size: 1.8rem
 
 
-   .site-inner,
+   .site-inner
+      padding: 5% 5% 0
+
+
    .wrap
       padding-left: 5%
       padding-right: 5%
 
 
+   .after-entry,
    .archive-description,
    .author-box,
    .comment-respond,
    .entry,
    .entry-comments,
    .entry-pings,
-   .sidebar .widget,
-   .site-header
-      padding: 0
+   .sidebar .widget
+      padding: 30px
+      margin-bottom: 5%
+
+
+   .sidebar
+      margin-bottom: 5%
+
+
+   .pagination
+      margin: 5% auto
 
 
    .archive-pagination li a
@@ -131,101 +319,4 @@
    .two-sixths,
    .two-thirds
       margin: 0
-      width: 100%
-
-
-   .sidebar .widget.enews-widget
-      padding: 40px
-
-
-
-@include phone
-
-   .genesis-nav-menu.responsive-menu > .menu-item > .sub-menu,
-   .genesis-nav-menu.responsive-menu
-      display: none
-
-
-   .genesis-nav-menu.responsive-menu .menu-item,
-   .responsive-menu-icon
-      display: block
-
-
-   .genesis-nav-menu.responsive-menu .menu-item
-      margin: 0
-
-
-   .genesis-nav-menu.responsive-menu .menu-item:hover
-      position: static
-
-
-   .genesis-nav-menu.responsive-menu .current-menu-item > a,
-   .genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
-   .genesis-nav-menu.responsive-menu a,
-   .genesis-nav-menu.responsive-menu a:hover
-      background: none
-      line-height: 1
-      padding: 16px 20px
-
-
-   .nav-primary .genesis-nav-menu.responsive-menu .current-menu-item > a,
-   .nav-primary .genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
-   .nav-primary .genesis-nav-menu.responsive-menu a,
-   .nav-primary .genesis-nav-menu.responsive-menu a:hover
-      color: $white
-
-
-   .genesis-nav-menu.responsive-menu .menu-item-has-children
-      cursor: pointer
-
-
-   .genesis-nav-menu.responsive-menu .menu-item-has-children > a
-      margin-right: 60px
-
-
-   .genesis-nav-menu.responsive-menu > .menu-item-has-children:before
-      content: "\f347"
-      float: right
-      font: normal 1.6rem/1 $icon-font
-      height: 16px
-      padding: 16px 20px
-      right: 0
-      text-align: right
-      z-index: 9999
-
-
-   .nav-primary .genesis-nav-menu.responsive-menu > .menu-item-has-children:before
-      color: $white
-
-
-   .genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before
-      content: "\f343"
-
-
-   .genesis-nav-menu.responsive-menu .sub-menu
-      border: none
-      left: auto
-      opacity: 1
-      padding-left: 25px
-      position: relative
-      -moz-transition:    opacity .4s ease-in-out
-      -ms-transition:     opacity .4s ease-in-out
-      -o-transition:      opacity .4s ease-in-out
-      -webkit-transition: opacity .4s ease-in-out
-      transition:         opacity .4s ease-in-out
-      width: 100%
-      z-index: 99
-
-
-   .genesis-nav-menu.responsive-menu .sub-menu .sub-menu
-      margin: 0
-
-
-   .genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
-   .genesis-nav-menu.responsive-menu .sub-menu li a,
-   .genesis-nav-menu.responsive-menu .sub-menu li a:hover
-      background: none
-      border: none
-      padding: 12px 20px
-      position: relative
       width: 100%

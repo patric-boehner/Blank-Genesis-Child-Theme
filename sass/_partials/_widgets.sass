@@ -2,7 +2,23 @@
 //**********************************************
 
 .widget
+	margin-bottom: 40px
 	word-wrap: break-word
+
+
+.widget p:last-child,
+.widget ul > li:last-of-type,
+.widget-area .widget:last-of-type
+	margin-bottom: 0
+
+
+.widget ul > li
+	margin-bottom: 10px
+	padding-bottom: 10px
+
+
+.widget ul > li:last-of-type
+	padding-bottom: 0
 
 
 .widget ol > li
@@ -13,7 +29,7 @@
 
 
 .widget li li
-	border: none
+	border: 0
 	margin: 0 0 0 30px
 	padding: 0
 
@@ -27,13 +43,46 @@
 	text-align: center
 
 
+// ## Footer Widget
+//**********************************************
+
+.footer-widgets
+	background-color: $white
+	font-size: 1.8rem
+	clear: both
+	padding: 60px 0
+
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3
+	width: 380px
+
+
+.footer-widgets-1
+	margin-right: 70px
+
+
+.footer-widgets-1,
+.footer-widgets-2
+	float: left
+
+
+.footer-widgets-3
+	float: right
+
+
 // ## Featured Content
 //**********************************************
 
 .featured-content .entry
-	border-bottom: 2px solid $border-color
-	margin-bottom: 20px
-	padding: 0 0 24px
+	background: none
+	padding: 0
+
+
+.featured-content .entry:last-of-type
+	margin-bottom: 0
+
 
 .featured-content .entry-title
 	font-size: 20px
