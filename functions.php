@@ -215,9 +215,6 @@ function pb_child_theme_setup() {
 	//* Add support for after entry widget
 	// add_theme_support( 'genesis-after-entry-widget-area' );
 
-   //* Execute shortcodes in widgets
-   add_filter( 'widget_text', 'do_shortcode' );
-
 
    //* Media
    //**********************
