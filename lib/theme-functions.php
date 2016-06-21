@@ -55,6 +55,9 @@ function pb_child_theme_script_enqueue() {
 	//* Fitvid Script
 	wp_enqueue_script( 'fitvids.combined.min', get_stylesheet_directory_uri() . '/js/fitvids.combined.min.js', array( 'jquery' ), pb_version_id(), true );
 
+	//* Test Script
+	wp_enqueue_script( 'test.min', get_stylesheet_directory_uri() . '/js/test.min.js', array( 'jquery' ), pb_version_id(), true );
+
 }
 
 //* Load Login Style
