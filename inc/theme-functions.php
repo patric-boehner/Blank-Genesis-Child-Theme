@@ -49,7 +49,7 @@ function pb_child_theme_script_enqueue() {
 	);
 	wp_localize_script( 'responsive-menu.min', 'genesisChildL10n', $output );
 
-	//* Smooht Scroll' Script
+	//* Smooht Scroll Script
 	wp_enqueue_script( 'smooth-scroll.min', get_stylesheet_directory_uri() . '/js/smooht-scroll.min.js', array( 'jquery' ), pb_version_id(), true );
 
 	//* Scroll To Top Script

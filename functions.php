@@ -38,11 +38,11 @@ function pb_version_id() {
 }
 
 //* Development Tools
-require_once( dirname(__FILE__) . "/lib/dev-tools.php" );
+require_once( dirname(__FILE__) . "/inc/dev-tools.php" );
 
 //* Test File
 // Remove before deployment
-require_once( dirname(__FILE__)."/lib/test.php" );
+require_once( dirname(__FILE__)."/inc/test.php" );
 
 
 //**********************************************
@@ -71,16 +71,16 @@ function pb_child_theme_setup() {
    //**********************************************
 
    // Clean up and organize all our changes
-   include_once( CHILD_DIR . '/lib/theme-functions.php' );
+   include_once( CHILD_DIR . '/inc/theme-functions.php' );
 
 	// Theme Defaults
-	include_once( CHILD_DIR . '/lib/theme-defaults.php' );
+	include_once( CHILD_DIR . '/inc/theme-defaults.php' );
 
 
    //**********************************************
    //* Load Site Library Files & Scripts
    //**********************************************
-   //* Files found in the lib directory /functions-backend.php
+   //* Files found in the inc directory /functions-backend.php
    // https://codex.wordpress.org/Function_Reference/wp_enqueue_script
 
 	//* Remove primary stylesheet
