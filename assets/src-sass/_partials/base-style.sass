@@ -1,0 +1,255 @@
+// All Base styles
+//**********************************************
+
+html
+	font-size: 62.5%
+	@include font-smoothing (antialiased)
+
+
+body > div
+	font-size: 20px
+	font-size: 2rem
+
+	@include phone
+		font-size: 18px
+		font-size: 1.8rem
+
+
+body
+	background-color: $background-color
+	color: $primary-color
+	font-family: $primary-font
+	font-size: 20px
+	font-size: 2rem
+	font-weight: $normal
+	line-height: 1.625
+	margin: 0
+
+
+a
+	color: $highlight-color
+	text-decoration: underline
+	text-decoration-skip: ink
+	transition: all 0.1s ease-in-out
+
+	&:focus,
+	&:hover
+		color: $primary-color
+
+
+b,
+strong
+	font-weight: $bold
+
+
+ol,
+ul
+	list-style: none
+	margin: 0
+	padding: 0
+
+
+code
+	padding: 2px 4px
+	white-space: nowrap
+
+
+mark
+	background: #ddd
+	color: #000
+
+
+// Paragraph Style
+//**********************************************
+
+p
+	margin: 0 0 $element-spacing
+	padding: 0
+
+
+// Horizontal Rule
+//**********************************************
+
+hr
+	border: 0
+	border-collapse: collapse
+	border-top: 1px solid $border-color
+	clear: both
+	margin: 1em 0
+
+
+// Lists
+//**********************************************
+
+ol,
+ul
+	margin-bottom: $element-spacing
+	margin-left: 40px
+
+
+ol > li
+	list-style-type: decimal
+
+
+ul > li
+	list-style-type: disc
+
+
+ol ol,
+ul ul,
+ol ul,
+ul ol
+	margin-bottom: 0
+
+
+// Blockquote
+//**********************************************
+
+blockquote
+	margin: 40px
+
+	&::before
+		content: "\201C"
+		display: block
+		font-size: 30px
+		font-size: 3rem
+		height: 0
+		left: -20px
+		position: relative
+		top: -10px
+
+	cite
+		display: block
+
+	// &.is-large.wp-block-quote
+	// &.wp-block-pullquote
+
+
+// Headings
+//**********************************************
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	font-family: $primary-font
+	font-weight: $bold
+	line-height: 1.2
+	margin: 0 0 15px 0
+
+	a
+		color: $primary-color
+		text-decoration: none
+
+		&:hover,
+		&:focus
+			color: $highlight-color
+
+
+h1
+	font-size: 36px
+	font-size: 3.6rem
+
+
+h2
+	font-size: 30px
+	font-size: 3rem
+
+
+h3
+	font-size: 24px
+	font-size: 2.4rem
+
+
+h4
+	font-size: 20px
+	font-size: 2rem
+
+
+h5
+	font-size: 18px
+	font-size: 1.8rem
+
+
+h6
+	font-size: 16px
+	font-size: 1.6rem
+
+
+// Alighments
+//**********************************************
+
+.alignnone
+	display: inline-block
+
+
+.alignleft
+	display: inline
+	float: left
+	margin-right: $element-spacing
+
+
+.alignright
+	display: inline
+	float: right
+	margin-left: $element-spacing
+
+
+.aligncenter
+	clear: both
+	display: block
+	margin-left: auto
+	margin-right: auto
+
+
+
+// Objects
+//**********************************************
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption
+	max-width: 100%
+
+
+img
+	display: block
+	height: auto
+	max-width: 100%
+
+
+figure
+	margin: 0 0 $element-spacing 0
+	max-width: 100%
+	position: relative
+
+
+.wp-audio-shortcode,
+.wp-playlist,
+.wp-video
+	margin-bottom: $element-spacing
+
+
+// Float Clearing
+//**********************************************
+
+.author-box,
+.clearfix,
+.entry,
+.entry-content,
+.footer-widgets,
+.nav-primary,
+.nav-secondary,
+.pagination,
+.site-container,
+.site-footer,
+.site-header,
+.site-inner,
+.widget,
+.wrap
+	@include clearfix

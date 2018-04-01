@@ -1,0 +1,110 @@
+// Box Sizing
+//**********************************************
+
+html,
+input[type="search"]
+	-webkit-box-sizing: border-box
+	-moz-box-sizing:    border-box
+	box-sizing:         border-box
+
+
+*,
+*::before,
+*::after
+	box-sizing: inherit
+
+
+// Layout
+//**********************************************
+
+.site-inner .content-area,
+.wrap
+	margin: 0 auto
+	max-width: calc(1280px + (5% + 5%))
+	padding: 0 5%
+
+	@include tablet
+		max-width: calc(800px + (5% + 5%))
+
+	@include phone
+		padding: 0
+
+
+.full-width-content .content-area
+	display: block
+	max-width: 880px
+
+
+@include phone
+	.site-inner,
+	.wrap
+		margin-left: 5%
+		margin-right: 5%
+
+
+.site-inner .content-area
+	margin-top: $base-margin
+	word-wrap: break-word
+
+
+@include above-tablet
+	.content-area
+
+		.content
+			width: calc(100% - 30% - #{$base-margin})
+			float: left
+
+		.sidebar-primary
+			width: 30%
+			margin-left: $base-margin
+			float: left
+
+
+	@supports( display: grid )
+
+		.content-area
+			display: grid
+			grid-template-columns: 1fr 30%
+			grid-template-areas: "content sidebar"
+			grid-column-gap: $base-margin
+	
+			.content,
+			.sidebar-primary
+				width: 100%
+				float: none
+				margin-left: 0
+
+			.content
+				grid-area: content
+
+			.sidebar-primary
+				grid-area: sidebar
+
+
+.full-width-content .content
+	width: 100%
+
+
+// Widgets
+//**********************************************
+
+.widget
+	margin-bottom: $base-margin
+	word-wrap: break-word
+
+	&:last-of-type
+		margin-bottom: 0
+
+
+@include above-tablet
+	.footer-widgets
+
+		.footer-widgets-1,
+		.footer-widgets-2,
+		.footer-widgets-3
+			width: calc(100% / 3 - 40px / 3 * 2)
+			margin-left: $base-margin
+			float: left
+
+		.footer-widgets-1
+			margin-left: 0

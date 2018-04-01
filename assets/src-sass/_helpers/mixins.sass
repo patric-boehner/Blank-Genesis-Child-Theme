@@ -1,0 +1,167 @@
+// Global Mixins
+//**********************************************
+
+
+// Pading Scale
+//**********************************************
+
+@mixin padding-scale
+	padding: 40px
+
+	@include above-phone
+		padding: $base-padding
+
+	@include above-tablet
+		padding: 80px
+
+
+// Font Smoothing
+//**********************************************
+
+@mixin font-smoothing($value: antialiased)
+	@if $value == antialiased
+		-webkit-font-smoothing: antialiased
+		-moz-osx-font-smoothing: grayscale
+
+	@else
+		-webkit-font-smoothing: subpixel-antialiased
+		-moz-osx-font-smoothing: auto
+
+
+// Placeholder Text
+//**********************************************
+
+@mixin placeholder-color
+
+	::-moz-placeholder
+		color: $primary-color
+		opacity: 1
+
+
+	::-ms-input-placeholder
+		color: $primary-color
+
+
+	::-webkit-input-placeholder
+		color: $primary-color
+
+
+	input:focus::-webkit-input-placeholder,
+	input:focus::-moz-placeholder,
+	input:focus:-ms-input-placeholder,
+	textarea:focus::-webkit-input-placeholder,
+	textarea:focus::-moz-placeholder,
+	textarea:focus:-ms-input-placeholder
+		color: transparent
+
+
+// Hiden Text
+//**********************************************
+
+@mixin hiden-text
+	border: 0
+	clip: rect(0, 0, 0, 0)
+	height: 1px
+	overflow: hidden
+	position: absolute !important
+	width: 1px
+	word-wrap: normal !important
+
+
+// Clearfix
+//**********************************************
+
+@mixin clearfix()
+	&::before
+		content: " "
+		display: table
+
+	&::after
+		clear: both
+		content: " "
+		display: table
+
+
+// Button base
+//**********************************************
+
+@mixin button
+	background-color: #333
+	border: 0
+	color: $white
+	cursor: pointer
+	font-size: 16px
+	font-size: 1.6rem
+	font-weight: $bold
+	padding: 16px 24px
+	text-decoration: none
+	white-space: normal
+	width: auto
+
+	&:hover,
+	&:focus
+		background-color: $highlight-color
+		color: $white
+
+	&:disabled
+		background-color: $border-color
+		border-width: 0
+		color: $primary-color
+		cursor: not-allowed
+
+
+// Media Quiery
+//**********************************************
+
+@mixin desktop
+	@media only screen and (max-width: $desktop)
+		@content
+
+@mixin above-desktop
+	@media only screen and (min-width: $desktop)
+		@content
+
+
+@mixin small-desktop
+	@media only screen and (max-width: $small-desktop)
+		@content
+
+@mixin above-small-desktop
+	@media only screen and (min-width: $small-desktop)
+		@content
+
+
+@mixin tablet
+	@media only screen and (max-width: $tablet)
+		@content
+
+@mixin above-tablet
+	@media only screen and (min-width: $tablet)
+		@content
+
+
+@mixin phone
+	@media only screen and (max-width: $phone)
+		@content
+
+@mixin above-phone
+	@media only screen and (min-width: $phone)
+		@content
+
+
+@mixin small-phone
+	@media only screen and (max-width: $small-phone)
+		@content
+
+@mixin above-small-phone
+	@media only screen and (min-width: $small-phone)
+		@content
+
+
+@mixin smallest
+	@media only screen and (max-width: $smallest)
+		@content
+
+@mixin above-smallest
+	@media only screen and (min-width: $smallest)
+		@content

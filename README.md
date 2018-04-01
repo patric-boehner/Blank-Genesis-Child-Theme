@@ -1,61 +1,79 @@
 # Blank Genesis Child Theme
 
-This is my personal blank starter theme for use as a child theme of the [Genesis Framework](http://www.studiopress.com/). I use it to build my custom Wordpress themes. It uses [sass](http://sass-lang.com/) and [CodeKit](https://incident57.com/codekit/) to compile, minify and handle dependancies (none at the moment thought the markup is there for [bourbon](http://bourbon.io/)). Tested up to WordPress version 4.3.1 and Genesis version 2.2.3.
+**Github project link:** https://github.com/patric-boehner/Blank-Genesis-Child-Theme/
 
-## Genesis V 2.2.3
+This is my personal blank starter theme for use as a child theme of the [Genesis Framework](http://www.studiopress.com/). The child theme uses [CodeKit](https://incident57.com/codekit/) to compile and minify the JS and [sass](http://sass-lang.com/). Your welcome yo use any development tool you like, just take a look at the file organization to compile files correctly.
 
-This blank stater theme was redone for version 2.2.3 of genesis. Many of the accessibility features have been added with the exception of the menu markup and the needed changes to the responsive menu javascript and css. At the moment, this starter theme is using the old menu markup, js and css. All the other css changes have been applied.
+Tested up to WordPress version 4.9.4 and Genesis version 2.6.1.
 
-## Usage
+## Core Functionality Plugin
 
-The theme uses sass (sass over scss) for styling and the compiling is handling via CodeKit. If you have CodeKit simply add the child theme folder into codekit and the ```config.codekit``` file will do the rest. If your not using codekit than see the compile list bellow and use whatever system you prefer.
+All website functions that should be independent of the theme  should be laced in the theme's accompanying Core Functionality Plugin. Most often this includes custom post types, custom taxonomies, custom widgets, and custom meta boxes.
 
-#### Compile:
 
-**CSS**
-- sass/style.sass -> /style.css
-- sass/login.sass -> /css/login.min.css
-- sass/editory-style -> /css/editor-style.min.css
+## File Organization
 
-**JS**
-- js/src/responsive-menu.js -> js/responsive-menu.min.js
-- js/src/scroll-to-top.js -> js/scroll-to-top.min.js
-- js/src/fitvids.combined.js -> js/fitvids.combined.min.js
+### Sass Organization
 
-#### Cleanup
+I'm still breaking up the default genesis child theme style sheet. Those core elements can be found within the `_partials` folder. These partial files get pulled into the style sheets at the base of the `src-sass` folder.
 
-**Concatenate & Conditionally Load**  
+```
+assets/src-sass
+	| - _helpers
+		| - _variables.sass        # Global variables used in any sass file
+		| - _mixins.sass           # Global mixins used in any sass file
+	|
+	| - _partials                # All partial sass files used in other style sheets
+		| - ...
+	|  
+	| - _vendor                  # Third party scss used in other style sheets
+		| - icon-font.scss
+		| - ...
+	|
+	| - editor-styles.sass       # Sass file for classic editor styles   -> css/editor-style.min.css
+	| - global-styles.sass       # Sass file for frontend global styles  -> css/global-style.min.css
+	| - gutenberg-styles.sass    # Sass file for gutenberg editor styles -> css/gutenberg-style.min.css
+	| - login-styles.sass        # Sass file for login screen styles     -> css/login-style.min.css
+	| - print.sass               # Sass file for media="print" styles    -> css/print.min.css
+```
 
-Not all the js and css files have been concatenated. Those file with ```combined``` in the name have some degree of concatenation already handled by codkit via in-file statements. The rest are being enqueued individually. I tend to leave this till the end of a project, after establishing that everything is working as desired, then I will concatenate and conditionally include my js and css files where needed.
+### JS Organization
 
-**Remove Unnecessary Files**  
+```
+assets/src-js
+	| - _partials                 # All partial js files used in other js files
+		| - responsive-menu.js
+		| - ...
+		|
+	| - _vendor                   # Third party js used in other js files
+		| - ...
+		|
+	| - global.js                 # JS file for frontend global js -> js/global.min.js
+```
 
-The theme contains two test files, one for css and one for php. It can be nice to have a place to work before finally organizing changes. Before deploying remember to remove or at least empty out these two files.
+## Installation Instructions
+
+1. Upload the child theme theme folder via FTP to your wp-content/themes/ directory. (The Genesis parent theme needs to be in the wp-content/themes/ directory as well.)
+2. Go to your WordPress dashboard and select Appearance.
+3. Activate the child theme.
+4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking.
 
 ## License
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-> This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
->
-> This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+```
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+```
 
 ## Credits & References
 
-#### Sample Child Themes
-- https://github.com/eddiemachado/bones-genesis
-- https://github.com/mattbanks/Genesis-Starter-Child-Theme
-- https://github.com/billerickson/BE-Genesis-Child
+A lot of people who have helped me learn and from whom I have borrowed code.
 
-#### Accessibility
-- http://robincornett.com/genesis-responsive-menu/#genesis-footer-widgets
-
-#### JS & CSS/SASS Libraries  
-- https://github.com/davatron5000/FitVids.js
-
-#### Other
-- http://briangardner.com/code/  
-- http://my.studiopress.com/snippets/  
-- http://my.studiopress.com/docs/shortcode-reference/  
-- http://www.billerickson.net/code/  
+- **Tonya Mork** https://github.com/hellofromtonya
+- **Bill Erickson** http://www.billerickson.net/
+- **Matt Banks** https://github.com/mattbanks/
+- **Studio Press** http://my.studiopress.com/snippets/  

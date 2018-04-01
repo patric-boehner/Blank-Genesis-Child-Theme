@@ -1,0 +1,48 @@
+// Column Classes
+// http://www.billerickson.net/column-class-generator/
+//**********************************************
+
+@include above-tablet
+
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds
+		float: left
+		margin-left: $base-margin
+
+	.one-half,
+	.three-sixths,
+	.two-fourths
+		width: calc( ( 100% / 2 ) - ( #{$base-margin} / 2 ) )
+
+	.one-third,
+	.two-sixths
+		width: calc( ( 100% / 3 ) -  ( ( #{$base-margin} / 3 ) * 2 ) )
+
+	.four-sixths,
+	.two-thirds
+		width: calc( ( ( 100% / 3 ) * 2 ) - ( #{$base-margin} / 3 ) )
+
+	.one-fourth
+		width: calc( ( 100% / 4 ) - ( ( #{$base-margin} / 4 ) * 3 ) )
+
+	.three-fourths
+		width: calc( ( ( 100% / 4 ) * 3 ) - ( #{$base-margin} / 4 ) )
+
+	.one-sixth
+		width: calc( ( 100% / 6 ) - ( ( #{$base-margin} / 6 ) * 5 ) )
+
+	.five-sixths
+		width: calc( ( ( 100% / 6 ) * 5 ) -  ( #{$base-margin} / 6 ) )
+
+	.first
+		clear: both
+		margin-left: 0
