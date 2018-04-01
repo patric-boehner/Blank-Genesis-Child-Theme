@@ -12,6 +12,22 @@ All website functions that should be independent of the theme  should be laced i
 
 ## File Organization
 
+### Core Files
+
+Functions.php mainly pulls in all the files within the include folder. It also defines the child theme and setups the cache busting function used on sites with wp_debug() on.
+
+```
+inc/
+	| - admin		# All changes that affect the admin area or default theme settings loaded in functions.php.
+	| - functions		# Collection of functions that are applied global and don't fit within a default template
+	|			  file loaded in functions.php.
+	| - partials		# Collection of individual template parts used within the structure files or default template files.
+	| - structure		# Functions that directly relate to changes to the structure or the default templates files.
+	|			  This borrows from how Genesis organizes some of its files.
+	| - views		# Seperated html to keep code dry.
+	| - theme-setup.php 	# Setup of most Genesis specific filters and theme support options.
+```
+
 ### Sass Organization
 
 The core elements of the stylehseet can be found within the `_partials` folder. These partial files get pulled into the style sheets at the base of the `src-sass` folder.
