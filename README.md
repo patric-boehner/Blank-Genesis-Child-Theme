@@ -2,7 +2,7 @@
 
 **Github project link:** https://github.com/patric-boehner/Blank-Genesis-Child-Theme/
 
-This is my personal blank starter theme for use as a child theme of the [Genesis Framework](http://www.studiopress.com/). The child theme uses [CodeKit](https://incident57.com/codekit/) to compile and minify the JS and [sass](http://sass-lang.com/). Your welcome yo use any development tool you like, just take a look at the file organization to compile files correctly.
+This is the second version of my personal blank starter theme for use as a child of the [Genesis Framework](http://www.studiopress.com/). Your welcome to use this but be aware it is set up with my preferences and opinion in mind. The child theme uses [CodeKit](https://incident57.com/codekit/) to compile and minify the JS and [SASS](http://sass-lang.com/). Your welcome to use any development tool you like, just deleate the CodeKit files and take a look at the file organization to compile files correctly.
 
 Tested up to WordPress version 4.9.4 and Genesis version 2.6.1.
 
@@ -10,12 +10,11 @@ Tested up to WordPress version 4.9.4 and Genesis version 2.6.1.
 
 All website functions that should be independent of the theme  should be laced in the theme's accompanying Core Functionality Plugin. Most often this includes custom post types, custom taxonomies, custom widgets, and custom meta boxes.
 
-
 ## File Organization
 
 ### Sass Organization
 
-I'm still breaking up the default genesis child theme style sheet. Those core elements can be found within the `_partials` folder. These partial files get pulled into the style sheets at the base of the `src-sass` folder.
+The core elements of the stylehseet can be found within the `_partials` folder. These partial files get pulled into the style sheets at the base of the `src-sass` folder.
 
 ```
 assets/src-sass
@@ -24,7 +23,18 @@ assets/src-sass
 		| - _mixins.sass           # Global mixins used in any sass file
 	|
 	| - _partials                # All partial sass files used in other style sheets
-		| - ...
+		| - accessibility.sass
+		| - base-style.sass
+		| - column-classes.sass
+		| - content-area.sass
+		| - forms.sass
+		| - layout.sass
+		| - navigation.sass
+		| - post-elements.sass
+		| - reset.scss
+		| - site-footer.sass
+		| - site-header.sass
+		| - widgets.sass
 	|  
 	| - _vendor                  # Third party scss used in other style sheets
 		| - icon-font.scss
@@ -48,7 +58,7 @@ assets/src-js
 	| - _vendor                   # Third party js used in other js files
 		| - ...
 		|
-	| - global.js                 # JS file for frontend global js -> js/global.min.js
+	| - global.js                 # JS file for frontend global js	-> js/global.min.js
 ```
 
 ## Installation Instructions
