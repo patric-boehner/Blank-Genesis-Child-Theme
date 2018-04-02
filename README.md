@@ -10,6 +10,13 @@ Tested up to WordPress version 4.9.4 and Genesis version 2.6.1.
 
 All website functions that should be independent of the theme  should be laced in the theme's accompanying Core Functionality Plugin. Most often this includes custom post types, custom taxonomies, custom widgets, and custom meta boxes.
 
+## Opinionated Changes
+
+- Their is no Genesis Theme Settings page. Studiopress is doing away with this page at some point in the future so why not help them along.
+- Al Genesis theme settings options have been removed except update notifications. This can still be found in the customizer. If you need theme settings then remove the filter in admin/genesis-metaboxes.php. Otherwise build them into Customizer.
+- All in post setting have also been removed, with the exception of archive headings and descriptions.
+- All Genesis built in widgets have been removed, along with a handful of core widgets.
+
 ## File Organization
 
 ### Core Files

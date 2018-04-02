@@ -15,6 +15,10 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Remove Genesis menu link
+remove_theme_support( 'genesis-admin-menu' );
+
+
 // Remove Genesis in-post Scripts Settings
 remove_action( 'admin_menu', 'genesis_add_inpost_scripts_box' );
 remove_action( 'save_post', 'genesis_inpost_seo_save', 1, 2 );
@@ -26,6 +30,15 @@ remove_theme_support( 'genesis-inpost-layouts' );
 
 // Remove Archive Layout settings
 remove_theme_support( 'genesis-archive-layouts' );
+
+
+// Set AdSense ID to always be an empty string - stops meta box from appearing on Post screens.
+add_filter( 'genesis_pre_get_option_adsense_id', '__return_empty_string' );
+
+
+// Remove Genesis user permisions
+remove_action( 'show_user_profile', 'genesis_user_options_fields' );
+remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
 
 
 /**

@@ -158,7 +158,7 @@ function pb_set_theme_options() {
 		$override->set_options( $options );
 
 		//Remove Theme Settings Metaboxes
-		$metaboxes = array( 'breadcrumb', 'feeds', 'header', 'nav', 'adsense', 'breadcrumb', 'comments', 'posts', 'blogpage', 'scripts', 'layout' );
+		$metaboxes = array( 'version', 'breadcrumb', 'feeds', 'header', 'nav', 'adsense', 'breadcrumb', 'comments', 'posts', 'blogpage', 'scripts', 'layout' );
 		$override->remove_metaboxes( $metaboxes );
 
 	}
