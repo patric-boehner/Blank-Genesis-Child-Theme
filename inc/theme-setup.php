@@ -34,7 +34,6 @@ add_theme_support( 'genesis-structural-wraps', array(
 
 	'header',
 	'nav',
-	// 'site-inner',
 	'footer-widgets',
 	'footer'
 

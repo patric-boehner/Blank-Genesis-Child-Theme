@@ -32,7 +32,7 @@ input[type="search"]
 
 .full-width-content .content-area
 	display: block
-	max-width: 880px
+	max-width: calc(880px + (5% + 5%))
 
 
 @include phone
@@ -65,6 +65,7 @@ input[type="search"]
 
 		.content-area
 			display: grid
+			// Swap around for sidebar-content
 			grid-template-columns: 1fr 30%
 			grid-template-areas: "content sidebar"
 			grid-column-gap: $base-margin

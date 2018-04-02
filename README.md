@@ -12,10 +12,16 @@ All website functions that should be independent of the theme  should be laced i
 
 ## Opinionated Changes
 
-- Their is no Genesis Theme Settings page. Studiopress is doing away with this page at some point in the future so why not help them along.
-- Al Genesis theme settings options have been removed except update notifications. This can still be found in the customizer. If you need theme settings then remove the filter in admin/genesis-metaboxes.php. Otherwise build them into Customizer.
+- There is no Genesis Theme Settings page. Studiopress is doing away with this page at some point in the future so why not help them along.
+	-> /inc/admin/genesis-metaboxes.php
+- All Genesis theme settings options have been removed except update notifications. This can still be found in the customizer.
+	-> /inc/admin/customizer.php
 - All in post setting have also been removed, with the exception of archive headings and descriptions.
+	-> /inc/admin/genesis-metaboxes.php
 - All Genesis built in widgets have been removed, along with a handful of core widgets.
+	-> /inc/admin/widgets.php
+- Uses CSS Grid with float and percentage based fallback for the content area.
+- The CSS has been simplified and all media queries have been moved inline.
 
 ## File Organization
 
@@ -89,7 +95,6 @@ assets/src-js
 1. Upload the child theme theme folder via FTP to your wp-content/themes/ directory. (The Genesis parent theme needs to be in the wp-content/themes/ directory as well.)
 2. Go to your WordPress dashboard and select Appearance.
 3. Activate the child theme.
-4. Inside your WordPress dashboard, go to Genesis > Theme Settings and configure them to your liking.
 
 ## License
 
