@@ -365,19 +365,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/assets\/src-sass\/_partials\/reset.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/assets\/src-sass\/css\/reset.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/assets\/src-sass\/_partials\/site-footer.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -426,6 +413,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/src-sass\/css\/icon-font.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/src-sass\/_vendor\/reset.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/src-sass\/css\/reset.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

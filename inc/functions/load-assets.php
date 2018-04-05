@@ -82,7 +82,9 @@ add_editor_style( "assets/css/editor-style.min.css" );
 // Load Gutenberg styles
 add_action( 'enqueue_block_editor_assets', 'pb_gutenberg_scripts' );
 function pb_gutenberg_scripts() {
+
 	wp_enqueue_style( 'gutenberg-styles', get_stylesheet_directory_uri() . '/assets/css/gutenberg-style.min.css', array( 'wp-edit-blocks' ), cache_version_id() );
+
 }
 
 

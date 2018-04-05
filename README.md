@@ -60,14 +60,13 @@ assets/src-sass
 		| - layout.sass
 		| - navigation.sass
 		| - post-elements.sass
-		| - reset.scss
 		| - site-footer.sass
 		| - site-header.sass
 		| - widgets.sass
 	|  
 	| - _vendor                  # Third party scss used in other style sheets
 		| - icon-font.scss
-		| - ...
+		| - reset.scss
 	|
 	| - editor-styles.sass       # Sass file for classic editor styles   -> css/editor-style.min.css
 	| - global-styles.sass       # Sass file for frontend global styles  -> css/global-style.min.css
@@ -114,4 +113,5 @@ A lot of people who have helped me learn and from whom I have borrowed code.
 - **Tonya Mork** https://github.com/hellofromtonya
 - **Bill Erickson** http://www.billerickson.net/
 - **Matt Banks** https://github.com/mattbanks/
+- **SEO Themes** https://github.com/seothemes/
 - **Studio Press** http://my.studiopress.com/snippets/  
