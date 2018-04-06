@@ -48,6 +48,7 @@ function pb_get_read_more_link( $more ) {
 
 }
 
+
 // Add Read More link to excerpts
 add_filter( 'get_the_excerpt', 'pb_modify_excerpt_read_more_link' );
 function pb_modify_excerpt_read_more_link( $excerpt ) {
@@ -60,7 +61,9 @@ function pb_modify_excerpt_read_more_link( $excerpt ) {
 
 	}
 
-	return $excerpt . $continue_reading;
+	$trim_excerpt = rtrim( $excerpt, "." );
+
+	return $trim_excerpt . $continue_reading;
 
 }
 
