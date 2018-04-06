@@ -98,9 +98,9 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 
 
 // Enable support for Gutenberge wide images.
-add_theme_support( 'gutenberg', array(
-	'wide-images' => true,
-) );
+// add_theme_support( 'gutenberg', array(
+// 	'wide-images' => true,
+// ) );
 
 
 // Enable support for WooCommerce and WooCommerce features.
