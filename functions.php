@@ -16,7 +16,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Blank Child Theme' );
 define( 'CHILD_THEME_URL', 'http://example.com/' );
-define( 'CHILD_THEME_VERSION', '1.0.6' );
+define( 'CHILD_THEME_VERSION', '1.0.7' );
 
 
 // Cache Busting
