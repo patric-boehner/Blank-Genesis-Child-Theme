@@ -30,7 +30,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 //
 // 	$form_id = uniqid( 'searchform-', true );
 //
-// 	$icon_search = '';
+// 	// $icon_search = '';
 //
 // 	$form .= sprintf(
 // 		'<meta itemprop="target" content="%s"/><label for="%s"><span class="screen-reader-text">%s</span><input itemprop="query-input" type="search" name="s" id="%s" %s="%s" /></label><button class="search-button" type="submit">%s</button></form>',
@@ -40,7 +40,8 @@ if( !defined( 'ABSPATH' ) ) exit;
 // 		esc_attr( $form_id ),
 // 		$value_or_placeholder,
 // 		esc_attr( 'Search...', 'blank_child_theme' ),
-// 		$icon_search
+// 		// $icon_search
+// 		esc_html( 'Search', 'blank_child_theme' )
 // 	);
 //
 // 	return apply_filters( 'genesis_search_form', $form );
