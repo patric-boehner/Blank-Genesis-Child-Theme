@@ -21,7 +21,9 @@ function pb_comment_form_defaults( array $paramaters ) {
 
 	$paramaters['title_reply'] = __( 'Join The Conversation', 'blank_child_theme' );
 
-	$paramaters['comment_notes_before'] = '<p class="comment-notes">' . __( 'Please leave your comment below. Your email address will not be published. Required fields are marked *', 'blank_child_theme' ) . '</p>';
+	$aria_describeby = '<span id="email-notes">' .__( 'Your email address will not be published.', 'blank_child_theme' ). '</span>';
+
+	$paramaters['comment_notes_before'] = '<p class="comment-notes">' . __( 'Please leave your comment below.', 'blank_child_theme' ) . ' ' . $aria_describeby . ' ' . __( 'Required fields are marked *', 'blank_child_theme' ) . '</p>';
 
 	// $paramaters['comment_notes_after'] = '<p class="comment-form-notes">' . '</p>';
 
