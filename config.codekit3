@@ -754,6 +754,13 @@
 		"oAP": "\/inc\/views\/copyright-text.php",
 		"oF": 0
 		},
+	"\/LICENSE": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/LICENSE",
+		"oF": 0
+		},
 	"\/README.md": {
 		"cB": 0,
 		"cS": 0,
