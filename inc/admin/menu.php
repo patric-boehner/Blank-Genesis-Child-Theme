@@ -15,9 +15,16 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Change admin menu order
-add_filter( 'custom_menu_order', 'pb_change_admin_menu_order' );
-add_filter( 'menu_order', 'pb_change_admin_menu_order' );
+/**
+ * Reorders and cleans up the administration menu to make it more user-friendly.
+ *
+ * @param  array $menuOrder The current array of menu items.
+ * @return array            An updated order of the items that correspond to the menu.
+ *
+ * @link   https://codex.wordpress.org/Plugin_API/Filter_Reference/custom_menu_order
+ */
+add_filter( 'custom_menu_order', 'pb_change_admin_menu_order', 10, 1 );
+add_filter( 'menu_order', 'pb_change_admin_menu_order', 10, 1 );
 function pb_change_admin_menu_order( $menu_order ) {
 
 	if ( !$menu_order ) {

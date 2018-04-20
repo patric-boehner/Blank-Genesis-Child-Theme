@@ -16,11 +16,11 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 // Links
-$prev_link = get_previous_posts_link( apply_filters( 'genesis_prev_link_text', '' . __( 'Previous Page', 'blank_child_theme' ) ) );
-$next_link = get_next_posts_link( apply_filters( 'genesis_next_link_text', __( 'Next Page', 'blank_child_theme' ) . '' ) );
+$prev_link = get_previous_posts_link( apply_filters( 'genesis_prev_link_text', '' . __( 'Previous Page', 'blank-child-theme' ) ) );
+$next_link = get_next_posts_link( apply_filters( 'genesis_next_link_text', __( 'Next Page', 'blank-child-theme' ) . '' ) );
 
 // Screen Reader Text
-$screen_reader = '<h2 id="pagination-nav" class="screen-reader-text">' . __( 'Pagination Menu', 'blank_child_theme' ) .  '</h2>';
+$screen_reader = '<h2 id="pagination-nav" class="screen-reader-text">' . __( 'Pagination Menu', 'blank-child-theme' ) .  '</h2>';
 
 // Output
 if ( $prev_link || $next_link ) {

@@ -16,7 +16,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Blank Child Theme' );
 define( 'CHILD_THEME_URL', 'http://example.com/' );
-define( 'CHILD_THEME_VERSION', '2.0.8' );
+define( 'CHILD_THEME_VERSION', '2.0.10' );
 
 
 // Cache Busting
@@ -30,7 +30,7 @@ function cache_version_id() {
 
 }
 
-// Set Content Width
+// // Set Content Width
 $content_width = apply_filters( 'content_width', 720, 720, 720 );
 
 

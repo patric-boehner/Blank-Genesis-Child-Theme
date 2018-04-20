@@ -20,8 +20,8 @@ $previous_post_link = get_previous_post_link( '%link' );
 $next_post_link = get_next_post_link( '%link' );
 
 // Nav Titles
-$previous_post_text = '<span class="nav-title">' .__( 'Previous Post:', 'blank_child_theme' ). '</span>';
-$next_post_text = '<span class="nav-title">' .__( 'Next Post:', 'blank_child_theme' ). '</span>';
+$previous_post_text = '<span class="nav-title">' .__( 'Previous Post:', 'blank-child-theme' ). '</span>';
+$next_post_text = '<span class="nav-title">' .__( 'Next Post:', 'blank-child-theme' ). '</span>';
 
 // Link Structure
 if ( $next_post_link ) {
@@ -33,7 +33,7 @@ if ( $previous_post_link ) {
 }
 
 // Screen Reader Text
-$screen_reader = '<h2 id="pagination-nav" class="screen-reader-text">' . __( 'Pagination Menu', 'blank_child_theme' ) .  '</h2>';
+$screen_reader = '<h2 id="pagination-nav" class="screen-reader-text">' . __( 'Pagination Menu', 'blank-child-theme' ) .  '</h2>';
 
 // Output if either post is available
 if ( $next_post_link || $previous_post_link ) {

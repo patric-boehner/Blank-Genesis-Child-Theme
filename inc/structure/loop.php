@@ -31,14 +31,14 @@ function pb_filter_not_post_text( $text ) {
 
  if ( is_search() ) {
 
-	 $text = __( '<strong>Sorry, but nothing matched your search terms.</strong> Please try again with some different keywords.', 'blank_child_theme' );
+	 $text = __( '<strong>Sorry, but nothing matched your search terms.</strong> Please try again with some different keywords.', 'blank-child-theme' );
 	 $text = $text . genesis_search_form();
 
  }
 
  if ( is_archive() ) {
 
-	 $text = __( '<strong>Sorry, but I don\'t have any posts on that subject.</strong> Please try searching for something else.', 'blank_child_theme' );
+	 $text = __( '<strong>Sorry, but I don\'t have any posts on that subject.</strong> Please try searching for something else.', 'blank-child-theme' );
 	 $text = $text . genesis_search_form();
 
  }

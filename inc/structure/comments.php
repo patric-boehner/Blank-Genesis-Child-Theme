@@ -19,15 +19,15 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_filter( 'comment_form_defaults', 'pb_comment_form_defaults' );
 function pb_comment_form_defaults( array $paramaters ) {
 
-	$paramaters['title_reply'] = __( 'Join The Conversation', 'blank_child_theme' );
+	$paramaters['title_reply'] = __( 'Join The Conversation', 'blank-child-theme' );
 
-	$aria_describeby = '<span id="email-notes">' .__( 'Your email address will not be published.', 'blank_child_theme' ). '</span>';
+	$aria_describeby = '<span id="email-notes">' .__( 'Your email address will not be published.', 'blank-child-theme' ). '</span>';
 
-	$paramaters['comment_notes_before'] = '<p class="comment-notes">' . __( 'Please leave your comment below.', 'blank_child_theme' ) . ' ' . $aria_describeby . ' ' . __( 'Required fields are marked *', 'blank_child_theme' ) . '</p>';
+	$paramaters['comment_notes_before'] = '<p class="comment-notes">' . __( 'Please leave your comment below.', 'blank-child-theme' ) . ' ' . $aria_describeby . ' ' . __( 'Required fields are marked *', 'blank-child-theme' ) . '</p>';
 
 	// $paramaters['comment_notes_after'] = '<p class="comment-form-notes">' . '</p>';
 
-	// $paramaters['label_submit'] = __( 'Post Comment', 'blank_child_theme' );
+	// $paramaters['label_submit'] = __( 'Post Comment', 'blank-child-theme' );
 
 	return $paramaters;
 
@@ -38,7 +38,7 @@ function pb_comment_form_defaults( array $paramaters ) {
 add_filter( 'genesis_next_comments_link_text', 'pb_filter_next_comments_link_text' );
 function pb_filter_next_comments_link_text( $text ) {
 
-	return __( 'Newer Comments', 'blank_child_theme' );
+	return __( 'Newer Comments', 'blank-child-theme' );
 
 }
 
@@ -47,6 +47,6 @@ function pb_filter_next_comments_link_text( $text ) {
 add_filter( 'genesis_prev_comments_link_text', 'pb_filter_prev_comments_link_text' );
 function pb_filter_prev_comments_link_text( $text ) {
 
-	return __( 'Older Comments', 'blank_child_theme' );
+	return __( 'Older Comments', 'blank-child-theme' );
 
 }

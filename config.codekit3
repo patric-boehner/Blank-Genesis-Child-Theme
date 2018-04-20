@@ -7,7 +7,7 @@
 		"uuidString": "8760B3BA-01A6-4BC7-B32E-26A56862918E"
 		}
 	],
-"creatorBuild": "26330",
+"creatorBuild": "26680",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -823,7 +823,8 @@
 	"creationDate": 541903987,
 	"displayValue": "blank-child-theme",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "meme-confession"
+	"iconImageName": "meme-confession",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -2626,6 +2627,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {

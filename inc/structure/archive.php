@@ -84,10 +84,10 @@ add_filter ( 'genesis_prev_link_text' , 'pb_filter_previous_page_link_text' );
 function pb_filter_previous_page_link_text ( $text ) {
 
 	if ( ! is_post_type_archive( '' ) || ! is_tax( '' ) ) {
-		return __( 'Newer Posts', 'blank_child_theme' );
+		return __( 'Newer Posts', 'blank-child-theme' );
 	}
 
-	return __( 'CPT Previous Page', 'blank_child_theme' );
+	return __( 'CPT Previous Page', 'blank-child-theme' );
 
 }
 
@@ -97,10 +97,10 @@ add_filter ( 'genesis_next_link_text' , 'pb_filter_next_page_link_text' );
 function pb_filter_next_page_link_text ( $text ) {
 
 	if ( ! is_post_type_archive( '' ) || ! is_tax( '' ) ) {
-		return __( 'Older Posts', 'blank_child_theme' );
+		return __( 'Older Posts', 'blank-child-theme' );
 	}
 
-	return __( 'CPT Next Page', 'blank_child_theme' );
+	return __( 'CPT Next Page', 'blank-child-theme' );
 
 }
 

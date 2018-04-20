@@ -18,7 +18,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 // Read More Link
 $end_of_line = '...';
 
-$link_text = __( 'Continue Reading', 'blank_child_theme' );
+$link_text = __( 'Continue Reading', 'blank-child-theme' );
 
 $screen_reader = '<span class="screen-reader-text">: ' .esc_html( get_the_title() ). '</span>';
 

@@ -19,7 +19,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 // Output no post content and structure
 echo '<div class="entry"><div class="entry-content">';
 
-	printf( '<p class="no-posts-message">%s</p>', apply_filters( 'genesis_noposts_text', __( 'Sorry, no content matched your criteria.', 'blank_child_theme' ) ) );
+	printf( '<p class="no-posts-message">%s</p>', apply_filters( 'genesis_noposts_text', __( 'Sorry, no content matched your criteria.', 'blank-child-theme' ) ) );
 
 	// Add widget area if needed
 

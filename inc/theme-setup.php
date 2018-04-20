@@ -56,8 +56,8 @@ add_theme_support( 'genesis-accessibility', array(
 // Add Primary and Footer menu
 add_theme_support( 'genesis-menus', array(
 
-	'primary' => __( 'Primary Menu', 'blank_child_theme' ),
-	'secondary' => __( 'Footer Menu', 'blank_child_theme' ),
+	'primary' => __( 'Primary Menu', 'blank-child-theme' ),
+	'secondary' => __( 'Footer Menu', 'blank-child-theme' ),
 
 ) );
 

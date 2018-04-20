@@ -58,9 +58,9 @@ function genesis_responsive_menu_settings() {
 
 	$settings = array(
 
-		'mainMenu'         => __( 'Menu', 'genesis-sample' ),
+		'mainMenu'         => __( 'Menu', 'blank-child-theme' ),
 		'menuIconClass'    => 'icon-menu',
-		'subMenu'          => __( 'Submenu', 'genesis-sample' ),
+		'subMenu'          => __( 'Submenu', 'blank-child-theme' ),
 		'subMenuIconClass' => 'icon-chevron-down',
 		'menuClasses'      => array(
 			'combine' => array(

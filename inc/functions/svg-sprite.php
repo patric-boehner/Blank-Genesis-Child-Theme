@@ -55,12 +55,12 @@ function pb_include_svg_icons() {
 function pb_get_svg( $args = array() ) {
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
-		return __( 'Please define default parameters in the form of an array.', 'gnetleheartyoga-2016' );
+		return __( 'Please define default parameters in the form of an array.', 'blank-child-theme' );
 	}
 
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return __( 'Please define an SVG icon filename.', 'gnetleheartyoga-2016' );
+		return __( 'Please define an SVG icon filename.', 'blank-child-theme' );
 	}
 
 	// Set defaults.

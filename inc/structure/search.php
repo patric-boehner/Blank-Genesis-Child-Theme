@@ -19,7 +19,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 // add_filter( 'get_search_form', 'pb_custom_search_form', 10, 4 );
 // function pb_custom_search_form() {
 //
-// 	$search_text = get_search_query() ? apply_filters( 'the_search_query', get_search_query() ) : apply_filters( 'genesis_search_text', __( 'Search this website', 'blank_child_theme' ) . ' &#x02026;' );
+// 	$search_text = get_search_query() ? apply_filters( 'the_search_query', get_search_query() ) : apply_filters( 'genesis_search_text', __( 'Search this website', 'blank-child-theme' ) . ' &#x02026;' );
 //
 // 	$onfocus = "if ('" . esc_js( $search_text ) . "' === this.value) {this.value = '';}";
 // 	$onblur  = "if ('' === this.value) {this.value = '" . esc_js( $search_text ) . "';}";
@@ -36,12 +36,12 @@ if( !defined( 'ABSPATH' ) ) exit;
 // 		'<meta itemprop="target" content="%s"/><label for="%s"><span class="screen-reader-text">%s</span><input itemprop="query-input" type="search" name="s" id="%s" %s="%s" /></label><button class="search-button" type="submit">%s</button></form>',
 // 		home_url( '/?s={s}' ),
 // 		esc_attr( $form_id ),
-// 		esc_html( 'Search this website', 'blank_child_theme' ),
+// 		esc_html( 'Search this website', 'blank-child-theme' ),
 // 		esc_attr( $form_id ),
 // 		$value_or_placeholder,
-// 		esc_attr( 'Search...', 'blank_child_theme' ),
+// 		esc_attr( 'Search...', 'blank-child-theme' ),
 // 		// $icon_search
-// 		esc_html( 'Search', 'blank_child_theme' )
+// 		esc_html( 'Search', 'blank-child-theme' )
 // 	);
 //
 // 	return apply_filters( 'genesis_search_form', $form );
@@ -53,7 +53,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_filter( 'genesis_search_form_label', 'pb_search_form_label' );
 function pb_search_form_label( $label ) {
 
-	return esc_html__( 'Search this website', 'blank_child_theme' );
+	return esc_html__( 'Search this website', 'blank-child-theme' );
 
 }
 
@@ -67,7 +67,7 @@ function pb_search_form_label( $label ) {
 add_filter( 'genesis_search_text', 'pb_search_form_placeholder_text' );
 function pb_search_form_placeholder_text( $text ) {
 
-	return esc_attr__( 'Search...', 'blank_child_theme' );
+	return esc_attr__( 'Search...', 'blank-child-theme' );
 
 }
 

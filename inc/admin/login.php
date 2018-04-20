@@ -19,7 +19,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_filter( 'login_headerurl', 'pb_login_logo_url_change' );
 function pb_login_logo_url_change() {
 
-	return esc_url( get_bloginfo( 'url' ) );
+	return esc_url( home_url() );
 
 }
 
@@ -37,7 +37,7 @@ function pb_login_logo_site_title() {
 add_filter( 'login_errors', 'pb_login_errors_message' );
 function pb_login_errors_message() {
 
-	$error_message = '<b>' .esc_html__( 'Error', 'blank_child_theme' ). ': ' . '</b>' .__( 'Invalid Username/Email or Password', 'blank_child_theme' ). '';
+	$error_message = '<b>' .esc_html__( 'Error', 'blank-child-theme' ). ': ' . '</b>' .__( 'Invalid Username/Email or Password', 'blank-child-theme' ). '';
 	return $error_message;
 
 }
