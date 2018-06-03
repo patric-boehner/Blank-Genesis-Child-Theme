@@ -110,8 +110,14 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 // add_theme_support( 'wc-product-gallery-slider' );
 
 
+// Sets the content width based on the theme's design and stylesheet.
+if ( ! isset( $content_width ) ) {
+	$content_width = 680; // Pixels.
+}
+
+
 // Add Image Sizes.
-add_image_size( 'featured-image', 720, 400, TRUE );
+add_image_size( 'featured-image', 680, 400, TRUE );
 
 
 // Change the favicon path

@@ -51,7 +51,7 @@ function pb_change_site_title_schema( $attr ) {
 add_filter( 'genesis_attr_nav-primary', 'pb_change_primary_nav_aria_label' );
 function pb_change_primary_nav_aria_label( $attributes ) {
 
-	$attributes['aria-label'] = 'Main Menu';
+	$attributes['aria-label'] = 'Main';
 
 	return $attributes;
 
@@ -62,7 +62,7 @@ function pb_change_primary_nav_aria_label( $attributes ) {
 add_filter( 'genesis_attr_nav-secondary', 'pb_change_secondary_nav_aria_label' );
 function pb_change_secondary_nav_aria_label( $attributes ) {
 
-	$attributes['aria-label'] = 'Footer Menu';
+	$attributes['aria-label'] = 'Footer';
 
 	return $attributes;
 

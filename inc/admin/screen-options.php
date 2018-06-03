@@ -29,7 +29,8 @@ function pb_hide_default_meta_boxes( $hidden, $screen ) {
 			'commentstatusdiv',
 			'commentsdiv',
 			'authordiv',
-			'revisionsdiv'
+			'revisionsdiv',
+			'tags'
 		);
 
 	}

@@ -47,11 +47,11 @@ function pb_admin_bar_notice() {
 
 	// Check which site we are one & change text accordingly
 	if ( pb_is_local_dev_site() ) {
-		$admin_text = 'Local Development Website';
+		$admin_text = 'Local Development';
 	} elseif ( pb_is_development_staging_site() ) {
-		$admin_text = 'Developemnt Staging Website';
+		$admin_text = 'Developemnt Staging';
 	} elseif ( pb_is_staging_site() ) {
-		$admin_text = 'Staging Website';
+		$admin_text = 'Staging';
 	}else {
 		$admin_text = '';
 	}

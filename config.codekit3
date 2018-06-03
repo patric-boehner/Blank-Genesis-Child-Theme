@@ -558,13 +558,6 @@
 		"oAP": "\/inc\/admin\/screen-options.php",
 		"oF": 0
 		},
-	"\/inc\/admin\/theme-defaults.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/inc\/admin\/theme-defaults.php",
-		"oF": 0
-		},
 	"\/inc\/admin\/widgets.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -738,6 +731,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/inc\/structure\/search.php",
+		"oF": 0
+		},
+	"\/inc\/theme-defaults.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/theme-defaults.php",
 		"oF": 0
 		},
 	"\/inc\/theme-setup.php": {

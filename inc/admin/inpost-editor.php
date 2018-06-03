@@ -49,3 +49,20 @@ function pb_disable_classic_editor_by_template() {
 	}
 
 }
+
+
+// Cleanup Post Editior Screen
+add_action( 'init', 'simplify_post_editing_screens' );
+function simplify_post_editing_screens() {
+
+	// Posts
+	remove_post_type_support( 'post', 'custom-fields' );
+	remove_post_type_support( 'post', 'trackbacks' );
+
+	// Pages
+	remove_post_type_support( 'page', 'custom-fields' );
+	remove_post_type_support( 'page', 'thumbnail' );
+	remove_post_type_support( 'page', 'comments' );
+	remove_post_type_support( 'page', 'trackbacks' );
+
+}

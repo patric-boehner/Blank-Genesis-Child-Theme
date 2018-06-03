@@ -34,3 +34,12 @@ function pb_default_attachment_display_settings() {
 	}
 
 }
+
+
+// Register the three useful image sizes for use in Add Media modal
+// add_filter( 'image_size_names_choose', 'pa_add_medium_large_size_selection' );
+// function pa_add_medium_large_size_selection( $sizes ) {
+//     return array_merge( $sizes, array(
+//         'medium_large' => __( 'Medium Large' ),
+//     ) );
+// }
