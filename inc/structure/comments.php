@@ -15,6 +15,24 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Append a comment parent link for comments more then three deep
+// add_filter( 'comment_text', 'pb_append_parent_link', 100 );
+// function pb_append_parent_link( $content ) {
+//
+// 	$reply_link = pb_comment_parent_link(
+// 		array(
+//         'depth'  => 3,
+//         'text'   => __( 'In reply to %s', 'extant' ),
+//         'before' => '<div class="comment-parent">',
+//         'after'  => '</div>'
+//     )
+// 	);
+//
+// 	return $content . $reply_link;
+//
+// }
+
+
 // Modify the comments default
 add_filter( 'comment_form_defaults', 'pb_comment_form_defaults' );
 function pb_comment_form_defaults( array $paramaters ) {

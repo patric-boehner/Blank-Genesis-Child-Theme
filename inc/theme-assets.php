@@ -24,13 +24,13 @@ add_action( 'wp_enqueue_scripts', 'pb_enqueue_child_theme_scripts_styles' );
 function pb_enqueue_child_theme_scripts_styles() {
 
 	// Move jQuery to footer
-	if( ! is_admin() ) {
-
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-		wp_enqueue_script( 'jquery' );
-
-	}
+	// if( ! is_admin() ) {
+	//
+	// 	wp_deregister_script( 'jquery' );
+	// 	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+	// 	wp_enqueue_script( 'jquery' );
+	//
+	// }
 
 	// Load Webfonts
 	wp_enqueue_style( 'google-web-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600', array(), cache_version_id() );

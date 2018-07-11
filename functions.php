@@ -42,6 +42,11 @@ add_filter( 'genesis_load_deprecated', '__return_false' );
 // Theme Setup & Defaults
 include_once( CHILD_DIR . '/inc/theme-setup.php' );
 include_once( CHILD_DIR . '/inc/theme-defaults.php' );
+include_once( CHILD_DIR . '/inc/theme-assets.php' );
+
+
+// Test
+include_once( CHILD_DIR . '/inc/pluggable/lazyload/lazyload.php' );
 
 
 // Admin
@@ -56,7 +61,6 @@ include_once( CHILD_DIR . '/inc/admin/dashboard.php' );
 
 
 // Gobal Functions
-include_once( CHILD_DIR . '/inc/functions/load-assets.php' );
 include_once( CHILD_DIR . '/inc/functions/development-tools.php' );
 include_once( CHILD_DIR . '/inc/functions/cleanup.php' );
 include_once( CHILD_DIR . '/inc/functions/helpers.php' );
