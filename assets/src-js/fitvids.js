@@ -5,4 +5,4 @@ jQuery(document).ready(function($){
 	$(".site-inner").fitVids();
 });
 
-// @codekit-append "../_vendor/fitvids.js";
+// @codekit-append "_vendor/fitvids.js";

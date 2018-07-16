@@ -23,14 +23,10 @@ remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 add_action( 'wp_enqueue_scripts', 'pb_enqueue_child_theme_scripts_styles' );
 function pb_enqueue_child_theme_scripts_styles() {
 
-	// Move jQuery to footer
-	// if( ! is_admin() ) {
-	//
-	// 	wp_deregister_script( 'jquery' );
-	// 	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-	// 	wp_enqueue_script( 'jquery' );
-	//
-	// }
+	// Register component styles that are printed as needed.
+	wp_register_style( 'site-footer-partial', get_theme_file_uri( '/assets/css/site-footer.min.css' ), array(), cache_version_id() );
+	wp_register_style( 'site-content-area-partial', get_theme_file_uri( '/assets/css/content-area.min.css' ), array(), cache_version_id() );
+
 
 	// Load Webfonts
 	wp_enqueue_style( 'google-web-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600', array(), cache_version_id() );
@@ -39,13 +35,18 @@ function pb_enqueue_child_theme_scripts_styles() {
 	wp_enqueue_style( 'global-style', get_stylesheet_directory_uri() . "/assets/css/global-style.min.css", false, cache_version_id() );
 
 	// Load Global Script
-	wp_enqueue_script( 'global-script', get_stylesheet_directory_uri() . "/assets/js/global.min.js", array( 'jquery' ), cache_version_id(), true );
+	wp_enqueue_script( 'global-script', get_stylesheet_directory_uri() . "/assets/js/global.min.js", array( 'jquery' ), cache_version_id(), false );
+	wp_script_add_data( 'global-script', 'async', true );
 
 	wp_localize_script(
 		'global-script',
 		'genesis_responsive_menu',
 		genesis_responsive_menu_settings()
 	);
+
+	// FitVids Script
+	wp_enqueue_script( 'fitvids-script', get_stylesheet_directory_uri() . "/assets/js/fitvids.min.js", array( 'jquery' ), cache_version_id(), false );
+	wp_script_add_data( 'fitvids-script', 'defer', true );
 
 	// Load Print Styles
 	wp_enqueue_style( 'print', get_stylesheet_directory_uri() . '/assets/css/print.min.css', false, cache_version_id(), 'print' );

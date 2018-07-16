@@ -16,6 +16,16 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
+	"\/assets\/css\/content-area.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/content-area.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/assets\/css\/editor-style.min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -101,6 +111,16 @@
 		"oAP": "\/assets\/css\/print.min.css.map",
 		"oF": 0
 		},
+	"\/assets\/css\/site-footer.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/site-footer.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/assets\/icons\/icomoon.eot": {
 		"cB": 0,
 		"ft": 8192,
@@ -168,6 +188,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/assets\/images\/placeholder.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/placeholder.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/images\/svg-sprite-sheet.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -178,6 +208,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/assets\/js\/fitvids.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/min\/fitvids.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/js\/global.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -185,16 +225,6 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/min\/global.min-min.js",
 		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/assets\/src-js\/_partials\/fitvids.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/assets\/src-js\/_partials\/min\/fitvids-min.js",
-		"oF": 1,
 		"sC": 1,
 		"tS": 0
 		},
@@ -215,6 +245,16 @@
 		"oA": 1,
 		"oAP": "\/assets\/src-js\/_vendor\/min\/fitvids-min.js",
 		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/src-js\/fitvids.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/fitvids.min.js",
+		"oF": 2,
 		"sC": 1,
 		"tS": 0
 		},
@@ -300,19 +340,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/assets\/src-sass\/_partials\/content-area.sass": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/assets\/src-sass\/css\/content-area.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/assets\/src-sass\/_partials\/forms.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -361,19 +388,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/src-sass\/css\/post-elements.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/assets\/src-sass\/_partials\/site-footer.sass": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/assets\/src-sass\/css\/site-footer.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -427,6 +441,19 @@
 		"oA": 1,
 		"oAP": "\/assets\/src-sass\/css\/reset.css",
 		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/src-sass\/content-area.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/content-area.min.css",
+		"oF": 2,
 		"oS": 0,
 		"uL": 1
 		},
@@ -491,6 +518,19 @@
 		"ma": 1,
 		"oA": 0,
 		"oAP": "\/assets\/css\/print.min.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/assets\/src-sass\/site-footer.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/site-footer.min.css",
 		"oF": 2,
 		"oS": 3,
 		"uL": 1
@@ -600,13 +640,6 @@
 		"oAP": "\/inc\/functions\/js-body-class.php",
 		"oF": 0
 		},
-	"\/inc\/functions\/load-assets.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/inc\/functions\/load-assets.php",
-		"oF": 0
-		},
 	"\/inc\/functions\/markup.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -684,6 +717,23 @@
 		"oAP": "\/inc\/partials\/read-more.php",
 		"oF": 0
 		},
+	"\/inc\/pluggable\/lazyload\/js\/lazyload.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/inc\/pluggable\/lazyload\/js\/min\/lazyload-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/inc\/pluggable\/lazyload\/lazyload.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/pluggable\/lazyload\/lazyload.php",
+		"oF": 0
+		},
 	"\/inc\/structure\/archive.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -696,6 +746,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/inc\/structure\/comments.php",
+		"oF": 0
+		},
+	"\/inc\/structure\/content-area.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/structure\/content-area.php",
 		"oF": 0
 		},
 	"\/inc\/structure\/footer.php": {
@@ -731,6 +788,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/inc\/structure\/search.php",
+		"oF": 0
+		},
+	"\/inc\/theme-assets.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/theme-assets.php",
 		"oF": 0
 		},
 	"\/inc\/theme-defaults.php": {
