@@ -20,19 +20,14 @@ function wprig_lazyload_images() {
 	}
 
 	// If lazy-load is disabled in Customizer, do nothing.
-	// if ( 'no-lazyload' === get_theme_mod( 'lazy_load_media' ) ) {
-	// 	return;
-	// }
+	if ( 'no-lazyload' === get_theme_mod( 'lazy_load_media' ) ) {
+		return;
+	}
 
 	// If the Jetpack Lazy-Images module is active, do nothing.
 	if ( ! apply_filters( 'lazyload_is_enabled', true ) ) {
 		return;
 	}
-
-	// If AMP is active, do nothing.
-	// if ( wprig_is_amp() ) {
-	// 	return;
-	// }
 
 	add_action( 'wp_head', 'wprig_setup_filters', PHP_INT_MAX );
 	add_action( 'wp_enqueue_scripts', 'wprig_enqueue_assets' );
