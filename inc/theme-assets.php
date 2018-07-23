@@ -44,9 +44,21 @@ function pb_enqueue_child_theme_scripts_styles() {
 		genesis_responsive_menu_settings()
 	);
 
+	// Lazy Load Script
+	if ( 'lazyload' === get_theme_mod( 'lazy_load_media' ) ) {
+		wp_enqueue_script( 'wprig-lazy-load-images', get_stylesheet_directory_uri() . "/assets/js/lazyload.min.js", array(), cache_version_id(), false );
+		wp_script_add_data( 'wprig-lazy-load-images', 'defer', true );
+	}
+
 	// FitVids Script
 	wp_enqueue_script( 'fitvids-script', get_stylesheet_directory_uri() . "/assets/js/fitvids.min.js", array( 'jquery' ), cache_version_id(), false );
 	wp_script_add_data( 'fitvids-script', 'defer', true );
+
+	// Social Share Script
+	if ( ! empty( get_theme_mod( 'social_share_option', '1' ) ) && is_singular( 'post' ) ) {
+		wp_enqueue_script( 'social-share-script', get_stylesheet_directory_uri() . "/assets/js/social-share.min.js", array( 'jquery' ), cache_version_id(), false );
+		wp_script_add_data( 'social-share-script', 'defer', true );
+	}
 
 	// Load Print Styles
 	wp_enqueue_style( 'print', get_stylesheet_directory_uri() . '/assets/css/print.min.css', false, cache_version_id(), 'print' );

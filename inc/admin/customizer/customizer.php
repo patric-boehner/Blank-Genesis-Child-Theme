@@ -35,51 +35,19 @@ function pb_remove_css_section( $wp_customize ) {
 
 
 
-/**
- * WP Rig Theme Customizer
- *
- * @package wprig
- */
+// Add custom customizer sections
+// https://codex.wordpress.org/Theme_Customization_API
+// https://codex.wordpress.org/Class_Reference%5CWP_Customize_Manager%5Cadd_control
 
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
 add_action( 'customize_register', 'pb_customize_register' );
 function pb_customize_register( $wp_customize ) {
-	/**
-	 * Theme options.
-	 */
-	$wp_customize->add_section(
-		'theme_options', array(
-			'title'							 => 'Lazy-Load Images',
-			'panel'							 => 'genesis',
-		)
-	);
 
-	if ( function_exists( 'wprig_lazyload_images' ) ) {
-		$wp_customize->add_setting(
-			'lazy_load_media', array(
-				'default'           => 'lazyload',
-				'sanitize_callback' => 'pb_sanitize_lazy_load_media',
-				'transport'         => 'postMessage',
-			)
-		);
+	// Add lazy-loading
+	include CHILD_DIR . '/inc/admin/customizer/partials/lazy-load.php';
 
-		$wp_customize->add_control(
-			'lazy_load_media', array(
-				'label'           => __( 'Lazy-load images', 'blank-child-theme' ),
-				'section'         => 'theme_options',
-				'type'            => 'radio',
-				'description'     => __( 'Lazy-loading images means images are loaded only when they are in view. Improves performance, but can result in content jumping around on slower connections.', 'blank-child-theme' ),
-				'choices'         => array(
-					'lazyload'    => __( 'Lazy-load on (default)', 'blank-child-theme' ),
-					'no-lazyload' => __( 'Lazy-load off', 'blank-child-theme' ),
-				),
-			)
-		);
-	}
+	// Add social-share
+	include CHILD_DIR . '/inc/admin/customizer/partials/social-share.php';
+
 }
 
 

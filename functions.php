@@ -20,7 +20,7 @@ include_once get_template_directory() . '/lib/init.php';
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Blank Child Theme' );
 define( 'CHILD_THEME_URL', 'http://example.com/' );
-define( 'CHILD_THEME_VERSION', '2.1.1' );
+define( 'CHILD_THEME_VERSION', '2.1.2' );
 
 
 // Cache Busting
@@ -45,13 +45,14 @@ include_once( CHILD_DIR . '/inc/theme-defaults.php' );
 include_once( CHILD_DIR . '/inc/theme-assets.php' );
 
 
-// Test
+// Pluggable Options
 include_once( CHILD_DIR . '/inc/pluggable/lazyload/lazyload.php' );
+include_once( CHILD_DIR . '/inc/pluggable/social-share/social-share.php' );
 
 
 // Admin
 include_once( CHILD_DIR . '/inc/admin/widgets.php' );
-include_once( CHILD_DIR . '/inc/admin/customizer.php' );
+include_once( CHILD_DIR . '/inc/admin/customizer/customizer.php' );
 include_once( CHILD_DIR . '/inc/admin/genesis-metaboxes.php' );
 include_once( CHILD_DIR . '/inc/admin/inpost-editor.php' );
 include_once( CHILD_DIR . '/inc/admin/screen-options.php' );

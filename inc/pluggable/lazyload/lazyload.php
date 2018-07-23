@@ -30,7 +30,6 @@ function wprig_lazyload_images() {
 	}
 
 	add_action( 'wp_head', 'wprig_setup_filters', PHP_INT_MAX );
-	add_action( 'wp_enqueue_scripts', 'wprig_enqueue_assets' );
 
 	// Do not lazy load avatar in admin bar.
 	add_action( 'admin_bar_menu', 'wprig_remove_filters', 0 );
@@ -247,14 +246,6 @@ function wprig_build_attributes_string( $attributes ) {
 	}
 
 	return implode( ' ', $string );
-}
-
-/**
- * Enqueue and defer lazyload script.
- */
-function wprig_enqueue_assets() {
-	wp_enqueue_script( 'wprig-lazy-load-images', get_theme_file_uri( '/inc/pluggable/lazyload/js/lazyload.js' ), array(), '20151215', false );
-	wp_script_add_data( 'wprig-lazy-load-images', 'defer', true );
 }
 
 wprig_lazyload_images();

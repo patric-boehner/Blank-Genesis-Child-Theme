@@ -228,6 +228,36 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/assets\/js\/lazyload.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/min\/lazyload.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/js\/social-share.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/min\/social-share.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/src-js\/_partials\/lazyload.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/src-js\/_partials\/min\/lazyload-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/src-js\/_partials\/responsive-menus.js": {
 		"ft": 64,
 		"ma": 0,
@@ -235,6 +265,16 @@
 		"oA": 1,
 		"oAP": "\/assets\/js\/responsive-menus.min.js",
 		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/src-js\/_partials\/social-share-link.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/src-js\/_partials\/min\/social-share-link-min.js",
+		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
@@ -265,6 +305,26 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/global.min.js",
 		"oF": 2,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/src-js\/lazyload.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/assets\/js\/lazyload.min.js",
+		"oF": 2,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/src-js\/social-share.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/social-share.min.js",
+		"oF": 3,
 		"sC": 1,
 		"tS": 0
 		},
@@ -549,11 +609,25 @@
 		"oAP": "\/functions.php",
 		"oF": 0
 		},
-	"\/inc\/admin\/customizer.php": {
+	"\/inc\/admin\/customizer\/customizer.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/inc\/admin\/customizer.php",
+		"oAP": "\/inc\/admin\/customizer\/customizer.php",
+		"oF": 0
+		},
+	"\/inc\/admin\/customizer\/partials\/lazy-load.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/admin\/customizer\/partials\/lazy-load.php",
+		"oF": 0
+		},
+	"\/inc\/admin\/customizer\/partials\/social-share.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/admin\/customizer\/partials\/social-share.php",
 		"oF": 0
 		},
 	"\/inc\/admin\/dashboard.php": {
@@ -717,21 +791,25 @@
 		"oAP": "\/inc\/partials\/read-more.php",
 		"oF": 0
 		},
-	"\/inc\/pluggable\/lazyload\/js\/lazyload.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/inc\/pluggable\/lazyload\/js\/min\/lazyload-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"\/inc\/pluggable\/lazyload\/lazyload.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/inc\/pluggable\/lazyload\/lazyload.php",
+		"oF": 0
+		},
+	"\/inc\/pluggable\/social-share\/social-share.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/pluggable\/social-share\/social-share.php",
+		"oF": 0
+		},
+	"\/inc\/pluggable\/social-share\/views\/social-share-links.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/pluggable\/social-share\/views\/social-share-links.php",
 		"oF": 0
 		},
 	"\/inc\/structure\/archive.php": {

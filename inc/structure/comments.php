@@ -15,6 +15,43 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Resitrict Nested comments to 2 depth
+// http://justintadlock.com/archives/2016/11/16/designing-better-nested-comments
+// function jt_comment_parent_link( $args = array() ) {
+//
+//     echo jt_get_comment_parent_link( $args );
+// }
+//
+// function jt_get_comment_parent_link( $args = array() ) {
+//
+//     $link = '';
+//
+//     $defaults = array(
+//         'text'   => '%s', // Defaults to comment author.
+//         'depth'  => 2,    // At what level should the link show.
+//         'before' => '',   // String to output before link.
+//         'after'  => ''    // String to output after link.
+//     );
+//
+//     $args = wp_parse_args( $args, $defaults );
+//
+//     if ( $args['depth'] <= $GLOBALS['comment_depth'] ) {
+//
+//         $parent = get_comment()->comment_parent;
+//
+//         if ( 0 < $parent ) {
+//
+//             $url  = esc_url( get_comment_link( $parent ) );
+//             $text = sprintf( $args['text'], get_comment_author( $parent ) );
+//
+//             $link = sprintf( '%s<a class="comment-parent-link" href="%s">%s</a>%s', $args['before'], $url, $text, $args['after'] );
+//         }
+//     }
+//
+//     return $link;
+// }
+
+
 // Append a comment parent link for comments more then three deep
 // add_filter( 'comment_text', 'pb_append_parent_link', 100 );
 // function pb_append_parent_link( $content ) {
