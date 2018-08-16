@@ -15,6 +15,15 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Add stylesheet before Comments
+add_action( 'genesis_before_comments', 'pb_load_comments_area_styles' );
+function pb_load_comments_area_styles() {
+
+	wp_print_styles( array( 'site-comment-partial' ) );
+
+}
+
+
 // Resitrict Nested comments to 2 depth
 // http://justintadlock.com/archives/2016/11/16/designing-better-nested-comments
 // function jt_comment_parent_link( $args = array() ) {
