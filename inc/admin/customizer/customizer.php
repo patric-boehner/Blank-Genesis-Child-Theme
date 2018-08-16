@@ -46,6 +46,9 @@ function pb_customize_register( $wp_customize ) {
 	include CHILD_DIR . '/inc/admin/customizer/partials/lazy-load.php';
 
 	// Add social-share
+	include CHILD_DIR . '/inc/admin/customizer/partials/top-banner.php';
+
+	// Add social-share
 	include CHILD_DIR . '/inc/admin/customizer/partials/social-share.php';
 
 }
@@ -67,4 +70,18 @@ function pb_sanitize_lazy_load_media( $input ) {
 	}
 
 	return '';
+}
+
+
+/**
+ * Gets default top banner section text.
+ *
+ * @since 1.0.0
+ *
+ * @return string Text to use in the top banner.
+ */
+function pb_get_default_top_banner_text() {
+
+	return __( 'Add your custom Call To Action text here. Limited time only. <strong><a href="https://example.com">Reserve your session today!</a></strong>', 'authority-pro' );
+
 }

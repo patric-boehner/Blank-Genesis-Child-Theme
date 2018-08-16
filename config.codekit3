@@ -16,6 +16,23 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
+	"\/assets\/css\/comments.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/comments.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/assets\/css\/comments.min.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/css\/comments.min.css.map",
+		"oF": 0
+		},
 	"\/assets\/css\/content-area.min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -75,6 +92,23 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/assets\/css\/gutenberg-style.min.css.map",
+		"oF": 0
+		},
+	"\/assets\/css\/header.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/css\/header.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/assets\/css\/header.min.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/css\/header.min.css.map",
 		"oF": 0
 		},
 	"\/assets\/css\/login-style.min.css": {
@@ -248,13 +282,23 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/assets\/js\/top-banner.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/min\/top-banner.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/src-js\/_partials\/lazyload.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/assets\/src-js\/_partials\/min\/lazyload-min.js",
-		"oF": 0,
+		"oF": 2,
 		"sC": 1,
 		"tS": 0
 		},
@@ -278,6 +322,16 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/assets\/src-js\/_partials\/top-banner.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/src-js\/_partials\/min\/top-banner-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/src-js\/_vendor\/fitvids.js": {
 		"ft": 64,
 		"ma": 0,
@@ -287,6 +341,13 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
+		},
+	"\/assets\/src-js\/_vendor\/LICENSE": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/assets\/src-js\/_vendor\/LICENSE",
+		"oF": 0
 		},
 	"\/assets\/src-js\/fitvids.js": {
 		"ft": 64,
@@ -325,6 +386,16 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/social-share.min.js",
 		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/src-js\/top-banner.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/top-banner.min.js",
+		"oF": 2,
 		"sC": 1,
 		"tS": 0
 		},
@@ -400,6 +471,32 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/src-sass\/_partials\/comments.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/src-sass\/css\/comments.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/src-sass\/_partials\/content-area.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/src-sass\/css\/content-area.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/assets\/src-sass\/_partials\/forms.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -448,6 +545,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/src-sass\/css\/post-elements.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/src-sass\/_partials\/site-footer.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/src-sass\/css\/site-footer.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -504,6 +614,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/src-sass\/comments.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 1,
+		"oA": 0,
+		"oAP": "\/assets\/css\/comments.min.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
 	"\/assets\/src-sass\/content-area.sass": {
 		"aP": 1,
 		"bl": 0,
@@ -554,6 +677,19 @@
 		"oAP": "\/assets\/css\/gutenberg-style.min.css",
 		"oF": 2,
 		"oS": 3,
+		"uL": 1
+		},
+	"\/assets\/src-sass\/header.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 1,
+		"oA": 0,
+		"oAP": "\/assets\/css\/header.min.css",
+		"oF": 2,
+		"oS": 0,
 		"uL": 1
 		},
 	"\/assets\/src-sass\/login-style.sass": {
@@ -628,6 +764,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/inc\/admin\/customizer\/partials\/social-share.php",
+		"oF": 0
+		},
+	"\/inc\/admin\/customizer\/partials\/top-banner.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/admin\/customizer\/partials\/top-banner.php",
 		"oF": 0
 		},
 	"\/inc\/admin\/dashboard.php": {
@@ -742,6 +885,13 @@
 		"oAP": "\/inc\/functions\/post-thumbnail-cache.php",
 		"oF": 0
 		},
+	"\/inc\/functions\/rss.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/functions\/rss.php",
+		"oF": 0
+		},
 	"\/inc\/functions\/sitemap.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -840,6 +990,13 @@
 		"oAP": "\/inc\/structure\/footer.php",
 		"oF": 0
 		},
+	"\/inc\/structure\/header.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/structure\/header.php",
+		"oF": 0
+		},
 	"\/inc\/structure\/loop.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -894,6 +1051,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/inc\/views\/copyright-text.php",
+		"oF": 0
+		},
+	"\/inc\/views\/top-banner.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/inc\/views\/top-banner.php",
 		"oF": 0
 		},
 	"\/LICENSE": {

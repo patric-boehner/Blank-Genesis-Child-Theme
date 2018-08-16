@@ -77,8 +77,9 @@ include_once( CHILD_DIR . '/inc/functions/yoast-filter.php' );
 
 
 // Structure
-include_once( CHILD_DIR . '/inc/structure/comments.php' );
+include_once( CHILD_DIR . '/inc/structure/header.php' );
 include_once( CHILD_DIR . '/inc/structure/content-area.php' );
+include_once( CHILD_DIR . '/inc/structure/comments.php' );
 include_once( CHILD_DIR . '/inc/structure/search.php' );
 include_once( CHILD_DIR . '/inc/structure/footer.php' );
 include_once( CHILD_DIR . '/inc/structure/post.php' );

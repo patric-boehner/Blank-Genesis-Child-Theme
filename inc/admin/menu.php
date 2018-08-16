@@ -43,3 +43,7 @@ function pb_change_admin_menu_order( $menu_order ) {
 	);
 
 }
+
+
+// Remove Post via email option
+add_filter( 'enable_post_by_email_configuration', '__return_false', 100 );

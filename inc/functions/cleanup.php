@@ -31,8 +31,6 @@ function twf_remove_jquery_migrate( $scripts ) {
 }
 
 
-
-
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
@@ -64,6 +62,20 @@ remove_action( 'wp_head','feed_links', 2 );
 remove_action( 'wp_head','feed_links_extra', 3 );
 
 
+// Disable Pingbacks
+add_filter( 'xmlrpc_methods', 'pb_disable_xmlrpc_ping');
+function pb_disable_xmlrpc_ping ($methods) {
+
+	unset( $methods['pingback.ping'] );
+	return $methods;
+
+}
+
+
+// Disable XML-RPC
+remove_action ('wp_head', 'rsd_link');
+
+
 // Remove Genesis Page Templates
 add_filter( 'theme_page_templates', 'pb_remove_genesis_page_templates' );
 function pb_remove_genesis_page_templates( $page_templates ) {
@@ -82,16 +94,17 @@ remove_filter( 'body_class', 'genesis_header_body_classes' );
 // Cleanup menu classes
 add_filter( 'nav_menu_css_class', 'pb_clean_nav_menu_classes', 5 );
 function pb_clean_nav_menu_classes( $classes ) {
+
 	if( ! is_array( $classes ) )
 
 		return $classes;
-	$allowed_classes = array(
-		'menu-item-home',
-		'menu-item',
-		'current-menu-item',
-		'current-menu-ancestor',
-		'menu-item-has-children',
-	);
+		$allowed_classes = array(
+			'menu-item-home',
+			'menu-item',
+			'current-menu-item',
+			'current-menu-ancestor',
+			'menu-item-has-children',
+		);
 
 	return array_intersect( $classes, $allowed_classes );
 

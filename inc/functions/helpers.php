@@ -122,6 +122,7 @@ function wprig_get_preload_stylesheet_uri( $wp_styles, $handle ) {
 	return $preload_uri;
 }
 
+
 /**
  * Adds preload for in-body stylesheets depending on what templates are being used.
  * Disabled when AMP is active as AMP injects the stylesheets inline.
@@ -136,14 +137,25 @@ function wprig_add_body_style() {
 
 		$preloads = array();
 
-		// Preload content.css.
-		$preloads['site-footer-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-footer-partial' );
+		// Preload Header CSS
+		$preloads['site-header-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-header-partial' );
+
+		// Preload Content CSS
 		$preloads['site-content-area-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-content-area-partial' );
+
+		// Preload Footer CSS
+		$preloads['site-footer-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-footer-partial' );
+
+		// Preload Comments CSS
+		if ( is_singular() && comments_open() ) {
+			$preloads['site-comment-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-comment-partial' );
+		}
 
 		// Output the preload markup in <head>.
 		foreach ( $preloads as $handle => $src ) {
 			echo '<link rel="preload" id="' . esc_attr( $handle ) . '-preload" href="' . esc_url( $src ) . '" as="style" />';
 			echo "\n";
+
 		}
 
 }

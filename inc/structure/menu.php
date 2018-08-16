@@ -16,8 +16,8 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 // Repositions primary navigation menu to header.
-// remove_action( 'genesis_after_header', 'genesis_do_nav' );
-// add_action( 'genesis_header', 'genesis_do_nav', 12 );
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
 
 // Reposition the secondary navigation menu to footer.

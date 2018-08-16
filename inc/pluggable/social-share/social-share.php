@@ -7,42 +7,16 @@
  * Assumes the theme has an image folder with an logo.png file
  * If you are using text with your links, remove the aria-label attribute.
  *
- * @package Integrative Trauma Recovery
+ * @package Blank Child Theme
  * @author  Patrick Boehner
  * @license GPL-2.0+
- * @link    https://integrative-trauma-recovery.com
+ *
  */
 
 
 //* Block Acess
 //**********************
 if( !defined( 'ABSPATH' ) ) exit;
-
-
-//* Get Images
-//**********************
-/* https://css-tricks.com/snippets/wordpress/get-the-first-image-from-a-post/
- * https://designsbynickthegeek.com/tutorials/genesis-explained-image-functions
- */
-
-// function pb_find_image_url() {
-//
-// 	// If a featured image is set first, use that, orerwsie fallback to first Images
-// 	// The genesis_get_image() function does both functions for us.
-// 	$first_img = genesis_get_image( array(
-// 		'format' => 'url',
-// 		'size'	=> 'large'
-// 	) );
-//
-// 	// If the post has no images, returen the default image (site logo)
-// 	if( empty( $first_img ) ) {
-// 		$first_img = esc_url( get_stylesheet_directory_uri() . '/images/logo.png' );
-// 	}
-//
-// 	// Return the image
-// 	return $first_img;
-//
-// }
 
 
 //* Social Share Icons
@@ -82,11 +56,28 @@ function pb_add_social_share_options() {
 
 	// Add Twitter handle if it exists
 	if ( get_theme_mod( 'social_share_twitter_account' )  ) {
-	  $twitter	 = '@' . urlencode( $site_twitter );
+	  $twitter_user	 = '@' . urlencode( $site_twitter );
 	} elseif (  get_the_author_meta( 'twitter' ) ) {
-	  $twitter	 = '@' . urlencode( $author_twitter );
+	  $twitter_user	 = '@' . urlencode( $author_twitter );
 	} else {
-	  $twitter	 = '';
+	  $twitter_user	 = '';
+	}
+
+	// Icons & Screen Reader
+	if ( function_exists( 'pb_get_svg' ) ) {
+		$screen_reader = esc_attr( ' screen-reader-text' );
+		$facebook		= pb_get_svg( array( 'icon' => 'facebook' ) );
+		$twitter		= pb_get_svg( array( 'icon' => 'twitter' ) );
+		$linkedin		= pb_get_svg( array( 'icon' => 'linked-in' ) );
+		$pinterest	= pb_get_svg( array( 'icon' => 'pinterest' ) );
+		$mail				= pb_get_svg( array( 'icon' => 'mail' ) );
+	} else {
+		$screen_reader = '';
+		$facebook		= '';
+		$twitter		= '';
+		$linkedin		= '';
+		$pinterest	= '';
+		$mail				= '';
 	}
 
 	// Output social share links

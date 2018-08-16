@@ -15,6 +15,31 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+/**
+ * Adds top-banner body classes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Current classes.
+ * @return array The new classes.
+ */
+add_action( 'body_class', 'pb_notice_bar_classes' );
+function pb_notice_bar_classes( $classes ) {
+
+	if ( get_theme_mod( 'pb-theme-top-banner-text', true ) ) {
+
+		$classes[] = 'top-banner-hidden';
+
+		if ( is_customize_preview() ) {
+			$classes[] = 'customizer-preview';
+		}
+	}
+
+	return $classes;
+
+}
+
+
 // Change '.content-sidebar-wrap' to '.content-area'
 add_filter( 'genesis_markup_content-sidebar-wrap_open', 'pb_change_content_sidebar_wrap', 10, 2 );
 function pb_change_content_sidebar_wrap( $open, $args ) {
