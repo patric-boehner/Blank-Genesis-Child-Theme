@@ -20,7 +20,7 @@ include_once get_template_directory() . '/lib/init.php';
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Blank Child Theme' );
 define( 'CHILD_THEME_URL', 'http://example.com/' );
-define( 'CHILD_THEME_VERSION', '2.1.2' );
+define( 'CHILD_THEME_VERSION', '2.1.3' );
 
 
 // Cache Busting

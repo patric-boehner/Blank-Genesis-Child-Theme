@@ -14,7 +14,11 @@
 //**********************
 if( !defined( 'ABSPATH' ) ) exit;
 
-
+// Useful Links
+/*
+ * https://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_control
+ * https://developer.wordpress.org/themes/customize-api/customizer-objects/
+ */
 
 // Remove Genesis & additional CSS options
 add_action( 'customize_register', 'pb_remove_css_section', 15 );
