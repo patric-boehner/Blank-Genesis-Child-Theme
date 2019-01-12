@@ -116,3 +116,27 @@ input[type="search"]
 
 		.footer-widgets-1
 			margin-left: 0
+
+
+// Search Form
+// https://yoksel.github.io/flex-cheatsheet
+//**********************************************
+
+.search-form
+	@include above-small-phone
+		display: flex
+		flex-direction: row
+		align-items: center
+		flex-wrap: wrap
+
+		label,
+		.search-submit
+			align-self: stretch
+
+		label
+			flex-basis: 50%
+			flex-grow: 1
+			margin-right: $element-spacing
+
+		.search-submit
+			flex-basis: content
