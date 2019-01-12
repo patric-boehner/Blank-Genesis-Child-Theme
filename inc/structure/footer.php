@@ -28,7 +28,7 @@ function pb_load_footer_styles() {
 add_filter( 'genesis_footer_output', 'pb_footer_cred_output' );
 function pb_footer_cred_output() {
 
-	$first_year		   = '2018';
+	$first_year		   = '2019';
 
 	if( date( 'Y' ) !== $first_year ){
 		$credits_years   = '&copy; ' . $first_year . ' - ' . date( 'Y' ) . ' ' . '';
