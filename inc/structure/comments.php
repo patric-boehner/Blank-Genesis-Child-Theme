@@ -98,6 +98,21 @@ function pb_comment_form_defaults( array $paramaters ) {
 }
 
 
+// Filter form classes
+add_filter( 'comment_form_default_fields', 'pb_comment_form_classes' );
+function pb_comment_form_classes( $fields ) {
+
+	foreach( $fields as &$field ) {
+		$field = str_replace( 'class="comment-form-author"', 'class="comment-form-author first one-half"', $field );
+		$field = str_replace( 'class="comment-form-email"', 'class="comment-form-email one-half"', $field );
+		// $field = str_replace( 'class="comment-form-url"', 'class="comment-form-url first one-half"', $field );
+	}
+
+	return $fields;
+
+}
+
+
 // Customize the next page link in comment pagination
 add_filter( 'genesis_next_comments_link_text', 'pb_filter_next_comments_link_text' );
 function pb_filter_next_comments_link_text( $text ) {
