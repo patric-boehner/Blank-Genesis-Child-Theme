@@ -1,11 +1,11 @@
 <div class="top-banner">
   <div class="wrap">
-    <p>
+    <p class="top-banner-text">
       <?php echo $text; ?>
     </p>
+    <button id="top-banner-close">
+      <span><?php esc_html_e( 'Close Banner', 'blank-child-theme' ) ?></span>
+    </button>
   </div>
-  <button id="top-banner-close">
-    <span><?php _e( 'Close Banner', 'blank-child-theme' ) ?></span>
-  </button>
 </div>
 <!-- End of Top Banner -->
