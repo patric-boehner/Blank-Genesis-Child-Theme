@@ -15,13 +15,14 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Remove Genesis menu link
-remove_theme_support( 'genesis-admin-menu' );
+// Removes output of unused admin settings metaboxes.
+add_action( 'genesis_theme_settings_metaboxes', 'genesis_sample_remove_metaboxes' );
+function genesis_sample_remove_metaboxes( $_genesis_admin_settings ) {
 
+	remove_meta_box( 'genesis-theme-settings-header', $_genesis_admin_settings, 'main' );
+	remove_meta_box( 'genesis-theme-settings-nav', $_genesis_admin_settings, 'main' );
 
-// Remove Genesis in-post Scripts Settings
-remove_action( 'admin_menu', 'genesis_add_inpost_scripts_box' );
-remove_action( 'save_post', 'genesis_inpost_seo_save', 1, 2 );
+}
 
 
 // Remove Genesis in-post Layout Settings
@@ -30,10 +31,6 @@ remove_theme_support( 'genesis-inpost-layouts' );
 
 // Remove Archive Layout settings
 remove_theme_support( 'genesis-archive-layouts' );
-
-
-// Set AdSense ID to always be an empty string - stops meta box from appearing on Post screens.
-add_filter( 'genesis_pre_get_option_adsense_id', '__return_empty_string' );
 
 
 // Remove Genesis user permisions
@@ -48,10 +45,6 @@ remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
 
 // Remove Genesis in-post SEO Settings
 remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
-
-
-// Remove Genesis SEO Settings menu link
-remove_theme_support( 'genesis-seo-settings-menu' );
 
 
 // Rmeove Genesis taxonomy SEO settings
