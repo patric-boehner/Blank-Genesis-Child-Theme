@@ -86,6 +86,6 @@ function pb_sanitize_lazy_load_media( $input ) {
  */
 function pb_get_default_top_banner_text() {
 
-	return __( 'Add your custom Call To Action text here. Limited time only. <strong><a href="https://example.com">Reserve your session today!</a></strong>', 'authority-pro' );
+	return __( 'Add your custom Call To Action text here. Limited time only. <strong><a href="https://example.com">Reserve your session today!</a></strong>', 'blank-child-theme' );
 
 }
