@@ -1,70 +1,78 @@
 /**
- * This script adds the accessibility-ready responsive menus Genesis Framework child themes.
+ * Add the accessible responsive menu.
+ *
+ * @version 1.1.3
  *
  * @author StudioPress
- * @link https://github.com/copyblogger/responsive-menus
- * @version 1.1.2
- * @license GPL-2.0+
+ * @link https://github.com/copyblogger/responsive-menus/
+ * @license GPL-2.0-or-later
+ * @package GenesisSample
  */
-
-var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? '' : genesis_responsive_menu,
-	genesisMenusUnchecked  = genesisMenuParams.menuClasses,
-	genesisMenus           = {},
-	menusToCombine         = [];
 
 ( function ( document, $, undefined ) {
 
 	'use strict';
 
-	// Make our menus unique if there's more than one instance on the page.
+	var genesisMenuParams     = typeof genesis_responsive_menu === 'undefined' ? '' : genesis_responsive_menu,
+		genesisMenusUnchecked = genesisMenuParams.menuClasses,
+		genesisMenus          = {},
+		menusToCombine        = [];
+
 	/**
 	 * Validate the menus passed by the theme with what's being loaded on the page,
 	 * and pass the new and accurate information to our new data.
+	 *
 	 * @param {genesisMenusUnchecked} Raw data from the localized script in the theme.
 	 * @return {array} genesisMenus array gets populated with updated data.
 	 * @return {array} menusToCombine array gets populated with relevant data.
 	 */
-	$.each( genesisMenusUnchecked, function( group ) {
+	$.each(
+		genesisMenusUnchecked, function( group ) {
 
-		// Mirror our group object to populate.
-		genesisMenus[group] = [];
+			// Mirror our group object to populate.
+			genesisMenus[group] = [];
 
-		// Loop through each instance of the specified menu on the page.
-		$.each( this, function( key, value ) {
+			// Loop through each instance of the specified menu on the page.
+			$.each(
+				this, function( key, value ) {
 
-			var menuString = value,
-				$menu      = $(value);
+					var menuString = value,
+					$menu          = $( value );
 
-			// If there is more than one instance, append the index and update array.
-			if ( $menu.length > 1 ) {
+					// If there is more than one instance, append the index and update array.
+					if ( $menu.length > 1 ) {
 
-				$.each( $menu, function( key, value ) {
+						$.each(
+							$menu, function( key, value ) {
 
-					var newString = menuString + '-' + key;
+								var newString = menuString + '-' + key;
 
-					$(this).addClass( newString.replace('.','') );
+								$( this ).addClass( newString.replace( '.','' ) );
 
-					genesisMenus[group].push( newString );
+								genesisMenus[group].push( newString );
 
-					if ( 'combine' === group ) {
-						menusToCombine.push( newString );
+								if ( 'combine' === group ) {
+									menusToCombine.push( newString );
+								}
+
+							}
+						);
+
+					} else if ( $menu.length == 1 ) {
+
+						genesisMenus[group].push( menuString );
+
+						if ( 'combine' === group ) {
+							menusToCombine.push( menuString );
+						}
+
 					}
 
-				});
-
-			} else if ( $menu.length == 1 ) {
-
-				genesisMenus[group].push( menuString );
-
-				if ( 'combine' === group ) {
-					menusToCombine.push( menuString );
 				}
+			);
 
-			}
-
-		});
-
-	});
+		}
+	);
 
 	// Make sure there is something to use for the 'others' array.
 	if ( typeof genesisMenus.others == 'undefined' ) {
@@ -75,7 +83,7 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 	if ( menusToCombine.length == 1 ) {
 		genesisMenus.others.push( menusToCombine[0] );
 		genesisMenus.combine = null;
-		menusToCombine = null;
+		menusToCombine       = null;
 	}
 
 	var genesisMenu         = {},
@@ -91,27 +99,29 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 			return;
 		}
 
-		var menuIconClass     = typeof genesisMenuParams.menuIconClass !== 'undefined' ? genesisMenuParams.menuIconClass : 'dashicons-before dashicons-menu',
-			subMenuIconClass  = typeof genesisMenuParams.subMenuIconClass !== 'undefined' ? genesisMenuParams.subMenuIconClass : 'dashicons-before dashicons-arrow-down-alt2',
-			toggleButtons     = {
-				menu : $( '<button />', {
+		var menuIconClass    = typeof genesisMenuParams.menuIconClass !== 'undefined' ? genesisMenuParams.menuIconClass : 'dashicons-before dashicons-menu';
+		var	subMenuIconClass = typeof genesisMenuParams.subMenuIconClass !== 'undefined' ? genesisMenuParams.subMenuIconClass : 'dashicons-before dashicons-arrow-down-alt2';
+		var	toggleButtons    = {
+			menu : $( '<button />', {
 					'class' : mainMenuButtonClass,
 					'aria-expanded' : false,
-					'aria-pressed' : false,
-					'role' : 'button'
-					} )
-					.append( genesisMenuParams.mainMenu ),
-				submenu : $( '<button />', {
+					'aria-pressed' : false
+				}
+			)
+			.append( genesisMenuParams.mainMenu ),
+				submenu : $(
+					'<button />', {
 					'class' : subMenuButtonClass,
 					'aria-expanded' : false,
-					'aria-pressed' : false,
-					'role' : 'button'
-					} )
-					.append( $( '<span />', {
-						'class' : 'screen-reader-text',
-						'text' : genesisMenuParams.subMenu
-					} ) )
-			};
+					'aria-pressed' : false
+				}
+			)
+			.append( $('<span />', {
+					'class' : 'screen-reader-text',
+					'text' : genesisMenuParams.subMenu
+				} )
+			)
+		};
 
 		// Add the responsive menu class to the active menus.
 		_addResponsiveMenuClass();
@@ -129,6 +139,7 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 
 	/**
 	 * Add menu toggle button to appropriate menus.
+	 *
 	 * @param {toggleButtons} Object of menu buttons to use for toggles.
 	 */
 	function _addMenuButtons( toggleButtons ) {
@@ -136,13 +147,12 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 		// Apply sub menu toggle to each sub-menu found in the menuList.
 		$( _getMenuSelectorString( genesisMenus ) ).find( '.sub-menu' ).before( toggleButtons.submenu );
 
-
 		if ( menusToCombine !== null ) {
 
 			var menusToToggle = genesisMenus.others.concat( menusToCombine[0] );
 
-			 // Only add menu button the primary menu and navs NOT in the combine variable.
-			 $( _getMenuSelectorString( menusToToggle ) ).before( toggleButtons.menu );
+			// Only add menu button the primary menu and navs NOT in the combine variable.
+			$( _getMenuSelectorString( menusToToggle ) ).before( toggleButtons.menu );
 
 		} else {
 
@@ -164,7 +174,7 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 	 * Execute our responsive menu functions on window resizing.
 	 */
 	function _doResize() {
-		var buttons   = $( 'button[id^="genesis-mobile-"]' ).attr( 'id' );
+		var buttons = $( 'button[id^="genesis-mobile-"]' ).attr( 'id' );
 		if ( typeof buttons === 'undefined' ) {
 			return;
 		}
@@ -188,6 +198,7 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 
 	/**
 	 * Combine our menus if the mobile menu is visible.
+	 *
 	 * @params buttons
 	 */
 	function _combineMenus( buttons ){
@@ -199,22 +210,29 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 
 		// Split up the menus to combine based on order of appearance in the array.
 		var primaryMenu   = menusToCombine[0],
-			combinedMenus = $( menusToCombine ).filter( function(index) { if ( index > 0 ) { return index; } });
+			combinedMenus = $( menusToCombine ).filter(
+				function(index) { if ( index > 0 ) {
+							return index; } }
+			);
 
 		// If the responsive menu is active, append items in 'combinedMenus' object to the 'primaryMenu' object.
 		if ( 'none' !== _getDisplayValue( buttons ) ) {
 
-			$.each( combinedMenus, function( key, value ) {
-				$(value).find( '.menu > li' ).addClass( 'moved-item-' + value.replace( '.','' ) ).appendTo( primaryMenu + ' ul.genesis-nav-menu' );
-			});
+			$.each(
+				combinedMenus, function( key, value ) {
+					$( value ).find( '.menu > li' ).addClass( 'moved-item-' + value.replace( '.','' ) ).appendTo( primaryMenu + ' ul.genesis-nav-menu' );
+				}
+			);
 			$( _getMenuSelectorString( combinedMenus ) ).hide();
 
 		} else {
 
 			$( _getMenuSelectorString( combinedMenus ) ).show();
-			$.each( combinedMenus, function( key, value ) {
-				$( '.moved-item-' + value.replace( '.','' ) ).appendTo( value + ' ul.genesis-nav-menu' ).removeClass( 'moved-item-' + value.replace( '.','' ) );
-			});
+			$.each(
+				combinedMenus, function( key, value ) {
+					$( '.moved-item-' + value.replace( '.','' ) ).appendTo( value + ' ul.genesis-nav-menu' ).removeClass( 'moved-item-' + value.replace( '.','' ) );
+				}
+			);
 
 		}
 
@@ -250,6 +268,7 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 
 	/**
 	 * Activate/deactivate superfish.
+	 *
 	 * @params buttons
 	 */
 	function _superfishToggle( buttons ) {
@@ -271,6 +290,7 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 
 	/**
 	 * Modify skip link to match mobile buttons.
+	 *
 	 * @param buttons
 	 */
 	function _changeSkipLink( buttons ) {
@@ -283,38 +303,41 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 			return;
 		}
 
-		$.each( menuToggleList, function ( key, value ) {
+		$.each(
+			menuToggleList, function ( key, value ) {
 
-			var newValue  = value.replace( '.', '' ),
-				startLink = 'genesis-' + newValue,
-				endLink   = 'genesis-mobile-' + newValue;
+				var newValue = value.replace( '.', '' ),
+				startLink    = 'genesis-' + newValue,
+				endLink      = 'genesis-mobile-' + newValue;
 
-			if ( 'none' == _getDisplayValue( buttons ) ) {
-				startLink = 'genesis-mobile-' + newValue;
-				endLink   = 'genesis-' + newValue;
+				if ( 'none' == _getDisplayValue( buttons ) ) {
+					startLink = 'genesis-mobile-' + newValue;
+					endLink   = 'genesis-' + newValue;
+				}
+
+				var $item = $( '.genesis-skip-link a[href="#' + startLink + '"]' );
+
+				if ( menusToCombine !== null && value !== menusToCombine[0] ) {
+					$item.toggleClass( 'skip-link-hidden' );
+				}
+
+				if ( $item.length > 0 ) {
+					var link = $item.attr( 'href' );
+					link     = link.replace( startLink, endLink );
+
+					$item.attr( 'href', link );
+				} else {
+					return;
+				}
+
 			}
-
-			var $item = $( '.genesis-skip-link a[href="#' + startLink + '"]' );
-
-			if ( menusToCombine !== null && value !== menusToCombine[0] ) {
-				$item.toggleClass( 'skip-link-hidden' );
-			}
-
-			if ( $item.length > 0 ) {
-				var link  = $item.attr( 'href' );
-					link  = link.replace( startLink, endLink );
-
-				$item.attr( 'href', link );
-			} else {
-				return;
-			}
-
-		});
+		);
 
 	}
 
 	/**
 	 * Close all the menu toggles if buttons are hidden.
+	 *
 	 * @param buttons
 	 */
 	function _maybeClose( buttons ) {
@@ -327,12 +350,13 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 			.attr( 'aria-expanded', false )
 			.attr( 'aria-pressed', false );
 
-		$( '.' + responsiveMenuClass + ', ' + responsiveMenuClass + ' .sub-menu' )
+		$( '.' + responsiveMenuClass + ', .' + responsiveMenuClass + ' .sub-menu' )
 			.attr( 'style', '' );
 	}
 
 	/**
 	 * Generic function to get the display value of an element.
+	 *
 	 * @param  {id} $id ID to check
 	 * @return {string}     CSS value of display property
 	 */
@@ -344,27 +368,33 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 
 	/**
 	 * Toggle aria attributes.
+	 *
 	 * @param  {button} $this     passed through
 	 * @param  {aria-xx} attribute aria attribute to toggle
 	 * @return {bool}           from _ariaReturn
 	 */
 	function _toggleAria( $this, attribute ) {
-		$this.attr( attribute, function( index, value ) {
-			return 'false' === value;
-		});
+		$this.attr(
+			attribute, function( index, value ) {
+				return 'false' === value;
+			}
+		);
 	}
 
 	/**
 	 * Helper function to return a comma separated string of menu selectors.
+	 *
 	 * @param {itemArray} Array of menu items to loop through.
 	 * @param {ignoreSecondary} boolean of whether to ignore the 'secondary' menu item.
 	 * @return {string} Comma-separated string.
 	 */
 	function _getMenuSelectorString( itemArray ) {
 
-		var itemString = $.map( itemArray, function( value, key ) {
-			return value;
-		});
+		var itemString = $.map(
+			itemArray, function( value, key ) {
+				return value;
+			}
+		);
 
 		return itemString.join( ',' );
 
@@ -373,6 +403,7 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 	/**
 	 * Helper function to return a group array of all the menus in
 	 * both the 'others' and 'combine' arrays.
+	 *
 	 * @return {array} Array of all menu items as class selectors.
 	 */
 	function _getAllMenusArray() {
@@ -383,16 +414,20 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 		// If there are menus in the 'menusToCombine' array, add them to 'menuList'.
 		if ( menusToCombine !== null ) {
 
-			$.each( menusToCombine, function( key, value ) {
-				menuList.push( value.valueOf() );
-			});
+			$.each(
+				menusToCombine, function( key, value ) {
+					menuList.push( value.valueOf() );
+				}
+			);
 
 		}
 
 		// Add menus in the 'others' array to 'menuList'.
-		$.each( genesisMenus.others, function( key, value ) {
-			menuList.push( value.valueOf() );
-		});
+		$.each(
+			genesisMenus.others, function( key, value ) {
+				menuList.push( value.valueOf() );
+			}
+		);
 
 		if ( menuList.length > 0 ) {
 			return menuList;
@@ -402,14 +437,16 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 
 	}
 
-	$(document).ready(function () {
+	$( document ).ready(
+		function () {
 
-		if ( _getAllMenusArray() !== null ) {
+			if ( _getAllMenusArray() !== null ) {
 
-			genesisMenu.init();
+				genesisMenu.init();
+
+			}
 
 		}
-
-	});
+	);
 
 })( document, jQuery );

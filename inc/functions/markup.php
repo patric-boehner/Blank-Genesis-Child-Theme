@@ -26,13 +26,14 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_action( 'body_class', 'pb_notice_bar_classes' );
 function pb_notice_bar_classes( $classes ) {
 
-	if ( get_theme_mod( 'pb-theme-top-banner-text', true ) ) {
+	if ( get_theme_mod( 'pb-theme-top-banner-visibility', 1 ) ) {
 
 		$classes[] = 'top-banner-hidden';
 
 		if ( is_customize_preview() ) {
 			$classes[] = 'customizer-preview';
 		}
+
 	}
 
 	return $classes;
@@ -45,6 +46,29 @@ add_filter( 'genesis_markup_content-sidebar-wrap_open', 'pb_change_content_sideb
 function pb_change_content_sidebar_wrap( $open, $args ) {
 
 	return str_replace( 'content-sidebar-wrap', 'content-area', $open );
+
+}
+
+
+/**
+ * Archive Description markup
+ * From Bill Erickson
+ */
+add_filter( 'genesis_markup_posts-page-description_open', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_posts-page-description_close', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_taxonomy-archive-description_open', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_taxonomy-archive-description_close', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_author-archive-description_open', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_author-archive-description_close', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_cpt-archive-description_open', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_cpt-archive-description_close', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_date-archive-description_open', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_date-archive-description_close', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_search-archive-description_open', 'pb_archive_description_markup' );
+add_filter( 'genesis_markup_search-archive-description_close', 'pb_archive_description_markup' );
+function pb_archive_description_markup( $markup ) {
+
+	return str_replace( array( '<div', '</div' ), array( '<header', '</header' ), $markup );
 
 }
 

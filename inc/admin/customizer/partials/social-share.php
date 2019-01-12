@@ -32,7 +32,6 @@ $wp_customize->add_section(
   )
 );
 
-
 // Turn on and off
 $wp_customize->add_setting(
   'social_share_option',

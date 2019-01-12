@@ -57,30 +57,20 @@ function pb_add_social_share_options() {
 	// Add Twitter handle if it exists
 	if ( get_theme_mod( 'social_share_twitter_account' )  ) {
 	  $twitter_user	 = '@' . urlencode( $site_twitter );
-	} elseif (  get_the_author_meta( 'twitter' ) ) {
-	  $twitter_user	 = '@' . urlencode( $author_twitter );
 	} else {
 	  $twitter_user	 = '';
 	}
 
 	// Icons & Screen Reader
-	if ( function_exists( 'pb_get_svg' ) ) {
-		$screen_reader = esc_attr( ' screen-reader-text' );
-		$facebook		= pb_get_svg( array( 'icon' => 'facebook' ) );
-		$twitter		= pb_get_svg( array( 'icon' => 'twitter' ) );
-		$linkedin		= pb_get_svg( array( 'icon' => 'linked-in' ) );
-		$pinterest	= pb_get_svg( array( 'icon' => 'pinterest' ) );
-		$mail				= pb_get_svg( array( 'icon' => 'mail' ) );
-	} else {
-		$screen_reader = '';
-		$facebook		= '';
-		$twitter		= '';
-		$linkedin		= '';
-		$pinterest	= '';
-		$mail				= '';
-	}
+
+	$facebook = pb_svg_icons_available( 'Facebook', 'facebook', '', '32px', '32px' );
+	$twitter = pb_svg_icons_available( 'Twitter', 'twitter', '', '32px', '32px' );
+	$linkedin	= pb_svg_icons_available( 'LinkedIn', 'linkedin', '', '32px', '32px' );
+	$pinterest = pb_svg_icons_available( 'Pinterest', 'pinterest', '', '32px', '32px' );
+	$mail	= pb_svg_icons_available( 'Email', 'envelope', '', '32px', '32px' );
+
 
 	// Output social share links
-	include CHILD_DIR . '/inc/pluggable/social-share/views/social-share-links.php';
+	include CHILD_DIR . '/inc/views/social-share-links.php';
 
 }

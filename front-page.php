@@ -34,15 +34,14 @@ remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open',  5  );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 
+
 // Change entry title to h2 on homepage
-// add_filter( 'genesis_entry_title_wrap', 'pb_post_title_wrap' );
-// function pb_post_title_wrap( $wrap ) {
-//
-// 	$wrap = 'h2';
-//
-// 	return $wrap;
-//
-// }
+add_filter( 'genesis_entry_title_wrap', 'pb_post_title_wrap' );
+function pb_post_title_wrap( $wrap ) {
+
+	return 'h1';
+
+}
 
 
 //**********************

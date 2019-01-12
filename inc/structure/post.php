@@ -30,10 +30,6 @@ function sp_post_info_filter( $post_info ) {
 }
 
 
-// Display author box
-add_filter( 'get_the_author_genesis_author_box_single', '__return_false' );
-
-
 // Add social share to entry footer
 add_action( 'genesis_entry_footer', 'pb_social_share_in_foonter' );
 function pb_social_share_in_foonter() {
@@ -43,6 +39,24 @@ function pb_social_share_in_foonter() {
 	}
 
 	pb_add_social_share_options();
+
+}
+
+
+// Customize author box
+add_action( 'genesis_author_box', 'pb_modify_author_profile', 10, 6 );
+function pb_modify_author_profile() {
+
+	$facebook_link = esc_url( get_the_author_meta( 'facebook' ) );
+	$twitter_link = esc_url( get_the_author_meta( 'twitter' ) );
+	$linked_link = esc_url( get_the_author_meta( 'linkedin' ) );
+
+	$facebook = pb_svg_icons_available( 'Facebook', 'facebook', '', '25px', '25px' );
+	$twitter = pb_svg_icons_available( 'Twitter', 'twitter', '', '25px', '25px' );
+	$linkedin = pb_svg_icons_available( 'LinkedIn', 'linkedin', '', '25px', '25px' );
+
+	// Include authoe profile
+	include CHILD_DIR . '/inc/views/author-profile.php';
 
 }
 
