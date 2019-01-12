@@ -97,17 +97,80 @@ add_theme_support( 'genesis-after-entry-widget-area' );
 add_theme_support( 'genesis-footer-widgets', 3 );
 
 
-// Enable support for Gutenberge wide images.
-// add_theme_support( 'gutenberg', array(
-// 	'wide-images' => true,
-// ) );
+// Display author box
+// add_filter( 'get_the_author_genesis_author_box_single', '__return_false' );
 
 
-// Enable support for WooCommerce and WooCommerce features.
-// add_theme_support( 'woocommerce' );
-// add_theme_support( 'wc-product-gallery-zoom' );
-// add_theme_support( 'wc-product-gallery-lightbox' );
-// add_theme_support( 'wc-product-gallery-slider' );
+// Add support for editor styles.
+add_theme_support( 'editor-styles' );
+
+
+// Enable support for Block Editor wide images.
+add_theme_support( 'align-wide' );
+
+
+// Make media embeds responsive.
+add_theme_support( 'responsive-embeds' );
+
+
+// Disable custom font sizes
+add_theme_support( 'disable-custom-font-sizes' );
+
+
+// -- Editor Font Styles
+add_theme_support( 'editor-font-sizes', array(
+
+	array(
+		'name'      => __( 'small', 'blank-child-theme' ),
+		'shortName' => __( 'S', 'blank-child-theme' ),
+		'size'      => 16,
+		'slug'      => 'small'
+	),
+	array(
+		'name'      => __( 'regular', 'blank-child-theme' ),
+		'shortName' => __( 'M', 'blank-child-theme' ),
+		'size'      => 20,
+		'slug'      => 'regular'
+	),
+	array(
+		'name'      => __( 'large', 'blank-child-theme' ),
+		'shortName' => __( 'L', 'blank-child-theme' ),
+		'size'      => 24,
+		'slug'      => 'large'
+	),
+
+) );
+
+
+// Disable Custom Colors
+add_theme_support( 'disable-custom-colors' );
+
+
+// Editor Color Palette
+add_theme_support( 'editor-color-palette', array(
+
+	array(
+		'name'  => __( 'Blue', 'ea_genesis_child' ),
+		'slug'  => 'blue',
+		'color'	=> '#004b96',
+	),
+	array(
+		'name'  => __( 'Green', 'ea_genesis_child' ),
+		'slug'  => 'green',
+		'color' => '#58AD69',
+	),
+	array(
+		'name'  => __( 'Orange', 'ea_genesis_child' ),
+		'slug'  => 'orange',
+		'color' => '#FFBC49',
+	),
+	array(
+		'name'	=> __( 'Red', 'ea_genesis_child' ),
+		'slug'	=> 'red',
+		'color'	=> '#E2574C',
+	),
+
+) );
 
 
 // Sets the content width based on the theme's design and stylesheet.
@@ -120,12 +183,5 @@ if ( ! isset( $content_width ) ) {
 add_image_size( 'featured-image', 680, 400, TRUE );
 
 
-// Change the favicon path
-add_filter( 'genesis_favicon_url', 'custom_favicon_url' );
-function custom_favicon_url( $favicon ) {
-
-	$favicon =  get_stylesheet_directory_uri() . '/assets/images/favicon.png';
-
-	return $favicon;
-
-}
+// Remove Genesis Favicon (use site icon instead)
+remove_action( 'wp_head', 'genesis_load_favicon' );

@@ -32,14 +32,8 @@ class PB_Override_Genesis_Settings {
 	// The array of options to set
 	private $options = array();
 
-	// The array of metaboxes to remove
-	private $metaboxes = array();
-
 	// The current option to be set
 	private $current_option = '';
-
-	// The current metabox to be removed
-	private $current_metabox = '';
 
 	// Set Genesis Theme Options with array
 	public function set_options( $these_options ) {
@@ -78,28 +72,6 @@ class PB_Override_Genesis_Settings {
 
 	}
 
-	// Remove a group of metaboxes
-	public function remove_metaboxes( $metaboxes ) {
-
-		if( !is_array( $metaboxes ) )
-			return;
-
-		// Set metaboxes
-		$this->metaboxes = $metaboxes;
-
-		// Add action
-		add_action( 'genesis_theme_settings_metaboxes', array( $this, 'remove_genesis_metaboxes' ) );
-
-	}
-
-	// Remove genesis theme settings metaboxes
-	public function remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
-
-		foreach( $this->metaboxes as $metabox ) {
-			remove_meta_box( "genesis-theme-settings-{$metabox}",     $_genesis_theme_settings_pagehook, 'main' );
-		}
-
-	}
 }
 
 
@@ -156,10 +128,6 @@ function pb_set_theme_options() {
 		'image_alignment'				 		=> 'alignnone', // blank, 'alignleft' or 'alignright'
 		);
 		$override->set_options( $options );
-
-		//Remove Theme Settings Metaboxes
-		$metaboxes = array( 'version', 'breadcrumb', 'feeds', 'header', 'nav', 'adsense', 'breadcrumb', 'comments', 'posts', 'blogpage', 'scripts', 'layout' );
-		$override->remove_metaboxes( $metaboxes );
 
 	}
 
