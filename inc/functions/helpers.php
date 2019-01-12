@@ -15,6 +15,30 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+//  Helper function for adding SVG or fallingback to text
+function pb_svg_icons_available( $text, $icon_name, $icon_text ='', $width ='15px', $height ='15px' ) {
+
+	$text = sanitize_text_field( $text );
+	$icon_name = esc_attr( $icon_name );
+	$icon_text = sanitize_text_field( $icon_text );
+	$width = esc_attr( $width );
+	$height = esc_attr( $width );
+
+	if ( function_exists( 'pb_get_svg' ) && empty( $icon_text ) ) {
+		$search_icon = pb_get_svg( array( 'icon' => $icon_name, 'width' => $width, 'height' => $height, 'title' => __( $text ) ) );
+		$icon = $search_icon;
+	} elseif ( function_exists( 'pb_get_svg' ) && ! empty( $icon_text ) ) {
+		$search_icon = pb_get_svg( array( 'icon' => $icon_name, 'width' => $width, 'height' => $height, 'title' => __( '' ) ) );
+		$icon =  '<span class="icon-text">' . $search_icon . $icon_text . '</span>';
+	} else {
+		$icon  = $text;
+	}
+
+	return $icon;
+
+}
+
+
 /**
  * Helper function to check if we're on a WooCommerce page.
  *
