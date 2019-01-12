@@ -28,7 +28,7 @@ function pb_load_header_styles() {
 add_action( 'genesis_before_header', 'pb_add_top_banner' );
 function pb_add_top_banner() {
 
-	if ( get_theme_mod( 'pb-theme-top-banner-visibility', true ) && !isset( $_COOKIE[ 'top-banner-hidden' ] ) ) {
+	if ( get_theme_mod( 'pb-theme-top-banner-visibility', 1 ) && !isset( $_COOKIE[ 'top-banner-hidden' ] ) ) {
 
     $text = get_theme_mod( 'pb-theme-top-banner-text', pb_get_default_top_banner_text() );
 
