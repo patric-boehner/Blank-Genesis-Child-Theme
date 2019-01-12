@@ -15,17 +15,16 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Remove jQuery Migrate
-add_action( 'wp_default_scripts', 'twf_remove_jquery_migrate' );
-function twf_remove_jquery_migrate( $scripts ) {
+/**
+ * Remove jQuery Migrate
+ * From Bill Erickson
+ */
+add_action( 'wp_default_scripts', 'pb_remove_jquery_migrate' );
+function pb_remove_jquery_migrate( $scripts ) {
 
-	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
-		$script = $scripts->registered['jquery'];
-
-		if ( $script->deps ) {
-			$script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
-		}
-
+	if( !is_admin() ) {
+		$scripts->remove( 'jquery');
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
 	}
 
 }
@@ -76,7 +75,10 @@ function pb_disable_xmlrpc_ping ($methods) {
 remove_action ('wp_head', 'rsd_link');
 
 
-// Remove Genesis Page Templates
+/**
+ * Remove Genesis Page Templates
+ * From: Bill Erickson
+ */
 add_filter( 'theme_page_templates', 'pb_remove_genesis_page_templates' );
 function pb_remove_genesis_page_templates( $page_templates ) {
 
@@ -91,27 +93,58 @@ function pb_remove_genesis_page_templates( $page_templates ) {
 remove_filter( 'body_class', 'genesis_header_body_classes' );
 
 
-// Cleanup menu classes
+/**
+ * Cleanup menu classes
+ * From: Bill Erickson
+ */
 add_filter( 'nav_menu_css_class', 'pb_clean_nav_menu_classes', 5 );
 function pb_clean_nav_menu_classes( $classes ) {
 
-	if( ! is_array( $classes ) )
-
+	if( ! is_array( $classes ) ) {
 		return $classes;
-		$allowed_classes = array(
-			'menu-item-home',
-			'menu-item',
-			'current-menu-item',
-			'current-menu-ancestor',
-			'menu-item-has-children',
-		);
+	}
 
-	return array_intersect( $classes, $allowed_classes );
+	foreach( $classes as $i => $class ) {
+
+		// Remove class with menu item id
+		$id = strtok( $class, 'menu-item-' );
+
+		if( 0 < intval( $id ) ) {
+			unset( $classes[ $i ] );
+		}
+
+		// Remove menu-item-type-*
+		if( false !== strpos( $class, 'menu-item-type-' ) ) {
+			unset( $classes[ $i ] );
+		}
+
+		// Remove menu-item-object-*
+		if( false !== strpos( $class, 'menu-item-object-' ) ) {
+			unset( $classes[ $i ] );
+		}
+
+		// Change page ancestor to menu ancestor
+		if( 'current-page-ancestor' == $class ) {
+			$classes[] = 'current-menu-ancestor';
+			unset( $classes[ $i ] );
+		}
+
+	}
+
+	// Remove submenu class if depth is limited
+	if( isset( $args->depth ) && 1 === $args->depth ) {
+		$classes = array_diff( $classes, array( 'menu-item-has-children' ) );
+	}
+
+	return $classes;
 
 }
 
 
-// Cleanup post classes
+/**
+ * Cleanup post classes
+ * From: Bill Erickson
+ */
 add_filter( 'post_class', 'pb_clean_post_classes', 5 );
 function pb_clean_post_classes( $classes ) {
 
