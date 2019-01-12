@@ -20,7 +20,7 @@ include_once get_template_directory() . '/lib/init.php';
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Blank Child Theme' );
 define( 'CHILD_THEME_URL', 'http://example.com/' );
-define( 'CHILD_THEME_VERSION', '2.1.3' );
+define( 'CHILD_THEME_VERSION', '2.1.5' );
 
 
 // Cache Busting
@@ -45,31 +45,27 @@ include_once( CHILD_DIR . '/inc/theme-defaults.php' );
 include_once( CHILD_DIR . '/inc/theme-assets.php' );
 
 
-// Pluggable Options
-include_once( CHILD_DIR . '/inc/pluggable/lazyload/lazyload.php' );
-include_once( CHILD_DIR . '/inc/pluggable/social-share/social-share.php' );
-
-
 // Admin
 include_once( CHILD_DIR . '/inc/admin/widgets.php' );
 include_once( CHILD_DIR . '/inc/admin/customizer/customizer.php' );
 include_once( CHILD_DIR . '/inc/admin/genesis-metaboxes.php' );
 include_once( CHILD_DIR . '/inc/admin/inpost-editor.php' );
-include_once( CHILD_DIR . '/inc/admin/screen-options.php' );
 include_once( CHILD_DIR . '/inc/admin/login.php' );
 include_once( CHILD_DIR . '/inc/admin/menu.php' );
 include_once( CHILD_DIR . '/inc/admin/dashboard.php' );
+include_once( CHILD_DIR . '/inc/admin/user-profile.php' );
 
 
 // Gobal Functions
-include_once( CHILD_DIR . '/inc/functions/development-tools.php' );
 include_once( CHILD_DIR . '/inc/functions/cleanup.php' );
 include_once( CHILD_DIR . '/inc/functions/helpers.php' );
+include_once( CHILD_DIR . '/inc/functions/social-share.php' );
 include_once( CHILD_DIR . '/inc/functions/markup.php' );
 include_once( CHILD_DIR . '/inc/functions/post-thumbnail-cache.php' );
 include_once( CHILD_DIR . '/inc/functions/media.php' );
 include_once( CHILD_DIR . '/inc/functions/js-body-class.php' );
-// include_once( CHILD_DIR . '/inc/functions/svg-sprite.php' );
+include_once( CHILD_DIR . '/inc/functions/svg-sprite.php' );
+include_once( CHILD_DIR . '/inc/functions/lazyload.php' );
 include_once( CHILD_DIR . '/inc/functions/sitemap.php' );
 include_once( CHILD_DIR . '/inc/functions/breadcrumbs.php' );
 include_once( CHILD_DIR . '/inc/functions/ninja-forms-filter.php' );
