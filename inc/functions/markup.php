@@ -41,11 +41,33 @@ function pb_notice_bar_classes( $classes ) {
 }
 
 
+// Remove redundent .site-inner and .content-sidebar-wrap on full-width layouts
+add_action( 'genesis_meta', 'pb_remove_redundant_markup' );
+function pb_remove_redundant_markup() {
+
+	add_filter( 'genesis_markup_site-inner', '__return_null' );
+
+	if ( 'full-width-content' === genesis_site_layout() ) {
+		add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
+	}
+
+}
+
+
 // Change '.content-sidebar-wrap' to '.content-area'
 add_filter( 'genesis_markup_content-sidebar-wrap_open', 'pb_change_content_sidebar_wrap', 10, 2 );
 function pb_change_content_sidebar_wrap( $open, $args ) {
 
 	return str_replace( 'content-sidebar-wrap', 'content-area', $open );
+
+}
+
+
+// Modify footer widget wrap
+add_filter( 'genesis_structural_wrap-footer-widgets', 'pb_filter_footer_widgets_structural_wrap', 10, 2 );
+function pb_filter_footer_widgets_structural_wrap( $open, $args ) {
+
+	return str_replace( 'wrap', 'footer-widgets-wrap', $open );
 
 }
 
@@ -72,6 +94,12 @@ function pb_archive_description_markup( $markup ) {
 
 }
 
+
+/**
+ * Notes
+ *
+ * https://wpbeaches.com/adding-attribute-html-section-genesis/
+ */
 
 // Add Organization schema to site title
 add_filter( 'genesis_attr_title-area', 'pb_change_title_area_schema' );
@@ -101,6 +129,17 @@ add_filter( 'genesis_attr_nav-primary', 'pb_change_primary_nav_aria_label' );
 function pb_change_primary_nav_aria_label( $attributes ) {
 
 	$attributes['aria-label'] = 'Main';
+
+	return $attributes;
+
+}
+
+
+// Change secondary nave aria-label
+add_filter( 'genesis_attr_site-footer', 'pb_change_footer_role' );
+function pb_change_footer_role( $attributes ) {
+
+	$attributes['role'] = 'contentinfo';
 
 	return $attributes;
 

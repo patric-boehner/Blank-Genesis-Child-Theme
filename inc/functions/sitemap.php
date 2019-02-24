@@ -23,7 +23,7 @@ function pb_customize_sitemap_output() {
 
 	// Pages
 	$sitemap  =  sprintf( '<%2$s>%1$s</%2$s>', __( 'Pages:', 'blank-child-theme' ), $heading );
-	$sitemap .=  sprintf( '<ul>%s</ul>', wp_list_pages( 'title_li=&echo=0' ) );
+	$sitemap .=  sprintf( '<ul>%s</ul>', wp_list_pages( 'exclude=' .pb_find_unlisted_pages(). '&title_li=&echo=0' ) );
 
 	// Post Type
 	// $sitemap .=  sprintf( '<%2$s>%1$s</%2$s>', __( 'Post Type:', 'blank-child-theme' ) , $heading );

@@ -27,15 +27,6 @@ function pb_remove_image_fallback( $args ) {
 }
 
 
-// Set a custom excerpt length
-// add_filter( 'excerpt_length', 'pb_set_excerpt_length', 999 );
-// function pb_set_excerpt_length( $length ) {
-//
-// 	return 50;
-//
-// }
-
-
 // Modify automatic excerpts read more Link
 add_filter( 'the_content_more_link', 'pb_get_read_more_link' );
 add_filter( 'get_the_content_more_link', 'pb_get_read_more_link' );

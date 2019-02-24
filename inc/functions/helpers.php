@@ -102,84 +102,32 @@ function pb_get_comment_parent_link( $args = array() ) {
 }
 
 
-/**
- * Adds async/defer attributes to enqueued / registered scripts.
- *
- * If #12009 lands in WordPress, this function can no-op since it would be handled in core.
- *
- * @link https://core.trac.wordpress.org/ticket/12009
- * @param string $tag    The script tag.
- * @param string $handle The script handle.
- * @return array
- */
-add_filter( 'script_loader_tag', 'wprig_filter_script_loader_tag', 10, 2 );
-function wprig_filter_script_loader_tag( $tag, $handle ) {
 
-	foreach ( array( 'async', 'defer' ) as $attr ) {
+// Return a list of page ID that have been set to nofollow in Yoast.
+function pb_find_unlisted_pages() {
 
-		if ( ! wp_scripts()->get_data( $handle, $attr ) ) {
-			continue;
-		}
-		// Prevent adding attribute when already added in #12009.
-		if ( ! preg_match( ":\s$attr(=|>|\s):", $tag ) ) {
-			$tag = preg_replace( ':(?=></script>):', " $attr", $tag, 1 );
-		}
-		// Only allow async or defer, not both.
-		break;
-
+	if ( ! class_exists( 'WPSEO_Meta' ) ) {
+		return;
 	}
 
-	return $tag;
+	$key = '_yoast_wpseo_meta-robots-noindex';
 
-}
+	$args = [
+		'post_type'  => 'page',
+		'fields'		 => 'ids',
+		'nopaging'	 => true,
+		'meta_key'	 => $key,
+		'meta_value' => '1'
+	];
+	
+	$pages_no_follow = get_posts( $args );
 
+	foreach ( $pages_no_follow as $page ) {
+		$pages[] = $page;
+	}
 
+	$page_ids = implode( "','", $pages );
 
-/**
- * Generate preload markup for stylesheets.
- *
- * @param object $wp_styles Registered styles.
- * @param string $handle The style handle.
- */
-function wprig_get_preload_stylesheet_uri( $wp_styles, $handle ) {
-	$preload_uri = $wp_styles->registered[ $handle ]->src . '?ver=' . $wp_styles->registered[ $handle ]->ver;
-	return $preload_uri;
-}
-
-
-/**
- * Adds preload for in-body stylesheets depending on what templates are being used.
- * Disabled when AMP is active as AMP injects the stylesheets inline.
- *
- * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content
- */
-add_action( 'wp_head', 'wprig_add_body_style' );
-function wprig_add_body_style() {
-
-		// Get registered styles.
-		$wp_styles = wp_styles();
-
-		$preloads = array();
-
-		// Preload Header CSS
-		$preloads['site-header-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-header-partial' );
-
-		// Preload Content CSS
-		$preloads['site-content-area-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-content-area-partial' );
-
-		// Preload Footer CSS
-		$preloads['site-footer-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-footer-partial' );
-
-		// Preload Comments CSS
-		if ( is_singular() && comments_open() ) {
-			$preloads['site-comment-partial'] = wprig_get_preload_stylesheet_uri( $wp_styles, 'site-comment-partial' );
-		}
-
-		// Output the preload markup in <head>.
-		foreach ( $preloads as $handle => $src ) {
-			echo '<link rel="preload" id="' . esc_attr( $handle ) . '-preload" href="' . esc_url( $src ) . '" as="style" />';
-			echo "\n";
-
-		}
+	return $page_ids;
 
 }

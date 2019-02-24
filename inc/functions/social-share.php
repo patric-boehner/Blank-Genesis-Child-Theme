@@ -36,15 +36,14 @@ function pb_add_social_share_options() {
 	}
 
 	// Setup Variables
-	$url        = urlencode( get_permalink() );
-	$url_short  = urlencode( wp_get_shortlink() );
-	$title      = urlencode( get_the_title() );
-	$title	    = str_replace( '%26%238217%3B', '%27', $title );
-	$name       = urlencode( get_bloginfo( 'name' ) );
+	$url        			= urlencode( get_permalink() );
+	$url_short  			= urlencode( wp_get_shortlink() );
+	$title						= esc_attr( strip_tags( get_the_title() ) );
+	$name       			= urlencode( get_bloginfo( 'name' ) );
 	$site_twitter     = esc_html( get_theme_mod( 'social_share_twitter_account' ) );
 	$author_twitter   = esc_html( get_the_author_meta( 'twitter' ) );
 
-	// If the post has no images, returen the default image (site logo)
+	// If the post hasp no images, returen the default image (site logo)
 	if ( !empty( genesis_get_image() ) ) {
 		$first_img = genesis_get_image( array(
 			'format' => 'url',
@@ -63,11 +62,11 @@ function pb_add_social_share_options() {
 
 	// Icons & Screen Reader
 
-	$facebook = pb_svg_icons_available( 'Facebook', 'facebook', '', '32px', '32px' );
-	$twitter = pb_svg_icons_available( 'Twitter', 'twitter', '', '32px', '32px' );
-	$linkedin	= pb_svg_icons_available( 'LinkedIn', 'linkedin', '', '32px', '32px' );
-	$pinterest = pb_svg_icons_available( 'Pinterest', 'pinterest', '', '32px', '32px' );
-	$mail	= pb_svg_icons_available( 'Email', 'envelope', '', '32px', '32px' );
+	$facebook = pb_svg_icons_available( 'Share on Facebook', 'facebook', '', '32px', '32px' );
+	$twitter = pb_svg_icons_available( 'Share on Twitter', 'twitter', '', '32px', '32px' );
+	$linkedin	= pb_svg_icons_available( 'Share on LinkedIn', 'linkedin', '', '32px', '32px' );
+	$pinterest = pb_svg_icons_available( 'Share on Pinterest', 'pinterest', '', '32px', '32px' );
+	$mail	= pb_svg_icons_available( 'Share via Email', 'envelope', '', '32px', '32px' );
 
 
 	// Output social share links

@@ -60,11 +60,13 @@
     display: inline-block; }
     .social-links-list li a,
     .author-contact-list li a {
+      line-height: 0;
+      display: block;
       padding: 0 20px 10px 0; }
 
 .sidebar {
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   margin-bottom: 40px; }
 
 .sidebar .widget {

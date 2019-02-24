@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="blankgenesischildtheme">Blank Genesis Child Theme</h1>
+
+<p><strong>Github project link:</strong> https://github.com/patric-boehner/Blank-Genesis-Child-Theme/</p>
+
+<p>This is the second version of my personal blank starter theme for use as a child of the <a href="http://www.studiopress.com/">Genesis Framework</a>. You are welcome to use this but be aware it is set up with my preferences and opinion in mind. The child theme uses <a href="https://incident57.com/codekit/">CodeKit</a> to compile and minify the JS and <a href="http://sass-lang.com/">SASS &amp; SCSS</a>. Your welcome to use any development tool you like, just delete the CodeKit files and take a look at the file organization to compile files correctly.</p>
+
+<p>Tested up to WordPress version 5.0.3 and Genesis version 2.8.1.</p>
+
+<h2 id="corefunctionalityplugin">Core Functionality Plugin</h2>
+
+<p>All website functions that should be independent of the theme should be laced in the theme&#8217;s accompanying Core Functionality Plugin. Most often this includes custom post types, custom taxonomies, custom widgets, and custom meta boxes.</p>
+
+<h2 id="opinionatedchanges">Opinionated Changes</h2>
+
+<ul>
+<li>There is no Genesis Theme Settings page. Studiopress is doing away with this page at some point in the future so why not help them along.
+-&gt; /inc/admin/genesis-metaboxes.php</li>
+<li>All Genesis theme settings options have been removed except update notifications. This can still be found in the customizer.
+-&gt; /inc/admin/customizer.php</li>
+<li>All in post setting have also been removed, with the exception of archive headings and descriptions.
+-&gt; /inc/admin/genesis-metaboxes.php</li>
+<li>All Genesis built in widgets have been removed, along with most core widgets.
+-&gt; /inc/admin/widgets.php</li>
+<li>Using the new genesis configuration API</li>
+<li>Supports Gutenberg with frontend and editor styles.</li>
+<li>Some Gutenberg blocks have been disabled by default.
+-&gt; /inc/admin/editor.php</li>
+<li>The theme includes LazyLoading that can be activated in customizer. The lazy loading function comes from the wprig project.
+-&gt; https://github.com/wprig/wprig</li>
+<li>The theme uses CSS progressive loading along with the Filamont Group LoadCSS polyfill. The progressive loading function comes from the wprig project.
+-&gt; /inc/functions/resource-loading.php</li>
+<li>The theme uses async and defer JS loading. The progressive handling comes from the wprig project.
+-&gt; /inc/functions/resource-loading.php</li>
+<li>Social share links and a cookie based top banner can be activated in customizer.
+-&gt; /inc/admin/customizer/partials</li>
+<li>Uses CSS Grid with float and percentage based fallback for the content area.</li>
+<li>The CSS has been simplified and all media queries have been moved inline.</li>
+</ul>
+
+<h2 id="fileorganization">File Organization</h2>
+
+<h3 id="corefiles">Core Files</h3>
+
+<p>Functions.php mainly pulls in all the files within the include folder. It also defines the child theme and setups the cache busting function used on sites with wp_debug() on.</p>
+
+<pre><code>config/
+	| - # All the changes to Genesis config settings. Seperates them out and keeps the inc/theme-setup.php file clean.
+inc/
+	| - admin		# All changes that affect the admin area or default theme settings loaded in functions.php.
+	| - functions		# Collection of functions that are applied global and don't fit within a default template
+	|			  file loaded in functions.php.
+	| - partials		# Collection of individual template parts used within the structure files or default template files.
+	| - structure		# Functions that directly relate to changes to the structure or the default templates files.
+	|			  This borrows from how Genesis organizes some of its files.
+	| - views		# Seperated html to keep code dry.
+	| - theme-assets.php # Deals with loading all CSS &amp; JS asset files.
+	| - theme-defaults.php # Sets the defaults for all Genesis config settings.
+	| - theme-setup.php 	# Setup of most Genesis specific filters and theme support options.
+</code></pre>
+
+<h3 id="sassorganization">Sass Organization</h3>
+
+<p>The core elements of the stylehseet can be found within the <code>_partials</code> folder. These partial files get pulled into the style sheets at the base of the <code>src-sass</code> folder.</p>
+
+<pre><code>assets/src-sass
+	| - _blocks
+		| - block-alignment.scss
+		| - block-buttons.scss
+		| - block-colors.scss
+		| - block-columns.scss
+		| - block-cover-image.scss
+		| - block-editor-base.sass
+		| - block-gallery.scss
+		| - block-quotes-captions.scss
+		| - block-text.scss
+		| - block-widgets.scss
+	| - _helpers
+		| - _variables.sass        # Global variables used in any sass file
+		| - _mixins.sass           # Global mixins used in any sass file
+	|
+	| - _partials                # All partial sass files used in other style sheets
+		| - accessibility.sass
+		| - base-style.sass
+		| - column-classes.sass
+		| - content-area.sass
+		| - forms.sass
+		| - layout.sass
+		| - navigation.sass
+		| - post-elements.sass
+		| - site-footer.sass
+		| - site-header.sass
+		| - widgets.sass
+	|  
+	| - _vendor                  # Third party scss used in other style sheets
+		| - icon-font.scss
+		| - reset.scss
+	|
+	| - editor-styles.sass       # Sass file for classic editor styles   -&gt; css/editor-style.min.css
+	| - global-styles.sass       # Sass file for frontend global styles  -&gt; css/global-style.min.css
+	| - gutenberg-styles.sass    # Sass file for gutenberg editor styles -&gt; css/gutenberg-style.min.css
+	| - login-styles.sass        # Sass file for login screen styles     -&gt; css/login-style.min.css
+	| - print.sass               # Sass file for media=&quot;print&quot; styles    -&gt; css/print.min.css
+</code></pre>
+
+<h3 id="jsorganization">JS Organization</h3>
+
+<pre><code>assets/src-js
+	| - _partials                 # All partial js files used in other js files
+		| - lazyload.js
+		| - responsive-menus.js
+		| - social-share-link.js
+		| - top-banner-aria.js
+		| - top-banner.js
+	| - _vendor                   # Third party js used in other js files
+		| - cssrelpreload.js
+		| - skip-link-fix.js
+	| - global.js                 # JS file for frontend global js	-&gt; js/global.min.js
+	| - lazyload.js
+	| - social-share.js
+	| - top-banner.js
+	| - cssrelpreload.js
+</code></pre>
+
+<h2 id="installationinstructions">Installation Instructions</h2>
+
+<ol>
+<li>Upload the child theme theme folder via FTP to your wp-content/themes/ directory. (The Genesis parent theme needs to be in the wp-content/themes/ directory as well.)</li>
+<li>Go to your WordPress dashboard and select Appearance.</li>
+<li>Activate the child theme.</li>
+</ol>
+
+<h2 id="license">License</h2>
+
+<p>License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html</p>
+
+<pre><code>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+</code></pre>
+
+<h2 id="creditsreferences">Credits &amp; References</h2>
+
+<p>A lot of people who have helped me learn and from whom I have borrowed code.</p>
+
+<ul>
+<li><strong>Tonya Mork</strong> https://github.com/hellofromtonya/</li>
+<li><strong>Bill Erickson</strong> http://www.billerickson.net/</li>
+<li><strong>WP Wrig</strong> https://github.com/wprig/wprig/</li>
+<li><strong>Matt Banks</strong> https://github.com/mattbanks/</li>
+<li><strong>SEO Themes</strong> https://github.com/seothemes/</li>
+<li><strong>Studio Press</strong> http://my.studiopress.com/snippets/</li>
+</ul>
+
+</body>
+</html>
+

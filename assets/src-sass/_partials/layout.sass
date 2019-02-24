@@ -17,7 +17,9 @@ input[type="search"]
 // Layout
 //**********************************************
 
-.site-inner .content-area,
+// .site-inner .content-area,
+.content-area,
+.footer-widgets-wrap,
 .wrap
 	margin: 0 auto
 	max-width: calc(1280px + (5% + 5%))
@@ -36,19 +38,35 @@ input[type="search"]
 	margin: 0
 
 
-.full-width-content .content-area
-	display: block
-	max-width: calc(880px + (5% + 5%))
+.full-width-content
+	.content
+		display: block
+		max-width: calc(880px + (5% + 5%))
+		padding: 0 5%
+		margin: 0 auto
+		margin-top: $base-margin
+
+		@include tablet
+			max-width: calc(800px + (5% + 5%))
+
+		@include phone
+			margin-left: 5%
+			margin-right: 5%
+			padding: 0
 
 
+// Mobile outer margin
 @include phone
-	.site-inner,
+	// .site-inner,
+	.content-area,
+	.footer-widgets-wrap,
 	.wrap
 		margin-left: 5%
 		margin-right: 5%
 
 
-.site-inner .content-area
+// .site-inner .content-area
+.content-area
 	margin-top: $base-margin
 	word-wrap: break-word
 
@@ -89,10 +107,6 @@ input[type="search"]
 				grid-area: sidebar
 
 
-.full-width-content .content
-	width: 100%
-
-
 // Widgets
 //**********************************************
 
@@ -116,6 +130,20 @@ input[type="search"]
 
 		.footer-widgets-1
 			margin-left: 0
+
+	@supports( display: grid )
+
+		.footer-widgets-wrap
+			display: grid
+			grid-template-columns: 1fr 1fr 1fr
+			grid-column-gap: $base-margin
+
+			.footer-widgets-1,
+			.footer-widgets-2,
+			.footer-widgets-3
+				width: 100%
+				margin: 0
+				float: none
 
 
 // Search Form

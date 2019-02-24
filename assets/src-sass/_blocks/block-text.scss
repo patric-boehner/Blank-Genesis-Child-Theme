@@ -1,0 +1,31 @@
+// Gutenberg text options
+// -- see editor-font-sizes in inc/theme-setup.php
+
+// Color defaults
+$sizes: (
+	'small': 1.6rem,
+	'regular': 2.0rem,
+	'large': 2.4rem,
+);
+
+
+// Loop through text sizes
+@each $name, $size in $sizes {
+
+	.has-#{$name}-font-size {
+		font-size: $size;
+	}
+
+}
+
+
+// Drop Caps
+.has-drop-cap:not(:focus)::first-letter {
+	margin: 0.02em 0.08em 0 -0.08em;
+}
+
+
+.has-larger-font-size.has-drop-cap:not(:focus)::first-letter,
+.has-small-font-size.has-drop-cap:not(:focus)::first-letter {
+	margin-right: 0.01em;
+}

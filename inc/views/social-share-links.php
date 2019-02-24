@@ -1,5 +1,5 @@
 <div class="social-share-links">
-	<h3><?php echo _e( 'Share this page', 'blank-child-theme' ) ?><span class="screen-reader-text"><?php _e( ' (Links open in new window)', 'blank-child-theme' ); ?></span></h3>
+	<h3><?php echo esc_html_e( 'Share this page', 'blank-child-theme' ) ?><span class="screen-reader-text"><?php _e( ' (Links open in new window)', 'blank-child-theme' ); ?></span></h3>
 	<ul class="social-links-list">
 		<?php if( get_theme_mod( 'social_share_facebook_option' ) ) : ?>
 			<li class="social-share-item">

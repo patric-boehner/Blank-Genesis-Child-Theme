@@ -19,9 +19,9 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_filter( 'user_contactmethods', 'custom_user_contact_methods' );
 function custom_user_contact_methods( $user_contact_method ) {
 
-	$user_contact_method['facebook'] = __( 'Facebook', 'blank-child-theme' );
-	$user_contact_method['twitter'] = __( 'Twitter', 'blank-child-theme' );
-	$user_contact_method['linkedin'] = __( 'LinkedIn', 'blank-child-theme' );
+	$user_contact_method['facebook'] = __( 'Facebook profile', 'blank-child-theme' );
+	$user_contact_method['twitter'] = __( 'Twitter profile', 'blank-child-theme' );
+	$user_contact_method['linkedin'] = __( 'LinkedIn profile', 'blank-child-theme' );
 
 	return $user_contact_method;
 

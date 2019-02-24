@@ -20,7 +20,7 @@ remove_action( 'genesis_loop_else', 'genesis_do_noposts' );
 add_action( 'genesis_loop_else', 'pb_alter_no_posts_output' );
 function pb_alter_no_posts_output() {
 
-	get_template_part( '/inc/partials/no', 'posts' );
+	get_template_part( '/inc/partials/no-posts' );
 
 }
 
@@ -32,14 +32,14 @@ function pb_filter_not_post_text( $text ) {
  if ( is_search() ) {
 
 	 $text = __( '<strong>Sorry, but nothing matched your search terms.</strong> Please try again with some different keywords.', 'blank-child-theme' );
-	 $text = $text . genesis_search_form();
+	 $text = $text . get_search_form();
 
  }
 
  if ( is_archive() ) {
 
 	 $text = __( '<strong>Sorry, but I don\'t have any posts on that subject.</strong> Please try searching for something else.', 'blank-child-theme' );
-	 $text = $text . genesis_search_form();
+	 $text = $text . get_search_form();
 
  }
 

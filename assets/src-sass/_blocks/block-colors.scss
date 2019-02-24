@@ -1,0 +1,30 @@
+// Gutenberg color options
+// -- see editor-color-palette in inc/theme-setup.php
+
+// Color defaults
+$colors: (
+	'blue': #004b96,
+	'green': #58AD69,
+	'orange': #FFBC49,
+	'white': #FFFFFF,
+);
+
+
+// Loop through text and background colors
+@each $name, $color in $colors {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+
+}
+
+
+// Backgrounds
+.has-background {
+	padding: 25px 30px;
+}

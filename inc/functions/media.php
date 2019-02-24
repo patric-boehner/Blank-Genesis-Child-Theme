@@ -43,3 +43,13 @@ function pb_default_attachment_display_settings() {
 //         'medium_large' => __( 'Medium Large' ),
 //     ) );
 // }
+
+
+// Change Default Gallery Image Size
+// add_filter( 'shortcode_atts_gallery', 'pb_change_gallery_atts', 10, 3 );
+// function pb_change_gallery_atts( $output, $pairs, $atts ) {
+//
+// 	$output['size'] = 'medium_thumbnail';
+// 	return $output;
+//
+// }

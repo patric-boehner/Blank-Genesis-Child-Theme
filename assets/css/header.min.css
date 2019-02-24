@@ -234,14 +234,17 @@
       margin-bottom: 0; } }
 
 .pagination {
-  clear: both;
-  margin: 40px 0; }
+  clear: both; }
 
-.post-pagination a {
-  display: block; }
+.archive-pagination {
+  margin-bottom: 40px; }
 
-.post-pagination .nav-title {
-  font-weight: 600; }
+.post-pagination {
+  margin-bottom: 40px; }
+  .post-pagination a {
+    display: block; }
+  .post-pagination .nav-title {
+    font-weight: 600; }
 
 .pagination-next {
   text-align: right;

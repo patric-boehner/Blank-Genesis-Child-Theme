@@ -1,13 +1,24 @@
 <?php
+
 /**
  * Lazy-load images.
  *
  * Modified version of Lazy Images module in Jetpack.
- *
  * @link https://github.com/Automattic/jetpack/blob/master/modules/lazy-images/lazy-images.php
  *
  * @package wprig
+ *
+ * @package Blank Child Theme
+ * @author  Patrick Boehner
+ * @license GPL-2.0+
+ * @link    http://example.com/
  */
+
+
+// If this file is called directly, abort.
+//**********************
+if( !defined( 'ABSPATH' ) ) exit;
+
 
 /**
  * Main function. Runs everything.

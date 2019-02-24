@@ -16,21 +16,38 @@
 		"oAP": "/.gitignore",
 		"oF": 0
 		},
-	"/assets/css/block-front-end.min.css": {
+	"/assets/css/block-editor-style.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/assets/css/block-front-end.min-min.css",
+		"oAP": "/assets/css/block-editor-style.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"/assets/css/block-front-end.min.css.map": {
+	"/assets/css/block-editor-style.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/assets/css/block-front-end.min.css.map",
+		"oAP": "/assets/css/block-editor-style.min.css.map",
+		"oF": 0
+		},
+	"/assets/css/block-front-style.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/assets/css/block-front-style.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/assets/css/block-front-style.min.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/assets/css/block-front-style.min.css.map",
 		"oF": 0
 		},
 	"/assets/css/comments.min.css": {
@@ -65,23 +82,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/assets/css/content-area.min.css.map",
-		"oF": 0
-		},
-	"/assets/css/editor-style.min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/css/editor-style.min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/assets/css/editor-style.min.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/assets/css/editor-style.min.css.map",
 		"oF": 0
 		},
 	"/assets/css/global-style.min.css": {
@@ -256,12 +256,12 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/assets/js/fitvids.min.js": {
+	"/assets/js/cssrelpreload.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/assets/js/min/fitvids.min-min.js",
+		"oAP": "/assets/js/cssrelpreload.min.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -271,7 +271,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/assets/js/min/global.min-min.js",
+		"oAP": "/assets/js/global.min.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -281,7 +281,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/assets/js/min/lazyload.min-min.js",
+		"oAP": "/assets/js/lazyload.min.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -291,7 +291,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/assets/js/min/social-share.min-min.js",
+		"oAP": "/assets/js/social-share.min.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -301,7 +301,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/assets/js/min/top-banner.min-min.js",
+		"oAP": "/assets/js/top-banner.min.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -311,7 +311,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "/assets/src-js/_partials/min/lazyload-min.js",
+		"oAP": "/assets/js/lazyload.min.js",
 		"oF": 2,
 		"sC": 1,
 		"tS": 0
@@ -322,16 +322,6 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/assets/js/responsive-menus.min.js",
-		"oF": 3,
-		"sC": 1,
-		"tS": 0
-		},
-	"/assets/src-js/_partials/skip-links-mobile-fix.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/assets/src-js/_partials/min/skip-links-mobile-fix-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -341,7 +331,17 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "/assets/src-js/_partials/min/social-share-link-min.js",
+		"oAP": "/assets/js/social-share-link.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/assets/src-js/_partials/top-banner-aria.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/assets/js/top-banner-aria.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -351,17 +351,17 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "/assets/src-js/_partials/min/top-banner-min.js",
+		"oAP": "/assets/js/top-banner.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"/assets/src-js/_vendor/fitvids.js": {
+	"/assets/src-js/_vendor/cssrelpreload.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "/assets/src-js/_vendor/min/fitvids-min.js",
+		"oAP": "/assets/js/cssrelpreload.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -373,14 +373,24 @@
 		"oAP": "/assets/src-js/_vendor/LICENSE",
 		"oF": 0
 		},
-	"/assets/src-js/fitvids.js": {
+	"/assets/src-js/_vendor/skip-link-fix.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/assets/js/skip-link-fix.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"/assets/src-js/cssrelpreload.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "/assets/js/fitvids.min.js",
+		"oAP": "/assets/js/cssrelpreload.min.js",
 		"oF": 2,
-		"sC": 1,
+		"sC": 3,
 		"tS": 0
 		},
 	"/assets/src-js/global.js": {
@@ -389,7 +399,7 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/assets/js/global.min.js",
-		"oF": 2,
+		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
@@ -409,7 +419,7 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/assets/js/social-share.min.js",
-		"oF": 3,
+		"oF": 2,
 		"sC": 1,
 		"tS": 0
 		},
@@ -430,6 +440,136 @@
 		"oAP": "/assets/src-sass/.sass-cache/7633b87c3861dc72eb6afa47ef36d66c77111e14/style.scssc",
 		"oF": 0
 		},
+	"/assets/src-sass/_blocks/block-alignment.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-alignment.min.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-buttons.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-buttons.min.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-colors.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-colors.min.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-columns.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-columns.min.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-cover-image.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-cover-image.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-editor-base.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-editor-base.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-gallery.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-gallery.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-quotes-captions.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-quotes-captions.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-text.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-text.min.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_blocks/block-widgets.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/block-widgets.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/assets/src-sass/_helpers/mixins.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -438,7 +578,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/mixins.css",
+		"oAP": "/assets/css/mixins.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -451,7 +591,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/variables.css",
+		"oAP": "/assets/css/variables.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -464,7 +604,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/accessibility.css",
+		"oAP": "/assets/css/accessibility.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -477,33 +617,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/base-style.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/assets/src-sass/_partials/block-back-end.sass": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/src-sass/css/block-back-end.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/assets/src-sass/_partials/block-front-end.sass": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/src-sass/css/block-front-end.css",
+		"oAP": "/assets/css/base-style.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -516,7 +630,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/column-classes.css",
+		"oAP": "/assets/css/column-classes.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -529,7 +643,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/comments.css",
+		"oAP": "/assets/css/comments.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -542,7 +656,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/content-area.css",
+		"oAP": "/assets/css/content-area.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -555,7 +669,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/forms.css",
+		"oAP": "/assets/css/forms.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -568,7 +682,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/layout.css",
+		"oAP": "/assets/css/layout.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -581,7 +695,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/navigation.css",
+		"oAP": "/assets/css/navigation.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -594,7 +708,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/post-elements.css",
+		"oAP": "/assets/css/post-elements.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -607,7 +721,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/site-footer.css",
+		"oAP": "/assets/css/site-footer.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -620,7 +734,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/site-header.css",
+		"oAP": "/assets/css/site-header.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -633,7 +747,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/widgets.css",
+		"oAP": "/assets/css/widgets.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -646,7 +760,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/icon-font.css",
+		"oAP": "/assets/css/icon-font.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -659,12 +773,25 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/src-sass/css/reset.css",
+		"oAP": "/assets/css/reset.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"/assets/src-sass/block-front-end.sass": {
+	"/assets/src-sass/block-editor-style.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/assets/css/block-editor-style.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/block-front-style.sass": {
 		"aP": 1,
 		"bl": 0,
 		"dP": 10,
@@ -672,7 +799,7 @@
 		"ft": 2,
 		"ma": 1,
 		"oA": 0,
-		"oAP": "/assets/css/block-front-end.min.css",
+		"oAP": "/assets/css/block-front-style.min.css",
 		"oF": 2,
 		"oS": 3,
 		"uL": 1
@@ -701,19 +828,6 @@
 		"oAP": "/assets/css/content-area.min.css",
 		"oF": 2,
 		"oS": 0,
-		"uL": 1
-		},
-	"/assets/src-sass/editor-style.sass": {
-		"aP": 1,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 2,
-		"ma": 1,
-		"oA": 0,
-		"oAP": "/assets/css/editor-style.min.css",
-		"oF": 2,
-		"oS": 3,
 		"uL": 1
 		},
 	"/assets/src-sass/global-style.sass": {
@@ -781,6 +895,62 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/config/accessibility.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/config/accessibility.php",
+		"oF": 0
+		},
+	"/config/customizer-theme-settings.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/config/customizer-theme-settings.php",
+		"oF": 0
+		},
+	"/config/editor-color-palette.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/config/editor-color-palette.php",
+		"oF": 0
+		},
+	"/config/editor-font-sizes.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/config/editor-font-sizes.php",
+		"oF": 0
+		},
+	"/config/html5.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/config/html5.php",
+		"oF": 0
+		},
+	"/config/layouts.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/config/layouts.php",
+		"oF": 0
+		},
+	"/config/menus.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/config/menus.php",
+		"oF": 0
+		},
+	"/config/structural-wraps.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/config/structural-wraps.php",
+		"oF": 0
+		},
 	"/front-page.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -830,6 +1000,13 @@
 		"oAP": "/inc/admin/dashboard.php",
 		"oF": 0
 		},
+	"/inc/admin/editor.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/inc/admin/editor.php",
+		"oF": 0
+		},
 	"/inc/admin/genesis-metaboxes.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -870,6 +1047,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/inc/admin/widgets.php",
+		"oF": 0
+		},
+	"/inc/functions/autoptimize.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/inc/functions/autoptimize.php",
 		"oF": 0
 		},
 	"/inc/functions/breadcrumbs.php": {
@@ -933,6 +1117,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/inc/functions/post-thumbnail-cache.php",
+		"oF": 0
+		},
+	"/inc/functions/resource-loading.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/inc/functions/resource-loading.php",
 		"oF": 0
 		},
 	"/inc/functions/rss.php": {
@@ -1153,6 +1344,13 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/search.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/search.php",
+		"oF": 0
+		},
 	"/style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1191,7 +1389,7 @@
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerEnableIEGrid": 0,
@@ -2592,7 +2790,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http://localhost:8888",
+	"externalServerAddress": "https://child-theme-development.local",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
@@ -3004,11 +3202,11 @@
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*-min.js",
-		"autoOutputPathRelativePath": "/min",
+		"autoOutputPathFilenamePattern": "*.min.js",
+		"autoOutputPathRelativePath": "/assets/js",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 2,
+		"autoOutputPathStyle": 1,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"syntaxCheckerStyle": 1,
@@ -3104,11 +3302,11 @@
 		},
 	"languageDefaultsSASS": {
 		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.css",
-		"autoOutputPathRelativePath": "../css",
+		"autoOutputPathFilenamePattern": "*.min.css",
+		"autoOutputPathRelativePath": "/assets/css",
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
-		"autoOutputPathStyle": 2,
+		"autoOutputPathStyle": 1,
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,

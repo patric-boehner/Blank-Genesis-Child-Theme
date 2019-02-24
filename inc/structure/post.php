@@ -69,6 +69,6 @@ function pb_customize_entry_pagination() {
 		return;
 	}
 
-	get_template_part( '/inc/partials/post', 'pagination' );
+	get_template_part( '/inc/partials/post-pagination' );
 
 }

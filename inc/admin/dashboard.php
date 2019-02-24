@@ -15,13 +15,20 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Remove welcome dashboard
+remove_action( 'welcome_panel', 'wp_welcome_panel' );
+
+
 // Remove dashboard meta boxes
 add_action( 'wp_dashboard_setup', 'pb_remove_dashboard_widgets' );
 function pb_remove_dashboard_widgets() {
 
-	global $wp_meta_boxes;
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	// remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+	// remove_meta_box( 'monsterinsights_reports_widget', 'dashboard', 'normal' );
+	// remove_meta_box( 'woocommerce_dashboard_status', 'dashboard', 'normal' );
+	remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
 
 }

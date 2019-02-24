@@ -1,0 +1,46 @@
+// Block Alignment
+
+.full-width-content {
+
+	.alignwide,
+	.alignfull {
+		margin: 30px calc(49% - 50vw);
+		max-width: 100vw;
+		width: 100vw;
+	}
+
+
+	@include above-tablet {
+
+		// For the negative left/right margin, subtract page width from the content width and divide by two
+		.alignwide {
+			margin: 30px calc( ( 760px - 1023px ) / 2  );
+			max-width: 1023px;
+			width: 1023px;
+		}
+
+	}
+
+}
+
+
+.wp-block-button.alignleft,
+.wp-block-cover.alignleft,
+.wp-block-image .alignleft {
+	margin-right: 2em;
+}
+
+
+.wp-block-button.alignright,
+.wp-block-cover.alignright,
+.wp-block-image .alignright {
+	margin-left: 2em;
+}
+
+
+.wp-block-image.alignwide,
+.wp-block-image.alignfull,
+.wp-block-embed.alignwide,
+.wp-block-embed.alignfull {
+	margin-bottom: 30px;
+}

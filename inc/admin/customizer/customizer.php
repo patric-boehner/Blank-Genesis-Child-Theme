@@ -24,14 +24,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_action( 'customize_register', 'pb_remove_css_section', 15 );
 function pb_remove_css_section( $wp_customize ) {
 
-	// $wp_customize->remove_control( 'blog_title' );
-	$wp_customize->remove_section( 'genesis_header' );
-	$wp_customize->remove_section( 'genesis_comments' );
-	$wp_customize->remove_section( 'genesis_layout' );
-	$wp_customize->remove_section( 'genesis_adsense' );
-	$wp_customize->remove_section( 'genesis_breadcrumbs' );
-	$wp_customize->remove_section( 'genesis_archives' );
-	$wp_customize->remove_section( 'genesis_scripts' );
+	$wp_customize->remove_control( 'blog_title' );
 	$wp_customize->remove_panel( 'genesis-seo' );
 	$wp_customize->remove_section( 'custom_css' );
 

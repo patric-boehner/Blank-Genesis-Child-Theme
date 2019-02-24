@@ -1,0 +1,144 @@
+// Regular content width.
+// 702px + 27px to match paragraph width on front-end and editor.
+
+.wp-block
+	max-width: 732px
+
+
+.wp-block[data-align="wide"]
+	max-width: 1092px
+
+
+.wp-block[data-align="full"]
+	max-width: none
+
+
+// Base Style
+
+.edit-post-visual-editor.editor-styles-wrapper
+
+	background-color: $white
+	color: $primary-color
+	font-family: $primary-font
+	font-size: 20px
+	font-weight: $normal
+	line-height: 1.625
+	margin: 0
+
+	p
+		font-size: 20px
+
+
+	p,
+	ul,
+	ol,
+	dl
+		line-height: 1.625
+
+
+	a
+		color: $highlight-color
+		text-decoration: underline
+		text-decoration-skip: ink
+		transition: all 0.25s ease-in-out
+
+		&:focus,
+		&:hover
+			color: $primary-color
+			text-decoration: none
+
+
+	b,
+	strong
+		font-weight: $bold
+
+
+	ol,
+	ul
+		list-style: none
+		margin: 0
+		padding: 0
+
+
+	code
+		padding: 2px 4px
+		white-space: nowrap
+
+
+	mark
+		background: #ddd
+		color: #000
+
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+		font-family: $primary-font
+		font-weight: $bold
+		line-height: 1.2
+		margin: 0 0 15px 0
+
+		a
+			color: $primary-color
+			text-decoration: none
+
+			&:hover,
+			&:focus
+				color: $highlight-color
+
+
+	h1
+		font-size: 36px
+
+
+	h2
+		font-size: 30px
+
+
+	h3
+		font-size: 24px
+
+
+	h4
+		font-size: 20px
+
+
+	h5
+		font-size: 18px
+
+
+	h6
+		font-size: 16px
+
+
+	.editor-post-title__block .editor-post-title__input
+		font-family: $primary-font
+		font-size: 30px
+		font-weight: $bold
+		line-height: 1.2
+
+
+	.has-drop-cap:not(:focus)::first-letter
+		margin: 0.02em 0.08em 0 -0.08em
+
+
+	.has-larger-font-size.has-drop-cap:not(:focus)::first-letter,
+	.has-small-font-size.has-drop-cap:not(:focus)::first-letter
+		margin-right: 0.01em
+
+
+	.wp-block[data-align="center"] .wp-block-latest-posts
+		text-align: center
+
+
+	.wp-block[data-align="full"] .wp-block-latest-posts
+		padding: 0 30px
+
+
+	// Columns block
+
+	.wp-block[data-align="full"] .wp-block-columns > .editor-inner-blocks
+		padding: 0 30px

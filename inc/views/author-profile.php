@@ -1,16 +1,15 @@
 <section class="author-box" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+  <h2 class="screen-reader-text"><?php esc_html_e( 'Author Profile', 'blank-child-theme' ); ?></h2>
     <div class="author-avatar">
       <?php echo get_avatar( get_the_author_meta( 'email' ) ); ?>
     </div>
     <div class="author-box-content">
-      <h2 class="author-box-title" itemprop="name">
-        <?php the_author_meta( 'display_name' ); ?>
-      </h2>
+      <h3 class="author-box-title" itemprop="name"><?php the_author_meta( 'display_name' ); ?></h3>
       <p itemprop="description">
         <?php the_author_meta( 'description' ); ?>
       </p>
       <?php if ( !empty( $facebook_link ) || !empty( $twitter_link ) || !empty( $linked_link ) ): ?>
-        <h3 class="screen-reader-text"><?php esc_html_e( 'Author Contact Methods', 'blank-child-theme' ); ?></h3>
+        <h4 class="screen-reader-text"><?php esc_html_e( 'Author Contact Methods', 'blank-child-theme' ); ?></h4>
         <ul class="author-contact-list">
           <?php if( !empty( $facebook_link ) ): ?>
           <li>

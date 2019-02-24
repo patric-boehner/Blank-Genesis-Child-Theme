@@ -1,0 +1,58 @@
+// Gutenberg color options
+// -- see editor-color-palette in inc/theme-setup.php
+
+// Color defaults
+$colors: (
+	'blue': #004b96,
+	'green': #58AD69,
+	'orange': #FFBC49,
+	'white': #FFFFFF,
+);
+
+
+// Button block
+.wp-block-button__link {
+	border-radius: 0;
+	font-weight: $bold;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:not(.has-text-color) {
+		color: white;
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	&:not(.has-background) {
+		$default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
+		background-color: $default;
+
+		&:hover,
+		&:focus {
+			background-color: darken( $default, 20% );
+		}
+	}
+
+	@each $name, $color in $colors {
+
+		&.has-#{$name}-color:hover,
+		&.has-#{$name}-color:focus {
+			color: $color;
+		}
+
+		&.has-#{$name}-background-color:hover,
+		&.has-#{$name}-background-color:focus {
+			background-color: darken( $color, 20% );
+		}
+	}
+
+}
+
+
+.wp-block-button__link.has-background {
+		padding: 12px 24px;
+}

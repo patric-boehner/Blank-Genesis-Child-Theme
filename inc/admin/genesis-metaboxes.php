@@ -38,11 +38,6 @@ remove_action( 'show_user_profile', 'genesis_user_options_fields' );
 remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
 
 
-/**
- * Genesis SEO settings:
- * For refrance, see /genesis/lib/functions/seo.php
- */
-
 // Remove Genesis in-post SEO Settings
 remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
 

@@ -2,9 +2,9 @@
 
 **Github project link:** https://github.com/patric-boehner/Blank-Genesis-Child-Theme/
 
-This is the second version of my personal blank starter theme for use as a child of the [Genesis Framework](http://www.studiopress.com/). Your welcome to use this but be aware it is set up with my preferences and opinion in mind. The child theme uses [CodeKit](https://incident57.com/codekit/) to compile and minify the JS and [SASS](http://sass-lang.com/). Your welcome to use any development tool you like, just deleate the CodeKit files and take a look at the file organization to compile files correctly.
+This is the second version of my personal blank starter theme for use as a child of the [Genesis Framework](http://www.studiopress.com/). You are welcome to use this but be aware it is set up with my preferences and opinion in mind. The child theme uses [CodeKit](https://incident57.com/codekit/) to compile and minify the JS and [SASS & SCSS](http://sass-lang.com/). Your welcome to use any development tool you like, just delete the CodeKit files and take a look at the file organization to compile files correctly.
 
-Tested up to WordPress version 4.9.4 and Genesis version 2.6.1.
+Tested up to WordPress version 5.0.3 and Genesis version 2.8.1.
 
 ## Core Functionality Plugin
 
@@ -18,8 +18,20 @@ All website functions that should be independent of the theme  should be laced i
 	-> /inc/admin/customizer.php
 - All in post setting have also been removed, with the exception of archive headings and descriptions.
 	-> /inc/admin/genesis-metaboxes.php
-- All Genesis built in widgets have been removed, along with a handful of core widgets.
+- All Genesis built in widgets have been removed, along with most core widgets.
 	-> /inc/admin/widgets.php
+- Using the new genesis configuration API
+- Supports Gutenberg with frontend and editor styles.
+- Some Gutenberg blocks have been disabled by default.
+	-> /inc/admin/editor.php
+- The theme includes LazyLoading that can be activated in customizer. The lazy loading function comes from the wprig project.
+	-> https://github.com/wprig/wprig
+- The theme uses CSS progressive loading along with the Filamont Group LoadCSS polyfill. The progressive loading function comes from the wprig project.
+	-> /inc/functions/resource-loading.php
+- The theme uses async and defer JS loading. The progressive handling comes from the wprig project.
+	-> /inc/functions/resource-loading.php
+- Social share links and a cookie based top banner can be activated in customizer.
+	-> /inc/admin/customizer/partials
 - Uses CSS Grid with float and percentage based fallback for the content area.
 - The CSS has been simplified and all media queries have been moved inline.
 
@@ -30,6 +42,8 @@ All website functions that should be independent of the theme  should be laced i
 Functions.php mainly pulls in all the files within the include folder. It also defines the child theme and setups the cache busting function used on sites with wp_debug() on.
 
 ```
+config/
+	| - # All the changes to Genesis config settings. Seperates them out and keeps the inc/theme-setup.php file clean.
 inc/
 	| - admin		# All changes that affect the admin area or default theme settings loaded in functions.php.
 	| - functions		# Collection of functions that are applied global and don't fit within a default template
@@ -38,6 +52,8 @@ inc/
 	| - structure		# Functions that directly relate to changes to the structure or the default templates files.
 	|			  This borrows from how Genesis organizes some of its files.
 	| - views		# Seperated html to keep code dry.
+	| - theme-assets.php # Deals with loading all CSS & JS asset files.
+	| - theme-defaults.php # Sets the defaults for all Genesis config settings.
 	| - theme-setup.php 	# Setup of most Genesis specific filters and theme support options.
 ```
 
@@ -47,6 +63,17 @@ The core elements of the stylehseet can be found within the `_partials` folder. 
 
 ```
 assets/src-sass
+	| - _blocks
+		| - block-alignment.scss
+		| - block-buttons.scss
+		| - block-colors.scss
+		| - block-columns.scss
+		| - block-cover-image.scss
+		| - block-editor-base.sass
+		| - block-gallery.scss
+		| - block-quotes-captions.scss
+		| - block-text.scss
+		| - block-widgets.scss
 	| - _helpers
 		| - _variables.sass        # Global variables used in any sass file
 		| - _mixins.sass           # Global mixins used in any sass file
@@ -80,13 +107,19 @@ assets/src-sass
 ```
 assets/src-js
 	| - _partials                 # All partial js files used in other js files
-		| - responsive-menu.js
-		| - ...
-		|
+		| - lazyload.js
+		| - responsive-menus.js
+		| - social-share-link.js
+		| - top-banner-aria.js
+		| - top-banner.js
 	| - _vendor                   # Third party js used in other js files
-		| - ...
-		|
+		| - cssrelpreload.js
+		| - skip-link-fix.js
 	| - global.js                 # JS file for frontend global js	-> js/global.min.js
+	| - lazyload.js
+	| - social-share.js
+	| - top-banner.js
+	| - cssrelpreload.js
 ```
 
 ## Installation Instructions
@@ -110,8 +143,9 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 A lot of people who have helped me learn and from whom I have borrowed code.
 
-- **Tonya Mork** https://github.com/hellofromtonya
+- **Tonya Mork** https://github.com/hellofromtonya/
 - **Bill Erickson** http://www.billerickson.net/
+- **WP Wrig** https://github.com/wprig/wprig/
 - **Matt Banks** https://github.com/mattbanks/
 - **SEO Themes** https://github.com/seothemes/
 - **Studio Press** http://my.studiopress.com/snippets/  

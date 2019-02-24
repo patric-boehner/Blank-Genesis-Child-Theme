@@ -20,8 +20,8 @@ if( !defined( 'ABSPATH' ) ) exit;
  * Custom search form
  *
  */
-add_filter( 'genesis_search_form', 'ea_search_form' );
-function ea_search_form() {
+add_filter( 'get_search_form', 'pb_search_form' );
+function pb_search_form() {
 
 	$label_text = esc_html__( 'Search for', 'blank-child-theme' );
 	$placeholder_text = esc_html__( 'Search', 'blank-child-theme' );
