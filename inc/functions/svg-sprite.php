@@ -30,7 +30,7 @@ add_action( 'wp_footer', 'pb_include_svg_icons', 9999 );
 function pb_include_svg_icons() {
 
 	// Define SVG sprite file.
-	$svg_icons = get_stylesheet_directory()  . '/assets/images/svg-sprite-sheet.svg';
+	$svg_icons = get_stylesheet_directory()  . '/assets/icons/svg-sprite-sheet.svg';
 
 	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {

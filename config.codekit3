@@ -169,36 +169,25 @@
 		"oAP": "/assets/css/site-footer.min.css.map",
 		"oF": 0
 		},
-	"/assets/icons/icomoon.eot": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/assets/icons/icomoon.eot",
-		"oF": 0
-		},
-	"/assets/icons/icomoon.svg": {
+	"/assets/icons/chevron-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "/assets/icons/icomoon.svg",
+		"oAP": "/assets/icons/chevron-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/assets/icons/icomoon.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/assets/icons/icomoon.ttf",
-		"oF": 0
-		},
-	"/assets/icons/icomoon.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/assets/icons/icomoon.woff",
-		"oF": 0
+	"/assets/icons/menu.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/assets/icons/menu.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"/assets/icons/selection.json": {
 		"ft": 524288,
@@ -207,6 +196,16 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"/assets/icons/svg-sprite-sheet.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/assets/icons/svg-sprite-sheet.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"/assets/images/favicon.ico": {
 		"cB": 0,
@@ -241,16 +240,6 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "/assets/images/placeholder.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"/assets/images/svg-sprite-sheet.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/assets/images/svg-sprite-sheet.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -752,15 +741,28 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/assets/src-sass/_vendor/icon-font.scss": {
+	"/assets/src-sass/_vendor/icons.sass": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
-		"ft": 4,
+		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/assets/css/icon-font.min.css",
+		"oAP": "/assets/css/icons.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/assets/src-sass/_vendor/icons_COPY.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/assets/css/icons_COPY.min.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1313,6 +1315,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/LICENSE",
+		"oF": 0
+		},
+	"/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/README.html",
 		"oF": 0
 		},
 	"/README.md": {

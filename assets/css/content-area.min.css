@@ -72,6 +72,9 @@
 .sidebar .widget {
   background-color: #fff;
   padding: 40px; }
+  .sidebar .widget ul,
+  .sidebar .widget ol {
+    margin-left: 0; }
 
 .icon-text {
   position: relative; }
