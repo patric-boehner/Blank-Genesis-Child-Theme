@@ -31,8 +31,8 @@ function sp_post_info_filter( $post_info ) {
 
 
 // Add social share to entry footer
-add_action( 'genesis_entry_footer', 'pb_social_share_in_foonter' );
-function pb_social_share_in_foonter() {
+add_action( 'genesis_entry_footer', 'pb_social_share_in_footer' );
+function pb_social_share_in_footer() {
 
 	if ( ! is_singular( 'post' ) ) {
 		return;

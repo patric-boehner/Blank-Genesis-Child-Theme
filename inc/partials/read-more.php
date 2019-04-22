@@ -22,4 +22,4 @@ $link_text = esc_html__( 'Continue Reading', 'blank-child-theme' );
 
 $screen_reader = '<span class="screen-reader-text">: ' .esc_html( get_the_title() ). '</span>';
 
-$continue_reading = $end_of_line . '<a class="more-link" href="' .esc_url( get_permalink() ). '" itemprop="url">' . $link_text . $screen_reader . '</a>';
+$continue_reading = $end_of_line . '<a class="more-link" href="' .esc_url( get_permalink() ). '">' . $link_text . $screen_reader . '</a>';

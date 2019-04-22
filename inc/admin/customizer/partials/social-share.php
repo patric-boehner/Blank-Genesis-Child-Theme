@@ -23,7 +23,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 // Add Social Share Section
 
-$wp_customize->add_section(
+{$wp_customize->add_section(
   'ct_social_share_settings' ,
   array(
     'title'      => __( 'Social Share Links', 'blank-child-theme' ),
@@ -167,10 +167,9 @@ $wp_customize->add_control(
   )
 );
 
-
-// Set twitter handle
+// Title
 $wp_customize->add_setting(
-  'social_share_twitter_account',
+  'network_title',
   array(
     'default' => '',
     'transport' => 'refresh',
@@ -178,13 +177,72 @@ $wp_customize->add_setting(
 );
 
 
-// Add text box
+$wp_customize->add_control(
+  'network_title',
+  array(
+    'label'         => __( 'Additional Settings', 'blank-child-theme' ),
+  	'section'       => 'ct_social_share_settings',
+    'type'          => 'hidden',
+    'description'   => __( 'Customize the options for sharing on Twitter and via email.', 'blank-child-theme' ),
+  )
+);
+
+
+// Set twitter handle
+$wp_customize->add_setting(
+  'social_share_twitter_account',
+  array(
+    'default'   => '',
+    'transport' => 'refresh',
+  )
+);
+
 $wp_customize->add_control(
   'social_share_twitter_account',
   array(
     'label'       => __( 'Twitter Handle', 'blank-child-theme' ),
     'section'     => 'ct_social_share_settings',
     'type'        => 'text',
-    'description' => __( 'Add your Twitter handle without the @ symbol. If left empty, the post author\'s handle will be used.', 'blank-child-theme' ),
+    'description' => '',
   )
 );
+
+
+  // Set Email Subject
+  $wp_customize->add_setting(
+    'social_share_email_subject',
+    array(
+      'default'   => __( 'Shared Post:', 'blank-child-theme' ),
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    'social_share_email_subject',
+    array(
+      'label'       => __( 'Email Subject', 'blank-child-theme' ),
+      'section'     => 'ct_social_share_settings',
+      'type'        => 'text',
+      'description' => __( 'The post title will be appended to the subject.', 'blank-child-theme' ),
+    )
+  );
+
+
+  // Set Email Body
+  $wp_customize->add_setting(
+    'social_share_email_body',
+    array(
+      'default'   => __( 'I want to share this post with you. Here is the link to the article:', 'blank-child-theme' ),
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    'social_share_email_body',
+    array(
+      'label'       => __( 'Email Subject', 'blank-child-theme' ),
+      'section'     => 'ct_social_share_settings',
+      'type'        => 'textarea',
+      'description' => __( 'The post url will be appended to the body text you add.', 'blank-child-theme' ),
+    )
+  );}

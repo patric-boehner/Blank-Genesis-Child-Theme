@@ -41,7 +41,9 @@ function pb_add_social_share_options() {
 	$title						= esc_attr( strip_tags( get_the_title() ) );
 	$name       			= urlencode( get_bloginfo( 'name' ) );
 	$site_twitter     = esc_html( get_theme_mod( 'social_share_twitter_account' ) );
-	$author_twitter   = esc_html( get_the_author_meta( 'twitter' ) );
+	// $author_twitter   = esc_html( get_the_author_meta( 'twitter' ) );
+	$email_subject		= esc_html( get_theme_mod( 'social_share_email_subject' ) );
+	$email_body				= esc_html( get_theme_mod( 'social_share_email_body' ) );
 
 	// If the post hasp no images, returen the default image (site logo)
 	if ( !empty( genesis_get_image() ) ) {
@@ -57,7 +59,20 @@ function pb_add_social_share_options() {
 	if ( get_theme_mod( 'social_share_twitter_account' )  ) {
 	  $twitter_user	 = '@' . urlencode( $site_twitter );
 	} else {
-	  $twitter_user	 = '';
+		$twitter_user	 = '';
+	}
+
+	// Email output
+	if ( get_theme_mod( 'social_share_email_subject' ) ) {
+		$subject = urlencode( $email_subject ) . '&nbsp;' .  $name;
+	} else {
+		$subject = $name;
+	}
+
+	if ( get_theme_mod( 'social_share_email_body' ) ) {
+		$body = urlencode( $email_body ) . '&nbsp;' .  $url;
+	} else {
+		$body = $url;
 	}
 
 	// Icons & Screen Reader

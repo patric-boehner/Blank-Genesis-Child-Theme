@@ -19,9 +19,22 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_filter( 'user_contactmethods', 'custom_user_contact_methods' );
 function custom_user_contact_methods( $user_contact_method ) {
 
-	$user_contact_method['facebook'] = __( 'Facebook profile', 'blank-child-theme' );
-	$user_contact_method['twitter'] = __( 'Twitter profile', 'blank-child-theme' );
-	$user_contact_method['linkedin'] = __( 'LinkedIn profile', 'blank-child-theme' );
+	if ( genesis_detect_seo_plugins() ) {
+
+		unset( $user_contact_method[ 'myspace' ] );
+		unset( $user_contact_method[ 'tumblr' ] );
+		unset( $user_contact_method[ 'wikipedia' ] );
+
+		return $user_contact_method;
+
+	}
+
+	$user_contact_method[ 'facebook' ] = __( 'Facebook Profile', 'blank-child-theme' );
+	$user_contact_method[ 'twitter' ] = __( 'Twitter Username', 'blank-child-theme' );
+	$user_contact_method[ 'instagram' ] = __( 'Instagram Profile', 'blank-child-theme' );
+	$user_contact_method[ 'youtube' ] = __( 'Youtube Profile', 'blank-child-theme' );
+	$user_contact_method[ 'linkedin' ] = __( 'LinkedIn Profile', 'blank-child-theme' );
+	$user_contact_method[ 'soundcloud' ] = __( 'SoundCloud Profile', 'blank-child-theme' );
 
 	return $user_contact_method;
 

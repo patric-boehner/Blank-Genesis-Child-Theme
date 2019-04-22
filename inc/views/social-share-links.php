@@ -23,7 +23,7 @@
 		<?php endif; ?>
 		<?php if( get_theme_mod( 'social_share_email_option' ) ) : ?>
 			<li class="social-share-item">
-				<a href="mailto:?subject=<?php echo $name; ?>&body=<?php echo $name; ?>&nbsp;blog&nbsp;post:&nbsp;<?php echo $title; ?>&nbsp;&ndash;&nbsp;<?php echo $url; ?>" class="social-link mail" target="_blank" rel="noopener noreferrer"><?php echo $mail; ?></a>
+				<a href="mailto:?subject=<?php echo $subject; ?>&body=<?php echo $body; ?>" class="social-link mail" target="_blank" rel="noopener noreferrer"><?php echo $mail; ?></a>
 			</li>
 		<?php endif; ?>
 	</ul>
