@@ -7,11 +7,12 @@
 		"uuidString": "8760B3BA-01A6-4BC7-B32E-26A56862918E"
 		}
 	],
-"creatorBuild": "28905",
+"creatorBuild": "29156",
 "files": {
 	"/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/.gitignore",
 		"oF": 0
@@ -29,6 +30,7 @@
 	"/assets/css/block-editor-style.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/block-editor-style.min.css.map",
 		"oF": 0
@@ -46,6 +48,7 @@
 	"/assets/css/block-front-style.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/block-front-style.min.css.map",
 		"oF": 0
@@ -63,6 +66,7 @@
 	"/assets/css/comments.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/comments.min.css.map",
 		"oF": 0
@@ -80,6 +84,7 @@
 	"/assets/css/content-area.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/content-area.min.css.map",
 		"oF": 0
@@ -97,6 +102,7 @@
 	"/assets/css/global-style.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/global-style.min.css.map",
 		"oF": 0
@@ -114,6 +120,7 @@
 	"/assets/css/header.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/header.min.css.map",
 		"oF": 0
@@ -131,6 +138,7 @@
 	"/assets/css/login-style.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/login-style.min.css.map",
 		"oF": 0
@@ -148,6 +156,7 @@
 	"/assets/css/print.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/print.min.css.map",
 		"oF": 0
@@ -165,6 +174,7 @@
 	"/assets/css/site-footer.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/site-footer.min.css.map",
 		"oF": 0
@@ -210,6 +220,7 @@
 	"/assets/images/favicon.ico": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/images/favicon.ico",
 		"oF": 0
@@ -246,6 +257,7 @@
 		"prP": 0
 		},
 	"/assets/js/cssrelpreload.min.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -256,6 +268,7 @@
 		"tS": 0
 		},
 	"/assets/js/global.min.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -266,6 +279,7 @@
 		"tS": 0
 		},
 	"/assets/js/lazyload.min.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -276,6 +290,7 @@
 		"tS": 0
 		},
 	"/assets/js/social-share.min.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -286,6 +301,7 @@
 		"tS": 0
 		},
 	"/assets/js/top-banner.min.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -296,6 +312,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/_partials/lazyload.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -306,6 +323,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/_partials/responsive-menus.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -316,6 +334,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/_partials/social-share-link.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -326,6 +345,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/_partials/top-banner-aria.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -336,6 +356,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/_partials/top-banner.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -346,6 +367,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/_vendor/cssrelpreload.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -358,11 +380,13 @@
 	"/assets/src-js/_vendor/LICENSE": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/src-js/_vendor/LICENSE",
 		"oF": 0
 		},
 	"/assets/src-js/_vendor/skip-link-fix.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -373,6 +397,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/cssrelpreload.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -383,6 +408,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/global.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -393,6 +419,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/lazyload.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
@@ -403,6 +430,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/social-share.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -413,6 +441,7 @@
 		"tS": 0
 		},
 	"/assets/src-js/top-banner.js": {
+		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -425,6 +454,7 @@
 	"/assets/src-sass/.sass-cache/7633b87c3861dc72eb6afa47ef36d66c77111e14/style.scssc": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/src-sass/.sass-cache/7633b87c3861dc72eb6afa47ef36d66c77111e14/style.scssc",
 		"oF": 0
@@ -900,6 +930,7 @@
 	"/config/accessibility.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config/accessibility.php",
 		"oF": 0
@@ -907,6 +938,7 @@
 	"/config/customizer-theme-settings.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config/customizer-theme-settings.php",
 		"oF": 0
@@ -914,6 +946,7 @@
 	"/config/editor-color-palette.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config/editor-color-palette.php",
 		"oF": 0
@@ -921,6 +954,7 @@
 	"/config/editor-font-sizes.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config/editor-font-sizes.php",
 		"oF": 0
@@ -928,6 +962,7 @@
 	"/config/html5.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config/html5.php",
 		"oF": 0
@@ -935,6 +970,7 @@
 	"/config/layouts.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config/layouts.php",
 		"oF": 0
@@ -942,6 +978,7 @@
 	"/config/menus.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config/menus.php",
 		"oF": 0
@@ -949,6 +986,7 @@
 	"/config/structural-wraps.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/config/structural-wraps.php",
 		"oF": 0
@@ -956,6 +994,7 @@
 	"/front-page.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/front-page.php",
 		"oF": 0
@@ -963,6 +1002,7 @@
 	"/functions.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/functions.php",
 		"oF": 0
@@ -970,6 +1010,7 @@
 	"/inc/admin/customizer/customizer.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/customizer/customizer.php",
 		"oF": 0
@@ -977,6 +1018,7 @@
 	"/inc/admin/customizer/partials/lazy-load.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/customizer/partials/lazy-load.php",
 		"oF": 0
@@ -984,6 +1026,7 @@
 	"/inc/admin/customizer/partials/social-share.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/customizer/partials/social-share.php",
 		"oF": 0
@@ -991,6 +1034,7 @@
 	"/inc/admin/customizer/partials/top-banner.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/customizer/partials/top-banner.php",
 		"oF": 0
@@ -998,6 +1042,7 @@
 	"/inc/admin/dashboard.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/dashboard.php",
 		"oF": 0
@@ -1005,6 +1050,7 @@
 	"/inc/admin/editor.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/editor.php",
 		"oF": 0
@@ -1012,6 +1058,7 @@
 	"/inc/admin/genesis-metaboxes.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/genesis-metaboxes.php",
 		"oF": 0
@@ -1019,6 +1066,7 @@
 	"/inc/admin/inpost-editor.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/inpost-editor.php",
 		"oF": 0
@@ -1026,6 +1074,7 @@
 	"/inc/admin/login.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/login.php",
 		"oF": 0
@@ -1033,6 +1082,7 @@
 	"/inc/admin/menu.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/menu.php",
 		"oF": 0
@@ -1040,6 +1090,7 @@
 	"/inc/admin/user-profile.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/user-profile.php",
 		"oF": 0
@@ -1047,6 +1098,7 @@
 	"/inc/admin/widgets.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/admin/widgets.php",
 		"oF": 0
@@ -1054,6 +1106,7 @@
 	"/inc/functions/autoptimize.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/autoptimize.php",
 		"oF": 0
@@ -1061,6 +1114,7 @@
 	"/inc/functions/breadcrumbs.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/breadcrumbs.php",
 		"oF": 0
@@ -1068,6 +1122,7 @@
 	"/inc/functions/cleanup.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/cleanup.php",
 		"oF": 0
@@ -1075,6 +1130,7 @@
 	"/inc/functions/helpers.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/helpers.php",
 		"oF": 0
@@ -1082,6 +1138,7 @@
 	"/inc/functions/js-body-class.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/js-body-class.php",
 		"oF": 0
@@ -1089,6 +1146,7 @@
 	"/inc/functions/lazyload.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/lazyload.php",
 		"oF": 0
@@ -1096,6 +1154,7 @@
 	"/inc/functions/markup.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/markup.php",
 		"oF": 0
@@ -1103,6 +1162,7 @@
 	"/inc/functions/media.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/media.php",
 		"oF": 0
@@ -1110,6 +1170,7 @@
 	"/inc/functions/ninja-forms-filter.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/ninja-forms-filter.php",
 		"oF": 0
@@ -1117,6 +1178,7 @@
 	"/inc/functions/post-thumbnail-cache.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/post-thumbnail-cache.php",
 		"oF": 0
@@ -1124,6 +1186,7 @@
 	"/inc/functions/resource-loading.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/resource-loading.php",
 		"oF": 0
@@ -1131,13 +1194,23 @@
 	"/inc/functions/rss.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/rss.php",
+		"oF": 0
+		},
+	"/inc/functions/schema.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/inc/functions/schema.php",
 		"oF": 0
 		},
 	"/inc/functions/sitemap.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/sitemap.php",
 		"oF": 0
@@ -1145,6 +1218,7 @@
 	"/inc/functions/social-share.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/social-share.php",
 		"oF": 0
@@ -1152,6 +1226,7 @@
 	"/inc/functions/svg-sprite.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/svg-sprite.php",
 		"oF": 0
@@ -1159,6 +1234,7 @@
 	"/inc/functions/yoast-filter.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/functions/yoast-filter.php",
 		"oF": 0
@@ -1166,6 +1242,7 @@
 	"/inc/partials/no-posts.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/partials/no-posts.php",
 		"oF": 0
@@ -1173,6 +1250,7 @@
 	"/inc/partials/pagination.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/partials/pagination.php",
 		"oF": 0
@@ -1180,6 +1258,7 @@
 	"/inc/partials/post-pagination.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/partials/post-pagination.php",
 		"oF": 0
@@ -1187,6 +1266,7 @@
 	"/inc/partials/read-more.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/partials/read-more.php",
 		"oF": 0
@@ -1194,6 +1274,7 @@
 	"/inc/structure/archive.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/archive.php",
 		"oF": 0
@@ -1201,6 +1282,7 @@
 	"/inc/structure/comments.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/comments.php",
 		"oF": 0
@@ -1208,6 +1290,7 @@
 	"/inc/structure/content-area.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/content-area.php",
 		"oF": 0
@@ -1215,6 +1298,7 @@
 	"/inc/structure/footer.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/footer.php",
 		"oF": 0
@@ -1222,6 +1306,7 @@
 	"/inc/structure/header.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/header.php",
 		"oF": 0
@@ -1229,6 +1314,7 @@
 	"/inc/structure/loop.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/loop.php",
 		"oF": 0
@@ -1236,6 +1322,7 @@
 	"/inc/structure/menu.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/menu.php",
 		"oF": 0
@@ -1243,6 +1330,7 @@
 	"/inc/structure/post.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/post.php",
 		"oF": 0
@@ -1250,6 +1338,7 @@
 	"/inc/structure/search.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/structure/search.php",
 		"oF": 0
@@ -1257,6 +1346,7 @@
 	"/inc/theme-assets.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/theme-assets.php",
 		"oF": 0
@@ -1264,6 +1354,7 @@
 	"/inc/theme-defaults.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/theme-defaults.php",
 		"oF": 0
@@ -1271,6 +1362,7 @@
 	"/inc/theme-setup.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/theme-setup.php",
 		"oF": 0
@@ -1278,6 +1370,7 @@
 	"/inc/views/author-profile.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/views/author-profile.php",
 		"oF": 0
@@ -1285,6 +1378,7 @@
 	"/inc/views/copyright-text.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/views/copyright-text.php",
 		"oF": 0
@@ -1292,6 +1386,7 @@
 	"/inc/views/search-form.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/views/search-form.php",
 		"oF": 0
@@ -1299,6 +1394,7 @@
 	"/inc/views/social-share-links.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/views/social-share-links.php",
 		"oF": 0
@@ -1306,6 +1402,7 @@
 	"/inc/views/top-banner.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/inc/views/top-banner.php",
 		"oF": 0
@@ -1313,6 +1410,7 @@
 	"/LICENSE": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/LICENSE",
 		"oF": 0
@@ -1320,6 +1418,7 @@
 	"/README.html": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/README.html",
 		"oF": 0
@@ -1332,6 +1431,7 @@
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/README.html",
 		"oF": 0,
@@ -1356,6 +1456,7 @@
 	"/search.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/search.php",
 		"oF": 0
@@ -1373,6 +1474,7 @@
 	"/templates/landing-page.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/landing-page.php",
 		"oF": 0
@@ -1380,6 +1482,7 @@
 	"/templates/site-map.php": {
 		"cB": 0,
 		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/site-map.php",
 		"oF": 0
@@ -1479,6 +1582,12 @@
 		"function-sent": {
 			"active": 0
 			},
+		"inline-consecutive-adds": {
+			"active": 0
+			},
+		"inline-environment-variables": {
+			"active": 0
+			},
 		"instanceof": {
 			"active": 0
 			},
@@ -1498,6 +1607,36 @@
 			"active": 0
 			},
 		"minify-booleans": {
+			"active": 0
+			},
+		"minify-builtins": {
+			"active": 0
+			},
+		"minify-constant-folding": {
+			"active": 0
+			},
+		"minify-dead-code-elimination": {
+			"active": 0
+			},
+		"minify-flip-comparisons": {
+			"active": 0
+			},
+		"minify-guarded-expressions": {
+			"active": 0
+			},
+		"minify-infinity": {
+			"active": 0
+			},
+		"minify-mangle-names": {
+			"active": 0
+			},
+		"minify-numeric-literals": {
+			"active": 0
+			},
+		"minify-simplify": {
+			"active": 0
+			},
+		"minify-type-constructors": {
 			"active": 0
 			},
 		"modules-amd": {
@@ -1548,6 +1687,9 @@
 		"pipeline-operator": {
 			"active": 0
 			},
+		"private-methods": {
+			"active": 0
+			},
 		"property-literals": {
 			"active": 0
 			},
@@ -1581,10 +1723,16 @@
 		"regenerator": {
 			"active": 0
 			},
+		"regexp-constructors": {
+			"active": 0
+			},
 		"remove-console": {
 			"active": 0
 			},
 		"remove-debugger": {
+			"active": 0
+			},
+		"remove-undefined": {
 			"active": 0
 			},
 		"reserved-words": {
@@ -2533,6 +2681,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-useless-catch": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-useless-computed-key": {
 			"active": 0,
 			"optionString": ""
@@ -3195,6 +3347,7 @@
 		"noEscapeInAttributes": 0,
 		"outputFormat": 2,
 		"shouldRunCacheBuster": 0,
+		"shouldRunHTMLMinifier": 0,
 		"useCDATA": 0,
 		"useDoubleQuotes": 0,
 		"useUnixNewlines": 0
@@ -3216,6 +3369,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 1,
+		"bundleFormat": 0,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"syntaxCheckerStyle": 1,
@@ -3238,7 +3392,8 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"shouldRunCacheBuster": 0
+		"shouldRunCacheBuster": 0,
+		"shouldRunHTMLMinifier": 0
 		},
 	"languageDefaultsLESS": {
 		"allowInsecureImports": 0,
@@ -3277,6 +3432,7 @@
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
 		"shouldRunCacheBuster": 0,
+		"shouldRunHTMLMinifier": 0,
 		"useCompatibilityMode": 0
 		},
 	"languageDefaultsOTHER": {
@@ -3286,7 +3442,8 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"shouldRunCacheBuster": 0
+		"shouldRunCacheBuster": 0,
+		"shouldRunHTMLMinifier": 0
 		},
 	"languageDefaultsPNG": {
 		"autoOutputAction": 0,
@@ -3307,7 +3464,8 @@
 		"autoOutputPathStyle": 0,
 		"compileDebug": 1,
 		"outputStyle": 0,
-		"shouldRunCacheBuster": 0
+		"shouldRunCacheBuster": 0,
+		"shouldRunHTMLMinifier": 0
 		},
 	"languageDefaultsSASS": {
 		"autoOutputAction": 0,
@@ -3336,7 +3494,8 @@
 		"outputFormat": 0,
 		"outputStyle": 1,
 		"railsCompatible": 0,
-		"shouldRunCacheBuster": 0
+		"shouldRunCacheBuster": 0,
+		"shouldRunHTMLMinifier": 0
 		},
 	"languageDefaultsSTYLUS": {
 		"autoOutputAction": 0,
@@ -3424,16 +3583,20 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"ascii_only": {
-			"active": 0,
+		"arrows": {
+			"active": 1,
 			"flagValue": -1
 			},
-		"bare_returns": {
+		"ascii_only": {
 			"active": 0,
 			"flagValue": -1
 			},
 		"booleans": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"booleans_as_integers": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"braces": {
@@ -3445,14 +3608,14 @@
 			"flagValue": -1
 			},
 		"comments": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"comparisons": {
 			"active": 1,
 			"flagValue": -1
 			},
-		"compress": {
+		"computed_props": {
 			"active": 1,
 			"flagValue": -1
 			},
@@ -3475,6 +3638,10 @@
 		"drop_debugger": {
 			"active": 1,
 			"flagValue": -1
+			},
+		"ecma": {
+			"active": 1,
+			"flagValue": 5
 			},
 		"eval": {
 			"active": 0,
@@ -3500,10 +3667,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"html5_comments": {
-			"active": 1,
-			"flagValue": -1
-			},
 		"ie8": {
 			"active": 0,
 			"flagValue": -1
@@ -3512,13 +3675,13 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"indent-start": {
-			"active": 0,
-			"flagValue": 0
-			},
 		"indent_level": {
 			"active": 0,
 			"flagValue": 4
+			},
+		"indent_start": {
+			"active": 0,
+			"flagValue": 0
 			},
 		"inline": {
 			"active": 1,
@@ -3530,6 +3693,10 @@
 			},
 		"join_vars": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"keep_classnames": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"keep_fargs": {
@@ -3552,13 +3719,13 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"mangle": {
-			"active": 1,
-			"flagValue": -1
-			},
 		"max_line_len": {
 			"active": 1,
 			"flagValue": 32000
+			},
+		"module": {
+			"active": 0,
+			"flagValue": -1
 			},
 		"negate_iife": {
 			"active": 1,
@@ -3567,10 +3734,6 @@
 		"passes": {
 			"active": 1,
 			"flagValue": 1
-			},
-		"preserve_line": {
-			"active": 0,
-			"flagValue": -1
 			},
 		"properties": {
 			"active": 1,
@@ -3594,6 +3757,10 @@
 			},
 		"reduce_vars": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"safari10": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"semicolons": {
@@ -3628,6 +3795,10 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"unsafe_arrows": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"unsafe_comps": {
 			"active": 0,
 			"flagValue": -1
@@ -3637,6 +3808,10 @@
 			"flagValue": -1
 			},
 		"unsafe_math": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe_methods": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -3664,15 +3839,12 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"width": {
-			"active": 1,
-			"flagValue": 80
-			},
 		"wrap_iife": {
 			"active": 0,
 			"flagValue": -1
 			}
 		},
+	"uglifyMangleNames": 1,
 	"uglifyReservedNamesString": "$",
 	"websiteRelativeRoot": ""
 	},

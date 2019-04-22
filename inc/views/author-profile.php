@@ -1,11 +1,11 @@
-<section class="author-box" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+<section class="author-box">
   <h2 class="screen-reader-text"><?php esc_html_e( 'Author Profile', 'blank-child-theme' ); ?></h2>
     <div class="author-avatar">
       <?php echo get_avatar( get_the_author_meta( 'email' ) ); ?>
     </div>
     <div class="author-box-content">
-      <h3 class="author-box-title" itemprop="name"><?php the_author_meta( 'display_name' ); ?></h3>
-      <p itemprop="description">
+      <h3 class="author-box-title"><?php the_author_meta( 'display_name' ); ?></h3>
+      <p>
         <?php the_author_meta( 'description' ); ?>
       </p>
       <?php if ( !empty( $facebook_link ) || !empty( $twitter_link ) || !empty( $linked_link ) ): ?>

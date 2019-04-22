@@ -20,7 +20,7 @@ include_once get_template_directory() . '/lib/init.php';
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Blank Child Theme' );
 define( 'CHILD_THEME_URL', 'http://example.com/' );
-define( 'CHILD_THEME_VERSION', '2.1.6' );
+define( 'CHILD_THEME_VERSION', '2.1.7' );
 
 
 // Cache Busting
@@ -71,6 +71,7 @@ include_once( CHILD_DIR . '/inc/functions/svg-sprite.php' );
 include_once( CHILD_DIR . '/inc/functions/lazyload.php' );
 include_once( CHILD_DIR . '/inc/functions/sitemap.php' );
 include_once( CHILD_DIR . '/inc/functions/breadcrumbs.php' );
+include_once( CHILD_DIR . '/inc/functions/schema.php' );
 // include_once( CHILD_DIR . '/inc/functions/ninja-forms-filter.php' );
 // include_once( CHILD_DIR . '/inc/functions/yoast-filter.php' );
 

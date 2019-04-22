@@ -101,29 +101,6 @@ function pb_archive_description_markup( $markup ) {
  * https://wpbeaches.com/adding-attribute-html-section-genesis/
  */
 
-// Add Organization schema to site title
-add_filter( 'genesis_attr_title-area', 'pb_change_title_area_schema' );
-function pb_change_title_area_schema( $attr ) {
-
-	$attr['itemscope'] = 'itemscope';
-	$attr['itemtype']  = 'http://schema.org/Organization';
-
-	return $attr;
-
-}
-
-
-// Change site title schema from healine to name
-add_filter( 'genesis_attr_site-title', 'pb_change_site_title_schema' );
-function pb_change_site_title_schema( $attr ) {
-
-	$attr['itemprop'] = 'name';
-
-	return $attr;
-
-}
-
-
 // Change secondary nave aria-label
 add_filter( 'genesis_attr_nav-primary', 'pb_change_primary_nav_aria_label' );
 function pb_change_primary_nav_aria_label( $attributes ) {
