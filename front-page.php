@@ -27,7 +27,7 @@ function pb_wrap_site_title( $wrap ) {
 
 
 //* Force full-width-content layout setting
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 
 
