@@ -17,10 +17,18 @@ if( !defined( 'ABSPATH' ) ) exit;
 include_once get_template_directory() . '/lib/init.php';
 
 
+// Set localization
+// add_action( 'after_setup_theme', 'genesis_sample_localization_setup' );
+// function genesis_sample_localization_setup() {
+//
+// 	load_child_theme_textdomain( genesis_get_theme_handle(), get_stylesheet_directory() . '/languages' );
+//
+// }
+
+
 // Child theme (do not remove).
-define( 'CHILD_THEME_NAME', 'Blank Child Theme' );
-define( 'CHILD_THEME_URL', 'http://example.com/' );
-define( 'CHILD_THEME_VERSION', '2.1.7' );
+define( 'CHILD_THEME_HANDLE', sanitize_title_with_dashes( wp_get_theme()->get( 'Name' ) ) );
+define( 'CHILD_THEME_VERSION', wp_get_theme()->get( 'Version' ) );
 
 
 // Cache Busting
@@ -41,8 +49,8 @@ add_filter( 'genesis_load_deprecated', '__return_false' );
 
 // Theme Setup & Defaults
 include_once( CHILD_DIR . '/inc/theme-setup.php' );
-include_once( CHILD_DIR . '/inc/theme-defaults.php' );
 include_once( CHILD_DIR . '/inc/theme-assets.php' );
+include_once( CHILD_DIR . '/inc/theme-output.php' );
 
 
 // Admin
@@ -61,6 +69,7 @@ include_once( CHILD_DIR . '/inc/admin/user-profile.php' );
 include_once( CHILD_DIR . '/inc/functions/autoptimize.php' );
 include_once( CHILD_DIR . '/inc/functions/cleanup.php' );
 include_once( CHILD_DIR . '/inc/functions/helpers.php' );
+include_once( CHILD_DIR . '/inc/functions/image-sizes.php' );
 include_once( CHILD_DIR . '/inc/functions/resource-loading.php' );
 include_once( CHILD_DIR . '/inc/functions/social-share.php' );
 include_once( CHILD_DIR . '/inc/functions/markup.php' );
