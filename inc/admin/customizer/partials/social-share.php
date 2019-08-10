@@ -23,7 +23,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 // Add Social Share Section
 
-{$wp_customize->add_section(
+$wp_customize->add_section(
   'ct_social_share_settings' ,
   array(
     'title'      => __( 'Social Share Links', 'blank-child-theme' ),
@@ -240,9 +240,9 @@ $wp_customize->add_control(
   $wp_customize->add_control(
     'social_share_email_body',
     array(
-      'label'       => __( 'Email Subject', 'blank-child-theme' ),
+      'label'       => __( 'Email Body', 'blank-child-theme' ),
       'section'     => 'ct_social_share_settings',
       'type'        => 'textarea',
       'description' => __( 'The post url will be appended to the body text you add.', 'blank-child-theme' ),
     )
-  );}
+  );

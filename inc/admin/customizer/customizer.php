@@ -26,6 +26,12 @@ function pb_remove_css_section( $wp_customize ) {
 
 	$wp_customize->remove_control( 'blog_title' );
 	$wp_customize->remove_panel( 'genesis-seo' );
+	$wp_customize->remove_section( 'genesis_layout' );
+	$wp_customize->remove_section( 'genesis_breadcrumbs' );
+	$wp_customize->remove_section( 'genesis_comments' );
+	$wp_customize->remove_section( 'genesis_archives' );
+	$wp_customize->remove_section( 'genesis_footer' );
+	$wp_customize->remove_section( 'genesis_scripts' );
 	$wp_customize->remove_section( 'custom_css' );
 
 }
@@ -42,11 +48,14 @@ function pb_customize_register( $wp_customize ) {
 	// Add lazy-loading
 	include CHILD_DIR . '/inc/admin/customizer/partials/lazy-load.php';
 
-	// Add social-share
+	// Add banner
 	include CHILD_DIR . '/inc/admin/customizer/partials/top-banner.php';
 
 	// Add social-share
 	include CHILD_DIR . '/inc/admin/customizer/partials/social-share.php';
+
+	// Add logo
+	include CHILD_DIR . '/inc/admin/customizer/partials/logo.php';
 
 }
 
