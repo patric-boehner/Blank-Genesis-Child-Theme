@@ -33,6 +33,14 @@ remove_theme_support( 'genesis-inpost-layouts' );
 remove_theme_support( 'genesis-archive-layouts' );
 
 
+// Remove Genesis menu link
+remove_theme_support( 'genesis-admin-menu' );
+
+
+// Remove Genesis SEO Settings menu link
+remove_theme_support( 'genesis-seo-settings-menu' );
+
+
 // Remove Genesis user permisions
 remove_action( 'show_user_profile', 'genesis_user_options_fields' );
 remove_action( 'edit_user_profile', 'genesis_user_options_fields' );
