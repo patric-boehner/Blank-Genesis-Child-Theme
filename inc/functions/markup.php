@@ -16,6 +16,49 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 /**
+ * Adds body classes to help with block styling.
+ *
+ * - `has-no-blocks` if content contains no blocks.
+ * - `first-block-[block-name]` to allow changes based on the first block (such as removing padding above a Cover block).
+ * - `first-block-align-[alignment]` to allow styling adjustment if the first block is wide or full-width.
+ *
+ * @since 2.8.0
+ *
+ * @param array $classes The original classes.
+ * @return array The modified classes.
+ */
+
+add_filter( 'body_class', 'genesis_blocks_body_classes' );
+function genesis_blocks_body_classes( $classes ) {
+
+	if ( ! is_singular() || ! function_exists( 'has_blocks' ) || ! function_exists( 'parse_blocks' ) ) {
+		return $classes;
+	}
+
+	if ( ! has_blocks() ) {
+		$classes[] = 'has-no-blocks';
+		return $classes;
+	}
+
+	$post_object = get_post( get_the_ID() );
+
+	$blocks      = (array) parse_blocks( $post_object->post_content );
+
+	if ( isset( $blocks[0]['blockName'] ) ) {
+		$classes[] = 'first-block-' . str_replace( '/', '-', $blocks[0]['blockName'] );
+	}
+
+	if ( isset( $blocks[0]['attrs']['align'] ) ) {
+		$classes[] = 'first-block-align-' . $blocks[0]['attrs']['align'];
+	}
+
+	return $classes;
+
+}
+
+
+
+/**
  * Adds top-banner body classes.
  *
  * @since 1.0.0
