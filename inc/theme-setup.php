@@ -47,6 +47,7 @@ remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 // Unregister primary widget area.
 // unregister_sidebar( 'sidebar' ); // Primary
 
+
 // Removes secondary sidebar.
 unregister_sidebar( 'sidebar-alt' ); // Secondary
 
