@@ -54,9 +54,6 @@ function pb_customize_register( $wp_customize ) {
 	// Add social-share
 	include CHILD_DIR . '/inc/admin/customizer/partials/social-share.php';
 
-	// Add logo
-	include CHILD_DIR . '/inc/admin/customizer/partials/logo.php';
-
 }
 
 
