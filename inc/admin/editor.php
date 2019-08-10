@@ -21,19 +21,19 @@ if( !defined( 'ABSPATH' ) ) exit;
 function pb_allowed_block_types( $allowed_blocks, $post ) {
 
 	$allowed_blocks = array(
+		'core/block', // Include to show reusable blocks in the block inserter.
 		'core/image',
+		'core/gallery',
 		'core/paragraph',
 		'core/heading',
 		'core/list',
-    'core/button',
-    'core/text-columns',
-		'core/columns',
-    'core/media-text',
-    'core/separator',
-    'core/gallery',
-    'core/quote',
-    'core/shortcode',
-    'core/embed'
+		'core/quote',
+		'core/button',
+		'core/text-columns',
+		'core/spacer',
+		'core/shortcode',
+		'core/embed',
+		'core/group',
 	);
 
 	// if( $post->post_type === 'page' ) {
