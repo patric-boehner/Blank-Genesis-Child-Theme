@@ -65,12 +65,12 @@ function pb_enqueue_child_theme_scripts_styles() {
   );
 
 
-	// Load Webfonts
-	wp_enqueue_style(
+  // Load Webfonts
+  wp_enqueue_style(
     'google-web-fonts',
-    pb_fonts_url(),
+    '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap',
     array(),
-    null
+    cache_version_id()
   );
 
 
@@ -242,9 +242,9 @@ function pb_block_editor_styles() {
   // Load Webfonts
   wp_enqueue_style(
     'google-web-fonts',
-    pb_fonts_url(),
+    '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap',
     array(),
-    null
+    cache_version_id()
   );
 
 }
