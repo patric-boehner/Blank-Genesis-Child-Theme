@@ -25,7 +25,7 @@ function pb_login_logo_url_change() {
 
 
 // Filter login logo text
-add_filter( 'login_headertitle', 'pb_login_logo_site_title' );
+add_filter( 'login_headertext', 'pb_login_logo_site_title' );
 function pb_login_logo_site_title() {
 
 	return esc_html( get_bloginfo( 'name' ) );
