@@ -67,40 +67,6 @@ function wprig_filter_script_loader_tag( $tag, $handle ) {
 }
 
 
-
-// Register Google Fonts
-function pb_fonts_url() {
-
-	$fonts_url = '';
-	/**
-	 * Translator: If Source Sans pro does not support characters in your language, translate this to 'off'.
-	 */
-	$source_sans_pro = esc_html_x( 'on', 'Source Sans Pro font: on or off', 'blank-child-theme' );
-
-	$font_families = array();
-
-	if ( 'off' !== $source_sans_pro ) {
-
-		$font_families[] = 'Source Sans Pro:400,600';
-
-	}
-
-	if ( in_array( 'on', array( $source_sans_pro ) ) ) {
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-
-	}
-
-	return esc_url_raw( $fonts_url );
-
-}
-
-
 /** Progressive Enhancements
  * Preload is a progressize enhacement.
  * For browsers that support it, it can be used and ignored by those who don't.
