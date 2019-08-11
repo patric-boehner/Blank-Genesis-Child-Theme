@@ -49,6 +49,7 @@ add_filter( 'genesis_load_deprecated', '__return_false' );
 
 // Theme Setup & Defaults
 include_once( CHILD_DIR . '/inc/theme-setup.php' );
+include_once( CHILD_DIR . '/inc/theme-defaults.php' );
 include_once( CHILD_DIR . '/inc/theme-assets.php' );
 
 // Admin

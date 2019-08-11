@@ -67,6 +67,15 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 // add_filter( 'get_the_author_genesis_author_box_single', '__return_false' );
 
 
+// Add featured image post type support
+add_post_type_support( 'post', 'genesis-singular-images' );
+add_post_type_support( 'page', 'genesis-singular-images' );
+
+
+// Remove support for custom logo
+remove_action( 'after_setup_theme', 'genesis_output_custom_logo', 11 );
+
+
 // Add support for editor styles.
 add_theme_support( 'editor-styles' );
 
@@ -103,6 +112,7 @@ if ( ! isset( $content_width ) ) {
 
 // Add Image Sizes.
 add_image_size( 'featured-image', 680, 400, TRUE );
+// add_image_size( 'genesis-singular-images', 200, 300, true );
 
 
 // Remove Genesis Favicon (use site icon instead)

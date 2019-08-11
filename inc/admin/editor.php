@@ -43,3 +43,14 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 	return $allowed_blocks;
 
 }
+
+
+// Disable gensis title toggle
+// add_filter( 'genesis_title_toggle_enabled', '__return_false' );
+
+
+// Add title togle support for a custom post type
+// add_post_type_support( '[post-type]', 'genesis-title-toggle' );
+
+// Disable genesis breadcrumb support
+// add_filter( 'genesis_breadcrumbs_toggle_enabled', '__return_false' );
