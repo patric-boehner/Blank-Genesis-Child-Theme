@@ -30,7 +30,7 @@ function pb_add_social_share_options() {
 		return;
 	}
 
-	// If lazy-load is disabled in Customizer, do nothing.
+	// If share options is disabled in Customizer, do nothing.
 	if ( empty( get_theme_mod( 'social_share_option', '1' ) ) ) {
 		return;
 	}
@@ -41,7 +41,7 @@ function pb_add_social_share_options() {
 	$title						= esc_attr( strip_tags( get_the_title() ) );
 	$name       			= urlencode( get_bloginfo( 'name' ) );
 	$site_twitter     = esc_html( get_theme_mod( 'social_share_twitter_account' ) );
-	// $author_twitter   = esc_html( get_the_author_meta( 'twitter' ) );
+	$author_twitter   = esc_html( get_the_author_meta( 'twitter' ) );
 	$email_subject		= esc_html( get_theme_mod( 'social_share_email_subject' ) );
 	$email_body				= esc_html( get_theme_mod( 'social_share_email_body' ) );
 
@@ -56,8 +56,10 @@ function pb_add_social_share_options() {
 	}
 
 	// Add Twitter handle if it exists
-	if ( get_theme_mod( 'social_share_twitter_account' )  ) {
+	if ( !empty( $site_twitter ) ) {
 	  $twitter_user	 = '@' . urlencode( $site_twitter );
+	} elseif ( !empty( $author_twitter ) ) {
+		$twitter_user = '@' . urlencode( $author_twitter );
 	} else {
 		$twitter_user	 = '';
 	}

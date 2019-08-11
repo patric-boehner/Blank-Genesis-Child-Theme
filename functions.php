@@ -79,7 +79,6 @@ include_once( CHILD_DIR . '/inc/functions/svg-sprite.php' );
 include_once( CHILD_DIR . '/inc/functions/lazyload.php' );
 include_once( CHILD_DIR . '/inc/functions/sitemap.php' );
 include_once( CHILD_DIR . '/inc/functions/breadcrumbs.php' );
-include_once( CHILD_DIR . '/inc/functions/schema.php' );
 // include_once( CHILD_DIR . '/inc/functions/ninja-forms-filter.php' );
 // include_once( CHILD_DIR . '/inc/functions/yoast-filter.php' );
 

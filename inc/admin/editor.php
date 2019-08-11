@@ -17,7 +17,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 // Allowed list of blocks
 // https://rudrastyh.com/gutenberg/remove-default-blocks.html
-// add_filter( 'allowed_block_types', 'pb_allowed_block_types', 10, 2 );
+add_filter( 'allowed_block_types', 'pb_allowed_block_types', 10, 2 );
 function pb_allowed_block_types( $allowed_blocks, $post ) {
 
 	$allowed_blocks = array(
