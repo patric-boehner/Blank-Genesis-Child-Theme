@@ -1,32 +1,21 @@
 // Site Footer
 //**********************************************
 
-.footer-widgets
-	background-color: $white
-	clear: both
-	font-size: 18px
-	font-size: 1.8rem
-	padding: $base-padding 0
+.footer-block-content-area
+	padding: $margin_2x 0
 
-	.widget
+	.block-content-area
+		@include medium-font
+			
 		p:last-of-type
 			margin-bottom: 0
 
-	@include tablet
-		.widget-area
-			margin-bottom: $base-margin
-
-			&:last-of-type
-				margin-bottom: 0
-
 
 .site-footer
-	background-color: $white
 	border-top: 1px solid $border-color
-	font-size: 16px
-	font-size: 1.6rem
+	@include small-font
 	line-height: 1
-	padding: $base-padding 0
+	padding: $margin_1x 0
 	text-align: center
 
 

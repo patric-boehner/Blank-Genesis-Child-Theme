@@ -51,9 +51,25 @@ function pb_modify_author_profile() {
 	$twitter_link = esc_url( get_the_author_meta( 'twitter' ) );
 	$linked_link = esc_url( get_the_author_meta( 'linkedin' ) );
 
-	$facebook = pb_svg_icons_available( 'Facebook', 'facebook', '', '25px', '25px' );
-	$twitter = pb_svg_icons_available( 'Twitter', 'twitter', '', '25px', '25px' );
-	$linkedin = pb_svg_icons_available( 'LinkedIn', 'linkedin', '', '25px', '25px' );
+	// Icons & Screen Reader
+	$facebook = pb_load_inline_svg( array(
+		'filename' => 'facebook',
+		'title' => esc_html__( 'Facebook', 'blank-child-theme' ),
+		'width' => '16px',
+		'height' => '28px',
+	) );
+	$twitter = pb_load_inline_svg( array(
+		'filename' => 'twitter',
+		'title' => esc_html__( 'Twitter', 'blank-child-theme' ),
+		'width' => '26px',
+		'height' => '28px',
+	) );
+	$linkedin = pb_load_inline_svg( array(
+		'filename' => 'linkedin',
+		'title' => esc_html__( 'LinkedIn', 'blank-child-theme' ),
+		'width' => '24px',
+		'height' => '28px',
+	) );
 
 	// Include authoe profile
 	include CHILD_DIR . '/inc/views/author-profile.php';
@@ -70,5 +86,20 @@ function pb_customize_entry_pagination() {
 	}
 
 	get_template_part( '/inc/partials/post-pagination' );
+
+}
+
+
+// Add after post block area
+add_action( 'genesis_after_entry', 'pb_after_post_block_area', 9 );
+function pb_after_post_block_area() {
+
+	if ( ! is_singular( 'post' ) ) {
+		return;
+	}
+
+	if ( function_exists( 'pb_show_content_area' ) ) {
+		pb_show_content_area( 'after-blog-post' );
+	}
 
 }

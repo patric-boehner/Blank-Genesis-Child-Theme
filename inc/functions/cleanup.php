@@ -30,10 +30,6 @@ function pb_remove_jquery_migrate( $scripts ) {
 }
 
 
-// Remove Edit link
-add_filter( 'genesis_edit_post_link', '__return_false' );
-
-
 // Disable HTML in comments
 add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
 add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
@@ -73,20 +69,6 @@ function pb_disable_xmlrpc_ping ($methods) {
 
 // Disable XML-RPC
 remove_action ('wp_head', 'rsd_link');
-
-
-/**
- * Remove Genesis Page Templates
- * From: Bill Erickson
- */
-add_filter( 'theme_page_templates', 'pb_remove_genesis_page_templates' );
-function pb_remove_genesis_page_templates( $page_templates ) {
-
-	unset( $page_templates[ 'page_archive.php' ] );
-	unset( $page_templates[ 'page_blog.php' ] );
-	return $page_templates;
-
-}
 
 
 // Remove .header classes added by genesis

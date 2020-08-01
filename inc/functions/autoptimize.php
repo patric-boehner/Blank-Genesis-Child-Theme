@@ -29,7 +29,7 @@ add_filter('autoptimize_filter_js_exclude','pb_ao_override_js_exclude', 30, 1 );
 function pb_ao_override_js_exclude( $exclude ) {
 
 	// Exclude theme scripts that are allready defered or asynced
-	return $exclude.", global.min.js, social-share.min.js, top-banner.min.js, lazyload.min.js";
+	return $exclude.", global.min.js, social-share.min.js, top-banner.min.js";
 
 }
 
@@ -44,6 +44,6 @@ add_filter('autoptimize_filter_css_exclude','my_ao_override_cssexclude', 30, 1);
 function my_ao_override_cssexclude( $exclude ) {
 
 	// Exclude theme css that has specific function
-	return $exclude.", header.min.css, content-area.min.css, comments.min.css, site-footer.min.css, print.min.css, login-style.min.css, block-front-end.min.css, global-style.min.css";
+	return $exclude.", comments.min.css, print.min.css, login-style.min.css";
 
 }

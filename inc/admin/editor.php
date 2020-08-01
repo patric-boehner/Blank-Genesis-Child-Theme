@@ -17,7 +17,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 // Allowed list of blocks
 // https://rudrastyh.com/gutenberg/remove-default-blocks.html
-add_filter( 'allowed_block_types', 'pb_allowed_block_types', 10, 2 );
+// add_filter( 'allowed_block_types', 'pb_allowed_block_types', 10, 2 );
 function pb_allowed_block_types( $allowed_blocks, $post ) {
 
 	$allowed_blocks = array(
@@ -28,16 +28,19 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 		'core/heading',
 		'core/list',
 		'core/quote',
-		'core/button',
+		'core/buttons',
 		'core/text-columns',
+		'core/columns',
 		'core/spacer',
+		'core/seperator',
 		'core/shortcode',
 		'core/embed',
 		'core/group',
+		'core/shortcode'
 	);
 
 	// if( $post->post_type === 'page' ) {
-	// 	$allowed_blocks[] = 'core/shortcode';
+	// 	$allowed_blocks[] = '';
 	// }
 
 	return $allowed_blocks;
@@ -47,7 +50,6 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 
 // Disable gensis title toggle
 // add_filter( 'genesis_title_toggle_enabled', '__return_false' );
-
 
 // Add title togle support for a custom post type
 // add_post_type_support( '[post-type]', 'genesis-title-toggle' );

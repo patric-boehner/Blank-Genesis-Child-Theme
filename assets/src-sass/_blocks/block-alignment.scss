@@ -4,9 +4,10 @@
 
 	.alignwide,
 	.alignfull {
-		margin: 30px calc(49% - 50vw);
+		margin: 0 calc(49% - 50vw);
 		max-width: 100vw;
 		width: 100vw;
+		margin-bottom: $margin_1x;
 	}
 
 
@@ -14,9 +15,10 @@
 
 		// For the negative left/right margin, subtract page width from the content width and divide by two
 		.alignwide {
-			margin: 30px calc( ( 760px - 1023px ) / 2  );
-			max-width: 1023px;
-			width: 1023px;
+			margin: 0 calc( ( 800px - 1200px ) / 2  );
+			max-width: $full-wdith;
+			width: $full-wdith;
+			margin-bottom: $margin_1x;
 		}
 
 	}
@@ -42,5 +44,5 @@
 .wp-block-image.alignfull,
 .wp-block-embed.alignwide,
 .wp-block-embed.alignfull {
-	margin-bottom: 30px;
+	margin-bottom: $margin_1x;
 }

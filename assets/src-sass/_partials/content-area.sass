@@ -2,10 +2,9 @@
 //**********************************************
 
 .breadcrumb
-	background-color: $white
 	font-size: 16px
 	font-size: 1.6rem
-	padding: 20px 40px 0 40px
+	margin-bottom: $margin_2x
 
 
 .entry-image-link
@@ -14,19 +13,16 @@
 
 
 .entry-image
-	margin-bottom: $element-spacing
+	margin-bottom: $margin_1x
 
 
 .after-entry,
 .archive-description,
-.author-box
-	background-color: $white
-	margin-bottom: $base-margin
-	@include padding-scale
+.author-profile
+	margin-bottom: $margin_2x
 
 
-.archive-description,
-.author-box
+.archive-description
 	p:last-child
 		margin-bottom: 0
 
@@ -34,10 +30,9 @@
 // Entries
 //**********************************************
 
-.entry
-	background-color: $white
-	margin-bottom: $base-margin
-	@include padding-scale
+.entry,
+.block-content-area
+	margin-bottom: $margin_2x
 
 
 // Entry meta
@@ -56,18 +51,20 @@
 // After Post Meta
 //**********************************************
 
-.social-links-list,
-.author-contact-list
-	margin: 0
+.share-links,
+.author-contact
 
-	li
+	&--list
+		margin: 0
+
+	&--item
 		list-style: none
 		display: inline-block
 
-		a
-			line-height: 0
-			display: block
-			padding: 0 20px 10px 0
+	&--link
+		line-height: 0
+		display: block
+		padding: 0 20px 10px 0
 
 
 
@@ -77,13 +74,4 @@
 .sidebar
 	font-size: 18px
 	font-size: 1.8rem
-	margin-bottom: $base-margin
-
-
-.sidebar .widget
-	background-color: $white
-	padding: 40px
-
-	ul,
-	ol
-		margin-left: 0
+	margin-bottom: $margin_2x

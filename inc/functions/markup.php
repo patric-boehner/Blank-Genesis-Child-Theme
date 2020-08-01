@@ -15,6 +15,10 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Disable Genesis Schema
+add_filter( 'genesis_disable_microdata', '__return_true' );
+
+
 /**
  * Adds body classes to help with block styling.
  *

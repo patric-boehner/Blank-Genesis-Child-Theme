@@ -15,6 +15,15 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Remove Widgets supage
+add_action( 'admin_menu', 'pb_remove_widgets_menus', 999 );
+function pb_remove_widgets_menus(){
+
+  remove_submenu_page( 'themes.php', 'widgets.php' );
+
+}
+
+
 /**
  * Reorders and cleans up the administration menu to make it more user-friendly.
  *

@@ -1,18 +1,34 @@
 // Global Mixins
 //**********************************************
 
+@mixin base-style
+	color: $primary-color
+	font-family: $primary-font
+	@include regular_font
+	font-weight: $normal
+	line-height: 1.625
 
-// Pading Scale
+	@media print
+		font-family: $primary-font
+
+
+
+// Font Sizes
 //**********************************************
 
-@mixin padding-scale
-	padding: 40px
+@mixin small-font
+	font-size: 1.6rem
+	font-size: 16px
 
-	@include above-phone
-		padding: $base-padding
 
-	@include above-tablet
-		padding: 60px
+@mixin medium-font
+	font-size: 1.8rem
+	font-size: 18px
+
+
+@mixin regular_font
+	font-size: 2.0rem
+	font-size: 20px
 
 
 // Font Smoothing
@@ -84,6 +100,16 @@
 
 // Button base
 //**********************************************
+
+@mixin button-reset()
+	background: transparent
+	border: none
+	border-radius: 0
+	box-shadow: none
+	padding: 0
+	outline: none
+	cursor: pointer
+
 
 @mixin button
 	background-color: #333

@@ -15,28 +15,40 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Add stylesheet before Footer
-add_action( 'genesis_before_footer', 'pb_load_footer_styles' );
-function pb_load_footer_styles() {
+// Add Footer Block Areas
+add_action( 'genesis_before_footer', 'pb_footer_block_areas' );
+function pb_footer_block_areas() {
 
-	wp_print_styles( array( 'site-footer-partial' ) ); // Note: If this was already done it will be skipped.
+	// Hide if widget areas option is toggled on
+	if ( genesis_footer_widgets_hidden_on_current_page() ) {
+		return;
+	}
+
+	echo '<div id="genesis-footer-widgets" class="footer-block-content-area">';
+	echo '<h2 class="screen-reader-text">Footer</h2>';
+	echo '<div class="footer-content-areas-wrap">';
+
+	if ( function_exists( 'pb_show_content_area' ) ) {
+		pb_show_content_area( 'footer-left' );
+		pb_show_content_area( 'footer-middle' );
+		pb_show_content_area( 'footer-right' );
+	}
+
+	echo "</div></div>";
 
 }
 
 
 // Customize Footer Credits
-add_filter( 'genesis_footer_output', 'pb_footer_cred_output' );
-function pb_footer_cred_output() {
+remove_filter( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'pb_footer_credit_output' );
+function pb_footer_credit_output() {
 
-	$first_year		   = '2019';
+		$creds_text = wp_kses_post( genesis_get_option( 'footer_text' ) );
+		$output     = '<p class="copyright">' . genesis_strip_p_tags( $creds_text ) . '</p>';
 
-	if( date( 'Y' ) !== $first_year ){
-		$credits_years   = '&copy; ' . $first_year . ' - ' . date( 'Y' ) . ' ' . '';
-	} else {
-		$credits_years   = '&copy; ' . $first_year . ' ' . '';
-	}
+		$output = apply_filters( 'genesis_footer_output', $output, $creds_text );
 
-	// Include copyright view
-	include CHILD_DIR . '/inc/views/copyright-text.php';
+		echo $output;
 
 }

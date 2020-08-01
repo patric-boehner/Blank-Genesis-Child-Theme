@@ -1,0 +1,14 @@
+// Block Group
+
+.wp-block-group
+
+	&__inner-container
+		margin: 0 auto
+		max-width: calc( #{$grid-width} + (5% + 5%) )
+		padding: 0 5%
+
+		@include tablet
+			max-width: calc( 800px + (5% + 5%) )
+
+		@include phone
+			padding: 0

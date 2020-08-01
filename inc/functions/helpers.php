@@ -119,7 +119,7 @@ function pb_find_unlisted_pages() {
 		'meta_key'	 => $key,
 		'meta_value' => '1'
 	];
-	
+
 	$pages_no_follow = get_posts( $args );
 
 	foreach ( $pages_no_follow as $page ) {

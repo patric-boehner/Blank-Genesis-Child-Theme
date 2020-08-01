@@ -43,19 +43,45 @@ function pb_comment_form_defaults( array $paramaters ) {
 }
 
 
-// Filter form classes
-add_filter( 'comment_form_default_fields', 'pb_comment_form_classes' );
-function pb_comment_form_classes( $fields ) {
+// Filter form defualts
+// add_filter( 'comment_form_default_fields', 'pb_comment_form_classes' );
+// function pb_comment_form_classes( $fields ) {
+//
+// 	foreach( $fields as &$field ) {
+// 		$field = str_replace(
+// 			'<label for="author">Name <span class="required">*</span></label>',
+// 			'<label for="author">' .esc_html__( 'Your Name', 'life-after-divorce' ). ' <span class="required">*</span></label>',
+// 			$field
+// 		);
+// 		$field = str_replace(
+// 			'<label for="email">Email <span class="required">*</span></label>',
+// 			'<label for="email">' .esc_html__( 'Your Email', 'life-after-divorce' ). ' <span class="required">*</span></label>',
+// 			$field
+// 		);
+// 		$field = str_replace(
+// 			'Save my name, email, and website in this browser for the next time I comment.',
+// 			esc_html__( 'Save name and email in this browser for the next time you comment.', 'life-after-divorce' ),
+// 			$field
+// 		);
+// 	}
+//
+// 	return $fields;
+//
+// }
 
-	foreach( $fields as &$field ) {
-		$field = str_replace( 'class="comment-form-author"', 'class="comment-form-author first one-half"', $field );
-		$field = str_replace( 'class="comment-form-email"', 'class="comment-form-email one-half"', $field );
-		// $field = str_replace( 'class="comment-form-url"', 'class="comment-form-url first one-half"', $field );
-	}
 
-	return $fields;
-
-}
+// Remove URL Field
+// add_filter('comment_form_default_fields', 'pb_unset_url_field');
+// function pb_unset_url_field($fields) {
+//
+// 	if(isset($fields['url'])) {
+//
+// 		unset($fields['url']);
+// 		return $fields;
+//
+// 	}
+//
+// }
 
 
 // Customize the next page link in comment pagination

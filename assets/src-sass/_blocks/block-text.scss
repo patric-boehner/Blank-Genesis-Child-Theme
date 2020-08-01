@@ -1,13 +1,6 @@
 // Gutenberg text options
 // -- see editor-font-sizes in inc/theme-setup.php
 
-// Color defaults
-$sizes: (
-	'small': 1.6rem,
-	'regular': 2.0rem,
-	'large': 2.4rem,
-);
-
 
 // Loop through text sizes
 @each $name, $size in $sizes {

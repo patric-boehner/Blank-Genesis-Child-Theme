@@ -78,12 +78,36 @@ function pb_add_social_share_options() {
 	}
 
 	// Icons & Screen Reader
-
-	$facebook = pb_svg_icons_available( 'Share on Facebook', 'facebook', '', '32px', '32px' );
-	$twitter = pb_svg_icons_available( 'Share on Twitter', 'twitter', '', '32px', '32px' );
-	$linkedin	= pb_svg_icons_available( 'Share on LinkedIn', 'linkedin', '', '32px', '32px' );
-	$pinterest = pb_svg_icons_available( 'Share on Pinterest', 'pinterest', '', '32px', '32px' );
-	$mail	= pb_svg_icons_available( 'Share via Email', 'envelope', '', '32px', '32px' );
+	$facebook = pb_load_inline_svg( array(
+		'filename' => 'facebook',
+		'title' => esc_html__( 'Share on Facebook', 'blank-child-theme' ),
+		'width' => '16px',
+		'height' => '28px',
+	) );
+	$twitter = pb_load_inline_svg( array(
+		'filename' => 'twitter',
+		'title' => esc_html__( 'Share on Twitter', 'blank-child-theme' ),
+		'width' => '26px',
+		'height' => '28px',
+	) );
+	$linkedin = pb_load_inline_svg( array(
+		'filename' => 'linkedin',
+		'title' => esc_html__( 'Share on LinkedIn', 'blank-child-theme' ),
+		'width' => '24px',
+		'height' => '28px',
+	) );
+	$pinterest = pb_load_inline_svg( array(
+		'filename' => 'pinterest',
+		'title' => esc_html__( 'Share on Pinterest', 'blank-child-theme' ),
+		'width' => '20px',
+		'height' => '28px',
+	) );
+	$mail = pb_load_inline_svg( array(
+		'filename' => 'envelope',
+		'title' => esc_html__( 'Share via Email', 'blank-child-theme' ),
+		'width' => '28px',
+		'height' => '28px',
+	) );
 
 
 	// Output social share links

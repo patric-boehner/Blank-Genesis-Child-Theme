@@ -59,6 +59,15 @@ function pb_modify_excerpt_read_more_link( $excerpt ) {
 }
 
 
+// Filter excerpt length
+add_filter( 'excerpt_length', 'tn_custom_excerpt_length', 999 );
+function tn_custom_excerpt_length( $length ) {
+
+	return 55;
+
+}
+
+
 
 // Modify arhive pagination
 remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );

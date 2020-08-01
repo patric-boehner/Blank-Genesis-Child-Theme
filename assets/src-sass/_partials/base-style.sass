@@ -7,20 +7,17 @@ html
 
 
 body > div
-	font-size: 20px
-	font-size: 2rem
+	@include regular_font
 
 	@include phone
-		font-size: 18px
-		font-size: 1.8rem
+		@include medium_font
 
 
 body
-	background-color: $background-color
+	background-color: $white
 	color: $primary-color
 	font-family: $primary-font
-	font-size: 20px
-	font-size: 2rem
+	@include regular_font
 	font-weight: $normal
 	line-height: 1.625
 	margin: 0
@@ -64,7 +61,7 @@ mark
 //**********************************************
 
 p
-	margin: 0 0 $element-spacing
+	margin: 0 0 $margin_1x
 	padding: 0
 
 
@@ -84,7 +81,7 @@ hr
 
 ol,
 ul
-	margin-bottom: $element-spacing
+	margin-bottom: $margin_1x
 	margin-left: 40px
 
 
@@ -127,12 +124,11 @@ blockquote
 	&::before
 		content: "\201C"
 		display: block
-		font-size: 30px
-		font-size: 3rem
+		font-size: 60px
+		font-size: 6rem
 		height: 0
-		left: -20px
 		position: relative
-		top: -10px
+		top: -60px
 
 	cite
 		display: block
@@ -194,20 +190,16 @@ h6
 // Alighments
 //**********************************************
 
-.alignnone
-	display: inline-block
-
-
 .alignleft
 	display: inline
 	float: left
-	margin-right: $element-spacing
+	margin-right: $margin_1x
 
 
 .alignright
 	display: inline
 	float: right
-	margin-left: $element-spacing
+	margin-left: $margin_1x
 
 
 .aligncenter
@@ -237,7 +229,7 @@ img
 
 
 figure
-	margin: 0 0 $element-spacing 0
+	margin: 0 0 $margin_1x 0
 	max-width: 100%
 	position: relative
 
@@ -245,7 +237,7 @@ figure
 .wp-audio-shortcode,
 .wp-playlist,
 .wp-video
-	margin-bottom: $element-spacing
+	margin-bottom: $margin_1x
 
 
 // Float Clearing

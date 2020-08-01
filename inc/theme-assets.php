@@ -23,47 +23,6 @@ remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 add_action( 'wp_enqueue_scripts', 'pb_enqueue_child_theme_scripts_styles' );
 function pb_enqueue_child_theme_scripts_styles() {
 
-  // Move jQuery to footer
-	if( ! is_admin() ) {
-
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-		wp_enqueue_script( 'jquery' );
-
-	}
-
-	// Register component styles that are printed as needed.
-  wp_register_style(
-    'site-header-partial',
-    get_theme_file_uri( '/assets/css/header.min.css' ),
-    array(),
-    cache_version_id()
-  );
-
-
-  wp_register_style(
-    'site-content-area-partial',
-    get_theme_file_uri( '/assets/css/content-area.min.css' ),
-    array(),
-    cache_version_id()
-  );
-
-
-  wp_register_style(
-    'site-comment-partial',
-    get_theme_file_uri( '/assets/css/comments.min.css' ),
-    array(),
-    cache_version_id()
-  );
-
-
-	wp_register_style(
-    'site-footer-partial',
-    get_theme_file_uri( '/assets/css/site-footer.min.css' ),
-    array(),
-    cache_version_id()
-  );
-
 
   // Load Webfonts
   wp_enqueue_style(
@@ -83,8 +42,21 @@ function pb_enqueue_child_theme_scripts_styles() {
   );
 
 
+  // Load Comment Stylesheet
+  if( is_singular() && comments_open() ) {
+
+    wp_enqueue_style(
+      'comment-style',
+      get_stylesheet_directory_uri() . "/assets/css/comments.min.css",
+      false,
+      cache_version_id()
+    );
+
+  }
+
+
   // Block Editor Front End Styles
-  if ( has_blocks() && is_singular() ) {
+  if ( has_blocks() ) {
 
     wp_enqueue_style(
       'front-end-block-styles',
@@ -120,34 +92,6 @@ function pb_enqueue_child_theme_scripts_styles() {
     'async',
     true
   );
-
-
-  // Load responsive menu varaibles
-  wp_localize_script(
-		'global-script',
-		'genesis_responsive_menu',
-		genesis_responsive_menu_settings()
-	);
-
-
-	// Lazy Load Script
-	if ( 'lazyload' === get_theme_mod( 'lazy_load_media' ) ) {
-
-		wp_enqueue_script(
-      'wprig-lazy-load-images',
-      get_stylesheet_directory_uri() . "/assets/js/lazyload.min.js",
-      array(),
-      cache_version_id(),
-      false
-    );
-
-		wp_script_add_data(
-      'wprig-lazy-load-images',
-      'defer',
-      true
-    );
-
-	}
 
 
 	// Social Share Script
@@ -207,48 +151,38 @@ function pb_enqueue_child_theme_scripts_styles() {
 }
 
 
-// Defines responsive menu settings
-function genesis_responsive_menu_settings() {
+// Block Editor Assets
+/**
+ * Registers an editor stylesheet for the current theme.
+ */
+add_action( 'after_setup_theme', 'pb_theme_add_editor_styles' );
+function pb_theme_add_editor_styles() {
 
-	$settings = array(
-		'mainMenu'         => __( 'Menu', 'blank-child-theme' ),
-		'menuIconClass'    => 'icon-menu',
-		'subMenu'          => __( 'Submenu', 'blank-child-theme' ),
-		'subMenuIconClass' => 'icon-chevron-down',
-		'menuClasses'      => array(
-			'combine' => array(
-				'.nav-primary',
-			),
-			'others'  => array(),
-		),
-	);
-
-	return $settings;
+    add_editor_style( "/assets/css/block-editor-style.min.css" );
 
 }
 
 
-// Block Editor Assets
 add_action( 'enqueue_block_editor_assets', 'pb_block_editor_styles' );
 function pb_block_editor_styles() {
 
-  wp_enqueue_style(
-    'theme-block-editor-styles',
-    get_stylesheet_directory_uri() . "/assets/css/block-editor-style.min.css",
-    false,
-    cache_version_id()
+  wp_enqueue_script(
+    'theme-block-editor-js',
+    get_stylesheet_directory_uri() . "/assets/js/editor.min.js",
+    array( 'wp-blocks', 'wp-dom' ),
+    cache_version_id(),
+    true
   );
 
   // Load Webfonts
   wp_enqueue_style(
     'google-web-fonts',
-    '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap',
+    '//fonts.googleapis.com/css?family=Noto+Serif&display=swap',
     array(),
     cache_version_id()
   );
 
 }
-
 
 // Retrive Customize settings for banner cookie
 function pb_get_customizer_banner_cookie_settings(){
