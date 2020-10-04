@@ -1,0 +1,43 @@
+// Media Elements
+
+img
+	display: block
+	height: auto
+	max-width: 100%
+
+
+figure
+	margin: 0 0 var(--spacing-1x) 0
+	max-width: 100%
+	position: relative
+
+
+// Make sure embeds and iframes fit their containers.
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption
+	max-width: 100%
+
+
+.wp-audio-shortcode,
+.wp-playlist,
+.wp-video
+	margin-bottom: var(--spacing-1x)
+
+
+// Media Captions
+figcaption,
+.wp-caption,
+.wp-caption-text
+	color: var(--color-dark-gray)
+	font-size: var(--font-size-x-small)
+	font-style: italic
+	margin-bottom: var(--spacing-1x)
+	margin-top: 10px
+
+	.alignleft &,
+	.alignright &
+		margin-bottom: 0

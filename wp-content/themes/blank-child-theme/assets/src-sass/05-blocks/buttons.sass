@@ -1,0 +1,38 @@
+// Button block
+
+.wp-block-buttons
+	.wp-block-button
+		margin-bottom: var(--spacing-1x)
+		margin-right: var(--spacing-1x)
+
+		&:last-of-type
+			margin-right: 0
+
+
+.wp-block-button
+	&__link
+		@extend %button
+			
+		&:not(.has-text-color)
+			color: var(--color-white)
+			
+			&:hover
+				color: var(--color-white)
+				
+		&:not(.has-background)
+			$default: nth( nth( $colors, 1 ), 2 ) // first color in $colors array
+			background-color: $default
+
+			&:hover,
+			&:focus
+				background-color: darken( $default, 20% )
+
+		@each $name, $color in $colors
+
+			&.has-#{$name}-color:hover,
+			&.has-#{$name}-color:focus
+				color: $color
+			
+			&.has-#{$name}-background-color:hover,
+			&.has-#{$name}-background-color:focus
+				background-color: darken( $color, 20% )

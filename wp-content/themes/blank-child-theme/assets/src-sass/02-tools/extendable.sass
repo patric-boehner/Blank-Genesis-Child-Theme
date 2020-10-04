@@ -1,0 +1,26 @@
+// Button Extendable Style
+
+%button
+    background-color: var(--color-primary)
+    border: 0
+    border-radius: 0
+    color: var(--color-white)
+    cursor: pointer
+    font-size: var(--font-size-small)
+    font-weight: var(--font-weight-bold)
+    padding: 16px 24px
+    text-decoration: none
+    white-space: normal
+    width: auto
+    line-height: normal
+
+    &:hover,
+    &:focus
+        background-color: var(--color-highlight)
+        color: $white
+
+    &:disabled
+        background-color: var( --color-border)
+        border-width: 0
+        color: var(--color-primary)
+        cursor: not-allowed

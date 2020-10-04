@@ -1,33 +1,69 @@
-# Other cleanup
-sitemap.xml
-sitemap.xml.gz
-*.log
+# Ignore everything #
+**
+!wp-content/
+wp-content/**
+!wp-content/themes/
+!wp-content/plugins/
+wp-content/themes/**
+wp-content/plugins/**
 
-# ignore codekit
-.codekit-cache
+# Add two rules for each Theme or Plugin you want to include:
+# 1. !folder-name/    <-- includes the Plugin and top level files
+# 2. !folder-name/**  <-- includes the Plugin and sub level files recursively, except for the "Ignore some other system generated files" rules below
+###############################
 
-# ignore mac files
-.DS_Store
+# Start editing!
 
-# ignore log files and databases
-*.log
-*.sql
-*.sqlite
+# Theme
+!wp-content/themes/blank-child-theme/
+!wp-content/themes/blank-child-theme/**
 
-# ignore compiled files
+# Functionality Plugin
+!wp-content/plugins/core-functionality/
+!wp-content/plugins/core-functionality/**
+
+
+# Stop editing!
+
+############################################
+# Ignore some other system generated files #
+############################################
 *.com
 *.class
 *.dll
 *.exe
 *.o
 *.so
-
-# ignore packaged files
 *.7z
+*.zip
 *.dmg
 *.gz
 *.iso
 *.jar
 *.rar
 *.tar
-*.zip
+*.log
+*.sql
+*.sqlite
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.codekit-cache
+.sass-cache
+# Sublime
+*.sublime-project
+*.sublime-workspace
+# PhpStorm
+.idea/
+config.codekit
+config.codekit3
+*.yml
+
+# Always include the build script #
+###################################
+!build.sh
+!README.md
+!CHANGELOG.md

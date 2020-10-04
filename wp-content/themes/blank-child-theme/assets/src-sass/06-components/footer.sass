@@ -1,0 +1,47 @@
+// Site Footer
+//**********************************************
+
+.footer-block-content-area
+	
+	.block-content-area
+		font-size: var(--font-size-small)
+			
+		p:last-of-type
+			margin-bottom: 0
+
+
+.site-footer
+	border-top: 1px solid var(--color-border)
+	font-size: var(--font-size-x-small)
+	line-height: 1
+	text-align: center
+
+	@include above-tablet
+
+		> .wrap
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			flex-direction: row-reverse
+
+			&:before,
+			&:after
+				content: none
+
+	p
+		margin-bottom: 0
+
+
+.copyright
+	width: auto
+
+
+// Footer Navigation
+	
+ul.menu-secondary
+	.menu-item
+		display: inline-block
+
+		a
+			padding: 0 20px 10px
+

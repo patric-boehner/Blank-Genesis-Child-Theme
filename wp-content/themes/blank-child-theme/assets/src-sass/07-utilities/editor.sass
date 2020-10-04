@@ -1,0 +1,25 @@
+.editor-post-title__block .editor-post-title__input
+	font-family: var(--font-primary)
+	font-size: var(--heading-font-size-h1)
+	font-weight: var(--font-weight-bold)
+	line-height: 1.2
+
+
+// Regular content width
+.wp-block
+	max-width: var(--width-content)
+
+	&[data-align="wide"],
+	&[data-align="full"]
+		max-width: none
+
+
+.wp-block[data-align="wide"]
+	max-width: var(--width-full)
+
+
+// Fix padding issue on columns in media-text block
+.wp-block-media-text
+	.wp-block-columns
+		.block-editor-inner-blocks
+			padding: 0

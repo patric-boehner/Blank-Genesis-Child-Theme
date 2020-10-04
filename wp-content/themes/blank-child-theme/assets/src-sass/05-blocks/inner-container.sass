@@ -1,0 +1,21 @@
+// Block Inner Containers
+
+.wp-block-group.alignfull,
+.wp-block-group.alignwide,
+.wp-block-cover.alignfull,
+.wp-block-cover.alignwide
+
+	.wp-block-cover__inner-container,
+	.wp-block-group__inner-container
+		margin: 0 auto
+		width: auto
+		max-width: calc( var(--width-full) + (5% + 5%) )
+		padding: 0 5%
+
+		@include tablet
+			max-width: calc( var(--width-content) + (5% + 5%) )
+
+		@include phone
+			margin-left: 5%
+			margin-right: 5%
+			padding: 0

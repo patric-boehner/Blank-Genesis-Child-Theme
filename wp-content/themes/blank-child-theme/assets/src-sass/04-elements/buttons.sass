@@ -1,0 +1,20 @@
+// Buttons
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.search-submit,
+.button
+	@extend %button
+
+
+.button
+	display: inline-block
+
+	&.button-block
+		display: block
+		width: 100%
+
+
+.button .icon
+	fill: var(--color-white)

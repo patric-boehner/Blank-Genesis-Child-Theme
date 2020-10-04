@@ -1,0 +1,118 @@
+// Box Sizing
+
+html
+	-webkit-box-sizing: border-box
+	-moz-box-sizing:    border-box
+	box-sizing:         border-box
+
+
+*,
+*::before,
+*::after
+	box-sizing: inherit
+
+
+.site-container
+	overflow-x: hidden
+
+
+// Nav Layout
+
+.nav-primary,
+.nav-secondary
+	.wrap
+		max-width: none
+		padding: 0
+		margin: 0
+
+
+// Page Layout
+
+.content-area,
+.footer-content-areas-wrap,
+.wrap
+	margin: 0 auto
+	max-width: calc( var(--width-full) + (5% + 5%) )
+	padding: 0 5%
+
+	@include tablet
+		max-width: calc( var(--width-content) + (5% + 5%) )
+
+	@include phone
+		padding: 0
+		margin-left: 5%
+		margin-right: 5%
+
+
+.content
+	display: block
+	max-width: calc( var(--width-content) + (5% + 5%) )
+	padding: 0 5%
+	margin: 0 auto
+	margin-top: var(--spacing-2x)
+
+	@include phone
+		margin-left: 5%
+		margin-right: 5%
+		padding: 0
+
+
+@include above-tablet
+	.content-area
+		display: grid
+		// Swap around for sidebar-content
+		grid-template-columns: 1fr minmax(300px, 30%)
+		grid-template-areas: "content sidebar"
+		grid-column-gap: var(--grid-gap)
+
+		.content,
+		.sidebar-primary
+			width: 100%
+			float: none
+			margin-left: 0
+
+		.content
+			grid-area: content
+
+		.sidebar-primary
+			grid-area: sidebar
+
+
+// Block Content Areas
+//**********************************************
+
+@include above-tablet
+	.footer-content-areas-wrap
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		grid-column-gap: var(--grid-gap)
+		
+		.block-content-area-footer-left,
+		.block-content-area-footer-middle,
+		.block-content-area-footer-right
+			width: 100%
+			margin: 0
+			float: none
+
+
+// Search Form
+//**********************************************
+
+.search-form
+	@include above-small-phone
+		display: flex
+		flex-direction: row
+		align-items: center
+		flex-wrap: wrap
+
+		label,
+		.search-submit
+			align-self: stretch
+
+		label
+			flex-basis: 50%
+			flex-grow: 1
+			margin-right: var(--spacing-1x)
+
+		.search-submit
+			flex-basis: content

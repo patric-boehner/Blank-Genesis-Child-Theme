@@ -1,0 +1,63 @@
+// Block Quotes and Captions
+
+
+.wp-block-quote,
+.wp-block-pullquote
+	border: none
+	padding: 24px 24px 36px
+
+	p
+		font-size: var(--font-size-medium)
+		font-style: italic
+		line-height: 1.8
+		margin-bottom: var(--spacing-1x)
+
+
+.wp-block-pullquote p,
+.wp-block-quote.is-style-large p
+	font-size: var(--font-size-large)
+
+
+
+.wp-block-pullquote.is-style-solid-color
+
+	p
+		color: var(--color-white)
+		text-align: center
+
+
+.wp-block-pullquote:not(.is-style-solid-color)[style*="border-color"]
+	border: 2px solid
+	border-left: none
+	border-right: none
+
+
+.wp-block-quote,
+.wp-block-pullquote
+
+	cite
+		color: var(--color-dark-gray)
+		display: block
+		font-size: var(--font-size-small)
+		font-style: italic
+		margin-top: -25px
+		text-align: inherit
+		text-transform: none
+
+
+.wp-block-pullquote
+
+	cite
+		text-align: center
+
+
+	&.is-style-solid-color
+		cite
+			color: var(--color-white)
+			font-style: italic
+			margin-top: 20px
+
+
+.wp-block-pullquote .has-text-color cite,
+.wp-block-pullquote .has-text-color p
+	color: currentColor
