@@ -34,20 +34,19 @@
 		left: auto
 		opacity: 1
 
-
+	// Bold menu tem
 	> .menu-bold > a
 
 		@include above-phone
 			font-weight: var(--font-weight-bold)
 
-
+	// Button menu item
 	> .menu-highlight > a
 
 		@include above-phone
 			margin-left: 15px
 			padding-right: 20px
 			padding-left: 20px
-			border-radius: 3px
 			color: var(--color-white)
 			background-color: var(--color-highlight)
 			font-weight: var(--font-weight-bold)
@@ -57,7 +56,8 @@
 	> .menu-highlight > a:hover
 
 		@include above-phone
-			background-color: var(--color-white)
+			background-color: var(--color-primary)
+			color: var(--color-white)
 
 
 	a
@@ -88,7 +88,7 @@
 
 		@include above-phone
 			position: absolute
-			width: 180px
+			width: var(--menu-item-width)
 			padding-left: 0
 			border-top: 1px solid var(--color-border)
 			opacity: 0
@@ -102,7 +102,7 @@
 			word-wrap: break-word
 
 			@include above-phone
-				width: 180px
+				width: var(--menu-item-width)
 				padding-top: 20px
 				padding-bottom: 20px
 				border: 1px solid var(--color-border)
@@ -128,6 +128,9 @@
 
 	@include above-phone
 		display: block
+	
+	@include phone
+		display: inline-block
 
 
 // Responsive Menu
@@ -167,7 +170,7 @@
 
 			@include above-phone
 				position: absolute
-				width: 180px
+				width: var(--menu-item-width)
 				padding-left: 0
 				border-top: 1px solid var(--color-border)
 				opacity: 0
@@ -253,6 +256,7 @@
 
 	@include above-phone
 		width: auto
+		float: right
 
 
 // Primary nav

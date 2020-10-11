@@ -15,6 +15,11 @@ wp.domReady( () => {
 		[ 'default', 'large' ]
 	);
 
+	wp.blocks.unregisterBlockStyle(
+		'core/image',
+		[ 'default', 'rounded' ]
+	);
+
 	// wp.blocks.registerBlockStyle( 'core/heading', [
 	// 	{
 	// 		name: 'default',
