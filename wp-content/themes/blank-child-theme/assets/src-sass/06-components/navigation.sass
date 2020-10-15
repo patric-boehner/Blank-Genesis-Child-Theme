@@ -128,9 +128,6 @@
 
 	@include above-phone
 		display: block
-	
-	@include phone
-		display: inline-block
 
 
 // Responsive Menu
@@ -179,7 +176,6 @@
 
 // Menu toggle
 .menu-toggle
-	float: right
 	display: block
 	visibility: visible
 	font-size: var(--font-size-normal)
@@ -187,7 +183,6 @@
 	overflow: hidden
 	position: relative
 	z-index: 1000
-	margin: 0 auto
 	padding: 16px 0
 	border-width: 0
 	color: var(--color-primary)
@@ -253,10 +248,9 @@
 
 .nav-primary
 	width: 100%
-
+	
 	@include above-phone
 		width: auto
-		float: right
 
 
 // Primary nav

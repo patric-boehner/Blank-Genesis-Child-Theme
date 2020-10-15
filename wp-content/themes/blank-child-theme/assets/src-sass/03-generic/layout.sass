@@ -28,61 +28,61 @@ html
 
 // Page Layout
 
+
 .content-area,
-.footer-content-areas-wrap,
 .wrap
 	margin: 0 auto
-	max-width: calc( var(--width-full) + (5% + 5%) )
-	padding: 0 5%
+	max-width: calc( var(--width-full) + (var(--width-spacing) + var(--width-spacing)) )
+	padding: 0 var(--width-spacing)
 
 	@include tablet
-		max-width: calc( var(--width-content) + (5% + 5%) )
+		max-width: calc( var(--width-content) + (var(--width-spacing) + var(--width-spacing)) )
 
 	@include phone
 		padding: 0
-		margin-left: 5%
-		margin-right: 5%
+		margin-left: var(--width-spacing)
+		margin-right: var(--width-spacing)
 
 
 .content
 	display: block
-	max-width: calc( var(--width-content) + (5% + 5%) )
-	padding: 0 5%
+	max-width: calc( var(--width-content) + (var(--width-spacing) + var(--width-spacing)) )
+	padding: 0 var(--width-spacing)
 	margin: 0 auto
 	margin-top: var(--spacing-2x)
 
 	@include phone
-		margin-left: 5%
-		margin-right: 5%
+		margin-left: var(--width-spacing)
+		margin-right: var(--width-spacing)
 		padding: 0
 
 
-@include above-tablet
-	.content-area
-		display: grid
-		// Swap around for sidebar-content
-		grid-template-columns: 1fr minmax(300px, 30%)
-		grid-template-areas: "content sidebar"
-		grid-column-gap: var(--grid-gap)
+// @include above-tablet
+// 	.content-area
+// 		display: grid
+// 		// Swap around for sidebar-content
+// 		grid-template-columns: 1fr minmax(300px, 30%)
+// 		grid-template-areas: "content sidebar"
+// 		grid-column-gap: var(--grid-gap)
 
-		.content,
-		.sidebar-primary
-			width: 100%
-			float: none
-			margin-left: 0
+// 		.content,
+// 		.sidebar-primary
+// 			width: 100%
+// 			float: none
+// 			margin-left: 0
 
-		.content
-			grid-area: content
+// 		.content
+// 			grid-area: content
 
-		.sidebar-primary
-			grid-area: sidebar
+// 		.sidebar-primary
+// 			grid-area: sidebar
 
 
 // Block Content Areas
 //**********************************************
 
 @include above-tablet
-	.footer-content-areas-wrap
+	.footer-block-content-area .wrap
 		display: grid
 		grid-template-columns: 1fr 1fr 1fr
 		grid-column-gap: var(--grid-gap)
