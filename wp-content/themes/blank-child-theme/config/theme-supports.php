@@ -21,18 +21,15 @@ return [
 	'structural-wraps'								=> [
 		'header',
 		'nav',
-		// 'footer-widgets',
 		'footer',
 	],
 	'genesis-accessibility'           => [
-		'404-page',
 		'drop-down-menu',
 		'headings',
 		'rems',
 		'search-form',
 		'skip-links'
 	],
-	'genesis-lazy-load-images'        => '',
 	'genesis-after-entry-widget-area' => '',
 	'genesis-footer-widgets'          => 0,
 	'genesis-menus'                   => [

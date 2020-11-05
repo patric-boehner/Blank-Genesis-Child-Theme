@@ -63,7 +63,7 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 
 
 // Add viewport meta tag for mobile browsers.
-add_theme_support( 'genesis-responsive-viewport' );
+// add_theme_support( 'genesis-responsive-viewport' );
 
 
 // Remove the site description
