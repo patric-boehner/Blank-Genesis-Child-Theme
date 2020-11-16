@@ -3,13 +3,25 @@
 // Header
 
 .site-header
-	padding: var(--spacing-1x) 0
+	padding: var(--spacing-medium) 0
 
 
 // Strucutre
 
+.content
+	margin-top: var(--spacing-content-area)
+	margin-bottom: var(--spacing-content-area)
+
+
+	.entry-content:first-child > .alignfull:first-child
+		margin-top: calc( var(--spacing-content-area) * -1 )
+
+	.entry-content:last-child > .alignfull:last-child
+		margin-bottom: calc( var(--spacing-content-area) * -1 )
+
+
 .content-area
-	margin-top: var(--spacing-2x)
+	margin-top: var(--spacing-x-large)
 	word-wrap: break-word
 
 
@@ -17,36 +29,36 @@
 
 .entry,
 .block-content-area
-	margin-bottom: var(--spacing-2x)
+	margin-bottom: var(--spacing-x-large)
 
 
 .entry-header
-	margin-bottom: var(--spacing-2x)
+	margin-bottom: var(--spacing-x-large)
 
 	
 .comment-respond
-	margin-bottom: var(--spacing-2x)
-	margin-top: var(--spacing-2x)
+	margin-bottom: var(--spacing-x-large)
+	margin-top: var(--spacing-x-large)
 
 
 .entry-comments,
-	margin-bottom: var(--spacing-2x)
+	margin-bottom: var(--spacing-x-large)
 
 
 .after-entry,
 .author-profile
-	margin-bottom: var(--spacing-2x)
+	margin-bottom: var(--spacing-x-large)
 
 
 .pagination
-	margin-bottom: var(--spacing-2x)
+	margin-bottom: var(--spacing-x-large)
 
 
 // Footer
 
 .footer-block-content-area
-	padding: var(--spacing-2x) 0
+	padding: var(--spacing-x-large) 0
 
 	
 .site-footer
-	padding: var(--spacing-1x) 0
+	padding: var(--spacing-medium) 0

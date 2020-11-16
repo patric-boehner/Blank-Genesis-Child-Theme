@@ -62,10 +62,6 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 }
 
 
-// Add viewport meta tag for mobile browsers.
-// add_theme_support( 'genesis-responsive-viewport' );
-
-
 // Remove the site description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
@@ -74,6 +70,20 @@ remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 unregister_sidebar( 'sidebar' ); // Primary
 unregister_sidebar( 'sidebar-alt' ); // Secondary
 unregister_sidebar( 'header-right' ); // Header Right
+
+
+// Remove Sidebar for wide and narrow layouts
+add_action( 'genesis_meta', 'pb_remove_sidebar_narrow_wide_layout', 12 );
+function pb_remove_sidebar_narrow_wide_layout() {
+
+	$site_layout = genesis_site_layout();
+
+	if ( 'wide-content' === $site_layout || 'narrow-content' === $site_layout ) {
+		remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+		remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+	}
+
+}
 
 
 // Remove Edit link
@@ -102,7 +112,7 @@ remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
 
 
 // Remove Genesis in-post Layout Settings
-remove_theme_support( 'genesis-inpost-layouts' );
+// remove_theme_support( 'genesis-inpost-layouts' );
 
 
 // Remove Archive Layout settings

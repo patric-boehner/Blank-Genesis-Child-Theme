@@ -28,33 +28,49 @@ html
 
 // Page Layout
 
-
 .content-area,
 .wrap
 	margin: 0 auto
-	max-width: calc( var(--width-full) + (var(--width-spacing) + var(--width-spacing)) )
-	padding: 0 var(--width-spacing)
-
-	@include tablet
-		max-width: calc( var(--width-content) + (var(--width-spacing) + var(--width-spacing)) )
+	max-width: calc( var(--wrap-max-width) + (var(--side-spacing) * 2 ) )
+	padding: 0 var(--side-spacing)
 
 	@include phone
 		padding: 0
-		margin-left: var(--width-spacing)
-		margin-right: var(--width-spacing)
+		margin-left: var(--side-spacing)
+		margin-right: var(--side-spacing)
 
 
 .content
 	display: block
-	max-width: calc( var(--width-content) + (var(--width-spacing) + var(--width-spacing)) )
-	padding: 0 var(--width-spacing)
+	max-width: calc( var(--wrap-max-width) + (var(--side-spacing) * 2 ) )
+	padding: 0 var(--side-spacing)
 	margin: 0 auto
-	margin-top: var(--spacing-2x)
-
+	
 	@include phone
-		margin-left: var(--width-spacing)
-		margin-right: var(--width-spacing)
 		padding: 0
+		margin-left: var(--side-spacing)
+		margin-right: var(--side-spacing)
+
+
+.narrow-content
+	.content-area,
+	.content
+		--wrap-max-width: var(--width-content)
+
+
+.inner-wrap
+	width: 100%
+	display: grid
+	grid-template-columns: 1fr 1fr
+	grid-template-areas: "previous next"
+
+	.pagination-next
+		grid-area: next
+		justify-self: end
+		
+	.pagination-previous
+		grid-area: previous
+		justify-self: start
 
 
 // @include above-tablet
@@ -112,7 +128,7 @@ html
 		label
 			flex-basis: 50%
 			flex-grow: 1
-			margin-right: var(--spacing-1x)
+			margin-right: var(--spacing-medium)
 
 		.search-submit
 			flex-basis: content

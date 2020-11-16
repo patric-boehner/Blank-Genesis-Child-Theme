@@ -2,7 +2,9 @@
 
 .alignwide,
 .alignfull
-	margin: 0 calc(50% - 50vw)
+	margin: 0
+	margin-left: calc(50% - 50vw)
+	margin-right: calc(50% - 50vw)
 	max-width: 100vw
 	width: 100vw
 
@@ -10,9 +12,19 @@
 @include above-tablet
 	// For the negative left/right margin, subtract page width from the content width and divide by two
 	.alignwide
-		margin: 0 calc( ( var(--width-content) - var(--width-full) ) / 2  )
+		margin: 0
+		margin-left: calc( ( var(--width-content) - var(--width-full) ) / 2  )
+		margin-right: calc( ( var(--width-content) - var(--width-full) ) / 2  )
 		max-width: var(--width-full)
 		width: var(--width-full)
+
+
+.wide-content
+	.alignwide
+		max-width: auto
+		width: auto
+		margin-left: auto
+		margin-right: auto
 
 
 // Alighments
@@ -20,13 +32,13 @@
 .alignleft
 	display: inline
 	float: left
-	margin-right: var(--spacing-1x)
+	margin-right: var(--spacing-medium)
 
 
 .alignright
 	display: inline
 	float: right
-	margin-left: var(--spacing-1x)
+	margin-left: var(--spacing-medium)
 
 
 .aligncenter
@@ -42,5 +54,5 @@
 	
 	&.alignwide,
 	&.alignfull
-		margin-bottom: var(--spacing-1x)
+		margin-bottom: var(--spacing-medium)
 

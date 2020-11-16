@@ -72,3 +72,6 @@ include_once( CORE_DIR . '/inc/post-types/blocks.php' );
 
 // Taxonomies
 // include_once( CORE_DIR . '/inc/taxonomies/tax-name.php' );
+
+// Blocks
+// include_once( CORE_DIR . '/inc/blocks/custom-block.php' );

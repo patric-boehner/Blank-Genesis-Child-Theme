@@ -15,13 +15,15 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Add stylesheet before Comments
-add_action( 'genesis_before_comments', 'pb_load_comments_area_styles' );
-function pb_load_comments_area_styles() {
+// Change Gravatar Size
+add_filter( 'genesis_comment_list_args', 'pb_change_comments_gravatar' );
+function pb_change_comments_gravatar( array $args ) {
 
-	wp_print_styles( array( 'site-comment-partial' ) );
+	$args['avatar_size'] = 72;
 
+	return $args;
 }
+
 
 
 // Modify the comments default
@@ -71,17 +73,17 @@ function pb_comment_form_defaults( array $paramaters ) {
 
 
 // Remove URL Field
-// add_filter('comment_form_default_fields', 'pb_unset_url_field');
-// function pb_unset_url_field($fields) {
-//
-// 	if(isset($fields['url'])) {
-//
-// 		unset($fields['url']);
-// 		return $fields;
-//
-// 	}
-//
-// }
+add_filter('comment_form_default_fields', 'pb_unset_url_field');
+function pb_unset_url_field($fields) {
+
+	if(isset($fields['url'])) {
+
+		unset($fields['url']);
+		return $fields;
+
+	}
+
+}
 
 
 // Customize the next page link in comment pagination

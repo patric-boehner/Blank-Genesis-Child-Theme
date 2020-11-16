@@ -24,10 +24,12 @@ if ( is_readable( $genesis_layouts_config ) ) {
 
 	$layouts = require $genesis_layouts_config;
 	
+	unset( $layouts['content-sidebar'] );
 	unset( $layouts['sidebar-content'] );
 	unset( $layouts['content-sidebar-sidebar'] );
 	unset( $layouts['sidebar-sidebar-content'] );
 	unset( $layouts['sidebar-content-sidebar'] );
+	unset( $layouts['full-width-contnet'] );
 
 }
 

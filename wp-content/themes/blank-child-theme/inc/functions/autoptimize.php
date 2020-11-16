@@ -29,7 +29,7 @@ add_filter('autoptimize_filter_js_exclude','pb_ao_override_js_exclude', 30, 1 );
 function pb_ao_override_js_exclude( $exclude ) {
 
 	// Exclude theme scripts that are allready defered or asynced
-	return $exclude.", global.min.js, social-share.min.js, top-banner.min.js";
+	return $exclude.", top-banner.min.js";
 
 }
 

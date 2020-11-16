@@ -62,9 +62,10 @@
 
 	a
 		display: block
-		padding: 23px 20px
+		padding: var(--menu-item-padding)
 		outline-offset: -1px
 		color: var(--color-primary)
+		font-size: var(--menu-font-size)
 		font-weight: var(--font-weight-normal)
 		text-decoration: none
 
@@ -128,6 +129,11 @@
 
 	@include above-phone
 		display: block
+
+	// @include phone
+	// 	position: absolute
+	// 	top: 100%
+	// 	z-index: 1
 
 
 // Responsive Menu
@@ -257,7 +263,7 @@
 //**********************************************
 
 .nav-secondary
-	margin-bottom: var(--spacing-1x)
+	margin-bottom: var(--spacing-medium)
 
 	@include above-phone
 		width: auto

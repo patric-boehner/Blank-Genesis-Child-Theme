@@ -31,6 +31,15 @@
     --heading-font-size-h5: var(--font-size-small);
     --heading-font-size-h6: var(--font-size-x-small);
 
+    // Font Styles
+    --heading-font-family: var(--font-primary);
+    --heading-text-transform: uppercase;
+    --heading-font-weight: var(--font-weight-bold);
+
+    --body-font-family: var(--font-secondary);
+    --body-font-weight: var(--font-weight-normal);
+    --body-font-weight-bold: var(--font-weight-bold);
+
     // Colors
     --color-blue: #004b96;
     --color-green: #58AD69;
@@ -44,27 +53,63 @@
     --color-border: var(--color-dark-gray);
     --color-background: var(--color-light-gray);
 
+    --color-default-overlay: #000;
+
     // Base Spacing
-    --spacing-base: 30px;
+    --spacing-base: 15px;
 
     // Structure
     --width-full: 1200px;
     --width-content: 800px;
 
-    --width-spacing: 8%;
+    --wrap-max-width: var(--width-full);
+
+    --side-spacing: 8%;
 
     // Grid
     --grid-width: var(--width-full);
-    --grid-gap: var(--spacing-base);
+    --grid-gap: var(--spacing-medium);
 
     // Spacing
-    --spacing-1x: var(--spacing-base);
-    --spacing-2x: calc(var(--spacing-base)*2);
-    --spacing-3x: calc(var(--spacing-base)*3);
-    // --spacing-4x: calc(var(--spacing-base)*4);
+    --spacing-x-small: calc(var(--spacing-small) / 3); // 5px
+    --spacing-small: calc(var(--spacing-medium) / 2); // 15px
+    --spacing-medium: calc(var(--spacing-base) * 2); // 30px
+    --spacing-large: calc(var(--spacing-base) * 3); // 45px
+    --spacing-x-large: calc(var(--spacing-medium) * 2); // 60px
+    --spacing-xx-large: calc(var(--spacing-x-large) * 2);  // 120px
+
+    --spacing-content-area: var(--spacing-xx-large);
+    --spacing-row: var(--spacing-x-large);
 
     // Menu
-    --menu-item-width: 200px
+    --menu-font-size: var(--font-size-medium);
+    --menu-item-padding: var(--spacing-small) var(--spacing-medium);
+    --menu-item-width: 200px;
 
 }
-    
+
+
+// Desktop
+@media only screen and (max-width: 1340px) {
+
+    :root {
+
+        // Menu
+        --menu-font-size: 90%;
+        --menu-item-padding: var(--spacing-small) var(--spacing-small);
+    }
+
+}
+
+
+// Table
+@media only screen and (max-width: 1023px) {
+
+    :root {
+
+        // Structure
+        --wrap-max-width: var(--width-content);
+
+    }
+
+}

@@ -19,6 +19,47 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_filter( 'genesis_disable_microdata', '__return_true' );
 
 
+// Remove feautre classes
+remove_filter( 'body_class', 'genesis_title_hidden_body_class' );
+remove_filter( 'body_class', 'genesis_breadcrumbs_hidden_body_class' );
+remove_filter( 'body_class', 'genesis_singular_image_hidden_body_class' );
+remove_filter( 'body_class', 'genesis_singular_image_visible_body_class' );
+
+
+// Add body clases to all blogs and archives
+add_filter( 'body_class', 'pb_archive_body_class' );
+function pb_archive_body_class( $classes ) {
+
+	if(  !is_home() || !is_search() ) {
+		return $classes;	
+	}
+	
+    $classes[] = 'archive';
+	return $classes;
+	
+}
+
+
+// Add class to first post
+add_filter( 'post_class', 'pb_first_post_class' );
+function pb_first_post_class( $classes ) {
+
+	if ( !is_home() || is_paged() ) {
+		return $classes;
+	}
+
+    global $wp_query;
+
+    if( 0 == $wp_query->current_post ) {
+			$classes[] = 'first-entry';
+		}
+
+	  return $classes;
+
+}
+
+
+
 /**
  * Adds body classes to help with block styling.
  *
@@ -94,7 +135,7 @@ function pb_remove_redundant_markup() {
 
 	add_filter( 'genesis_markup_site-inner', '__return_null' );
 
-	if ( 'full-width-content' === genesis_site_layout() ) {
+	if ( 'full-width-content' === genesis_site_layout() || 'wide-content' === genesis_site_layout() || 'narrow-content' === genesis_site_layout() ) {
 		add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
 	}
 

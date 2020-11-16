@@ -25,11 +25,11 @@ $next_post_text = '<span class="nav-title">' .__( 'Next Post:', 'blank-child-the
 
 // Link Structure
 if ( $next_post_link ) {
-	$next_post_link = '<div class="post-pagination pagination-previous first one-half">' . $next_post_text . ' ' . $next_post_link . '</div>';
+	$next_post_link = '<div class="pagination-previous">' . $next_post_text . ' ' . $next_post_link . '</div>';
 }
 
 if ( $previous_post_link ) {
-	$previous_post_link = '<div class="post-pagination pagination-next one-half">' . $previous_post_text . ' ' . $previous_post_link . '</div>';
+	$previous_post_link = '<div class="pagination-next">' . $previous_post_text . ' ' . $previous_post_link . '</div>';
 }
 
 // Screen Reader Text
@@ -41,7 +41,7 @@ if ( $next_post_link || $previous_post_link ) {
 	genesis_markup( array(
 		'open'	 => '<nav %s>',
 		'close'	 => '</nav><!-- End of Post Pagination -->',
-		'content' => $screen_reader . $next_post_link . $previous_post_link,
+		'content' => $screen_reader . '<div class="inner-wrap">' . $next_post_link . $previous_post_link . '</div>',
 		'context' => 'adjacent-entry-pagination',
 	) );
 

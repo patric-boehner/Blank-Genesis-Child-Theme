@@ -56,3 +56,65 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 
 // Disable genesis breadcrumb support
 // add_filter( 'genesis_breadcrumbs_toggle_enabled', '__return_false' );
+
+
+
+/**
+ * Gutenberg layout class
+ * @link https://www.billerickson.net/change-gutenberg-content-width-to-match-layout/
+ *
+ * @param string $classes
+ * @return string
+ */
+add_filter( 'admin_body_class', 'pb_block_editor_layout_class' );
+function pb_block_editor_layout_class( $classes ) {
+
+	$screen = get_current_screen();
+
+	if( ! $screen->is_block_editor() ) {
+		return $classes;
+	}
+
+	$layout = false;
+	$post_id = isset( $_GET['post'] ) ? intval( $_GET['post'] ) : false;
+  
+	// Get post-specific layout
+	if( $post_id ) {
+		$layout = genesis_get_custom_field( '_genesis_layout', $post_id );
+	}
+		
+    
+	// Pages use full width as default, see below
+	if( empty( $layout ) && 'page' === get_post_type() ) {
+		$layout = 'wide-content';
+	}
+    
+	// If no post-specific layout, use site-wide default
+	elseif( empty( $layout ) ) {
+		$layout = genesis_get_option( 'site_layout' );
+	}
+
+	$classes .= ' ' . $layout . ' ';
+	
+	return $classes;
+
+}
+
+
+/**
+ * Full width layout for pages as default
+ * https://www.billerickson.net/change-gutenberg-content-width-to-match-genesis-layout/
+ *
+ * @param string $layout 
+ * @return string
+ */
+add_filter( 'genesis_pre_get_option_site_layout', 'pb_wide_width_pages' );
+function pb_wide_width_pages( $layout ) {
+
+	if( is_page() ) {
+		$layout = 'wide-content';
+	}
+		
+	return $layout;
+
+}

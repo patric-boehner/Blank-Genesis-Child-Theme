@@ -4,7 +4,9 @@
 @each $name, $color in $colors
 
 	.has-#{$name}-color
+		--color-inherit: var(--color-#{$name})
 		color: $color
 
 	.has-#{$name}-background-color
+		--color-inherit-background: var(--color-#{$name})
 		background-color: $color

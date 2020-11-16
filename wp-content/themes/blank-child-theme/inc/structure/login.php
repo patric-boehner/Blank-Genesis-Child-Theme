@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Login page customization
+ * Login Structure
  *
  * @package Blank Child Theme
  * @author  Patrick Boehner

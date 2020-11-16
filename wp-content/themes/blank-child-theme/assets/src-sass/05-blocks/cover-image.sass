@@ -1,4 +1,10 @@
 // Block Cover Image
 
 .wp-block-cover
-    padding: 0
+
+    &.alignfull
+        padding-top: var(--spacing-row)
+        padding-bottom: var(--spacing-row)
+
+    &.has-background-dim
+        background-color: var(--color-inherit-background, var(--color-default-overlay))

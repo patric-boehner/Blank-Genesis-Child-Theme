@@ -56,8 +56,8 @@ include_once( CHILD_DIR . '/inc/theme-assets.php' );
 include_once( CHILD_DIR . '/inc/admin/customizer/customizer.php' );
 include_once( CHILD_DIR . '/inc/admin/widgets.php' );
 include_once( CHILD_DIR . '/inc/admin/editor.php' );
-include_once( CHILD_DIR . '/inc/admin/login.php' );
 include_once( CHILD_DIR . '/inc/admin/menu.php' );
+include_once( CHILD_DIR . '/inc/admin/layouts.php' );
 include_once( CHILD_DIR . '/inc/admin/dashboard.php' );
 include_once( CHILD_DIR . '/inc/admin/user-profile.php' );
 include_once( CHILD_DIR . '/inc/admin/block-patterns.php' );
@@ -75,8 +75,11 @@ include_once( CHILD_DIR . '/inc/functions/post-thumbnail-cache.php' );
 include_once( CHILD_DIR . '/inc/functions/media.php' );
 include_once( CHILD_DIR . '/inc/functions/js-body-class.php' );
 include_once( CHILD_DIR . '/inc/functions/inline-svg.php' );
-include_once( CHILD_DIR . '/inc/functions/sitemap.php' );
-include_once( CHILD_DIR . '/inc/functions/breadcrumbs.php' );
+include_once( CHILD_DIR . '/inc/functions/sitemap.php' );;
+
+
+// Blocks
+include_once( CHILD_DIR . '/inc/blocks/paragraphs.php' );
 
 
 // Structure
@@ -88,3 +91,6 @@ include_once( CHILD_DIR . '/inc/structure/post.php' );
 include_once( CHILD_DIR . '/inc/structure/archive.php' );
 include_once( CHILD_DIR . '/inc/structure/loop.php' );
 include_once( CHILD_DIR . '/inc/structure/menu.php' );
+include_once( CHILD_DIR . '/inc/structure/breadcrumbs.php' );
+include_once( CHILD_DIR . '/inc/structure/skip-links.php' );
+include_once( CHILD_DIR . '/inc/structure/login.php' );

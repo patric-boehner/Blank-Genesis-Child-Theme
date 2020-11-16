@@ -23,11 +23,14 @@ require_once( CORE_DIR . '/inc/functions/dont-update.php' );
 // Remoce Custom Meta
 require_once( CORE_DIR . '/inc/functions/custom-meta.php' );
 
+// Custom Functions
+require_once( CORE_DIR . '/inc/functions/custom-functions.php' );
+
 // Post Type Title Placeholder
 require_once( CORE_DIR . '/inc/functions/editor-placeholder.php' );
 
 // Yost SEO
 require_once( CORE_DIR . '/inc/functions/seo.php' );
 
-// Use shortcodes in widgets
-add_filter( 'widget_text', 'do_shortcode' );
+// ACF Functions
+require_once( CORE_DIR . '/inc/functions/acf.php' );

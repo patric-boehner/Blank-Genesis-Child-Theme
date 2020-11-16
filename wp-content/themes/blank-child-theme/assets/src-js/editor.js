@@ -1,3 +1,3 @@
 // Editor combined JS
 
-// @codekit-prepend "_partials/block-styles.js";
+// @codekit-prepend "_blocks/block-styles.js";

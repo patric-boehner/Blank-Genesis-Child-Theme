@@ -25,13 +25,13 @@ $screen_reader = '<h2 id="pagination-nav" class="screen-reader-text">' . __( 'Pa
 // Output
 if ( $prev_link || $next_link ) {
 
-	$pagination = $prev_link ? sprintf( '<div class="pagination-previous first one-half">%s</div>', $prev_link ) : '';
-	$pagination .= $next_link ? sprintf( '<div class="pagination-next one-half">%s</div>', $next_link ) : '';
+	$pagination = $prev_link ? sprintf( '<div class="pagination-previous">%s</div>', $prev_link ) : '';
+	$pagination .= $next_link ? sprintf( '<div class="pagination-next">%s</div>', $next_link ) : '';
 
 	genesis_markup( array(
 		'open'	 => '<nav %s>',
 		'close'	 => '</nav><!-- End of Pagination -->',
-		'content' => $screen_reader . $pagination,
+		'content' => $screen_reader . '<div class="inner-wrap">' . $pagination . '</div>',
 		'context' => 'archive-pagination',
 	) );
 

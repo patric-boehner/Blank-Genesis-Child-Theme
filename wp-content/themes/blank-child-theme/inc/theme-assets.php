@@ -55,16 +55,6 @@ function pb_enqueue_child_theme_scripts_styles() {
   }
 
 
-  // Load Print Styles
-	wp_enqueue_style(
-    'print',
-    get_stylesheet_directory_uri() . '/assets/css/print.min.css',
-    false,
-    cache_version_id(),
-    'print'
-  );
-
-
 	// Load Global Script
 	wp_enqueue_script(
     'global-script',
@@ -138,6 +128,28 @@ function pb_enqueue_child_theme_scripts_styles() {
 }
 
 
+// Load footer styles
+add_action( 'init', 'pb_load_styles_footer' );
+function pb_load_styles_footer() {
+
+  add_action( 'get_footer', 'pb_enqueue_print_stylesheet' );
+
+}
+
+// Load Print Styles
+function pb_enqueue_print_stylesheet() {
+
+	wp_enqueue_style(
+    'print',
+    get_stylesheet_directory_uri() . '/assets/css/print.min.css',
+    false,
+    cache_version_id(),
+    'print'
+  );
+
+}
+
+
 // Block Editor Assets
 /**
  * Registers an editor stylesheet for the current theme.
@@ -153,10 +165,18 @@ function pb_theme_add_editor_styles() {
 add_action( 'enqueue_block_editor_assets', 'pb_block_editor_styles' );
 function pb_block_editor_styles() {
 
+  // Editor layout styles
+  wp_enqueue_style(
+    'editor-layout',
+    get_stylesheet_directory_uri() . "/assets/css/editor-layout.min.css",
+    false,
+    cache_version_id()
+  );
+
   wp_enqueue_script(
     'theme-block-editor-js',
     get_stylesheet_directory_uri() . "/assets/js/editor.min.js",
-    array( 'wp-blocks', 'wp-dom' ),
+    array( 'wp-blocks', 'wp-dom', 'wp-i18n', 'wp-editor' ),
     cache_version_id(),
     true
   );
