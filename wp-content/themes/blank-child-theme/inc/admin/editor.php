@@ -88,6 +88,10 @@ function pb_block_editor_layout_class( $classes ) {
 	if( empty( $layout ) && 'page' === get_post_type() ) {
 		$layout = 'wide-content';
 	}
+
+	if( empty( $layout ) && 'post' === get_post_type() ) {
+		$layout = 'narrow-content';
+	}
     
 	// If no post-specific layout, use site-wide default
 	elseif( empty( $layout ) ) {

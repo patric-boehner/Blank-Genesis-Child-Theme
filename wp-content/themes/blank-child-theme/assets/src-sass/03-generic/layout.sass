@@ -21,41 +21,38 @@ html
 .nav-primary,
 .nav-secondary
 	.wrap
-		max-width: none
-		padding: 0
-		margin: 0
+		width: 100%
+		max-width: 100%
 
 
 // Page Layout
 
 .content-area,
+.content,
 .wrap
-	margin: 0 auto
-	max-width: calc( var(--wrap-max-width) + (var(--side-spacing) * 2 ) )
-	padding: 0 var(--side-spacing)
-
-	@include phone
-		padding: 0
-		margin-left: var(--side-spacing)
-		margin-right: var(--side-spacing)
-
-
-.content
 	display: block
-	max-width: calc( var(--wrap-max-width) + (var(--side-spacing) * 2 ) )
-	padding: 0 var(--side-spacing)
+	width: calc( 100% - ( var(--side-spacing) * 2 ) )
+	max-width: var(--wrap-max-width)
 	margin: 0 auto
-	
-	@include phone
-		padding: 0
-		margin-left: var(--side-spacing)
-		margin-right: var(--side-spacing)
 
 
 .narrow-content
 	.content-area,
 	.content
 		--wrap-max-width: var(--width-content)
+
+
+.wp-block-cover,
+.wp-block-group
+	&.alignfull
+		padding: 0 var(--side-spacing)
+
+
+.wp-block-cover__inner-container,
+.wp-block-group__inner-container
+	width: 100%
+	max-width: var(--wrap-max-width)
+	margin: 0 auto
 
 
 .inner-wrap
@@ -94,25 +91,7 @@ html
 // 			grid-area: sidebar
 
 
-// Block Content Areas
-//**********************************************
-
-@include above-tablet
-	.footer-block-content-area .wrap
-		display: grid
-		grid-template-columns: 1fr 1fr 1fr
-		grid-column-gap: var(--grid-gap)
-		
-		.block-content-area-footer-left,
-		.block-content-area-footer-middle,
-		.block-content-area-footer-right
-			width: 100%
-			margin: 0
-			float: none
-
-
 // Search Form
-//**********************************************
 
 .search-form
 	@include above-small-phone

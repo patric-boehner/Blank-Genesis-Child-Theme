@@ -24,14 +24,12 @@ function pb_footer_block_areas() {
 		return;
 	}
 
-	echo '<div id="genesis-footer-widgets" class="footer-block-content-area">';
+	echo '<div id="genesis-footer-widgets" class="before-footer block-content-area">';
 	echo '<h2 class="screen-reader-text">Footer</h2>';
 	echo '<div class="wrap">';
 
 	if ( function_exists( 'pb_show_content_area' ) ) {
-		pb_show_content_area( 'footer-left' );
-		pb_show_content_area( 'footer-middle' );
-		pb_show_content_area( 'footer-right' );
+		pb_show_content_area( 'footer' );
 	}
 
 	echo "</div></div>";

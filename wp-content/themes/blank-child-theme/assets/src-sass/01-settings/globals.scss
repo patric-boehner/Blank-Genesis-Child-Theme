@@ -6,7 +6,7 @@
     // Font Family
     --font-primary: 'Source Sans Pro', sans-serif;
     --font-secondary: 'Source Sans Pro', sans-serif;
-    --font-icon: 'icomoon';
+    // --font-icon: 'icomoon';
 
     // Font Weight
     --font-weight-normal: 400;
@@ -14,8 +14,9 @@
 
     // Base Font Size
     --font-size-normal: 1.25rem; // 20px
-    
+        
     // Font Size
+
     --font-size-x-small: 1rem; // 16px
     --font-size-small: 1.125rem; // 18px
     --font-size-medium: var(--font-size-normal);
@@ -85,6 +86,7 @@
     --menu-font-size: var(--font-size-medium);
     --menu-item-padding: var(--spacing-small) var(--spacing-medium);
     --menu-item-width: 200px;
+    --mobil-menu-height: 120px; 
 
 }
 
@@ -103,13 +105,10 @@
 
 
 // Table
-@media only screen and (max-width: 1023px) {
+// @media only screen and (max-width: 1023px) {
 
-    :root {
+//     :root {
 
-        // Structure
-        --wrap-max-width: var(--width-content);
+//     }
 
-    }
-
-}
+// }

@@ -1,22 +1,13 @@
 // Social Icons
 
 .wp-block-social-links
-	.wp-block-social-link
+
+    .wp-social-link
+        color: var( --color-inherit, var(--color-primary) ) !important
         background-color: transparent !important
-        color: var(--color-primary)
-        width: 36px
-        height: 36px
-        margin: 0 var(--spacing-small) var(--spacing-small) 0
 
         a
-            padding: 0
+            background-color: transparent !important
 
-            svg
-                width: 36px
-                height: 100%
-                fill: var(--color-highlight)
-
-                &:hover,
-                &:focus
-                    fill: var(--color-primary)
-            
+            &:focus
+                color: var(--color-highlight)

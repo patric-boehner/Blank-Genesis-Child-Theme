@@ -15,6 +15,17 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Apply Narrow Widht layout to single posts.
+add_filter( 'genesis_pre_get_option_site_layout', 'pb_set_single_posts_layout' );
+function pb_set_single_posts_layout() {
+
+    if ( is_single() ) {
+        return 'narrow-content';
+	}
+	
+}
+
+
 // Customize the post info function
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );
 function sp_post_info_filter( $post_info ) {
