@@ -29,7 +29,7 @@ function register_acf_custom_block() {
       'keywords'          => array( '' ),
       'post_types'        => array( 'block_area', 'page', 'post' ),
       'multiple'          => true,
-      'render_template'   => CORE_DIR . 'inc/blocks/partials/custom-block.php',
+      'render_template'   => CORE_DIR . 'inc/blocks/custom-block/partial.php',
       'example'  => array(
         'attributes' => array(
             'mode' => 'preview',

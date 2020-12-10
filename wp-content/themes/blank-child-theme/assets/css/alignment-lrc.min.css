@@ -1,0 +1,15 @@
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: var(--spacing-medium); }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: var(--spacing-medium); }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }

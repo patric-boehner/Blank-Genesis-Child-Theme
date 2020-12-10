@@ -60,8 +60,8 @@ function pb_modify_excerpt_read_more_link( $excerpt ) {
 
 
 // Filter excerpt length
-add_filter( 'excerpt_length', 'tn_custom_excerpt_length', 999 );
-function tn_custom_excerpt_length( $length ) {
+add_filter( 'excerpt_length', 'pb_custom_excerpt_length', 999 );
+function pb_custom_excerpt_length( $length ) {
 
 	return 55;
 

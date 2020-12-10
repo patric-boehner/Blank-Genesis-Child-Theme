@@ -102,9 +102,11 @@
       ));
 
       if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
+      
       echo '<div class="block-content-area block-content-area-' . $location . '">';
-      the_content();
-			echo '</div>';
+         the_content();
+      echo '</div>';
+      
       endwhile; endif; wp_reset_postdata();
 
 	 }

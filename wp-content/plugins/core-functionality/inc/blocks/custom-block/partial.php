@@ -46,4 +46,4 @@ $text = esc_html( get_field( 'text' ) );
 
 
 // Output content
-include CORE_DIR . '/inc/blocks/views/custom-block.php';
+include CORE_DIR . '/inc/blocks/custom-block/view.php';

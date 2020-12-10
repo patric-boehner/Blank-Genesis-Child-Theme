@@ -1,0 +1,44 @@
+// Icon Block
+.icon-block
+    display: flex
+    flex-wrap: nowrap
+
+    &.icon-size-small .icon,
+    &.icon-size-large .icon
+        height: auto
+
+    &.icon-size-small .icon
+        width: var(--icon-size-small)
+
+    &.icon-size-large .icon
+        width: var(--icon-size-large)
+
+    &.icon-align-top,
+    &.icon-align-center
+        flex-direction: column
+    
+    &.icon-align-left
+        flex-direction: row
+
+        .icon
+            margin-right: var(--spacing-small)
+            margin-bottom: var(--spacing-small)
+
+    &.icon-align-center .icon
+        align-self: center
+
+    &.is-vertically-aligned-center
+        align-items: center
+
+    &.is-vertically-aligned-top
+        align-items: flex-start
+        
+    &.is-vertically-aligned-bottom
+        align-items: flex-end
+
+
+    .block__inner
+        display: block
+        width: 100%
+        flex-grow: 1
+        flex-basis: min-content

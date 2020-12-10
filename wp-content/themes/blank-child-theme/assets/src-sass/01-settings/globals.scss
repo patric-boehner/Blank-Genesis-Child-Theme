@@ -56,6 +56,11 @@
 
     --color-default-overlay: #000;
 
+    // Icons
+    --icon-size-default: 28px;
+    --icon-size-small: calc( var(--icon-size-default) / 2);
+    --icon-size-large: calc( var(--icon-size-default) * 2);
+
     // Base Spacing
     --spacing-base: 15px;
 

@@ -20,28 +20,28 @@ wp.domReady( () => {
 		[ 'default', 'rounded' ]
 	);
 
-	wp.blocks.registerBlockStyle( 'core/paragraph', [
-		{
-			name: 'default',
-			label: 'Default',
-			isDefault: true,
-		},
-		{
-			name: 'subheading',
-			label: 'Subheading',
-		}
-	]);
+	// wp.blocks.registerBlockStyle( 'core/paragraph', [
+	// 	{
+	// 		name: 'default',
+	// 		label: 'Default',
+	// 		isDefault: true,
+	// 	},
+	// 	{
+	// 		name: 'subheading',
+	// 		label: 'Subheading',
+	// 	}
+	// ]);
 
-	wp.blocks.registerBlockStyle( 'core/heading', [
-		{
-			name: 'default',
-			label: 'Default',
-			isDefault: true,
-		},
-		{
-			name: 'subheading',
-			label: 'Subheading',
-		}
-	]);
+	// wp.blocks.registerBlockStyle( 'core/heading', [
+	// 	{
+	// 		name: 'default',
+	// 		label: 'Default',
+	// 		isDefault: true,
+	// 	},
+	// 	{
+	// 		name: 'subheading',
+	// 		label: 'Subheading',
+	// 	}
+	// ]);
 
 } );
