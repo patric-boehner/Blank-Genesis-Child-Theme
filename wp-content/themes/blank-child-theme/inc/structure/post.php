@@ -99,3 +99,28 @@ function pb_after_post_block_area() {
 	}
 
 }
+
+
+/**
+ * Cleanup post classes
+ * From: Bill Erickson
+ */
+add_filter( 'post_class', 'pb_clean_post_classes', 5 );
+function pb_clean_post_classes( $classes ) {
+
+	if( ! is_array( $classes ) )
+		return $classes;
+
+	// Change hentry to entry, remove if adding microformat support
+	$key = array_search( 'hentry', $classes );
+
+	if( false !== $key )
+		$classes = array_replace( $classes, array( $key => 'entry' ) );
+		$allowed_classes = array(
+			'entry',
+			'type-' . get_post_type(),
+		 );
+
+	return array_intersect( $classes, $allowed_classes );
+
+}

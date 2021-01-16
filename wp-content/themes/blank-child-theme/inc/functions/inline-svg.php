@@ -3,10 +3,9 @@
 /**
  * Add inline SVG files,
  *
- * @package Life After Divorce Theme
+ * @package Blank Child Theme
  * @author  Patrick Boehner
  * @license GPL-2.0+
- * @link    https://lifeafterdivorcecoaching.com
  */
 
 
@@ -30,8 +29,6 @@ function pb_load_inline_svg( $args = array()) {
       	'title'       => '',
   		'desc'        => '',
   		'class'       => '',
-  		'width'		  => '28px',
-  		'height'	  => '28px'
   	);
 
   	// Parse args.
@@ -43,17 +40,6 @@ function pb_load_inline_svg( $args = array()) {
       return '';
     }
 
-  	// Set default width and height.
-  	$svg_width = ' width="'.esc_attr( $args['width'] ).'" ';
-  	$svg_height = 'height="'.esc_attr( $args['height'] ).'" ';
-
-    // Strip out PX and return an integer
-    $width = intval( str_replace( 'px', '', esc_attr( $args['width'] ) ) );
-    $height = intval( str_replace( 'px', '', esc_attr( $args['height'] ) ) );
-
-    // Viewbox
-    $svg_viewbox = ' ' . 'viewBox="0 0 ' . $width . ' ' . $height . '" ';
-
     // Additonal Class
     if ( $args['class'] ) {
       $class = ' ' . sanitize_html_class( $args['class'] );// code...
@@ -62,7 +48,7 @@ function pb_load_inline_svg( $args = array()) {
     }
 
   	// Set aria hidden.
-  	$aria_hidden = ' ' . 'aria-hidden="true" tab-index="-1"';
+  	$aria_hidden = ' ' . 'aria-hidden="true"';
 
   	// Set ARIA.
   	$aria_labelledby = '';
@@ -74,18 +60,19 @@ function pb_load_inline_svg( $args = array()) {
   		$aria_labelledby = ' ' . 'aria-labelledby="title-' . $unique_id . '"';
 
   		if ( $args['desc'] ) {
-  			$aria_labelledby = ' ' . 'aria-labelledby="title-' . $unique_id . ' ' . 'desc-' . $unique_id . '"';
+  			$aria_labelledby = ' ' . 'aria-labelledby="title-' . $unique_id . ' ' . 'desc-' . $unique_id . '  ';
   		}
   	}
 
     // Load and return the contents of the file
     $svg_file = file_get_contents( CHILD_DIR . $svg_path . esc_attr( $args[ 'filename' ] ) . $file_end );
 
-    // Remove the wrapping svg
-    $svg_content = preg_replace( '/^\<[\/]{0,1}svg[^\>]*\>/i', '', $svg_file );
+    // Remove width and height info
+	$svg_content = preg_replace( '/(width|height)="\d*"\s/', "", $svg_file );
+
 
     // Begin SVG markup.
-  	$svg = '<svg class="icon icon-' . sanitize_html_class( $args['filename'] ) . $class .'"' . $svg_width . $svg_height . $svg_viewbox . $aria_hidden . $aria_labelledby . ' role="img">';
+	  $svg = str_replace( '<svg', '<svg class="icon icon-' . sanitize_html_class( $args['filename'] ) . $class .'"' . $aria_hidden . $aria_labelledby . ' role="img"', $svg_content );
 
   	// Display the title.
   	if ( $args['title'] ) {
@@ -96,9 +83,6 @@ function pb_load_inline_svg( $args = array()) {
   			$svg .= '<desc id="desc-' . $unique_id . '">' . esc_html( $args['desc'] ) . '</desc>';
   		}
   	}
-
-    $svg .= $svg_content;
-  	$svg .= '</svg>';
 
   	return $svg;
 

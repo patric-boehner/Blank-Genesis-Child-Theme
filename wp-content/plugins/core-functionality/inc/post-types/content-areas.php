@@ -93,6 +93,14 @@
         return;
       }
 
+      // Option to hide block area
+      // $hidden_id = get_field( 'hide_content_areas' );
+      // $page_slug = get_post_field( 'post_name', $hidden_id );
+
+      // if ( $page_slug == $location ) {
+      //    return;
+      // }
+
       $location = sanitize_key( $location );
 
       $loop = new WP_Query( array(

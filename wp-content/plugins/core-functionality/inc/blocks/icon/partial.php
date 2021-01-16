@@ -47,6 +47,8 @@ if ( function_exists( 'pb_load_inline_svg' ) ) {
       'height' => '28',
       'title' => '',
   ) );
+} else {
+  $icon_svg = '';
 }
 
 // Output content

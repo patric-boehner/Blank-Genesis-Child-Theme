@@ -15,12 +15,6 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Disable HTML in comments
-add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
-add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
-add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );
-
-
 // Stop WordPress from Guessing Urls
 add_filter( 'redirect_canonical', 'pb_stop_guessing' );
 function pb_stop_guessing($url) {
@@ -58,79 +52,6 @@ remove_action ('wp_head', 'rsd_link');
 
 // Remove .header classes added by genesis
 remove_filter( 'body_class', 'genesis_header_body_classes' );
-
-
-/**
- * Cleanup menu classes
- * From: Bill Erickson
- */
-add_filter( 'nav_menu_css_class', 'pb_clean_nav_menu_classes', 5 );
-function pb_clean_nav_menu_classes( $classes ) {
-
-	if( ! is_array( $classes ) ) {
-		return $classes;
-	}
-
-	foreach( $classes as $i => $class ) {
-
-		// Remove class with menu item id
-		$id = strtok( $class, 'menu-item-' );
-
-		if( 0 < intval( $id ) ) {
-			unset( $classes[ $i ] );
-		}
-
-		// Remove menu-item-type-*
-		if( false !== strpos( $class, 'menu-item-type-' ) ) {
-			unset( $classes[ $i ] );
-		}
-
-		// Remove menu-item-object-*
-		if( false !== strpos( $class, 'menu-item-object-' ) ) {
-			unset( $classes[ $i ] );
-		}
-
-		// Change page ancestor to menu ancestor
-		if( 'current-page-ancestor' == $class ) {
-			$classes[] = 'current-menu-ancestor';
-			unset( $classes[ $i ] );
-		}
-
-	}
-
-	// Remove submenu class if depth is limited
-	if( isset( $args->depth ) && 1 === $args->depth ) {
-		$classes = array_diff( $classes, array( 'menu-item-has-children' ) );
-	}
-
-	return $classes;
-
-}
-
-
-/**
- * Cleanup post classes
- * From: Bill Erickson
- */
-add_filter( 'post_class', 'pb_clean_post_classes', 5 );
-function pb_clean_post_classes( $classes ) {
-
-	if( ! is_array( $classes ) )
-		return $classes;
-
-	// Change hentry to entry, remove if adding microformat support
-	$key = array_search( 'hentry', $classes );
-
-	if( false !== $key )
-		$classes = array_replace( $classes, array( $key => 'entry' ) );
-		$allowed_classes = array(
-			'entry',
-			'type-' . get_post_type(),
-		 );
-
-	return array_intersect( $classes, $allowed_classes );
-
-}
 
 
 // Disable Emojie Scripts

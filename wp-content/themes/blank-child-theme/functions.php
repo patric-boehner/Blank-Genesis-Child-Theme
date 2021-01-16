@@ -65,7 +65,7 @@ include_once( CHILD_DIR . '/inc/admin/block-patterns.php' );
 
 // Gobal Functions
 include_once( CHILD_DIR . '/inc/functions/autoptimize.php' );
-include_once( CHILD_DIR . '/inc/functions/cleanup.php' );
+include_once( CHILD_DIR . '/inc/functions/cleanup-header.php' );
 include_once( CHILD_DIR . '/inc/functions/helpers.php' );
 include_once( CHILD_DIR . '/inc/functions/image-sizes.php' );
 include_once( CHILD_DIR . '/inc/functions/resource-loading.php' );

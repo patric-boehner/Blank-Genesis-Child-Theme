@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /**
  * Read More Link Structure

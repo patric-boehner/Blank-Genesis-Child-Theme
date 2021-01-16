@@ -1,4 +1,4 @@
-  <?php
+<?php
 
 /**
  * Load Scripts and Stylesheets

@@ -13,7 +13,7 @@
 
 return [
 	GENESIS_SETTINGS_FIELD => [
-		'blog_title'								=> 'text', // or 'image'
+		'blog_title'				=> 'text', // or 'image'
 		'header_right'              => 0,
 		'feed_uri'                  => '',
 		'comments_feed_uri'         => 0,

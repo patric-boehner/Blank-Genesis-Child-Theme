@@ -1,5 +1,7 @@
 .content-grid
     .block__inner
         display: grid
-        grid-template-columns: var(--grid-columns)
         grid-gap: var(--grid-gap)
+
+        @include above-tablet
+            grid-template-columns: var(--grid-columns)

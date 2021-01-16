@@ -15,6 +15,12 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Disable HTML in comments
+add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
+add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
+add_filter( 'comment_excerpt', 'wp_filter_nohtml_kses' );
+
+
 // Change Gravatar Size
 add_filter( 'genesis_comment_list_args', 'pb_change_comments_gravatar' );
 function pb_change_comments_gravatar( array $args ) {
