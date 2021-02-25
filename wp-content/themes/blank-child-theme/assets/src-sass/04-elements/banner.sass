@@ -1,23 +1,28 @@
 // Banner Styles
 
-.top-banner-visible
-    .top-banner
+.header-banner
+    border-bottom: 1px solid var(--color-border)
+    position: relative
+
+    &.header-banner__button
         --button-width: 150px
-        border-bottom: 1px solid var(--color-border)
-        position: relative
         
-        .wrap
-            display: flex
-            flex-wrap: nowrap
-            align-items: center
-            padding-top: var(--spacing-medium)
-            padding-bottom: var(--spacing-medium)
+        .block-content-area
             padding-right: var(--button-width)
-        
-        &__text
-            margin: 0
-            flex-grow: 2
-        
-        button
-            position: absolute
-            right: 0
+
+    
+    .block-content-area
+        display: flex
+        flex-wrap: nowrap
+        align-items: center
+        padding-top: var(--spacing-medium)
+        padding-bottom: var(--spacing-medium)
+    
+    & >
+        margin: 0
+        flex-grow: 2
+    
+    button
+        position: absolute
+        right: 0
+        top: 0

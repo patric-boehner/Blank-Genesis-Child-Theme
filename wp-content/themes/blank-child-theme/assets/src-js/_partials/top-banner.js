@@ -1,24 +1,11 @@
 /* MIT: https://github.com/js-cookie/js-cookie */
 
-(function($, Cookies) {
-	var socialnav = false;
-	var socialnavtop = 0;
+jQuery(document).ready(function($){
+
 	var $body = $( 'body' );
-	var days_to_expire = dismissal_length.value.days;
-
-	// Alway show top banner in Customizer.
-	$( document ).ready( function() {
-
-		if ( $body.hasClass( 'customizer-preview' ) ) {
-			$body.removeClass( 'top-banner-hidden' );
-			$body.addClass( 'top-banner-visible' );
-			showBanner();
-		}
-
-	});
 
 	// Show if no cookie set.
-	if ( ! Cookies.get( 'top-banner-hidden' ) ) {
+	if ( ! Cookies.get( 'banner-hidden' ) ) {
 
 		$( document ).ready( function() {
 
@@ -39,8 +26,8 @@
 	}
 
 	function showBanner() {
-		$( '.top-banner' ).fadeIn(function() {
-			$(this).children('#top-banner__close').animate({
+		$( '.header-banner' ).fadeIn(function() {
+			$(this).children('#banner__close').animate({
 				opacity: 1
 			}, 1000);
 
@@ -49,15 +36,14 @@
 	}
 
 	function closeBanner() {
-		$( '#top-banner__close' ).click(function() {
+		$( '#banner__close' ).click(function() {
 
 			$(this).parent().slideUp(function() {
 				$body.removeClass( 'top-banner-visible' );
 				$body.addClass( 'top-banner-hidden' );
 			});
-			Cookies.set( 'top-banner-hidden', 'true', { expires: days_to_expire } );
 
 		});
 	}
 
-})(jQuery, Cookies);
+});

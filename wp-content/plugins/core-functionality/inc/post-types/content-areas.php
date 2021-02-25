@@ -61,7 +61,7 @@
           'hierarchical'        => false,
           'public'              => false,
           'show_ui'             => true,
- 			    'menu_icon'				    => 'dashicons-schedule',
+ 			 'menu_icon'				    => 'dashicons-schedule',
           'can_export'          => true,
           'has_archive'         => false,
           'exclude_from_search' => true, // If set to true will remove the custom post type from search, but also from the main query on the taxonomy page
@@ -78,8 +78,8 @@
     function pb_redirect_single_content_area() {
 
       if( is_singular( 'content_area' ) ) {
-			     wp_redirect( home_url() );
-			     exit;
+			   wp_redirect( home_url() );
+			   exit;
 		  }
 
     }
@@ -104,9 +104,9 @@
       $location = sanitize_key( $location );
 
       $loop = new WP_Query( array(
-        'post_type'		=> 'content_area',
-        'name'    		=> $location,
-        'posts_per_page'	=> 1,
+        'post_type'		 => 'content_area',
+        'name'    		 => $location,
+        'posts_per_page' => 1,
       ));
 
       if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();

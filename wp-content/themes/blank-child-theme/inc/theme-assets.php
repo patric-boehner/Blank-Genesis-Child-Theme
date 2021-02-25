@@ -66,7 +66,7 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 	wp_script_add_data(
     'global-script',
-    'async',
+    'defer',
     true
   );
 
@@ -92,18 +92,22 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
   // Setup page if has top banner.
-	if ( get_theme_mod( 'pb-theme-top-banner-visibility', 1 ) && !isset( $_COOKIE[ 'top-banner-hidden' ] ) ) {
+  $id = pb_get_id_by_slug( 'banner', 'content_area' );
+  $display = esc_attr( get_field( 'enable_banner', $id ) );
+  $cookie = esc_attr( get_field( 'banner_cookie', $id ) );
+
+	if ( $display == 'enable' && $cookie == 'enable' && !isset( $_COOKIE[ 'banner-hidden' ] ) ) {
 
 		wp_enqueue_script(
-      'top-banner-js',
-      get_stylesheet_directory_uri() . "/assets/js/top-banner.min.js",
+      'banner-script',
+      get_stylesheet_directory_uri() . "/assets/js/banner.min.js",
       array( 'jquery' ),
       cache_version_id(),
       false
     );
 
 		wp_script_add_data(
-      'top-banner-js',
+      'banner-script',
       'defer',
       true
     );
@@ -113,14 +117,15 @@ function pb_enqueue_child_theme_scripts_styles() {
   // Load Customizer Banner varaibles
 	/*
 		* Actual function to pass PHP to JavaScript. Args:
-		* 1. The target JavaScript file has the handle 'top-banner-js' (this is the file we just enqueued)
+		* 1. The target JavaScript file has the handle 'banner-script' (this is the file we just enqueued)
 		* 2. The data will be called 'dismissalLength' by the JS file
 		* 3. 'dismissal_length' will contain the data in $cookie_date
 		* https://wpshout.com/building-a-magical-golden-bridge-from-php-to-javascript-with-wp_localize_script/
 		* https://wordpress.stackexchange.com/questions/186155/how-do-you-pass-a-boolean-value-to-wp-localize-script
 		*/
+    
 	wp_localize_script(
-		'top-banner-js',
+		'banner-script',
 		'dismissal_length',
 		pb_get_customizer_banner_cookie_settings()
 	);
@@ -194,12 +199,11 @@ function pb_block_editor_styles() {
 // Retrive Customize settings for banner cookie
 function pb_get_customizer_banner_cookie_settings(){
 
-	$settings = array(
+  $id = pb_get_id_by_slug( 'banner', 'content_area' );
+  $days = esc_attr( get_field( 'hide_banner', $id ) );
 
-		'value' => array(
-			'days'	=> get_theme_mod( 'pb-theme-top-banner-cookie-end-date' )
-		),
-
+  $settings = array(
+		'days'	=> $days,
 	);
 
 	return $settings;

@@ -27,7 +27,7 @@ function register_acf_custom_block() {
       'category'          => 'common', // common, formatting, layout, widgets, embed
       'icon'              => 'admin-appearance', // Dahsicons
       'keywords'          => array( '' ),
-      'post_types'        => array( 'block_area', 'page', 'post' ),
+      'post_types'        => array( 'content_area', 'page', 'post' ),
       'multiple'          => true,
       'render_template'   => CORE_DIR . 'inc/blocks/custom-block/partial.php',
       'example'  => array(

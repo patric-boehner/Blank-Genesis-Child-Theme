@@ -114,13 +114,12 @@ function genesis_blocks_body_classes( $classes ) {
 add_action( 'body_class', 'pb_notice_bar_classes' );
 function pb_notice_bar_classes( $classes ) {
 
-	if ( get_theme_mod( 'pb-theme-top-banner-visibility', 1 ) ) {
+	$id = pb_get_id_by_slug( 'banner', 'content_area' );
+	$display = esc_attr( get_field( 'enable_banner', $id ) );
+
+	if ( $display == 'enable' ) {
 
 		$classes[] = 'top-banner-hidden';
-
-		if ( is_customize_preview() ) {
-			$classes[] = 'customizer-preview';
-		}
 
 	}
 

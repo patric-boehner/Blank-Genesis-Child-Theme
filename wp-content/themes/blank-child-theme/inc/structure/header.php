@@ -16,16 +16,37 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 // Add top banner if set
-add_action( 'genesis_before_header', 'pb_add_top_banner' );
-function pb_add_top_banner() {
+add_action( 'genesis_before_header', 'pb_add_banner' );
+function pb_add_banner() {
 
-	if ( get_theme_mod( 'pb-theme-top-banner-visibility', 1 ) && !isset( $_COOKIE[ 'top-banner-hidden' ] ) ) {
+  if ( function_exists( 'pb_show_content_area' ) && !isset( $_COOKIE[ 'banner-hidden' ] ) ) {
 
-    $text = get_theme_mod( 'pb-theme-top-banner-text', pb_get_default_top_banner_text() );
+    $id = pb_get_id_by_slug( 'banner', 'content_area' );
+    $display = esc_attr( get_field( 'enable_banner', $id ) );
+    $cookie = esc_attr( get_field( 'banner_cookie', $id ) );
 
-    // Output top-banner html
-    include CHILD_DIR . '/inc/views/top-banner.php';
+    // Adjust display and remove cookie if not set to allow banner to close
+    if( $cookie == 'enable' ){
+      $class = ' header-banner__button';
+    } else {
+      $class = '';
+    }
 
-  }
+    if( $display == 'enable' ) {
+
+      echo '<div class="header-banner'.$class.'">';
+
+        pb_show_content_area( 'banner' );
+
+        if( $cookie == 'enable' ) {
+          // Output banner close button
+          include CHILD_DIR . '/inc/views/banner-button.php';
+        }
+
+      echo '</div>';
+
+    }
+		
+	}
 
 }

@@ -15,6 +15,17 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Get ID of page by slug
+function pb_get_id_by_slug( $page_slug, $post_type ) {
+    $page = get_page_by_path( $page_slug, OBJECT, $post_type );
+    if ( $page ) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}
+
+
 //  Helper function for adding SVG or fallingback to text
 function pb_svg_icons_available( $text, $icon_name, $icon_text ='', $width ='15px', $height ='15px' ) {
 
