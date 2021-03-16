@@ -32,9 +32,7 @@ function register_acf_content_grid_block() {
       'post_types'        => array( 'content_area', 'page', 'post' ),
       'multiple'          => true,
       'render_template'   => CORE_DIR . 'inc/blocks/content-grid/partial.php',
-      'enqueue_style'     => get_stylesheet_directory_uri() . "/assets/css/content-grid.
-      min.css",
-      'enqueue_scripts'   => get_stylesheet_directory_uri() . "/assets/js/banner-block.min.js",
+      'enqueue_style'     => get_stylesheet_directory_uri() . "/assets/css/content-grid.min.css",
       'example'  => array(
         'attributes' => array(
             'mode' => 'preview',

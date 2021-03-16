@@ -36,7 +36,8 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 		'core/shortcode',
 		'core/embed',
 		'core/group',
-		'core/shortcode'
+		'core/cover',
+		'core/shortcode',
 	);
 
 	// if( $post->post_type === 'page' ) {

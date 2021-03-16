@@ -41,10 +41,10 @@
             <article class="content-grid-block__item" aria-label="<?php the_title(); ?>">
               <div class="content-grid-block__media">
               <a href="<?php esc_url( the_permalink() ); ?>" aria-hidden="true" tabindex="-1">
-                <?php the_post_thumbnail( 'medium', array( 'class' => 'content-grid-block__image' ) ); ?>
+                <?php the_post_thumbnail( 'genesis-singular-images' ); ?>
               </a>
               </div>
-              <div class="content-grid-block__content">
+              <div class="content-grid-block__body">
                 <header class="content-grid-block__header">
                   <h3>
                     <a href="<?php esc_url( the_permalink() ); ?>"><?php esc_html( the_title() ); ?></a>

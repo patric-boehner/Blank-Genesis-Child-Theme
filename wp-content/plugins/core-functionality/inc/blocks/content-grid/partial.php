@@ -23,7 +23,7 @@ if( !empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'content-grid';
+$className = 'content-grid-block';
 
 if( !empty( $block['className'] ) ) {
     $className .= ' ' . $block['className'];

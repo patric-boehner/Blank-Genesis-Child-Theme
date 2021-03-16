@@ -22,6 +22,20 @@
 			margin: 0 auto
 
 
+// Group and Media & Text
+.wp-block[data-align="full"]
+	.wp-block-media-text,
+	.wp-block-group,
+	.wp-block-cover
+		margin-top: 0
+		margin-bottom: 0
+		
+	.wp-block-group,
+	.wp-block-cover
+        padding-top: var(--spacing-row)
+        padding-bottom: var(--spacing-row)
+ 
+
 // Fix padding issue on columns in media-text block
 .wp-block-media-text
 	.wp-block-columns
@@ -29,7 +43,7 @@
 			padding: 0
 
 
-// Fix link issues
-.content-grid
+// Fix link issues for custom blocks
+.content-grid-block 
 	a
 		pointer-events: none

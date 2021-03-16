@@ -25,13 +25,19 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
   // Load Webfonts
-  wp_enqueue_style(
-    'google-web-fonts',
-    '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap',
-    array(),
-    cache_version_id()
-  );
+  // wp_enqueue_style(
+  //   'google-web-fonts',
+  //   '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap',
+  //   array(),
+  //   cache_version_id()
+  // );
 
+  wp_enqueue_style(
+    'web-fonts',
+    get_stylesheet_directory_uri() . "/assets/css/fonts.min.css",
+    false,
+    cache_version_id(),
+  );
 
 	// Load Global Stylesheet
 	wp_enqueue_style(
@@ -66,7 +72,7 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 	wp_script_add_data(
     'global-script',
-    'defer',
+    'preload',
     true
   );
 
@@ -113,6 +119,7 @@ function pb_enqueue_child_theme_scripts_styles() {
     );
 
 	}
+
 
   // Load Customizer Banner varaibles
 	/*

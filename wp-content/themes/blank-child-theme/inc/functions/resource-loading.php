@@ -19,7 +19,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 // Resource hinting with preconect and dns-preload
-add_filter( 'wp_resource_hints', 'pb_resource_hints', 10, 2 );
+// add_filter( 'wp_resource_hints', 'pb_resource_hints', 10, 2 );
 function pb_resource_hints( $urls, $relation_type ) {
 
 	if ( 'preconnect' === $relation_type ) {
@@ -48,22 +48,37 @@ function pb_resource_hints( $urls, $relation_type ) {
 add_filter( 'script_loader_tag', 'pb_filter_script_loader_tag', 10, 2 );
 function pb_filter_script_loader_tag( $tag, $handle ) {
 
-	foreach ( array( 'async', 'defer' ) as $attr ) {
+	foreach( array( 'async', 'defer', 'preload' ) as $attr ) {
 
-		if ( ! wp_scripts()->get_data( $handle, $attr ) ) {
+		if( ! wp_scripts()->get_data( $handle, $attr ) ) {
 			continue;
 		}
 
 		// Prevent adding attribute when already added in #12009.
-		if ( ! preg_match( ":\s$attr(=|>|\s):", $tag ) ) {
-			$tag = preg_replace( ':(?=></script>):', " $attr", $tag, 1 );
+		if( ! preg_match( ":\s$attr(=|>|\s):", $tag ) ) {
+			$tag = preg_replace( ':(?=></script>):', " rel='$attr'", $tag, 1 );
 		}
 
-		// Only allow async or defer, not both.
+		// Only allow one.
 		break;
 
 	}
 
 	return $tag;
+
+}
+
+
+// Preload Stylesheets
+add_filter('style_loader_tag', 'pb_filter_style_loader_tag', 10, 2);
+function pb_filter_style_loader_tag( $html, $handle ) {
+
+    if( $handle === 'web-fonts' ) {
+
+		return str_replace("rel='stylesheet'","rel='preload' as='font' type='font/woff2' ", $html);
+
+    }
+
+    return $html;
 
 }

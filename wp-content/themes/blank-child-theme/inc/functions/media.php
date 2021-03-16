@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Modify Gallery Attributes
+ * Modify Images
  *
  * @package Blank Child Theme
  * @author  Patrick Boehner
@@ -15,34 +15,42 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Change default link style for images
-add_action( 'admin_init', 'pb_default_attachment_display_settings', 10 );
-function pb_default_attachment_display_settings() {
+// Adjsut compression quality
+// add_filter('jpeg_quality', function( $arg ){
+// 	return 87;
+// });
 
-	$image_link_setting  = get_option( 'image_default_link_type' );
-	$image_align_setting = get_option( 'image_default_align' );
-	$image_size_setting  = get_option( 'image_default_size' );
 
-	// Avoid the option being set every time, and instead only do it if not allready set.
-	if ( $image_link_setting && $image_align_setting && $image_size_setting  !== 'none' ) {
-		update_option( 'image_default_link_type', 'none' );
-		// Set link type (file, post, custom, none)
-		update_option( 'image_default_align', 'center' );
-		// Set image alignment (left, right, center, none)
-		update_option( 'image_default_size', 'large' );
-		// Set image size (thumbnail, medium, large, full)
-	}
+// Remove intermediate sizes size
+// remove_image_size('1536x1536');
+// remove_image_size('2048x2048');
+
+
+
+// Update default image sizes on theme switch
+add_action( 'switch_theme', 'pb_child_theme_enforce_image_size_options' );
+function pb_child_theme_enforce_image_size_options() {
+
+	update_option( 'thumbnail_size_w', 150 );
+	update_option( 'thumbnail_size_h', 150 );
+	update_option( 'thumbnail_crop', 1 );
+	update_option( 'medium_size_w', 300 );
+	update_option( 'medium_size_h', 300 );
+	update_option( 'large_size_w', 1024 );
+	update_option( 'large_size_h', 1024 );
 
 }
 
 
-// Register the three useful image sizes for use in Add Media modal
-// add_filter( 'image_size_names_choose', 'pa_add_medium_large_size_selection' );
-// function pa_add_medium_large_size_selection( $sizes ) {
-//     return array_merge( $sizes, array(
-//         'medium_large' => __( 'Medium Large' ),
-//     ) );
-// }
+// Add mage sizes for use in Add Media modal
+add_filter( 'image_size_names_choose', 'pa_add_medium_large_size_selection' );
+function pa_add_medium_large_size_selection( $sizes ) {
+
+    return array_merge( $sizes, array(
+        'medium_large' => __( 'Medium Large' ),
+    ) );
+
+}
 
 
 // Change Default Gallery Image Size
