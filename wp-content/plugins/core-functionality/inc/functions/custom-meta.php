@@ -24,8 +24,8 @@ if( !defined( 'ABSPATH' ) ) exit;
  * Remove ancient Custom Fields Metabox because it's slow and most often useless anymore
  * ref: https://core.trac.wordpress.org/ticket/33885
  */
-add_action( 'admin_menu' , 'jb_remove_post_custom_fields_now' );
-function jb_remove_post_custom_fields_now() {
+add_action( 'admin_menu' , 'pb_remove_post_custom_fields_now' );
+function pb_remove_post_custom_fields_now() {
 
 	foreach ( get_post_types( '', 'names' ) as $post_type ) {
 		remove_meta_box( 'postcustom' , $post_type , 'normal' );

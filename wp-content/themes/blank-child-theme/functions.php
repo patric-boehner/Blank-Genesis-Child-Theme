@@ -57,7 +57,6 @@ include_once( CHILD_DIR . '/inc/admin/customizer/customizer.php' );
 include_once( CHILD_DIR . '/inc/admin/widgets.php' );
 include_once( CHILD_DIR . '/inc/admin/editor.php' );
 include_once( CHILD_DIR . '/inc/admin/menu.php' );
-include_once( CHILD_DIR . '/inc/admin/layouts.php' );
 include_once( CHILD_DIR . '/inc/admin/dashboard.php' );
 include_once( CHILD_DIR . '/inc/admin/user-profile.php' );
 include_once( CHILD_DIR . '/inc/admin/block-patterns.php' );

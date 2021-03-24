@@ -15,22 +15,15 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Overide
-$layouts = array();
-
-$genesis_layouts_config = get_template_directory() . '/config/layouts.php';
-
-if ( is_readable( $genesis_layouts_config ) ) {
-
-	$layouts = require $genesis_layouts_config;
+return [
+	'wide-content'         => [
+		'label'   => __( 'Wide Content', 'blank-child-theme' ),
+		'default' => is_rtl() ? false : true,
+		'type'    => [ 'site' ],
+	],
+	'narrow-content'         => [
+		'label'   => __( 'Narrow Content', 'blank-child-theme' ),
+		'type'    => [ 'site' ],
+	],
 	
-	unset( $layouts['content-sidebar'] );
-	unset( $layouts['sidebar-content'] );
-	unset( $layouts['content-sidebar-sidebar'] );
-	unset( $layouts['sidebar-sidebar-content'] );
-	unset( $layouts['sidebar-content-sidebar'] );
-	unset( $layouts['full-width-contnet'] );
-
-}
-
-return $layouts;
+];

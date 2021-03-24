@@ -29,7 +29,7 @@ add_filter('autoptimize_filter_js_exclude','pb_ao_override_js_exclude', 30, 1 );
 function pb_ao_override_js_exclude( $exclude ) {
 
 	// Exclude theme scripts that are allready defered or asynced
-	return $exclude.", top-banner.min.js";
+	return $exclude.", banner.min.js";
 
 }
 
@@ -40,8 +40,8 @@ function pb_ao_override_js_exclude( $exclude ) {
  * @param $exclude: comma-seperated list of exclude strings
  * @return: comma-seperated list of exclude strings
  */
-add_filter('autoptimize_filter_css_exclude','my_ao_override_cssexclude', 30, 1);
-function my_ao_override_cssexclude( $exclude ) {
+add_filter('autoptimize_filter_css_exclude','pb_ao_override_cssexclude', 30, 1);
+function pb_ao_override_cssexclude( $exclude ) {
 
 	// Exclude theme css that has specific function
 	return $exclude.", comments.min.css, print.min.css, login-style.min.css";

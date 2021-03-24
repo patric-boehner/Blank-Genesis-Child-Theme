@@ -28,6 +28,7 @@ function pb_footer_block_areas() {
 	echo '<h2 class="screen-reader-text">Footer</h2>';
 	echo '<div class="wrap">';
 
+	// Output content area
 	if ( function_exists( 'pb_show_content_area' ) ) {
 		pb_show_content_area( 'footer' );
 	}

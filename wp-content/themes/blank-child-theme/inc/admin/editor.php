@@ -104,22 +104,3 @@ function pb_block_editor_layout_class( $classes ) {
 	return $classes;
 
 }
-
-
-/**
- * Full width layout for pages as default
- * https://www.billerickson.net/change-gutenberg-content-width-to-match-genesis-layout/
- *
- * @param string $layout 
- * @return string
- */
-add_filter( 'genesis_pre_get_option_site_layout', 'pb_wide_width_pages' );
-function pb_wide_width_pages( $layout ) {
-
-	if( is_page() ) {
-		$layout = 'wide-content';
-	}
-		
-	return $layout;
-
-}

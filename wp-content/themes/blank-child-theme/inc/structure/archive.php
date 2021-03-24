@@ -15,6 +15,52 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Add body clases to all blogs and archives
+add_filter( 'body_class', 'pb_archive_body_class' );
+function pb_archive_body_class( $classes ) {
+
+	if(  !is_home() || !is_search() ) {
+		return $classes;	
+	}
+	
+    $classes[] = 'archive';
+	return $classes;
+	
+}
+
+
+// Removes possible conflicting class names
+add_filter( 'genesis_attr_taxonomy-archive-description', 'pb_attributes_archive_description' );
+add_filter( 'genesis_attr_author-archive-description', 'pb_attributes_archive_description' );
+function pb_attributes_archive_description( $attributes ) {
+
+	$attributes['class'] = str_replace( ' taxonomy-description', '' ,$attributes['class'] );
+	$attributes['class'] = str_replace( ' author-description', '', $attributes['class'] );
+
+	return $attributes;
+
+}
+
+
+// Add class to first post
+add_filter( 'post_class', 'pb_first_post_class' );
+function pb_first_post_class( $classes ) {
+
+	if ( !is_home() || is_paged() ) {
+		return $classes;
+	}
+
+    global $wp_query;
+
+    if( 0 == $wp_query->current_post ) {
+			$classes[] = 'first-entry';
+		}
+
+	  return $classes;
+
+}
+
+
 // Remove Genesis image fallback
 add_filter( 'genesis_get_image_default_args', 'pb_remove_image_fallback' );
 function pb_remove_image_fallback( $args ) {
@@ -23,6 +69,23 @@ function pb_remove_image_fallback( $args ) {
 	$args['fallback'] = false;
 
 	return $args;
+
+}
+
+
+// Add content area before footer
+add_action( 'genesis_before_footer', 'pb_add_archive_content_area', 1 );
+function pb_add_archive_content_area() {
+
+	// if this is not an archive, abort.
+    if ( is_singular() ) {
+        return;
+    }
+
+	// Output content area
+	if ( function_exists( 'pb_show_content_area' ) ) {
+		pb_show_content_area( 'archive-footer' );
+	}
 
 }
 

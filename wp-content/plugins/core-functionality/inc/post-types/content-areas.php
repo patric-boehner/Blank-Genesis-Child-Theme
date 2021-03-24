@@ -105,6 +105,7 @@
 
       $loop = new WP_Query( array(
         'post_type'		 => 'content_area',
+        'post_status'    => 'publish',
         'name'    		 => $location,
         'posts_per_page' => 1,
       ));

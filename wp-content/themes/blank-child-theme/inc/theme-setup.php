@@ -65,22 +65,27 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 // Remove the site description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
-
 // Unregister primary widget area.
 unregister_sidebar( 'sidebar' ); // Primary
 unregister_sidebar( 'sidebar-alt' ); // Secondary
 unregister_sidebar( 'header-right' ); // Header Right
 
 
-// Remove Sidebar for wide and narrow layouts
-add_action( 'genesis_meta', 'pb_remove_sidebar_narrow_wide_layout', 12 );
-function pb_remove_sidebar_narrow_wide_layout() {
+// Remove Sidebar for all layouts
+remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
 
-	$site_layout = genesis_site_layout();
 
-	if ( 'wide-content' === $site_layout || 'narrow-content' === $site_layout ) {
-		remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
-		remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+// Force narrow-content on single posts only
+add_filter( 'genesis_pre_get_option_site_layout', 'pb_narrow_layout_archives' );
+function pb_narrow_layout_archives() {
+
+	if ( is_home() || is_archive() ) {
+		return 'narrow-content';
+	}
+
+	if ( is_singular( 'post' ) ) {
+		return 'narrow-content';
 	}
 
 }
