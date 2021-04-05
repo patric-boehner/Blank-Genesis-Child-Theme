@@ -37,8 +37,9 @@ function register_acf_content_grid_block() {
         'attributes' => array(
             'mode' => 'preview',
             'data' => array(
-              'text'          => "Custom block sample text...",
-              'is_preview'    => true,
+              'content_layout'  => "three-columns",
+              'number_entries'  => "3",
+              'is_preview'      => true,
             )
         )
       ),

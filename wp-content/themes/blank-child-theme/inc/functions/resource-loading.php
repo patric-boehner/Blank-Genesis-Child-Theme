@@ -69,13 +69,19 @@ function pb_filter_script_loader_tag( $tag, $handle ) {
 }
 
 
-// Preload Stylesheets
+// Preload Font Files
 add_filter('style_loader_tag', 'pb_filter_style_loader_tag', 10, 2);
 function pb_filter_style_loader_tag( $html, $handle ) {
 
-    if( $handle === 'web-fonts' ) {
+    if( $handle === 'ssp-regular-font' ) {
+		
+		return str_replace(array("rel='stylesheet'", "media='all'"), array("rel='preload' as='font' type='font/woff2' crossorigin='anonymous'", ""), $html);
 
-		return str_replace("rel='stylesheet'","rel='preload' as='font' type='font/woff2' ", $html);
+    }
+
+	if( $handle === 'ssp-bold-font' ) {
+
+		return str_replace(array("rel='stylesheet'", "media='all'"), array("rel='preload' as='font' type='font/woff2' crossorigin='anonymous'", ""), $html);
 
     }
 

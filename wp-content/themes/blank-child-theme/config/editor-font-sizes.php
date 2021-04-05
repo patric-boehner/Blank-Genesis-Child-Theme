@@ -19,19 +19,19 @@ if( !defined( 'ABSPATH' ) ) exit;
 return array(
 
 	array(
-		'name'      => __( 'small', 'blank-child-theme' ),
+		'name'      => __( 'Small', 'blank-child-theme' ),
 		'shortName' => __( 'S', 'blank-child-theme' ),
 		'size'      => 16,
 		'slug'      => 'small'
 	),
 	array(
-		'name'      => __( 'regular', 'blank-child-theme' ),
+		'name'      => __( 'Regular', 'blank-child-theme' ),
 		'shortName' => __( 'M', 'blank-child-theme' ),
 		'size'      => 20,
 		'slug'      => 'regular'
 	),
 	array(
-		'name'      => __( 'large', 'blank-child-theme' ),
+		'name'      => __( 'Large', 'blank-child-theme' ),
 		'shortName' => __( 'L', 'blank-child-theme' ),
 		'size'      => 24,
 		'slug'      => 'large'

@@ -77,3 +77,4 @@ include_once( CORE_DIR . '/inc/post-types/blocks.php' );
 // include_once( CORE_DIR . '/inc/blocks/custom-block/custom-block.php' );
 include_once( CORE_DIR . '/inc/blocks/content-grid/content-grid.php' );
 include_once( CORE_DIR . '/inc/blocks/icon/icon-block.php' );
+include_once( CORE_DIR . '/inc/blocks/video/video-block.php' );
