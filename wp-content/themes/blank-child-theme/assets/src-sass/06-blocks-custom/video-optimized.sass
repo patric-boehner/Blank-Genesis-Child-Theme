@@ -19,6 +19,10 @@
     overflow: hidden
     cursor: pointer
 
+    &:hover > .video-block__button,
+    &:focus > .video-block__button
+        background-color: var(--color-highlight)
+
 
 .video-block__thumbnail
     position: absolute
@@ -26,7 +30,7 @@
     top: 0
     left: 0
 
-    
+ 
 .video-block__button
     position: absolute
     top: 50%

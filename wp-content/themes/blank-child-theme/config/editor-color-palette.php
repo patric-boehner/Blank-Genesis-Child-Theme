@@ -34,6 +34,17 @@ return array(
 		'color' => '#FFBC49',
 	),
 	array(
+		'name'  => __( 'Dark Gray', 'blank-child-theme' ),
+		'slug'  => 'light-gray',
+		'color' => '#eee',
+	),
+	array(
+		'name'  => __( 'Light Gray', 'blank-child-theme' ),
+		'slug'  => 'dark-gray',
+		'color' => '#333',
+	),
+
+	array(
 		'name'  => __( 'White', 'blank-child-theme' ),
 		'slug'  => 'white',
 		'color' => '#FFFFFF',

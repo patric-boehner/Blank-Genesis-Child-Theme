@@ -1,2 +1,32 @@
 // Block styles available to multiple blocks
+
+// Group Spacing
+.wp-block-group,
+.wp-block-cover
     
+    &.is-style-no-spacing
+        padding-top: 0
+        padding-bottom: 0
+
+    &.is-style-medium-spacing
+        padding-top: var(--spacing-x-large)
+        padding-bottom: var(--spacing-x-large)
+
+    &.is-style-large-spacing
+        padding-top: var(--spacing-xx-large)
+        padding-bottom: var(--spacing-xx-large)
+
+
+// Paragraph, heading, and block
+.is-style-no-bottom-spacing
+        margin-bottom: 0
+
+.is-style-larger-bottom-spacing
+    margin-bottom: var(--spacing-large)
+
+.icon-block
+    &.is-style-no-bottom-spacing
+        margin-bottom: 0
+
+    &.is-style-larger-bottom-spacing
+        margin-bottom: var(--spacing-large)

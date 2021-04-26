@@ -13,13 +13,13 @@
 	// For the negative left/right margin, subtract page width from the content width and divide by two
 	.alignwide
 		margin: 0
-		margin-left: calc( ( var(--width-content) - var(--width-full) ) / 2  )
-		margin-right: calc( ( var(--width-content) - var(--width-full) ) / 2  )
+		margin-left: calc( ( ( var(--width-full) - var(--width-content) ) / 2 ) * -1 )
+		margin-right: calc( ( ( var(--width-full) - var(--width-content) ) / 2 ) * -1 )
 		max-width: var(--width-full)
 		width: var(--width-full)
 
 
-.wide-content
+.full-width-content
 	.alignwide
 		max-width: auto
 		width: auto

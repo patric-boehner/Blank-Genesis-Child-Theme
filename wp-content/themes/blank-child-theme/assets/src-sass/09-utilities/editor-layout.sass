@@ -1,11 +1,24 @@
-// Conten Width Based on Body Count
+// Hide Post Title
+.genesis-title-hidden
+	.editor-post-title__block
+		opacity: 0.4
 
+		&::after
+				content: "\f530"
+				font-family: 'dashicons'
+				position: absolute
+				right: 0
+				top: 33%
+				font-size: var(--font-size-x-large)		
+			
+
+// Conten Width Based on Body Count
 .narrow-content
 	.wp-block
 		--wrap-max-width: var(--width-content)
 
 
-.wide-content
+.full-width-content
 	.wp-block
 		--wrap-max-width: var(--width-full)
 

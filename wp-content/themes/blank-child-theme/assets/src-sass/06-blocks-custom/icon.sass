@@ -25,17 +25,24 @@
 .icon-block
     display: flex
     flex-wrap: nowrap
+    margin-bottom: var(--spacing-small)
+
+    .icon
+        fill: var(--color-fill, currentColor)
 
     &.icon-align-top,
     &.icon-align-center
         flex-direction: column
+
+        .icon
+            margin-bottom: var(--spacing-small)
+            margin-top: 8px // Line height offset
     
     &.icon-align-left
         flex-direction: row
 
         .icon
             margin-right: var(--spacing-small)
-            margin-bottom: var(--spacing-small)
 
     &.icon-align-center .icon
         align-self: center
@@ -50,7 +57,7 @@
         align-items: flex-end
 
 
-    .block__inner
+    & > .block__inner
         display: block
         width: 100%
         flex-grow: 1

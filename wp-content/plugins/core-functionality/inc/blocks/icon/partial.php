@@ -30,6 +30,7 @@ if( !empty( $block['align_content'] ) ) {
 $icon_name = esc_attr( get_field( 'icon_select' ) );
 $align = esc_attr( get_field( 'icon_align' ) );
 $size = esc_attr( get_field( 'icon_size' ) );
+$color = esc_attr( get_field( 'icon_color' ) );
 
 if( !empty( $size ) ) {
   $className .= ' icon-size-' . $size;
@@ -37,6 +38,10 @@ if( !empty( $size ) ) {
 
 if( !empty( $align ) ) {
   $className .= ' icon-align-' . $align;
+}
+
+if( !empty( $color ) ) {
+  $className .= ' has-fill-'.$color.'-color';
 }
 
 // Icons

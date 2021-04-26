@@ -45,7 +45,7 @@ function pb_search_form() {
 add_filter('pre_get_posts', 'pb_filter_search_results');
 function pb_filter_search_results( $query ) {
 
-	if ( $query->is_search ) {
+	if ( !is_admin() && $query->is_main_query() &&  $query->is_search ) {
 
 		$query->set(
 			'post_type',

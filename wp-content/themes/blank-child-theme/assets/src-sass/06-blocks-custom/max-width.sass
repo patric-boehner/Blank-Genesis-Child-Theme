@@ -1,0 +1,34 @@
+// Variables & Resets
+//**********************************************
+
+// Tools
+
+@import "../02-tools/variables"
+@import "../02-tools/mixins"
+
+
+// Max-Width
+.max-width-block
+    display: flex
+    float: none
+    width: 100%
+    flex-wrap: wrap
+    justify-content: flex-start
+
+    &.align-right
+        justify-content: flex-end
+
+    &.align-center
+        justify-content: center
+
+    &.is-style-default-width
+        --wrap-max-width: var(--width-content)
+
+    &.is-style-small-width
+        --wrap-max-width: var(--width-small)
+
+    &.is-style-large-width
+        --wrap-max-width: var(--width-full)
+
+    .block__inner
+        max-width: var(--wrap-max-width)

@@ -59,6 +59,19 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 // add_filter( 'genesis_breadcrumbs_toggle_enabled', '__return_false' );
 
 
+// Custom Layout
+add_action( 'after_setup_theme', 'pb_register_narrow_layout' );
+function pb_register_narrow_layout() {
+
+	genesis_register_layout(
+		'narrow-content', // A layout slug of your choice. Used in body classes. 
+		[
+			'label' => __( 'Narrow Content', 'blank-child-theme' ),
+		]
+	);
+
+}
+
 
 /**
  * Gutenberg layout class
@@ -87,9 +100,9 @@ function pb_block_editor_layout_class( $classes ) {
     
 	// Pages use full width as default, see below
 	if( empty( $layout ) && 'page' === get_post_type() ) {
-		$layout = 'wide-content';
+		$layout = 'full-width-layout';
 	}
-
+	// Change defualt for posts
 	if( empty( $layout ) && 'post' === get_post_type() ) {
 		$layout = 'narrow-content';
 	}
@@ -100,6 +113,35 @@ function pb_block_editor_layout_class( $classes ) {
 	}
 
 	$classes .= ' ' . $layout . ' ';
+	
+	return $classes;
+
+}
+
+
+// Add editor class if title is hidden
+add_filter( 'admin_body_class', 'pb_block_editor_title_class' );
+function pb_block_editor_title_class( $classes ) {
+
+	$screen = get_current_screen();
+
+	if( ! $screen->is_block_editor() ) {
+		return $classes;
+	}
+
+	$title_hidden = false;
+	$post_id = isset( $_GET['post'] ) ? intval( $_GET['post'] ) : false;
+
+	if( $post_id ) {
+		$title_hidden = genesis_get_custom_field( '_genesis_hide_title', $post_id );
+	}
+
+	if ( !empty( $title_hidden ) ) {
+		$title_hidden = 'genesis-title-hidden';
+	}
+
+	
+	$classes .= ' ' . $title_hidden . ' ';
 	
 	return $classes;
 

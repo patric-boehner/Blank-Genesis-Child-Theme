@@ -1,0 +1,41 @@
+
+@import "../02-tools/variables"
+@import "../02-tools/mixins"
+
+.accordion-block
+    margin-bottom: var(--spacing-medium)
+
+    .hidden
+        display: none
+
+    &__header
+        position: relative
+        width: 100%
+        font-size: var(--heading-font-size-h4)
+        font-weight: var(--heading-font-weight)
+        background-color: var(--color-background)
+        padding: var(--spacing-small)
+        margin-bottom: 0
+
+    .block__inner
+        padding: var(--spacing-small)
+
+.accordion-block__header > button
+    @include button-reset
+    font-weight: inherit
+    width: 100%
+    text-align: left
+
+    &::after
+        position: absolute
+        content: ''
+        background: url('#{$icon-path}/chevron-down.svg') no-repeat top left
+        background-size: contain
+        width: 1em
+        height: 1em
+        top: 20px
+        right: 20px
+
+.accordion-block__header > button[aria-expanded='false']
+    &::after
+        transform: rotate(180deg)

@@ -26,7 +26,6 @@ remove_filter( 'body_class', 'genesis_singular_image_hidden_body_class' );
 remove_filter( 'body_class', 'genesis_singular_image_visible_body_class' );
 
 
-
 /**
  * Adds body classes to help with block styling.
  *
@@ -101,7 +100,7 @@ function pb_remove_redundant_markup() {
 
 	add_filter( 'genesis_markup_site-inner', '__return_null' );
 
-	if ( 'full-width-content' === genesis_site_layout() || 'wide-content' === genesis_site_layout() || 'narrow-content' === genesis_site_layout() ) {
+	if ( 'full-width-content' === genesis_site_layout() || 'full-width-content' === genesis_site_layout() || 'narrow-content' === genesis_site_layout() ) {
 		add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
 	}
 

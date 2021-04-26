@@ -37,7 +37,7 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 )
 
 
 // Change entry title to h2 on homepage
-add_filter( 'genesis_entry_title_wrap', 'pb_post_title_wrap' );
+// add_filter( 'genesis_entry_title_wrap', 'pb_post_title_wrap' );
 function pb_post_title_wrap( $wrap ) {
 
 	return 'h1';

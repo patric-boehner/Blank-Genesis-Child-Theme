@@ -1,17 +1,22 @@
+// Post Title
 .editor-post-title__block .editor-post-title__input
 	font-family: var(--font-primary)
 	font-size: var(--heading-font-size-h1)
 	font-weight: var(--font-weight-bold)
 	line-height: 1.2
 
-// Regular content width
 
+// Regular content width
 .wp-block
 	max-width: var(--wrap-max-width)
 
 	&[data-align="wide"],
 	&[data-align="full"]
 		max-width: none
+
+	&[data-align="full"]
+		margin-top: 0
+		margin-bottom: 0
 
 
 .wp-block[data-align="wide"]
@@ -20,6 +25,15 @@
 	@include above-tablet
 		.alignwide
 			margin: 0 auto
+
+
+// Reusable block content width
+.wp-block.is-reusable
+
+	&[data-align="full"]
+		max-width: none
+		margin-left: -10px
+		margin-right: -10px
 
 
 // Seperator Block
@@ -35,10 +49,10 @@
 		margin-top: 0
 		margin-bottom: 0
 		
-	.wp-block-group,
-	.wp-block-cover
-        padding-top: var(--spacing-row)
-        padding-bottom: var(--spacing-row)
+	// .wp-block-group,
+	// .wp-block-cover
+    //     padding-top: var(--spacing-row)
+    //     padding-bottom: var(--spacing-row)
  
 
 // Fix padding issue on columns in media-text block

@@ -15,6 +15,10 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Disable application passwords
+add_filter( 'wp_is_application_passwords_available', '__return_false' );
+
+
 // Register User Contact Methods
 add_filter( 'user_contactmethods', 'custom_user_contact_methods' );
 function custom_user_contact_methods( $user_contact_method ) {

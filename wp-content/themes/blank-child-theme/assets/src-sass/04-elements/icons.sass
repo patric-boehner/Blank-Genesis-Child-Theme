@@ -1,29 +1,26 @@
 // Icons
 
-.icon,
-svg
-  fill: var(--color-highlight)
+.icon
+  fill: var(--color-primary)
 
 
 .has-background,
 .has-background-dim,
 .has-text-color
   .icon
-    fill: var(--color-inherit)
+    fill: var(--color-fill, currentColor)
 
 
-a .icon,
-a svg
+a .icon
 
 	&:hover,
 	&:focus
-		fill: var(--color-primary)
+		fill: var(--color-highlight)
 
 
 .icon-text
 	position: relative
 
-	svg,
 	.icon
 		margin-right: 10px
 		vertical-align: middle

@@ -10,4 +10,25 @@
         display: block
 
         .wp-block-column:not(:first-child)
-            margin-left: 0
+            margin-left: 0 !important
+
+
+// Column Styles
+.wp-block-columns    
+
+    &.is-style-medium-gap
+        --grid-gap: var(--spacing-x-large)
+
+        .wp-block-column:not(:first-child)
+            margin-left: var(--grid-gap)
+
+    &.is-style-large-gap
+        --grid-gap: var(--spacing-xx-large)
+
+        .wp-block-column:not(:first-child)
+            margin-left: var(--grid-gap)
+
+    .wp-block-column
+
+        &.is-style-medium-spacing
+            padding: var(--spacing-medium)

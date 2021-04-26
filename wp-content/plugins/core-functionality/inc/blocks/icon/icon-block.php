@@ -27,7 +27,7 @@ function register_acf_icon_block() {
       'category'          => 'common', // common, formatting, layout, widgets, embed
       'icon'              => 'carrot', // Dahsicons
       'keywords'          => array( 'icon' ),
-      'post_types'        => array( 'block_area', 'page', 'post' ),
+      'post_types'        => array( 'content_area', 'page', 'post' ),
       'multiple'          => true,
       'render_template'   => CORE_DIR . 'inc/blocks/icon/partial.php',
       'enqueue_style'     => get_stylesheet_directory_uri() . "/assets/css/icon.min.css",

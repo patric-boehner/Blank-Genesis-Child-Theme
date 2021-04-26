@@ -77,8 +77,8 @@ remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' )
 
 
 // Force narrow-content on single posts only
-add_filter( 'genesis_pre_get_option_site_layout', 'pb_narrow_layout_archives' );
-function pb_narrow_layout_archives() {
+add_filter( 'genesis_pre_get_option_site_layout', 'pb_narrow_layout' );
+function pb_narrow_layout() {
 
 	if ( is_home() || is_archive() ) {
 		return 'narrow-content';

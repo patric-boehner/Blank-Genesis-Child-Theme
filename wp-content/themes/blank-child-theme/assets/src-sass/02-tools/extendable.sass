@@ -13,11 +13,13 @@
     white-space: normal
     width: auto
     line-height: normal
+    transition: all 0.25s ease-in-out
 
     &:hover,
-    &:focus
-        background-color: var(--color-highlight)
-        color: $white
+    &:focus,
+    &:visited
+        background-color: var(--color-inherit-background, --color-highlight)
+        color: var(--color-inherit, --color-white)
 
     &:disabled
         background-color: var( --color-border)

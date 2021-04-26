@@ -42,7 +42,8 @@
 			font-weight: var(--font-weight-bold)
 
 	// Button menu item
-	> .menu-highlight > a
+	> .menu-highlight > a,
+	> .menu-highlight.current-menu-item > a
 
 		@include above-phone
 			margin-left: 15px
@@ -54,11 +55,14 @@
 
 
 	> .menu-highlight > a:focus,
-	> .menu-highlight > a:hover
+	> .menu-highlight > a:hover,
+	> .menu-highlight.current-menu-item > a:focus,
+	> .menu-highlight.current-menu-item > a:hover
 
 		@include above-phone
 			background-color: var(--color-primary)
 			color: var(--color-white)
+			
 
 
 	a
@@ -126,16 +130,9 @@
 
 .js .nav-primary
 	display: none
-	position: relative
 
 	@include above-phone
 		display: block
-
-	// @include phone
-	// 	position: absolute
-	// 	top: var(--mobil-menu-height)
-	// 	z-index: 3
-	// 	left: 0
 
 
 // Responsive Menu
@@ -155,6 +152,17 @@
 // Responsive Menu
 .genesis-responsive-menu
 	position: relative
+
+	@include phone
+		background-color: var(--color-white)
+		position: absolute
+		top: 96px
+		left: 0
+		right: 0
+		z-index: 100
+
+		.wrap
+			padding: 0 var(--side-spacing)  var(--side-spacing) var(--side-spacing)
 
 	.genesis-nav-menu
 
@@ -191,7 +199,6 @@
 	overflow: hidden
 	position: relative
 	z-index: 1000
-	padding: 16px 0
 	border-width: 0
 	color: var(--color-primary)
 	background-color: var(--color-white)

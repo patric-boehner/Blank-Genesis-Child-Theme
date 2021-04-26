@@ -14,6 +14,7 @@
 //**********************
 if( !defined( 'ABSPATH' ) ) exit;
 
+
 // Customize the post info function
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );
 function sp_post_info_filter( $post_info ) {

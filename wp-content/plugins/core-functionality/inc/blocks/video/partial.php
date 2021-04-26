@@ -64,6 +64,5 @@ if ( $vidoe_url_host == 'www.youtube.com' || $vidoe_url_host == 'youtube.com' ) 
 
 }
 
-
 // Output content
 include CORE_DIR . '/inc/blocks/video/view.php';
