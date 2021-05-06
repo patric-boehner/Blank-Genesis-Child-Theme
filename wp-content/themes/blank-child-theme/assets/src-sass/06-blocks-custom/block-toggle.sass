@@ -2,7 +2,7 @@
 @import "../02-tools/variables"
 @import "../02-tools/mixins"
 
-.accordion-block
+.toggle-block
     margin-bottom: var(--spacing-medium)
 
     .hidden
@@ -15,12 +15,13 @@
         font-weight: var(--heading-font-weight)
         background-color: var(--color-background)
         padding: var(--spacing-small)
+        padding-left: calc( var(--spacing-small) + 40px )
         margin-bottom: 0
 
     .block__inner
         padding: var(--spacing-small)
 
-.accordion-block__header > button
+.toggle-block__header > button
     @include button-reset
     font-weight: inherit
     width: 100%
@@ -34,8 +35,8 @@
         width: 1em
         height: 1em
         top: 20px
-        right: 20px
+        left: 20px
 
-.accordion-block__header > button[aria-expanded='false']
+.toggle-block__header > button[aria-expanded='false']
     &::after
-        transform: rotate(180deg)
+        transform: rotate(-90deg)

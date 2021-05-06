@@ -24,7 +24,7 @@ function register_acf_max_width_block() {
       'name'              => 'max-width-block',
       'title'             => esc_html__('Max-Width', 'core-functionality'),
       'description'       => esc_html__('A wrapping block for setting the maximum width of the content contained inside.', 'core-functionality'),
-      'category'          => 'layout', // common, formatting, layout, widgets, embed
+      'category'          => 'design', // common, formatting, layout, widgets, embed
       'icon'              => 'editor-expand', // Dahsicons
       'keywords'          => array( 'width, group, max width, max-width' ),
       'multiple'          => true,

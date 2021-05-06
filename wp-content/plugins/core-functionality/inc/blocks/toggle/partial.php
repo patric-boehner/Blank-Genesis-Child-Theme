@@ -16,14 +16,14 @@ if( !defined( 'ABSPATH' ) ) exit;
 //**********************
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'accordion-block-' . $block['id'];
+$id = 'toggle-block-' . $block['id'];
 
 if( !empty( $block['anchor'] ) ) {
     $id = $block['anchor'];
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'accordion-block accordion-container';
+$className = 'toggle-block toggle-container';
 
 if( !empty( $block['className'] ) ) {
     $className .= ' ' . $block['className'];
@@ -47,4 +47,4 @@ $heading = esc_html( get_field( 'heading_level' ) );
 
 
 // Output content
-include CORE_DIR . '/inc/blocks/accordion/view.php';
+include CORE_DIR . '/inc/blocks/toggle/view.php';

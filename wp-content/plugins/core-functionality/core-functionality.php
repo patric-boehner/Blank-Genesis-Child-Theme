@@ -74,9 +74,10 @@ include_once( CORE_DIR . '/inc/post-types/blocks.php' );
 // include_once( CORE_DIR . '/inc/taxonomies/tax-name.php' );
 
 // Blocks
+include_once( CORE_DIR . '/inc/blocks/categories.php' );
 // include_once( CORE_DIR . '/inc/blocks/custom-block/custom-block.php' );
 include_once( CORE_DIR . '/inc/blocks/content-grid/content-grid.php' );
 include_once( CORE_DIR . '/inc/blocks/icon/icon-block.php' );
 include_once( CORE_DIR . '/inc/blocks/video/video-block.php' );
-include_once( CORE_DIR . '/inc/blocks/accordion/accordion-block.php' );
+include_once( CORE_DIR . '/inc/blocks/toggle/toggle-block.php' );
 include_once( CORE_DIR . '/inc/blocks/max-width/max-width-block.php' );

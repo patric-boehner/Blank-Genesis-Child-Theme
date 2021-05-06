@@ -34,11 +34,24 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 		'core/spacer',
 		'core/seperator',
 		'core/shortcode',
-		'core/embed',
+		// 'core/embed',
 		'core/group',
 		'core/cover',
 		'core/shortcode',
+		'acf/accordion-block',
+		'acf/content-grid',
+		'acf/icon-block',
+		'acf/max-width-block',
+		'acf/video-block',
 	);
+
+	// $allowed_blocks = array(
+	// 	'core/youtube',
+	// 	'core/facebook',
+	// 	'core/twitter',
+	// 	'core/soundcloud',
+	// 	'core/vimeo',
+	// );
 
 	// if( $post->post_type === 'page' ) {
 	// 	$allowed_blocks[] = '';
@@ -144,5 +157,16 @@ function pb_block_editor_title_class( $classes ) {
 	$classes .= ' ' . $title_hidden . ' ';
 	
 	return $classes;
+
+
+//Remove inpost Genesis settings
+add_action( 'init', 'pb_simplify_editing_screens' );
+function pb_simplify_editing_screens() {
+
+	// Posts
+	remove_post_type_support( 'post' , 'genesis-scripts' );
+
+	//Pages
+	remove_post_type_support( 'page' , 'genesis-scripts' );
 
 }

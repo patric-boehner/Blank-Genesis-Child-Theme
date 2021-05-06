@@ -25,8 +25,8 @@ function register_acf_content_grid_block() {
   acf_register_block_type( array(
       'name'              => 'content-grid',
       'title'             => esc_html__('Content Grid', 'core-functionality'),
-      'description'       => esc_html__('A block for outputting a grid of content.', 'core-functionality'),
-      'category'          => 'common', // common, formatting, layout, widgets, embed
+      'description'       => esc_html__('A set of posts displayed by category and/or tag in a grid.', 'core-functionality'),
+      'category'          => 'content', // common, formatting, layout, widgets, embed
       'icon'              => 'block-default', // Dahsicons
       'keywords'          => array( '' ),
       'post_types'        => array( 'content_area', 'page', 'post' ),

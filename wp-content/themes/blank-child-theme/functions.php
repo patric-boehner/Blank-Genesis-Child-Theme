@@ -87,6 +87,7 @@ include_once( CHILD_DIR . '/inc/structure/comments.php' );
 include_once( CHILD_DIR . '/inc/structure/search.php' );
 include_once( CHILD_DIR . '/inc/structure/footer.php' );
 include_once( CHILD_DIR . '/inc/structure/post.php' );
+include_once( CHILD_DIR . '/inc/structure/sidebar.php' );
 include_once( CHILD_DIR . '/inc/structure/archive.php' );
 include_once( CHILD_DIR . '/inc/structure/loop.php' );
 include_once( CHILD_DIR . '/inc/structure/menu.php' );

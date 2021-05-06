@@ -7,6 +7,11 @@
 @import "../02-tools/mixins"
 
 .content-grid-block
+    &.three-columns
+        --grid-columns: repeat(3, 1fr)
+
+    &.four-columns
+        --grid-columns: repeat(4, 1fr)
 
     .block__inner
         display: grid

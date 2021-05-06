@@ -65,15 +65,11 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 // Remove the site description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
+
 // Unregister primary widget area.
 unregister_sidebar( 'sidebar' ); // Primary
 unregister_sidebar( 'sidebar-alt' ); // Secondary
 unregister_sidebar( 'header-right' ); // Header Right
-
-
-// Remove Sidebar for all layouts
-remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
-remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
 
 
 // Force narrow-content on single posts only

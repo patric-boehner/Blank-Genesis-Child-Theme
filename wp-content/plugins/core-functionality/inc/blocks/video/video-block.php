@@ -24,7 +24,7 @@ function register_acf_ll_video_block() {
       'name'              => 'video-block',
       'title'             => esc_html__('Optimized Video', 'core-functionality'),
       'description'       => esc_html__('A block for embeding a video from youtube or vimeo for faster page speed.', 'core-functionality'),
-      'category'          => 'media', // common, formatting, layout, widgets, embed
+      'category'          => 'content', // common, formatting, layout, widgets, embed
       'icon'              => 'video-alt3', // Dahsicons
       'keywords'          => array( 'video, youtube, vimeo, lazyload, optimized' ),
       'post_types'        => array( 'content_area', 'page', 'post' ),

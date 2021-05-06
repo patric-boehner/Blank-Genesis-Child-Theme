@@ -4,10 +4,11 @@
     margin-left: auto
     margin-right: auto
 
-    .wp-block
+    .wp-block[data-align="left"],
+    .wp-block[data-align="right"]
         height: auto
-
-    .wp-block > *
-        float: none
-        margin-left: auto
-        margin-right: auto
+        
+        & > *
+            float: none
+            margin-right: 0
+            margin-left: 0

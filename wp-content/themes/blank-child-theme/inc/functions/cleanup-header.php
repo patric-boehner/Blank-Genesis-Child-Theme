@@ -15,6 +15,32 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Remove jQuery Migrate
+add_action( 'wp_default_scripts', 'pb_remove_jquery_migrate' );
+function pb_remove_jquery_migrate( $scripts ) {
+
+	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+		$script = $scripts->registered['jquery'];
+
+		if ( $script->deps ) {
+			$script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
+		}
+
+	}
+
+}
+
+
+// Disable the superfish script
+// add_action( 'wp_enqueue_scripts', 'sp_disable_superfish' );
+// function sp_disable_superfish() {
+	
+// 	wp_deregister_script( 'superfish' );
+// 	wp_deregister_script( 'superfish-args' );
+
+// }
+
+
 // Stop WordPress from Guessing Urls
 add_filter( 'redirect_canonical', 'pb_stop_guessing' );
 function pb_stop_guessing($url) {
