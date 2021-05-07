@@ -158,6 +158,8 @@ function pb_block_editor_title_class( $classes ) {
 	
 	return $classes;
 
+}
+
 
 //Remove inpost Genesis settings
 add_action( 'init', 'pb_simplify_editing_screens' );

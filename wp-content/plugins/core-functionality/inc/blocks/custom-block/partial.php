@@ -45,5 +45,25 @@ if( !empty( $block['align_content'] ) ) {
 $text = esc_html( get_field( 'text' ) );
 
 
+/**
+ * Template file for inner blocks
+ * 
+ * Add to the view file using esc_attr( wp_json_encode( $template ) );
+ * 
+ * @link https://www.billerickson.net/innerblocks-with-acf-blocks/
+ */
+$template = array(
+  array( 'core/heading',
+    array(
+      'level'   => 3,
+      'placeholder' => 'Heading Goes Here', // Use content or placeholder
+    ) ),
+  array( 'core/paragraph',
+    array(
+      'placeholder' => 'Content goes here.'
+    ) )
+);
+
+
 // Output content
 include CORE_DIR . '/inc/blocks/custom-block/view.php';

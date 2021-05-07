@@ -46,5 +46,26 @@ $text = esc_html( get_field( 'heading' ) );
 $heading = esc_html( get_field( 'heading_level' ) );
 
 
+
+/**
+ * Template file for inner blocks
+ * 
+ * Add to the view file using esc_attr( wp_json_encode( $template ) );
+ * 
+ * @link https://www.billerickson.net/innerblocks-with-acf-blocks/
+ */
+$template = array(
+  array( 'core/heading',
+    array(
+      'level'   => 3,
+      'placeholder' => 'Enter a heading or a question',
+    ) ),
+  array( 'core/paragraph',
+    array(
+      'placeholder' => 'Enter your content or the answer to the question'
+    ) )
+);
+
+
 // Output content
 include CORE_DIR . '/inc/blocks/toggle/view.php';
