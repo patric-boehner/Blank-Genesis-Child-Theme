@@ -15,16 +15,6 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-// Reposition the breadcrumbs.
-// remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-// add_action( 'genesis_before', 'pb_move_breadcrumbs' );
-// function pb_move_breadcrumbs() {
-
-// 	add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs', 12 );
-
-// }
-
-
 // Add blog to single post and category breadcrumbs
 add_filter( 'genesis_single_crumb', 'pb_add_blog_crumb', 10, 2 );
 add_filter( 'genesis_archive_crumb', 'pb_add_blog_crumb', 10, 2 );

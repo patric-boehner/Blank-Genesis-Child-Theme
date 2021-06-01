@@ -55,20 +55,24 @@ html
 	margin: 0 auto
 
 
-.inner-wrap
-	width: 100%
-	display: grid
-	grid-template-columns: 1fr 1fr
-	grid-template-areas: "previous next"
+.pagination
+	.inner-wrap
+		width: 100%
+		display: grid
+		grid-gap: var(--spacing-medium)
 
-	.pagination-next
-		grid-area: next
-		justify-self: end
-		
-	.pagination-previous
-		grid-area: previous
-		justify-self: start
+		@include above-phone
+			grid-template-columns: 1fr 1fr
+			grid-template-areas: "previous next"
 
+			.pagination-next
+				grid-area: next
+				justify-self: end
+				
+			.pagination-previous
+				grid-area: previous
+				justify-self: start
+			
 
 // @include above-tablet
 // 	.content-area
@@ -89,6 +93,16 @@ html
 
 // 		.sidebar-primary
 // 			grid-area: sidebar
+
+
+// Footer
+
+.sub-footer
+	@include above-tablet
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		flex-direction: row-reverse
 
 
 // Search Form

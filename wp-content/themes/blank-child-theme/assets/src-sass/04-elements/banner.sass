@@ -10,23 +10,13 @@
     position: relative
 
     &.header-banner__button
-        --button-width: 150px
-        
-        .block-content-area
-            padding-right: var(--button-width)
 
-    
-    .block-content-area
-        // display: flex
-        // flex-wrap: nowrap
-        // align-items: center
-        padding-top: var(--spacing-medium)
-        padding-bottom: var(--spacing-medium)
-    
-    & >
-        margin: 0
-        flex-grow: 2
-    
+    .block-content-area__banner
+        display: block
+        width: calc( 100% - ( var(--side-spacing) * 2 ) )
+        max-width: var(--wrap-max-width)
+        margin: 0 auto
+
     button
         position: absolute
         right: 0

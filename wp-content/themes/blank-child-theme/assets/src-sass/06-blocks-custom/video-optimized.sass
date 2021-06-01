@@ -3,6 +3,8 @@
 @import "../02-tools/mixins"
 
 .optimized-video-block
+    --aspect-ratio: 315 / 560
+
     iframe
         position: absolute
         height: 100%
@@ -15,13 +17,14 @@
 .video-block__wrapper
     position: relative
     background-color: var(--color-light-gray)
-    padding-top: 56.25%
+    padding-top: calc(var(--aspect-ratio) * 100%)
     overflow: hidden
     cursor: pointer
 
     &:hover > .video-block__button,
     &:focus > .video-block__button
         background-color: var(--color-highlight)
+        color: var(--color-white)
 
 
 .video-block__thumbnail

@@ -24,3 +24,29 @@ function pb_remove_sidebar_skiplink( $links ) {
 	return $links;
 
 }
+
+
+// Change Skiplinks
+// https://github.com/billerickson/EA-Genesis-Child/blob/master/inc/markup.php
+add_filter( 'genesis_skip_links_output', 'pb_main_content_skip_link' );
+function pb_main_content_skip_link( $skip_links ) {
+
+	$old = $skip_links;
+	$skip_links = array();
+
+	foreach( $old as $id => $label ) {
+		if( 'genesis-content' == $id ) {
+			$id = 'main-content';
+		}
+
+		if( 'genesis-footer-widgets' == $id ) {
+			$id = 'footer';
+		}
+			
+		$skip_links[ $id ] = $label;
+		
+	}
+
+	return $skip_links;
+	
+}

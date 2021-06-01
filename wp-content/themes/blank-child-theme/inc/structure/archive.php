@@ -19,11 +19,14 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_filter( 'body_class', 'pb_archive_body_class' );
 function pb_archive_body_class( $classes ) {
 
-	if(  !is_home() || !is_search() ) {
+	
+	if(  is_front_page() || is_singular() || is_404() ) {
 		return $classes;	
 	}
 	
+
     $classes[] = 'archive';
+
 	return $classes;
 	
 }
@@ -39,6 +42,12 @@ function pb_attributes_archive_description( $attributes ) {
 
 	return $attributes;
 
+}
+
+
+// Remove description on paginated archives
+if( get_query_var( 'paged' ) ) {
+	remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_intro_text', 12, 3 );
 }
 
 
@@ -84,7 +93,9 @@ function pb_add_archive_content_area() {
 
 	// Output content area
 	if ( function_exists( 'pb_show_content_area' ) ) {
-		pb_show_content_area( 'archive-footer' );
+		pb_show_content_area( array(
+			'location' => 'archive-footer',
+		) );
 	}
 
 }

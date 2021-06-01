@@ -22,7 +22,7 @@ add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
 // Reposition the secondary navigation menu to footer.
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_footer', 'genesis_do_subnav', 6 );
+add_action( 'pb_before_footer_credit', 'genesis_do_subnav' );
 
 
 // Control the menu depth.

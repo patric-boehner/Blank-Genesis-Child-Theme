@@ -11,13 +11,16 @@
               continue;
             }
 
+            $time = '<time class="entry-time">'.get_the_date().'</time>';
+            $author = '<span class="entry-author"> '.esc_html( 'By', 'core-functionality' ).' <span class="entry-author-name">'.get_the_author().'</span></span>';
+
             // Display a card
             if ( function_exists( 'cf_acf_blocks_display_card' ) ) {
               cf_acf_blocks_display_card(
                 array(
                   'title' => get_the_title(),
                   'image' => wp_get_attachment_image( get_post_thumbnail_id(), 'genesis-singular-images', false ),
-                  'meta' => get_the_date(),
+                  'header_meta' => $time . $author,
                   'text'  => cf_custom_excerpt(
                     array(
                       'length' => 35,
@@ -25,7 +28,7 @@
                       )
                     ),
                   'url'   => get_the_permalink(),
-                  'button' => '',
+                  'footer_menu' => '',
                 )
             );
           }

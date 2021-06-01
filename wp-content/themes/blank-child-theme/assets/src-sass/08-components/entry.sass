@@ -14,10 +14,21 @@
 .entry-meta
 	font-size: var(--font-size-small)
 
+	a
+		font-weight: var(--body-font-weight)
+
 
 .entry-categories,
 .entry-tags
 	display: block
+	font-weight: var(--body-font-weight-bold)
+
+
+// Entry Content
+.single .entry-content
+	h2, h3, h4, h5, h6
+		&:not(:first-child)
+			margin-top: var(--spacing-large)
 
 
 // After Post
@@ -40,10 +51,3 @@
 	.icon
 		width: var(--icon-size-default)
 		height: var(--icon-size-default)
-
-
-// Columns
-
-// .sidebar
-// 	font-size: var(--font-size-small)
-// 	margin-bottom: var(--spacing-x-large)

@@ -1,0 +1,1 @@
+.top-banner-visible .header-banner{display:block}.header-banner{display:none;border-bottom:1px solid var(--color-border);position:relative}.header-banner .block-content-area__banner{display:block;width:calc(100% - (var(--side-spacing)*2));max-width:var(--wrap-max-width);margin:0 auto}.header-banner button{position:absolute;right:0;top:0}

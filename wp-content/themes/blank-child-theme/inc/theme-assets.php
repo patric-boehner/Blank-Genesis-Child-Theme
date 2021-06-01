@@ -25,19 +25,7 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
   // Load Webfonts
-  wp_enqueue_style(
-    'ssp-regular-font',
-    get_stylesheet_directory_uri() . "/assets/fonts/source-sans-pro-v14-latin-regular.woff2",
-    null,
-    null,
-  );
-
-  wp_enqueue_style(
-    'ssp-bold-font',
-    get_stylesheet_directory_uri() . "/assets/fonts/source-sans-pro-v14-latin-600.woff2",
-    null,
-    null,
-  );
+  pb_enqueue_webfonts();
 
 
 	// Load Global Stylesheet
@@ -49,10 +37,63 @@ function pb_enqueue_child_theme_scripts_styles() {
   );
 
 
+  // Setup page if has top banner.
+  if ( pb_is_banner_active() == true ) {
+
+    wp_register_style(
+      'banner-style',
+      get_stylesheet_directory_uri() . "/assets/css/banner.min.css",
+      false,
+      cache_version_id()
+    );
+
+		wp_enqueue_script(
+      'banner-script',
+      get_stylesheet_directory_uri() . "/assets/js/banner.min.js",
+      array( 'jquery' ),
+      cache_version_id(),
+      false
+    );
+
+		wp_script_add_data(
+      'banner-script',
+      'defer',
+      true
+    );
+
+    // Load Customizer Banner varaibles    
+    wp_localize_script(
+      'banner-script',
+      'dismissal_length',
+      pb_get_banner_cookie_settings()
+    );
+
+	}
+
+
+  // Load Blocks Stylesheet
+  wp_register_style(
+    'blocks-style',
+    get_stylesheet_directory_uri() . "/assets/css/blocks.min.css",
+    false,
+    cache_version_id()
+  );
+  
+
+
+  // Load Entry Content Stylesheet
+  wp_register_style(
+    'entry-content-style',
+    get_stylesheet_directory_uri() . "/assets/css/entry-content.min.css",
+    false,
+    cache_version_id()
+  );
+  
+
   // Load Comment Stylesheet
   if( is_singular() && comments_open() ) {
 
-    wp_enqueue_style(
+    wp_register_style(
       'comment-style',
       get_stylesheet_directory_uri() . "/assets/css/comments.min.css",
       false,
@@ -60,6 +101,15 @@ function pb_enqueue_child_theme_scripts_styles() {
     );
 
   }
+
+
+  // Load Footer Stylesheet
+  wp_register_style(
+    'footer-style',
+    get_stylesheet_directory_uri() . "/assets/css/footer.min.css",
+    false,
+    cache_version_id()
+  );
 
 
 	// Load Global Script
@@ -76,6 +126,7 @@ function pb_enqueue_child_theme_scripts_styles() {
     'defer',
     true
   );
+
 
 	// Social Share Script
 	if ( ! empty( get_theme_mod( 'social_share_option', 1 ) ) && is_singular( 'post' ) ) {
@@ -95,47 +146,6 @@ function pb_enqueue_child_theme_scripts_styles() {
     );
 
 	}
-
-
-  // Setup page if has top banner.
-  $id = pb_get_id_by_slug( 'banner', 'content_area' );
-  $display = esc_attr( get_field( 'enable_banner', $id ) );
-  $cookie = esc_attr( get_field( 'banner_cookie', $id ) );
-
-	if ( ( $display == 'enable' || $cookie == 'enable' ) && !isset( $_COOKIE[ 'banner-hidden' ] ) ) {
-
-		wp_enqueue_script(
-      'banner-script',
-      get_stylesheet_directory_uri() . "/assets/js/banner.min.js",
-      array( 'jquery' ),
-      cache_version_id(),
-      false
-    );
-
-		wp_script_add_data(
-      'banner-script',
-      'defer',
-      true
-    );
-
-	}
-
-
-  // Load Customizer Banner varaibles
-	/*
-		* Actual function to pass PHP to JavaScript. Args:
-		* 1. The target JavaScript file has the handle 'banner-script' (this is the file we just enqueued)
-		* 2. The data will be called 'dismissalLength' by the JS file
-		* 3. 'dismissal_length' will contain the data in $cookie_date
-		* https://wpshout.com/building-a-magical-golden-bridge-from-php-to-javascript-with-wp_localize_script/
-		* https://wordpress.stackexchange.com/questions/186155/how-do-you-pass-a-boolean-value-to-wp-localize-script
-		*/
-    
-	wp_localize_script(
-		'banner-script',
-		'dismissal_length',
-		pb_get_customizer_banner_cookie_settings()
-	);
 
 }
 
@@ -178,19 +188,7 @@ add_action( 'enqueue_block_editor_assets', 'pb_block_editor_styles' );
 function pb_block_editor_styles() {
 
   // Load Webfonts
-  wp_enqueue_style(
-    'ssp-regular-font',
-    get_stylesheet_directory_uri() . "/assets/fonts/source-sans-pro-v14-latin-regular.woff2",
-    null,
-    null,
-  );
-
-  wp_enqueue_style(
-    'ssp-bold-font',
-    get_stylesheet_directory_uri() . "/assets/fonts/source-sans-pro-v14-latin-600.woff2",
-    null,
-    null,
-  );
+  pb_enqueue_webfonts();
 
   // Editor layout styles
   wp_enqueue_style(
@@ -210,20 +208,6 @@ function pb_block_editor_styles() {
 
 }
 
-// Retrive Customize settings for banner cookie
-function pb_get_customizer_banner_cookie_settings(){
-
-  $id = pb_get_id_by_slug( 'banner', 'content_area' );
-  $days = esc_attr( get_field( 'hide_banner', $id ) );
-
-  $settings = array(
-		'days'	=> $days,
-	);
-
-	return $settings;
-
-}
-
 
 // Load login stylesheet
 add_action( 'login_enqueue_scripts', 'pb_custom_login_stylesheet' );
@@ -234,6 +218,26 @@ function pb_custom_login_stylesheet() {
     get_stylesheet_directory_uri() . "/assets/css/login.min.css",
     false,
     cache_version_id()
+  );
+
+}
+
+
+// Load local web fonts
+function pb_enqueue_webfonts() {
+
+  wp_enqueue_style(
+    'ssp-regular-font',
+    get_stylesheet_directory_uri() . "/assets/fonts/source-sans-pro-v14-latin-regular.woff2",
+    null,
+    null,
+  );
+
+  wp_enqueue_style(
+    'ssp-bold-font',
+    get_stylesheet_directory_uri() . "/assets/fonts/source-sans-pro-v14-latin-600.woff2",
+    null,
+    null,
   );
 
 }

@@ -42,6 +42,11 @@ if ( !defined( 'CORE_FILE' ) ) {
 	define( 'CORE_FILE', __FILE__ );
 }
 
+// Plugin File Path Fix For Activation Hook
+// http://timneill.net/2013/01/help-register_activation_hook-isnt-working/
+define('CORE_PLUGIN_PATH', WP_PLUGIN_DIR . '/core-functionality/');
+require_once CORE_PLUGIN_PATH . 'core-functionality.php';
+
 
 //* Version Numbers
 //**********************

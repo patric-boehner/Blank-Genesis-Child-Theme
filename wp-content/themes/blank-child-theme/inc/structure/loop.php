@@ -15,6 +15,17 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Add entry content styles
+add_action( 'genesis_before_loop', 'pb_add_entry_content_style', 1 );
+function pb_add_entry_content_style() {
+
+	// Output styles
+	wp_print_styles( 'blocks-style' );
+    wp_print_styles( 'entry-content-style' );
+
+}
+
+
 // Replace No Posts loop structure
 remove_action( 'genesis_loop_else', 'genesis_do_noposts' );
 add_action( 'genesis_loop_else', 'pb_alter_no_posts_output' );

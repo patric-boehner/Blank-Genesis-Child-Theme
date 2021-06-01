@@ -76,7 +76,7 @@ unregister_sidebar( 'header-right' ); // Header Right
 add_filter( 'genesis_pre_get_option_site_layout', 'pb_narrow_layout' );
 function pb_narrow_layout() {
 
-	if ( is_home() || is_archive() ) {
+	if ( is_home() || is_archive() || is_404() || is_search() ) {
 		return 'narrow-content';
 	}
 

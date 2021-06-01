@@ -9,6 +9,12 @@
     @include tablet
         display: block
 
+        .wp-block-column
+            margin-bottom: var(--grid-gap)
+
+            &:last-child
+                margin-bottom: 0
+
         .wp-block-column:not(:first-child)
             margin-left: 0 !important
 

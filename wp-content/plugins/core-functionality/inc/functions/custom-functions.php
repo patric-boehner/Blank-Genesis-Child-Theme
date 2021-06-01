@@ -144,54 +144,49 @@ function cf_acf_blocks_display_card( $args = array() ) {
 
 	// Setup defaults.
 	$defaults = array(
-		'title' => '',
-		'image' => '',
-		'meta'  => '',
-		'text'  => '',
-		'button' => '',
-		'url'   => '',
-		'class' => '', // add space at beging
+		'title'			=> '',
+		'image'			=> '',
+		'header_meta'	=> '',
+		'text'			=> '',
+		'footer_meta'	=> '',
+		'url'			=> '',
 	);
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 	?>
-	<article class="content-grid-block__item<?php echo esc_attr( $args['class'] ); ?>" aria-label="<?php echo esc_html( $args['title'] ); ?>">
-		<?php if ( $args['image'] ) : ?>
-			<div class="content-grid-block__media">
-				<a href="<?php echo esc_url( $args['url'] ); ?>" tabindex="-1">
-					<?php echo wp_kses_post( $args['image'] ); ?>
+	<article <?php post_class(); ?> aria-label="<?php echo esc_html( $args['title'] ); ?>">
+
+		<header class="entry-header">
+			<?php if( $args[ 'image' ] ): ?>
+				<a class="entry-image-link" href="<?php echo esc_url( $args[ 'url' ] ); ?>" aria-hidden="true" tabindex="-1">
+					<?php echo wp_kses_post( $args[ 'image' ] ); ?>
 				</a>
+			<?php endif; ?>
+			<?php if ( $args['title'] ) : ?>
+				<h3 class="entry-title">
+					<a class="entry-title-link" rel="bookmark" href="<?php echo esc_url( $args['url'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a>
+				</h3>
+			<?php endif; ?>
+			<?php if( $args[ 'header_meta' ] ): ?>
+				<p class="entry-meta"><?php echo $args[ 'header_meta' ]; ?></p>
+			<?php endif; ?>
+		</header>
+
+		<?php if( $args[ 'text' ] || $args[ 'image' ] ): ?>
+			<div class="entry-content">
+				<?php if ( $args['text'] ) : ?>
+					<p><?php echo esc_html( $args[ 'text' ] ); ?></p>
+				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 
-		<div class="content-grid-block__body">
-			<header class="content-grid-block__header">
-				<?php if ( $args['title'] ) : ?>
-					<h3>
-						<a href="<?php echo esc_url( $args['url'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a>
-					</h3>
-				<?php endif; ?>
-				<?php if ( $args['meta'] ) : ?>
-					<p class="content-grid-block__meta">
-						<?php echo esc_html( $args['meta'] ); ?>
-					</p>
-				<?php endif; ?>
-			</header>
-
-			<?php if ( $args['text'] ) : ?>
-				<div class="content-grid-block__content">
-					<p>
-						<?php echo esc_html( $args['text'] ); ?>
-					</p>
-					<?php if ( $args['button'] && $args['url'] ) : ?>
-							<a class="button" href="<?php echo esc_url( $args['url'] ); ?>" aria-hidden="true" tabindex="-1">
-								<?php esc_html_e( $args['button'], 'core-functionality' ); ?>
-							</a>
-					<?php endif; ?>
-				</div>
-			<?php endif; ?>
-		</div>
+		<?php if( $args[ 'footer_meta' ] ): ?>
+			<footer class="entry-footer">
+				<p class="entry-meta"><?php echo $args[ 'footer_meta' ]; ?></p>
+			</footer>
+		<?php endif; ?>
+		
 	</article>
 	<?php
 }

@@ -81,7 +81,7 @@ add_action( 'body_class', 'pb_notice_bar_classes' );
 function pb_notice_bar_classes( $classes ) {
 
 	$id = pb_get_id_by_slug( 'banner', 'content_area' );
-	$display = esc_attr( get_field( 'enable_banner', $id ) );
+	$display = esc_attr( get_post_meta( $id, 'enable_banner', true ) );
 
 	if ( $display == 'enable' ) {
 

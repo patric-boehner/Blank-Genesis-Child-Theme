@@ -6,6 +6,10 @@
 	padding: var(--spacing-medium) 0
 
 
+.archive-description
+	margin-bottom: var(--spacing-row)
+
+
 // Strucutre
 
 .content
@@ -25,6 +29,10 @@
 	word-wrap: break-word
 
 
+.breadcrumb
+	margin-bottom: var(--spacing-row)
+
+
 // Entry Elements
 
 .entry
@@ -39,8 +47,13 @@
 	margin-bottom: var(--spacing-row)
 
 
-.block-content-area-after-blog-post
-	margin-bottom: var(--spacing-row)
+.block-content-area
+	&__after-blog-post
+		margin-bottom: var(--spacing-row)
+
+	&__banner
+		padding-top: var(--spacing-medium)
+		padding-bottom: var(--spacing-medium)
 
 	
 .comment-respond
@@ -63,9 +76,9 @@
 
 // Footer
 
-.before-footer
+.block-content-area__footer
 	padding-top: var(--spacing-row)
 	padding-bottom: var(--spacing-row)
 	
-.site-footer
+.sub-footer
 	padding: var(--spacing-medium) 0

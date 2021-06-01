@@ -14,14 +14,15 @@
 //**********************
 if( !defined( 'ABSPATH' ) ) exit;
 
+// Nav Titles
+$previous_post_text = '<span class="nav-title">' .__( 'Previous Post', 'blank-child-theme' ). '</span>';
+$next_post_text = '<span class="nav-title">' .__( 'Next Post', 'blank-child-theme' ). '</span>';
+
 
 // Links
 $previous_post_link = get_previous_post_link( '%link' );
 $next_post_link = get_next_post_link( '%link' );
 
-// Nav Titles
-$previous_post_text = '<span class="nav-title">' .__( 'Previous Post:', 'blank-child-theme' ). '</span>';
-$next_post_text = '<span class="nav-title">' .__( 'Next Post:', 'blank-child-theme' ). '</span>';
 
 // Link Structure
 if ( $next_post_link ) {

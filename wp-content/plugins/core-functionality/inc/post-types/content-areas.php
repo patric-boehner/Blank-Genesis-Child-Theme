@@ -86,38 +86,48 @@
 
 
     // Show Block Area
-    function pb_show_content_area( $location = '' ) {
+    function pb_show_content_area( $args = array() ) {
+
+      // Setup defaults
+      $defaults = array(
+         'location'        => '',
+         'element'         => 'div',
+         'class'           => '',
+         'id'              => '',
+      );
+
+      // Parse arguments.
+      $args = wp_parse_args( $args, $defaults );
 
       // Return early
-      if( ! $location ) {
-        return;
-      }
-
-      // Option to hide block area
-      // $hidden_id = get_field( 'hide_content_areas' );
-      // $page_slug = get_post_field( 'post_name', $hidden_id );
-
-      // if ( $page_slug == $location ) {
-      //    return;
-      // }
-
-      $location = sanitize_key( $location );
+      if( ! $args['location'] ) {
+         return;
+       }
 
       $loop = new WP_Query( array(
         'post_type'		 => 'content_area',
-        'post_status'    => 'publish',
-        'name'    		 => $location,
+        'name'    		 => $args['location'],
         'posts_per_page' => 1,
       ));
 
       if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
-      
-      echo '<div class="block-content-area block-content-area-' . $location . '">';
-         the_content();
-      echo '</div>';
-      
+
+         // Output ID is supplied
+         $id = ( $args[ 'id' ] ) ? sprintf( 'id="%s"', $args[ 'id' ] ) : '';
+         // Sanitize location name
+         $location = sanitize_key( $args[ 'location' ] );
+
+         // Output content
+         echo sprintf( '<%s %s class="block-content-area__%s%s">', $args[ 'element' ], $id, $location, $args['class'] );
+
+         echo the_content();
+
+         echo sprintf( '</%s>', $args[ 'element' ] );
+
       endwhile; endif; wp_reset_postdata();
 
+
 	 }
+
 
  }

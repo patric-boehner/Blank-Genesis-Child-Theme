@@ -9,8 +9,10 @@
 	width: 100vw
 
 
-@include above-tablet
+@include above-small-desktop
 	// For the negative left/right margin, subtract page width from the content width and divide by two
+	// Medi query is bsaed on the --width-full width
+
 	.alignwide
 		margin: 0
 		margin-left: calc( ( ( var(--width-full) - var(--width-content) ) / 2 ) * -1 )

@@ -15,6 +15,16 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Add Comment styles
+add_action( 'genesis_before_comments', 'pb_add_styles_before_comments' );
+function pb_add_styles_before_comments() {
+
+	// Output styles
+    wp_print_styles( 'comment-style' );
+
+}
+
+
 // Disable HTML in comments
 add_filter( 'comment_text', 'wp_filter_nohtml_kses' );
 add_filter( 'comment_text_rss', 'wp_filter_nohtml_kses' );
@@ -49,33 +59,6 @@ function pb_comment_form_defaults( array $paramaters ) {
 	return $paramaters;
 
 }
-
-
-// Filter form defualts
-// add_filter( 'comment_form_default_fields', 'pb_comment_form_classes' );
-// function pb_comment_form_classes( $fields ) {
-//
-// 	foreach( $fields as &$field ) {
-// 		$field = str_replace(
-// 			'<label for="author">Name <span class="required">*</span></label>',
-// 			'<label for="author">' .esc_html__( 'Your Name', 'life-after-divorce' ). ' <span class="required">*</span></label>',
-// 			$field
-// 		);
-// 		$field = str_replace(
-// 			'<label for="email">Email <span class="required">*</span></label>',
-// 			'<label for="email">' .esc_html__( 'Your Email', 'life-after-divorce' ). ' <span class="required">*</span></label>',
-// 			$field
-// 		);
-// 		$field = str_replace(
-// 			'Save my name, email, and website in this browser for the next time I comment.',
-// 			esc_html__( 'Save name and email in this browser for the next time you comment.', 'life-after-divorce' ),
-// 			$field
-// 		);
-// 	}
-//
-// 	return $fields;
-//
-// }
 
 
 // Remove URL Field

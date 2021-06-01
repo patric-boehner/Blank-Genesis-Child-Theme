@@ -12,19 +12,19 @@
     --font-weight-bold: 600;
 
     // Base Font Size
-    --font-size-normal: 1.25rem; // 20px
+    --font-size-base: 1rem; // 16px
+    --font-scale: 1.25; // Major third scale
         
     // Font Size
+    --font-size-x-small: calc( var(--font-size-small) / var(--font-scale) );
+    --font-size-small: var(--font-size-base);
+    --font-size-medium: calc( var(--font-size-small) * var(--font-scale) );
+    --font-size-large: calc( var(--font-size-medium) * var(--font-scale) );
+    --font-size-x-large: calc( var(--font-size-large) * var(--font-scale) );
+    --font-size-xx-large: calc( var(--font-size-x-large) * var(--font-scale) );
+    --font-size-xxx-large: calc( var(--font-size-xx-large) * var(--font-scale) );
 
-    --font-size-x-small: 1rem; // 16px
-    --font-size-small: 1.125rem; // 18px
-    --font-size-medium: var(--font-size-normal);
-    --font-size-large: 1.5rem; // 24px
-    --font-size-x-large: 1.875rem; // 30px
-    --font-size-xx-large: 2.25rem; // 36px
-    --font-sixe-xxx-large: 4rem; // 64px
-
-    --heading-font-size-h1: var(--font-sixe-xxx-large);
+    --heading-font-size-h1: var(--font-size-xxx-large);
     --heading-font-size-h2: var(--font-size-xx-large);
     --heading-font-size-h3: var(--font-size-x-large);
     --heading-font-size-h4: var(--font-size-large);
@@ -81,10 +81,10 @@
     --spacing-small: calc(var(--spacing-medium) / 2); // 15px
     --spacing-medium: calc(var(--spacing-base) * 2); // 30px
     --spacing-large: calc(var(--spacing-base) * 3); // 45px
-    --spacing-x-large: calc(var(--spacing-medium) * 2); // 60px
+    --spacing-x-large: calc(var(--spacing-medium) * 2); // 90px
     --spacing-xx-large: calc(var(--spacing-x-large) * 2);  // 120px
 
-    --spacing-content-area: var(--spacing-xx-large);
+    --spacing-content-area: var(--spacing-x-large);
     --spacing-row: var(--spacing-x-large);
 
     // Menu
@@ -110,10 +110,21 @@
 
 
 // Table
-// @media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1023px) {
 
-//     :root {
+    :root {
 
-//     }
+        // Font Size
+        --heading-font-size-h1: var(--font-size-xx-large);
+        --heading-font-size-h2: var(--font-size-x-large);
+        --heading-font-size-h3: var(--font-size-large);
 
-// }
+        // Spacing
+        --spacing-content-area: var(--spacing-large);
+        --spacing-row: var(--spacing-large);
+
+        --spacing-xx-large: calc(var(--spacing-large) * 2);  // 120px
+
+    }
+
+}

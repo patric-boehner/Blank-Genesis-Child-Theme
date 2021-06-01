@@ -15,6 +15,7 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+
 // Customize the post info function
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );
 function sp_post_info_filter( $post_info ) {
@@ -75,6 +76,7 @@ function pb_customize_entry_pagination() {
 }
 
 
+
 // Add after post block area
 add_action( 'genesis_after_entry', 'pb_after_post_block_area', 9 );
 function pb_after_post_block_area() {
@@ -84,9 +86,13 @@ function pb_after_post_block_area() {
 	}
 
 	if ( function_exists( 'pb_show_content_area' ) ) {
-		pb_show_content_area( 'after-blog-post' );
+		pb_show_content_area( array( 
+			'location' => 'after-blog-post',
+			'element' => 'section',
+		) );
+	
 	}
-
+	
 }
 
 

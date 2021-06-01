@@ -15,8 +15,54 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Load footer sytles
+add_action( 'genesis_footer', 'pb_load_footer_styles' );
+function pb_load_footer_styles() {
+
+	// Output styles
+    wp_print_styles( 'footer-style' );
+
+}
+
+
+// Remove the footer credits
+remove_filter( 'genesis_footer', 'genesis_do_footer' );
+
+
+// Genesis footer and footer block area
+add_action( 'genesis_footer', 'pb_footer' );
+function pb_footer() {
+
+	echo '<h2 class="screen-reader-text">'.esc_html__('Footer', 'blank-child-theme').'</h2>';
+
+	// Output the footer block area
+	pb_footer_block_areas();
+
+	genesis_markup(
+		[
+			'open'    => '<div %s>',
+			'context' => 'sub-footer',
+		]
+	);
+
+	// Hook location
+	do_action( 'pb_before_footer_credit' );
+
+	// Output footer credits
+	pb_footer_credit_output();
+
+	genesis_markup(
+		[
+			'close'   => '</div>',
+			'context' => 'sub-footer',
+		]
+	);
+
+
+}
+
+
 // Add Footer Block Areas
-add_action( 'genesis_before_footer', 'pb_footer_block_areas' );
 function pb_footer_block_areas() {
 
 	// Hide if widget areas option is toggled on
@@ -24,23 +70,18 @@ function pb_footer_block_areas() {
 		return;
 	}
 
-	echo '<div id="genesis-footer-widgets" class="before-footer block-content-area">';
-	echo '<h2 class="screen-reader-text">Footer</h2>';
-	echo '<div class="wrap">';
-
 	// Output content area
 	if ( function_exists( 'pb_show_content_area' ) ) {
-		pb_show_content_area( 'footer' );
+		pb_show_content_area( array(
+			'location' => 'footer',
+			'id'	   => 'footer',
+		) );
 	}
-
-	echo "</div></div>";
 
 }
 
 
 // Customize Footer Credits
-remove_filter( 'genesis_footer', 'genesis_do_footer' );
-add_action( 'genesis_footer', 'pb_footer_credit_output' );
 function pb_footer_credit_output() {
 
 		$creds_text = wp_kses_post( genesis_get_option( 'footer_text' ) );

@@ -15,6 +15,25 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Custom excerpt length.
+function pb_custom_excerpt( $args = array() ) {
+
+	// Set defaults.
+	$defaults = array(
+		'length' => 20,
+		'more'   => '...',
+		'post'   => '',
+	);
+
+	// Parse args.
+	$args = wp_parse_args( $args, $defaults );
+
+	// Trim the excerpt.
+	return wp_trim_words( get_the_excerpt( $args['post'] ), absint( $args['length'] ), esc_html( $args['more'] ) );
+
+}
+
+
 // Get ID of page by slug
 function pb_get_id_by_slug( $page_slug, $post_type ) {
     $page = get_page_by_path( $page_slug, OBJECT, $post_type );
