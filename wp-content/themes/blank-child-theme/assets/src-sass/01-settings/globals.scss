@@ -12,12 +12,13 @@
     --font-weight-bold: 600;
 
     // Base Font Size
-    --font-size-base: 1rem; // 16px
+    --font-size-base: 0.925rem; // 16px
     --font-scale: 1.25; // Major third scale
+    --font-scale-responsive: 0.075vw;
         
     // Font Size
     --font-size-x-small: calc( var(--font-size-small) / var(--font-scale) );
-    --font-size-small: var(--font-size-base);
+    --font-size-small: calc( var(--font-size-base) + var(--font-scale-responsive) );
     --font-size-medium: calc( var(--font-size-small) * var(--font-scale) );
     --font-size-large: calc( var(--font-size-medium) * var(--font-scale) );
     --font-size-x-large: calc( var(--font-size-large) * var(--font-scale) );
@@ -35,10 +36,12 @@
     --heading-font-family: var(--font-primary);
     --heading-text-transform: uppercase;
     --heading-font-weight: var(--font-weight-bold);
+    --heading-line-height: 1.2;
 
     --body-font-family: var(--font-secondary);
     --body-font-weight: var(--font-weight-normal);
     --body-font-weight-bold: var(--font-weight-bold);
+    --body-font-line-height: 1.625;
 
     // Colors
     --color-blue: #004b96;
@@ -102,7 +105,7 @@
     :root {
 
         // Menu
-        --menu-font-size: 90%;
+        // --menu-font-size: 90%;
         --menu-item-padding: var(--spacing-small) var(--spacing-small);
     }
 
@@ -115,9 +118,8 @@
     :root {
 
         // Font Size
-        --heading-font-size-h1: var(--font-size-xx-large);
-        --heading-font-size-h2: var(--font-size-x-large);
-        --heading-font-size-h3: var(--font-size-large);
+        --heading-line-height: 1.15;
+        --body-font-line-height: 1.575;
 
         // Spacing
         --spacing-content-area: var(--spacing-large);

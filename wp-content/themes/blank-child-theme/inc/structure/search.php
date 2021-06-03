@@ -42,7 +42,7 @@ function pb_search_form() {
 
 
 // Restric what post types display in search results
-add_filter('pre_get_posts', 'pb_filter_search_results');
+// add_filter('pre_get_posts', 'pb_filter_search_results');
 function pb_filter_search_results( $query ) {
 
 	if ( !is_admin() && $query->is_main_query() &&  $query->is_search ) {

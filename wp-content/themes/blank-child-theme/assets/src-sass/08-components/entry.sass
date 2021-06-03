@@ -25,15 +25,19 @@
 
 
 // Entry Content
-.single .entry-content
-	h2, h3, h4, h5, h6
-		&:not(:first-child)
-			margin-top: var(--spacing-large)
+.single
+	.entry-content
+		h2, h3, h4, h5, h6
+			&:not(:first-child)
+				margin-top: var(--spacing-medium)
 
 
 // After Post
 
 .share-links
+
+	&__heading
+		font-size: var( --heading-font-size-h4 )
 
 	&__list
 		margin: 0
@@ -51,3 +55,28 @@
 	.icon
 		width: var(--icon-size-default)
 		height: var(--icon-size-default)
+
+
+// Author Profile
+
+.author-profile
+	display: flex
+	flex-direction: row
+	padding: var(--spacing-medium)
+	background-color: var(--color-background)
+
+	@include small-phone
+		flex-direction: column
+		align-items: center
+
+	&__image
+		margin-right: var(--grid-gap)
+
+		@include small-phone
+			margin-right: 0
+			margin-bottom: var(--grid-gap)
+
+	.avatar
+		float: none
+		height: auto
+		max-width: 96px

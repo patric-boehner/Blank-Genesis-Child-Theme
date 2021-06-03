@@ -41,18 +41,6 @@ function pb_remove_jquery_migrate( $scripts ) {
 // }
 
 
-// Stop WordPress from Guessing Urls
-add_filter( 'redirect_canonical', 'pb_stop_guessing' );
-function pb_stop_guessing($url) {
-
-	if ( is_404() ) {
-		return false;
-	}
-		return $url;
-
-}
-
-
 // Remove Meta Tags
 remove_action( 'wp_head', 'wp_generator' );
 

@@ -1,8 +1,10 @@
 <section class="author-profile">
   <h2 class="screen-reader-text"><?php esc_html_e( 'Author Profile', 'blank-child-theme' ); ?></h2>
-    <?php echo $avatar; ?>
+    <div class="author-profile__image">
+      <?php echo $avatar; ?>
+    </div>
     <div class="author-profile__content">
-      <h3 class="author-profile__title"><?php echo $name; ?></h3>
+     <?php echo $heading; ?>
       <p class="author-profile__description">
         <?php echo $description; ?>
       </p>

@@ -1,5 +1,5 @@
 <div class="share-links">
-	<h3><?php echo esc_html__( 'Share this Article', 'life-after-divorce' ) ?>:<span class="screen-reader-text"> (<?php _e( 'Links open in new window', 'life-after-divorce' ); ?>)</span></h3>
+	<h3 class="share-links__heading"><?php echo esc_html__( 'Share this Article', 'life-after-divorce' ) ?>:<span class="screen-reader-text"> (<?php _e( 'Links open in new window', 'life-after-divorce' ); ?>)</span></h3>
 	<ul class="share-links__list">
 		<?php if( get_theme_mod( 'social_share_facebook_option' ) ) : ?>
 			<li class="share-links__item">

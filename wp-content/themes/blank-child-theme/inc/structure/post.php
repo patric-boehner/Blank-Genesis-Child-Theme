@@ -48,13 +48,24 @@ function pb_social_share_in_footer() {
 add_action( 'genesis_author_box', 'pb_modify_author_profile', 10, 6 );
 function pb_modify_author_profile() {
 
-	$avatar = get_avatar( get_the_author_meta( 'ID' ) ); // $size is the second peramater, ex: 100
-	$name = get_the_author_meta( 'display_name' );
-	$description = get_the_author_meta( 'description' );
+	// Variables
+	$id = get_the_author_meta( 'ID' );
+	$link = esc_url( get_author_posts_url( $id ) );
+	$avatar = get_avatar( $id ); // $size is the second peramater, ex: 100
+	$name = esc_html( get_the_author_meta( 'display_name' ) );
+	$prepend = esc_attr__( 'About:' , 'blank-child-theme' );
+	$description = esc_html( get_the_author_meta( 'description' ) );
 
 	// Exit early if no bio
-	if( empty( $description ) ) {
+	if( empty( $description ) && get_the_author_meta( 'genesis_author_box_single', $id ) ) {
 		return;
+	}
+	
+	// Author heading strucutre
+	if( get_the_author_meta( 'genesis_author_box_archive', $id ) ) {
+		$heading = sprintf( '<a href="%s"><h3 class="author-profile__title">%s %s</h3></a>', $link, $prepend, $name );
+	} else {
+		$heading = sprintf( '<h3 class="author-profile__title">%s %s</h3>', $prepend, $name );
 	}
 
 	// Include authoe profile

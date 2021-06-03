@@ -37,9 +37,11 @@ if( !empty( $block['align'] ) ) {
 $iframe = get_field( 'video_iframe' );
 $title = esc_html( get_field( 'video_title' ) );
 
-// Use preg_match to find iframe src.
+// Get iframe src
 preg_match('/src="(.+?)"/', $iframe, $matches);
-$src = $matches[1];
+
+// Check if iframe src is supplied
+$src = !empty( $matches ) ? $src = $matches[1] : $src = '';
 
 // Get the host url
 $vidoe_url_host = parse_url( $src, PHP_URL_HOST );
@@ -62,7 +64,13 @@ if ( $vidoe_url_host == 'www.youtube.com' || $vidoe_url_host == 'youtube.com' ) 
   // Video thumbnail
   $img_url = esc_url( 'https://vumbnail.com/'.$video_id.'_large.jpg' );
 
+} else {
+  
+  $video_id = '';
+  $img_url = '';
+
 }
+  
 
 // Output content
 include CORE_DIR . '/inc/blocks/video/view.php';

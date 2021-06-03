@@ -59,9 +59,9 @@ function genesis_blocks_body_classes( $classes ) {
 		$classes[] = 'first-block-' . str_replace( '/', '-', $blocks[0]['blockName'] );
 	}
 
-	if ( isset( $blocks[0]['attrs']['align'] ) ) {
-		$classes[] = 'first-block-align-' . $blocks[0]['attrs']['align'];
-	}
+	// if ( isset( $blocks[0]['attrs']['align'] ) ) {
+	// 	$classes[] = 'first-block-align-' . $blocks[0]['attrs']['align'];
+	// }
 
 	return $classes;
 
