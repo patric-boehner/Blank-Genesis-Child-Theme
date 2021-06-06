@@ -35,7 +35,7 @@ function register_acf_ll_video_block() {
       'supports'		    => [
         'mode'          => 'preview',
         // Each can also be set to true or false
-        'align'			    => array( 'wide', 'full' ),
+        'align'			    => false,
       ]
   ));
 

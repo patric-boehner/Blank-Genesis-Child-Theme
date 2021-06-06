@@ -110,7 +110,7 @@ function pb_enqueue_child_theme_scripts_styles() {
     false,
     cache_version_id()
   );
-
+  
 
 	// Load Global Script
 	wp_enqueue_script(

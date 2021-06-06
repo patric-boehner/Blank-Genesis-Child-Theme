@@ -15,6 +15,30 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+/**
+ * Cleanup post classes
+ * From: Bill Erickson
+ */
+add_filter( 'post_class', 'pb_clean_post_classes', 5 );
+function pb_clean_post_classes( $classes ) {
+
+	if( ! is_array( $classes ) )
+		return $classes;
+
+	// Change hentry to entry, remove if adding microformat support
+	$key = array_search( 'hentry', $classes );
+
+	if( false !== $key )
+		$classes = array_replace( $classes, array( $key => 'entry' ) );
+		$allowed_classes = array(
+			'entry',
+			'type-' . get_post_type(),
+		 );
+
+	return array_intersect( $classes, $allowed_classes );
+
+}
+
 
 // Customize the post info function
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );
@@ -54,7 +78,7 @@ function pb_modify_author_profile() {
 	$avatar = get_avatar( $id ); // $size is the second peramater, ex: 100
 	$name = esc_html( get_the_author_meta( 'display_name' ) );
 	$prepend = esc_attr__( 'About:' , 'blank-child-theme' );
-	$description = esc_html( get_the_author_meta( 'description' ) );
+	$description = wp_kses_post( ( get_the_author_meta( 'description' ) ) );
 
 	// Exit early if no bio
 	if( empty( $description ) && get_the_author_meta( 'genesis_author_box_single', $id ) ) {
@@ -104,29 +128,4 @@ function pb_after_post_block_area() {
 	
 	}
 	
-}
-
-
-/**
- * Cleanup post classes
- * From: Bill Erickson
- */
-add_filter( 'post_class', 'pb_clean_post_classes', 5 );
-function pb_clean_post_classes( $classes ) {
-
-	if( ! is_array( $classes ) )
-		return $classes;
-
-	// Change hentry to entry, remove if adding microformat support
-	$key = array_search( 'hentry', $classes );
-
-	if( false !== $key )
-		$classes = array_replace( $classes, array( $key => 'entry' ) );
-		$allowed_classes = array(
-			'entry',
-			'type-' . get_post_type(),
-		 );
-
-	return array_intersect( $classes, $allowed_classes );
-
 }

@@ -16,7 +16,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 // Load footer sytles
-add_action( 'genesis_footer', 'pb_load_footer_styles' );
+add_action( 'genesis_footer', 'pb_load_footer_styles', 1 );
 function pb_load_footer_styles() {
 
 	// Output styles
@@ -30,7 +30,7 @@ remove_filter( 'genesis_footer', 'genesis_do_footer' );
 
 
 // Genesis footer and footer block area
-add_action( 'genesis_footer', 'pb_footer' );
+add_action( 'genesis_footer', 'pb_footer', 5 );
 function pb_footer() {
 
 	echo '<h2 class="screen-reader-text">'.esc_html__('Footer', 'blank-child-theme').'</h2>';

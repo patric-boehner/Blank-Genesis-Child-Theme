@@ -109,7 +109,7 @@ function pb_add_social_share_options() {
 		'height' => '28px',
 	) );
 
-
+	
 	// Output social share links
 	include CHILD_DIR . '/inc/views/social-share-links.php';
 

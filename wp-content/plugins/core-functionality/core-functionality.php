@@ -3,7 +3,7 @@
  * Plugin Name: Core Functionality
  * Plugin URI: https://
  * Description: This custom plugin is a companion to your websites. It contains all your site's core functionality so that it is independent of your theme. For your site to have all its intended functionality, this plugin must be active.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Patrick Boehner
  * Author URI: http://www.patrickboehner.com
  *
@@ -86,3 +86,6 @@ include_once( CORE_DIR . '/inc/blocks/icon/icon-block.php' );
 include_once( CORE_DIR . '/inc/blocks/video/video-block.php' );
 include_once( CORE_DIR . '/inc/blocks/toggle/toggle-block.php' );
 include_once( CORE_DIR . '/inc/blocks/max-width/max-width-block.php' );
+
+// Plugible
+include_once( CORE_DIR . '/inc/plugable/popular-posts.php' );

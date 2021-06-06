@@ -44,10 +44,10 @@ preg_match('/src="(.+?)"/', $iframe, $matches);
 $src = !empty( $matches ) ? $src = $matches[1] : $src = '';
 
 // Get the host url
-$vidoe_url_host = parse_url( $src, PHP_URL_HOST );
+$video_url_host = parse_url( $src, PHP_URL_HOST );
 
 // Adjust conditions if from youtube or vimeo
-if ( $vidoe_url_host == 'www.youtube.com' || $vidoe_url_host == 'youtube.com' ) {
+if ( $video_url_host == 'www.youtube.com' || $video_url_host == 'youtube.com' ) {
 
   $video_id = parse_url( $src, PHP_URL_PATH );
   $video_id = esc_attr( str_replace( '/embed/', '', $video_id ) );
@@ -56,7 +56,7 @@ if ( $vidoe_url_host == 'www.youtube.com' || $vidoe_url_host == 'youtube.com' ) 
   $img_url = esc_url( 'https://img.youtube.com/vi/'.$video_id.'/maxresdefault.jpg' );
 
 
-} elseif ( $vidoe_url_host == 'player.vimeo.com' ) {
+} elseif ( $video_url_host == 'player.vimeo.com' ) {
 
   $video_id = parse_url( $src, PHP_URL_PATH );
   $video_id = esc_attr( str_replace( '/video/', '', $video_id ) );
@@ -69,8 +69,7 @@ if ( $vidoe_url_host == 'www.youtube.com' || $vidoe_url_host == 'youtube.com' ) 
   $video_id = '';
   $img_url = '';
 
-}
-  
+}  
 
 // Output content
 include CORE_DIR . '/inc/blocks/video/view.php';

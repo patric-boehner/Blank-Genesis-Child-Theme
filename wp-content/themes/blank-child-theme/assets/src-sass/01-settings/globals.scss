@@ -88,7 +88,7 @@
     --spacing-xx-large: calc(var(--spacing-x-large) * 2);  // 120px
 
     --spacing-content-area: var(--spacing-x-large);
-    --spacing-row: var(--spacing-x-large);
+    --spacing-row: var(--spacing-large);
 
     // Menu
     --menu-font-size: var(--font-size-medium);
@@ -119,7 +119,7 @@
 
         // Font Size
         --heading-line-height: 1.15;
-        --body-font-line-height: 1.575;
+        --body-font-line-height: 1.525;
 
         // Spacing
         --spacing-content-area: var(--spacing-large);

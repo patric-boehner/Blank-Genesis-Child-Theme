@@ -1,18 +1,13 @@
 // Comment
 
-.comment-respond,
-.entry-comments,
-	font-family: var(--font-size-small)
-
-
 .comment-list
-	margin: 0
+	padding-left: 0
 
 	.depth-1
 		padding-left: 0
 
 	.children
-		margin: 0
+		padding-left: var(--side-spacing)
 
 	.comment-header
 		margin-bottom: var(--spacing-medium)
@@ -28,7 +23,11 @@
 
 	li
 		list-style: none
-		padding: 40px 0 0 30px
+		padding: var(--spacing-medium) 0 0 0
+
+
+.comment-author-name
+	font-weight: var(--font-weight-bold)
 
 
 .comment-respond
@@ -42,3 +41,9 @@
 
 	.form-submit
 		margin-bottom: 0
+
+
+#cancel-comment-reply-link
+	@extend %button
+	font-size: var(--font-size-x-small)
+	margin-left: var(--spacing-small)

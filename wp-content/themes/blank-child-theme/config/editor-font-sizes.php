@@ -19,20 +19,20 @@ if( !defined( 'ABSPATH' ) ) exit;
 return array(
 
 	array(
-		'name'      => __( 'Small', 'blank-child-theme' ),
-		'shortName' => __( 'S', 'blank-child-theme' ),
+		'name'      => esc_attr__( 'Small', 'blank-child-theme' ),
+		'shortName' => esc_attr__( 'S', 'blank-child-theme' ),
 		'size'      => 16,
 		'slug'      => 'small'
 	),
 	array(
-		'name'      => __( 'Regular', 'blank-child-theme' ),
-		'shortName' => __( 'M', 'blank-child-theme' ),
+		'name'      => esc_attr__( 'Regular', 'blank-child-theme' ),
+		'shortName' => esc_attr__( 'M', 'blank-child-theme' ),
 		'size'      => 20,
 		'slug'      => 'regular'
 	),
 	array(
-		'name'      => __( 'Large', 'blank-child-theme' ),
-		'shortName' => __( 'L', 'blank-child-theme' ),
+		'name'      => esc_attr__( 'Large', 'blank-child-theme' ),
+		'shortName' => esc_attr__( 'L', 'blank-child-theme' ),
 		'size'      => 24,
 		'slug'      => 'large'
 	),
