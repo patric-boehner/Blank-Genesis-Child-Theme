@@ -23,7 +23,7 @@
               // Youtube
               if( this.dataset.src === 'www.youtube.com' ){
 
-                iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&color=white" );
+                iframe.setAttribute( "src", "https://www.youtube-nocookie.com/embed/"+ this.dataset.embed +"?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&color=white" );
 
               }
               // Vimeo

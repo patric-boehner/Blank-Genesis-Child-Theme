@@ -1,0 +1,59 @@
+{
+    "key": "group_606a2264c4ff4",
+    "title": "Optimize Video",
+    "fields": [
+        {
+            "key": "field_60b5cf6bb846b",
+            "label": "Video URL",
+            "name": "video_iframe",
+            "type": "oembed",
+            "instructions": "Paste a link to the youtube or vimeo content you want to display on your site.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": 248,
+            "height": "100%"
+        },
+        {
+            "key": "field_606a22be94c19",
+            "label": "Video Title",
+            "name": "video_title",
+            "type": "text",
+            "instructions": "Add the title of the video",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/video-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1623010473
+}

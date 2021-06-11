@@ -154,7 +154,7 @@ function pb_enqueue_child_theme_scripts_styles() {
 add_action( 'init', 'pb_load_styles_footer' );
 function pb_load_styles_footer() {
 
-  add_action( 'get_footer', 'pb_enqueue_print_stylesheet' );
+  add_action( 'get_footer', 'pb_enqueue_print_stylesheet', 0 );
 
 }
 

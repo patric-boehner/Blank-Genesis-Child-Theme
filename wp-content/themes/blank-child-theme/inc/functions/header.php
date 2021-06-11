@@ -31,6 +31,21 @@ function pb_remove_jquery_migrate( $scripts ) {
 }
 
 
+// Remove WP Embed unless using an embed block
+add_action( 'wp_footer', 'my_deregister_scripts' );
+function my_deregister_scripts(){
+
+	// Exit if embed block is in use
+	if ( has_block( 'embed' ) ) {
+		return;
+	}
+
+	wp_dequeue_script( 'wp-embed' );
+
+}
+   
+
+
 // Disable the superfish script
 // add_action( 'wp_enqueue_scripts', 'sp_disable_superfish' );
 // function sp_disable_superfish() {

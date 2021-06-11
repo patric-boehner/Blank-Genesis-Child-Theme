@@ -1,0 +1,126 @@
+{
+    "key": "group_5fcf4b514a207",
+    "title": "Icon",
+    "fields": [
+        {
+            "key": "field_5fcf4bf1022b9",
+            "label": "Icon",
+            "name": "icon_select",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "arrow-left": "Left Arrow",
+                "arrow-right": "Right Arrow",
+                "check": "Checkmark",
+                "star": "Star"
+            },
+            "default_value": "check",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fcf57cdf48aa",
+            "label": "Align",
+            "name": "icon_align",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "left": "Left",
+                "center": "Center"
+            },
+            "allow_null": 0,
+            "default_value": "top",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5fcf4c54022bb",
+            "label": "Size",
+            "name": "icon_size",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "small": "Small",
+                "default": "Default",
+                "large": "Large"
+            },
+            "allow_null": 0,
+            "default_value": "default",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_607b85629540e",
+            "label": "Color",
+            "name": "icon_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "blue": "Blue",
+                "green": "Green",
+                "orange": "Orange",
+                "dark-gray": "Dark Gray",
+                "light-gray": "Light Gray",
+                "white": "White"
+            },
+            "default_value": "dark-gray",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/icon-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1623010470
+}

@@ -24,14 +24,29 @@ return array(
 		'color'	=> '#004b96',
 	),
 	array(
+		'name'  => __( 'Light Blue', 'blank-child-theme' ),
+		'slug'  => 'light-blue',
+		'color'	=> '#d5e1ee',
+	),
+	array(
 		'name'  => __( 'Green', 'blank-child-theme' ),
 		'slug'  => 'green',
 		'color' => '#58AD69',
 	),
 	array(
+		'name'  => __( 'Light Green', 'blank-child-theme' ),
+		'slug'  => 'light-green',
+		'color' => '#C0DFC6',
+	),
+	array(
 		'name'  => __( 'Orange', 'blank-child-theme' ),
 		'slug'  => 'orange',
-		'color' => '#FFBC49',
+		'color' => '#C69239',
+	),
+	array(
+		'name'  => __( 'Light Orange', 'blank-child-theme' ),
+		'slug'  => 'light-orange',
+		'color' => '#F7EEDF',
 	),
 	array(
 		'name'  => __( 'Dark Gray', 'blank-child-theme' ),

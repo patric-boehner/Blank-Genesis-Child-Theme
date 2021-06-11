@@ -1,0 +1,47 @@
+{
+    "key": "group_6084d47ce2ade",
+    "title": "Max-Width",
+    "fields": [
+        {
+            "key": "field_6084d4a2ef0dc",
+            "label": "Maximum Width",
+            "name": "maximum_width",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "small-width": "Small",
+                "default-width": "Default",
+                "large-width": "Large"
+            },
+            "allow_null": 0,
+            "default_value": "default-width",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/max-width-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1623010471
+}

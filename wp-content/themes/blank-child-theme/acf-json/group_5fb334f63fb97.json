@@ -1,0 +1,319 @@
+{
+    "key": "group_5fb334f63fb97",
+    "title": "Content Grid",
+    "fields": [
+        {
+            "key": "field_5fb33525a8b61",
+            "label": "Layout",
+            "name": "content_layout",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "three-columns": "Three Columns",
+                "four-columns": "Four Columns"
+            },
+            "allow_null": 0,
+            "default_value": "three-columns",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5fd179633e4f1",
+            "label": "Get Entries By",
+            "name": "get_method",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default Query",
+                "choice": "Choice"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fd179a63e4f2",
+            "label": "Choose Entries",
+            "name": "chosen_entires",
+            "type": "post_object",
+            "instructions": "Show specific entries. Choose all that apply in the order you wish.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd179633e4f1",
+                        "operator": "==",
+                        "value": "choice"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5fb33630a8b63",
+            "label": "Number of Entries",
+            "name": "number_entries",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd179633e4f1",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": 1
+        },
+        {
+            "key": "field_5fcf41177db5d",
+            "label": "From Categories",
+            "name": "from_categories",
+            "type": "taxonomy",
+            "instructions": "Limit entries to specific categories.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd179633e4f1",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_6090c43140a9b",
+            "label": "From Tags",
+            "name": "from_tags",
+            "type": "taxonomy",
+            "instructions": "Limit entries to specific tags.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd179633e4f1",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_tag",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5fb6074235d7d",
+            "label": "Order By",
+            "name": "order_by",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd179633e4f1",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "title": "Title",
+                "name": "Slug",
+                "date": "Date Published",
+                "modified": "Date Modified",
+                "rand": "Random",
+                "menu_order": "Menu Order"
+            },
+            "default_value": "date",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fb6080635d7e",
+            "label": "Order",
+            "name": "order_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd179633e4f1",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ASC": "Ascending",
+                "DESC": "Descending"
+            },
+            "default_value": "DESC",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fb3366da8b64",
+            "label": "Offset",
+            "name": "offset_entries",
+            "type": "number",
+            "instructions": "Skip this number of entries.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd179633e4f1",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5fb354829b643",
+            "label": "Exclude Entries",
+            "name": "exclude_entry",
+            "type": "post_object",
+            "instructions": "Hide a specific entry. Choose all that apply.\r\nDo not exclude posts that are also part of the offset.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd179633e4f1",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/content-grid"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1623010469
+}
