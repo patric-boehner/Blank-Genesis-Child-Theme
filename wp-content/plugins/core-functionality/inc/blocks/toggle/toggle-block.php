@@ -33,7 +33,7 @@ function register_acf_toggle_block() {
       'enqueue_style'     => get_stylesheet_directory_uri() . "/assets/css/block-toggle.min.css",
       'enqueue_script'     => get_stylesheet_directory_uri() . "/assets/js/block-toggle.min.js",
       'supports'		    => [
-        'mode'          => 'preview',
+        'mode'          => false,
         // Each can also be set to true or false
         'align'			    => array( 'wide', 'full' ),
         'customClassName'	=> true,

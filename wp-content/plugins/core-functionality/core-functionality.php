@@ -86,6 +86,7 @@ include_once( CORE_DIR . '/inc/blocks/icon/icon-block.php' );
 include_once( CORE_DIR . '/inc/blocks/video/video-block.php' );
 include_once( CORE_DIR . '/inc/blocks/toggle/toggle-block.php' );
 include_once( CORE_DIR . '/inc/blocks/max-width/max-width-block.php' );
+include_once( CORE_DIR . '/inc/blocks/cover-block/cover-block.php' );
 
 // Plugible
 include_once( CORE_DIR . '/inc/plugable/popular-posts.php' );

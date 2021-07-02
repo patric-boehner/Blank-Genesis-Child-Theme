@@ -41,6 +41,14 @@ function pb_change_comments_gravatar( array $args ) {
 }
 
 
+// Modify the author says text in comments
+add_filter( 'comment_author_says_text', 'sp_comment_author_says_text' );
+function sp_comment_author_says_text() {
+
+	return;
+
+}
+
 
 // Modify the comments default
 add_filter( 'comment_form_defaults', 'pb_comment_form_defaults' );

@@ -36,5 +36,23 @@ return array(
 		'size'      => 24,
 		'slug'      => 'large'
 	),
+	array(
+		'name'      => esc_attr__( 'H1 Heading', 'blank-child-theme' ),
+		'shortName' => esc_attr__( 'h1', 'blank-child-theme' ),
+		'size'      => 49,
+		'slug'      => 'xxx-large'
+	),
+	array(
+		'name'      => esc_attr__( 'H2 Heading', 'blank-child-theme' ),
+		'shortName' => esc_attr__( 'h2', 'blank-child-theme' ),
+		'size'      => 39,
+		'slug'      => 'xx-large'
+	),
+	array(
+		'name'      => esc_attr__( 'H3 Heading', 'blank-child-theme' ),
+		'shortName' => esc_attr__( 'h3', 'blank-child-theme' ),
+		'size'      => 31,
+		'slug'      => 'x-large'
+	)
 
 );

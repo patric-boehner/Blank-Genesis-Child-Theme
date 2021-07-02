@@ -31,7 +31,7 @@ function register_acf_max_width_block() {
       'render_template'   => CORE_DIR . 'inc/blocks/max-width/partial.php',
       'enqueue_style'     => get_stylesheet_directory_uri() . "/assets/css/max-width.min.css",
       'supports'		    => [
-        'mode'          => 'preview',
+        'mode'          => false,
         // Each can also be set to true or false
         'align'    => array( 'left', 'right', 'center' ),
         'customClassName'	=> true,

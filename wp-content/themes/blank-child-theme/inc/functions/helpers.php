@@ -45,30 +45,6 @@ function pb_get_id_by_slug( $page_slug, $post_type ) {
 }
 
 
-//  Helper function for adding SVG or fallingback to text
-function pb_svg_icons_available( $text, $icon_name, $icon_text ='', $width ='15px', $height ='15px' ) {
-
-	$text = sanitize_text_field( $text );
-	$icon_name = esc_attr( $icon_name );
-	$icon_text = sanitize_text_field( $icon_text );
-	$width = esc_attr( $width );
-	$height = esc_attr( $width );
-
-	if ( function_exists( 'pb_get_svg' ) && empty( $icon_text ) ) {
-		$search_icon = pb_get_svg( array( 'icon' => $icon_name, 'width' => $width, 'height' => $height, 'title' => __( $text ) ) );
-		$icon = $search_icon;
-	} elseif ( function_exists( 'pb_get_svg' ) && ! empty( $icon_text ) ) {
-		$search_icon = pb_get_svg( array( 'icon' => $icon_name, 'width' => $width, 'height' => $height, 'title' => __( '' ) ) );
-		$icon =  '<span class="icon-text">' . $search_icon . $icon_text . '</span>';
-	} else {
-		$icon  = $text;
-	}
-
-	return $icon;
-
-}
-
-
 /**
  * Helper function to check if we're on a WooCommerce page.
  *
@@ -89,6 +65,35 @@ function pb_is_woocommerce_page() {
 	} else {
 		return false;
 	}
+
+}
+
+
+
+/**
+ * Checks if we're on any type of archive page.
+ *
+ * Thanks BizBudding's Mia Engine
+ * 
+ * @param bool $use_cache Whether to use static cache.
+ *
+ * @return bool
+ */
+function pb_is_type_archive( $use_cache = false ) {
+
+	static $is_type_archive = null;
+
+	if ( ! is_null( $is_type_archive ) && $use_cache ) {
+
+		return $is_type_archive;
+
+	} else {
+
+		$is_type_archive = is_home() || is_post_type_archive() || is_category() || is_tag() || is_tax() || is_author() || is_date() || is_year() || is_month() || is_day() || is_time() || is_archive() || is_search();
+		
+	}
+
+	return $is_type_archive;
 
 }
 

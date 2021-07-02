@@ -40,8 +40,8 @@ function register_acf_custom_block() {
         )
       ),
       'supports'		    => [
-        'mode'          => 'preview',
         // Each can also be set to true or false
+        'mode'          => false,
         'align'			    => array( 'wide', 'full', 'left', 'right', 'center' ),
         'align_text'    => array( 'left', 'right', 'center' ),
         'align_content' => array( 'top', 'center', 'bottom' ), // matrix

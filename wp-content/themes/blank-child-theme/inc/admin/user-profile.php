@@ -33,11 +33,15 @@ function custom_user_contact_methods( $user_contact_method ) {
 
 	}
 
-	$user_contact_method[ 'facebook' ] = __( 'Facebook Profile', 'blank-child-theme' );
-	$user_contact_method[ 'twitter' ] = __( 'Twitter Username', 'blank-child-theme' );
-	$user_contact_method[ 'instagram' ] = __( 'Instagram Profile', 'blank-child-theme' );
-	$user_contact_method[ 'youtube' ] = __( 'Youtube Profile', 'blank-child-theme' );
-	$user_contact_method[ 'linkedin' ] = __( 'LinkedIn Profile', 'blank-child-theme' );
+	if ( current_user_can( 'edit_posts' ) ) {
+
+		$user_contact_method[ 'facebook' ] = __( 'Facebook Profile', 'blank-child-theme' );
+		$user_contact_method[ 'twitter' ] = __( 'Twitter Username', 'blank-child-theme' );
+		$user_contact_method[ 'instagram' ] = __( 'Instagram Profile', 'blank-child-theme' );
+		$user_contact_method[ 'youtube' ] = __( 'Youtube Profile', 'blank-child-theme' );
+		$user_contact_method[ 'linkedin' ] = __( 'LinkedIn Profile', 'blank-child-theme' );
+
+	}
 
 	return $user_contact_method;
 

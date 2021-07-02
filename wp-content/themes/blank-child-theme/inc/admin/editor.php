@@ -38,7 +38,7 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 		'core/group',
 		'core/cover',
 		'core/shortcode',
-		'acf/accordion-block',
+		'acf/toggle-block',
 		'acf/content-grid',
 		'acf/icon-block',
 		'acf/max-width-block',

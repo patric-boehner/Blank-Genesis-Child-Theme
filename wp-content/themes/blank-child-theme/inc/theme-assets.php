@@ -24,10 +24,6 @@ add_action( 'wp_enqueue_scripts', 'pb_enqueue_child_theme_scripts_styles' );
 function pb_enqueue_child_theme_scripts_styles() {
 
 
-  // Load Webfonts
-  pb_enqueue_webfonts();
-
-
 	// Load Global Stylesheet
 	wp_enqueue_style(
     'global-style',
@@ -35,6 +31,10 @@ function pb_enqueue_child_theme_scripts_styles() {
     false,
     cache_version_id()
   );
+
+
+  // Load Webfonts
+  pb_enqueue_webfonts();
 
 
   // Setup page if has top banner.
@@ -154,7 +154,7 @@ function pb_enqueue_child_theme_scripts_styles() {
 add_action( 'init', 'pb_load_styles_footer' );
 function pb_load_styles_footer() {
 
-  add_action( 'get_footer', 'pb_enqueue_print_stylesheet', 0 );
+  add_action( 'get_footer', 'pb_enqueue_print_stylesheet' );
 
 }
 

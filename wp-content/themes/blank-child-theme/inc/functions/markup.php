@@ -116,6 +116,61 @@ function pb_change_content_sidebar_wrap( $open, $args ) {
 }
 
 
+// Change 'genesis-content' to 'main-content'
+add_filter( 'genesis_attr_content', 'pb_main_id_attributes', 12 );
+function pb_main_id_attributes( $attributes ) {
+
+	// class, id, itemscope, itemtype, etc.
+	$attributes['id']  = 'main-content';
+	
+	return $attributes;
+
+}
+
+
+// Remove unnecessary post classes.
+add_filter( 'post_class', 'pb_remove_post_classes', 10, 3 );
+function pb_remove_post_classes( $classes, $class, $post_id ) {
+
+	return array_diff(
+
+		$classes,
+		[
+			'post',
+			'has-post-thumbnail',
+			'category-uncategorized',
+			'post-' . $post_id,
+			'status-' . get_post_status( $post_id ),
+			'format-' . ( get_post_format( $post_id ) ? get_post_format( $post_id ) : 'standard' ),
+		]
+	);
+
+}
+
+
+// Adds before content class to entry meta.
+add_filter( 'genesis_attr_entry-meta-before-content', 'pb_entry_meta_before_content_atts' );
+function pb_entry_meta_before_content_atts( $atts ) {
+
+	$atts['class'] .= ' entry-meta-before-content';
+
+	return $atts;
+
+}
+
+
+// Adds after content class to entry meta.
+add_filter( 'genesis_attr_entry-meta-after-content', 'pb_entry_meta_after_content_atts' );
+function pb_entry_meta_after_content_atts( $atts ) {
+
+	$atts['class'] .= ' entry-meta-after-content';
+
+	return $atts;
+	
+}
+
+
+
 /**
  * Archive Description markup
  * From Bill Erickson

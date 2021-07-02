@@ -73,6 +73,7 @@ if ( $video_url_host == 'www.youtube.com' || $video_url_host == 'youtube.com' ) 
   $video_id = '';
   $img_url = '';
   $size = array( '' );
+  $responsive = '<span></span>';
 
 }  
 

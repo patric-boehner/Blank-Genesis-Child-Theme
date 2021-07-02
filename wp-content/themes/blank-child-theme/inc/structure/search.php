@@ -27,9 +27,7 @@ function pb_search_form() {
 	$placeholder_text = esc_html__( 'Search', 'blank-child-theme' );
 
 	$text = esc_html__( 'Submit', 'blank-child-theme' );
-	$icon_name = 'search';
-
-	$button = pb_svg_icons_available( $text, $icon_name );
+	$button = $text;
 
 	ob_start();
 

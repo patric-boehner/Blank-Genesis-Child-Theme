@@ -29,10 +29,11 @@ function register_acf_icon_block() {
       'keywords'          => array( 'icon' ),
       'post_types'        => array( 'content_area', 'page', 'post' ),
       'multiple'          => true,
+      'mode'              => 'preview',
       'render_template'   => CORE_DIR . 'inc/blocks/icon/partial.php',
       'enqueue_style'     => get_stylesheet_directory_uri() . "/assets/css/icon.min.css",
       'supports'		    => [
-        'mode'          => 'preview',
+        'mode'          => false,
         // Each can also be set to true or false
         'align'			    => false,
         'align_content' => array( 'top', 'center', 'bottom' ), // matrix

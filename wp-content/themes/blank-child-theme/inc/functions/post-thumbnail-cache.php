@@ -26,15 +26,8 @@ if( !defined( 'ABSPATH' ) ) exit;
 /**
  * Prime post thumbnail cache.
  *
- * Automatically primes the cache for the main loop on the front page and
- * archives. The cache can be activated for additional queries using the
- * 'pb_cache_post_thumbnails' filter.
- *
- * Custom queries can also pass a 'pb_cache_post_thumbnails' flag via the
- * query args to prime the cache.
- *
- * @since 1.0.0
- *
+ * Automatically primes the cache for the main loop on the front page and archives.
+ * 
  * @param array $posts List of posts in the query.
  * @param WP_Query $wp_query WP Query object.
  * @return array
@@ -43,16 +36,12 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_action( 'the_posts', 'pb_prime_post_thumbnails_cache', 10, 2 );
 function pb_prime_post_thumbnails_cache( $posts, $wp_query ) {
 
-	// Prime the cache for the main front page and archive loops by default.
-	$is_main_archive_loop = $wp_query->is_main_query() && ! is_singular();
-	$do_prime_cache = apply_filters( 'pb_cache_post_thumbnails', $is_main_archive_loop );
-
-	if ( ! $do_prime_cache && ! $wp_query->get( 'pb_cache_post_thumbnails' ) ) {
+	if ( ! ( $wp_query->is_main_query() && pb_is_type_archive() ) ) {
 		return $posts;
 	}
 
 	update_post_thumbnail_cache( $wp_query );
-	
+
 	return $posts;
 
 }

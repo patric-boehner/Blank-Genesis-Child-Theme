@@ -61,3 +61,52 @@ function pa_add_medium_large_size_selection( $sizes ) {
 // 	return $output;
 //
 // }
+
+
+
+
+
+/**
+ * Limits srcset from using an image larger than the actual src image.
+ *
+ * @since 2.13.0
+ *
+ * @param array  $image_meta    The image meta data as returned by 'wp_get_attachment_metadata()'.
+ * @param int[]  $size_array    {
+ *     An array of requested width and height values.
+ *
+ *     @type int $0 The width in pixels.
+ *     @type int $1 The height in pixels.
+ * }
+ * @param string $image_src     The 'src' of the image.
+ * @param int    $attachment_id The image attachment ID or 0 if not supplied.
+ *
+ * @return array
+ */
+add_filter( 'wp_calculate_image_srcset_meta', 'pb_limit_max_srcset_image', 10, 4 );
+function pb_limit_max_srcset_image( $image_meta, $size_array, $image_src, $attachment_id ) {
+
+	if ( ! isset( $size_array[0] ) ) {
+		return $image_meta;
+	}
+
+	$width = $size_array[0];
+
+	if ( is_array( $image_meta['sizes'] ) && $image_meta['sizes'] ) {
+
+		foreach ( $image_meta['sizes'] as $name => $value ) {
+
+			if ( ! isset( $value['width'] ) ) {
+				continue;
+			}
+			if ( $value['width'] > $width ) {
+				unset( $image_meta['sizes'][ $name ] );
+			}
+
+		}
+
+	}
+
+	return $image_meta;
+
+}
