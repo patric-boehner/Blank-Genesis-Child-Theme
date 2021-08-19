@@ -11,8 +11,8 @@
  */
 
 
-add_filter( 'block_categories', 'cf_custom_block_categories', 10, 2 );
-function cf_custom_block_categories( $categories, $post ) {
+add_filter( 'block_categories_all', 'cf_custom_block_categories_all', 10, 2 );
+function cf_custom_block_categories_all( $categories, $post ) {
     // if ( $post->post_type !== 'post' ) {
     //     return $categories;
     // }
