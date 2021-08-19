@@ -143,7 +143,7 @@ add_theme_support( 'editor-styles' );
 
 
 // Enable support for Block Editor wide images.
-add_theme_support( 'align-wide' );
+// add_theme_support( 'align-wide' );
 
 
 // Make media embeds responsive.
@@ -151,23 +151,23 @@ add_theme_support( 'responsive-embeds' );
 
 
 // Editor Font Styles
-add_theme_support( 'editor-font-sizes', genesis_get_config( 'editor-font-sizes' ) );
+// add_theme_support( 'editor-font-sizes', genesis_get_config( 'editor-font-sizes' ) );
 
 
 // Disable custom font sizes
-add_theme_support( 'disable-custom-font-sizes' );
+// add_theme_support( 'disable-custom-font-sizes' );
 
 
 // Editor Color Palette
-add_theme_support( 'editor-color-palette', genesis_get_config( 'editor-color-palette' ) );
+// add_theme_support( 'editor-color-palette', genesis_get_config( 'editor-color-palette' ) );
 
 
 // Editor Color Gradients
-add_theme_support( 'editor-gradient-presets', genesis_get_config( 'editor-gradient-presets' ) );
+// add_theme_support( 'editor-gradient-presets', genesis_get_config( 'editor-gradient-presets' ) );
 
 
 // Disable Custom Colors
-add_theme_support( 'disable-custom-colors' );
+// add_theme_support( 'disable-custom-colors' );
 
 
 //Disable Gradients

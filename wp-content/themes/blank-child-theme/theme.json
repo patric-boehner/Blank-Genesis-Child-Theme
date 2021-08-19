@@ -1,0 +1,110 @@
+{
+    "version": 1,
+    "settings": {
+
+        "layout": {
+            "contentSize": "1200px",
+            "wideSize": "1200px"
+        },
+
+        "color": {
+            "custom": false,
+            "customDutone": false,
+            "dutone": [],
+            "gradients": [],
+            "link": false,
+            "palette": [
+                {
+                    "slug": "blue",
+                    "color": "#004b96",
+                    "name": "Blue"
+                },
+                {
+                    "slug": "light-blue",
+                    "color": "#d5e1ee",
+                    "name": "Light Blue"
+                },
+                {
+                    "slug": "green",
+                    "color": "#58AD69",
+                    "name": "Green"
+                },
+                {
+                    "slug": "light-green",
+                    "color": "#C0DFC6",
+                    "name": "Light Green"
+                },
+                {
+                    "slug": "orange",
+                    "color": "#C69239",
+                    "name": "Orange"
+                },
+                {
+                    "slug": "light-orange",
+                    "color": "#F7EEDF",
+                    "name": "Light Orange"
+                },
+                {
+                    "slug": "dark-gray",
+                    "color": "#333",
+                    "name": "Dark Gray"
+                },
+                {
+                    "slug": "light-gray",
+                    "color": "#eee",
+                    "name": "Light Gray"
+                },
+                {
+                    "slug": "white",
+                    "color": "#FFFFFF",
+                    "name": "White"
+                }
+            ]
+        },
+
+        "typography": {
+            "customFontSize": false,
+            "customLineHeight": false,
+            "dropCap": false,
+            "fontSizes": [
+                {
+                    "slug": "small",
+                    "size": "16px",
+                    "name": "Small"
+                },
+                {
+                    "slug": "default",
+                    "size": "20px",
+                    "name": "Default"
+                },
+                {
+                    "slug": "large",
+                    "size": "24px",
+                    "name": "Large"
+                },
+                {
+                    "slug": "x-large",
+                    "size": "31px",
+                    "name": "H3 Heading"
+                },
+                {
+                    "slug": "xx-large",
+                    "size": "39px",
+                    "name": "H2 Heading"
+                },
+                {
+                    "slug": "xxx-large",
+                    "size": "49px",
+                    "name": "H1 Heading"
+                }
+            ]
+        }
+
+    },
+    "styles": {
+
+    },
+    "templateparts": [
+
+    ]
+}
