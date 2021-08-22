@@ -87,6 +87,10 @@ function pb_narrow_layout() {
 }
 
 
+//Only load styles for used blocks
+// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
+
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
@@ -142,36 +146,8 @@ remove_action( 'edit_user_profile', 'genesis_user_seo_fields' );
 add_theme_support( 'editor-styles' );
 
 
-// Enable support for Block Editor wide images.
-// add_theme_support( 'align-wide' );
-
-
 // Make media embeds responsive.
 add_theme_support( 'responsive-embeds' );
-
-
-// Editor Font Styles
-// add_theme_support( 'editor-font-sizes', genesis_get_config( 'editor-font-sizes' ) );
-
-
-// Disable custom font sizes
-// add_theme_support( 'disable-custom-font-sizes' );
-
-
-// Editor Color Palette
-// add_theme_support( 'editor-color-palette', genesis_get_config( 'editor-color-palette' ) );
-
-
-// Editor Color Gradients
-// add_theme_support( 'editor-gradient-presets', genesis_get_config( 'editor-gradient-presets' ) );
-
-
-// Disable Custom Colors
-// add_theme_support( 'disable-custom-colors' );
-
-
-//Disable Gradients
-add_theme_support( 'disable-custom-gradients' );
 
 
 // Add Image Sizes.

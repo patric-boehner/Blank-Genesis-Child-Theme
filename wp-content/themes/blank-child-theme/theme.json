@@ -7,10 +7,17 @@
             "wideSize": "1200px"
         },
 
+        "spacing": {
+            "customMargin": false,
+            "customPadding": false,
+            "units": [ "px", "vh", "vw" ]
+        },
+
         "color": {
             "custom": false,
-            "customDutone": false,
-            "dutone": [],
+            "customDuotone": false,
+            "customGradient": false,
+            "duotone": [],
             "gradients": [],
             "link": false,
             "palette": [
@@ -64,8 +71,19 @@
 
         "typography": {
             "customFontSize": false,
+            "customFontStyle": true,
+            "customFontWeight": true,
             "customLineHeight": false,
+            "customTextDecorations": true,
+            "customTextTransforms": true,
             "dropCap": false,
+            "fontFamilies": [
+                {
+                    "fontFamily": "'Source Sans Pro', sans-serif",
+                    "slug": "font-priamry",
+                    "name": "Primary Font"
+                }
+            ],
             "fontSizes": [
                 {
                     "slug": "small",
@@ -98,13 +116,50 @@
                     "name": "H1 Heading"
                 }
             ]
+        },
+
+        "custom": {
+            "fontFamily": {
+                "primary": "'Source Sans Pro', sans-serif",
+                "secondary": "'Source Sans Pro', sans-serif"
+            },
+            "base-font": "20px",
+            "spacing": {
+                "x-small": "5px",
+                "small": "15px",
+                "medium": "30px",
+                "large": "45px",
+                "x-large": "90px",
+                "xx-large": "120px"   
+            }
         }
 
     },
+
     "styles": {
 
-    },
-    "templateparts": [
+        "typography": {
+            "fontSize": "var(--wp--preset--font-size--default)",
+            "fontFamily": "var(--wp--custom--font-family--primary)",
+			"lineHeight": "1.2"
+        },
 
+        "color": {
+            "background": "var(--wp--preset--color--white)",
+            "text": "var(--wp--preset--color--dark-gray)"
+        },
+
+        "elements": {
+            "link": {
+                "color": {
+                    "text": "var(--wp--preset--color--orange)"
+                   }
+            }
+        }
+        
+    },
+
+    "templateparts": [
     ]
+
 }
