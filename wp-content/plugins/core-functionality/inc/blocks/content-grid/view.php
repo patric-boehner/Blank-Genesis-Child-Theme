@@ -28,7 +28,7 @@
                       )
                     ),
                   'url'   => get_the_permalink(),
-                  'footer_menu' => '',
+                  'footer_meta' => '',
                 )
             );
           }

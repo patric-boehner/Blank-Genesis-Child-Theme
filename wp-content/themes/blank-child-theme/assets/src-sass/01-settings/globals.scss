@@ -12,25 +12,17 @@
     --font-weight-bold: 600;
 
     // Base Font Size
-    --font-size-base: 0.925rem; // 16px
-    --font-scale: 1.25; // Major third scale
-    --font-scale-responsive: 0.075vw;
+    // --font-size-base: 0.925rem; // 16px
+    // --font-scale: 1.25; // Major third scale
+    // --font-scale-responsive: 0.075vw;
         
     // Font Size
-    --font-size-x-small: calc( var(--font-size-small) / var(--font-scale) );
-    --font-size-small: calc( var(--font-size-base) + var(--font-scale-responsive) );
-    --font-size-medium: calc( var(--font-size-small) * var(--font-scale) );
-    --font-size-large: calc( var(--font-size-medium) * var(--font-scale) );
-    --font-size-x-large: calc( var(--font-size-large) * var(--font-scale) );
-    --font-size-xx-large: calc( var(--font-size-x-large) * var(--font-scale) );
-    --font-size-xxx-large: calc( var(--font-size-xx-large) * var(--font-scale) );
-
-    --heading-font-size-h1: var(--font-size-xxx-large);
-    --heading-font-size-h2: var(--font-size-xx-large);
-    --heading-font-size-h3: var(--font-size-x-large);
-    --heading-font-size-h4: var(--font-size-large);
-    --heading-font-size-h5: var(--font-size-small);
-    --heading-font-size-h6: var(--font-size-x-small);
+    // --heading-font-size-h1: var(--wp--preset--font-size--gigantic);
+    // --heading-font-size-h2: var(--wp--preset--font-size--huge);
+    // --heading-font-size-h3: var(--wp--preset--font-size--extra-large);
+    // --heading-font-size-h4: var(--wp--preset--font-size--large);
+    // --heading-font-size-h5: var(--wp--preset--font-size--small);
+    // --heading-font-size-h6: var(--wp--preset--font-size--tiny);
 
     // Font Styles
     --heading-font-family: var(--font-primary);
@@ -44,20 +36,10 @@
     --body-font-line-height: 1.625;
 
     // Colors
-    --color-blue: #004b96;
-    --color-light-blue: #d5e1ee;
-    --color-green: #58AD69;
-    --color-light-green: #C0DFC6;
-    --color-orange: #C69239;
-    --color-light-orange: #F7EEDF;
-    --color-white: #fff;
-    --color-dark-gray: #333;
-    --color-light-gray: #eee;
-
-    --color-primary: var(--color-dark-gray);
-    --color-highlight: var(--color-blue);
-    --color-border: var(--color-dark-gray);
-    --color-background: var(--color-light-gray);
+    --color-primary: var(--wp--preset--color--dark-gray);
+    --color-highlight: var(--wp--preset--color--blue);
+    --color-border: var(--wp--preset--color--dark-gray);
+    --color-background: var(--wp--preset--color--light-gray);
 
     --color-default-overlay: #000;
 
