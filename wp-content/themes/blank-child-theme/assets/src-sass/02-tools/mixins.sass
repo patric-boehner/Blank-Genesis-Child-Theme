@@ -17,16 +17,16 @@
 @mixin placeholder-color
 
 	::-moz-placeholder
-		color: var(--color-primary)
+		color: var(--wp--custom--color--foreground)
 		opacity: 1
 
 
 	::-ms-input-placeholder
-		color: var(--color-primary)
+		color: var(--wp--custom--color--foreground)
 
 
 	::-webkit-input-placeholder
-		color: var(--color-primary)
+		color: var(--wp--custom--color--foreground)
 
 
 	input:focus::-webkit-input-placeholder,
@@ -60,19 +60,6 @@
 	padding: 0
 	outline: none
 	cursor: pointer
-
-
-// Clearfix
-
-@mixin clearfix()
-	&::before
-		content: " "
-		display: table
-
-	&::after
-		clear: both
-		content: " "
-		display: table
 
 
 // Media Quiery

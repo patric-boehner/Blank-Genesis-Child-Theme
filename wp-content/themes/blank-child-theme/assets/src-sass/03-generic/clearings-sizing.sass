@@ -1,0 +1,45 @@
+// Box Sizing
+html
+	-webkit-box-sizing: border-box
+	-moz-box-sizing:    border-box
+	box-sizing:         border-box
+
+
+*,
+*::before,
+*::after
+	box-sizing: inherit
+
+
+// Clearfix
+.after-entry::before,
+.author-box::before,
+.clearfix::before,
+.entry::before,
+.entry-content::before,
+.nav-primary::before,
+.nav-secondary::before,
+.pagination::before,
+.site-container::before,
+.site-footer::before,
+.site-inner::before,
+.widget::before
+	content: " "
+	display: table
+
+
+.after-entry::after,
+.author-box::after,
+.clearfix::after,
+.entry::after,
+.entry-content::after,
+.nav-primary::after,
+.nav-secondary::after,
+.pagination::after,
+.site-container::after,
+.site-footer::after,
+.site-inner::after,
+.widget::after,
+	clear: both
+	content: " "
+	display: table

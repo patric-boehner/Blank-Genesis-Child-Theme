@@ -41,7 +41,7 @@ if( !empty( $align ) ) {
 }
 
 if( !empty( $color ) ) {
-  $className .= ' has-fill-'.$color.'-color';
+  $className .= ' has-'.$color.'-color';
 }
 
 // Icons

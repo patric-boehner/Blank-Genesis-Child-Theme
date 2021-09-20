@@ -1,20 +1,3 @@
-// Box Sizing
-
-html
-	-webkit-box-sizing: border-box
-	-moz-box-sizing:    border-box
-	box-sizing:         border-box
-
-
-*,
-*::before,
-*::after
-	box-sizing: inherit
-
-
-.site-container
-	overflow-x: hidden
-
 
 // Nav Layout
 
@@ -31,27 +14,28 @@ html
 .content,
 .wrap
 	display: block
-	width: calc( 100% - ( var(--side-spacing) * 2 ) )
-	max-width: var(--wrap-max-width)
+	width: calc( 100% - ( var(--wp--custom--spacing--side) * 2 ) )
+	max-width: var(--wp--custom--width--max-width)
 	margin: 0 auto
 
 
 .narrow-content
 	.content-area,
 	.content
-		--wrap-max-width: var(--width-content)
+		--wp--custom--width--max-width: var(--wp--custom--width--content)
 
 
 .wp-block-cover,
 .wp-block-group
 	&.alignfull
-		padding: 0 var(--side-spacing)
+		padding-left: var(--wp--custom--spacing--side)
+		padding-right: var(--wp--custom--spacing--side)
 
 
 .wp-block-cover__inner-container,
 .wp-block-group__inner-container
 	width: 100%
-	max-width: var(--wrap-max-width)
+	max-width: var(--wp--custom--width--max-width)
 	margin: 0 auto
 
 
@@ -59,7 +43,7 @@ html
 	.inner-wrap
 		width: 100%
 		display: grid
-		grid-gap: var(--spacing-medium)
+		grid-gap: var(--wp--custom--spacing--medium)
 
 		@include above-phone
 			grid-template-columns: 1fr 1fr
@@ -80,7 +64,7 @@ html
 // 		// Swap around for sidebar-content
 // 		grid-template-columns: 1fr minmax(300px, 30%)
 // 		grid-template-areas: "content sidebar"
-// 		grid-column-gap: var(--grid-gap)
+// 		grid-column-gap: var(--wp--custom--grid--gap)
 
 // 		.content,
 // 		.sidebar-primary
@@ -121,7 +105,7 @@ html
 		label
 			flex-basis: 50%
 			flex-grow: 1
-			margin-right: var(--spacing-medium)
+			margin-right: var(--wp--custom--spacing--medium)
 
 		.search-submit
 			flex-basis: content

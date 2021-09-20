@@ -16,7 +16,7 @@
 .content-grid-block
     .block__inner
         display: grid
-        grid-gap: var(--grid-gap)
+        grid-gap: var(--wp--custom--grid--gap)
 
         @include above-tablet
             grid-template-columns: var(--grid-columns)
@@ -25,14 +25,14 @@
         margin-bottom: 0
 
     .entry-image-link
-        margin-bottom: var(--spacing-small)
+        margin-bottom: var(--wp--custom--spacing--small)
 
     .entry-header
-        margin-bottom: var(--spacing-medium)
+        margin-bottom: var(--wp--custom--spacing--medium)
 
         &:hover a,
         &:focus a
-            color: var(--color-highlight)
+            color: var(--wp--custom--color--secondary)
 
     .entry-title
-        font-size: var(--wp--custom--heading--h4)
+        font-size: var(--wp--custom--heading--size-h4)

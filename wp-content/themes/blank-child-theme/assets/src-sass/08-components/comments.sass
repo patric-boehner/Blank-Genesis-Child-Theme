@@ -7,10 +7,10 @@
 		padding-left: 0
 
 	.children
-		padding-left: var(--side-spacing)
+		padding-left: var(--wp--custom--spacing--side)
 
 	.comment-header
-		margin-bottom: var(--spacing-medium)
+		margin-bottom: var(--wp--custom--spacing--medium)
 
 		p
 			margin-bottom: 0
@@ -19,15 +19,15 @@
 		clear: both
 
 	.alert
-		font-weight: var(--font-weight-bold)
+		font-weight: var(--wp--custom--font-weight--bold)
 
 	li
 		list-style: none
-		padding: var(--spacing-medium) 0 0 0
+		padding: var(--wp--custom--spacing--medium) 0 0 0
 
 
 .comment-author-name
-	font-weight: var(--font-weight-bold)
+	font-weight: var(--wp--custom--font-weight--bold)
 
 
 .comment-respond
@@ -44,6 +44,31 @@
 
 
 #cancel-comment-reply-link
-	@extend %button
-	font-size: var(--font-size-x-small)
-	margin-left: var(--spacing-small)
+	background-color: var( --color-inherit-background, var(--wp--custom--color--foreground) )
+    border: 0
+    border-radius: 0
+    color: var( --color-inherit, var(--wp--preset--color--white) )
+    cursor: pointer
+    font-size: var(--font-size-x-small)
+    font-weight: var(--wp--custom--font-weight--bold)
+    padding: 16px 24px
+    text-decoration: none
+    white-space: normal
+    width: auto
+    line-height: normal
+    transition: all 0.25s ease-in-out
+	margin-left: var(--wp--custom--spacing--small)
+
+
+    &:hover,
+    &:focus,
+    &:visited
+        background-color: var( --color-inherit-background, var(--wp--custom--color--secondary) )
+        color: var( --color-inherit, var(--wp--preset--color--white) )
+
+    &:disabled
+        background-color: var(--wp--custom--border--color)
+        border-width: 0
+        color: var(--wp--custom--color--foreground)
+        cursor: not-allowed
+	

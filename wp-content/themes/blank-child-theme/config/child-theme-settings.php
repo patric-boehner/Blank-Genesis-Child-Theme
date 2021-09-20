@@ -37,7 +37,7 @@ return [
 		'content_archive_limit'     => 0,
 		'content_archive_thumbnail' => 1,
 		'entry_meta_after_content'  => '[post_categories] [post_tags]',
-		'entry_meta_before_content' => '[post_date] ' . __( 'by', 'genesis-sample' ) . ' [post_author_posts_link] [post_comments] [post_edit]',
+		'entry_meta_before_content' => '[post_date] ' . __( 'by', 'blank-child-theme' ) . ' [post_author_posts_link] [post_comments] [post_edit]',
 		'image_size'                => 'genesis-singular-images',
 		'image_alignment'           => 'alignnone', // 'aligncenter', 'alignleft' or 'alignright'
 		'posts_nav'                 => 'older-newer', // older-newer, numeric

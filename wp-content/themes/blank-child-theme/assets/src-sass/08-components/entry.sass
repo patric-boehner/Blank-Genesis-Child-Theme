@@ -6,22 +6,22 @@
 
 
 .entry-image
-	margin-bottom: var(--spacing-medium)
+	margin-bottom: var(--wp--custom--spacing--medium)
 
 
 // Entry meta
 
 .entry-meta
-	font-size: var(--font-size-small)
+	font-size: var(--wp--preset--font-size--small)
 
 	a
-		font-weight: var(--body-font-weight)
+		font-weight: var(--wp--custom--body--font-weight)
 
 
 .entry-categories,
 .entry-tags
 	display: block
-	font-weight: var(--body-font-weight-bold)
+	font-weight: var(--wp--custom--body--font-weight-bold)
 
 
 // Entry Content
@@ -29,7 +29,7 @@
 	.entry-content
 		h2, h3, h4, h5, h6
 			&:not(:first-child)
-				margin-top: var(--spacing-medium)
+				margin-top: var(--wp--custom--spacing--medium)
 
 
 // After Post
@@ -37,7 +37,7 @@
 .share-links
 
 	&__heading
-		font-size: var( --wp--custom--heading--h4 )
+		font-size: var( --wp--custom--heading--size-h4 )
 
 	&__list
 		margin: 0
@@ -53,8 +53,8 @@
 		padding: 0 20px 10px 0
 
 	.icon
-		width: var(--icon-size-default)
-		height: var(--icon-size-default)
+		width: var(--wp--preset--font-size--normal)
+		height: var(--wp--preset--font-size--normal)
 
 
 // Author Profile
@@ -62,19 +62,16 @@
 .author-profile
 	display: flex
 	flex-direction: row
-	padding: var(--spacing-medium)
-	background-color: var(--color-background)
 
 	@include small-phone
 		flex-direction: column
-		// align-items: center
 
 	&__image
-		margin-right: var(--grid-gap)
+		margin-right: var(--wp--custom--grid--gap)
 
 		@include small-phone
 			margin-right: 0
-			margin-bottom: var(--grid-gap)
+			margin-bottom: var(--wp--custom--grid--gap)
 
 	.avatar
 		float: none
@@ -82,7 +79,7 @@
 		max-width: 96px
 
 	&__title
-		font-size: var(--wp--custom--heading--h4)
+		font-size: var(--wp--custom--heading--size-h4)
 	
 	&__description
 		margin-bottom: 0

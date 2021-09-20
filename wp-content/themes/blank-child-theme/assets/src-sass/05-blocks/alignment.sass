@@ -10,13 +10,13 @@
 
 @include above-desktop
 	// For the negative left/right margin, subtract page width from the content width and divide by two
-	// Medi query is bsaed on the --width-full width
+	// Medi query is bsaed on the --wp--custom--width--full width
 
 	.alignwide
-		margin-left: calc( ( ( var(--width-full) - var(--width-content) ) / 2 ) * -1 )
-		margin-right: calc( ( ( var(--width-full) - var(--width-content) ) / 2 ) * -1 )
-		max-width: calc( 100% + ( var(--width-full) - var(--width-content) ) ) // 400px sum of left and right margin
-		width: var(--width-full)
+		margin-left: calc( ( ( var(--wp--custom--width--full) - var(--wp--custom--width--content) ) / 2 ) * -1 )
+		margin-right: calc( ( ( var(--wp--custom--width--full) - var(--wp--custom--width--content) ) / 2 ) * -1 )
+		max-width: calc( 100% + ( var(--wp--custom--width--full) - var(--wp--custom--width--content) ) ) // 400px sum of left and right margin
+		width: var(--wp--custom--width--full)
 
 
 .full-width-content
@@ -33,7 +33,7 @@
 	
 	&.alignwide,
 	&.alignfull
-		margin-bottom: var(--spacing-medium)
+		margin-bottom: var(--wp--custom--spacing--medium)
 
 
 // Alighments
@@ -41,13 +41,13 @@
 .alignleft
 	display: inline
 	float: left
-	margin-right: var(--spacing-medium)
+	margin-right: var(--wp--custom--spacing--medium)
 
 
 .alignright
 	display: inline
 	float: right
-	margin-left: var(--spacing-medium)
+	margin-left: var(--wp--custom--spacing--medium)
 
 
 .aligncenter

@@ -10,18 +10,18 @@
 				position: absolute
 				right: 0
 				top: 33%
-				font-size: var(--font-size-x-large)		
+				font-size: var(--wp--preset--font-size--huge)		
 			
 
 // Conten Width Based on Body Count
 .narrow-content
 	.wp-block
-		--wrap-max-width: var(--width-content)
+		--wp--custom--width--max-width: var(--wp--custom--width--content)
 
 
 .full-width-content
 	.wp-block
-		--wrap-max-width: var(--width-full)
+		--wp--custom--width--max-width: var(--wp--custom--width--full)
 
 
 // Regular content width
@@ -29,5 +29,5 @@
 .wp-block-cover__inner-container,
 .wp-block-group__inner-container
 	width: 100%
-	max-width: var(--wrap-max-width)
+	max-width: var(--wp--custom--width--max-width)
 	margin: 0 auto

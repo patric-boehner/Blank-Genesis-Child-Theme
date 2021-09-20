@@ -5,9 +5,15 @@
 	
 
 .wp-block-quote.is-style-large p
-	font-size: var(--font-size-large)
+	font-size: var(--wp--preset--font-size--large)
 
 
 .wp-block-quote
 	cite
-		@extend %citation
+		color: var(--color-dark-gray)
+		display: block
+		font-size: var(--wp--preset--font-size--small)
+		font-style: italic
+		margin-top: -25px
+		text-align: inherit
+		text-transform: none

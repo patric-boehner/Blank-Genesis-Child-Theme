@@ -1,27 +1,3 @@
-/** 
- * WC3: Mobile Menus 
- * https://w3c.github.io/wai-mobile-intro/mobile/mobile-menus/
-*/
-
-document.getElementById('nav-toggle').addEventListener('click', toggleMenu, false);
-
-function toggleMenu(event) {
-
-    var navBar = document.getElementById("genesis-nav-primary");
-    var expanded = event.currentTarget.getAttribute("aria-expanded");
-
-    if (expanded==="true") {
-      navBar.classList.add("closed");
-      navBar.classList.remove("opened");
-      event.currentTarget.setAttribute('aria-expanded', 'false');
-    } else {
-      navBar.classList.add("opened");
-      navBar.classList.remove("closed");
-      event.currentTarget.setAttribute('aria-expanded', 'true');
-    }
-  
-}
-
 /**
  * Object for creating click-triggered navigation submenus
  *
@@ -220,43 +196,3 @@ function toggleMenu(event) {
 	});
 
 }());
-
-
-/**
- * File skip-link-focus-fix.js.
- *
- * Helps with accessibility for keyboard only users.
- *
- * Learn more: https://git.io/vWdr2
- */
-( function() {
-	var isIe = /(trident|msie)/i.test( navigator.userAgent );
-
-	if ( isIe && document.getElementById && window.addEventListener ) {
-		window.addEventListener( 'hashchange', function() {
-			var id = location.hash.substring( 1 ),
-				element;
-
-			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-				return;
-			}
-
-			element = document.getElementById( id );
-
-			if ( element ) {
-				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-					element.tabIndex = -1;
-				}
-
-				element.focus();
-			}
-		}, false );
-	}
-} () );
-
-
-// Global combined JS
-
-// @codekit-prepend "_partials/mobile-menu-toggle.js";
-// @codekit-prepend "_partials/responsive-menu.js";
-// @codekit-prepend "_vendor/skip-link-fix.js";
