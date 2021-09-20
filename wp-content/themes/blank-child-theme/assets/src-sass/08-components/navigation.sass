@@ -1,279 +1,230 @@
 // Site Navigation
 //**********************************************
 
-.genesis-nav-menu
-	clear: both
+.nav-primary
+	// background-color: var(--wp--preset--color--light-gray)
 	width: 100%
-	line-height: 1
-	margin: 0
-	padding: 0
-
-	.menu-item
-		display: block
-		float: none
-		position: relative
-
-		@include above-phone
-			display: inline-block
-
-
-	// Menu items
-	.menu-item:focus,
-	.menu-item:hover
-		position: relative
-
 
 	@include above-phone
-
-		.menu-item:focus .sub-menu:focus,
-		.menu-item:hover .sub-menu:hover
-			z-index: 100
-
-	.menu-item:focus > .sub-menu,
-	.menu-item:hover > .sub-menu
-		display: block
-		left: auto
-		opacity: 1
-
-	// Bold menu tem
-	> .menu-bold > a
-
-		@include above-phone
-			font-weight: var(--font-weight-bold)
-
-	// Button menu item
-	> .menu-highlight > a,
-	> .menu-highlight.current-menu-item > a
-
-		@include above-phone
-			margin-left: 15px
-			padding-right: 20px
-			padding-left: 20px
-			color: var(--color-white)
-			background-color: var(--color-highlight)
-			font-weight: var(--font-weight-bold)
-
-
-	> .menu-highlight > a:focus,
-	> .menu-highlight > a:hover,
-	> .menu-highlight.current-menu-item > a:focus,
-	> .menu-highlight.current-menu-item > a:hover
-
-		@include above-phone
-			background-color: var(--color-primary)
-			color: var(--color-white)
-			
-
-
-	a
-		display: block
-		padding: var(--menu-item-padding)
-		outline-offset: -1px
-		color: var(--color-primary)
-		font-size: var(--menu-font-size)
-		font-weight: var(--font-weight-normal)
-		text-decoration: none
-
-	a:focus,
-	a:hover,
-	.current-menu-item > a,
-	.sub-menu .current-menu-item > a:focus,
-	.sub-menu .current-menu-item > a:hover
-		color: var(--color-highlight)
-		text-decoration: none
-
-	.sub-menu
-		display: block
-		clear: both
-		position: static
-		z-index: 99
-		width: 100%
-		margin: 0
-		padding-left: 15px
-		opacity: 1
-
-		@include above-phone
-			position: absolute
-			width: var(--menu-item-width)
-			padding-left: 0
-			border-top: 1px solid var(--color-border)
-			opacity: 0
-			transition: opacity 0.4s ease-in-out
-
-
-		a
-			position: relative
-			width: 100%
-			background-color: var(--color-white)
-			word-wrap: break-word
-
-			@include above-phone
-				width: var(--menu-item-width)
-				padding-top: 20px
-				padding-bottom: 20px
-				border: 1px solid var(--color-border)
-				border-top: 0
-
-
-		.sub-menu
-
-			@include above-phone
-				margin: -46px 0 0 179px
-
-
-	.sub-menu:focus-within
-		opacity: 1
-
-
-// Hide Menu
-//**********************************************
-
-.js .nav-primary
-	display: none
-
-	@include above-phone
-		display: block
+		width: auto
 
 
 // Responsive Menu
-//**********************************************
-
-.menu
-
-	.menu-item:focus
-		position: static
-
-	.menu-item > a:focus + ul.sub-menu,
-	.menu-item.sfHover > ul.sub-menu
-		left: auto
-		opacity: 1
-
-
-// Responsive Menu
-.genesis-responsive-menu
+.nav-primary
 	position: relative
 
 	@include phone
-		background-color: var(--color-white)
 		position: absolute
-		top: 96px
+		background-color: var(--wp--preset--color--white)
+		top: 100%
 		left: 0
-		right: 0
 		z-index: 100
 
-		.wrap
-			padding: var(--side-spacing)
 
-	.genesis-nav-menu
-
-		.menu-item:hover > .sub-menu,
-		.menu-item:focus > .sub-menu
-			display: none
-
-		.sub-menu
-			display: none
-			clear: both
-			position: static
-			z-index: 99
-			left: -9999px
-			width: 100%
-			margin: 0
-			padding-left: 15px
-			opacity: 1
-
-			@include above-phone
-				position: absolute
-				width: var(--menu-item-width)
-				padding-left: 0
-				border-top: 1px solid var(--color-border)
-				opacity: 0
-				transition: opacity 0.4s ease-in-out
-
-
-// Menu toggle
-.menu-toggle
-	display: block
-	visibility: visible
-	font-size: var(--font-size-medium)
-	font-weight: var(--font-weight-bold)
-	overflow: hidden
-	position: relative
-	z-index: 1000
-	border-width: 0
-	color: var(--color-primary)
-	background-color: var(--color-white)
-	line-height: inherit
-	text-align: center
-
-	@include above-phone
-		display: none
-
-	&:before
-		margin-right: 10px
-		vertical-align: middle
-
-	&:focus,
-	&:hover
-		border-width: 0
-		color: var(--color-highlight)
-		background-color: var(--color-white)
-
-
-// Submenu toggle
-.sub-menu-toggle
-	display: block
-	visibility: visible
-	float: right
-	overflow: hidden
+// Initial state, hidden off screen
+.genesis-nav-menu ul
 	position: absolute
+	top: 100%
+	left: 0
+	visibility: hidden
+
+
+/**
+ * No JS fallback
+ *
+ * Triggers menus on hover rather than click. Supports keyboard navigation in modern browsers.
+ */
+.genesis-nav-menu.no-js li:hover > ul
+	visibility: visible
+
+.genesis-nav-menu.no-js li:focus-within > ul
+	visibility: visible
+
+
+// Open/Close Menu Behavior with JS
+.genesis-nav-menu ul[aria-hidden="false"]
+	visibility: visible
+
+
+// Prevent offscreen-submenus
+.genesis-nav-menu .sub-menu--right
+	left: auto !important
+	right: 0 !important
+
+
+/**
+ * Footnotes
+ *
+ * [1] Using visibility instead of display allows for easier transitions and animation of submenus
+ * [2] Must be a separate ruleset so that hover works in non-modern browsers
+ */
+
+.menu,
+.sub-menu
+	margin: 0
+	padding: 0
+
+
+.genesis-nav-menu .menu-item
+	list-style: none
+	width: 100%
+
+	@include above-phone
+		max-width: max-content
+
+
+.genesis-nav-menu
+	justify-content: stretch
+
+	@include above-phone
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-end
+
+
+// Menu Reponsive
+.js .nav-primary:not(.opened) .genesis-nav-menu
+	display: none
+
+	@include above-phone
+		display: flex
+
+
+// Menu item style
+.genesis-nav-menu
+	button
+		border: 0
+		background: transparent
+
+	a,
+	button
+		padding: var(--wp--custom--menu--item-padding)
+		color: var(--wp--custom--color--foreground)
+		font-size: var(--wp--custom--menu--font-size)
+		font-weight: var(--wp--custom--font-weight--normal)
+		text-decoration: none
+		transition: none
+
+		&:hover,
+		&:focus
+			color: var(--wp--custom--color--secondary)
+
+		&:focus
+			background-color: var(--wp--preset--color--light-orange)
+
+	button:hover svg,
+	button:focus svg
+		fill: var(--wp--custom--color--secondary)
+
+
+.genesis-nav-menu > li
+	position: relative
+	flex: 1 1 auto
+	display: flex
+	justify-content: stretch
+	flex-wrap: wrap
+
+
+.genesis-nav-menu
+	> li > a,
+	> li > button
+		flex: 1 0 auto
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		font-size: inherit
+		cursor: pointer
+
+		@include above-phone
+			justify-content: center
+
+
+// SVG
+.genesis-nav-menu
+	svg
+		width: 1em
+		height: 1em
+		margin-left: .5em
+		fill: var(--wp--custom--color--foreground)
+
+
+	[aria-expanded="true"] svg
+		transform: scaleY(-1)
+
+
+// Submenu Style
+.genesis-nav-menu ul
+	min-width: 100%
+	width: 15em
+	padding: 0
+	background-color: var(--wp--preset--color--light-gray)
 	z-index: 100
-	top: 0
-	right: 0
-	margin: 0 auto
-	padding: 15px
-	border-width: 0
-	color: var(--color-highlight)
-	background-color: transparent
-	text-align: center
+
+
+// Submenu Responsive Behavior
+.genesis-nav-menu ul[aria-hidden="false"]
+	position: static
+	width: 100%
+	flex: 0 0 auto
+
+	@include above-phone
+		position: absolute
+		width: auto
+
+
+// Submenu link
+.genesis-nav-menu ul a
+	display: block
+	padding-top: var(--wp--custom--spacing--small)
+	padding-bottom: var(--wp--custom--spacing--small)
+
+	@include above-phone
+		padding: var(--wp--custom--menu--item-padding)
+		white-space: nowrap
+
+
+// Mobile Menu Toggle
+button.nav-toggle
+	display: none // Hidden by defualt if no JS support
+	align-items: center
+	font-size: inherit
+	font-family: inherit
+	padding: var(--wp--custom--menu--item-padding)
+	background: transparent
+	border: 0
+	cursor: pointer
+
+	svg
+		width: 1em
+		height: 1em
+		margin-left: .5em
+		fill: var(--wp--custom--color--foreground)
+
+
+// Responsive Mobile Menu Toggle
+.js button.nav-toggle
+	display: flex
 
 	@include above-phone
 		display: none
 
-	&:focus,
-	&:hover
-		border-width: 0
-		color: var(--color-highlight)
-		background-color: transparent
 
-	&:before
-		display: inline-block
-		transition: transform 0.25s ease-in-out
-		transform: rotate(0)
-		text-rendering: auto
-
-	.sub-menu &
-		padding: 12px 10px
-
-	&.activated:before
-		transform: rotate(180deg)
-
-
-// Primary nav
-//**********************************************
-
-.nav-primary
-	width: 100%
-	
+// Addon classes
+.menu-bold > a
 	@include above-phone
-		width: auto
+		font-weight: var(--wp--custom--font-weight--bold)
 
 
-// Primary nav
-//**********************************************
-
-.nav-secondary
-	margin-bottom: var(--spacing-medium)
-
+.menu-highlight > a
 	@include above-phone
-		width: auto
-		margin-bottom: 0
+		padding-right: 20px
+		padding-left: 20px
+		margin-left: 20px
+		color: var(--wp--preset--color--white)
+		background-color: var(--wp--custom--color--secondary)
+		font-weight: var(--wp--custom--font-weight--bold)
+
+		&:hover,
+		&:focus
+			background-color: var(--wp--custom--color--foreground)
+			color: var(--wp--preset--color--white)

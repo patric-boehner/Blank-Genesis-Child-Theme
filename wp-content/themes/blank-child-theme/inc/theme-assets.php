@@ -116,14 +116,8 @@ function pb_enqueue_child_theme_scripts_styles() {
 	wp_enqueue_script(
     'global-script',
     get_stylesheet_directory_uri() . "/assets/js/global.min.js",
-    array( 'jquery' ),
+    array(),
     cache_version_id(),
-    false
-  );
-
-	wp_script_add_data(
-    'global-script',
-    'defer',
     true
   );
 

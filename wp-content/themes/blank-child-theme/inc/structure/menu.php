@@ -86,3 +86,65 @@ function pb_clean_nav_menu_classes( $classes ) {
 	return $classes;
 
 }
+
+
+// Add no-js class to menu
+add_filter( 'wp_nav_menu_args', 'yourprefix_remove_superfish_nav_primary' );
+function yourprefix_remove_superfish_nav_primary( $args ) {
+
+	if( 'primary' == $args['theme_location'] ) {
+		$args['menu_class'] = 'menu genesis-nav-menu menu-primary no-js';
+	}
+	
+	return $args;
+
+}
+
+
+/**
+ * Add arrows to menu items
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/code/add-arrows-to-menu-items/
+ * 
+ * @param string $item_output, HTML output for the menu item
+ * @param object $item, menu item object
+ * @param int $depth, depth in menu structure
+ * @param object $args, arguments passed to wp_nav_menu()
+ * @return string $item_output
+ */
+add_filter( 'walker_nav_menu_start_el', 'pb_arrows_in_menus', 10, 4 );
+function pb_arrows_in_menus( $item_output, $item, $depth, $args ) {
+
+	if( in_array( 'menu-item-has-children', $item->classes ) ) {
+
+		$icon = pb_load_inline_svg( array(
+			'filename' => 'chevron-down',
+			'title' => '',
+		) );
+
+		$arrow = 0 == $depth ? $icon : $icon;
+		$item_output = str_replace( '</a>', $arrow . '</a>', $item_output );
+
+	}
+
+	return $item_output;
+
+}
+
+
+// Add mobile menu button
+add_action('genesis_header', 'pb_add_primary_menu_toggle', 10);
+function pb_add_primary_menu_toggle() {
+
+	$icon = pb_load_inline_svg( array(
+		'filename' => 'menu',
+	) );
+
+	$menu = esc_html__( 'Menu' , 'blank-child-theme');
+
+	$mobile_button = sprintf( '<button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="genesis-nav-primary">%s%s</button>', '<span>'.$menu.'</span>' ,$icon );
+
+
+	echo $mobile_button;
+
+}

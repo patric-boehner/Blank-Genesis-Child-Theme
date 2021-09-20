@@ -18,13 +18,11 @@ return [
 		'script',
 		'style',
 	],
-	'structural-wraps'								=> [
+	'structural-wraps'				  => [
 		'header',
-		'nav',
 		'footer',
 	],
 	'genesis-accessibility'           => [
-		'drop-down-menu',
 		'headings',
 		'rems',
 		'search-form',
@@ -33,7 +31,7 @@ return [
 	'genesis-after-entry-widget-area' => '',
 	'genesis-footer-widgets'          => 0,
 	'genesis-menus'                   => [
-		'primary'   => __( 'Header Menu', 'genesis-sample' ),
-		'secondary' => __( 'Footer Menu', 'genesis-sample' ),
+		'primary'   => __( 'Header Menu', 'blank-child-theme' ),
+		'secondary' => __( 'Footer Menu', 'blank-child-theme' ),
 	],
 ];

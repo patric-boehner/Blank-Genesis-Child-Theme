@@ -54,14 +54,6 @@ function pb_load_post_type_support() {
 }
 
 
-// Registers the responsive menus.
-if ( function_exists( 'genesis_register_responsive_menus' ) ) {
-
-	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
-
-}
-
-
 // Remove the site description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 

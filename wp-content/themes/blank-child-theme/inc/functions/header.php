@@ -15,6 +15,16 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+//* Disable the superfish script
+add_action( 'wp_enqueue_scripts', 'sp_disable_superfish' );
+function sp_disable_superfish() {
+	wp_deregister_script( 'superfish' );
+	wp_deregister_script( 'superfish-args' );
+}
+
+apply_filters( 'genesis_superfish_enabled', false );
+
+
 // Remove jQuery Migrate
 add_action( 'wp_default_scripts', 'pb_remove_jquery_migrate' );
 function pb_remove_jquery_migrate( $scripts ) {
