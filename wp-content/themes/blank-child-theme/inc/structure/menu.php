@@ -136,14 +136,16 @@ function pb_arrows_in_menus( $item_output, $item, $depth, $args ) {
 add_action('genesis_header', 'pb_add_primary_menu_toggle', 10);
 function pb_add_primary_menu_toggle() {
 
-	$icon = pb_load_inline_svg( array(
-		'filename' => 'menu',
+	$icon_open = pb_load_inline_svg( array(
+		'filename' => 'bars'
 	) );
+	$icon_close = pb_load_inline_svg( array(
+		'filename' => 'close'
+	) );
+	
+	$menu = sprintf( '<span>%s</span>', esc_html__( 'Menu' , 'blank-child-theme') );
 
-	$menu = esc_html__( 'Menu' , 'blank-child-theme');
-
-	$mobile_button = sprintf( '<button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="genesis-nav-primary">%s%s</button>', '<span>'.$menu.'</span>' ,$icon );
-
+	$mobile_button = sprintf( '<button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="genesis-nav-primary">%s%s%s</button>', $menu, $icon_open, $icon_close );
 
 	echo $mobile_button;
 

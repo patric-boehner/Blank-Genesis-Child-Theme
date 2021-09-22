@@ -4,9 +4,11 @@
 .nav-primary
 	// background-color: var(--wp--preset--color--light-gray)
 	width: 100%
+	border-top: 1px solid var(--wp--preset--color--light-gray)
 
 	@include above-phone
 		width: auto
+		border-top: 0
 
 
 // Responsive Menu
@@ -67,23 +69,21 @@
 
 .genesis-nav-menu .menu-item
 	list-style: none
-	width: 100%
-
-	@include above-phone
-		max-width: max-content
 
 
 .genesis-nav-menu
 	justify-content: stretch
+	padding: var(--wp--custom--spacing--small) 0
 
 	@include above-phone
 		display: flex
 		flex-wrap: wrap
 		justify-content: flex-end
+		padding: 0
 
 
 // Menu Reponsive
-.js .nav-primary:not(.opened) .genesis-nav-menu
+.js .nav-primary:not(.opened)
 	display: none
 
 	@include above-phone
@@ -124,6 +124,10 @@
 	justify-content: stretch
 	flex-wrap: wrap
 
+	@include phone
+		button
+			justify-content: space-between
+
 
 .genesis-nav-menu
 	> li > a,
@@ -142,8 +146,8 @@
 // SVG
 .genesis-nav-menu
 	svg
-		width: 1em
-		height: 1em
+		width: 0.7em
+		height: 0.7em
 		margin-left: .5em
 		fill: var(--wp--custom--color--foreground)
 
@@ -190,20 +194,45 @@ button.nav-toggle
 	font-size: inherit
 	font-family: inherit
 	padding: var(--wp--custom--menu--item-padding)
+	padding-right: 0
 	background: transparent
 	border: 0
 	cursor: pointer
 
 	svg
-		width: 1em
-		height: 1em
+		width: 0.8em
+		height: 0.8em
 		margin-left: .5em
 		fill: var(--wp--custom--color--foreground)
+		
+	&[aria-expanded="true"]
+		.icon-bars
+			display: none
+
+		.icon-close
+			display: block
+
+
+	&[aria-expanded="false"]
+		.icon-bars
+			display: block
+		
+		.icon-close
+			display: none
+
 
 
 // Responsive Mobile Menu Toggle
 .js button.nav-toggle
 	display: flex
+
+	&:hover,
+	&:focus
+		color: var(--wp--custom--color--secondary)
+
+	&:hover svg,
+	&:focus svg
+		fill: var(--wp--custom--color--secondary)
 
 	@include above-phone
 		display: none

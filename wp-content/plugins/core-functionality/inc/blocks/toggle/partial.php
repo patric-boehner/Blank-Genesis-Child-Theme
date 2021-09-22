@@ -16,14 +16,18 @@ if( !defined( 'ABSPATH' ) ) exit;
 //**********************
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'toggle-block-' . $block['id'];
+$id = 'toggle-' . $block['id'];
+$id_only = str_replace( 'block_', '', $block['id'] );
+
+$toggle_id = 'toggle__button-' . $id_only;
+$content_id = 'toggle__content-' . $id_only;
 
 if( !empty( $block['anchor'] ) ) {
     $id = $block['anchor'];
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'toggle-block toggle-container';
+$className = 'toggle-block';
 
 if( !empty( $block['className'] ) ) {
     $className .= ' ' . $block['className'];
@@ -41,10 +45,21 @@ if( !empty( $block['align_content'] ) ) {
   $className .= ' is-vertically-aligned-' . $block['align_content'];
 }
 
+// Icons
+if ( function_exists( 'pb_load_inline_svg' ) ) {
+  $icon_svg = pb_load_inline_svg( array( 
+      'filename' => 'chevron-down',
+      'width' => '24',
+      'height' => '24',
+      'title' => '',
+  ) );
+} else {
+  $icon_svg = '';
+}
+
 // Variables
 $text = esc_html( get_field( 'heading' ) );
 $heading = esc_html( get_field( 'heading_level' ) );
-
 
 
 /**

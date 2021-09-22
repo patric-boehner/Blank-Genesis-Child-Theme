@@ -2,11 +2,9 @@
 @import "../02-tools/variables"
 @import "../02-tools/mixins"
 
+
 .toggle-block
     margin-bottom: var(--wp--custom--spacing--medium)
-
-    .hidden
-        display: none
 
     &__header
         position: relative
@@ -15,13 +13,17 @@
         font-weight: var(--wp--custom--heading--font-weight)
         background-color: var(--wp--custom--color--background)
         padding: var(--wp--custom--spacing--small)
-        padding-left: calc( var(--wp--custom--spacing--small) + 40px )
         margin-bottom: 0
 
     .block__inner
         padding: var(--wp--custom--spacing--medium)
 
-.toggle-block__header > button
+
+.toggle__content:not(.open)
+    display: none
+
+
+.toggle__button
     background: transparent
     border: none
     border-radius: 0
@@ -33,16 +35,28 @@
     font-weight: inherit
     width: 100%
     text-align: left
+    display: flex
+    align-items: center
 
-    &::after
-        position: absolute
-        content: ''
-        background: url('#{$icon-path}/chevron-down.svg') no-repeat top left
-        background-size: contain
-        width: 1em
-        height: 1em
-        top: 20px
-        left: 20px
+    &:focus
+        background-color: var(--wp--preset--color--light-orange)
 
-.toggle-block__header > button[aria-expanded='false']::after
+
+.js .toggle__button svg
+    width: 0.6em
+    height: 0.6em
+    margin-right: 15px
+
+
+.js .toggle__button
+    &:hover,
+    &:focus
+        color: var(--wp--custom--color--secondary)
+
+    &:hover svg,
+    &:focus svg
+        fill: var(--wp--custom--color--secondary)
+
+
+.toggle__button:not(.expanded) svg
     transform: rotate(-90deg)

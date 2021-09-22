@@ -1,1 +1,46 @@
-.toggle-block{margin-bottom:var(--wp--custom--spacing--medium)}.toggle-block .hidden{display:none}.toggle-block__header{position:relative;width:100%;font-size:var(--wp--custom--heading--size-h3);font-weight:var(--wp--custom--heading--font-weight);background-color:var(--wp--custom--color--background);padding:var(--wp--custom--spacing--small);padding-left:calc( var(--wp--custom--spacing--small) + 40px);margin-bottom:0}.toggle-block .block__inner{padding:var(--wp--custom--spacing--medium)}.toggle-block__header>button{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0;outline:none;cursor:pointer;font-size:inherit;font-weight:inherit;width:100%;text-align:left}.toggle-block__header>button::after{position:absolute;content:'';background:url("../icons/chevron-down.svg") no-repeat top left;background-size:contain;width:1em;height:1em;top:20px;left:20px}.toggle-block__header>button[aria-expanded='false']::after{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}
+.toggle-block {
+  margin-bottom: var(--wp--custom--spacing--medium); }
+  .toggle-block__header {
+    position: relative;
+    width: 100%;
+    font-size: var(--wp--custom--heading--size-h3);
+    font-weight: var(--wp--custom--heading--font-weight);
+    background-color: var(--wp--custom--color--background);
+    padding: var(--wp--custom--spacing--small);
+    margin-bottom: 0; }
+  .toggle-block .block__inner {
+    padding: var(--wp--custom--spacing--medium); }
+
+.toggle__content:not(.open) {
+  display: none; }
+
+.toggle__button {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: inherit;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center; }
+  .toggle__button:focus {
+    background-color: var(--wp--preset--color--light-orange); }
+
+.js .toggle__button svg {
+  width: 0.6em;
+  height: 0.6em;
+  margin-right: 15px; }
+
+.js .toggle__button:hover, .js .toggle__button:focus {
+  color: var(--wp--custom--color--secondary); }
+
+.js .toggle__button:hover svg, .js .toggle__button:focus svg {
+  fill: var(--wp--custom--color--secondary); }
+
+.toggle__button:not(.expanded) svg {
+  transform: rotate(-90deg); }
