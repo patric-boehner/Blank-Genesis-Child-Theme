@@ -1,3 +1,38 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-style-font-display: swap;
+  src: url("../fonts/source-sans-pro-v14-latin-regular.woff2") format("woff2");
+  src: url("../fonts/source-sans-pro-v14-latin-regular.woff2") format("woff2"), url("../fonts/source-sans-pro-v14-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/source-sans-pro-v14-latin-600.woff2") format("woff2");
+  src: url("../fonts/source-sans-pro-v14-latin-600.woff2") format("woff2"), url("../fonts/source-sans-pro-v14-latin-600.woff") format("woff");
+}
+
+@media only screen and (max-width: 1340px) {
+  body {
+    --wp--custom--menu--item-padding: var(--wp--custom--spacing--small);
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  body {
+    --wp--custom--heading--line-heigh: 1.15;
+    --wp--custom--body--line-heigh: 1.525;
+    --wp--custom--spacing--content-area: var(--wp--custom--spacing--large);
+    --wp--custom--spacing--row: var(--wp--custom--spacing--large);
+    --wp--custom--spacing--large: var(--wp--custom--spacing--medium);
+    --wp--custom--spacing--x-large: var( --wp--custom--spacing--large );
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -77,7 +112,7 @@ html {
 .pagination .inner-wrap {
   width: 100%;
   display: grid;
-  grid-gap: var(--wp--custom--spacing--medium);
+  gap: var(--wp--custom--spacing--medium);
 }
 
 @media only screen and (min-width: 768px) {
@@ -108,33 +143,27 @@ html {
   }
 }
 
-@media only screen and (min-width: 550px) {
-  .search-form {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-            flex-direction: row;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-  }
-  .search-form label,
-.search-form .search-submit {
-    -webkit-align-self: stretch;
-            align-self: stretch;
-  }
-  .search-form label {
-    -webkit-flex-basis: 50%;
-            flex-basis: 50%;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
-    margin-right: var(--wp--custom--spacing--medium);
-  }
-  .search-form .search-submit {
-    -webkit-flex-basis: content;
-            flex-basis: content;
-  }
+.search-form {
+  display: -webkit-flex;
+  display: flex;
+  gap: var(--wp--custom--spacing--small);
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: var(--wp--custom--spacing--medium);
+}
+
+.search-form label {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+          align-items: stretch;
+  margin: 0;
+  -webkit-flex-basis: 50%;
+          flex-basis: 50%;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
 }
 
 .site-header {
@@ -662,7 +691,7 @@ mark {
 .genesis-nav-menu {
   -webkit-justify-content: stretch;
           justify-content: stretch;
-  padding: var(--wp--custom--spacing--small) 0;
+  padding: var(--wp--custom--spacing--small) calc( var(--wp--custom--spacing--side) - var(--wp--custom--spacing--small));
 }
 
 @media only screen and (min-width: 768px) {
@@ -740,8 +769,6 @@ mark {
 
 .genesis-nav-menu > li > a,
 .genesis-nav-menu > li > button {
-  -webkit-flex: 1 0 auto;
-          flex: 1 0 auto;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -760,10 +787,14 @@ mark {
   }
 }
 
+.genesis-nav-menu > li > button {
+  width: 100%;
+  gap: var(--wp--custom--spacing--small);
+}
+
 .genesis-nav-menu svg {
   width: 0.7em;
   height: 0.7em;
-  margin-left: .5em;
   fill: var(--wp--custom--color--foreground);
 }
 
@@ -809,8 +840,6 @@ mark {
 
 button.nav-toggle {
   display: none;
-  -webkit-align-items: center;
-          align-items: center;
   font-size: inherit;
   font-family: inherit;
   padding: var(--wp--custom--menu--item-padding);
@@ -818,12 +847,14 @@ button.nav-toggle {
   background: transparent;
   border: 0;
   cursor: pointer;
+  -webkit-align-items: center;
+          align-items: center;
+  gap: var(--wp--custom--spacing--small);
 }
 
 button.nav-toggle svg {
   width: 0.8em;
   height: 0.8em;
-  margin-left: .5em;
   fill: var(--wp--custom--color--foreground);
 }
 

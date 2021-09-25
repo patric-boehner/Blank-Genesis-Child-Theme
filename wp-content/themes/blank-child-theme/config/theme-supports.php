@@ -18,7 +18,7 @@ return [
 		'script',
 		'style',
 	],
-	'structural-wraps'				  => [
+	'genesis-structural-wraps'        => [
 		'header',
 		'footer',
 	],
@@ -30,6 +30,7 @@ return [
 	],
 	'genesis-after-entry-widget-area' => '',
 	'genesis-footer-widgets'          => 0,
+	'genesis-lazy-load-images'        => '',
 	'genesis-menus'                   => [
 		'primary'   => __( 'Header Menu', 'blank-child-theme' ),
 		'secondary' => __( 'Footer Menu', 'blank-child-theme' ),

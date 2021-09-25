@@ -47,7 +47,7 @@ add_filter( 'image_size_names_choose', 'pa_add_medium_large_size_selection' );
 function pa_add_medium_large_size_selection( $sizes ) {
 
     return array_merge( $sizes, array(
-        'medium_large' => __( 'Medium Large' ),
+        'medium_large' => __( 'Medium Large', 'blank-child-theme' ),
     ) );
 
 }

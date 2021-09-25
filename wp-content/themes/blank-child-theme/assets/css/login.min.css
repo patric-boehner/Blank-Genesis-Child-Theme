@@ -1,13 +1,13 @@
 @media only screen and (max-width: 1340px) {
-  :root {
-    --menu-item-padding: var(--spacing-small) var(--spacing-small);
+  body {
+    --wp--custom--menu--item-padding: var(--wp--custom--spacing--small);
   }
 }
 
 @media only screen and (max-width: 1023px) {
-  :root {
-    --heading-line-height: 1.15;
-    --body-font-line-height: 1.525;
+  body {
+    --wp--custom--heading--line-heigh: 1.15;
+    --wp--custom--body--line-heigh: 1.525;
     --wp--custom--spacing--content-area: var(--wp--custom--spacing--large);
     --wp--custom--spacing--row: var(--wp--custom--spacing--large);
     --wp--custom--spacing--large: var(--wp--custom--spacing--medium);

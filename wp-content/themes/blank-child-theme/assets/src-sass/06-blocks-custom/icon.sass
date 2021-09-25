@@ -25,6 +25,7 @@
 .icon-block
     display: flex
     flex-wrap: nowrap
+    gap: var(--wp--custom--spacing--small)
     margin-bottom: var(--wp--custom--spacing--small)
 
     .icon
@@ -34,23 +35,14 @@
     &.icon-align-center
         flex-direction: column
 
-        .icon
-            margin-bottom: var(--wp--custom--spacing--small)
-            margin-top: 8px // Line height offset
-    
     &.icon-align-left
         flex-direction: row
 
-        .icon
-            margin-right: var(--wp--custom--spacing--small)
+    &.icon-align-top .icon
+        align-self: start
 
-    &.icon-align-top
-        .icon
-            align-self: start
-
-    &.icon-align-center
-        .icon
-            align-self: center
+    &.icon-align-center .icon
+        align-self: center
 
     &.is-vertically-aligned-center
         align-items: center

@@ -46,8 +46,8 @@ function sp_post_info_filter( $post_info ) {
 
 	if ( is_page() ) {
 		return;
-	}
-
+	}	
+	
 	$post_info = '[post_date] by [post_author] [post_comments]';
 
 	return $post_info;

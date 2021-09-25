@@ -16,6 +16,26 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Hide ACF Admin on live enviroment
+if ( 'local' !== wp_get_environment_type() || 'development' !== wp_get_environment_type() || 'staging' !== wp_get_environment_type() ) {
+
+	add_filter( 'acf/settings/show_admin', '__return_true' );
+
+}
+
+
+// Add Social Share Settings
+if( function_exists('acf_add_options_page') ) {
+ 
+	acf_add_options_sub_page(array(
+		'page_title' 	=> __( 'Social Share Setting', 'blank-child-theme' ),
+		'menu_title'	=> __( 'Social Share', 'blank-child-theme' ),
+		'parent_slug'	=> 'options-general.php',
+	));
+	
+}
+
+
 // Post archive theme settings page
 // if( function_exists('acf_add_options_page') ) {
  

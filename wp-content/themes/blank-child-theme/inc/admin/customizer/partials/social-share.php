@@ -27,7 +27,7 @@ $wp_customize->add_section(
   'ct_social_share_settings' ,
   array(
     'title'      => __( 'Social Share Links', 'blank-child-theme' ),
-    'panel'			 => 'genesis',
+    'panel'			 => 'blank-child-theme',
   // 'priority'   => 30,
   )
 );

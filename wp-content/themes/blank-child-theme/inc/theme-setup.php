@@ -23,7 +23,7 @@ if( !defined( 'ABSPATH' ) ) exit;
  *
  * @since 3.0.0
  */
-add_action( 'after_setup_theme', 'pb_load_theme_support', 9 );
+add_action( 'after_setup_theme', 'pb_load_theme_support', 12 );
 function pb_load_theme_support() {
 
 	$theme_supports = genesis_get_config( 'theme-supports' );
@@ -42,7 +42,7 @@ function pb_load_theme_support() {
  *
  * @since 3.0.0
  */
-add_action( 'after_setup_theme', 'pb_load_post_type_support', 9 );
+add_action( 'after_setup_theme', 'pb_load_post_type_support', 12 );
 function pb_load_post_type_support() {
 
 	$post_type_supports = genesis_get_config( 'post-type-supports' );

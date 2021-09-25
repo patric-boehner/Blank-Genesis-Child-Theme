@@ -46,10 +46,10 @@ function pb_remove_customizer_sections( $wp_customize ) {
 // https://codex.wordpress.org/Theme_Customization_API
 // https://codex.wordpress.org/Class_Reference%5CWP_Customize_Manager%5Cadd_control
 
-add_action( 'customize_register', 'pb_customize_register' );
-function pb_customize_register( $wp_customize ) {
+// add_action( 'customize_register', 'pb_customize_register' );
+// function pb_customize_register( $wp_customize ) {
 
-	// Add social-share
-	include CHILD_DIR . '/inc/admin/customizer/partials/social-share.php';
+// 	// Add social-share
+// 	include CHILD_DIR . '/inc/admin/customizer/partials/social-share.php';
 
-}
+// }

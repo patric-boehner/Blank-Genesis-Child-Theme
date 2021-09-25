@@ -15,11 +15,13 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-//* Disable the superfish script
+// Disable the superfish script
 add_action( 'wp_enqueue_scripts', 'sp_disable_superfish' );
 function sp_disable_superfish() {
+
 	wp_deregister_script( 'superfish' );
 	wp_deregister_script( 'superfish-args' );
+
 }
 
 apply_filters( 'genesis_superfish_enabled', false );
@@ -54,17 +56,6 @@ function my_deregister_scripts(){
 
 }
    
-
-
-// Disable the superfish script
-// add_action( 'wp_enqueue_scripts', 'sp_disable_superfish' );
-// function sp_disable_superfish() {
-	
-// 	wp_deregister_script( 'superfish' );
-// 	wp_deregister_script( 'superfish-args' );
-
-// }
-
 
 // Remove Meta Tags
 remove_action( 'wp_head', 'wp_generator' );

@@ -15,28 +15,15 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-
-/**
- * Custom search form
- *
- */
-add_filter( 'get_search_form', 'pb_search_form' );
-function pb_search_form() {
-
-	$label_text = esc_html__( 'Search for', 'blank-child-theme' );
-	$placeholder_text = esc_html__( 'Search', 'blank-child-theme' );
-
-	$text = esc_html__( 'Submit', 'blank-child-theme' );
-	$button = $text;
+add_filter( 'genesis_search_form', 'ea_search_form' );
+function ea_search_form() {
 
 	ob_start();
-
-	// Include search form
-	include CHILD_DIR . '/inc/views/search-form.php';
-
+	get_template_part( 'searchform' );
 	return ob_get_clean();
-
+	
 }
+
 
 
 // Restric what post types display in search results

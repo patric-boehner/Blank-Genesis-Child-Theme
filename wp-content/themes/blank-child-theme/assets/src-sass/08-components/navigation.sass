@@ -73,7 +73,7 @@
 
 .genesis-nav-menu
 	justify-content: stretch
-	padding: var(--wp--custom--spacing--small) 0
+	padding: var(--wp--custom--spacing--small) calc( var(--wp--custom--spacing--side) - var(--wp--custom--spacing--small) )
 
 	@include above-phone
 		display: flex
@@ -132,7 +132,6 @@
 .genesis-nav-menu
 	> li > a,
 	> li > button
-		flex: 1 0 auto
 		display: flex
 		flex-wrap: wrap
 		align-items: center
@@ -143,12 +142,16 @@
 			justify-content: center
 
 
+	> li > button
+		width: 100%
+		gap: var(--wp--custom--spacing--small)
+
+
 // SVG
 .genesis-nav-menu
 	svg
 		width: 0.7em
 		height: 0.7em
-		margin-left: .5em
 		fill: var(--wp--custom--color--foreground)
 
 
@@ -190,7 +193,6 @@
 // Mobile Menu Toggle
 button.nav-toggle
 	display: none // Hidden by defualt if no JS support
-	align-items: center
 	font-size: inherit
 	font-family: inherit
 	padding: var(--wp--custom--menu--item-padding)
@@ -198,11 +200,12 @@ button.nav-toggle
 	background: transparent
 	border: 0
 	cursor: pointer
+	align-items: center
+	gap: var(--wp--custom--spacing--small)
 
 	svg
 		width: 0.8em
 		height: 0.8em
-		margin-left: .5em
 		fill: var(--wp--custom--color--foreground)
 		
 	&[aria-expanded="true"]

@@ -42,15 +42,21 @@
 	&__list
 		margin: 0
 		padding: 0
+		display: flex
+		flex-wrap: wrap
+		gap: var(--wp--custom--grid--gap)
 
 	&__item
 		list-style: none
-		display: inline-block
 
 	&__link
-		line-height: 0
-		display: block
-		padding: 0 20px 10px 0
+		display: flex
+		align-items: center
+		gap: var(--wp--custom--spacing--x-small)
+
+	&__name
+		@include small-phone
+			@include hiden-text
 
 	.icon
 		width: var(--wp--preset--font-size--normal)
@@ -61,17 +67,10 @@
 
 .author-profile
 	display: flex
-	flex-direction: row
+	gap: var(--wp--custom--grid--gap)
 
 	@include small-phone
 		flex-direction: column
-
-	&__image
-		margin-right: var(--wp--custom--grid--gap)
-
-		@include small-phone
-			margin-right: 0
-			margin-bottom: var(--wp--custom--grid--gap)
 
 	.avatar
 		float: none

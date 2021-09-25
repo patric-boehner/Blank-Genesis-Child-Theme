@@ -22,24 +22,62 @@ function pb_add_blog_crumb( $crumb, $args ) {
 
 	if ( is_singular( 'post' ) || is_category() ) {
 
-		return '<a href="' . get_permalink( get_option( 'page_for_posts' ) ) . '">' . get_the_title( get_option( 'page_for_posts' ) ) .'</a> ' . $args['sep'] . ' ' . $crumb;
-	} else {
-
-		return $crumb;
+		$crumb = '<span class="breadcrumb-link-wrap"><a href="' . get_permalink( get_option( 'page_for_posts' ) ) . '">'. get_the_title( get_option( 'page_for_posts' ) ) .'</a></span>' . $args['sep'] . $crumb;
 
 	}
+
+	return $crumb;
+
 
 }
 
 
-// Remove Breadcrumb Arguments
-add_filter( 'genesis_breadcrumb_args', 'pb_remove_breadcrumb_prefix', 5 );
-function pb_remove_breadcrumb_prefix( $args ) {
+// Remove Breadcrumb labels
+add_filter( 'genesis_breadcrumb_args', 'pb_remove_breadcrumb_labels', 10 );
+function pb_remove_breadcrumb_labels( $args ) {
 
-	// Remove labels
-	foreach( $args['labels'] as $key => &$label ) {
-		$label = '';
-	}
+	$args['labels']['prefix'] = ''; 
+	$args['labels']['author'] = ''; 
+	$args['labels']['category'] = '';
+	$args['labels']['tag'] = ''; 
+	$args['labels']['date'] = ''; 
+	$args['labels']['search'] = ''; 
+	$args['labels']['tax'] = ''; 
+	$args['labels']['post_type'] = ''; 
+	$args['labels']['404'] = '';
+
+	return $args;
+
+}
+
+
+// Alter breadcrumb nav structure
+add_filter( 'genesis_breadcrumb_args', 'pb_alter_breadcrumb_markup', 11 );
+function pb_alter_breadcrumb_markup( $args ) {
+
+	$aria_label = esc_html__( 'Breadcrumb', ' blank-child-theme' );
+
+	$args['prefix'] = '<nav class="breadcrumb" aria-label="'.$aria_label.'">';
+
+	$args['suffix'] = '</nav>';
+
+	return $args;
+
+}
+
+
+// Change breadcrumb seperator
+add_filter( 'genesis_breadcrumb_args', 'pb_change_breadcrumb_seperator', 12 );
+function pb_change_breadcrumb_seperator( $args ) {
+
+	$icon = pb_load_inline_svg( array(
+		'filename' => 'chevron-down',
+		'title' => '',
+	) );
+
+	$aria_label = esc_html__( 'Breadcrumb Separator', ' blank-child-theme' );
+
+	$args['sep'] = '<span class="separator" aria-label="'.$aria_label.'">'.$icon.'</span> '; 
 
 	return $args;
 

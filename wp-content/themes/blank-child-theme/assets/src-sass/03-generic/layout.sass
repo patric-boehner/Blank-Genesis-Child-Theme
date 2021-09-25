@@ -43,7 +43,7 @@
 	.inner-wrap
 		width: 100%
 		display: grid
-		grid-gap: var(--wp--custom--spacing--medium)
+		gap: var(--wp--custom--spacing--medium)
 
 		@include above-phone
 			grid-template-columns: 1fr 1fr
@@ -92,20 +92,15 @@
 // Search Form
 
 .search-form
-	@include above-small-phone
+	display: flex
+	gap: var(--wp--custom--spacing--small)
+	flex-direction: row
+	flex-wrap: wrap
+	margin-bottom: var(--wp--custom--spacing--medium)
+
+	label
 		display: flex
-		flex-direction: row
-		align-items: center
-		flex-wrap: wrap
-
-		label,
-		.search-submit
-			align-self: stretch
-
-		label
-			flex-basis: 50%
-			flex-grow: 1
-			margin-right: var(--wp--custom--spacing--medium)
-
-		.search-submit
-			flex-basis: content
+		align-items: stretch
+		margin: 0
+		flex-basis: 50%
+		flex-grow: 1

@@ -65,8 +65,13 @@ function pb_cf_version_id() {
 //* Include Plugin Files
 //**********************
 
-// Init
-require_once( CORE_DIR . '/inc/init.php' );
+// Functions
+include_once( CORE_DIR . '/inc/functions/dont-update.php' );
+include_once( CORE_DIR . '/inc/functions/custom-meta.php' );
+include_once( CORE_DIR . '/inc/functions/custom-functions.php' );
+include_once( CORE_DIR . '/inc/functions/editor-placeholder.php' );
+include_once( CORE_DIR . '/inc/functions/seo.php' );
+include_once( CORE_DIR . '/inc/functions/acf.php' );
 
 
 // Post Types
@@ -89,4 +94,5 @@ include_once( CORE_DIR . '/inc/blocks/max-width/max-width-block.php' );
 include_once( CORE_DIR . '/inc/blocks/cover-block/cover-block.php' );
 
 // Plugible
+include_once( CORE_DIR . '/inc/plugable/social-share.php' );
 // include_once( CORE_DIR . '/inc/plugable/popular-posts.php' );
