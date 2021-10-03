@@ -80,10 +80,7 @@ function genesis_blocks_body_classes( $classes ) {
 add_action( 'body_class', 'pb_notice_bar_classes' );
 function pb_notice_bar_classes( $classes ) {
 
-	$id = pb_get_id_by_slug( 'banner', 'content_area' );
-	$display = esc_attr( get_post_meta( $id, 'enable_banner', true ) );
-
-	if ( $display == 'enable' ) {
+	if ( pb_is_banner_active() ) {
 
 		$classes[] = 'top-banner-hidden';
 
@@ -168,7 +165,6 @@ function pb_entry_meta_after_content_atts( $atts ) {
 	return $atts;
 	
 }
-
 
 
 /**

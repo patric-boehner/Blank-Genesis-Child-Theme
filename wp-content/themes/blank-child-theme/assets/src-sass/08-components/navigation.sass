@@ -12,15 +12,23 @@
 
 
 // Responsive Menu
+.js .nav-primary
+	padding: 0
+
+	@include phone
+		position: absolute
+		top: 100%
+		left: 0
+		z-index: 100
+		padding: var(--wp--custom--spacing--small) calc( var(--wp--custom--spacing--side) - var(--wp--custom--spacing--small) )
+
+		
+
 .nav-primary
 	position: relative
 
 	@include phone
-		position: absolute
 		background-color: var(--wp--preset--color--white)
-		top: 100%
-		left: 0
-		z-index: 100
 
 
 // Initial state, hidden off screen
@@ -67,19 +75,12 @@
 	padding: 0
 
 
-.genesis-nav-menu .menu-item
-	list-style: none
-
-
 .genesis-nav-menu
 	justify-content: stretch
-	padding: var(--wp--custom--spacing--small) calc( var(--wp--custom--spacing--side) - var(--wp--custom--spacing--small) )
+	// padding: var(--wp--custom--spacing--small) calc( var(--wp--custom--spacing--side) - var(--wp--custom--spacing--small) )
 
-	@include above-phone
-		display: flex
-		flex-wrap: wrap
-		justify-content: flex-end
-		padding: 0
+	// @include above-phone
+	// 	padding: 0
 
 
 // Menu Reponsive
@@ -142,7 +143,8 @@
 			justify-content: center
 
 
-	> li > button
+	> li > button,
+	> li > a
 		width: 100%
 		gap: var(--wp--custom--spacing--small)
 

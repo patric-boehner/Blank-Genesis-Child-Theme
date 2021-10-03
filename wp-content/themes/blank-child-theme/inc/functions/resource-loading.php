@@ -20,18 +20,18 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 // Resource hinting with preconect and dns-preload
 // add_filter( 'wp_resource_hints', 'pb_resource_hints', 10, 2 );
-function pb_resource_hints( $urls, $relation_type ) {
+// function pb_resource_hints( $urls, $relation_type ) {
 
-	if ( 'preconnect' === $relation_type ) {
-		$urls[] = array(
-			'href' => '//fonts.gstatic.com',
-			'crossorigin',
-		);
-	}
+// 	if ( 'preconnect' === $relation_type ) {
+// 		$urls[] = array(
+// 			'href' => '//fonts.gstatic.com',
+// 			'crossorigin',
+// 		);
+// 	}
 
-	return $urls;
+// 	return $urls;
 
-}
+// }
 
 
 /**
@@ -67,6 +67,27 @@ function pb_filter_script_loader_tag( $tag, $handle ) {
 	return $tag;
 
 }
+
+
+// Defer core JS files
+add_filter('script_loader_tag', 'pb_defer_comments_script', 10, 3);
+function pb_defer_comments_script($tag, $handle, $src) {
+
+    if ( 'comment-reply' !== $handle) {
+		return $tag;
+	}
+
+	$attr = 'defer';
+
+	// Prevent adding attribute when already added in #12009.
+	if( ! preg_match( ":\s$attr(=|>|\s):", $tag ) ) {
+		$tag = preg_replace( ':(?=></script>):', " rel='$attr'", $tag, 1 );
+	}
+   
+	return $tag;
+
+} 
+
 
 
 // Preload Font Files

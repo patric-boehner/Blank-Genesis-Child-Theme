@@ -18,28 +18,28 @@ remove_theme_support( 'core-block-patterns' );
 
 
 // Register block pattern categories
-register_block_pattern_category(
-    'posts',
-    array( 'label' => __( 'Custom Cateogry', 'blank-child-theme' ) )
-);
+// register_block_pattern_category(
+//     'posts',
+//     array( 'label' => __( 'Custom Cateogry', 'blank-child-theme' ) )
+// );
 
 
 // Custom block patterns
 // add_action( 'init', 'cf_register_block_patterns' );
-function cf_register_block_patterns() {
+// function cf_register_block_patterns() {
 
-    register_block_pattern(
-        'core-functionality/colum-header-layout',
-        array(
-            'title'       => __( 'Title', 'blank-child-theme' ),
-            'description' => _x( 'Description', 'Block pattern description', 'blank-child-theme' ),
-            'categories'  => array( 'columns' ),
-            'viewportWidth' => 1400,
-            'content'     => '',
-        )
-    );
+//     register_block_pattern(
+//         'core-functionality/colum-header-layout',
+//         array(
+//             'title'       => __( 'Title', 'blank-child-theme' ),
+//             'description' => _x( 'Description', 'Block pattern description', 'blank-child-theme' ),
+//             'categories'  => array( 'columns' ),
+//             'viewportWidth' => 1400,
+//             'content'     => '',
+//         )
+//     );
 
-}
+// }
  
 
 

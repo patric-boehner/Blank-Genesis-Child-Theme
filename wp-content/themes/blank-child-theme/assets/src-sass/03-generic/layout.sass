@@ -1,5 +1,15 @@
 
 // Nav Layout
+.menu-primary
+	@include above-phone
+		display: flex
+		flex-wrap: wrap
+		padding: 0
+		margin: 0
+	
+	.menu-item
+		list-style: none
+
 
 .nav-primary,
 .nav-secondary
@@ -9,20 +19,22 @@
 
 
 // Page Layout
-
+// .full-width and default layout
 .content-area,
 .content,
 .wrap
 	display: block
 	width: calc( 100% - ( var(--wp--custom--spacing--side) * 2 ) )
-	max-width: var(--wp--custom--width--max-width)
+	max-width: var(--wp--custom--width--full)
 	margin: 0 auto
 
 
 .narrow-content
+	--wp--custom--width--responsive: var(--wp--custom--width--content)
+
 	.content-area,
 	.content
-		--wp--custom--width--max-width: var(--wp--custom--width--content)
+		max-width: var(--wp--custom--width--responsive)
 
 
 .wp-block-cover,
@@ -35,7 +47,7 @@
 .wp-block-cover__inner-container,
 .wp-block-group__inner-container
 	width: 100%
-	max-width: var(--wp--custom--width--max-width)
+	max-width: var(--wp--custom--width--full)
 	margin: 0 auto
 
 
@@ -79,13 +91,36 @@
 // 			grid-area: sidebar
 
 
+// Comments
+.comment-form
+	display: grid
+	grid-gap: var(--wp--custom--grid--gap)
+
+	> *
+		width: 100%
+		margin-bottom: 0
+
+
 // Footer
 
+.menu-secondary
+	display: flex
+	flex-wrap: wrap
+	padding: 0
+	margin: 0
+	
+	.menu-item
+		list-style: none
+
+
 .sub-footer
-	@include above-tablet
-		display: flex
-		flex-wrap: wrap
-		justify-content: space-between
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	align-items: center
+	gap: var(--wp--custom--grid--gap)
+
+	@include above-phone
 		flex-direction: row-reverse
 
 

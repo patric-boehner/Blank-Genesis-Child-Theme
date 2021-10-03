@@ -8,6 +8,7 @@
 	width: 100vw
 
 
+// Loade Align Wide styles only on desktop
 @include above-desktop
 	// For the negative left/right margin, subtract page width from the content width and divide by two
 	// Medi query is bsaed on the --wp--custom--width--full width
@@ -19,15 +20,34 @@
 		width: var(--wp--custom--width--full)
 
 
-.full-width-content
-	.alignwide
-		max-width: auto
-		width: auto
-		margin-left: auto
-		margin-right: auto
+.wp-block-cover
+	&__inner-container
+		max-width: var(--wp--custom--width--responsive)
 
 
-.wp-block-image,
+// Specific Block Alignment
+
+// .full-width-content
+// 	.alignwide
+// 		max-width: auto
+// 		width: auto
+// 		margin-left: auto
+// 		margin-right: auto
+
+// 	.wp-block-group > *
+// 		max-width: var(--wp--custom--width--max-width)
+// 		margin-left: auto
+// 		margin-right: auto
+
+
+// .narrow-content
+// 	.wp-block-group > *
+// 		max-width: var(--wp--custom--width--max-width)
+// 		margin-left: auto
+// 		margin-right: auto
+
+
+
 .wp-block-image,
 .wp-block-embed
 	

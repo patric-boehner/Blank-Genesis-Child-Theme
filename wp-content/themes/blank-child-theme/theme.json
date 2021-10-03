@@ -3,14 +3,8 @@
     "settings": {
 
         "layout": {
-            "contentSize": "var(--wp--custom--width--full)",
-            "wideSize": "var(--wp--custom--width--content)"
-        },
-        
-        "spacing": {
-            "customMargin": true,
-            "customPadding": true,
-            "units": [ "px", "vh", "vw" ]
+            "contentSize": "var(--wp--custom--width--responsive)",
+            "wideSize": "var(--wp--custom--width--full)"
         },
 
         "color": {
@@ -179,19 +173,17 @@
                 "row": "var(--wp--custom--spacing--large)"
             },
             "width": {
-                "full": "1200px",
+                "full": "1400px",
                 "content": "800px",
                 "small": "600px",
-                "max-width": "var(--wp--custom--width--full)"
-            },
+                "max-width": "var(--wp--custom--width--full)",
+                "responsive": "var(--wp--custom--width--full)"            },
             "grid": {
                 "gap": "var(--wp--custom--spacing--medium)"
             },
             "menu": {
                 "font-size": "var(--wp--preset--font-size--normal)",
-                "item-padding": "var(--wp--custom--spacing--small) var(--wp--custom--spacing--medium)",
-                "width": "200px",
-                "mobile-height": "120px"
+                "item-padding": "var(--wp--custom--spacing--small) var(--wp--custom--spacing--medium)"
             }
         }
 

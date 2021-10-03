@@ -6,48 +6,52 @@
 	line-height: 1.2
 
 
+// Content Widths
+
 // Regular content width
-.wp-block
-	max-width: var(--wp--custom--width--max-width)
+// .wp-block
+// 	max-width: var(--wp--custom--width--max-width)
+// 	margin-left: auto
+// 	margin-right: auto
 
-	&[data-align="wide"],
-	&[data-align="full"]
-		max-width: none
+// 	&[data-align="wide"]
+// 		max-width: var(--wp--custom--width--max-width)
 
-	&[data-align="full"]
-		margin-top: 0
-		margin-bottom: 0
-
-
-.wp-block[data-align="wide"]
-	max-width: var(--wp--custom--width--full)
-
-	@include above-tablet
-		.alignwide
-			margin: 0 auto
+// 	&[data-align="full"] 
+// 		max-width: none
 
 
-// Reusable block content width
-.wp-block.is-reusable
+// .block-editor-block-list__layout > *
+// 	max-width: var(--wp--custom--width--full)
 
-	&[data-align="full"]
-		max-width: none
-		margin-left: -10px
-		margin-right: -10px
+
+// Cover Block Inner Widht
+.wp-block-cover__inner-container
+	max-width: var(--wp--custom--width--responsive)
+
+
+
+// // Reusable block content width
+// .wp-block.is-reusable
+
+// 	&[data-align="full"]
+// 		max-width: none
+// 		margin-left: -10px
+// 		margin-right: -10px
 
 
 // Seperator Block
-.wp-block-separator:not(.is-style-wide):not(.is-style-dots)
-    max-width: var(--wp--custom--width--max-width)
+// .wp-block-separator:not(.is-style-wide):not(.is-style-dots)
+//     max-width: var(--wp--custom--width--max-width)
 
 	
 // Group and Media & Text
-.wp-block[data-align="full"]
-	.wp-block-media-text,
-	.wp-block-group,
-	.wp-block-cover
-		margin-top: 0
-		margin-bottom: 0
+// .wp-block[data-align="full"]
+// 	.wp-block-media-text,
+// 	.wp-block-group,
+// 	.wp-block-cover
+// 		margin-top: 0
+// 		margin-bottom: 0
 		
 	// .wp-block-group,
 	// .wp-block-cover
@@ -56,13 +60,13 @@
  
 
 // Fix padding issue on columns in media-text block
-.wp-block-media-text
-	.wp-block-columns
-		.block-editor-inner-blocks
-			padding: 0
+// .wp-block-media-text
+// 	.wp-block-columns
+// 		.block-editor-inner-blocks
+// 			padding: 0
 
 
 // Fix link issues for custom blocks
-.content-grid-block 
-	a
-		pointer-events: none
+// .content-grid-block 
+// 	a
+// 		pointer-events: none

@@ -11,7 +11,8 @@
               continue;
             }
 
-            $time = '<time class="entry-time">'.get_the_date().'</time>';
+            // Meta
+            $time = '<time class="entry-time" datetime="'.get_the_date( 'Y-m-d' ).'">'.get_the_date().'</time>';
             $author = '<span class="entry-author"> '.esc_html( 'By', 'core-functionality' ).' <span class="entry-author-name">'.get_the_author().'</span></span>';
 
             // Display a card

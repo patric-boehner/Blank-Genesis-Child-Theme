@@ -28,7 +28,7 @@ function pb_add_social_share_options() {
 	}
 
 	// If share options is disabled do nothing.
-	if ( !empty( get_option( 'options_show_social_sharing' ) == 0  ) ) {
+	if( pb_display_sharing_feature() == false ){
 		return;
 	}
 
@@ -88,9 +88,13 @@ function pb_add_social_share_options() {
 			$class = esc_attr( $option );
 			$service = '<span class="share-links__name">'.esc_html( ucfirst( $option ) ).'</span>';
 			$share_link = $share_urls[ esc_attr( $option ) ];
-			$svg = pb_load_inline_svg( array(
-				'filename' => $class,
-			) );
+
+			if ( function_exists( 'pb_load_inline_svg' ) ) {
+				$svg = pb_load_inline_svg( array(
+					'directory' => 'social',
+					'filename' => $class,
+				) );
+			}
 			
 			// Strucutre
 			$share_item = sprintf(
@@ -116,6 +120,19 @@ function pb_add_social_share_options() {
 	);
 
 	echo $output;
+
+}
+
+
+// Check if social share is set to display
+function pb_display_sharing_feature() {
+
+	// Return false is 0, aka no
+	if ( !empty( get_option( 'options_show_social_sharing' ) == 0  ) ) {
+		return false;
+	}
+
+	return true;
 
 }
 

@@ -20,7 +20,6 @@ add_action( 'genesis_before_loop', 'pb_add_entry_content_style', 1 );
 function pb_add_entry_content_style() {
 
 	// Output styles
-	wp_print_styles( 'blocks-style' );
     wp_print_styles( 'entry-content-style' );
 
 }

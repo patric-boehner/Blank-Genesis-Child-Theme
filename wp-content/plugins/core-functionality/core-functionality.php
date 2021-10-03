@@ -72,6 +72,7 @@ include_once( CORE_DIR . '/inc/functions/custom-functions.php' );
 include_once( CORE_DIR . '/inc/functions/editor-placeholder.php' );
 include_once( CORE_DIR . '/inc/functions/seo.php' );
 include_once( CORE_DIR . '/inc/functions/acf.php' );
+include_once( CORE_DIR . '/inc/functions/user-profile.php' );
 
 
 // Post Types

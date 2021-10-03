@@ -69,6 +69,17 @@ function pb_comment_form_defaults( array $paramaters ) {
 }
 
 
+// Add button class to cancle reply comment link
+add_filter('cancel_comment_reply_link', 'pb_comment_cancle_reply_link_filter', 3, 99);
+function pb_comment_cancle_reply_link_filter( $formatted_link, $link, $text ) {
+
+	$formatted_link = str_replace( 'id="cancel-comment-reply-link"', 'id="cancel-comment-reply-link" class="button button__small" ', $formatted_link );
+
+	return $formatted_link;
+
+}
+
+
 // Remove URL Field
 add_filter('comment_form_default_fields', 'pb_unset_url_field');
 function pb_unset_url_field($fields) {

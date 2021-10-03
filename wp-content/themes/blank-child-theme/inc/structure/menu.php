@@ -117,10 +117,12 @@ function pb_arrows_in_menus( $item_output, $item, $depth, $args ) {
 
 	if( in_array( 'menu-item-has-children', $item->classes ) ) {
 
-		$icon = pb_load_inline_svg( array(
-			'filename' => 'chevron-down',
-			'title' => '',
-		) );
+		if ( function_exists( 'pb_load_inline_svg' ) ) {
+			$icon = pb_load_inline_svg( array(
+				'filename' => 'chevron-down',
+				'title' => '',
+			) );
+		}
 
 		$arrow = 0 == $depth ? $icon : $icon;
 		$item_output = str_replace( '</a>', $arrow . '</a>', $item_output );
@@ -136,12 +138,14 @@ function pb_arrows_in_menus( $item_output, $item, $depth, $args ) {
 add_action('genesis_header', 'pb_add_primary_menu_toggle', 10);
 function pb_add_primary_menu_toggle() {
 
-	$icon_open = pb_load_inline_svg( array(
-		'filename' => 'bars'
-	) );
-	$icon_close = pb_load_inline_svg( array(
-		'filename' => 'close'
-	) );
+	if ( function_exists( 'pb_load_inline_svg' ) ) {
+		$icon_open = pb_load_inline_svg( array(
+			'filename' => 'bars'
+		) );
+		$icon_close = pb_load_inline_svg( array(
+			'filename' => 'close'
+		) );
+	}
 	
 	$menu = sprintf( '<span>%s</span>', esc_html__( 'Menu' , 'blank-child-theme') );
 

@@ -1,11 +1,12 @@
 jQuery(document).ready(function($){
 
 	// Key under which name the cookie is saved
-    const cookieName = 'banner-hidden';
+    // The custom name of the banner
+    const cookieName = cookie_banner.name;
     // The value could be used to store different levels of consent
     const cookieValue = 'true';
     // Number of days the banner is dismissed
-    var days_to_expire = dismissal_length.days;
+    var days_to_expire = cookie_banner.days;
 
     function dismiss() {
         const date = new Date();

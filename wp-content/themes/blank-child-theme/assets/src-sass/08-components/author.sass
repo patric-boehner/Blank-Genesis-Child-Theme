@@ -1,0 +1,15 @@
+// Author Profile
+.author-profile
+	display: flex
+	gap: var(--wp--custom--grid--gap)
+	@include small-phone
+		flex-direction: column
+	.avatar
+		float: none
+		height: auto
+		max-width: 96px
+	&__title
+		font-size: var(--wp--custom--heading--size-h4)
+	
+	&__description
+		margin-bottom: 0

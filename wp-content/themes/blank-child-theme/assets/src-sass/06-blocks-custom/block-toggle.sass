@@ -9,9 +9,7 @@
     &__header
         position: relative
         width: 100%
-        font-size: var(--wp--custom--heading--size-h3)
-        font-weight: var(--wp--custom--heading--font-weight)
-        background-color: var(--wp--custom--color--background)
+        background-color: var(--wp--preset--color--light-gray)
         padding: var(--wp--custom--spacing--small)
         margin-bottom: 0
 
@@ -38,9 +36,6 @@
     display: flex
     align-items: center
 
-    &:focus
-        background-color: var(--wp--preset--color--light-orange)
-
 
 .js .toggle__button svg
     width: 0.6em
@@ -48,14 +43,16 @@
     margin-right: 15px
 
 
-.js .toggle__button
+.js .toggle-block__header
     &:hover,
     &:focus
-        color: var(--wp--custom--color--secondary)
+        background-color: var(--wp--preset--color--light-orange)
 
-    &:hover svg,
-    &:focus svg
-        fill: var(--wp--custom--color--secondary)
+        > .toggle__button    
+            color: var(--wp--custom--color--secondary)
+
+        > .toggle__button svg
+            fill: var(--wp--custom--color--secondary)
 
 
 .toggle__button:not(.expanded) svg

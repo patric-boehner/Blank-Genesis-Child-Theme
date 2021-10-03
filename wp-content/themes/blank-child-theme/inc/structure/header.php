@@ -19,7 +19,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 add_action( 'genesis_before_header', 'pb_add_banner' );
 function pb_add_banner() {
 
-  if ( function_exists( 'pb_show_content_area' ) && !isset( $_COOKIE[ 'banner-hidden' ] ) ) {
+  if ( function_exists( 'pb_show_content_area' ) && !isset( $_COOKIE[ pb_unique_banner_cookie_name() ] ) ) {
 
     // Output styles
     wp_print_styles( 'banner-style' );

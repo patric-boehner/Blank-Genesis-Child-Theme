@@ -9,7 +9,7 @@
     --wp--custom--heading--line-heigh: 1.15;
     --wp--custom--body--line-heigh: 1.525;
     --wp--custom--spacing--content-area: var(--wp--custom--spacing--large);
-    --wp--custom--spacing--row: var(--wp--custom--spacing--large);
+    --wp--custom--spacing--row: 60px;
     --wp--custom--spacing--large: var(--wp--custom--spacing--medium);
     --wp--custom--spacing--x-large: var( --wp--custom--spacing--large );
   }
@@ -35,4 +35,3 @@
   outline: 0;
   display: block;
 }
-/*# sourceMappingURL=login.min.css.map */

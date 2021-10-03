@@ -1,1 +1,22 @@
-.top-banner-visible .header-banner{display:block}.header-banner{display:none;border-bottom:1px solid var(--wp--custom--border--color);position:relative}.header-banner .block-content-area__banner{display:block;width:calc(100% - (var(--wp--custom--spacing--side)*2));max-width:var(--wp--custom--width--max-width);margin:0 auto}.header-banner button{position:absolute;right:0;top:0}
+.top-banner-visible .block-content-area__banner {
+  display: block;
+}
+
+.block-content-area__banner {
+  display: none;
+  border-bottom: 1px solid var(--wp--custom--border--color);
+  position: relative;
+}
+
+.block-content-area__banner .block__inner {
+  display: block;
+  width: calc( 100% - ( var(--wp--custom--spacing--side) * 2 ));
+  max-width: var(--wp--custom--width--max-width);
+  margin: 0 auto;
+}
+
+.block-content-area__banner button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

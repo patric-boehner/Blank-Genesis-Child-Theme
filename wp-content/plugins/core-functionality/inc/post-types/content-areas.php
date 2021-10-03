@@ -94,6 +94,8 @@
          'element'         => 'div',
          'class'           => '',
          'id'              => '',
+         'prepend'         => '',
+         'append'          => ''
       );
 
       // Parse arguments.
@@ -112,18 +114,34 @@
       ));
 
       if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
-
+         
+         // HTML Elements
+         $element = esc_attr( $args[ 'element' ] );
          // Output ID is supplied
-         $id = ( $args[ 'id' ] ) ? sprintf( 'id="%s"', $args[ 'id' ] ) : '';
+         $id = ( esc_attr( $args[ 'id' ] ) ) ? sprintf( 'id="%s"', esc_attr( $args[ 'id' ] ) ) : '';
          // Sanitize location name
          $location = sanitize_key( $args[ 'location' ] );
+         // Esc class name
+         $class = sanitize_html_class( $args['class'] );
 
          // Output content
-         echo sprintf( '<%s %s class="block-content-area__%s%s">', $args[ 'element' ], $id, $location, $args['class'] );
+         echo sprintf(
+            '<%s %s class="block-content-area__%s %s">%s',
+            $element,
+            $id,
+            $location,
+            $class,
+            $args['prepend']
+         );
 
          echo the_content();
 
-         echo sprintf( '</%s>', $args[ 'element' ] );
+         echo sprintf(
+            '%s</%s>',
+            $args[ 'append' ],
+            $element
+            
+         );
 
       endwhile; endif; wp_reset_postdata();
 

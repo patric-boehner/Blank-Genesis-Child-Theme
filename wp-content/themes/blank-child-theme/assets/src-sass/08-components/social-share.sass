@@ -1,0 +1,37 @@
+// Social Share
+
+.share-links
+
+	&__heading
+		font-size: var( --wp--custom--heading--size-h4 )
+
+	&__list
+		margin: 0
+		padding: 0
+		display: flex
+		flex-wrap: wrap
+		gap: var(--wp--custom--grid--gap)
+
+	&__item
+		list-style: none
+
+		&:hover a,
+		&:focus a
+			color: var(--wp--custom--color--foreground)
+
+		&:hover svg,
+		&:focus svg
+			fill: var(--wp--custom--color--foreground)
+
+	&__link
+		display: flex
+		align-items: center
+		gap: var(--wp--custom--spacing--x-small)
+
+	&__name
+		@include small-phone
+			@include hiden-text
+
+	.icon
+		width: var(--wp--preset--font-size--normal)
+		height: var(--wp--preset--font-size--normal)

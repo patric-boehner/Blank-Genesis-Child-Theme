@@ -52,7 +52,7 @@ function pb_enqueue_child_theme_scripts_styles() {
       get_stylesheet_directory_uri() . "/assets/js/banner.min.js",
       array( 'jquery' ),
       cache_version_id(),
-      false
+      true
     );
 
 		wp_script_add_data(
@@ -64,22 +64,12 @@ function pb_enqueue_child_theme_scripts_styles() {
     // Load Customizer Banner varaibles    
     wp_localize_script(
       'banner-script',
-      'dismissal_length',
+      'cookie_banner',
       pb_get_banner_cookie_settings()
     );
 
 	}
-
-
-  // Load Blocks Stylesheet
-  wp_register_style(
-    'blocks-style',
-    get_stylesheet_directory_uri() . "/assets/css/blocks.min.css",
-    false,
-    cache_version_id()
-  );
   
-
 
   // Load Entry Content Stylesheet
   wp_register_style(
@@ -88,7 +78,7 @@ function pb_enqueue_child_theme_scripts_styles() {
     false,
     cache_version_id()
   );
-  
+
 
   // Load Comment Stylesheet
   if( is_singular() && comments_open() ) {
@@ -121,16 +111,22 @@ function pb_enqueue_child_theme_scripts_styles() {
     true
   );
 
+  wp_script_add_data(
+    'global-script',
+    'defer',
+    true
+  );
+
 
 	// Social Share Script
-	if ( ! empty( get_theme_mod( 'social_share_option', 1 ) ) && is_singular( 'post' ) ) {
+	if ( pb_display_sharing_feature() == true && is_singular( 'post' ) ) {
 
 		wp_enqueue_script(
       'social-share-script',
       get_stylesheet_directory_uri() . "/assets/js/social-share.min.js",
       array( 'jquery' ),
       cache_version_id(),
-      false
+      true
     );
 
 		wp_script_add_data(
@@ -178,6 +174,7 @@ function pb_theme_add_editor_styles() {
 }
 
 
+
 add_action( 'enqueue_block_editor_assets', 'pb_block_editor_styles' );
 function pb_block_editor_styles() {
 
@@ -201,6 +198,7 @@ function pb_block_editor_styles() {
   );
 
 }
+
 
 
 // Load login stylesheet

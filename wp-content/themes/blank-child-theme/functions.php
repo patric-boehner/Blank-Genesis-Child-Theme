@@ -53,7 +53,7 @@ include_once( CHILD_DIR . '/inc/theme-assets.php' );
 
 
 // Admin
-include_once( CHILD_DIR . '/inc/admin/customizer/customizer.php' );
+include_once( CHILD_DIR . '/inc/admin/customizer.php' );
 include_once( CHILD_DIR . '/inc/admin/widgets.php' );
 include_once( CHILD_DIR . '/inc/admin/editor.php' );
 include_once( CHILD_DIR . '/inc/admin/menu.php' );
@@ -63,6 +63,7 @@ include_once( CHILD_DIR . '/inc/admin/block-patterns.php' );
 
 
 // Gobal Functions
+include_once( CHILD_DIR . '/inc/functions/author-profile.php' );
 include_once( CHILD_DIR . '/inc/functions/helpers.php' );
 include_once( CHILD_DIR . '/inc/functions/autoptimize.php' );
 include_once( CHILD_DIR . '/inc/functions/banner.php' );

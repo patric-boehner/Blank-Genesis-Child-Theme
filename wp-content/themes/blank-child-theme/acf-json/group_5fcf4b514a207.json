@@ -3,7 +3,7 @@
     "title": "Icon",
     "fields": [
         {
-            "key": "field_5fcf4bf1022b9",
+            "key": "field_615106b4445bd",
             "label": "Icon",
             "name": "icon_select",
             "type": "select",
@@ -16,12 +16,11 @@
                 "id": ""
             },
             "choices": {
-                "arrow-left": "Left Arrow",
-                "arrow-right": "Right Arrow",
-                "check": "Checkmark",
-                "star": "Star"
+                "0": "(None)",
+                "check": "check",
+                "star": "star"
             },
-            "default_value": "check",
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -122,5 +121,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623010470
+    "modified": 1632701112
 }

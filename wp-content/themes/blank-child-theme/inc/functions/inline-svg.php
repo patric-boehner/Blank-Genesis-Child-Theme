@@ -19,12 +19,9 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 function pb_load_inline_svg( $args = array()) {
 
-    // Add the path to your SVG directory inside your theme.
-    $svg_path = '/assets/icons/';
-    $file_end = '.svg';
-
     // Set defaults.
   	$defaults = array(
+		'directory'	  => 'theme',
   		'filename'    => '',
       	'title'       => '',
   		'desc'        => '',
@@ -33,6 +30,10 @@ function pb_load_inline_svg( $args = array()) {
 
   	// Parse args.
   	$args = wp_parse_args( $args, $defaults );
+
+	// Add the path to your SVG directory inside your theme.
+	$svg_path = '/assets/icons/' . $args['directory'] . '/';
+	$file_end = '.svg';
 
     //Check the SVG file exists
     if ( ! file_exists( CHILD_DIR . $svg_path . esc_attr( $args['filename'] ) . $file_end ) ) {

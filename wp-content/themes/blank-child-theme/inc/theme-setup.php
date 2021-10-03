@@ -79,7 +79,7 @@ function pb_narrow_layout() {
 }
 
 
-//Only load styles for used blocks
+// Only load styles for used blocks
 // add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 
@@ -142,6 +142,13 @@ add_theme_support( 'editor-styles' );
 add_theme_support( 'responsive-embeds' );
 
 
+// Remove block editor templates
+remove_theme_support( 'block-templates' );
+
+
 // Add Image Sizes.
 add_image_size( 'genesis-singular-images', 800, 600, TRUE );
 // add_image_size( 'genesis-singular-image-[type]', 600, 300, true ); // Specific post type
+
+
+add_theme_support( 'align-wide' );

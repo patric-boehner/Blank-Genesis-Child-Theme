@@ -70,14 +70,18 @@ function pb_alter_breadcrumb_markup( $args ) {
 add_filter( 'genesis_breadcrumb_args', 'pb_change_breadcrumb_seperator', 12 );
 function pb_change_breadcrumb_seperator( $args ) {
 
-	$icon = pb_load_inline_svg( array(
-		'filename' => 'chevron-down',
-		'title' => '',
-	) );
+	if ( function_exists( 'pb_load_inline_svg' ) ) {
+
+		$icon = pb_load_inline_svg( array(
+			'filename' => 'chevron-down',
+			'title' => '',
+		) );
+
+	}
 
 	$aria_label = esc_html__( 'Breadcrumb Separator', ' blank-child-theme' );
 
-	$args['sep'] = '<span class="separator" aria-label="'.$aria_label.'">'.$icon.'</span> '; 
+	$args['sep'] = '<span class="separator" aria-hidden="true">'.$icon.'</span> '; 
 
 	return $args;
 

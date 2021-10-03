@@ -69,3 +69,68 @@ if( function_exists('acf_add_options_page') ) {
 //     );
     
 // }
+
+
+
+/**
+ * Dynamic Icon Select 
+ * Lists icons found in theme's /assets/icons directory 
+ *
+ * https://www.billerickson.net/dynamic-dropdown-fields-in-acf/
+ */
+add_filter('acf/load_field/name=icon_select', 'cf_acf_icon_select' );
+function cf_acf_icon_select( $field ) {
+
+	$field['choices'] = array( 0 => '(None)' );
+
+	if( ! function_exists( 'cf_get_theme_icons' ) )
+		return $field;
+
+	$icons = cf_get_theme_icons();
+
+	foreach( $icons as $icon ) {
+		$field['choices'][ $icon ] = $icon;
+	}
+
+	return $field;
+
+}
+
+
+/**
+ * Get Theme Icons
+ * Refresh cache by bumping CHILD_THEME_VERSION
+ */
+function cf_get_theme_icons( $directory = 'decorative' ) {
+
+	$icons = get_option( 'cf_theme_icons_' . $directory );
+
+	$version = get_option( 'cf_theme_icons_' . $directory . '_version' );
+
+	if( empty( $icons ) || ( defined( 'CHILD_THEME_VERSION' ) && version_compare( CHILD_THEME_VERSION, $version ) ) ) {
+
+		$icons = scandir( get_stylesheet_directory() . '/assets/icons/' . $directory );
+		$icons = array_diff( $icons, array( '..', '.' ) );
+		$icons = array_values( $icons );
+
+		if( empty( $icons ) ) {
+			return $icons;
+		}
+			
+		// remove the .svg
+		foreach( $icons as $i => $icon ) {
+			$icons[ $i ] = substr( $icon, 0, -4 );
+		}
+
+		update_option( 'cf_theme_icons_' . $directory, $icons );
+
+		// Update the icon theme version
+		if( defined( 'CHILD_THEME_VERSION' ) ) {
+			update_option( 'cf_theme_icons_' . $directory . '_version', CHILD_THEME_VERSION );
+		}
+			
+	}
+
+	return $icons;
+
+}

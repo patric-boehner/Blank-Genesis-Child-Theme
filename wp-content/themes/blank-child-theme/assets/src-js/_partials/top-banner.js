@@ -3,9 +3,11 @@
 jQuery(document).ready(function($){
 
 	var $body = $( 'body' );
+	const cookieName = cookie_banner.name;
 
 	// Show if no cookie set.
-	if ( ! Cookies.get( 'banner-hidden' ) ) {
+	// if ( ! Cookies.get( 'banner-hidden' ) ) {
+	if ( ! Cookies.get( cookieName ) ) {
 
 		$( document ).ready( function() {
 

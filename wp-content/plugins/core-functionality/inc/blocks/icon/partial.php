@@ -46,7 +46,8 @@ if( !empty( $color ) ) {
 
 // Icons
 if ( function_exists( 'pb_load_inline_svg' ) ) {
-  $icon_svg = pb_load_inline_svg( array( 
+  $icon_svg = pb_load_inline_svg( array(
+      'directory' => 'decorative', 
       'filename' => $icon_name,
       'width' => '28',
       'height' => '28',
