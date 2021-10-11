@@ -15,8 +15,8 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-add_filter( 'genesis_search_form', 'ea_search_form' );
-function ea_search_form() {
+add_filter( 'genesis_search_form', 'pb_search_form' );
+function pb_search_form() {
 
 	ob_start();
 	get_template_part( 'searchform' );

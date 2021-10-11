@@ -32,12 +32,23 @@
   height: 0.6em;
   margin-right: 15px; }
 
-.js .toggle-block__header:hover, .js .toggle-block__header:focus {
-  background-color: var(--wp--preset--color--light-orange); }
-  .js .toggle-block__header:hover > .toggle__button, .js .toggle-block__header:focus > .toggle__button {
-    color: var(--wp--custom--color--secondary); }
-  .js .toggle-block__header:hover > .toggle__button svg, .js .toggle-block__header:focus > .toggle__button svg {
+.toggle-block__header {
+  position: relative; }
+
+.js .toggle__button:hover::before, .js .toggle__button:focus::before {
+  content: '';
+  color: var(--wp--custom--color--secondary);
+  background-color: var(--wp--preset--color--light-green);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+  .js .toggle__button:hover::before > svg, .js .toggle__button:focus::before > svg {
     fill: var(--wp--custom--color--secondary); }
+
+.js .toggle__button > * {
+  z-index: 1; }
 
 .toggle__button:not(.expanded) svg {
   transform: rotate(-90deg); }

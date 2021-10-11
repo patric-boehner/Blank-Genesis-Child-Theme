@@ -1,3 +1,17 @@
+// Hide Post Title
+.genesis-title-hidden
+    .editor-post-title__block
+        opacity: 0.4
+        display: flex
+        align-items: center
+
+        &::after
+                content: "\f530"
+                font-family: 'dashicons'
+                font-size: var(--wp--preset--font-size--huge)		
+                
+
+    
 // Conten Width Based on Body Count
 // .full-width-content
 //     .editor-styles-wrapper

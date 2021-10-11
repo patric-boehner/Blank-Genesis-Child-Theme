@@ -43,16 +43,27 @@
     margin-right: 15px
 
 
-.js .toggle-block__header
-    &:hover,
-    &:focus
-        background-color: var(--wp--preset--color--light-orange)
+.toggle-block__header
+    position: relative
 
-        > .toggle__button    
-            color: var(--wp--custom--color--secondary)
 
-        > .toggle__button svg
+.js .toggle__button
+    &:hover::before,
+    &:focus::before
+        content: ''
+        color: var(--wp--custom--color--secondary)
+        background-color: var(--wp--preset--color--light-green)
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+
+        > svg
             fill: var(--wp--custom--color--secondary)
+
+    > *
+        z-index: 1
 
 
 .toggle__button:not(.expanded) svg

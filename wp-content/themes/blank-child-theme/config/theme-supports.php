@@ -20,7 +20,7 @@ return [
 	],
 	'genesis-structural-wraps'        => [
 		'header',
-		'footer',
+		'footer'
 	],
 	'genesis-accessibility'           => [
 		'headings',

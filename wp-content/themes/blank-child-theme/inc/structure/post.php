@@ -68,6 +68,24 @@ function pb_social_share_in_footer() {
 }
 
 
+
+// Add previous and next post links after entry
+add_action( 'genesis_after_entry', 'pb_add_entry_footer_style', 1 );
+function pb_add_entry_footer_style() {
+
+	if ( ! is_singular( 'post' ) ) {
+		return;
+	}
+
+	// Output styles
+	wp_print_styles( 'entry-footer-style' );
+
+}
+
+
+
+
+
 // Add previous and next post links after entry
 add_action( 'genesis_after_entry', 'pb_customize_entry_pagination', 8 );
 function pb_customize_entry_pagination() {

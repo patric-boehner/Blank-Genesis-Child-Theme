@@ -109,3 +109,72 @@ function pb_filter_style_loader_tag( $html, $handle ) {
     return $html;
 
 }
+
+
+// Output video block dns prefetch
+add_action( 'wp_head', 'pb_preload_header_images', 3 );
+function pb_preload_header_images() {
+
+	// Archive
+	if( is_home() || is_archive() ) {
+		pb_archive_first_featured_image_preload();
+	}
+
+	// Posts
+	if( is_singular( 'post' ) ) {
+		pb_post_featured_image_preload();
+	}
+
+}
+
+
+// Get post featrued iamges
+function pb_post_featured_image_preload() {
+
+	// Variable
+	$image_id = get_post_thumbnail_id( get_the_ID() );
+	$background_image_large = get_the_post_thumbnail_url( get_the_ID(), 'genesis-singular-images' );
+	$srcset = wp_get_attachment_image_srcset( $image_id, 'genesis-singular-images' );
+
+	// Put it together
+	$background_image = sprintf( '<link rel="preload" as="image" href="%s" imagesrcset="%s"/>', $background_image_large, $srcset );
+
+	// Exiti early
+	if( empty( $image_id ) ) {
+		return;
+	}
+
+	if ( genesis_singular_image_hidden_on_current_page() ) {
+		return;
+	}
+
+	// Output 
+	echo $background_image;
+
+}
+
+
+// Get post featrued iamges
+function pb_archive_first_featured_image_preload() {
+
+	// Variable
+	$image_id = get_post_thumbnail_id( get_the_ID() );
+	$background_image_medium = get_the_post_thumbnail_url( get_the_ID(), 'genesis-singular-images' );
+	$srcset = wp_get_attachment_image_srcset( $image_id, 'genesis-singular-images' );
+
+	// Put it together
+	$background_image = sprintf(
+		'<link rel="preload" as="image" href="%s" imagesrcset="%s"/>',
+		$background_image_medium,
+		$srcset
+	);
+
+	// Exiti early
+	if( !empty( $image_id ) ) {
+		return;
+	}
+
+	// Output 
+	echo $background_image;
+
+}

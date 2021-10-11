@@ -5,23 +5,24 @@ input[type="reset"],
 input[type="submit"],
 .search-submit,
 .button
+    --button-padding: 16px 24px
+    --button-font-size: var(--wp--preset--font-size--small)
+
     background-color: var( --color-inherit-background, var(--wp--custom--color--foreground) )
     border: 0
     border-radius: 0
     color: var( --color-inherit, var(--wp--preset--color--white) )
     cursor: pointer
-    font-size: var(--wp--preset--font-size--small)
+    font-family: var(--wp--custom--body--font-family)
+    font-size: var(--button-font-size)
     font-weight: var(--wp--custom--font-weight--bold)
-    padding: 16px 24px
+    padding: var(--button-padding)
     text-decoration: none
     white-space: normal
     width: auto
     line-height: normal
     transition: all 0.25s ease-in-out
 
-    &__small
-        font-size: var(--wp--preset--font-size--tiny)
-        padding: 12px 18px
 
     &:hover,
     &:focus,
@@ -29,11 +30,11 @@ input[type="submit"],
         background-color: var( --color-inherit-background, var(--wp--custom--color--secondary) )
         color: var( --color-inherit, var(--wp--preset--color--white) )
 
-    &:disabled
-        background-color: var(--wp--custom--border--color)
-        border-width: 0
-        color: var(--wp--custom--color--foreground)
-        cursor: not-allowed
+
+.button
+    &__small
+        --button-padding: 12px 18px
+        --button-font-size: var(--wp--preset--font-size--tiny)
 
 
 .button

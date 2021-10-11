@@ -1,12 +1,12 @@
 // Block Group
 
-// .wp-block-group:not(.has-background):not(.alignwide):not(.alignfull)
-//     padding: 0
+.wp-block-group:not(.has-background):not(.alignwide):not(.alignfull)
+    --wp--custom--spacing--group-padding: 0
 
 
 .wp-block-group
-    padding: var(--wp--custom--spacing--medium)
+    padding: var(--wp--custom--spacing--group-padding)
 
     &.alignfull
-        padding-top: var(--wp--custom--spacing--row)
-        padding-bottom: var(--wp--custom--spacing--row)
+        padding-top: var(--wp--custom--spacing--group-padding)
+        padding-bottom: var(--wp--custom--spacing--group-padding)

@@ -50,6 +50,10 @@ function pb_get_first_block_image() {
 		return;
 	}
 
+	if( empty( $blocks[0]['attrs']['ulr'] ) ) {
+		return;
+	}
+
 	$image_url = esc_url( $blocks[0]['attrs']['url'] );
 
 	echo '<link rel="preload"  as="image" href="'.$image_url.'" />';

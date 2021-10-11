@@ -1,13 +1,11 @@
 // Site Footer
 //**********************************************
 
-.site-footer
-	.block-content-area
-		font-size: var(--wp--preset--font-size--small)
+.block-content-area__footer 
+	font-size: var(--wp--preset--font-size--small)
 
 
 .sub-footer
-	--wp--custom--menu--font-size: var(--wp--preset--font-size--small)
 	border-top: 1px solid var(--wp--custom--border--color)
 	font-size: var(--wp--preset--font-size--small)
 	line-height: 1
@@ -23,11 +21,13 @@
 
 
 // Footer Navigation
-
 .menu-secondary
-	--wp--custom--menu--item-padding: var(--wp--custom--spacing--small)
+	--menu--item-padding: var(--wp--custom--spacing--small)
 	padding: 0
 
 	a
-		padding: var( --wp--custom--menu--item-padding )
+		padding: var(--menu--item-padding)
+
+	li
+		max-width: max-content
 	

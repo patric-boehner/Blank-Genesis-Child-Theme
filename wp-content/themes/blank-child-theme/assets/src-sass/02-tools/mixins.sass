@@ -63,6 +63,15 @@
 
 
 // Media Quiery
+@mixin mobile-menu
+	@media only screen and (max-width: $mobile-menu)
+		@content
+
+@mixin above-mobile-menu
+	@media only screen and (min-width: $mobile-menu)
+		@content
+
+
 
 @mixin desktop
 	@media only screen and (max-width: $desktop)

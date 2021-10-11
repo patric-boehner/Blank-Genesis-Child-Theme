@@ -24,7 +24,6 @@ function pb_archive_body_class( $classes ) {
 		return $classes;	
 	}
 	
-
     $classes[] = 'archive';
 
 	return $classes;
@@ -65,7 +64,7 @@ function pb_first_post_class( $classes ) {
 			$classes[] = 'first-entry';
 		}
 
-	  return $classes;
+	return $classes;
 
 }
 

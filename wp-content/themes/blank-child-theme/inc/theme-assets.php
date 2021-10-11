@@ -47,26 +47,30 @@ function pb_enqueue_child_theme_scripts_styles() {
       cache_version_id()
     );
 
-		wp_enqueue_script(
-      'banner-script',
-      get_stylesheet_directory_uri() . "/assets/js/banner.min.js",
-      array( 'jquery' ),
-      cache_version_id(),
-      true
-    );
+    if( pb_is_dismissable_banner_active() == true ) {
 
-		wp_script_add_data(
-      'banner-script',
-      'defer',
-      true
-    );
+      wp_enqueue_script(
+        'banner-script',
+        get_stylesheet_directory_uri() . "/assets/js/banner.min.js",
+        array(),
+        cache_version_id(),
+        true
+      );
+  
+      wp_script_add_data(
+        'banner-script',
+        'defer',
+        true
+      );
+  
+      // Load Customizer Banner varaibles    
+      wp_localize_script(
+        'banner-script',
+        'cookie_banner',
+        pb_get_banner_cookie_settings()
+      );
 
-    // Load Customizer Banner varaibles    
-    wp_localize_script(
-      'banner-script',
-      'cookie_banner',
-      pb_get_banner_cookie_settings()
-    );
+    }
 
 	}
   
@@ -78,6 +82,20 @@ function pb_enqueue_child_theme_scripts_styles() {
     false,
     cache_version_id()
   );
+
+
+  if( is_singular( 'post' ) ) {
+
+    // Load Entry Content Stylesheet
+    wp_register_style(
+      'entry-footer-style',
+      get_stylesheet_directory_uri() . "/assets/css/entry-footer.min.css",
+      false,
+      cache_version_id()
+    );
+
+
+  }
 
 
   // Load Comment Stylesheet
@@ -119,23 +137,23 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
 	// Social Share Script
-	if ( pb_display_sharing_feature() == true && is_singular( 'post' ) ) {
+	// if ( pb_display_sharing_feature() == true && is_singular( 'post' ) ) {
 
-		wp_enqueue_script(
-      'social-share-script',
-      get_stylesheet_directory_uri() . "/assets/js/social-share.min.js",
-      array( 'jquery' ),
-      cache_version_id(),
-      true
-    );
+	// 	wp_enqueue_script(
+  //     'social-share-script',
+  //     get_stylesheet_directory_uri() . "/assets/js/social-share.min.js",
+  //     array( 'jquery' ),
+  //     cache_version_id(),
+  //     true
+  //   );
 
-		wp_script_add_data(
-      'social-share-script',
-      'defer',
-      true
-    );
+	// 	wp_script_add_data(
+  //     'social-share-script',
+  //     'defer',
+  //     true
+  //   );
 
-	}
+	// }
 
 }
 

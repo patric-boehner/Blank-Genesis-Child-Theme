@@ -36,6 +36,7 @@ function pb_add_social_share_options() {
 	$heading = esc_html__( 'Share this Article', 'blank-child-theme' );
 	$screen_reader_text = '<span class="screen-reader-text">('.esc_html__( 'Links open in new window', 'blank-child-theme' ).')</span>';
 
+
 	$url				= urlencode( get_permalink() );
 	$url_short			= urlencode( wp_get_shortlink() );
 	$title				= urlencode( esc_attr( strip_tags( get_the_title() ) ) );
@@ -46,18 +47,18 @@ function pb_add_social_share_options() {
 	// Formated Sharing Links
 	$share_urls = array(
 		'facebook' => sprintf(
-			'http://www.facebook.com/sharer/sharer.php?u=%s&t=%s',
+			'https://www.facebook.com/sharer/sharer.php?u=%s&t=%s',
 			$url,
 			$title
 		),
 		'twitter'  => sprintf(
-			'http://www.twitter.com/intent/tweet?url=%s&text=%s+%s',
+			'https://www.twitter.com/intent/tweet?url=%s&text=%s+%s',
 			$url_short,
 			$title,
 			pb_retrieve_sharing_twitter_handle()
 		),
 		'pinterest' => sprintf(
-			'http://pinterest.com/pin/create/button/?url=%s&media=%s&nbsp;&description=%s',
+			'https://pinterest.com/pin/create/button/?url=%s&media=%s&nbsp;&description=%s',
 			$url_short,
 			pb_retrieve_sharing_featured_image(),
 			$title
@@ -86,7 +87,13 @@ function pb_add_social_share_options() {
 			
 			// Variables
 			$class = esc_attr( $option );
-			$service = '<span class="share-links__name">'.esc_html( ucfirst( $option ) ).'</span>';
+			$screen_reader_link_text = '<span class="screen-reader-text">'.esc_html__( 'Share on', 'blank-child-theme' ).'</span>';
+			$service = sprintf(
+				'<span class="share-links__name">%s %s</span>',
+				$screen_reader_link_text,
+				esc_html( ucfirst( $option ) )
+			);
+
 			$share_link = $share_urls[ esc_attr( $option ) ];
 
 			if ( function_exists( 'pb_load_inline_svg' ) ) {
@@ -105,6 +112,7 @@ function pb_add_social_share_options() {
 				$service
 			);
 
+			// List of links
 			$share_links .= $share_item;
 
 		}

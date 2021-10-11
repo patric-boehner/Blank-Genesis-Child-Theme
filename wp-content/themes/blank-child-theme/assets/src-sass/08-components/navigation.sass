@@ -1,21 +1,32 @@
 // Site Navigation
 //**********************************************
+nav
+	--menu--item-font: var(--wp--custom--font-family--primary)
+	--menu--item-font-size: var(--wp--preset--font-size--normal)
+	--menu--item-font-weight: var(--wp--custom--font-weight--normal)
+	--menu--item-font-color: var(--wp--custom--color--foreground)
+	--menu--item-padding: var(--wp--custom--spacing--small) var(--wp--custom--spacing--medium)
+
+	@include small-desktop
+		--menu--item-padding: var(--wp--custom--spacing--small) var(--wp--custom--spacing--small)
+	
 
 .nav-primary
-	// background-color: var(--wp--preset--color--light-gray)
 	width: 100%
 	border-top: 1px solid var(--wp--preset--color--light-gray)
+	border-bottom: 1px solid var(--wp--preset--color--light-gray)
 
-	@include above-phone
+	@include above-mobile-menu
 		width: auto
 		border-top: 0
+		border-bottom: 0
 
 
 // Responsive Menu
 .js .nav-primary
 	padding: 0
 
-	@include phone
+	@include mobile-menu
 		position: absolute
 		top: 100%
 		left: 0
@@ -27,7 +38,7 @@
 .nav-primary
 	position: relative
 
-	@include phone
+	@include mobile-menu
 		background-color: var(--wp--preset--color--white)
 
 
@@ -77,18 +88,15 @@
 
 .genesis-nav-menu
 	justify-content: stretch
-	// padding: var(--wp--custom--spacing--small) calc( var(--wp--custom--spacing--side) - var(--wp--custom--spacing--small) )
-
-	// @include above-phone
-	// 	padding: 0
 
 
 // Menu Reponsive
 .js .nav-primary:not(.opened)
 	display: none
 
-	@include above-phone
+	@include above-mobile-menu
 		display: flex
+
 
 
 // Menu item style
@@ -99,10 +107,11 @@
 
 	a,
 	button
-		padding: var(--wp--custom--menu--item-padding)
-		color: var(--wp--custom--color--foreground)
-		font-size: var(--wp--custom--menu--font-size)
-		font-weight: var(--wp--custom--font-weight--normal)
+		padding: var(--menu--item-padding)
+		color: var(--menu--item-font-color)
+		font-family: var(--menu--item-font)
+		font-size: var(--menu--item-font-size)
+		font-weight: var(--menu--item-font-weight)
 		text-decoration: none
 		transition: none
 
@@ -111,7 +120,7 @@
 			color: var(--wp--custom--color--secondary)
 
 		&:focus
-			background-color: var(--wp--preset--color--light-orange)
+			background-color: var(--wp--preset--color--light-green)
 
 	button:hover svg,
 	button:focus svg
@@ -123,9 +132,12 @@
 	flex: 1 1 auto
 	display: flex
 	justify-content: stretch
+	max-width: max-content
 	flex-wrap: wrap
 
-	@include phone
+	@include mobile-menu
+		max-width: 100%
+		
 		button
 			justify-content: space-between
 
@@ -139,7 +151,7 @@
 		font-size: inherit
 		cursor: pointer
 
-		@include above-phone
+		@include above-mobile-menu
 			justify-content: center
 
 
@@ -154,7 +166,7 @@
 	svg
 		width: 0.7em
 		height: 0.7em
-		fill: var(--wp--custom--color--foreground)
+		fill: var(--menu--item-font-color)
 
 
 	[aria-expanded="true"] svg
@@ -176,7 +188,7 @@
 	width: 100%
 	flex: 0 0 auto
 
-	@include above-phone
+	@include above-mobile-menu
 		position: absolute
 		width: auto
 
@@ -187,8 +199,8 @@
 	padding-top: var(--wp--custom--spacing--small)
 	padding-bottom: var(--wp--custom--spacing--small)
 
-	@include above-phone
-		padding: var(--wp--custom--menu--item-padding)
+	@include above-mobile-menu
+		padding: var(--menu--item-padding)
 		white-space: nowrap
 
 
@@ -197,7 +209,7 @@ button.nav-toggle
 	display: none // Hidden by defualt if no JS support
 	font-size: inherit
 	font-family: inherit
-	padding: var(--wp--custom--menu--item-padding)
+	padding: var(--menu--item-padding)
 	padding-right: 0
 	background: transparent
 	border: 0
@@ -208,7 +220,7 @@ button.nav-toggle
 	svg
 		width: 0.8em
 		height: 0.8em
-		fill: var(--wp--custom--color--foreground)
+		fill: var(--menu--item-font-color)
 		
 	&[aria-expanded="true"]
 		.icon-bars
@@ -239,26 +251,26 @@ button.nav-toggle
 	&:focus svg
 		fill: var(--wp--custom--color--secondary)
 
-	@include above-phone
+	@include above-mobile-menu
 		display: none
 
 
 // Addon classes
 .menu-bold > a
-	@include above-phone
-		font-weight: var(--wp--custom--font-weight--bold)
+	@include above-mobile-menu
+		font-weight: var(--menu--item-font-weight)
 
 
 .menu-highlight > a
-	@include above-phone
+	@include above-mobile-menu
 		padding-right: 20px
 		padding-left: 20px
 		margin-left: 20px
 		color: var(--wp--preset--color--white)
 		background-color: var(--wp--custom--color--secondary)
-		font-weight: var(--wp--custom--font-weight--bold)
+		font-weight: var(--menu--item-font-weight)
 
 		&:hover,
 		&:focus
-			background-color: var(--wp--custom--color--foreground)
+			background-color: var(--menu--item-font-color)
 			color: var(--wp--preset--color--white)

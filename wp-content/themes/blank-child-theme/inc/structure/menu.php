@@ -135,7 +135,7 @@ function pb_arrows_in_menus( $item_output, $item, $depth, $args ) {
 
 
 // Add mobile menu button
-add_action('genesis_header', 'pb_add_primary_menu_toggle', 10);
+add_action( 'genesis_header', 'pb_add_primary_menu_toggle', 10 );
 function pb_add_primary_menu_toggle() {
 
 	if ( function_exists( 'pb_load_inline_svg' ) ) {

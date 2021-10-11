@@ -16,7 +16,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 // Add Comment styles
-add_action( 'genesis_before_comments', 'pb_add_styles_before_comments' );
+add_action( 'genesis_before_comments', 'pb_add_styles_before_comments', 5 );
 function pb_add_styles_before_comments() {
 
 	// Output styles
@@ -42,8 +42,8 @@ function pb_change_comments_gravatar( array $args ) {
 
 
 // Modify the author says text in comments
-add_filter( 'comment_author_says_text', 'sp_comment_author_says_text' );
-function sp_comment_author_says_text() {
+add_filter( 'comment_author_says_text', 'pb_comment_author_says_text' );
+function pb_comment_author_says_text() {
 
 	return;
 

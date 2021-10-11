@@ -1,9 +1,8 @@
-.site-footer .block-content-area {
+.block-content-area__footer {
   font-size: var(--wp--preset--font-size--small);
 }
 
 .sub-footer {
-  --wp--custom--menu--font-size: var(--wp--preset--font-size--small);
   border-top: 1px solid var(--wp--custom--border--color);
   font-size: var(--wp--preset--font-size--small);
   line-height: 1;
@@ -20,10 +19,16 @@
 }
 
 .menu-secondary {
-  --wp--custom--menu--item-padding: var(--wp--custom--spacing--small);
+  --menu--item-padding: var(--wp--custom--spacing--small);
   padding: 0;
 }
 
 .menu-secondary a {
-  padding: var(--wp--custom--menu--item-padding);
+  padding: var(--menu--item-padding);
+}
+
+.menu-secondary li {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }

@@ -80,10 +80,14 @@ function genesis_blocks_body_classes( $classes ) {
 add_action( 'body_class', 'pb_notice_bar_classes' );
 function pb_notice_bar_classes( $classes ) {
 
+	// Set banner hidden if banner is set to display at all
 	if ( pb_is_banner_active() ) {
-
 		$classes[] = 'top-banner-hidden';
+	}
 
+	// Set banner to visible if banner is set to display and cookies are set to false
+	if ( pb_is_banner_active() == true && pb_is_dismissable_banner_active() == false ) {
+		$classes[] = 'top-banner-visible';
 	}
 
 	return $classes;
@@ -201,17 +205,6 @@ add_filter( 'genesis_attr_nav-primary', 'pb_change_primary_nav_aria_label' );
 function pb_change_primary_nav_aria_label( $attributes ) {
 
 	$attributes['aria-label'] = 'Main';
-
-	return $attributes;
-
-}
-
-
-// Change secondary nave aria-label
-add_filter( 'genesis_attr_site-footer', 'pb_change_footer_role' );
-function pb_change_footer_role( $attributes ) {
-
-	$attributes['role'] = 'contentinfo';
 
 	return $attributes;
 

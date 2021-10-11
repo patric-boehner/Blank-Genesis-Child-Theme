@@ -31,7 +31,15 @@
             "type": "button_group",
             "instructions": "Allow the banner to be close for a set number of days",
             "required": 1,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6028b9151e6f6",
+                        "operator": "==",
+                        "value": "enable"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -55,6 +63,11 @@
             "required": 1,
             "conditional_logic": [
                 [
+                    {
+                        "field": "field_6028b9151e6f6",
+                        "operator": "==",
+                        "value": "enable"
+                    },
                     {
                         "field": "field_603753271729e",
                         "operator": "==",
@@ -98,5 +111,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623010467
+    "modified": 1633760211
 }

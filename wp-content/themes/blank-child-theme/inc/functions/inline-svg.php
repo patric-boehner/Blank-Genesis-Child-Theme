@@ -42,21 +42,17 @@ function pb_load_inline_svg( $args = array()) {
     }
 
     // Additonal Class
-    if ( $args['class'] ) {
-      $class = ' ' . sanitize_html_class( $args['class'] );// code...
-    } else {
-      $class = '';
-    }
+	$class = ( $args['class'] ) ? ' ' . sanitize_html_class( $args['class'] ) : '';
 
   	// Set aria hidden.
-  	$aria_hidden = ' ' . 'aria-hidden="true"';
+  	$screen_reader_hidden = ' ' . 'aria-hidden="true" focusable="false"';
 
   	// Set ARIA.
   	$aria_labelledby = '';
 
     // Titles and Desciption.
     if ( $args['title'] ) {
-  		$aria_hidden     = '';
+  		$screen_reader_hidden     = '';
   		$unique_id       = uniqid();
   		$aria_labelledby = ' ' . 'aria-labelledby="title-' . $unique_id . '"';
 
@@ -69,11 +65,11 @@ function pb_load_inline_svg( $args = array()) {
     $svg_file = file_get_contents( CHILD_DIR . $svg_path . esc_attr( $args[ 'filename' ] ) . $file_end );
 
     // Remove width and height info
-	$svg_content = preg_replace( '/(width|height)="\d*"\s/', "", $svg_file );
+	// $svg_file = preg_replace( '/(width|height)="\d*"\s/', "", $svg_file );
 
 
     // Begin SVG markup.
-	  $svg = str_replace( '<svg', '<svg class="icon icon-' . sanitize_html_class( $args['filename'] ) . $class .'"' . $aria_hidden . $aria_labelledby . ' role="img"', $svg_content );
+	  $svg = str_replace( '<svg', '<svg class="icon icon-' . sanitize_html_class( $args['filename'] ) . $class .'"' . $screen_reader_hidden . $aria_labelledby . ' role="img"', $svg_file );
 
   	// Display the title.
   	if ( $args['title'] ) {

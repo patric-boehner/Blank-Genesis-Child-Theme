@@ -7,6 +7,7 @@
 
 		&:last-of-type
 			margin-right: 0
+			margin-bottom: 0
 
 
 .wp-block-button
@@ -30,6 +31,10 @@
 		&:visited
 			background-color: var( --color-inherit-background, var(--wp--custom--color--secondary) )
 			color: var( --color-inherit, var(--wp--preset--color--white) )
+
+		&:focus
+			box-shadow: 0 0 0 3px var(--wp--preset--color--white),0 0 0 5px currentColor
+			outline: 0
 
 		&:disabled
 			background-color: var(--wp--custom--border--color)

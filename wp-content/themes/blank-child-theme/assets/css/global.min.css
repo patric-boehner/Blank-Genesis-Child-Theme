@@ -16,12 +16,6 @@
   src: url("../fonts/source-sans-pro-v14-latin-600.woff2") format("woff2"), url("../fonts/source-sans-pro-v14-latin-600.woff") format("woff");
 }
 
-@media only screen and (max-width: 1340px) {
-  body {
-    --wp--custom--menu--item-padding: var(--wp--custom--spacing--small);
-  }
-}
-
 @media only screen and (max-width: 1023px) {
   body {
     --wp--custom--heading--line-heigh: 1.15;
@@ -76,7 +70,7 @@ html {
   display: table;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .menu-primary {
     display: flex;
     flex-wrap: wrap;
@@ -211,12 +205,12 @@ html {
   margin-bottom: var(--wp--custom--spacing--content-area);
 }
 
-.content .entry-content:first-child > .alignfull:first-child {
-  margin-top: calc( var(--wp--custom--spacing--content-area) * -1);
-}
-
-.content .entry-content:last-child > .alignfull:last-child {
-  margin-bottom: calc( var(--wp--custom--spacing--content-area) * -1);
+.page.full-width-content .content,
+.page.full-width-content .entry,
+.landing-page .content,
+.landing-page .entry {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .content-area {
@@ -284,6 +278,7 @@ html {
 body {
   font-family: var(--wp--custom--body--font-family);
   font-weight: var(--wp--custom--body--font-weight);
+  line-height: var(--wp--custom--body--line-heigh);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -386,7 +381,8 @@ img {
 }
 
 figure {
-  margin: 0 0 var(--wp--custom--spacing--medium) 0;
+  margin: 0;
+  margin-bottom: var(--wp--custom--spacing--medium);
   max-width: 100%;
   position: relative;
 }
@@ -401,7 +397,9 @@ video {
 
 .wp-audio-shortcode,
 .wp-playlist,
-.wp-video {
+.wp-video,
+.wp-block-image,
+.wp-block-embed {
   margin-bottom: var(--wp--custom--spacing--medium);
 }
 
@@ -512,28 +510,22 @@ input[type="reset"],
 input[type="submit"],
 .search-submit,
 .button {
+  --button-padding: 16px 24px;
+  --button-font-size: var(--wp--preset--font-size--small);
   background-color: var(--color-inherit-background, var(--wp--custom--color--foreground));
   border: 0;
   border-radius: 0;
   color: var(--color-inherit, var(--wp--preset--color--white));
   cursor: pointer;
-  font-size: var(--wp--preset--font-size--small);
+  font-family: var(--wp--custom--body--font-family);
+  font-size: var(--button-font-size);
   font-weight: var(--wp--custom--font-weight--bold);
-  padding: 16px 24px;
+  padding: var(--button-padding);
   text-decoration: none;
   white-space: normal;
   width: auto;
   line-height: normal;
   transition: all 0.25s ease-in-out;
-}
-
-input[type__small="button"],
-input[type__small="reset"],
-input[type__small="submit"],
-.search-submit__small,
-.button__small {
-  font-size: var(--wp--preset--font-size--tiny);
-  padding: 12px 18px;
 }
 
 input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:visited,
@@ -553,15 +545,9 @@ input[type="submit"]:visited,
   color: var(--color-inherit, var(--wp--preset--color--white));
 }
 
-input[type="button"]:disabled,
-input[type="reset"]:disabled,
-input[type="submit"]:disabled,
-.search-submit:disabled,
-.button:disabled {
-  background-color: var(--wp--custom--border--color);
-  border-width: 0;
-  color: var(--wp--custom--color--foreground);
-  cursor: not-allowed;
+.button__small {
+  --button-padding: 12px 18px;
+  --button-font-size: var(--wp--preset--font-size--tiny);
 }
 
 .button {
@@ -648,6 +634,7 @@ mark {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .site-title {
@@ -657,15 +644,31 @@ mark {
   margin: 0;
 }
 
+nav {
+  --menu--item-font: var(--wp--custom--font-family--primary);
+  --menu--item-font-size: var(--wp--preset--font-size--normal);
+  --menu--item-font-weight: var(--wp--custom--font-weight--normal);
+  --menu--item-font-color: var(--wp--custom--color--foreground);
+  --menu--item-padding: var(--wp--custom--spacing--small) var(--wp--custom--spacing--medium);
+}
+
+@media only screen and (max-width: 1200px) {
+  nav {
+    --menu--item-padding: var(--wp--custom--spacing--small) var(--wp--custom--spacing--small);
+  }
+}
+
 .nav-primary {
   width: 100%;
   border-top: 1px solid var(--wp--preset--color--light-gray);
+  border-bottom: 1px solid var(--wp--preset--color--light-gray);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .nav-primary {
     width: auto;
     border-top: 0;
+    border-bottom: 0;
   }
 }
 
@@ -673,7 +676,7 @@ mark {
   padding: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 860px) {
   .js .nav-primary {
     position: absolute;
     top: 100%;
@@ -687,7 +690,7 @@ mark {
   position: relative;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 860px) {
   .nav-primary {
     background-color: var(--wp--preset--color--white);
   }
@@ -742,7 +745,7 @@ mark {
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .js .nav-primary:not(.opened) {
     display: flex;
   }
@@ -755,10 +758,11 @@ mark {
 
 .genesis-nav-menu a,
 .genesis-nav-menu button {
-  padding: var(--wp--custom--menu--item-padding);
-  color: var(--wp--custom--color--foreground);
-  font-size: var(--wp--custom--menu--font-size);
-  font-weight: var(--wp--custom--font-weight--normal);
+  padding: var(--menu--item-padding);
+  color: var(--menu--item-font-color);
+  font-family: var(--menu--item-font);
+  font-size: var(--menu--item-font-size);
+  font-weight: var(--menu--item-font-weight);
   text-decoration: none;
   transition: none;
 }
@@ -771,7 +775,7 @@ mark {
 
 .genesis-nav-menu a:focus,
 .genesis-nav-menu button:focus {
-  background-color: var(--wp--preset--color--light-orange);
+  background-color: var(--wp--preset--color--light-green);
 }
 
 .genesis-nav-menu button:hover svg,
@@ -784,10 +788,16 @@ mark {
   flex: 1 1 auto;
   display: flex;
   justify-content: stretch;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
   flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 860px) {
+  .genesis-nav-menu > li {
+    max-width: 100%;
+  }
   .genesis-nav-menu > li button {
     justify-content: space-between;
   }
@@ -802,7 +812,7 @@ mark {
   cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .genesis-nav-menu > li > a,
 .genesis-nav-menu > li > button {
     justify-content: center;
@@ -818,7 +828,7 @@ mark {
 .genesis-nav-menu svg {
   width: 0.7em;
   height: 0.7em;
-  fill: var(--wp--custom--color--foreground);
+  fill: var(--menu--item-font-color);
 }
 
 .genesis-nav-menu [aria-expanded="true"] svg {
@@ -840,7 +850,7 @@ mark {
   flex: 0 0 auto;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .genesis-nav-menu ul[aria-hidden="false"] {
     position: absolute;
     width: auto;
@@ -853,9 +863,9 @@ mark {
   padding-bottom: var(--wp--custom--spacing--small);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .genesis-nav-menu ul a {
-    padding: var(--wp--custom--menu--item-padding);
+    padding: var(--menu--item-padding);
     white-space: nowrap;
   }
 }
@@ -864,7 +874,7 @@ button.nav-toggle {
   display: none;
   font-size: inherit;
   font-family: inherit;
-  padding: var(--wp--custom--menu--item-padding);
+  padding: var(--menu--item-padding);
   padding-right: 0;
   background: transparent;
   border: 0;
@@ -876,7 +886,7 @@ button.nav-toggle {
 button.nav-toggle svg {
   width: 0.8em;
   height: 0.8em;
-  fill: var(--wp--custom--color--foreground);
+  fill: var(--menu--item-font-color);
 }
 
 button.nav-toggle[aria-expanded="true"] .icon-bars {
@@ -907,40 +917,31 @@ button.nav-toggle[aria-expanded="false"] .icon-close {
   fill: var(--wp--custom--color--secondary);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .js button.nav-toggle {
     display: none;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .menu-bold > a {
-    font-weight: var(--wp--custom--font-weight--bold);
+    font-weight: var(--menu--item-font-weight);
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 860px) {
   .menu-highlight > a {
     padding-right: 20px;
     padding-left: 20px;
     margin-left: 20px;
     color: var(--wp--preset--color--white);
     background-color: var(--wp--custom--color--secondary);
-    font-weight: var(--wp--custom--font-weight--bold);
+    font-weight: var(--menu--item-font-weight);
   }
   .menu-highlight > a:hover, .menu-highlight > a:focus {
-    background-color: var(--wp--custom--color--foreground);
+    background-color: var(--menu--item-font-color);
     color: var(--wp--preset--color--white);
   }
-}
-
-.adjacent-entry-pagination a {
-  display: block;
-  font-weight: var(--wp--custom--font-weight--bold);
-}
-
-.adjacent-entry-pagination .nav-title {
-  font-weight: var(--wp--custom--font-weight--bold);
 }
 
 .screen-reader-shortcut,
@@ -984,20 +985,4 @@ button.nav-toggle[aria-expanded="false"] .icon-close {
   list-style: none;
   margin-bottom: 0;
   width: 0;
-}
-
-.avatar {
-  float: left;
-}
-
-.alignleft .avatar {
-  margin-right: 24px;
-}
-
-.alignright .avatar {
-  margin-left: 24px;
-}
-
-.comment .avatar {
-  margin: 0 16px 24px 0;
 }

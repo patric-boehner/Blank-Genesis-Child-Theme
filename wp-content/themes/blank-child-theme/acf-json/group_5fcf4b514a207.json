@@ -89,8 +89,9 @@
             },
             "choices": {
                 "blue": "Blue",
+                "light-blue: Light Blue": "light-blue: Light Blue",
                 "green": "Green",
-                "orange": "Orange",
+                "light-green: Light Green": "light-green: Light Green",
                 "dark-gray": "Dark Gray",
                 "light-gray": "Light Gray",
                 "white": "White"
@@ -121,5 +122,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632701112
+    "modified": 1633826939
 }
