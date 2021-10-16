@@ -37,7 +37,12 @@
     align-items: center
 
 
+.toggle__button svg
+    display: none
+
+
 .js .toggle__button svg
+    display: block
     width: 0.6em
     height: 0.6em
     margin-right: 15px
@@ -66,5 +71,5 @@
         z-index: 1
 
 
-.toggle__button:not(.expanded) svg
+.js .toggle__button:not(.expanded) svg
     transform: rotate(-90deg)

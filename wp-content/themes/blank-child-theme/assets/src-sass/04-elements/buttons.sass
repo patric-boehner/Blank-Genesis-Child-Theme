@@ -3,15 +3,19 @@
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+button,
 .search-submit,
+.wp-block-search .wp-block-search__button,
 .button
     --button-padding: 16px 24px
     --button-font-size: var(--wp--preset--font-size--small)
+    --button-background: var(--wp--custom--color--foreground)
+    --button-color: var(--wp--preset--color--white)
 
-    background-color: var( --color-inherit-background, var(--wp--custom--color--foreground) )
+    background-color: var(--color-inherit-background, var(--button-background) )
     border: 0
     border-radius: 0
-    color: var( --color-inherit, var(--wp--preset--color--white) )
+    color: var( --color-inherit, var(--button-color) )
     cursor: pointer
     font-family: var(--wp--custom--body--font-family)
     font-size: var(--button-font-size)
@@ -27,9 +31,9 @@ input[type="submit"],
     &:hover,
     &:focus,
     &:visited
-        background-color: var( --color-inherit-background, var(--wp--custom--color--secondary) )
-        color: var( --color-inherit, var(--wp--preset--color--white) )
-
+        --button-background: var(--wp--custom--color--secondary)
+        --button-color: var(--wp--preset--color--white)
+        
 
 .button
     &__small
@@ -46,4 +50,4 @@ input[type="submit"],
 
 
 .button .icon
-	fill: var(--wp--preset--color--white)
+	fill: var(--button-color)

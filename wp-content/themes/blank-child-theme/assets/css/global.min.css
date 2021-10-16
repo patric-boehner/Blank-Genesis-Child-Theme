@@ -120,22 +120,22 @@ html {
   margin: 0 auto;
 }
 
-.pagination .inner-wrap {
+.pagination ul {
   width: 100%;
   display: grid;
   gap: var(--wp--custom--spacing--medium);
 }
 
 @media only screen and (min-width: 768px) {
-  .pagination .inner-wrap {
+  .pagination ul {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "previous next";
   }
-  .pagination .inner-wrap .pagination-next {
+  .pagination ul .pagination-next {
     grid-area: next;
     justify-self: end;
   }
-  .pagination .inner-wrap .pagination-previous {
+  .pagination ul .pagination-previous {
     grid-area: previous;
     justify-self: start;
   }
@@ -334,7 +334,7 @@ h6 a:active {
 
 b,
 strong {
-  font-weight: var(--wp--custom--body--font-weight-bold);
+  font-weight: var(--wp--custom--font-weight--bold);
 }
 
 a {
@@ -508,14 +508,18 @@ input[type="search"] {
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+button,
 .search-submit,
+.wp-block-search .wp-block-search__button,
 .button {
   --button-padding: 16px 24px;
   --button-font-size: var(--wp--preset--font-size--small);
-  background-color: var(--color-inherit-background, var(--wp--custom--color--foreground));
+  --button-background: var(--wp--custom--color--foreground);
+  --button-color: var(--wp--preset--color--white);
+  background-color: var(--color-inherit-background, var(--button-background));
   border: 0;
   border-radius: 0;
-  color: var(--color-inherit, var(--wp--preset--color--white));
+  color: var(--color-inherit, var(--button-color));
   cursor: pointer;
   font-family: var(--wp--custom--body--font-family);
   font-size: var(--button-font-size);
@@ -535,14 +539,20 @@ input[type="reset"]:visited,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:visited,
+button:hover,
+button:focus,
+button:visited,
 .search-submit:hover,
 .search-submit:focus,
 .search-submit:visited,
+.wp-block-search .wp-block-search__button:hover,
+.wp-block-search .wp-block-search__button:focus,
+.wp-block-search .wp-block-search__button:visited,
 .button:hover,
 .button:focus,
 .button:visited {
-  background-color: var(--color-inherit-background, var(--wp--custom--color--secondary));
-  color: var(--color-inherit, var(--wp--preset--color--white));
+  --button-background: var(--wp--custom--color--secondary);
+  --button-color: var(--wp--preset--color--white);
 }
 
 .button__small {
@@ -560,7 +570,7 @@ input[type="submit"]:visited,
 }
 
 .button .icon {
-  fill: var(--wp--preset--color--white);
+  fill: var(--button-color);
 }
 
 .icon {
@@ -701,6 +711,14 @@ nav {
   top: 100%;
   left: 0;
   visibility: hidden;
+}
+
+@media only screen and (max-width: 860px) {
+  .genesis-nav-menu.no-js ul {
+    visibility: visible;
+    position: relative;
+    display: block;
+  }
 }
 
 /**

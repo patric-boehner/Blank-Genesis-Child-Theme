@@ -98,6 +98,15 @@ function pb_is_type_archive( $use_cache = false ) {
 }
 
 
+
+// Check if page is a landing page
+function pb_is_landing_page() {
+
+	return( is_page_template( 'templates/landing-page.php' ) ) ? true : false ; 
+
+}
+
+
 // Output link to comments more then two deep
 /*
  * http://justintadlock.com/archives/2016/11/16/designing-better-nested-comments

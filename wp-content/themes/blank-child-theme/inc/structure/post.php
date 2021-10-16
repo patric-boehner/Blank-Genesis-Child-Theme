@@ -63,7 +63,9 @@ function pb_social_share_in_footer() {
 		return;
 	}
 
-	pb_add_social_share_options();
+	if ( function_exists( 'pb_add_social_share_options' ) ) {
+		pb_add_social_share_options();
+	}
 
 }
 
@@ -84,8 +86,6 @@ function pb_add_entry_footer_style() {
 
 
 
-
-
 // Add previous and next post links after entry
 add_action( 'genesis_after_entry', 'pb_customize_entry_pagination', 8 );
 function pb_customize_entry_pagination() {
@@ -94,7 +94,10 @@ function pb_customize_entry_pagination() {
 		return;
 	}
 
-	get_template_part( '/inc/partials/post-pagination' );
+	// Output pagination
+	if ( function_exists( 'pb_adjacent_entry_pagination' ) ) {
+		pb_adjacent_entry_pagination();
+	}
 
 }
 

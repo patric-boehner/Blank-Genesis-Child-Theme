@@ -38,7 +38,7 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
   // Setup page if has top banner.
-  if ( pb_is_banner_active() == true ) {
+  if ( pb_is_banner_active() == true && pb_is_landing_page() !== true ) {
 
     wp_register_style(
       'banner-style',
@@ -112,12 +112,16 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
   // Load Footer Stylesheet
-  wp_register_style(
-    'footer-style',
-    get_stylesheet_directory_uri() . "/assets/css/footer.min.css",
-    false,
-    cache_version_id()
-  );
+  if( pb_is_landing_page() !== true ) {
+
+    wp_register_style(
+      'footer-style',
+      get_stylesheet_directory_uri() . "/assets/css/footer.min.css",
+      false,
+      cache_version_id()
+    );
+    
+  }
   
 
 	// Load Global Script
@@ -137,23 +141,23 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
 	// Social Share Script
-	// if ( pb_display_sharing_feature() == true && is_singular( 'post' ) ) {
+	if ( pb_display_sharing_feature() == true && is_singular( 'post' ) ) {
 
-	// 	wp_enqueue_script(
-  //     'social-share-script',
-  //     get_stylesheet_directory_uri() . "/assets/js/social-share.min.js",
-  //     array( 'jquery' ),
-  //     cache_version_id(),
-  //     true
-  //   );
+		wp_enqueue_script(
+      'social-share-script',
+      get_stylesheet_directory_uri() . "/assets/js/social-share.min.js",
+      array(),
+      cache_version_id(),
+      true
+    );
 
-	// 	wp_script_add_data(
-  //     'social-share-script',
-  //     'defer',
-  //     true
-  //   );
+		wp_script_add_data(
+      'social-share-script',
+      'defer',
+      true
+    );
 
-	// }
+	}
 
 }
 

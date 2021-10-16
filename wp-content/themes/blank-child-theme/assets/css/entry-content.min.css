@@ -455,13 +455,23 @@ tbody {
   border-bottom: 1px solid var(--wp--custom--border--color);
 }
 
-.adjacent-entry-pagination a {
-  display: block;
-  font-weight: var(--wp--custom--font-weight--bold);
+.pagination ul {
+  margin: 0;
+  padding: 0;
 }
 
-.adjacent-entry-pagination .nav-title {
+.pagination-item {
+  list-style: none;
+}
+
+.nav-title {
+  display: block;
   font-weight: var(--wp--custom--font-weight--bold);
+  text-decoration: none !important;
+}
+
+.adjacent-entry-pagination a {
+  font-weight: var(--wp--custom--font-weight--normal);
 }
 
 .avatar {

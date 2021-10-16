@@ -73,6 +73,7 @@ include_once( CHILD_DIR . '/inc/functions/social-share.php' );
 include_once( CHILD_DIR . '/inc/functions/markup.php' );
 include_once( CHILD_DIR . '/inc/functions/post-thumbnail-cache.php' );
 include_once( CHILD_DIR . '/inc/functions/media.php' );
+include_once( CHILD_DIR . '/inc/functions/pagination.php' );
 include_once( CHILD_DIR . '/inc/functions/js-body-class.php' );
 include_once( CHILD_DIR . '/inc/functions/inline-svg.php' );
 include_once( CHILD_DIR . '/inc/functions/sitemap.php' );

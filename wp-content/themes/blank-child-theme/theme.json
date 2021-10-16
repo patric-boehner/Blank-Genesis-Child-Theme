@@ -86,38 +86,23 @@
                 },
                 {
                     "slug": "large",
-                    "size": "24px",
+                    "size": "var(--wp--custom--font-size--max-large)",
                     "name": "Large"
                 },
                 {
                     "slug": "extra-large",
-                    "size": "31px",
+                    "size": "var(--wp--custom--font-size--max-extra-large)",
                     "name": "H3 Heading"
                 },
                 {
                     "slug": "huge",
-                    "size": "39px",
+                    "size": "var(--wp--custom--font-size--max-huge)",
                     "name": "H2 Heading"
                 },
                 {
                     "slug": "gigantic",
-                    "size": "49px",
+                    "size": "var(--wp--custom--font-size--max-gigantic)",
                     "name": "H1 Heading"
-                },
-                {
-                    "slug": "max-31",
-                    "size": "clamp( 24px, 6vw, 31px)",
-                    "name": "Max Extra Large"
-                },
-                {
-                    "slug": "max-39",
-                    "size": "clamp( 31px, 6vw, 39px)",
-                    "name": "Max Huge"
-                },
-                {
-                    "slug": "max-49",
-                    "size": "clamp( 39px, 6vw, 49px)",
-                    "name": "Max Gigantic"
                 }
             ]
         },
@@ -142,11 +127,17 @@
                 "primary": "var(--wp--preset--color--blue)",
                 "secondary": "var(--wp--preset--color--green)"
             },
+            "fontSize": {
+                "max-large": "clamp( 22px, 4vw, 24px)",
+                "max-extra-large": "clamp( 24px, 4vw, 31px)",
+                "max-huge": "clamp( 31px, 4vw, 39px)",
+                "max-gigantic": "clamp( 39px, 4vw, 49px)"
+            },
             "heading": {
-                "size-h1": "var(--wp--preset--font-size--gigantic)",
-                "size-h2": "var(--wp--preset--font-size--huge)",
-                "size-h3": "var(--wp--preset--font-size--extra-large)",
-                "size-h4": "var(--wp--preset--font-size--large)",
+                "size-h1": "var(--wp--custom--font-size--max-gigantic)",
+                "size-h2": "var(--wp--custom--font-size--max-huge)",
+                "size-h3": "var(--wp--custom--font-size--max-extra-large)",
+                "size-h4": "var(--wp--preset--font-size--max-large)",
                 "size-h5": "var(--wp--preset--font-size--small)",
                 "size-h6": "var(--wp--preset--font-size--tiny)",
                 "font-family": "var(--wp--custom--font-family--primary)",

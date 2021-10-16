@@ -55,7 +55,7 @@ if ( $video_url_host == 'www.youtube.com' || $video_url_host == 'youtube.com' ) 
   // Video thumbnail
   $img_url = esc_url( 'https://img.youtube.com/vi/'.$video_id.'/' );
 
-  $responsive = sprintf( '<img class="video-block__thumbnail" srcset="%smqdefault.jpg 320w, %smaxresdefault.jpg 1280w" sizes="(max-width: 1280px) 100vw, 1280px" src="%smaxresdefault.jpg" alt="'.$title.'" loading="lazy" />', $img_url, $img_url, $img_url );
+  $responsive = sprintf( '<img class="video-block__thumbnail" srcset="%smqdefault.jpg 320w, %smaxresdefault.jpg 1280w" sizes="(max-width: 1280px) 100vw, 1280px" src="%smaxresdefault.jpg" alt="" loading="lazy" alt="" aria-hidden="true" focusable="false" />', $img_url, $img_url, $img_url );
 
 
 } elseif ( $video_url_host == 'player.vimeo.com' ) {
@@ -66,7 +66,7 @@ if ( $video_url_host == 'www.youtube.com' || $video_url_host == 'youtube.com' ) 
   // Video thumbnail
   $img_url = esc_url( 'https://vumbnail.com/'.$video_id.'' );
 
-  $responsive = sprintf( '<img class="video-block__thumbnail" srcset="%s.jpg 640w, %s_large.jpg 640w, %s_medium.jpg 200w, %s_small.jpg 100w" sizes="(max-width: 640px) 100vw, 640px" src="%s.jpg" alt="'.$title.'" loading="lazy" />', $img_url, $img_url, $img_url, $img_url, $img_url );
+  $responsive = sprintf( '<img class="video-block__thumbnail" srcset="%s.jpg 640w, %s_large.jpg 640w, %s_medium.jpg 200w, %s_small.jpg 100w" sizes="(max-width: 640px) 100vw, 640px" src="%s.jpg" loading="lazy" alt="" aria-hidden="true" focusable="false" />', $img_url, $img_url, $img_url, $img_url, $img_url );
 
 } else {
   

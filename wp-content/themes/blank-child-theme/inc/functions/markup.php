@@ -227,7 +227,7 @@ add_filter( 'genesis_attr_adjacent-entry-pagination', 'pb_add_pagination_nav_ari
 add_filter( 'genesis_attr_archive-pagination', 'pb_add_pagination_nav_aria_label' );
 function pb_add_pagination_nav_aria_label( $attributes ) {
 
-	$attributes['aria-labelledby'] = 'pagination-nav';
+	$attributes['aria-label'] = 'Pagination';
 
 	return $attributes;
 

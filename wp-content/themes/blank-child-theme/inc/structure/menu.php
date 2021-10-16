@@ -128,6 +128,7 @@ function pb_arrows_in_menus( $item_output, $item, $depth, $args ) {
 		$item_output = str_replace( '</a>', $arrow . '</a>', $item_output );
 
 	}
+		
 
 	return $item_output;
 

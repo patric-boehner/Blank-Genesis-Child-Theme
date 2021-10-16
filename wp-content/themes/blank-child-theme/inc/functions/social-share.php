@@ -87,11 +87,12 @@ function pb_add_social_share_options() {
 			
 			// Variables
 			$class = esc_attr( $option );
+			$name = esc_html( ucfirst( $option ) );
 			$screen_reader_link_text = '<span class="screen-reader-text">'.esc_html__( 'Share on', 'blank-child-theme' ).'</span>';
 			$service = sprintf(
 				'<span class="share-links__name">%s %s</span>',
 				$screen_reader_link_text,
-				esc_html( ucfirst( $option ) )
+				$name
 			);
 
 			$share_link = $share_urls[ esc_attr( $option ) ];
@@ -105,7 +106,7 @@ function pb_add_social_share_options() {
 			
 			// Strucutre
 			$share_item = sprintf(
-				'<li class="share-links__item"><a href="%s" class="share-links__link %s" target="_blank" rel="noopener noreferrer nofollow">%s%s</a></li>',
+				'<li class="share-links__item"><a href="%s" class="share-links__link %s" target="_blank" rel="noopener noreferrer nofollow">%s %s</a></li>',
 				$share_link,
 				$class,
 				$svg,

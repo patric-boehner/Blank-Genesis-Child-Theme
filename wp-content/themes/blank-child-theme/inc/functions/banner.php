@@ -15,6 +15,9 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Cleanup old cookies
+add_action( 'init', 'pb_remove_banner_cookie' );
+
 
 // Output banner
 function pb_output_banner() {
@@ -51,8 +54,9 @@ function pb_output_banner() {
 function pb_unique_banner_cookie_name() {
 
     // Variables
+    $key = 'mdY'; // 'mdYgi' Month, Day, Year, Hour, Minute. May want to simpligy to remove time
     $id = pb_get_id_by_slug( 'banner', 'content_area' );
-    $date_time = esc_attr( get_post_modified_time( 'mdYgi', false, $id, false ) );
+    $date_time = esc_attr( get_post_modified_time( $key, false, $id, false ) );
 
     $cookie_name = 'banner-hidden-' .  $date_time;
     
@@ -97,5 +101,35 @@ function pb_get_banner_cookie_settings() {
     );
 
     return $settings;
+
+}
+
+
+// Remove the cookie is the banner is turned off but the cookie is present
+function pb_remove_banner_cookie() {
+
+    if( isset( $_COOKIE ) ) {
+
+        // Loop through to get the name of each cookie
+        foreach( $_COOKIE as $key => $val ) {
+            
+            $cookie_name_partial = str_contains( $key, 'banner-hidden-' );
+            $cookie_name = pb_unique_banner_cookie_name();
+
+             // Remove cookie if the partial is present and isn't our existing unique cookie
+            if ( $cookie_name_partial == true && $key !== $cookie_name ) {
+
+                /*
+                 * Remember: unseting a cookie doesn't remove the cookie, just deleates the value
+                 * You need to reset the cookie 
+                 */
+                unset( $_COOKIE[ $key ] );
+                setcookie( $key, '', -1, '/' );
+
+            }
+        
+        }
+
+    }
 
 }

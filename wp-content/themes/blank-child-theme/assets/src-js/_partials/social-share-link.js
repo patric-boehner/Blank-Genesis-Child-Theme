@@ -1,14 +1,18 @@
 /*
  * Simpel Social Share Link Popouts
  * Original sample comes from Jared Atchison
- * http://www.jaredatchison.com/code/create-manual-social-media-share-buttons/
+ * http://www.jaredatchison.com/code/create-manual-social-media-share-share_links/
  *
  */
 
-jQuery(document).ready(function($){
+document.addEventListener("DOMContentLoaded", function(event) {
 
-	$(".share-links__link").click(function(event){
-		event.preventDefault();
+	var share_links = document.querySelectorAll('.share-links__link');
+
+	for(var i = 0; i < share_links.length; i++){
+
+	  share_links[i].addEventListener('click', function(e) {
+
 		var window_size = "";
 		var url = this.href;
 		var domain = url.split("/")[2];
@@ -29,6 +33,11 @@ jQuery(document).ready(function($){
 				window_size = "width=585,height=511";
 		}
 		window.open(url, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,' + window_size);
-	});
 
-});
+		e.preventDefault();
+
+	  }, false);
+
+	}
+
+  });

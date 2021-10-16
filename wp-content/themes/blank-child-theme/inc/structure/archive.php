@@ -94,6 +94,7 @@ function pb_add_archive_content_area() {
 	if ( function_exists( 'pb_show_content_area' ) ) {
 		pb_show_content_area( array(
 			'location' => 'archive-footer',
+			'element' => 'section',
 		) );
 	}
 
@@ -141,13 +142,15 @@ function pb_custom_excerpt_length( $length ) {
 }
 
 
-
 // Modify arhive pagination
 remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
 add_action( 'genesis_after_endwhile', 'pb_customize_archive_pagination' );
 function pb_customize_archive_pagination() {
 
-	get_template_part( '/inc/partials/pagination' );
+	// Output Pagination
+	if ( function_exists( 'pb_archive_pagination' ) ) {
+		pb_archive_pagination();
+	}
 
 }
 

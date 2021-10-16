@@ -83,7 +83,7 @@ h6 a:active {
 
 b,
 strong {
-  font-weight: var(--wp--custom--body--font-weight-bold);
+  font-weight: var(--wp--custom--font-weight--bold);
 }
 
 a {
@@ -662,4 +662,12 @@ hr.wp-block-separator {
 
 .wp-block-cover__inner-container {
   max-width: var(--wp--custom--width--responsive);
+}
+
+.content-grid-block a {
+  pointer-events: none;
+}
+
+.optimized-video-block button {
+  pointer-events: none;
 }

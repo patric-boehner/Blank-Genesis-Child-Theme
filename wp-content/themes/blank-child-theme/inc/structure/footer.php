@@ -84,11 +84,11 @@ function pb_footer_block_areas() {
 // Customize Footer Credits
 function pb_footer_credit_output() {
 
-		$creds_text = wp_kses_post( genesis_get_option( 'footer_text' ) );
-		$output     = '<p class="copyright">' . genesis_strip_p_tags( $creds_text ) . '</p>';
+	$creds_text = wp_kses_post( genesis_get_option( 'footer_text' ) );
+	$output     = '<p class="copyright">' . genesis_strip_p_tags( $creds_text ) . '</p>';
 
-		$output = apply_filters( 'genesis_footer_output', $output, $creds_text );
+	$output = apply_filters( 'genesis_footer_output', $output, $creds_text );
 
-		echo $output;
+	echo $output;
 
 }
