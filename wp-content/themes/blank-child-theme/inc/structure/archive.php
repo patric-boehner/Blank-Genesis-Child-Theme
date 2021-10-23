@@ -153,39 +153,3 @@ function pb_customize_archive_pagination() {
 	}
 
 }
-
-
-// Customize the previous page link in pagination
-add_filter ( 'genesis_prev_link_text' , 'pb_filter_previous_page_link_text' );
-function pb_filter_previous_page_link_text ( $text ) {
-
-	if ( ! is_post_type_archive( '' ) || ! is_tax( '' ) ) {
-		return __( 'Newer Posts', 'blank-child-theme' );
-	}
-
-	return __( 'CPT Previous Page', 'blank-child-theme' );
-
-}
-
-
-// Customize the next page link in pagination
-add_filter ( 'genesis_next_link_text' , 'pb_filter_next_page_link_text' );
-function pb_filter_next_page_link_text ( $text ) {
-
-	if ( ! is_post_type_archive( '' ) || ! is_tax( '' ) ) {
-		return __( 'Older Posts', 'blank-child-theme' );
-	}
-
-	return __( 'CPT Next Page', 'blank-child-theme' );
-
-}
-
-
-// Pagination link class
-add_filter('next_posts_link_attributes', 'pb_posts_link_attributes');
-add_filter('previous_posts_link_attributes', 'pb_posts_link_attributes');
-function pb_posts_link_attributes() {
-
-	return 'class="button"';
-
-}

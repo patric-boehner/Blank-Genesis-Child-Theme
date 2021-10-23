@@ -59,15 +59,15 @@
 
 		@include above-phone
 			grid-template-columns: 1fr 1fr
-			grid-template-areas: "previous next"
+			grid-template-areas: "next previous"
 
 			.pagination-next
 				grid-area: next
-				justify-self: end
+				justify-self: start
 				
 			.pagination-previous
 				grid-area: previous
-				justify-self: start
+				justify-self: end
 			
 
 // @include above-tablet

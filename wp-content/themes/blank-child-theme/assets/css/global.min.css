@@ -129,15 +129,15 @@ html {
 @media only screen and (min-width: 768px) {
   .pagination ul {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "previous next";
+    grid-template-areas: "next previous";
   }
   .pagination ul .pagination-next {
     grid-area: next;
-    justify-self: end;
+    justify-self: start;
   }
   .pagination ul .pagination-previous {
     grid-area: previous;
-    justify-self: start;
+    justify-self: end;
   }
 }
 
@@ -604,8 +604,8 @@ a .icon:hover, a .icon:focus {
 [class*="icon-"]::before,
 [class*="-toggle"]::before {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: var(--wp--custom--icon--normal);
+  height: var(--wp--custom--icon--normal);
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -650,7 +650,7 @@ mark {
 .site-title {
   font-size: var(--wp--preset--font-size--huge);
   font-weight: var(--wp--custom--font-weight--bold);
-  line-height: 1.2;
+  line-height: var(--wp--custom--heading--line-heigh);
   margin: 0;
 }
 
@@ -889,12 +889,13 @@ nav {
 }
 
 button.nav-toggle {
+  --button-background: transparent;
+  --button-color: var(--wp--preset--color--primary);
+  --button-padding: var(--menu--item-padding);
   display: none;
   font-size: inherit;
   font-family: inherit;
-  padding: var(--menu--item-padding);
   padding-right: 0;
-  background: transparent;
   border: 0;
   cursor: pointer;
   align-items: center;
@@ -943,18 +944,18 @@ button.nav-toggle[aria-expanded="false"] .icon-close {
 
 @media only screen and (min-width: 860px) {
   .menu-bold > a {
-    font-weight: var(--menu--item-font-weight);
+    --menu--item-font-weight: var(--wp--custom--font-weight--bold);
   }
 }
 
 @media only screen and (min-width: 860px) {
   .menu-highlight > a {
+    --menu--item-font-weight: var(--wp--custom--font-weight--bold);
     padding-right: 20px;
     padding-left: 20px;
     margin-left: 20px;
     color: var(--wp--preset--color--white);
     background-color: var(--wp--custom--color--secondary);
-    font-weight: var(--menu--item-font-weight);
   }
   .menu-highlight > a:hover, .menu-highlight > a:focus {
     background-color: var(--menu--item-font-color);

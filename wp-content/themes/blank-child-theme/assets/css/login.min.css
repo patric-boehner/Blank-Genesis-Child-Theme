@@ -23,7 +23,7 @@
   height: 0;
   padding-bottom: 43.75%;
   font-size: 20px;
-  line-height: 1.3em;
+  line-height: var(--wp--custom--heading--line-heigh);
   margin: 0 auto 25px;
   text-indent: -9999px;
   outline: 0;

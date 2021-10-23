@@ -17,8 +17,8 @@
             },
             "choices": {
                 "0": "(None)",
-                "check": "check",
-                "star": "star"
+                "check": "Check",
+                "star": "Star"
             },
             "default_value": false,
             "allow_null": 0,
@@ -122,5 +122,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634014571
+    "modified": 1634795043
 }

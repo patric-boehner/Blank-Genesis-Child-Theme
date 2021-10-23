@@ -214,12 +214,14 @@ nav
 
 // Mobile Menu Toggle
 button.nav-toggle
+	--button-background: transparent
+	--button-color: var(--wp--preset--color--primary)
+	--button-padding: var(--menu--item-padding)
+
 	display: none // Hidden by defualt if no JS support
 	font-size: inherit
 	font-family: inherit
-	padding: var(--menu--item-padding)
 	padding-right: 0
-	background: transparent
 	border: 0
 	cursor: pointer
 	align-items: center
@@ -266,17 +268,18 @@ button.nav-toggle
 // Addon classes
 .menu-bold > a
 	@include above-mobile-menu
-		font-weight: var(--menu--item-font-weight)
+		--menu--item-font-weight: var(--wp--custom--font-weight--bold)
 
 
 .menu-highlight > a
 	@include above-mobile-menu
+		--menu--item-font-weight: var(--wp--custom--font-weight--bold)
+
 		padding-right: 20px
 		padding-left: 20px
 		margin-left: 20px
 		color: var(--wp--preset--color--white)
 		background-color: var(--wp--custom--color--secondary)
-		font-weight: var(--menu--item-font-weight)
 
 		&:hover,
 		&:focus

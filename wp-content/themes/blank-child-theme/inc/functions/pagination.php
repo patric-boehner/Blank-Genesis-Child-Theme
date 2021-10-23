@@ -19,8 +19,8 @@ if( !defined( 'ABSPATH' ) ) exit;
 function pb_archive_pagination() {
 
 	// Links
-	$prev_link = get_previous_posts_link( apply_filters( 'genesis_prev_link_text', '' . __( 'Previous Page', 'blank-child-theme' ) ) );
-	$next_link = get_next_posts_link( apply_filters( 'genesis_next_link_text', __( 'Next Page', 'blank-child-theme' ) . '' ) );
+	$prev_link = get_previous_posts_link( apply_filters( 'genesis_prev_link_text', __( 'Previous Page', 'blank-child-theme' ) ) );
+	$next_link = get_next_posts_link( apply_filters( 'genesis_next_link_text', __( 'Next Page', 'blank-child-theme' ) ) );
 
 	// Screen Reader Text
 	$screen_reader = '<h2 class="screen-reader-text">' . __( 'Pagination', 'blank-child-theme' ) .  '</h2>';
@@ -28,8 +28,8 @@ function pb_archive_pagination() {
 	// Output
 	if ( $prev_link || $next_link ) {
 
-		$pagination = $prev_link ? sprintf( '<li class="pagination-previous pagination-item">%s</li>', $prev_link ) : '';
-		$pagination .= $next_link ? sprintf( '<li class="pagination-next pagination-item">%s</li>', $next_link ) : '';
+		$pagination = $prev_link ? sprintf( '<li class="pagination-next pagination-item">%s</li>', $prev_link ) : '';
+		$pagination .= $next_link ? sprintf( '<li class="pagination-previous pagination-item">%s</li>', $next_link ) : '';
 
 		genesis_markup( array(
 			'open'	 => $screen_reader. '<nav %s>',
@@ -60,8 +60,8 @@ function pb_adjacent_entry_pagination() {
 	// Output if either post is available
 	if ( $previous_link || $next_link ) {
 
-		$pagination = $previous_link ? sprintf( '<li class="pagination-next pagination-item">%s</li>', $previous_link ) : '';
-		$pagination .= $next_link ? sprintf( '<li class="pagination-previous pagination-item">%s</li>', $next_link ) : '';
+		$pagination = $previous_link ? sprintf( '<li class="pagination-previous pagination-item">%s</li>', $previous_link ) : '';
+		$pagination .= $next_link ? sprintf( '<li class="pagination-next pagination-item">%s</li>', $next_link ) : '';
 
 		genesis_markup( array(
 			'open'	 => $screen_reader . '<nav %s>',
@@ -74,3 +74,38 @@ function pb_adjacent_entry_pagination() {
 
 }
 
+
+// Customize the previous page link in pagination
+// add_filter ( 'genesis_prev_link_text' , 'pb_filter_previous_page_link_text' );
+// function pb_filter_previous_page_link_text ( $text ) {
+
+// 	if ( ! is_post_type_archive( '' ) || ! is_tax( '' ) ) {
+// 		return __( 'Newer Posts', 'blank-child-theme' );
+// 	}
+
+// 	return __( 'CPT Previous Page', 'blank-child-theme' );
+
+// }
+
+
+// Customize the next page link in pagination
+// add_filter ( 'genesis_next_link_text' , 'pb_filter_next_page_link_text' );
+// function pb_filter_next_page_link_text ( $text ) {
+
+// 	if ( ! is_post_type_archive( '' ) || ! is_tax( '' ) ) {
+// 		return __( 'Older Posts', 'blank-child-theme' );
+// 	}
+
+// 	return __( 'CPT Next Page', 'blank-child-theme' );
+
+// }
+
+
+// Pagination link class
+add_filter('next_posts_link_attributes', 'pb_posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'pb_posts_link_attributes');
+function pb_posts_link_attributes() {
+
+	return 'class="button"';
+
+}

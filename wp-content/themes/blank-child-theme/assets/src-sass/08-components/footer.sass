@@ -1,6 +1,10 @@
 // Site Footer
 //**********************************************
 
+.site-footer
+	background-color: var(--wp--preset--color--light-green)
+
+
 .block-content-area__footer 
 	font-size: var(--wp--preset--font-size--small)
 
@@ -8,7 +12,6 @@
 .sub-footer
 	border-top: 1px solid var(--wp--custom--border--color)
 	font-size: var(--wp--preset--font-size--small)
-	line-height: 1
 	text-align: center
 			
 	p
@@ -27,6 +30,11 @@
 
 	a
 		padding: var(--menu--item-padding)
+		text-decoration: underline
+
+		&:hover,
+		&:focus
+			text-decoration: none
 
 	li
 		max-width: max-content

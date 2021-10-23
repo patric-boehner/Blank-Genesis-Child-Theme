@@ -66,34 +66,33 @@ function pb_cf_version_id() {
 //**********************
 
 // Functions
-include_once( CORE_DIR . '/inc/functions/dont-update.php' );
-include_once( CORE_DIR . '/inc/functions/custom-meta.php' );
-include_once( CORE_DIR . '/inc/functions/custom-functions.php' );
-include_once( CORE_DIR . '/inc/functions/editor-placeholder.php' );
-include_once( CORE_DIR . '/inc/functions/seo.php' );
-include_once( CORE_DIR . '/inc/functions/acf.php' );
-include_once( CORE_DIR . '/inc/functions/user-profile.php' );
+include_once( CORE_DIR . 'inc/functions/dont-update.php' );
+include_once( CORE_DIR . 'inc/functions/custom-meta.php' );
+include_once( CORE_DIR . 'inc/functions/custom-functions.php' );
+include_once( CORE_DIR . 'inc/functions/editor-placeholder.php' );
+include_once( CORE_DIR . 'inc/functions/seo.php' );
+include_once( CORE_DIR . 'inc/functions/acf.php' );
+include_once( CORE_DIR . 'inc/functions/user-profile.php' );
 
 
 // Post Types
-include_once( CORE_DIR . '/inc/post-types/content-areas.php' );
-include_once( CORE_DIR . '/inc/post-types/blocks.php' );
-// include_once( CORE_DIR . '/inc/post-types/post-type.php' );
+include_once( CORE_DIR . 'inc/post-types/content-areas.php' );
+include_once( CORE_DIR . 'inc/post-types/blocks.php' );
+// include_once( CORE_DIR . 'inc/post-types/post-type.php' );
 
 
 // Taxonomies
-// include_once( CORE_DIR . '/inc/taxonomies/tax-name.php' );
+// include_once( CORE_DIR . 'inc/taxonomies/tax-name.php' );
 
 // Blocks
-include_once( CORE_DIR . '/inc/blocks/categories.php' );
-// include_once( CORE_DIR . '/inc/blocks/custom-block/custom-block.php' );
-include_once( CORE_DIR . '/inc/blocks/content-grid/content-grid.php' );
-include_once( CORE_DIR . '/inc/blocks/icon/icon-block.php' );
-include_once( CORE_DIR . '/inc/blocks/video/video-block.php' );
-include_once( CORE_DIR . '/inc/blocks/toggle/toggle-block.php' );
-include_once( CORE_DIR . '/inc/blocks/max-width/max-width-block.php' );
-include_once( CORE_DIR . '/inc/blocks/cover-block/cover-block.php' );
+include_once( CORE_DIR . 'inc/blocks/categories.php' );
+// include_once( CORE_DIR . 'inc/blocks/custom-block/custom-block.php' );
+include_once( CORE_DIR . 'inc/blocks/content-grid/content-grid.php' );
+include_once( CORE_DIR . 'inc/blocks/icon/icon-block.php' );
+include_once( CORE_DIR . 'inc/blocks/video/video-block.php' );
+include_once( CORE_DIR . 'inc/blocks/toggle/toggle-block.php' );
+include_once( CORE_DIR . 'inc/blocks/max-width/max-width-block.php' );
+include_once( CORE_DIR . 'inc/blocks/cover-block/cover-block.php' );
 
 // Plugible
-include_once( CORE_DIR . '/inc/plugable/social-share.php' );
-// include_once( CORE_DIR . '/inc/plugable/popular-posts.php' );
+include_once( CORE_DIR . 'inc/plugable/social-share/social-share.php' );

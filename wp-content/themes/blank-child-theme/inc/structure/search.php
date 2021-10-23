@@ -48,3 +48,31 @@ function pb_filter_search_results( $query ) {
 	return $query;
 
 }
+
+
+/**
+ * Exclude noindex'd pages from site search
+ * https://www.billerickson.net/code/exclude-no-index-content-from-wordpress-search/
+ */
+
+// add_action( 'pre_get_posts', 'pb_exclude_noindex_from_search' );
+function pb_exclude_noindex_from_search( $query ) {
+
+	if( class_exists('WPSEO_Options') ){
+
+		if( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
+
+			$meta_query = isset( $query->meta_query ) ? $query->meta_query : array();
+			$meta_query['noindex'] = array(
+				'key' => '_yoast_wpseo_meta-robots-noindex',
+				'value' => 1,
+				'compare' => 'NOT EXISTS',
+			);
+
+			$query->set( 'meta_query', $meta_query );
+
+		}
+
+	}
+
+}

@@ -29,8 +29,8 @@ a .icon:hover, a .icon:focus {
 [class*="icon-"]::before,
 [class*="-toggle"]::before {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: var(--wp--custom--icon--normal);
+  height: var(--wp--custom--icon--normal);
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;

@@ -89,7 +89,7 @@ function cf_acf_icon_select( $field ) {
 	$icons = cf_get_theme_icons();
 
 	foreach( $icons as $icon ) {
-		$field['choices'][ $icon ] = $icon;
+		$field['choices'][ $icon ] = ucwords($icon);
 	}
 
 	return $field;
