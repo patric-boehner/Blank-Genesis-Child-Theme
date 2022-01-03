@@ -69,6 +69,8 @@ function pa_add_medium_large_size_selection( $sizes ) {
 /**
  * Limits srcset from using an image larger than the actual src image.
  *
+ * https://www.ibenic.com/improve-responsive-image-attributes-wordpress/
+ * 
  * @since 2.13.0
  *
  * @param array  $image_meta    The image meta data as returned by 'wp_get_attachment_metadata()'.

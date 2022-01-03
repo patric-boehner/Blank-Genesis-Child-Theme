@@ -16,8 +16,8 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 // Disable the superfish script
-add_action( 'wp_enqueue_scripts', 'sp_disable_superfish' );
-function sp_disable_superfish() {
+add_action( 'wp_enqueue_scripts', 'pb_disable_superfish' );
+function pb_disable_superfish() {
 
 	wp_deregister_script( 'superfish' );
 	wp_deregister_script( 'superfish-args' );
@@ -44,8 +44,8 @@ function pb_remove_jquery_migrate( $scripts ) {
 
 
 // Remove WP Embed unless using an embed block
-add_action( 'wp_footer', 'my_deregister_scripts' );
-function my_deregister_scripts(){
+add_action( 'wp_footer', 'pb_deregister_scripts' );
+function pb_deregister_scripts(){
 
 	// Exit if embed block is in use
 	if ( has_block( 'embed' ) ) {

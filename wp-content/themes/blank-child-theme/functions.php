@@ -18,8 +18,8 @@ include_once get_template_directory() . '/lib/init.php';
 
 
 // Set localization
-add_action( 'after_setup_theme', 'genesis_sample_localization_setup' );
-function genesis_sample_localization_setup() {
+add_action( 'after_setup_theme', 'pb_theme_localization_setup' );
+function pb_theme_localization_setup() {
 
 	load_child_theme_textdomain( genesis_get_theme_handle(), get_stylesheet_directory() . '/languages' );
 

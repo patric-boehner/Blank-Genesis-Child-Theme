@@ -107,6 +107,14 @@
             ]
         },
 
+        "blocks": {
+            "core/button": {
+                "border": {
+                    "customRadius": false
+                }
+            }
+        },
+
         "custom": {
             "fontFamily": {
                 "primary": "'Source Sans Pro', sans-serif",
@@ -145,7 +153,7 @@
                 "size-h1": "var(--wp--custom--font-size--max-gigantic)",
                 "size-h2": "var(--wp--custom--font-size--max-huge)",
                 "size-h3": "var(--wp--custom--font-size--max-extra-large)",
-                "size-h4": "var(--wp--preset--font-size--max-large)",
+                "size-h4": "var(--wp--custom--font-size--max-large)",
                 "size-h5": "var(--wp--preset--font-size--small)",
                 "size-h6": "var(--wp--preset--font-size--tiny)",
                 "font-family": "var(--wp--custom--font-family--primary)",
@@ -205,32 +213,32 @@
             },
             "h1": {
                 "typography": {
-                    "fontSize": "var(--wp--custom--heading--size-h1)"
+                    "fontSize": "var(--wp--custom--heading--size-h-1)"
                 }
             },
             "h2": {
                 "typography": {
-                    "fontSize": "var(--wp--custom--heading--size-h2)"
+                    "fontSize": "var(--wp--custom--heading--size-h-2)"
                 }
             },
             "h3": {
                 "typography": {
-                    "fontSize": "var(--wp--custom--heading--size-h3)"
+                    "fontSize": "var(--wp--custom--heading--size-h-3)"
                 }
             },
             "h4": {
                 "typography": {
-                    "fontSize": "var(--wp--custom--heading--size-h4)"
+                    "fontSize": "var(--wp--custom--heading--size-h-4)"
                 }
             },
             "h5": {
                 "typography": {
-                    "fontSize": "var(--wp--custom--heading--size-h5)"
+                    "fontSize": "var(--wp--custom--heading--size-h-5)"
                 }
             },
             "h6": {
                 "typography": {
-                    "fontSize": "var(--wp--custom--heading--size-h6)"
+                    "fontSize": "var(--wp--custom--heading--size-h-6)"
                 }
             }
         },
