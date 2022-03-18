@@ -23,8 +23,8 @@ if( !defined( 'ABSPATH' ) ) exit;
  * Remove WPSEO Notifications
  *
  */
-add_action( 'init', 'ea_remove_wpseo_notifications' );
-function ea_remove_wpseo_notifications() {
+add_action( 'admin_notices', 'cf_remove_wpseo_notifications' );
+function cf_remove_wpseo_notifications() {
 
 	if( ! class_exists( 'Yoast_Notification_Center' ) )
 		return;
