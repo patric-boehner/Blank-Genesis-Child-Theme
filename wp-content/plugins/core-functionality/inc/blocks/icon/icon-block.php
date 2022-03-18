@@ -32,13 +32,19 @@ function register_acf_icon_block() {
       'mode'              => 'preview',
       'render_template'   => CORE_DIR . 'inc/blocks/icon/partial.php',
       'enqueue_style'     => get_stylesheet_directory_uri() . "/assets/css/icon.min.css",
-      'supports'		    => [
-        'mode'          => false,
+      'supports'		      => [
+        'mode'                => false,
         // Each can also be set to true or false
-        'align'			    => false,
-        'align_content' => array( 'top', 'center', 'bottom' ), // matrix
-        'customClassName'	=> true,
-        'jsx' 			=> true,
+        'align'			          => false,
+        // 'align'            => array( 'none', 'left', 'center' ),
+        'align_content'       => [ 'top', 'center', 'bottom' ], // matrix
+        'customClassName'	    => true,
+        'jsx' 			          => true,
+        'color'               => [
+          'background'            => false,
+          'gradients'             => false,
+          'text'                  => true,
+        ],
       ]
   ));
 

@@ -3,7 +3,7 @@
  * Plugin Name: Core Functionality
  * Plugin URI: https://
  * Description: This custom plugin is a companion to your websites. It contains all your site's core functionality so that it is independent of your theme. For your site to have all its intended functionality, this plugin must be active.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Patrick Boehner
  * Author URI: http://www.patrickboehner.com
  *
@@ -52,10 +52,10 @@ require_once CORE_PLUGIN_PATH . 'core-functionality.php';
 //**********************
 
 // If debug is on return version number as time, otherwsie return static number
-define ('CF_VERSION', '1.1.0');
+define ('CF_VERSION', '1.1.2');
 
 //* Cache Busting
-function pb_cf_version_id() {
+function cf_cf_version_id() {
 	if ( WP_DEBUG )
 	return time();
 	return CF_VERSION;
@@ -64,6 +64,12 @@ function pb_cf_version_id() {
 
 //* Include Plugin Files
 //**********************
+
+// Admin
+include_once( CORE_DIR . 'inc/admin/admin-bar-notice.php' );
+include_once( CORE_DIR . 'inc/admin/admin-menu.php' );
+include_once( CORE_DIR . 'inc/admin/admin-bar.php' );
+
 
 // Functions
 include_once( CORE_DIR . 'inc/functions/dont-update.php' );
@@ -84,6 +90,7 @@ include_once( CORE_DIR . 'inc/post-types/blocks.php' );
 // Taxonomies
 // include_once( CORE_DIR . 'inc/taxonomies/tax-name.php' );
 
+
 // Blocks
 include_once( CORE_DIR . 'inc/blocks/categories.php' );
 // include_once( CORE_DIR . 'inc/blocks/custom-block/custom-block.php' );
@@ -93,6 +100,7 @@ include_once( CORE_DIR . 'inc/blocks/video/video-block.php' );
 include_once( CORE_DIR . 'inc/blocks/toggle/toggle-block.php' );
 include_once( CORE_DIR . 'inc/blocks/max-width/max-width-block.php' );
 include_once( CORE_DIR . 'inc/blocks/cover-block/cover-block.php' );
+
 
 // Plugible
 include_once( CORE_DIR . 'inc/plugable/social-share/social-share.php' );

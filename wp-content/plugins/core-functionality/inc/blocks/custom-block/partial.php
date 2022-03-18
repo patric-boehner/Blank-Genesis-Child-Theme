@@ -15,31 +15,27 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 //**********************
 
-// Create id attribute allowing for custom "anchor" value.
-$id = 'custom-block-' . $block['id'];
-
-if( !empty( $block['anchor'] ) ) {
-    $id = $block['anchor'];
-}
-
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'custom-block';
+$classes = ['custom-block'];
 
-if( !empty( $block['className'] ) ) {
-    $className .= ' ' . $block['className'];
+if ( ! empty( $block['className'] ) ) {
+	$classes = array_merge( $classes, explode( ' ', $block['className'] ) );
 }
 
 if( !empty( $block['align'] ) ) {
-  $className .= ' align' . $block['align'];
+  $classes[] = 'align' . $block['align'];
 }
 
 if( !empty( $block['align_text'] ) ) {
-  $className .= ' has-text-align-' . $block['align_text'];
+  $classes[] = 'has-text-align-' . $block['align_text'];
 }
 
 if( !empty( $block['align_content'] ) ) {
-  $className .= ' is-vertically-aligned-' . $block['align_content'];
+  $className = 'is-vertically-aligned-' . $block['align_content'];
 }
+
+$block_classes = esc_attr( join( ' ', $classes ) );
+$block_id = !empty( $block['anchor'] ) ? ' id="' . esc_attr( sanitize_title( $block['anchor'] ) ) . '"' : '' ;
 
 // Variables
 $text = esc_html( get_field( 'text' ) );
