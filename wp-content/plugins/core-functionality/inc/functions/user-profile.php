@@ -17,8 +17,8 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 
 // Register User Contact Methods
-add_filter( 'user_contactmethods', 'custom_user_contact_methods' );
-function custom_user_contact_methods( $user_contact_method ) {
+add_filter( 'user_contactmethods', 'cf_custom_user_contact_methods' );
+function cf_custom_user_contact_methods( $user_contact_method ) {
 
 	if ( genesis_detect_seo_plugins() ) {
 

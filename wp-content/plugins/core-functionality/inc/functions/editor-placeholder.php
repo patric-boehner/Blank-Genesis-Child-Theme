@@ -20,8 +20,8 @@ if( !defined( 'ABSPATH' ) ) exit;;
 //* Change Post Editor Placeholder Text
 //**********************
 
-add_filter( 'enter_title_here', 'pb_change_placeholder_title_text' );
-function pb_change_placeholder_title_text( $title ){
+add_filter( 'enter_title_here', 'cf_change_placeholder_title_text' );
+function cf_change_placeholder_title_text( $title ){
 
 	$screen = get_current_screen();
 
