@@ -16,17 +16,6 @@
   src: url("../fonts/source-sans-pro-v14-latin-600.woff2") format("woff2"), url("../fonts/source-sans-pro-v14-latin-600.woff") format("woff");
 }
 
-@media only screen and (max-width: 1023px) {
-  body {
-    --wp--custom--heading--line-heigh: 1.15;
-    --wp--custom--body--line-heigh: 1.525;
-    --wp--custom--spacing--content-area: var(--wp--custom--spacing--large);
-    --wp--custom--spacing--row: 60px;
-    --wp--custom--spacing--large: var(--wp--custom--spacing--medium);
-    --wp--custom--spacing--x-large: var( --wp--custom--spacing--large );
-  }
-}
-
 html {
   box-sizing: border-box;
 }
@@ -276,9 +265,6 @@ html {
 }
 
 body {
-  font-family: var(--wp--custom--body--font-family);
-  font-weight: var(--wp--custom--body--font-weight);
-  line-height: var(--wp--custom--body--line-heigh);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -296,9 +282,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--wp--custom--heading--font-family);
-  font-weight: var(--wp--custom--heading--font-weight);
-  line-height: var(--wp--custom--heading--line-heigh);
   margin: 0 auto;
   margin-bottom: var(--wp--custom--spacing--small);
 }
@@ -416,36 +399,15 @@ figcaption {
   margin-bottom: 0;
 }
 
-blockquote {
-  margin: 0;
-  padding: 45px var(--wp--custom--spacing--medium) 0 var(--wp--custom--spacing--medium);
-  margin-bottom: var(--wp--custom--spacing--medium);
-}
-
-blockquote p {
-  font-size: var(--wp--preset--font-size--medium);
-  font-style: italic;
-  line-height: 1.8;
-  margin-bottom: var(--wp--custom--spacing--medium);
-}
-
-blockquote::before {
-  content: "\201C";
-  display: block;
-  font-size: var(--wp--preset--font-size--gigantic);
-  height: 0;
-  position: relative;
-  top: -30px;
-}
-
-blockquote cite {
-  display: block;
-  font-size: var(--wp--preset--font-size--small);
-  margin-top: -20px;
+form {
+  --form-min-height: 58px;
+  --form-border: 1px solid var(--wp--custom--border--color);
+  --form-padding: 16px;
 }
 
 label,
 legend {
+  display: inline-block;
   font-weight: var(--wp--custom--font-weight--bold);
   margin-bottom: 5px;
 }
@@ -453,18 +415,25 @@ legend {
 input,
 select,
 textarea {
-  font-family: var(--wp--custom--body--font-family);
+  font-family: var(--wp--preset--font-family--primary);
+  font-size: var(--wp--preset--font-size--small);
+  line-height: var(--wp--custom--line-height--normal);
   background-color: var(--wp--preset--color--white);
-  border: 1px solid var(--wp--custom--border--color);
+  border: var(--form-border);
   color: var(--wp--custom--color--foreground);
-  padding: 16px;
+  padding: var(--form-padding);
   width: 100%;
+  min-height: var(--form-min-height);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  border: 1px solid var(--wp--custom--border--color);
+  border: var(--form-border);
+}
+
+.post-password-form input[type="password"] {
+  min-height: var(--form-min-height);
 }
 
 input[type="checkbox"],
@@ -472,28 +441,6 @@ input[type="image"],
 input[type="radio"] {
   width: auto;
   margin-right: 10px;
-}
-
-::-moz-placeholder {
-  color: var(--wp--custom--color--foreground);
-  opacity: 1;
-}
-
-::-ms-input-placeholder {
-  color: var(--wp--custom--color--foreground);
-}
-
-::-webkit-input-placeholder {
-  color: var(--wp--custom--color--foreground);
-}
-
-input:focus::-webkit-input-placeholder,
-input:focus::-moz-placeholder,
-input:focus:-ms-input-placeholder,
-textarea:focus::-webkit-input-placeholder,
-textarea:focus::-moz-placeholder,
-textarea:focus:-ms-input-placeholder {
-  color: transparent;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -511,20 +458,17 @@ input[type="submit"],
 button,
 .search-submit,
 .wp-block-search .wp-block-search__button,
+.wp-block-button__link,
 .button {
-  --button-padding: 16px 24px;
-  --button-font-size: var(--wp--preset--font-size--small);
-  --button-background: var(--wp--custom--color--foreground);
-  --button-color: var(--wp--preset--color--white);
-  background-color: var(--color-inherit-background, var(--button-background));
+  background-color: var(--color-inherit-background, var(--wp--custom--button--background));
   border: 0;
   border-radius: 0;
-  color: var(--color-inherit, var(--button-color));
+  color: var(--color-inherit, var(--wp--custom--button--color));
   cursor: pointer;
-  font-family: var(--wp--custom--body--font-family);
+  font-family: var(--wp--preset--font-family--primary);
   font-size: var(--button-font-size);
   font-weight: var(--wp--custom--font-weight--bold);
-  padding: var(--button-padding);
+  padding: var(--wp--custom--button--padding);
   text-decoration: none;
   white-space: normal;
   width: auto;
@@ -532,45 +476,32 @@ button,
   transition: all 0.25s ease-in-out;
 }
 
-input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:visited,
+input[type="button"]:hover, input[type="button"]:focus,
 input[type="reset"]:hover,
 input[type="reset"]:focus,
-input[type="reset"]:visited,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
-input[type="submit"]:visited,
 button:hover,
 button:focus,
-button:visited,
 .search-submit:hover,
 .search-submit:focus,
-.search-submit:visited,
 .wp-block-search .wp-block-search__button:hover,
 .wp-block-search .wp-block-search__button:focus,
-.wp-block-search .wp-block-search__button:visited,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus,
 .button:hover,
-.button:focus,
-.button:visited {
-  --button-background: var(--wp--custom--color--secondary);
-  --button-color: var(--wp--preset--color--white);
+.button:focus {
+  --wp--custom--button--background: var(--wp--preset--color--light-green);
+  --wp--custom--button--color: var(--wp--custom--color--secondary);
 }
 
 .button__small {
-  --button-padding: 12px 18px;
-  --button-font-size: var(--wp--preset--font-size--tiny);
-}
-
-.button {
-  display: inline-block;
-}
-
-.button.button-block {
-  display: block;
-  width: 100%;
+  --wp--custom--button--padding: 12px 18px;
+  --wp--custom--button--font-size: var(--wp--preset--font-size--tiny);
 }
 
 .button .icon {
-  fill: var(--button-color);
+  fill: var(--wp--custom--button--color);
 }
 
 .icon {
@@ -650,12 +581,12 @@ mark {
 .site-title {
   font-size: var(--wp--preset--font-size--huge);
   font-weight: var(--wp--custom--font-weight--bold);
-  line-height: var(--wp--custom--heading--line-heigh);
+  line-height: var(--wp--custom--line-height--small);
   margin: 0;
 }
 
 nav {
-  --menu--item-font: var(--wp--custom--font-family--primary);
+  --menu--item-font: var(--wp--preset--font-family--priamry);
   --menu--item-font-size: var(--wp--preset--font-size--normal);
   --menu--item-font-weight: var(--wp--custom--font-weight--normal);
   --menu--item-font-color: var(--wp--custom--color--foreground);
@@ -889,9 +820,9 @@ nav {
 }
 
 button.nav-toggle {
-  --button-background: transparent;
-  --button-color: var(--wp--preset--color--primary);
-  --button-padding: var(--menu--item-padding);
+  --wp--custom--button--background: transparent;
+  --wp--custom--button--color: var(--wp--preset--color--primary);
+  --wp--custom--button--padding: var(--menu--item-padding);
   display: none;
   font-size: inherit;
   font-family: inherit;
@@ -954,12 +885,12 @@ button.nav-toggle[aria-expanded="false"] .icon-close {
     padding-right: 20px;
     padding-left: 20px;
     margin-left: 20px;
-    color: var(--wp--preset--color--white);
-    background-color: var(--wp--custom--color--secondary);
+    color: var(--wp--custom--button--color);
+    background-color: var(--wp--custom--button--background);
   }
   .menu-highlight > a:hover, .menu-highlight > a:focus {
-    background-color: var(--menu--item-font-color);
-    color: var(--wp--preset--color--white);
+    --wp--custom--button--background: var(--wp--preset--color--light-green) {
+       		--wp--custom--button--color: var(--wp--custom--color--secondary); } ;
   }
 }
 
@@ -977,7 +908,7 @@ button.nav-toggle[aria-expanded="false"] .icon-close {
 
 .screen-reader-text:focus,
 .screen-reader-shortcut:focus {
-  background: #fff;
+  background: var(--wp--preset--color--white);
   box-shadow: 0 0 2px 2px rgba(var(--wp--custom--color--foreground), 0.6);
   clip: auto !important;
   color: var(--wp--custom--color--foreground);

@@ -162,15 +162,8 @@ function pb_enqueue_child_theme_scripts_styles() {
 }
 
 
-// Load footer styles
-add_action( 'init', 'pb_load_styles_footer' );
-function pb_load_styles_footer() {
-
-  add_action( 'get_footer', 'pb_enqueue_print_stylesheet' );
-
-}
-
 // Load Print Styles
+add_action( 'get_footer', 'pb_enqueue_print_stylesheet' );
 function pb_enqueue_print_stylesheet() {
 
 	wp_enqueue_style(

@@ -1,14 +1,3 @@
-@media only screen and (max-width: 1023px) {
-  body {
-    --wp--custom--heading--line-heigh: 1.15;
-    --wp--custom--body--line-heigh: 1.525;
-    --wp--custom--spacing--content-area: var(--wp--custom--spacing--large);
-    --wp--custom--spacing--row: 60px;
-    --wp--custom--spacing--large: var(--wp--custom--spacing--medium);
-    --wp--custom--spacing--x-large: var( --wp--custom--spacing--large );
-  }
-}
-
 .login {
   background-color: var(--wp--custom--color--background);
 }
@@ -23,7 +12,7 @@
   height: 0;
   padding-bottom: 43.75%;
   font-size: 20px;
-  line-height: var(--wp--custom--heading--line-heigh);
+  line-height: var(--wp--custom--line-height--small);
   margin: 0 auto 25px;
   text-indent: -9999px;
   outline: 0;

@@ -1,7 +1,13 @@
 // Forms
 
+form
+	--form-min-height: 58px
+	--form-border: 1px solid var(--wp--custom--border--color)
+	--form-padding: 16px
+
 label,
 legend
+	display: inline-block
 	font-weight: var(--wp--custom--font-weight--bold)
 	margin-bottom: 5px
 
@@ -9,15 +15,22 @@ legend
 input,
 select,
 textarea
-	font-family: var(--wp--custom--body--font-family)
+	font-family: var(--wp--preset--font-family--primary)
+	font-size: var(--wp--preset--font-size--small)
+	line-height: var(--wp--custom--line-height--normal)
 	background-color: var(--wp--preset--color--white)
-	border: 1px solid var(--wp--custom--border--color)
+	border: var(--form-border)
 	color: var(--wp--custom--color--foreground)
-	padding: 16px
+	padding: var(--form-padding)
 	width: 100%
+	min-height: var(--form-min-height)
 
 	&:focus
-		border: 1px solid var(--wp--custom--border--color)
+		border: var(--form-border)
+
+
+.post-password-form input[type="password"]
+	min-height: var(--form-min-height)
 
 
 input[type="checkbox"],
@@ -25,9 +38,6 @@ input[type="image"],
 input[type="radio"]
 	width: auto
 	margin-right: 10px
-
-
-@include placeholder-color
 
 
 input[type="search"]::-webkit-search-cancel-button,

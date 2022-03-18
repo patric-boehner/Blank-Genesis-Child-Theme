@@ -1,19 +1,28 @@
 // Block Quotes and Captions
 
 .wp-block-quote
+	--quote-font-size: var(--wp--preset--font-size--large)
+
+	margin: var(--wp--custom--spacing--medium)
 	border: none
-	
 
-.wp-block-quote.is-style-large p
-	font-size: var(--wp--preset--font-size--large)
+	// &::before
+	// 	content: "\201C"
+	// 	display: block
+	// 	font-size: var(--block-quote-mark-size)
+	// 	height: var(--block-quote-mark-size)
+	// 	position: relative
 
+	p
+		font-size: var(--quote-font-size)
 
-.wp-block-quote
+		&:last-of-type
+			margin-bottom: 0
+
 	cite
 		color: var(--color-dark-gray)
-		display: block
 		font-size: var(--wp--preset--font-size--small)
-		font-style: italic
-		margin-top: -25px
-		text-align: inherit
-		text-transform: none
+		font-weight: var(--wp--custom--font-weight--bold)
+		font-style: normal
+		display: block
+		margin-top: var(--wp--custom--spacing--small)

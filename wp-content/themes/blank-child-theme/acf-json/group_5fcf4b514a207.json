@@ -73,36 +73,6 @@
             "default_value": "default",
             "layout": "horizontal",
             "return_format": "value"
-        },
-        {
-            "key": "field_607b85629540e",
-            "label": "Color",
-            "name": "icon_color",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "blue": "Blue",
-                "light-blue": "Light Blue",
-                "green": "Green",
-                "light-green": "Light Green",
-                "dark-gray": "Dark Gray",
-                "light-gray": "Light Gray",
-                "white": "White"
-            },
-            "default_value": "dark-gray",
-            "allow_null": 1,
-            "multiple": 0,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
         }
     ],
     "location": [
@@ -122,5 +92,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634795043
+    "show_in_rest": 0,
+    "modified": 1645842447
 }

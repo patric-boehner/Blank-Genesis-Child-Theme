@@ -142,6 +142,10 @@ add_theme_support( 'editor-styles' );
 add_theme_support( 'responsive-embeds' );
 
 
+// Remove Duatone SVG's
+remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+
+
 // Remove block editor templates
 remove_theme_support( 'block-templates' );
 

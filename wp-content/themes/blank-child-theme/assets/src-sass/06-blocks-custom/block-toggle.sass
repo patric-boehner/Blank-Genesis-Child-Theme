@@ -15,6 +15,9 @@
 
     .block__inner
         padding: var(--wp--custom--spacing--medium)
+        
+        p:last-of-type
+            margin-bottom: 0
 
 
 .toggle__content:not(.open)
@@ -22,6 +25,8 @@
 
 
 .toggle__button
+    --wp--custom--button--color: var(--wp--preset--color--primary)
+
     background: transparent
     border: none
     border-radius: 0
@@ -35,11 +40,7 @@
     text-align: left
     display: flex
     align-items: center
-
-
-.toggle__button
-    --button-color: var(--wp--preset--color--primary)
-
+    
     svg
         display: none
 
@@ -57,14 +58,10 @@
         transform: rotate(-90deg)
 
 
-.toggle-block__header
-    position: relative
-
-
 .js .toggle__button
     &:hover,
     &:focus
-        --button-color: var(--wp--custom--color--secondary)
+        --wp--custom--button--color: var(--wp--custom--color--secondary)
 
     &:hover::before,
     &:focus::before

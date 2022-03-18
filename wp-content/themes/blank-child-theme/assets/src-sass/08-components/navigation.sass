@@ -1,7 +1,7 @@
 // Site Navigation
 //**********************************************
 nav
-	--menu--item-font: var(--wp--custom--font-family--primary)
+	--menu--item-font: var(--wp--preset--font-family--priamry)
 	--menu--item-font-size: var(--wp--preset--font-size--normal)
 	--menu--item-font-weight: var(--wp--custom--font-weight--normal)
 	--menu--item-font-color: var(--wp--custom--color--foreground)
@@ -214,9 +214,9 @@ nav
 
 // Mobile Menu Toggle
 button.nav-toggle
-	--button-background: transparent
-	--button-color: var(--wp--preset--color--primary)
-	--button-padding: var(--menu--item-padding)
+	--wp--custom--button--background: transparent
+	--wp--custom--button--color: var(--wp--preset--color--primary)
+	--wp--custom--button--padding: var(--menu--item-padding)
 
 	display: none // Hidden by defualt if no JS support
 	font-size: inherit
@@ -278,10 +278,10 @@ button.nav-toggle
 		padding-right: 20px
 		padding-left: 20px
 		margin-left: 20px
-		color: var(--wp--preset--color--white)
-		background-color: var(--wp--custom--color--secondary)
+		color: var(--wp--custom--button--color)
+		background-color: var(--wp--custom--button--background)
 
 		&:hover,
 		&:focus
-			background-color: var(--menu--item-font-color)
-			color: var(--wp--preset--color--white)
+			--wp--custom--button--background: var(--wp--preset--color--light-green)
+       		--wp--custom--button--color: var(--wp--custom--color--secondary)

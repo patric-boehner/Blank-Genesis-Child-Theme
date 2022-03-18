@@ -1,67 +1,34 @@
 // Button block
 
 .wp-block-buttons
-	.wp-block-button
-		margin-bottom: var(--wp--custom--spacing--medium)
-		margin-right: var(--wp--custom--spacing--medium)
+	gap: var(--wp--custom--grid--gap-small) !important
+	
 
-		&:last-of-type
-			margin-right: 0
-			margin-bottom: 0
+.wp-block-button__link
+	background-color: var(--wp--custom--button--background)
+	border: 0
+	border-radius: 0
+	color: var( --color-inherit, var(--wp--custom--button--color) )
+	cursor: pointer
+	font-size: var(--button-font-size)
+	font-weight: var(--wp--custom--font-weight--bold)
+	padding: var(--wp--custom--button--padding)
+	text-decoration: none
+	white-space: normal
+	width: auto
+	line-height: normal
+	transition: all 0.25s ease-in-out
 
-
-.wp-block-button
-	&__link
-		background-color: var( --color-inherit-background, var(--wp--custom--color--foreground) )
+	&:hover,
+	&:focus
 		border: 0
-		border-radius: 0
-		color: var( --color-inherit, var(--wp--preset--color--white) )
-		cursor: pointer
-		font-size: var(--wp--preset--font-size--small)
-		font-weight: var(--wp--custom--font-weight--bold)
-		padding: 16px 24px
-		text-decoration: none
-		white-space: normal
-		width: auto
-		line-height: normal
-		transition: all 0.25s ease-in-out
+		background-color: var( --color-inherit-background, var(--wp--custom--button--background) )
+		color: var( --color-inherit, var(--wp--custom--button--color) )
 
-		&:hover,
-		&:focus,
-		&:visited
-			background-color: var( --color-inherit-background, var(--wp--custom--color--secondary) )
-			color: var( --color-inherit, var(--wp--preset--color--white) )
-
-		&:focus
-			box-shadow: 0 0 0 3px var(--wp--preset--color--white),0 0 0 5px currentColor
-			outline: 0
-
-		&:disabled
-			background-color: var(--wp--custom--border--color)
-			border-width: 0
-			color: var(--wp--custom--color--foreground)
-			cursor: not-allowed
-				
-		&:not(.has-text-color)
-			color: var(--wp--preset--color--white)
-			
-			&:hover
-				color: var(--wp--preset--color--white)
-				
-		&:not(.has-background)
-			$default: nth( nth( $colors, 1 ), 2 ) // first color in $colors array
-			background-color: $default
-
-			&:hover,
-			&:focus
-				background-color: darken( $default, 20% )
-
-		@each $name, $color in $colors
-
-			&.has-#{$name}-color:hover,
-			&.has-#{$name}-color:focus
-				color: $color
-			
-			&.has-#{$name}-background-color:hover,
-			&.has-#{$name}-background-color:focus
-				background-color: darken( $color, 20% )
+	&:focus
+		box-shadow: 0 0 0 3px var(--wp--preset--color--white),0 0 0 5px currentColor
+		outline: 0
+		
+	svg
+		vertical-align: middle
+		fill: currentcolor

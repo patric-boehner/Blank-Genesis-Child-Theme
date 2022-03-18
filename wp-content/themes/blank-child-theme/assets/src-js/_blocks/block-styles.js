@@ -12,7 +12,7 @@ wp.domReady( () => {
 
 	wp.blocks.unregisterBlockStyle(
 		'core/quote',
-		[ 'default', 'large' ]
+		[ 'default', 'large', 'plain' ]
 	);
 
 	wp.blocks.unregisterBlockStyle(
