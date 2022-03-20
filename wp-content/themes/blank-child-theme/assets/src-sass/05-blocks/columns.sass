@@ -1,40 +1,35 @@
 // Block Columns
 
 .wp-block-columns
+    gap: var(--wp--custom--grid--gap)
+
+
+.wp-block-column
+    margin: 0 !important
+
+
+.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:only-child)
+    flex-basis: 100% !important
+
+
+// Remove first and last margin
+.wp-block-column > :first-child
+    margin-top: 0
+
+
+.wp-block-column > :last-child
     margin-bottom: 0
-
-    .wp-block-column:not(:first-child)
-        margin-left: var(--wp--custom--grid--gap)
-
-    @include tablet
-        display: block
-
-        .wp-block-column
-            margin-bottom: var(--wp--custom--grid--gap)
-
-            &:last-child
-                margin-bottom: 0
-
-        .wp-block-column:not(:first-child)
-            margin-left: 0 !important
 
 
 // Column Styles
-.wp-block-columns    
 
-    &.is-style-medium-gap
-        --wp--custom--grid--gap: var(--wp--custom--spacing--large)
+.is-style-medium-gap
+    --wp--custom--grid--gap: var(--wp--custom--spacing--large)
 
-        .wp-block-column:not(:first-child)
-            margin-left: var(--wp--custom--grid--gap)
 
-    &.is-style-large-gap
-        --wp--custom--grid--gap: var(--wp--custom--spacing--x-large)
+.is-style-large-gap
+    --wp--custom--grid--gap: var(--wp--custom--spacing--x-large)
 
-        .wp-block-column:not(:first-child)
-            margin-left: var(--wp--custom--grid--gap)
 
-    .wp-block-column
-
-        &.is-style-medium-spacing
-            padding: var(--wp--custom--spacing--medium)
+.is-style-medium-spacing
+    padding: var(--wp--custom--spacing--medium)

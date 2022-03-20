@@ -4,6 +4,7 @@
 
 
 .toggle-block
+    margin-top: var(--wp--custom--spacing--medium)
     margin-bottom: var(--wp--custom--spacing--medium)
 
     &__header
@@ -11,12 +12,13 @@
         width: 100%
         background-color: var(--wp--preset--color--light-gray)
         padding: var(--wp--custom--spacing--small)
-        margin-bottom: 0
+        margin-bottom: 0 !important
+        margin-top: 0 !important
 
     .block__inner
         padding: var(--wp--custom--spacing--medium)
         
-        p:last-of-type
+        & > :last-child
             margin-bottom: 0
 
 

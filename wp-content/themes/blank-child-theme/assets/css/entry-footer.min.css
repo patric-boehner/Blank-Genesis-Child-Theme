@@ -45,6 +45,7 @@
     height: auto;
     max-width: 96px; }
   .author-profile__title {
-    font-size: var(--wp--custom--heading--size-h4); }
+    font-size: var(--wp--custom--heading--size-h4);
+    margin-top: 0; }
   .author-profile__description {
     margin-bottom: 0; }

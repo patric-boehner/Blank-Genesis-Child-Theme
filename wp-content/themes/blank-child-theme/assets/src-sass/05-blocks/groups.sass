@@ -4,9 +4,20 @@
     --wp--custom--spacing--group-padding: 0
 
 
+// Remove first and last margin
+.wp-block-group > :first-child
+    margin-top: 0
+
+
+.wp-block-group > :last-child
+    margin-bottom: 0
+
+
+// Group padding
 .wp-block-group
     padding: var(--wp--custom--spacing--group-padding)
 
     &.alignfull
         padding-top: var(--wp--custom--spacing--group-padding)
         padding-bottom: var(--wp--custom--spacing--group-padding)
+    

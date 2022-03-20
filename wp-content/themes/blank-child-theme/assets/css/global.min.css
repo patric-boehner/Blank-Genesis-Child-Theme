@@ -252,7 +252,7 @@ html {
 
 .block-content-area__footer {
   padding-top: var(--wp--custom--spacing--row);
-  padding-bottom: var(--wp--custom--spacing--row);
+  padding-bottom: var(--wp--custom--spacing--medium);
 }
 
 .sub-footer {
@@ -283,6 +283,7 @@ h4,
 h5,
 h6 {
   margin: 0 auto;
+  margin-top: var(--wp--custom--spacing--medium);
   margin-bottom: var(--wp--custom--spacing--small);
 }
 
@@ -338,8 +339,14 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-left: var(--wp--custom--spacing--medium);
+  margin-top: var(--wp--custom--spacing--medium);
   margin-bottom: var(--wp--custom--spacing--medium);
-  padding-left: 40px;
+  padding-left: var(--wp--custom--spacing--medium);
+}
+
+li {
+  margin-bottom: var(--wp--custom--spacing--x-small);
 }
 
 ol > li {
@@ -741,6 +748,7 @@ nav {
   max-width: -moz-max-content;
   max-width: max-content;
   flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 860px) {

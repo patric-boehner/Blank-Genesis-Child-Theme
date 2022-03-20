@@ -1,31 +1,27 @@
 .entry-content > .optimized-video-block:not(:first-child) {
   margin-top: var(--wp--custom--spacing--medium); }
 
-.optimized-video-block {
-  --aspect-ratio: 315 / 560; }
-  .optimized-video-block iframe {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: transparent; }
-
-.video-block__wrapper {
-  position: relative;
-  background-color: var(--color-light-gray);
-  padding-top: calc(var(--aspect-ratio) * 100%);
-  overflow: hidden;
-  cursor: pointer; }
-  .video-block__wrapper:hover > .video-block__button, .video-block__wrapper:focus > .video-block__button {
-    background-color: var(--wp--custom--color--secondary);
-    color: var(--wp--preset--color--white); }
-
-.video-block__thumbnail {
+.optimized-video-block iframe {
   position: absolute;
+  height: 100%;
   width: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+  background-color: transparent; }
+
+.video-block__wrapper {
+  aspect-ratio: var(--wp--custom--ratio--16-9);
+  position: relative;
+  background-color: var(--wp--custom--button--background);
+  color: var(--wp--custom--button--color);
+  cursor: pointer; }
+  .video-block__wrapper:hover > .video-block__button, .video-block__wrapper:focus > .video-block__button {
+    --wp--custom--button--background: var(--wp--preset--color--light-green);
+    --wp--custom--button--color: var(--wp--custom--color--secondary); }
+
+.video-block__thumbnail {
+  object: cover;
+  width: 100%; }
 
 .video-block__button {
   position: absolute;

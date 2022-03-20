@@ -168,7 +168,7 @@
                 "medium-large": "60px",
                 "large": "90px",
                 "x-large": "120px",
-                "side": "8%",
+                "side": "clamp( calc( (30/16) * 1rem), 5vw, calc( (180/16) * 1rem) )",
                 "content-area": "var(--wp--custom--spacing--x-large)",
                 "row": "var(--wp--custom--spacing--large)",
                 "group-padding": "var(--wp--custom--spacing--medium-large)"
@@ -178,11 +178,14 @@
                 "content": "800px",
                 "small": "600px",
                 "max-width": "var(--wp--custom--width--full)",
-                "responsive": "var(--wp--custom--width--full)"
+                "responsive": "var(--wp--custom--width--full)",
+                "scrollbar": "15px"
             },
             "grid": {
-                "gap": "var(--wp--custom--spacing--medium)",
-                "gap-small": "var(--wp--custom--spacing--small)"
+                "gap": "var(--wp--custom--spacing--medium)"
+            },
+            "ratio": {
+                "16-9": "16/9"
             },
             "button": {
                 "padding": "16px 24px",

@@ -2,22 +2,23 @@
 
 .alignwide,
 .alignfull
-	margin-left: calc(50% - 50vw)
-	margin-right: calc(50% - 50vw)
+	margin-left: calc(50% - (50vw - (var(--wp--custom--width--scrollbar) / 2)))
+	margin-right: calc(50% - (50vw - (var(--wp--custom--width--scrollbar) / 2)))
 	max-width: 100vw
-	width: 100vw
-
+	width: calc(100vw - var(--wp--custom--width--scrollbar))
+	
 
 // Loade Align Wide styles only on desktop
 @include above-desktop
-	// For the negative left/right margin, subtract page width from the content width and divide by two
+	// For the negative left/right margin, subtract page width from the content width, subtract the side spacing, and divide by two
 	// Medi query is bsaed on the --wp--custom--width--full width
 
 	.alignwide
-		margin-left: calc( ( ( var(--wp--custom--width--full) - var(--wp--custom--width--content) ) / 2 ) * -1 )
-		margin-right: calc( ( ( var(--wp--custom--width--full) - var(--wp--custom--width--content) ) / 2 ) * -1 )
-		max-width: calc( 100% + ( var(--wp--custom--width--full) - var(--wp--custom--width--content) ) ) // 400px sum of left and right margin
+		margin-left: calc( ( ( var(--wp--custom--width--full) - var(--wp--custom--width--content) - var(--wp--custom--spacing--side) ) / 2 ) * -1 )
+		margin-right: calc( ( ( var(--wp--custom--width--full) - var(--wp--custom--width--content) - var(--wp--custom--spacing--side) ) / 2 ) * -1 )
+		max-width: calc( 100% + ( var(--wp--custom--width--full) - var(--wp--custom--width--content) - var(--wp--custom--spacing--side) ) ) // 400px sum of left and right margin
 		width: var(--wp--custom--width--full)
+
 
 
 .wp-block-cover

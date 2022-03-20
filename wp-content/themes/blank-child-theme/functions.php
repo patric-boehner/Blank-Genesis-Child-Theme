@@ -66,10 +66,8 @@ include_once( CHILD_DIR . '/inc/admin/block-patterns.php' );
 include_once( CHILD_DIR . '/inc/functions/author-profile.php' );
 include_once( CHILD_DIR . '/inc/functions/helpers.php' );
 include_once( CHILD_DIR . '/inc/functions/autoptimize.php' );
-include_once( CHILD_DIR . '/inc/functions/banner.php' );
 include_once( CHILD_DIR . '/inc/functions/header.php' );
 include_once( CHILD_DIR . '/inc/functions/resource-loading.php' );
-include_once( CHILD_DIR . '/inc/functions/social-share.php' );
 include_once( CHILD_DIR . '/inc/functions/markup.php' );
 include_once( CHILD_DIR . '/inc/functions/post-thumbnail-cache.php' );
 include_once( CHILD_DIR . '/inc/functions/media.php' );
@@ -77,6 +75,11 @@ include_once( CHILD_DIR . '/inc/functions/pagination.php' );
 include_once( CHILD_DIR . '/inc/functions/js-body-class.php' );
 include_once( CHILD_DIR . '/inc/functions/inline-svg.php' );
 include_once( CHILD_DIR . '/inc/functions/sitemap.php' );
+
+
+// Pluggable
+include_once( CHILD_DIR . '/inc/pluggable/banner.php' );
+include_once( CHILD_DIR . '/inc/pluggable/social-share.php' );
 
 
 // Blocks

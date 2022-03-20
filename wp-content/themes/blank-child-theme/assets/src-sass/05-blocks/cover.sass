@@ -1,5 +1,14 @@
 // Block Cover Image
 
+// Remove first and last margin
+.wp-block-cover__inner-container > :first-child
+    margin-top: 0
+
+
+.wp-block-cover__inner-container > :last-child
+    margin-bottom: 0
+
+
 .wp-block-cover
     min-height: auto
     padding: var(--wp--custom--spacing--medium)

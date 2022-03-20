@@ -1,14 +1,16 @@
 .toggle-block {
+  margin-top: var(--wp--custom--spacing--medium);
   margin-bottom: var(--wp--custom--spacing--medium); }
   .toggle-block__header {
     position: relative;
     width: 100%;
     background-color: var(--wp--preset--color--light-gray);
     padding: var(--wp--custom--spacing--small);
-    margin-bottom: 0; }
+    margin-bottom: 0 !important;
+    margin-top: 0 !important; }
   .toggle-block .block__inner {
     padding: var(--wp--custom--spacing--medium); }
-    .toggle-block .block__inner p:last-of-type {
+    .toggle-block .block__inner > :last-child {
       margin-bottom: 0; }
 
 .toggle__content:not(.open) {
