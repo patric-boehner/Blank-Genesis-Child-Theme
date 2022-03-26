@@ -9,7 +9,8 @@
   gap: var(--wp--custom--grid--gap); }
 
 .share-links__item {
-  list-style: none; }
+  list-style: none;
+  margin: 0; }
   .share-links__item:hover a, .share-links__item:focus a {
     color: var(--wp--custom--color--foreground); }
   .share-links__item:hover svg, .share-links__item:focus svg {

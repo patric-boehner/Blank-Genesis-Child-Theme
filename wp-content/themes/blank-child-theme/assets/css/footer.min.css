@@ -2,7 +2,7 @@
   background-color: var(--wp--preset--color--light-green);
 }
 
-.block-content-area__footer {
+.block-content-area.footer {
   font-size: var(--wp--preset--font-size--small);
 }
 

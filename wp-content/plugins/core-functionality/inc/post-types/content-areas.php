@@ -126,7 +126,7 @@
 
          // Output content
          echo sprintf(
-            '<%s %s class="block-content-area__%s %s">%s',
+            '<%s %s class="block-content-area %s %s">%s',
             $element,
             $id,
             $location,

@@ -1,21 +1,22 @@
-.top-banner-visible .block-content-area__banner {
+.top-banner-visible .block-content-area.banner {
   display: block;
 }
 
-.block-content-area__banner {
+.block-content-area.banner {
   display: none;
   background-color: var(--wp--preset--color--light-gray);
   position: relative;
+  margin-top: 0;
 }
 
-.block-content-area__banner .block__inner {
+.block-content-area.banner .block__inner {
   display: block;
   width: calc( 100% - ( var(--wp--custom--spacing--side) * 2 ));
   max-width: var(--wp--custom--width--max-width);
   margin: 0 auto;
 }
 
-.block-content-area__banner button {
+.block-content-area.banner button {
   position: absolute;
   right: 0;
   top: 0;

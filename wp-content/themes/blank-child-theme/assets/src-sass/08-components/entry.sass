@@ -1,3 +1,4 @@
+
 // Featured Image
 
 .entry-image-link
@@ -8,32 +9,19 @@
 .entry-image
 	margin-bottom: var(--wp--custom--spacing--medium)
 
-
-// Entry meta
+	
+// Entry Meta
 
 .entry-meta
+	--wp--custom--grid--gap: var(--wp--custom--spacing--small)
+	display: flex
+	gap: var(--wp--custom--grid--gap)
 	font-size: var(--wp--preset--font-size--small)
 
 	a
 		font-weight: var(--wp--custom--font-weight--normal)
 
-
 .entry-categories,
 .entry-tags
 	display: block
 	font-weight: var(--wp--custom--font-weight--normal-bold)
-
-
-// Entry Content
-// .single
-// 	.entry-content
-// 		h2, h3, h4, h5, h6
-// 			&:not(:first-child)
-// 				margin-top: var(--wp--custom--spacing--medium)
-
-
-.entry-content > :first-child
-	margin-top: 0
-
-.entry-content > :last-child
-	margin-bottom: 0

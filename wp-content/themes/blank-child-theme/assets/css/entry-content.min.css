@@ -108,21 +108,26 @@ hr.wp-block-separator {
   --wp--custom--spacing--group-padding: 0;
 }
 
+.wp-block-group {
+  padding: var(--wp--custom--spacing--group-padding);
+  margin-bottom: var(--wp--custom--spacing--medium);
+}
+
+.wp-block-group.alignfull {
+  padding-top: var(--wp--custom--spacing--group-padding);
+  padding-bottom: var(--wp--custom--spacing--group-padding);
+}
+
+.wp-block-group.alignfull {
+  margin-bottom: 0;
+}
+
 .wp-block-group > :first-child {
   margin-top: 0;
 }
 
 .wp-block-group > :last-child {
   margin-bottom: 0;
-}
-
-.wp-block-group {
-  padding: var(--wp--custom--spacing--group-padding);
-}
-
-.wp-block-group.alignfull {
-  padding-top: var(--wp--custom--spacing--group-padding);
-  padding-bottom: var(--wp--custom--spacing--group-padding);
 }
 
 .wp-block-columns {
@@ -165,6 +170,14 @@ hr.wp-block-separator {
   padding: 0;
 }
 
+.wp-block-media-text__content > :first-child {
+  margin-top: 0;
+}
+
+.wp-block-media-text__content > :last-child {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 860px) {
   .wp-block-media-text,
 .wp-block-media-text.is-stacked-on-mobile {
@@ -196,8 +209,8 @@ hr.wp-block-separator {
 }
 
 .wp-block-cover.alignfull {
-  padding-top: var(--wp--custom--spacing--row);
-  padding-bottom: var(--wp--custom--spacing--row);
+  padding-top: var(--wp--custom--spacing--block-gap);
+  padding-bottom: var(--wp--custom--spacing--block-gap);
 }
 
 .wp-block-cover.has-background-dim {
@@ -298,10 +311,6 @@ hr.wp-block-separator {
   margin-bottom: var(--wp--custom--spacing--small);
 }
 
-.archive-description p:last-child {
-  margin-bottom: 0;
-}
-
 .breadcrumb {
   font-size: var(--wp--preset--font-size--small);
 }
@@ -326,6 +335,9 @@ hr.wp-block-separator {
 }
 
 .entry-meta {
+  --wp--custom--grid--gap: var(--wp--custom--spacing--small);
+  display: flex;
+  gap: var(--wp--custom--grid--gap);
   font-size: var(--wp--preset--font-size--small);
 }
 
@@ -337,14 +349,6 @@ hr.wp-block-separator {
 .entry-tags {
   display: block;
   font-weight: var(--wp--custom--font-weight--normal-bold);
-}
-
-.entry-content > :first-child {
-  margin-top: 0;
-}
-
-.entry-content > :last-child {
-  margin-bottom: 0;
 }
 
 pre {
