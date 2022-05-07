@@ -1,4 +1,10 @@
 
+// Header
+
+.entry-title
+	margin-top: 0	
+
+	
 // Featured Image
 
 .entry-image-link
@@ -15,7 +21,9 @@
 .entry-meta
 	--wp--custom--grid--gap: var(--wp--custom--spacing--small)
 	display: flex
+	flex-wrap: wrap
 	gap: var(--wp--custom--grid--gap)
+	row-gap: 0.5em
 	font-size: var(--wp--preset--font-size--small)
 
 	a
@@ -25,3 +33,7 @@
 .entry-tags
 	display: block
 	font-weight: var(--wp--custom--font-weight--normal-bold)
+
+
+.entry-meta-after-content
+	flex-direction: column

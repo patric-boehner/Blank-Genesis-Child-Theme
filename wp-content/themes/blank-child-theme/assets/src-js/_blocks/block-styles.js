@@ -70,10 +70,10 @@ wp.domReady( () => {
 			name: 'no-bottom-spacing',
 			label: 'No Bottom Margin',
 		},
-		{
-			name: 'larger-bottom-spacing',
-			label: 'Increased Bottom Spacing',
-		}
+		// {
+		// 	name: 'larger-bottom-spacing',
+		// 	label: 'Increased Bottom Spacing',
+		// }
 	]);
 
 	wp.blocks.registerBlockStyle( 'core/paragraph', [
@@ -86,10 +86,10 @@ wp.domReady( () => {
 			name: 'no-bottom-spacing',
 			label: 'No Bottom Margin',
 		},
-		{
-			name: 'larger-bottom-spacing',
-			label: 'Increased Bottom Spacing',
-		}
+		// {
+		// 	name: 'larger-bottom-spacing',
+		// 	label: 'Increased Bottom Spacing',
+		// }
 	]);
 
 	wp.blocks.registerBlockStyle( 'acf/icon-block', [

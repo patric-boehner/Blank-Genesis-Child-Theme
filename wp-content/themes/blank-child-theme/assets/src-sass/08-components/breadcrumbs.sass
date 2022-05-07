@@ -1,12 +1,18 @@
 // Breadcrumbs
 
 .breadcrumb
+	display: flex
+	flex-wrap: wrap
+	gap: var(--wp--custom--spacing--x-small)
 	font-size: var(--wp--preset--font-size--small)
 
+.separator
+	display: flex
+	align-items: center
+
 	svg
-		width: 0.7em
-		height: 0.7em
-		fill: var(--wp--custom--color--foreground)
+		--icon--size: 0.7em
+		width: var(--icon--size)
+		height: var(--icon--size)
 		transform: rotate(-90deg)
-		margin: 0 var(--wp--custom--spacing--x-small)
 		fill: var(--wp--preset--color--dark-gray)

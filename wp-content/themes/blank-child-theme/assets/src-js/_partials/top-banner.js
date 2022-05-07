@@ -2,7 +2,7 @@
 // https://web-crunch.com/posts/lets-build-with-javascript-broadcast-bar-cookies
 
 // Banner vars
-var banner = document.querySelector('.block-content-area__banner');
+var banner = document.querySelector('.block-content-area.banner');
 var close_banner = document.querySelector('#banner__close');
 
 // Cookie vars

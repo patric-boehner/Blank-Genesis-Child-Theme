@@ -3,6 +3,11 @@
 }
 
 .block-content-area.banner {
+  padding-top: var(--wp--custom--spacing--small);
+  padding-bottom: var(--wp--custom--spacing--small);
+}
+
+.block-content-area.banner {
   display: none;
   background-color: var(--wp--preset--color--light-gray);
   position: relative;

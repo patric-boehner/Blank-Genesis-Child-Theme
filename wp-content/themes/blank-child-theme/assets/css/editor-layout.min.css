@@ -1,4 +1,7 @@
 .icon {
+  --icon--size: var(--wp--custom--icon--normal);
+  width: var(--icon--size);
+  height: var(--icon--size);
   fill: var(--wp--custom--color--foreground);
 }
 
@@ -28,9 +31,10 @@ a .icon:hover, a .icon:focus {
 
 [class*="icon-"]::before,
 [class*="-toggle"]::before {
+  --icon--size: var(--wp--custom--icon--normal);
   display: inline-block;
-  width: var(--wp--custom--icon--normal);
-  height: var(--wp--custom--icon--normal);
+  width: var(--icon--size);
+  height: var(--icon--size);
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;

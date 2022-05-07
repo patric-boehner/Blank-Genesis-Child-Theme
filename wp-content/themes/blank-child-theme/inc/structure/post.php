@@ -118,5 +118,9 @@ function pb_after_post_block_area() {
 		) );
 	
 	}
-	
+
+	if( function_exists( 'pb_output_related_posts' ) ) {
+		pb_output_related_posts();
+	}
+
 }

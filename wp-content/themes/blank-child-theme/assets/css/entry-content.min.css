@@ -93,6 +93,10 @@ p.has-background {
   fill: currentcolor;
 }
 
+p + .wp-block-buttons {
+  margin-top: var(--wp--custom--spacing--medium);
+}
+
 hr,
 hr.wp-block-separator {
   border: 0;
@@ -110,7 +114,7 @@ hr.wp-block-separator {
 
 .wp-block-group {
   padding: var(--wp--custom--spacing--group-padding);
-  margin-bottom: var(--wp--custom--spacing--medium);
+  margin-bottom: var(--wp--custom--spacing--block-gap);
 }
 
 .wp-block-group.alignfull {
@@ -132,6 +136,7 @@ hr.wp-block-separator {
 
 .wp-block-columns {
   gap: var(--wp--custom--grid--gap);
+  margin-bottom: var(--wp--custom--spacing--block-gap);
 }
 
 .wp-block-column {
@@ -164,6 +169,7 @@ hr.wp-block-separator {
 
 .wp-block-media-text {
   gap: var(--wp--custom--grid--gap);
+  margin-bottom: var(--wp--custom--spacing--block-gap);
 }
 
 .wp-block-media-text .wp-block-media-text__content {
@@ -193,6 +199,14 @@ hr.wp-block-separator {
     grid-column: 1;
     grid-row: 1;
   }
+}
+
+.wp-block-cover {
+  margin-bottom: var(--wp--custom--spacing--block-gap);
+}
+
+.wp-block-cover.alignfull {
+  margin-bottom: 0;
 }
 
 .wp-block-cover__inner-container > :first-child {
@@ -312,17 +326,28 @@ hr.wp-block-separator {
 }
 
 .breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wp--custom--spacing--x-small);
   font-size: var(--wp--preset--font-size--small);
 }
 
-.breadcrumb svg {
-  width: 0.7em;
-  height: 0.7em;
-  fill: var(--wp--custom--color--foreground);
+.separator {
+  display: flex;
+  align-items: center;
+}
+
+.separator svg {
+  --icon--size: 0.7em;
+  width: var(--icon--size);
+  height: var(--icon--size);
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  margin: 0 var(--wp--custom--spacing--x-small);
   fill: var(--wp--preset--color--dark-gray);
+}
+
+.entry-title {
+  margin-top: 0;
 }
 
 .entry-image-link {
@@ -337,7 +362,9 @@ hr.wp-block-separator {
 .entry-meta {
   --wp--custom--grid--gap: var(--wp--custom--spacing--small);
   display: flex;
+  flex-wrap: wrap;
   gap: var(--wp--custom--grid--gap);
+  row-gap: 0.5em;
   font-size: var(--wp--preset--font-size--small);
 }
 
@@ -349,6 +376,10 @@ hr.wp-block-separator {
 .entry-tags {
   display: block;
   font-weight: var(--wp--custom--font-weight--normal-bold);
+}
+
+.entry-meta-after-content {
+  flex-direction: column;
 }
 
 pre {

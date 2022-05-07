@@ -80,6 +80,7 @@ include_once( CHILD_DIR . '/inc/functions/sitemap.php' );
 // Pluggable
 include_once( CHILD_DIR . '/inc/pluggable/banner.php' );
 include_once( CHILD_DIR . '/inc/pluggable/social-share.php' );
+include_once( CHILD_DIR . '/inc/pluggable/related-posts.php' );
 
 
 // Blocks

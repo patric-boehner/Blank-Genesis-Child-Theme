@@ -51,6 +51,15 @@
 	margin: 0 auto
 
 
+.related-posts,
+	.inner_content
+		display: grid
+		gap: var(--wp--custom--grid--gap)
+
+		@include above-tablet
+			grid-template-columns: var(--grid-columns)
+
+
 .pagination
 	ul
 		width: 100%

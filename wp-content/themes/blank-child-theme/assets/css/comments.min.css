@@ -2,6 +2,10 @@
   padding-left: 0;
 }
 
+.comment-list .comment {
+  margin-bottom: 0;
+}
+
 .comment-list .depth-1 {
   padding-left: 0;
 }

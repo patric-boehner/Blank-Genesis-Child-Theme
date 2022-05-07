@@ -4,7 +4,6 @@
 
 
 .toggle-block
-    margin-top: var(--wp--custom--spacing--medium)
     margin-bottom: var(--wp--custom--spacing--medium)
 
     &__header
@@ -17,9 +16,6 @@
 
     .block__inner
         padding: var(--wp--custom--spacing--medium)
-        
-        & > :last-child
-            margin-bottom: 0
 
 
 .toggle__content:not(.open)
@@ -28,7 +24,10 @@
 
 .toggle__button
     --wp--custom--button--color: var(--wp--preset--color--primary)
-
+    --wp--custom--grid--gap: var(--wp--custom--spacing--small)
+    display: flex
+    align-items: center
+    gap: var(--wp--custom--grid--gap)
     background: transparent
     border: none
     border-radius: 0
@@ -40,8 +39,7 @@
     font-weight: inherit
     width: 100%
     text-align: left
-    display: flex
-    align-items: center
+    
     
     svg
         display: none
@@ -52,7 +50,6 @@
         display: block
         width: 0.6em
         height: 0.6em
-        margin-right: 15px
 
 
 .js .toggle__button:not(.expanded)

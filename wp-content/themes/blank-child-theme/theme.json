@@ -169,9 +169,9 @@
                 "large": "90px",
                 "x-large": "120px",
                 "side": "clamp( calc( (30/16) * 1rem), 5vw, calc( (180/16) * 1rem) )",
-                "main": "var(--wp--custom--spacing--x-large)",
-                "entry-content": "var(--wp--custom--spacing--large)",
-                "block-gap": "var(--wp--custom--spacing--large)",
+                "main": "clamp(var(--wp--custom--spacing--medium), 10vw, var(--wp--custom--spacing--x-large))",
+                "entry-content": "clamp(var(--wp--custom--spacing--mediu-large), 10vw, var(--wp--custom--spacing--large))",
+                "block-gap": "clamp(var(--wp--custom--spacing--medium-large), 10vw, var(--wp--custom--spacing--large))",
                 "group-padding": "var(--wp--custom--spacing--medium-large)"
             },
             "width": { 

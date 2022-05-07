@@ -14,12 +14,17 @@
 
 
 .content-grid-block
-    .block__inner
+    margin-bottom: var(--wp--custom--spacing--block-gap)
+
+    .inner_content
         display: grid
         gap: var(--wp--custom--grid--gap)
 
         @include above-tablet
             grid-template-columns: var(--grid-columns)
+
+
+.content-grid-block
 
     .entry
         margin-bottom: 0

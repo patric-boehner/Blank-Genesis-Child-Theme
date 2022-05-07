@@ -22,6 +22,10 @@
 
 // Strucutre
 
+.content > * + *
+	margin-bottom: var(--wp--custom--spacing--block-gap)
+
+	
 .content
 	margin-top: var(--wp--custom--spacing--main)
 	margin-bottom: var(--wp--custom--spacing--main)
@@ -51,9 +55,6 @@
 
 
 // Entry Elements
-
-.entry
-	margin-bottom: var(--wp--custom--spacing--block-gap)
 
 .entry > :last-child
 	margin-bottom: 0
@@ -92,30 +93,12 @@
 .block-content-area > :last-child
 	margin-bottom: 0
 
-
-.block-content-area.after-blog-post
-	margin-bottom: var(--wp--custom--spacing--block-gap)
-
-
-.block-content-area.banner
-	padding-top: var(--wp--custom--spacing--small)
-	padding-bottom: var(--wp--custom--spacing--small)
-
 	
 .comment-respond
 	margin-bottom: var(--wp--custom--spacing--block-gap)
 
 
 .entry-comments,
-	margin-bottom: var(--wp--custom--spacing--block-gap)
-
-
-.after-entry,
-.author-profile
-	margin-bottom: var(--wp--custom--spacing--block-gap)
-
-
-.pagination
 	margin-bottom: var(--wp--custom--spacing--block-gap)
 
 
@@ -128,3 +111,13 @@
 .sub-footer
 	padding-top: var(--wp--custom--spacing--medium)
 	padding-bottom: var(--wp--custom--spacing--medium)
+
+
+// Blocks
+
+.block__inner > :first-child
+    margin-top: 0
+
+
+.block__inner > :last-child
+    margin-bottom: 0
