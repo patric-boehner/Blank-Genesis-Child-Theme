@@ -32,9 +32,7 @@ function cf_admin_bar_enviroment() {
 
 			// Add admin notice
 			add_action( 'wp_before_admin_bar_render', 'cf_admin_bar_notice' );
-			// Remove Howdy
-			add_filter( 'admin_bar_menu', 'cf_remove_howdy' );
-
+			
 		}
 	}
 
@@ -62,19 +60,6 @@ function cf_admin_bar_notice() {
 
 	global $wp_admin_bar;
 	$wp_admin_bar->add_menu( $admin_notice );
-
-}
-
-
-// Remove Howdy message
-function cf_remove_howdy( $wp_admin_bar ) {
-
-	$my_account = $wp_admin_bar->get_node( 'my-account' );
-	$newtitle = str_replace( 'Howdy,', '', $my_account->title );
-	$wp_admin_bar->add_node( array(
-		'id' => 'my-account',
-		'title' => $newtitle,
-	) );
 
 }
 

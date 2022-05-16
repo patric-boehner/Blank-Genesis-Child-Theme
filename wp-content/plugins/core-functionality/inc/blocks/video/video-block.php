@@ -48,7 +48,7 @@ if( function_exists( 'acf_register_block_type' ) ) {
 
 
 // Output video block dns prefetch
-add_action( 'wp_head', 'pb_add_dns_prefetch_video_links', 1 );
+add_action( 'wp_head', 'pb_add_dns_prefetch_video_links', 10 );
 function pb_add_dns_prefetch_video_links() {
 
 	pb_dns_prefetch_optimized_video();

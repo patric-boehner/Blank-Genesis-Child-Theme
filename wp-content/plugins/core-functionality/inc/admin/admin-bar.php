@@ -19,11 +19,32 @@ if( !defined( 'ABSPATH' ) ) exit;;
 
 //**********************
 
+
+/**
+ * Remove the Howdy Text in WordPress
+ *
+ * @link https://wpintensity.com/change-howdy-text-wordpress/
+ *
+ */
+add_filter( 'admin_bar_menu', 'cf_remove_howdy',25 );
+function cf_remove_howdy( $wp_admin_bar ) {
+
+    $my_account=$wp_admin_bar->get_node('my-account');
+    $newtitle = str_replace( 'Howdy,', '', $my_account->title );
+    $wp_admin_bar->add_node( array(
+        'id' => 'my-account',
+        'title' => $newtitle,
+    ) );
+	
+}
+
+
+
 /** 
  * Hide admin bar for none editor users
  * 
  * From the No Nonsense plugin by Room 34 Creative Services, LLC
- * https://room34.com
+ * @link https://room34.com
  */
 
 add_action( 'after_setup_theme', 'cf_hide_admin_bar_for_logged_in_non_editors', 10 );
@@ -40,7 +61,7 @@ function cf_hide_admin_bar_for_logged_in_non_editors() {
  * Limit admin elements for logged-in non-editors
  * 
  * From the No Nonsense plugin by Room 34 Creative Services, LLC
- * https://room34.com
+ * @link https://room34.com
  */
 
 add_action( 'admin_menu' , 'cf_limit_admin_elements_for_logged_in_non_editors', 11);

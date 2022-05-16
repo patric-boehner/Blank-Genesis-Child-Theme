@@ -12,6 +12,20 @@
 //**********************
 if( !defined( 'ABSPATH' ) ) exit;
 
+
+// Add Social Share Settings page
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> __( 'Social Share Setting', 'blank-child-theme' ),
+        'menu_title'	=> __( 'Social Share', 'blank-child-theme' ),
+        'parent_slug'	=> 'options-general.php',
+        'capability'    => 'edit_pages',
+    ));
+	
+}
+
+
 // ACF Social Share Options
 if( function_exists('acf_add_local_field_group') ):
 
@@ -158,7 +172,7 @@ if( function_exists('acf_add_local_field_group') ):
         'menu_order' => 0,
         'position' => 'normal',
         'style' => 'seamless',
-        'label_placement' => 'top',
+        'label_placement' => 'left',
         'instruction_placement' => 'label',
         'hide_on_screen' => '',
         'active' => true,

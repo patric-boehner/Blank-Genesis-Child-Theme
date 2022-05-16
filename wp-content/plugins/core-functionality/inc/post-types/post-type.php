@@ -2,7 +2,7 @@
 /**
  * Register custom post type
  * 
- * Run searhc and replace on 'cp_name' and 'CP Name' with the post type name
+ * Run searhc and replace on 'cpt_name' and 'CP Name' with the post type name
  *
  * @package    CoreFunctionality
  * @since      2.0.0
@@ -16,12 +16,12 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
-if ( ! function_exists( 'pb_register_cpt_name' ) ) {
+if ( ! function_exists( 'cf_register_cpt_name' ) ) {
 
    // Register Services post type
-   add_action( 'init', 'pb_register_cpt_name', 0 );
+   add_action( 'init', 'cf_register_cpt_name', 0 );
 
-   function pb_register_cpt_name() {
+   function cf_register_cpt_name() {
 
       // Label Variables
       $singular = 'CP Name';
@@ -55,7 +55,7 @@ if ( ! function_exists( 'pb_register_cpt_name' ) ) {
       );
 
       $rewrite = array(
-         'slug'                => 'cp_name',
+         'slug'                => 'cpt_name',
          'with_front'          => false,
          'pages'               => true,
          'feeds'               => true,
@@ -89,7 +89,7 @@ if ( ! function_exists( 'pb_register_cpt_name' ) ) {
          'capability_type'     => 'post',
       );
 
-      register_post_type( 'cp_name', $args );
+      register_post_type( 'cpt_name', $args );
 
    }
 
@@ -115,13 +115,13 @@ function pb_cp_name_notices( $messages ) {
    $post_type        = get_post_type( $post );
    $post_type_object = get_post_type_object( $post_type );
 
-   $messages['cp_name'] = array(
+   $messages['cpt_name'] = array(
       0  => '', // Unused. Messages start at index 1.
       1  => __( $singular . ' updated.', 'core-functionality' ),
       2  => __( 'Custom field updated.', 'core-functionality' ),
       3  => __( 'Custom field deleted.', 'core-functionality' ),
       4  => __( $singular . ' updated.', 'core-functionality' ),
-      5  => isset( $_GET['revision'] ) ? sprintf( __( 'cp_name restored to revision from %s', 'core-functionality' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+      5  => isset( $_GET['revision'] ) ? sprintf( __( 'cpt_name restored to revision from %s', 'core-functionality' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
       6  => __( $singular . ' published.', 'core-functionality' ),
       7  => __( $singular . ' saved.', 'core-functionality' ),
       8  => __( $singular . ' submitted.', 'core-functionality' ),

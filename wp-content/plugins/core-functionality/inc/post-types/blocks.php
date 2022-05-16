@@ -24,7 +24,6 @@ function cf_show_blocks_in_menu( $args, $post_type ) {
   $wp_block_args = [
     '_builtin'      => false,
     'show_in_menu'  => true,
-    // 'menu_position' => 63,
     'labels'        => array(
       'menu_name'           => __( 'Reusable Blocks', 'core-functionality' )
     ),

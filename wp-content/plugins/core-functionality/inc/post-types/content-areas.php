@@ -14,12 +14,12 @@
  if( !defined( 'ABSPATH' ) ) exit;
 
 
- if ( ! function_exists( 'pb_register_cpt_content_areas' ) ) {
+ if ( ! function_exists( 'cf_register_cpt_content_areas' ) ) {
 
     // Register Services post type
-    add_action( 'init', 'pb_register_cpt_content_areas', 0 );
+    add_action( 'init', 'cf_register_cpt_content_areas', 0 );
 
-    function pb_register_cpt_content_areas() {
+    function cf_register_cpt_content_areas() {
 
        // Label Variables
        $singular = 'Content Area';
@@ -61,11 +61,12 @@
           'hierarchical'        => false,
           'public'              => false,
           'show_ui'             => true,
- 			 'menu_icon'				    => 'dashicons-schedule',
+ 			 'menu_icon'			  => 'dashicons-schedule',
           'can_export'          => true,
           'has_archive'         => false,
           'exclude_from_search' => true, // If set to true will remove the custom post type from search, but also from the main query on the taxonomy page
           'rewrite'             => $rewrite,
+          'capability_type'     => 'content_area'
        );
 
        register_post_type( 'content_area', $args );
