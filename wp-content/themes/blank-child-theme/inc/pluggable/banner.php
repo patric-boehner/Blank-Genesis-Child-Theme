@@ -23,13 +23,14 @@ add_action( 'init', 'pb_remove_banner_cookie' );
 function pb_output_banner() {
 
     // Banner
-    $id = pb_get_id_by_slug( 'banner', 'content_area' );
-    $display = esc_attr( get_post_meta( $id, 'enable_banner', true ) );
-    $cookie = esc_attr( get_post_meta( $id, 'banner_cookie', true ) );
+    $display = esc_attr( get_option( 'options_enable_banner' ) );
+    $cookie = esc_attr( get_option( 'options_banner_cookie' ) );
+
     $button = sprintf(
         '<button id="banner__close" class="button button__small" aria-expanded="true"><span>%s</span></button>',
         esc_html__( 'Close Banner', 'blank-child-theme' )
     ); 
+
     // Adjust display and remove cookie if not set to allow banner to close
     $class = ( $cookie == 'enable' ) ? 'dismissable__button' : '';
 
@@ -55,7 +56,7 @@ function pb_unique_banner_cookie_name() {
 
     // Variables
     $key = 'mdY'; // 'mdYgi' Month, Day, Year, Hour, Minute. May want to simpligy to remove time
-    $id = pb_get_id_by_slug( 'banner', 'content_area' );
+    $id = get_option( 'options_banner_content' );
     $date_time = esc_attr( get_post_modified_time( $key, false, $id, false ) );
 
     $cookie_name = 'banner-hidden-' .  $date_time;
@@ -68,8 +69,8 @@ function pb_unique_banner_cookie_name() {
 // Check if the banner is active
 function pb_is_banner_active() {
 
-	$id = pb_get_id_by_slug( 'banner', 'content_area' );
-    $display = esc_attr( get_post_meta( $id, 'enable_banner', true ) );
+    $id = get_option( 'options_banner_content' );
+    $display = esc_attr( get_option( 'options_enable_banner' ) );
 
     return ( $display == 'enable' && !isset( $_COOKIE[ pb_unique_banner_cookie_name() ] ) ) ? true : false ;
 		
@@ -79,8 +80,8 @@ function pb_is_banner_active() {
 // Check if the banner is set to use the cookie
 function pb_is_dismissable_banner_active() {
 
-	$id = pb_get_id_by_slug( 'banner', 'content_area' );
-    $cookie = esc_attr( get_post_meta( $id, 'banner_cookie', true ) );
+    $id = get_option( 'options_banner_content' );
+    $cookie = esc_attr( get_option( 'options_banner_cookie' ) );
 
     return ( $cookie == 'enable' && !isset( $_COOKIE[ pb_unique_banner_cookie_name() ] ) ) ? true : false ;
 		
@@ -91,8 +92,8 @@ function pb_is_dismissable_banner_active() {
 // Retrive Customize settings for banner cookie
 function pb_get_banner_cookie_settings() {
 
-    $id = pb_get_id_by_slug( 'banner', 'content_area' );
-    $days = esc_attr( get_post_meta( $id, 'hide_banner', true ) );
+    $id = get_option( 'options_banner_content' );
+    $days = esc_attr( get_option( 'options_hide_banner' ) );
     $cookie_name = pb_unique_banner_cookie_name();
 
     $settings = array(

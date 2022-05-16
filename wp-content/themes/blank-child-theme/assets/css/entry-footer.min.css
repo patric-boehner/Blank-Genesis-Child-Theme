@@ -62,3 +62,5 @@
   .related-posts .entry,
   .related-posts .entry-content {
     margin-bottom: 0; }
+  .related-posts .entry-header {
+    position: relative; }

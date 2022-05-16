@@ -38,7 +38,6 @@ function pb_add_social_share_options() {
 
 
 	$url				= urlencode( get_permalink() );
-	$url_short			= urlencode( wp_get_shortlink() );
 	$title				= urlencode( esc_attr( strip_tags( get_the_title() ) ) );
 	$name				= urlencode( get_bloginfo( 'name' ) );
 	$sharing_options 	= get_option( 'options_sharing_options' );
@@ -53,19 +52,19 @@ function pb_add_social_share_options() {
 		),
 		'twitter'  => sprintf(
 			'https://www.twitter.com/intent/tweet?url=%s&text=%s+%s',
-			$url_short,
+			$url,
 			$title,
 			pb_retrieve_sharing_twitter_handle()
 		),
 		'pinterest' => sprintf(
 			'https://pinterest.com/pin/create/button/?url=%s&media=%s&nbsp;&description=%s',
-			$url_short,
+			$url,
 			pb_retrieve_sharing_featured_image(),
 			$title
 		),
 		'linkedin' => sprintf(
 			'https://www.linkedin.com/shareArticle?min=true&url=%s&title=%s&source=%s',
-			$url_short,
+			$url,
 			$title,
 			$name
 		),
@@ -88,7 +87,7 @@ function pb_add_social_share_options() {
 			// Variables
 			$class = esc_attr( $option );
 			$name = esc_html( ucfirst( $option ) );
-			$screen_reader_link_text = '<span class="screen-reader-text">'.esc_html__( 'Share on', 'blank-child-theme' ).'</span>';
+			$screen_reader_link_text = '<span class="screen-reader-text">'.esc_html__( 'Share on ', 'blank-child-theme' ).'</span>';
 			$service = sprintf(
 				'<span class="share-links__name">%s %s</span>',
 				$screen_reader_link_text,

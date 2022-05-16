@@ -27,9 +27,15 @@
 .is-style-medium-gap
     --wp--custom--grid--gap: var(--wp--custom--spacing--large)
 
+    @include phone
+        --wp--custom--grid--gap: var(--wp--custom--spacing--medium)
+
 
 .is-style-large-gap
     --wp--custom--grid--gap: var(--wp--custom--spacing--x-large)
+
+    @include phone
+        --wp--custom--grid--gap: var(--wp--custom--spacing--large)
 
 
 .is-style-medium-spacing

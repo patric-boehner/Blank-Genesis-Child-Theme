@@ -34,11 +34,11 @@ function pb_remove_dashboard_widgets() {
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-	// unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
 	// MonsterInsights
 	unset($wp_meta_boxes['dashboard']['normal']['core']['monsterinsights_reports_widget']);
 	// Yoast
-	unset($wp_meta_boxes['dashboard']['normal']['core']['yoast_db_widget']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['yoast_dashboard_widget']);
 	// WooCommerce
 	unset($wp_meta_boxes['dashboard']['normal']['core']['woocommerce_dashboard_status']);
 	// Gravity Forms
@@ -57,15 +57,14 @@ function pb_remove_dashboard_widgets() {
  * 
  * @link https://github.com/isvictorious/wcphx-2020/blob/master/wp-content/themes/wcphx-genesis/functions.php
  */
-// add_action( 'wp_before_admin_bar_render', 'pb_admin_bar_render' );
+add_action( 'wp_before_admin_bar_render', 'pb_admin_bar_render' );
 function pb_admin_bar_render() {
 	global $wp_admin_bar;
 
-	// $wp_admin_bar->remove_menu( 'comments' ); // remove comments
+	$wp_admin_bar->remove_menu( 'comments' ); // remove comments
 	$wp_admin_bar->remove_menu( 'wp-logo' ); // remove WordPress menu
 	$wp_admin_bar->remove_menu( 'updates' ); // remove updates
-	// $wp_admin_bar->remove_menu( 'new-content' ); // remove add new
-	// $wp_admin_bar->remove_menu( 'customize' ); // remove customizer
+	$wp_admin_bar->remove_menu( 'new-content' ); // remove add new
+	$wp_admin_bar->remove_menu( 'customize' ); // remove customizer
 
 }
-

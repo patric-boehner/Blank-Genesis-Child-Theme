@@ -23,7 +23,7 @@ function pb_archive_pagination() {
 	$next_link = get_next_posts_link( apply_filters( 'genesis_next_link_text', __( 'Next Page', 'blank-child-theme' ) ) );
 
 	// Screen Reader Text
-	$screen_reader = '<h2 class="screen-reader-text">' . __( 'Pagination', 'blank-child-theme' ) .  '</h2>';
+	$screen_reader = '<h2 id="pagination-nav" class="screen-reader-text">' . __( 'Pagination', 'blank-child-theme' ) .  '</h2>';
 
 	// Output
 	if ( $prev_link || $next_link ) {
@@ -32,7 +32,7 @@ function pb_archive_pagination() {
 		$pagination .= $next_link ? sprintf( '<li class="pagination-previous pagination-item">%s</li>', $next_link ) : '';
 
 		genesis_markup( array(
-			'open'	 => $screen_reader. '<nav %s>',
+			'open'	 => '<nav %s aria-labelledby="pagination-nav">' . $screen_reader,
 			'close'	 => '</nav>',
 			'content' => '<ul class="archive-pagination-menu">' . $pagination . '</ul>',
 			'context' => 'archive-pagination',
@@ -55,7 +55,7 @@ function pb_adjacent_entry_pagination() {
 	$next_link = get_next_post_link( $next_text .' '. '%link', '%title' );
 
 	// Screen Reader Text
-	$screen_reader = '<h2 class="screen-reader-text">' . __( 'Pagination', 'blank-child-theme' ) .  '</h2>';
+	$screen_reader = '<h2 id="pagination-nav" class="screen-reader-text">' . __( 'Pagination', 'blank-child-theme' ) .  '</h2>';
 
 	// Output if either post is available
 	if ( $previous_link || $next_link ) {
@@ -64,7 +64,7 @@ function pb_adjacent_entry_pagination() {
 		$pagination .= $next_link ? sprintf( '<li class="pagination-next pagination-item">%s</li>', $next_link ) : '';
 
 		genesis_markup( array(
-			'open'	 => $screen_reader . '<nav %s>',
+			'open'	 => '<nav %s aria-labelledby="pagination-nav">' . $screen_reader,
 			'close'	 => '</nav>',
 			'content' => '<ul class="adjacent-entry-pagination-menu">' . $pagination . '</ul>',
 			'context' => 'adjacent-entry-pagination',
@@ -107,5 +107,18 @@ add_filter('previous_posts_link_attributes', 'pb_posts_link_attributes');
 function pb_posts_link_attributes() {
 
 	return 'class="button"';
+
+}
+
+
+// Remove pagiantion aria label
+add_filter( 'genesis_attr_adjacent-entry-pagination', 'pb_remove_pagiantion_label' );
+add_filter( 'genesis_attr_archive-pagination', 'pb_remove_pagiantion_label' );
+
+function pb_remove_pagiantion_label( $attributes ) { 
+
+ $attributes['aria-label'] = '';
+
+ return $attributes;
 
 }

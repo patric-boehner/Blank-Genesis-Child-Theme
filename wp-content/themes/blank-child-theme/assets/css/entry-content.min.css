@@ -159,8 +159,20 @@ hr.wp-block-separator {
   --wp--custom--grid--gap: var(--wp--custom--spacing--large);
 }
 
+@media only screen and (max-width: 768px) {
+  .is-style-medium-gap {
+    --wp--custom--grid--gap: var(--wp--custom--spacing--medium);
+  }
+}
+
 .is-style-large-gap {
   --wp--custom--grid--gap: var(--wp--custom--spacing--x-large);
+}
+
+@media only screen and (max-width: 768px) {
+  .is-style-large-gap {
+    --wp--custom--grid--gap: var(--wp--custom--spacing--large);
+  }
 }
 
 .is-style-medium-spacing {

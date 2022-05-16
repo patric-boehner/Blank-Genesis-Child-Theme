@@ -81,10 +81,12 @@ include_once( CHILD_DIR . '/inc/functions/sitemap.php' );
 include_once( CHILD_DIR . '/inc/pluggable/banner.php' );
 include_once( CHILD_DIR . '/inc/pluggable/social-share.php' );
 include_once( CHILD_DIR . '/inc/pluggable/related-posts.php' );
+include_once( CHILD_DIR . '/inc/pluggable/user-profile-image.php' );
 
 
 // Blocks
 include_once( CHILD_DIR . '/inc/blocks/paragraphs.php' );
+include_once( CHILD_DIR . '/inc/blocks/cover-block.php' );
 
 
 // Structure
