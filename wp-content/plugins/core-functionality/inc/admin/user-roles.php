@@ -34,16 +34,20 @@ function cf_admin_user_role() {
     // Get the admin user role
     $role = get_role(  'administrator' );
 
-    // Add capabilities
-    $role->add_cap( 'publish_content_areas' );
-    $role->add_cap( 'read_private_content_areas' );
-    $role->add_cap( 'edit_content_areas' );
-    $role->add_cap( 'edit_content_area' );
-    $role->add_cap( 'edit_others_content_area' );
-    $role->add_cap( 'edit_others_content_areas' );
+    // Array of user capabilites
+    $caps = array(
+        'publish_content_areas',
+        'read_private_content_areas',
+        'edit_content_areas',
+        'edit_content_area',
+        'edit_others_content_area',
+        'edit_others_content_areas'
+    );
 
-	// Remove capabilities
-	// $role->remove_cap( 'install_plugins' );
+     // Add all the capabilities by looping through them
+     foreach ( $caps as $cap ) {
+        $role->add_cap( $cap );
+    }
 
 }
 
@@ -60,13 +64,20 @@ function cf_editor_user_role() {
     // Get the admin user role
     $role = get_role(  'editor' );
 
-    // Add capabilities
-    $role->add_cap( 'publish_content_areas' );
-    $role->add_cap( 'read_private_content_areas' );
-    $role->add_cap( 'edit_content_areas' );
-    $role->add_cap( 'edit_content_area' );
-    $role->add_cap( 'edit_others_content_area' );
-    $role->add_cap( 'edit_others_content_areas' );
+    // Array of user capabilites
+    $caps = array(
+        'publish_content_areas',
+        'read_private_content_areas',
+        'edit_content_areas',
+        'edit_content_area',
+        'edit_others_content_area',
+        'edit_others_content_areas'
+    );
+
+     // Add all the capabilities by looping through them
+     foreach ( $caps as $cap ) {
+        $role->add_cap( $cap );
+    }
 }
 
 
@@ -82,11 +93,18 @@ function cf_author_user_role() {
     // Get the admin user role
     $role = get_role(  'author' );
 
-    // Remove capabilities
-    $role->remove_cap( 'edit_content_areas' );
-    $role->remove_cap( 'edit_content_area' );
-    $role->remove_cap( 'edit_others_content_area' );
-    $role->remove_cap( 'edit_others_content_areas' );
+    // Array of user capabilites
+    $caps = array(
+        'edit_content_areas',
+        'edit_content_area',
+        'edit_others_content_area',
+        'edit_others_content_areas'
+    );
+
+     // Remove all the capabilities by looping through them
+     foreach ( $caps as $cap ) {
+        $role->remove_cap( $cap );
+    }
 }
 
 
@@ -102,11 +120,18 @@ function cf_contributor_user_role() {
     // Get the admin user role
     $role = get_role(  'contributor' );
 
-    // Remove capabilities
-    $role->remove_cap( 'edit_content_areas' );
-    $role->remove_cap( 'edit_content_area' );
-    $role->remove_cap( 'edit_others_content_area' );
-    $role->remove_cap( 'edit_others_content_areas' );
+    // Array of user capabilites
+    $caps = array(
+        'edit_content_areas',
+        'edit_content_area',
+        'edit_others_content_area',
+        'edit_others_content_areas'
+    );
+
+     // Remove all the capabilities by looping through them
+     foreach ( $caps as $cap ) {
+        $role->remove_cap( $cap );
+    }
 
 }
 
@@ -138,15 +163,21 @@ function cf_developer_user_role() {
     // Get the developer user role
     $role = get_role(  'developer' );
 
+    // Array of user capabilites
+    $caps = array(
+        'publish_content_areas',
+        'read_private_content_areas',
+        'edit_content_areas',
+        'edit_content_area',
+        'edit_others_content_area',
+        'edit_others_content_areas',
+        'install_plugins'
+    );
 
-    // Add capabilities
-    $role->add_cap( 'publish_content_areas' );
-    $role->add_cap( 'read_private_content_areas' );
-    $role->add_cap( 'edit_content_areas' );
-    $role->add_cap( 'edit_content_area' );
-    $role->add_cap( 'edit_others_content_area' );
-    $role->add_cap( 'edit_others_content_areas' );
-    $role->add_cap( 'install_plugins' );
+     // Add all the capabilities by looping through them
+     foreach ( $caps as $cap ) {
+        $role->add_cap( $cap );
+    }
 
 }
 
