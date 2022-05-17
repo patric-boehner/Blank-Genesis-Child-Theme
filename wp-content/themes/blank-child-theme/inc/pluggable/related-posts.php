@@ -22,7 +22,6 @@ function pb_output_related_posts() {
 	$current_cat = $category[0]->cat_ID;
     $post_to_exclude = array( get_the_ID() );
 
-
     // Query
     $posts = new WP_Query( array(
         'post_type' => 'post',
@@ -31,7 +30,11 @@ function pb_output_related_posts() {
         'no_found_rows'   => true,
         'update_post_meta_cache' => false
     ) );
-    
+
+    // Exit Early
+    if( pb_post_has_cateogry() == false ) {
+        return;
+    }
     
     // Loop
     if ( $posts->have_posts() ) :
@@ -67,4 +70,25 @@ function pb_output_related_posts() {
         '</div></section>',
     );
 
+}
+
+
+/**
+ * Check if the post in the loop has a cateogry
+ * 
+ * If that that isn't the default cateogry, return true
+ */
+function pb_post_has_cateogry() {
+    
+    // Get the current posts cateory slugs
+    $category = wp_get_post_categories( get_the_ID(), array( 'fields' => 'ids' ) );
+    $default_cateogry = get_option('default_category');
+
+    // If there is only one cateogry and that cateogry is the default category return flase
+    if( count( $category ) <= 1 && $category[0] == $default_cateogry ) {
+        return false;
+    }
+
+    return true;
+	
 }
