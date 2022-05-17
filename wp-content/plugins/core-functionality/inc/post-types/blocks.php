@@ -25,7 +25,8 @@ function cf_show_blocks_in_menu( $args, $post_type ) {
     '_builtin'      => false,
     'show_in_menu'  => true,
     'labels'        => array(
-      'menu_name'           => __( 'Reusable Blocks', 'core-functionality' )
+      'menu_name'           => __( 'Reusable Blocks', 'core-functionality' ),
+      'name_admin_bar'      => __( 'Reusable Blocks', 'core-functionality' )
     ),
     'menu_icon'     => 'dashicons-screenoptions'
   ];
