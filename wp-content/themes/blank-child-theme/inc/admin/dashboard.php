@@ -64,7 +64,7 @@ function pb_admin_bar_render() {
 	$wp_admin_bar->remove_menu( 'comments' ); // remove comments
 	$wp_admin_bar->remove_menu( 'wp-logo' ); // remove WordPress menu
 	$wp_admin_bar->remove_menu( 'updates' ); // remove updates
-	$wp_admin_bar->remove_menu( 'new-content' ); // remove add new
+	// $wp_admin_bar->remove_menu( 'new-content' ); // remove add new
 	$wp_admin_bar->remove_menu( 'customize' ); // remove customizer
 
 }
