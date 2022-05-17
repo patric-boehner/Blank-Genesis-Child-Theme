@@ -80,7 +80,6 @@ function _cf_core_functionality() {
 	require_once( CORE_DIR . 'inc/admin/admin-bar-notice.php' );
 	require_once( CORE_DIR . 'inc/admin/admin-menu.php' );
 	require_once( CORE_DIR . 'inc/admin/admin-bar.php' );
-	require_once( CORE_DIR . 'inc/admin/admin-bar.php' );
 	require_once( CORE_DIR . 'inc/admin/user-roles.php' );
 
 
