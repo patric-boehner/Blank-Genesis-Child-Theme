@@ -16,6 +16,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 //**********************
 // https://www.advancedcustomfields.com/resources/acf_register_block_type/
+// https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/
 
 function register_acf_toggle_block() {
 
@@ -25,7 +26,7 @@ function register_acf_toggle_block() {
       'title'             => esc_html__('Toggle', 'core-functionality'),
       'description'       => esc_html__('A block for creating an toggle element that you can add other blocks into.', 'core-functionality'),
       'category'          => 'common', // common, formatting, layout, widgets, embed
-      'icon'              => 'editor-ul', // Dahsicons
+      'icon'              => 'arrow-right-alt2', // Dahsicons
       'keywords'          => array( 'toggle, accordion faq' ),
       'post_types'        => array( 'content_area', 'page', 'post' ),
       'multiple'          => true,
