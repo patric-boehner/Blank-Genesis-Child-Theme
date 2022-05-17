@@ -24,6 +24,23 @@ function pb_remove_widgets_menus(){
 }
 
 
+// Add custom seperator
+add_action( 'admin_menu', 'pb_admin_menu_separator' );
+function pb_admin_menu_separator() {
+
+	global $menu;
+
+	$menu[] = array(
+		'',
+		'read',
+		'pb-separator-1',
+		'',
+		'wp-menu-separator pb-separator-1',
+	);
+
+}
+
+
 /**
  * Reorders and cleans up the administration menu to make it more user-friendly.
  *
@@ -50,6 +67,7 @@ function pb_change_admin_menu_order( $menu_order ) {
 		'edit-comments.php', // Comments
 		// 'edit.php?post_type=your_custom_post_type',
 		'upload.php', // Media
+		'pb-separator-1',
 		// 'separator2', // Second separator
 		'edit.php?post_type=wp_blocks',
 		'edit.php?post_type=content-area',
