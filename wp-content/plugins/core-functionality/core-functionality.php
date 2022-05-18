@@ -73,68 +73,54 @@ function cf_cf_version_id() {
 //* Include Plugin Files
 //**********************
 
-add_action( 'plugins_loaded', '_cf_core_functionality' );
-function _cf_core_functionality() {
-
-	// Admin
-	require_once( CORE_DIR . 'inc/admin/admin-bar-notice.php' );
-	require_once( CORE_DIR . 'inc/admin/admin-menu.php' );
-	require_once( CORE_DIR . 'inc/admin/admin-bar.php' );
-	require_once( CORE_DIR . 'inc/admin/user-roles.php' );
+// Admin
+require_once( CORE_DIR . 'inc/admin/admin-bar-notice.php' );
+require_once( CORE_DIR . 'inc/admin/admin-menu.php' );
+require_once( CORE_DIR . 'inc/admin/admin-bar.php' );
+require_once( CORE_DIR . 'inc/admin/user-roles.php' );
 
 
-	// Functions
-	require_once( CORE_DIR . 'inc/functions/dont-update.php' );
-	require_once( CORE_DIR . 'inc/functions/custom-meta.php' );
-	require_once( CORE_DIR . 'inc/functions/custom-functions.php' );
-	require_once( CORE_DIR . 'inc/functions/editor-placeholder.php' );
-	require_once( CORE_DIR . 'inc/functions/seo.php' );
-	require_once( CORE_DIR . 'inc/functions/acf.php' );
-	require_once( CORE_DIR . 'inc/functions/user-profile.php' );
+// Functions
+require_once( CORE_DIR . 'inc/functions/dont-update.php' );
+require_once( CORE_DIR . 'inc/functions/custom-meta.php' );
+require_once( CORE_DIR . 'inc/functions/custom-functions.php' );
+require_once( CORE_DIR . 'inc/functions/editor-placeholder.php' );
+require_once( CORE_DIR . 'inc/functions/seo.php' );
+require_once( CORE_DIR . 'inc/functions/acf.php' );
+require_once( CORE_DIR . 'inc/functions/user-profile.php' );
 
 
-	// Post Types
-	require_once( CORE_DIR . 'inc/post-types/content-areas.php' );
-	require_once( CORE_DIR . 'inc/post-types/blocks.php' );
-	// require_once( CORE_DIR . 'inc/post-types/post-type.php' );
+// Post Types
+require_once( CORE_DIR . 'inc/post-types/content-areas.php' );
+require_once( CORE_DIR . 'inc/post-types/blocks.php' );
+// require_once( CORE_DIR . 'inc/post-types/post-type.php' );
 
 
-	// Taxonomies
-	// require_once( CORE_DIR . 'inc/taxonomies/tax-name.php' );
+// Taxonomies
+// require_once( CORE_DIR . 'inc/taxonomies/tax-name.php' );
 
 
-	// Blocks
-	require_once( CORE_DIR . 'inc/blocks/categories.php' );
-	require_once( CORE_DIR . 'inc/blocks/content-grid/content-grid.php' );
-	require_once( CORE_DIR . 'inc/blocks/icon/icon-block.php' );
-	require_once( CORE_DIR . 'inc/blocks/video/video-block.php' );
-	require_once( CORE_DIR . 'inc/blocks/toggle/toggle-block.php' );
-	require_once( CORE_DIR . 'inc/blocks/max-width/max-width-block.php' );
-	// require_once( CORE_DIR . 'inc/blocks/custom-block/custom-block.php' );
+// Blocks
+require_once( CORE_DIR . 'inc/blocks/categories.php' );
+require_once( CORE_DIR . 'inc/blocks/content-grid/content-grid.php' );
+require_once( CORE_DIR . 'inc/blocks/icon/icon-block.php' );
+require_once( CORE_DIR . 'inc/blocks/video/video-block.php' );
+require_once( CORE_DIR . 'inc/blocks/toggle/toggle-block.php' );
+require_once( CORE_DIR . 'inc/blocks/max-width/max-width-block.php' );
+// require_once( CORE_DIR . 'inc/blocks/custom-block/custom-block.php' );
 
 
-	// Plugible
-	require_once( CORE_DIR . 'inc/plugable/social-share/social-share.php' );
-	require_once( CORE_DIR . 'inc/plugable/email-testing/email-testing.php' );
-	require_once( CORE_DIR . 'inc/plugable/user-profile-image/user-profile-image.php' );
-	require_once( CORE_DIR . 'inc/plugable/banner/banner.php' );
+// Plugible
+require_once( CORE_DIR . 'inc/plugable/social-share/social-share.php' );
+require_once( CORE_DIR . 'inc/plugable/email-testing/email-testing.php' );
+require_once( CORE_DIR . 'inc/plugable/user-profile-image/user-profile-image.php' );
+require_once( CORE_DIR . 'inc/plugable/banner/banner.php' );
 
-
-	// For third-party plugins looking to load their files
-	do_action( 'cf_core_functionality_loaded' );
-
-}
 
 
 // Plugin Activation hook
 register_activation_hook( __FILE__, 'cf_core_functionality_activate_hook' );
 function cf_core_functionality_activate_hook() {
-
-	// Startup
-	_cf_core_functionality();
-
-	// Add Content Areas post type
-	cf_register_cpt_content_areas();
 
 	// Clear the permalinks after the post type has been registered.
 	flush_rewrite_rules();
