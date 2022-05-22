@@ -23,18 +23,12 @@ function pb_add_banner() {
     return;
   }
 
-  if ( function_exists( 'pb_show_content_area' ) && !isset( $_COOKIE[ pb_unique_banner_cookie_name() ] ) ) {
+  if ( function_exists( 'pb_show_content_area' ) && function_exists( 'cf_output_banner' )  ) {
 
-    // Output site banner
-    if( function_exists( 'pb_output_banner' ) ) {
+     // Output styles
+     wp_print_styles( 'banner-style' );
 
-       // Output styles
-      wp_print_styles( 'banner-style' );
-
-      pb_output_banner();
-      
-    }
-    
+     cf_output_banner();
 		
 	}
 

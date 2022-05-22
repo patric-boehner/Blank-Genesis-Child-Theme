@@ -4,7 +4,6 @@
     position: relative;
     width: 100%;
     background-color: var(--wp--preset--color--light-gray);
-    padding: var(--wp--custom--spacing--small);
     margin-bottom: 0 !important;
     margin-top: 0 !important; }
   .toggle-block .block__inner {
@@ -14,7 +13,7 @@
   display: none; }
 
 .toggle__button {
-  --wp--custom--button--color: var(--wp--preset--color--primary);
+  --wp--custom--button--color: var(--wp--custom--color--foreground);
   --wp--custom--grid--gap: var(--wp--custom--spacing--small);
   display: flex;
   align-items: center;
@@ -23,13 +22,10 @@
   border: none;
   border-radius: 0;
   box-shadow: none;
-  padding: 0;
+  padding: var(--wp--custom--spacing--small);
   outline: none;
   cursor: pointer;
-  font-size: inherit;
-  font-weight: inherit;
-  width: 100%;
-  text-align: left; }
+  width: 100%; }
   .toggle__button svg {
     display: none; }
 
@@ -40,21 +36,3 @@
 
 .js .toggle__button:not(.expanded) svg {
   transform: rotate(-90deg); }
-
-.js .toggle__button:hover, .js .toggle__button:focus {
-  --wp--custom--button--color: var(--wp--custom--color--secondary); }
-
-.js .toggle__button:hover::before, .js .toggle__button:focus::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--wp--preset--color--light-green);
-  color: var(--wp--custom--color--secondary); }
-  .js .toggle__button:hover::before > svg, .js .toggle__button:focus::before > svg {
-    fill: var(--wp--custom--color--secondary); }
-
-.js .toggle__button > * {
-  z-index: 1; }

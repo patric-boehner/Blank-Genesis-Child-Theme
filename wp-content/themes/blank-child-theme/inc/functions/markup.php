@@ -68,33 +68,6 @@ function genesis_blocks_body_classes( $classes ) {
 }
 
 
-
-/**
- * Adds top-banner body classes.
- *
- * @since 1.0.0
- *
- * @param array $classes Current classes.
- * @return array The new classes.
- */
-add_action( 'body_class', 'pb_notice_bar_classes' );
-function pb_notice_bar_classes( $classes ) {
-
-	// Set banner hidden if banner is set to display at all
-	if ( pb_is_banner_active() ) {
-		$classes[] = 'top-banner-hidden';
-	}
-
-	// Set banner to visible if banner is set to display and cookies are set to false
-	if ( pb_is_banner_active() == true && pb_is_dismissable_banner_active() == false ) {
-		$classes[] = 'top-banner-visible';
-	}
-
-	return $classes;
-
-}
-
-
 // Remove redundent .site-inner and .content-sidebar-wrap on full-width layouts
 add_action( 'genesis_meta', 'pb_remove_redundant_markup' );
 function pb_remove_redundant_markup() {

@@ -41,7 +41,7 @@ function cf_admin_user_role() {
         'edit_content_areas',
         'edit_content_area',
         'edit_others_content_area',
-        'edit_others_content_areas'
+        'edit_others_content_areas',
     );
 
      // Add all the capabilities by looping through them
@@ -171,7 +171,6 @@ function cf_developer_user_role() {
         'edit_content_area',
         'edit_others_content_area',
         'edit_others_content_areas',
-        'install_plugins'
     );
 
      // Add all the capabilities by looping through them

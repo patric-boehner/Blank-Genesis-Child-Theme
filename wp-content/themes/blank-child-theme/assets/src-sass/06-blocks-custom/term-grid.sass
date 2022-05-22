@@ -14,7 +14,7 @@
     --grid-columns: repeat(4, 1fr)
 
 
-.content-grid-block
+.taxonomy-grid-block
     margin-bottom: var(--wp--custom--spacing--block-gap)
 
     .inner_content
@@ -25,20 +25,11 @@
             grid-template-columns: var(--grid-columns)
 
 
-.content-grid-block
+.taxonomy-link
+    padding: var(--wp--custom--button--padding)
+    background: var(--wp--preset--color--light-gray)
+    text-decoration: none
 
-    .entry
-        margin-bottom: 0
-
-    .entry-image-link
-        margin-bottom: var(--wp--custom--spacing--small)
-
-    .entry-header
-        margin-bottom: var(--wp--custom--spacing--medium)
-
-        &:hover a,
-        &:focus a
-            color: var(--wp--custom--color--secondary)
-
-    .entry-title
-        font-size: var(--wp--custom--heading--size-h4)
+    &:focus
+    &:hover
+        background-color: var(--wp--preset--color--light-green) 

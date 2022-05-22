@@ -58,7 +58,7 @@ function pb_comment_form_defaults( array $paramaters ) {
 
 	$aria_describeby = '<span id="email-notes">' .__( 'Your email address will not be published.', 'blank-child-theme' ). '</span>';
 
-	$paramaters['comment_notes_before'] = '<p class="comment-notes">' . __( 'Please leave your comment below.', 'blank-child-theme' ) . ' ' . $aria_describeby . ' ' . __( 'Required fields are marked *', 'blank-child-theme' ) . '</p>';
+	$paramaters['comment_notes_before'] = '<p class="comment-notes">' . __( 'Please leave a comment.', 'blank-child-theme' ) . ' ' . $aria_describeby . ' ' . __( 'Required fields are marked *', 'blank-child-theme' ) . '</p>';
 
 	// $paramaters['comment_notes_after'] = '<p class="comment-form-notes">' . '</p>';
 

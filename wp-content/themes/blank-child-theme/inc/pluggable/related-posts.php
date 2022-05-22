@@ -15,6 +15,11 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+/**
+ * Function for outputing the related posts
+ * 
+ * Returns a formated list of 3 posts
+ */
 function pb_output_related_posts() {
 
     // Variables
@@ -24,7 +29,7 @@ function pb_output_related_posts() {
 
     // Query
     $posts = new WP_Query( array(
-        'post_type' => 'post',
+        'post_type'       => 'post',
         'posts_per_page'  => 3 + count( $post_to_exclude ),
         'category__in'    => $current_cat,
         'no_found_rows'   => true,
@@ -44,7 +49,7 @@ function pb_output_related_posts() {
 
         // Opening Strcutre
         echo sprintf(
-            '<section class="related-posts"><h3>%s</h3><div class="inner_content">',
+            '<section class="related-posts"><h2>%s</h2><div class="inner_content">',
             $section_heading
         );
 

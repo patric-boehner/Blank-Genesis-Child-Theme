@@ -38,41 +38,45 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
   // Setup page if has top banner.
-  if ( pb_is_banner_active() == true && pb_is_landing_page() !== true ) {
+  if ( function_exists( 'cf_output_banner' ) ) {
 
-    wp_register_style(
-      'banner-style',
-      get_stylesheet_directory_uri() . "/assets/css/banner.min.css",
-      false,
-      cache_version_id()
-    );
+    if ( cf_is_banner_active() == true && pb_is_landing_page() !== true ) {
 
-    if( pb_is_dismissable_banner_active() == true ) {
-
-      wp_enqueue_script(
-        'banner-script',
-        get_stylesheet_directory_uri() . "/assets/js/banner.min.js",
-        array(),
-        cache_version_id(),
-        true
+      wp_register_style(
+        'banner-style',
+        get_stylesheet_directory_uri() . "/assets/css/banner.min.css",
+        false,
+        cache_version_id()
       );
   
-      wp_script_add_data(
-        'banner-script',
-        'defer',
-        true
-      );
+      if( cf_is_dismissable_banner_active() == true ) {
   
-      // Load Customizer Banner varaibles    
-      wp_localize_script(
-        'banner-script',
-        'cookie_banner',
-        pb_get_banner_cookie_settings()
-      );
-
+        wp_enqueue_script(
+          'banner-script',
+          get_stylesheet_directory_uri() . "/assets/js/banner.min.js",
+          array(),
+          cache_version_id(),
+          true
+        );
+    
+        wp_script_add_data(
+          'banner-script',
+          'defer',
+          true
+        );
+    
+        // Load Customizer Banner varaibles    
+        wp_localize_script(
+          'banner-script',
+          'cookie_banner',
+          cf_get_banner_cookie_settings()
+        );
+  
+      }
+  
     }
 
-	}
+  }
   
 
   // Load Entry Content Stylesheet
@@ -141,23 +145,27 @@ function pb_enqueue_child_theme_scripts_styles() {
 
 
 	// Social Share Script
-	if ( pb_display_sharing_feature() == true && is_singular( 'post' ) ) {
+  if ( function_exists( 'cf_add_social_share_options' ) ) {
 
-		wp_enqueue_script(
-      'social-share-script',
-      get_stylesheet_directory_uri() . "/assets/js/social-share.min.js",
-      array(),
-      cache_version_id(),
-      true
-    );
+    if ( cf_display_sharing_feature() == true && is_singular( 'post' ) ) {
 
-		wp_script_add_data(
-      'social-share-script',
-      'defer',
-      true
-    );
+      wp_enqueue_script(
+        'social-share-script',
+        get_stylesheet_directory_uri() . "/assets/js/social-share.min.js",
+        array(),
+        cache_version_id(),
+        true
+      );
+  
+      wp_script_add_data(
+        'social-share-script',
+        'defer',
+        true
+      );
+  
+    }
 
-	}
+  }
 
 }
 

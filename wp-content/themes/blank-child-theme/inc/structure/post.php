@@ -63,8 +63,8 @@ function pb_social_share_in_footer() {
 		return;
 	}
 
-	if ( function_exists( 'pb_add_social_share_options' ) ) {
-		pb_add_social_share_options();
+	if ( function_exists( 'cf_add_social_share_options' ) ) {
+		cf_add_social_share_options();
 	}
 
 }

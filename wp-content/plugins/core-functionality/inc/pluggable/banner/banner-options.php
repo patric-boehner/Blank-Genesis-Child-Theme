@@ -162,7 +162,7 @@ if( function_exists('acf_add_local_field_group') ):
 		'position' => 'normal',
 		'style' => 'seamless',
 		'label_placement' => 'left',
-		'instruction_placement' => 'label',
+		'instruction_placement' => 'field',
 		'hide_on_screen' => '',
 		'active' => true,
 		'description' => '',

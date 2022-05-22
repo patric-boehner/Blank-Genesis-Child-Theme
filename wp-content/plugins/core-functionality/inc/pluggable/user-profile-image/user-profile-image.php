@@ -6,9 +6,10 @@
  * Add an option to upload an image to the user profile
  * to replace gravatar.
  *
- * @package Blank Child Theme
- * @author  Patrick Boehner
- * @license GPL-2.0+
+ * @package    CoreFunctionality
+ * @since      2.0.0
+ * @copyright  Copyright (c) 2022, Patrick Boehner
+ * @license    GPL-2.0+ 
  *
  */
 
@@ -18,14 +19,18 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Load settings
+require_once( CORE_DIR . 'inc/pluggable/user-profile-image/user-profile-image-settings.php' );
+
+
 /**
  * Use ACF image field as avatar
  * @author Mike Hemberger
  * @link http://thestizmedia.com/acf-pro-simple-local-avatars/
  * @uses ACF Pro image field (tested return value set as Array )
  */
-add_filter( 'get_avatar', 'pb_acf_profile_image', 10, 5 );
-function pb_acf_profile_image( $avatar, $id_or_email, $size, $default, $alt ) {
+add_filter( 'get_avatar', 'cf_acf_profile_image', 10, 5 );
+function cf_acf_profile_image( $avatar, $id_or_email, $size, $default, $alt ) {
 
     $user = '';
     
@@ -80,8 +85,8 @@ function pb_acf_profile_image( $avatar, $id_or_email, $size, $default, $alt ) {
 
 
 // Use ACF field to replace the avatar image URL
-add_filter( 'get_avatar_url', 'pb_profile_avatar_url', 10, 3 );
-function pb_profile_avatar_url( $url, $id_or_email, $args ){
+add_filter( 'get_avatar_url', 'cf_profile_avatar_url', 10, 3 );
+function cf_profile_avatar_url( $url, $id_or_email, $args ){
 
     $user = '';
 

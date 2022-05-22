@@ -112,6 +112,9 @@
         'post_status'    => 'publish',
         'name'    		 => $args['location'],
         'posts_per_page' => 1,
+        'no_found_rows' => true,
+        'update_post_meta_cache' => false,
+        'update_post_term_cache' => false
       ));
 
       if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
@@ -151,3 +154,29 @@
 
 
  }
+
+
+// Add editor body class for content areas
+add_filter( 'admin_body_class', 'cf_content_areas_layout_class' );
+function cf_content_areas_layout_class( $classes ) {
+
+   $screen = get_current_screen();
+
+   if( ! $screen->is_block_editor() ) {
+      return $classes;
+   }
+
+   global $post;
+   $slug = $post->post_name;
+   $layout = '';
+
+   // Pages use full width as default, see below
+   if( 'content_area' === get_post_type() ) {
+      $layout = 'ca-' . $slug;
+   }
+
+   $classes .= ' ' . $layout . ' ';
+   
+   return $classes;
+
+}

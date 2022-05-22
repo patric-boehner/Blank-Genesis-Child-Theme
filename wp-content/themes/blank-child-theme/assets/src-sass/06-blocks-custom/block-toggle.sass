@@ -10,7 +10,6 @@
         position: relative
         width: 100%
         background-color: var(--wp--preset--color--light-gray)
-        padding: var(--wp--custom--spacing--small)
         margin-bottom: 0 !important
         margin-top: 0 !important
 
@@ -23,7 +22,7 @@
 
 
 .toggle__button
-    --wp--custom--button--color: var(--wp--preset--color--primary)
+    --wp--custom--button--color: var(--wp--custom--color--foreground)
     --wp--custom--grid--gap: var(--wp--custom--spacing--small)
     display: flex
     align-items: center
@@ -32,14 +31,10 @@
     border: none
     border-radius: 0
     box-shadow: none
-    padding: 0
+    padding: var(--wp--custom--spacing--small)
     outline: none
     cursor: pointer
-    font-size: inherit
-    font-weight: inherit
     width: 100%
-    text-align: left
-    
     
     svg
         display: none
@@ -57,24 +52,24 @@
         transform: rotate(-90deg)
 
 
-.js .toggle__button
-    &:hover,
-    &:focus
-        --wp--custom--button--color: var(--wp--custom--color--secondary)
+// .js .toggle__button
+//     &:hover,
+//     &:focus
+//         --wp--custom--button--color: var(--wp--custom--color--secondary)
 
-    &:hover::before,
-    &:focus::before
-        content: ''
-        position: absolute
-        top: 0
-        left: 0
-        height: 100%
-        width: 100%
-        background-color: var(--wp--preset--color--light-green)
-        color: var(--wp--custom--color--secondary)
+//     &:hover::before,
+//     &:focus::before
+//         content: ''
+//         position: absolute
+//         top: 0
+//         left: 0
+//         height: 100%
+//         width: 100%
+//         background-color: var(--wp--preset--color--light-green)
+//         color: var(--wp--custom--color--secondary)
 
-        > svg
-            fill: var(--wp--custom--color--secondary)
+//         > svg
+//             fill: var(--wp--custom--color--secondary)
 
-    > *
-        z-index: 1
+//     > *
+//         z-index: 1

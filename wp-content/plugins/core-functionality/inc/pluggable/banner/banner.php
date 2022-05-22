@@ -15,12 +15,16 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+// Bring in the options
+require_once( CORE_DIR . 'inc/pluggable/banner/banner-options.php' );
+
+
 // Cleanup old cookies
-add_action( 'init', 'pb_remove_banner_cookie' );
+add_action( 'init', 'cf_remove_banner_cookie' );
 
 
 // Output banner
-function pb_output_banner() {
+function cf_output_banner() {
 
     // Banner
     $display = esc_attr( get_option( 'options_enable_banner' ) );
@@ -28,7 +32,7 @@ function pb_output_banner() {
 
     $button = sprintf(
         '<button id="banner__close" class="button button__small" aria-expanded="true"><span>%s</span></button>',
-        esc_html__( 'Close Banner', 'blank-child-theme' )
+        esc_html__( 'Close Banner', 'core-functionality' )
     ); 
 
     // Adjust display and remove cookie if not set to allow banner to close
@@ -39,12 +43,17 @@ function pb_output_banner() {
 
         $close_button = ( $cookie == 'enable' ) ? $button : '';
 
-        pb_show_content_area( array(
-            'location'      => 'banner',
-            'class'         => $class,
-            'prepend'       => '<div class="block__inner">',
-            'append'        => $close_button . '</div>'
-        ) );
+
+        if ( function_exists( 'pb_show_content_area' ) && !isset( $_COOKIE[ cf_unique_banner_cookie_name() ] ) ) {
+
+            pb_show_content_area( array(
+                'location'      => 'banner',
+                'class'         => $class,
+                'prepend'       => '<div class="block__inner">',
+                'append'        => $close_button . '</div>'
+            ) );
+
+        }
 
     }
 
@@ -52,7 +61,7 @@ function pb_output_banner() {
 
 
 // Setup unique cookie name
-function pb_unique_banner_cookie_name() {
+function cf_unique_banner_cookie_name() {
 
     // Variables
     $key = 'mdY'; // 'mdYgi' Month, Day, Year, Hour, Minute. May want to simpligy to remove time
@@ -67,34 +76,34 @@ function pb_unique_banner_cookie_name() {
 
 
 // Check if the banner is active
-function pb_is_banner_active() {
+function cf_is_banner_active() {
 
     $id = get_option( 'options_banner_content' );
     $display = esc_attr( get_option( 'options_enable_banner' ) );
 
-    return ( $display == 'enable' && !isset( $_COOKIE[ pb_unique_banner_cookie_name() ] ) ) ? true : false ;
+    return ( $display == 'enable' && !isset( $_COOKIE[ cf_unique_banner_cookie_name() ] ) ) ? true : false ;
 		
 }
 
 
 // Check if the banner is set to use the cookie
-function pb_is_dismissable_banner_active() {
+function cf_is_dismissable_banner_active() {
 
     $id = get_option( 'options_banner_content' );
     $cookie = esc_attr( get_option( 'options_banner_cookie' ) );
 
-    return ( $cookie == 'enable' && !isset( $_COOKIE[ pb_unique_banner_cookie_name() ] ) ) ? true : false ;
+    return ( $cookie == 'enable' && !isset( $_COOKIE[ cf_unique_banner_cookie_name() ] ) ) ? true : false ;
 		
 }
 
 
 
 // Retrive Customize settings for banner cookie
-function pb_get_banner_cookie_settings() {
+function cf_get_banner_cookie_settings() {
 
     $id = get_option( 'options_banner_content' );
     $days = esc_attr( get_option( 'options_hide_banner' ) );
-    $cookie_name = pb_unique_banner_cookie_name();
+    $cookie_name = cf_unique_banner_cookie_name();
 
     $settings = array(
         'days'	=> $days,
@@ -107,7 +116,7 @@ function pb_get_banner_cookie_settings() {
 
 
 // Remove the cookie is the banner is turned off but the cookie is present
-function pb_remove_banner_cookie() {
+function cf_remove_banner_cookie() {
 
     if( isset( $_COOKIE ) ) {
 
@@ -115,7 +124,7 @@ function pb_remove_banner_cookie() {
         foreach( $_COOKIE as $key => $val ) {
             
             $cookie_name_partial = str_contains( $key, 'banner-hidden-' );
-            $cookie_name = pb_unique_banner_cookie_name();
+            $cookie_name = cf_unique_banner_cookie_name();
 
              // Remove cookie if the partial is present and isn't our existing unique cookie
             if ( $cookie_name_partial == true && $key !== $cookie_name ) {
@@ -132,5 +141,32 @@ function pb_remove_banner_cookie() {
         }
 
     }
+
+}
+
+
+
+/**
+ * Adds top-banner body classes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Current classes.
+ * @return array The new classes.
+ */
+add_action( 'body_class', 'cf_notice_bar_classes' );
+function cf_notice_bar_classes( $classes ) {
+
+	// Set banner hidden if banner is set to display at all
+	if ( cf_is_banner_active() ) {
+		$classes[] = 'top-banner-hidden';
+	}
+
+	// Set banner to visible if banner is set to display and cookies are set to false
+	if (  cf_is_banner_active() == true && cf_is_dismissable_banner_active() == false ) {
+		$classes[] = 'top-banner-visible';
+	}
+
+	return $classes;
 
 }

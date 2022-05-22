@@ -1,0 +1,201 @@
+{
+    "key": "group_62898b62afc97",
+    "title": "Taxonomy Grid",
+    "fields": [
+        {
+            "key": "field_62898c27e4c0e",
+            "label": "Layout",
+            "name": "content_layout",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "three-columns": "Three Columns",
+                "four-columns": "Four Columns"
+            },
+            "allow_null": 0,
+            "default_value": "three-columns",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_62898dc846abc",
+            "label": "Get Entries By",
+            "name": "get_method",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "choice": "Choice"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_62898e985e6fe",
+            "label": "Choose Terms",
+            "name": "choosen_terms",
+            "type": "taxonomy",
+            "instructions": "Show specific terms. Choose all that apply in the order you wish.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62898dc846abc",
+                        "operator": "==",
+                        "value": "choice"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_6289a45c01f2e",
+            "label": "Number of Entries",
+            "name": "number_entries",
+            "type": "number",
+            "instructions": "Limit the number of taxonomy terms displayed. Leave empty to display all.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62898dc846abc",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_6289a4b12c82d",
+            "label": "Order By",
+            "name": "order_by",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62898dc846abc",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "name": "Name",
+                "slug": "Slug",
+                "count": "Count",
+                "term_group": "Term Group",
+                "term_order": "Term Order",
+                "term_id": "ID"
+            },
+            "default_value": "name",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6289abb390667",
+            "label": "Order",
+            "name": "order_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62898dc846abc",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ASC": "Ascending",
+                "DESC": "Descending"
+            },
+            "default_value": "DESC",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/taxonomy-grid-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1653192114
+}

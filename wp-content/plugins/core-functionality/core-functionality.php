@@ -3,7 +3,7 @@
  * Plugin Name: Core Functionality
  * Plugin URI: https://
  * Description: This custom plugin is a companion to your websites. It contains all your site's core functionality so that it is independent of your theme. For your site to have all its intended functionality, this plugin must be active.
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author: Patrick Boehner
  * Author URI: http://www.patrickboehner.com
  *
@@ -53,7 +53,7 @@ if( !defined( 'CRON_EMAIL' ) ) {
 //**********************
 
 // If debug is on return version number as time, otherwsie return static number
-define ('CF_VERSION', '1.1.3');
+define ('CF_VERSION', '1.1.4');
 
 // Cache Busting
 function cf_cf_version_id() {
@@ -102,19 +102,20 @@ require_once( CORE_DIR . 'inc/post-types/blocks.php' );
 
 // Blocks
 require_once( CORE_DIR . 'inc/blocks/categories.php' );
-require_once( CORE_DIR . 'inc/blocks/content-grid/content-grid.php' );
-require_once( CORE_DIR . 'inc/blocks/icon/icon-block.php' );
-require_once( CORE_DIR . 'inc/blocks/video/video-block.php' );
-require_once( CORE_DIR . 'inc/blocks/toggle/toggle-block.php' );
-require_once( CORE_DIR . 'inc/blocks/max-width/max-width-block.php' );
+require_once( CORE_DIR . 'inc/blocks/content-grid/block.php' );
+require_once( CORE_DIR . 'inc/blocks/taxonomy-grid/block.php' );
+require_once( CORE_DIR . 'inc/blocks/icon/block.php' );
+require_once( CORE_DIR . 'inc/blocks/video/block.php' );
+require_once( CORE_DIR . 'inc/blocks/toggle/block.php' );
+require_once( CORE_DIR . 'inc/blocks/max-width/block.php' );
 // require_once( CORE_DIR . 'inc/blocks/custom-block/custom-block.php' );
 
 
 // Plugible
-require_once( CORE_DIR . 'inc/plugable/social-share/social-share.php' );
-require_once( CORE_DIR . 'inc/plugable/email-testing/email-testing.php' );
-require_once( CORE_DIR . 'inc/plugable/user-profile-image/user-profile-image.php' );
-require_once( CORE_DIR . 'inc/plugable/banner/banner.php' );
+require_once( CORE_DIR . 'inc/pluggable/social-share/social-share.php' );
+require_once( CORE_DIR . 'inc/pluggable/email-testing/email-testing.php' );
+require_once( CORE_DIR . 'inc/pluggable/user-profile-image/user-profile-image.php' );
+require_once( CORE_DIR . 'inc/pluggable/banner/banner.php' );
 
 
 
@@ -156,7 +157,7 @@ function cf_core_functionality_deactivation_hook() {
 
 
 // Plugin Uninstall Hook
-register_uninstall_hook(  __FILE__, 'cf_core_functionality_uninstall_hook' );
-function cf_core_functionality_uninstall_hook() {
+// register_uninstall_hook(  __FILE__, 'cf_core_functionality_uninstall_hook' );
+// function cf_core_functionality_uninstall_hook() {
 
-}
+// }

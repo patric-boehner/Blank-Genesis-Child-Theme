@@ -581,10 +581,6 @@ hr.wp-block-separator {
   margin-bottom: 0;
 }
 
-.content-grid-block a {
-  pointer-events: none;
-}
-
-.optimized-video-block button {
+.acf-block-component a {
   pointer-events: none;
 }

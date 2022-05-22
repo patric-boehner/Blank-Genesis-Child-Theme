@@ -1,0 +1,20 @@
+.three-columns {
+  --grid-columns: repeat(3, 1fr); }
+
+.four-columns {
+  --grid-columns: repeat(4, 1fr); }
+
+.taxonomy-grid-block {
+  margin-bottom: var(--wp--custom--spacing--block-gap); }
+  .taxonomy-grid-block .inner_content {
+    display: grid;
+    gap: var(--wp--custom--grid--gap); }
+    @media only screen and (min-width: 860px) {
+      .taxonomy-grid-block .inner_content {
+        grid-template-columns: var(--grid-columns); } }
+.taxonomy-link {
+  padding: var(--wp--custom--button--padding);
+  background: var(--wp--preset--color--light-gray);
+  text-decoration: none; }
+  .taxonomy-link:hover {
+    background-color: var(--wp--preset--color--light-green); }
