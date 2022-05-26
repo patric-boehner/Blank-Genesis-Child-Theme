@@ -46,7 +46,7 @@ function register_acf_content_grid_block() {
       'supports'		    => [
         'mode'          => false,
         // Each can also be set to true or false
-        'align'			    => array( 'wide', 'full' ),
+        'align'			    => array( 'wide' ),
         'align_text'    => array( 'left', 'right', 'center' ),
         'align_content' => array( 'top', 'center', 'bottom' ), // matrix
       ]

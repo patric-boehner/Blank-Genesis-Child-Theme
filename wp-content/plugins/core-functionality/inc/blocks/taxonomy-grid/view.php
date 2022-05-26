@@ -12,5 +12,5 @@
           <span class="taxonomy-name"><?php echo $name; ?></span>
         </a>
       <?php endforeach; ?>
-    </divl>
+    </div>
 </div>
