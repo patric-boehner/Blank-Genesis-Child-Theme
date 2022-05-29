@@ -44,8 +44,17 @@ function pb_output_related_posts() {
     // Loop
     if ( $posts->have_posts() ) :
 
-        // Variable
-        $section_heading = esc_html__( 'Related Posts', 'blank-child-theme');
+        /**
+         * Create a filterable headline text
+         * 
+         * Use 'pb_related_posts_title' as the hook for the callback function
+         * when you want to chnage the title.
+         * Default priority is 10.
+         * 
+         * @link https://developer.wordpress.org/reference/functions/add_filter/
+         */
+        $title = esc_html__( 'Related Posts', 'blank-child-theme');
+        $section_heading = apply_filters( 'pb_related_posts_title', $title );
 
         // Opening Strcutre
         echo sprintf(

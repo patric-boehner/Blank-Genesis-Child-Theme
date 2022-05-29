@@ -36,12 +36,12 @@ function cf_admin_user_role() {
 
     // Array of user capabilites
     $caps = array(
-        'publish_content_areas',
-        'read_private_content_areas',
-        'edit_content_areas',
         'edit_content_area',
-        'edit_others_content_area',
+        'read_content_area',
+        'edit_content_areas',
         'edit_others_content_areas',
+        'publish_content_areas',
+        'read_private_content_areas',    
     );
 
      // Add all the capabilities by looping through them
@@ -165,12 +165,14 @@ function cf_developer_user_role() {
 
     // Array of user capabilites
     $caps = array(
-        'publish_content_areas',
-        'read_private_content_areas',
-        'edit_content_areas',
         'edit_content_area',
-        'edit_others_content_area',
+        'read_content_area',
+        'delete_content_area',
+        'edit_content_areas',
         'edit_others_content_areas',
+        'publish_content_areas',
+        'read_private_content_areas',        
+        'create_content_aresas',
     );
 
      // Add all the capabilities by looping through them

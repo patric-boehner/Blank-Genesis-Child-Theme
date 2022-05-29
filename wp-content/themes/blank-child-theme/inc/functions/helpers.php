@@ -46,31 +46,6 @@ function pb_get_id_by_slug( $page_slug, $post_type ) {
 
 
 /**
- * Helper function to check if we're on a WooCommerce page.
- *
- * @since  2.0.0
- *
- * @link   https://docs.woocommerce.com/document/conditional-tags/.
- *
- * @return bool
- */
-function pb_is_woocommerce_page() {
-
-	if ( ! class_exists( 'WooCommerce' ) ) {
-		return false;
-	}
-
-	if ( is_woocommerce() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) {
-		return true;
-	} else {
-		return false;
-	}
-
-}
-
-
-
-/**
  * Checks if we're on any type of archive page.
  *
  * Thanks BizBudding's Mia Engine

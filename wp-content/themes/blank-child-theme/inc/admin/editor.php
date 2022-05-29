@@ -47,7 +47,7 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 		'acf/video-block',
 	);
 
-	// $allowed_blocks = array(
+	// $cpt_allowed_blocks = array(
 	// 	'core/youtube',
 	// 	'core/facebook',
 	// 	'core/twitter',
@@ -55,8 +55,9 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 	// 	'core/vimeo',
 	// );
 
-	// if( $post->post_type === 'page' ) {
-	// 	$allowed_blocks[] = '';
+	// Custom Post Type
+	// if( $post->post_type === 'cpt' ) {
+	// 	$allowed_blocks = $cpt_allowed_blocks;
 	// }
 
 	return $allowed_blocks;
@@ -65,32 +66,33 @@ function pb_allowed_block_types( $allowed_blocks, $post ) {
 
 
 // Disable gensis title toggle
-// add_filter( 'genesis_title_toggle_enabled', '__return_false' );
+add_filter( 'genesis_title_toggle_enabled', '__return_false' );
 
-// Add title togle support for a custom post type
-// add_post_type_support( '[post-type]', 'genesis-title-toggle' );
 
 // Disable genesis breadcrumb support
-// add_filter( 'genesis_breadcrumbs_toggle_enabled', '__return_false' );
+add_filter( 'genesis_breadcrumbs_toggle_enabled', '__return_false' );
 
 
-// Custom Layout
-add_action( 'after_setup_theme', 'pb_register_narrow_layout' );
-function pb_register_narrow_layout() {
+// // Custom Layout
+// add_action( 'after_setup_theme', 'pb_register_narrow_layout' );
+// function pb_register_narrow_layout() {
 
-	genesis_register_layout(
-		'narrow-content', // A layout slug of your choice. Used in body classes. 
-		[
-			'label' => __( 'Narrow Content', 'blank-child-theme' ),
-		]
-	);
+// 	genesis_register_layout(
+// 		'narrow-content', // A layout slug of your choice. Used in body classes. 
+// 		[
+// 			'label' => __( 'Narrow Content', 'blank-child-theme' ),
+// 		]
+// 	);
 
-}
+// }
 
 
 /**
  * Gutenberg layout class
+ * 
  * @link https://www.billerickson.net/change-gutenberg-content-width-to-match-layout/
+ * @link https://developer.wordpress.org/reference/functions/get_page_template_slug/
+ * @link https://tommcfarlin.com/body-class-based-on-a-template/
  *
  * @param string $classes
  * @return string
@@ -104,27 +106,29 @@ function pb_block_editor_layout_class( $classes ) {
 		return $classes;
 	}
 
-	$layout = false;
-	$post_id = isset( $_GET['post'] ) ? intval( $_GET['post'] ) : false;
-  
-	// Get post-specific layout
-	if( $post_id ) {
-		$layout = genesis_get_custom_field( '_genesis_layout', $post_id );
-	}
+	// Remove the `template-` prefix and get the name of the template without the file extension.
+	if ( !empty( get_post_meta( get_the_ID(), '_wp_page_template', true ) ) ) {
 		
+		$template_name = basename( get_page_template_slug( get_the_ID() ) );
+		$template_name = str_ireplace( 'template-', '', basename( get_page_template_slug( get_the_ID() ), '.php'));
+
+	} 
     
 	// Pages use full width as default, see below
-	if( empty( $layout ) && 'page' === get_post_type() ) {
-		$layout = 'full-width-layout';
+	if( 'page' === get_post_type() || $template_name == 'full-widht-layout' ) {
+		$layout = 'full-width-content';
 	}
+
 	// Change defualt for posts
-	if( empty( $layout ) && 'post' === get_post_type() ) {
+	if( 'post' === get_post_type() || $template_name == 'narow-contnet' ) {
 		$layout = 'narrow-content';
 	}
     
 	// If no post-specific layout, use site-wide default
-	elseif( empty( $layout ) ) {
-		$layout = genesis_get_option( 'site_layout' );
+	if( !empty( $template_name ) ) {
+		$layout = $template_name;
+	} else {
+		$layout = 'full-width-content';
 	}
 
 	$classes .= ' ' . $layout . ' ';
@@ -163,7 +167,7 @@ function pb_block_editor_title_class( $classes ) {
 }
 
 
-//Remove inpost Genesis settings
+// Remove inpost Genesis settings
 add_action( 'init', 'pb_simplify_editing_screens' );
 function pb_simplify_editing_screens() {
 

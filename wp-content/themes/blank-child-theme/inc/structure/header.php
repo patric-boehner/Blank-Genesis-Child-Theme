@@ -23,7 +23,7 @@ function pb_add_banner() {
     return;
   }
 
-  if ( function_exists( 'pb_show_content_area' ) && function_exists( 'cf_output_banner' )  ) {
+  if ( function_exists( 'cf_show_content_area' ) && function_exists( 'cf_output_banner' )  ) {
 
      // Output styles
      wp_print_styles( 'banner-style' );

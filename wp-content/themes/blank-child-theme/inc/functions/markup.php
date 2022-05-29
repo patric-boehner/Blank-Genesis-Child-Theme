@@ -24,6 +24,45 @@ remove_filter( 'body_class', 'genesis_title_hidden_body_class' );
 remove_filter( 'body_class', 'genesis_breadcrumbs_hidden_body_class' );
 remove_filter( 'body_class', 'genesis_singular_image_hidden_body_class' );
 remove_filter( 'body_class', 'genesis_singular_image_visible_body_class' );
+remove_filter( 'body_class', 'genesis_footer_widgets_hidden_body_class' );
+remove_filter( 'body_class', 'genesis_layout_body_classes' );
+remove_filter( 'body_class', 'genesis_header_body_classes' );
+
+
+/**
+ * Adds a css class to the body element.
+ *
+ * @param  array $classes the current body classes.
+ * @return array $classes modified classes.
+ */
+add_filter( 'body_class', 'pb_layout_body_class' );
+function pb_layout_body_class( $classes ) {
+
+	// 'full-width-content'
+	// 'narrow-content'
+	// 'sidebar-content'
+
+	// Remove the `template-` prefix and get the name of the template without the file extension.
+	if ( !empty( get_post_meta( get_the_ID(), '_wp_page_template', true ) ) ) {
+		
+		$template_name = basename( get_page_template_slug( get_the_ID() ) );
+		$template_name = str_ireplace( 'template-', '', basename( get_page_template_slug( get_the_ID() ), '.php'));
+
+		$classes[] = $template_name;
+
+	} elseif( is_singular( 'post' ) || is_home() || is_archive() || is_404() || is_search() ) {
+
+		$classes[] = 'narrow-content';
+
+	} else {
+
+		$classes[] = 'full-width-content';
+
+	}
+
+	return $classes;
+
+}
 
 
 /**
@@ -39,7 +78,7 @@ remove_filter( 'body_class', 'genesis_singular_image_visible_body_class' );
  * @return array The modified classes.
  */
 
-add_filter( 'body_class', 'genesis_blocks_body_classes' );
+add_filter( 'body_class', 'genesis_blocks_body_classes', 12 );
 function genesis_blocks_body_classes( $classes ) {
 
 	if ( ! is_singular() || ! function_exists( 'has_blocks' ) || ! function_exists( 'parse_blocks' ) ) {
@@ -74,7 +113,7 @@ function pb_remove_redundant_markup() {
 
 	add_filter( 'genesis_markup_site-inner', '__return_null' );
 
-	if ( 'full-width-content' === genesis_site_layout() || 'full-width-content' === genesis_site_layout() || 'narrow-content' === genesis_site_layout() ) {
+	if ( is_singular() || is_home() || is_archive() || is_404() || is_search() ) {
 		add_filter( 'genesis_markup_content-sidebar-wrap', '__return_null' );
 	}
 

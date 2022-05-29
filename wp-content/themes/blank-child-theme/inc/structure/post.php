@@ -111,8 +111,8 @@ function pb_after_post_block_area() {
 		return;
 	}
 
-	if ( function_exists( 'pb_show_content_area' ) ) {
-		pb_show_content_area( array( 
+	if ( function_exists( 'cf_show_content_area' ) ) {
+		cf_show_content_area( array( 
 			'location' => 'after-blog-post',
 			'element' => 'section',
 		) );

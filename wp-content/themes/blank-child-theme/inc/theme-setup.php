@@ -54,6 +54,7 @@ function pb_load_post_type_support() {
 }
 
 
+
 // Remove the site description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
@@ -64,19 +65,13 @@ unregister_sidebar( 'sidebar-alt' ); // Secondary
 unregister_sidebar( 'header-right' ); // Header Right
 
 
-// Force narrow-content on single posts only
-add_filter( 'genesis_pre_get_option_site_layout', 'pb_narrow_layout' );
-function pb_narrow_layout() {
-
-	if ( is_home() || is_archive() || is_404() || is_search() ) {
-		return 'narrow-content';
-	}
-
-	if ( is_singular( 'post' ) ) {
-		return 'narrow-content';
-	}
-
-}
+// Remove layouts
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'sidebar-content' );
+genesis_unregister_layout( 'content-sidebar' );
+genesis_unregister_layout( 'full-width-content' );
 
 
 // Only load styles for used blocks
@@ -109,7 +104,7 @@ remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
 
 
 // Remove Genesis in-post Layout Settings
-// remove_theme_support( 'genesis-inpost-layouts' );
+remove_theme_support( 'genesis-inpost-layouts' );
 
 
 // Remove Archive Layout settings

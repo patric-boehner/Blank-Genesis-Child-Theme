@@ -18,14 +18,5 @@ if( !defined( 'ABSPATH' ) ) exit;
 
 // Remove Sidebars
 // https://studiopress.github.io/genesis/developer-features/genesis-layouts/
-add_action( 'genesis_meta', 'pb_remove_sidebar_on_layouts' );
-function pb_remove_sidebar_on_layouts() {
-
-	$site_layout = genesis_site_layout();
-
-	if ( 'narrow-content' === $site_layout || 'full-width-content' === $site_layout ) {
-		remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
-		remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
-	}
-
-}
+remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );

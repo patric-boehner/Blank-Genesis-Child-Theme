@@ -26,7 +26,7 @@ function pb_remove_customizer_sections( $wp_customize ) {
 
 	$wp_customize->remove_control( 'blog_title' );
 	$wp_customize->remove_section( 'genesis_header' );
-	// $wp_customize->remove_section( 'genesis_layout' );
+	$wp_customize->remove_section( 'genesis_layout' );
 	$wp_customize->remove_section( 'genesis_breadcrumbs' );
 	// $wp_customize->remove_section( 'genesis_comments' );
 	$wp_customize->remove_control( 'genesis_trackbacks_posts' );

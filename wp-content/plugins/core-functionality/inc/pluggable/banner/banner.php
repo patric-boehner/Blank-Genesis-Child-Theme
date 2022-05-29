@@ -3,10 +3,10 @@
 /**
  * Banner Strucutre
  *
- * @package Blank Child Theme
- * @author  Patrick Boehner
- * @license GPL-2.0+
- * @link    http://example.com/
+ * @package    CoreFunctionality
+ * @since      2.0.0
+ * @copyright  Copyright (c) 2022, Patrick Boehner
+ * @license    GPL-2.0+
  */
 
 
@@ -44,9 +44,9 @@ function cf_output_banner() {
         $close_button = ( $cookie == 'enable' ) ? $button : '';
 
 
-        if ( function_exists( 'pb_show_content_area' ) && !isset( $_COOKIE[ cf_unique_banner_cookie_name() ] ) ) {
+        if ( function_exists( 'cf_show_content_area' ) && !isset( $_COOKIE[ cf_unique_banner_cookie_name() ] ) ) {
 
-            pb_show_content_area( array(
+            cf_show_content_area( array(
                 'location'      => 'banner',
                 'class'         => $class,
                 'prepend'       => '<div class="block__inner">',

@@ -9,7 +9,7 @@
  *
 * @package    CoreFunctionality
 * @since      2.0.0
-* @copyright  Copyright (c) 2019, Patrick Boehner
+* @copyright  Copyright (c) 2022, Patrick Boehner
 * @license    GPL-2.0+
  *
  */
@@ -46,7 +46,6 @@ function cf_add_social_share_options() {
 	$title				= urlencode( esc_attr( strip_tags( get_the_title() ) ) );
 	$name				= urlencode( get_bloginfo( 'name' ) );
 	$sharing_options 	= get_option( 'options_sharing_options' );
-	$print				= esc_js( 'javascript:window.print()' );
 
 
 	// 
@@ -86,8 +85,7 @@ function cf_add_social_share_options() {
 			'mailto:?subject=%s&body=%s',
 			cf_social_share_email_subject(),
 			cf_social_share_email_content()
-		),
-		'print' => $print,
+		)
 	);
 
 
@@ -202,22 +200,16 @@ function cf_sharing_button_text( $service_name ) {
 	$screen_reader_print_text = esc_html__( 'this page', 'blank-child-theme' );
 	$screen_reader_warning_text = esc_html__( 'Opens in new window', 'blank-child-theme' );
 
-	if ( $option == 'icon-text' && $service_name !== 'Print' ) {
+	// Default
+	$text = 'icon-text';
+
+	if ( $option == 'icon-text' ) {
 		$text = $screen_reader_share_text;
 	}
 
-	if ( $option == 'icon' && $service_name !== 'Print' ) {
+	if ( $option == 'icon' ) {
 		$text = $screen_reader_share_text . ' ' . $service_name;
 	}
-
-	if ( $option == 'icon-text' && $service_name == 'Print' ) {
-		$text = '';
-	}
-
-	if ( $option == 'icon' && $service_name == 'Print' ) {
-		$text = $service_name . ' ' . $screen_reader_print_text;
-	}
-
 
 	// Format the link text based on style
 	if (  $option == 'icon'  ) {

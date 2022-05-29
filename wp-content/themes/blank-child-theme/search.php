@@ -20,7 +20,12 @@ remove_action( 'genesis_before_loop', 'genesis_do_search_title' );
 add_action( 'genesis_before_loop', 'pb_modify_search_page_header' );
 function pb_modify_search_page_header() {
 
-	$title = sprintf( '<header class="archive-description search-description"><h1 class="archive-title">%s %s</h1></header>', apply_filters( 'genesis_search_title_text', __( 'Search Results for:', 'blank-child-theme' ) ), get_search_query() );
+	$title = sprintf( 
+		'<header class="archive-description search-description"><h1 class="archive-title">%s %s</h1></header>', 
+		apply_filters( 'genesis_search_title_text', __( 'Search Results for:', 'blank-child-theme' ) ), 
+		get_search_query() 
+	);
+
 	echo apply_filters( 'genesis_search_title_output', $title ) . "\n";
 
 }

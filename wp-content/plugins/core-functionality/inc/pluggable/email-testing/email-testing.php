@@ -14,7 +14,7 @@
 *
 * @package    CoreFunctionality
 * @since      2.0.0
-* @copyright  Copyright (c) 2019, Patrick Boehner
+* @copyright  Copyright (c) 2022, Patrick Boehner
 * @license    GPL-2.0+
 */
 

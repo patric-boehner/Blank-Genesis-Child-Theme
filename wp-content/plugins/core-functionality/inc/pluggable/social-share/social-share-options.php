@@ -91,7 +91,6 @@ if( function_exists('acf_add_local_field_group') ):
                     'pinterest' => 'Pinterest',
                     'linkedin' => 'Linkedin',
                     'email' => 'Email',
-                    'print' => 'Print',
                 ),
                 'allow_custom' => 0,
                 'default_value' => array(
@@ -100,7 +99,6 @@ if( function_exists('acf_add_local_field_group') ):
                     2 => 'pinterest',
                     3 => 'linkedin',
                     4 => 'email',
-                    5 => 'print',
                 ),
                 'allow_null' => 0,
                 'multiple' => 1,

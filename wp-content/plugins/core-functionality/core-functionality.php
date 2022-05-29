@@ -3,7 +3,7 @@
  * Plugin Name: Core Functionality
  * Plugin URI: https://
  * Description: This custom plugin is a companion to your websites. It contains all your site's core functionality so that it is independent of your theme. For your site to have all its intended functionality, this plugin must be active.
- * Version: 1.1.4
+ * Version: 1.1.5
  * Author: Patrick Boehner
  * Author URI: http://www.patrickboehner.com
  *
@@ -53,7 +53,7 @@ if( !defined( 'CRON_EMAIL' ) ) {
 //**********************
 
 // If debug is on return version number as time, otherwsie return static number
-define ('CF_VERSION', '1.1.4');
+define ('CF_VERSION', '1.1.5');
 
 // Cache Busting
 function cf_cf_version_id() {

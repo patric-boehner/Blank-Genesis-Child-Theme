@@ -42,7 +42,7 @@ function pb_child_theme_enforce_image_size_options() {
 }
 
 
-// Add mage sizes for use in Add Media modal
+// Add sizes for use in Add Media modal
 add_filter( 'image_size_names_choose', 'pa_add_medium_large_size_selection' );
 function pa_add_medium_large_size_selection( $sizes ) {
 

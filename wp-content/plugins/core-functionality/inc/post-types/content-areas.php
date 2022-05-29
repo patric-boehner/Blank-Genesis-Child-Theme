@@ -87,7 +87,7 @@
 
 
     // Show Block Area
-    function pb_show_content_area( $args = array() ) {
+    function cf_show_content_area( $args = array() ) {
 
       // Setup defaults
       $defaults = array(
@@ -95,6 +95,7 @@
          'element'         => 'div',
          'class'           => '',
          'id'              => '',
+         'attributes'      => '',
          'prepend'         => '',
          'append'          => ''
       );

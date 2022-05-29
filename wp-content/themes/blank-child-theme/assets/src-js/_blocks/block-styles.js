@@ -7,7 +7,7 @@ wp.domReady( () => {
 
 	wp.blocks.unregisterBlockStyle(
 		'core/separator',
-		[ 'default', 'wide', 'dots' ],
+		[ 'default', 'wide', 'dots' ]
 	);
 
 	wp.blocks.unregisterBlockStyle(
@@ -25,19 +25,7 @@ wp.domReady( () => {
 			name: 'default',
 			label: 'Default',
 			isDefault: true,
-		},
-		{
-			name: 'no-spacing',
-			label: 'No Spacing',
-		},
-		{
-			name: 'medium-spacing',
-			label: 'Medium Spacing',
-		},
-		{
-			name: 'large-spacing',
-			label: 'Large Spacing',
-		},
+		}
 	]);
 
 	wp.blocks.registerBlockStyle( 'core/group', [
@@ -45,19 +33,7 @@ wp.domReady( () => {
 			name: 'default',
 			label: 'Default',
 			isDefault: true,
-		},
-		{
-			name: 'no-spacing',
-			label: 'No Spacing',
-		},
-		{
-			name: 'medium-spacing',
-			label: 'Medium Spacing',
-		},
-		{
-			name: 'large-spacing',
-			label: 'Large Spacing',
-		},
+		}
 	]);
 
 	wp.blocks.registerBlockStyle( 'core/heading', [
@@ -65,15 +41,7 @@ wp.domReady( () => {
 			name: 'default',
 			label: 'Default',
 			isDefault: true,
-		},
-		{
-			name: 'no-bottom-spacing',
-			label: 'No Bottom Margin',
-		},
-		// {
-		// 	name: 'larger-bottom-spacing',
-		// 	label: 'Increased Bottom Spacing',
-		// }
+		}
 	]);
 
 	wp.blocks.registerBlockStyle( 'core/paragraph', [
@@ -81,15 +49,7 @@ wp.domReady( () => {
 			name: 'default',
 			label: 'Default',
 			isDefault: true,
-		},
-		{
-			name: 'no-bottom-spacing',
-			label: 'No Bottom Margin',
-		},
-		// {
-		// 	name: 'larger-bottom-spacing',
-		// 	label: 'Increased Bottom Spacing',
-		// }
+		}
 	]);
 
 	wp.blocks.registerBlockStyle( 'acf/icon-block', [
@@ -97,14 +57,6 @@ wp.domReady( () => {
 			name: 'default',
 			label: 'Default',
 			isDefault: true,
-		},
-		{
-			name: 'no-bottom-spacing',
-			label: 'No Bottom Margin',
-		},
-		{
-			name: 'larger-bottom-spacing',
-			label: 'Increased Bottom Spacing',
 		}
 	]);
 
@@ -129,10 +81,6 @@ wp.domReady( () => {
 			name: 'default',
 			label: 'Default',
 			isDefault: true,
-		},
-		{
-			name: 'medium-spacing',
-			label: 'Medium Spacing',
 		}
 	]);
 

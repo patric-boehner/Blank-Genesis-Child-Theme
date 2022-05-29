@@ -71,8 +71,8 @@ function pb_footer_block_areas() {
 	}
 
 	// Output content area
-	if ( function_exists( 'pb_show_content_area' ) ) {
-		pb_show_content_area( array(
+	if ( function_exists( 'cf_show_content_area' ) ) {
+		cf_show_content_area( array(
 			'location' => 'footer',
 			'id'	   => 'footer',
 		) );
