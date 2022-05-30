@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Core Functionality
- * Plugin URI: https://
+ * Plugin URI: https://btsadventures.com
  * Description: This custom plugin is a companion to your websites. It contains all your site's core functionality so that it is independent of your theme. For your site to have all its intended functionality, this plugin must be active.
- * Version: 1.1.5
+ * Version: 1.1.6
  * Author: Patrick Boehner
  * Author URI: http://www.patrickboehner.com
  *
@@ -107,7 +107,6 @@ require_once( CORE_DIR . 'inc/blocks/taxonomy-grid/block.php' );
 require_once( CORE_DIR . 'inc/blocks/icon/block.php' );
 require_once( CORE_DIR . 'inc/blocks/video/block.php' );
 require_once( CORE_DIR . 'inc/blocks/toggle/block.php' );
-require_once( CORE_DIR . 'inc/blocks/max-width/block.php' );
 // require_once( CORE_DIR . 'inc/blocks/custom-block/custom-block.php' );
 
 

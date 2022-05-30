@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Full Width Lauout
+ * Template Name: Full Width Layout
  *
  * @package Blank Child Theme
  * @author  Patrick Boehner
