@@ -27,35 +27,34 @@ if( !defined( 'ABSPATH' ) ) exit;
  */
 remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
 
-// add_action( 'genesis_before_loop', 'pb_add_or_remove_sidebar', 12 );
-function pb_add_or_remove_sidebar() {
 
-    // Remove inner content from primary sidebar
-    remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+// Add inner content to the primary sidebar
+// add_action( 'genesis_after_content', 'pb_add_primary_sidebar' );
+function pb_add_primary_sidebar() {
 
-    // Remove the primary sidebar if not on right template
-    if ( ! is_singular( 'post' ) ) {
 
-        remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+    // Excape Early
+    if( ! is_singular( 'post' ) ) {
+        return;
+    }
+
+    if( function_exists( 'cf_show_content_area' ) ) {
+
+        $screen_reader_heading = sprintf(
+            '<h2 class="screen-reader-text">%s</h2>',
+            esc_html__( 'Primary Sidebar', 'blank-child-theme' ),
+        );
+
+        cf_show_content_area( array( 
+            'location' => 'sidebar',
+            'element'  => 'aside',
+            'id'       => 'sidebar-primary',
+            'prepend'  => $screen_reader_heading
+        ) );
 
     }
 
-    // Add inner content to the primary sidebar
-    add_action( 'genesis_sidebar', 'pb_testing' );
-    function pb_testing() {
-
-        if( function_exists( 'cf_show_content_area' ) ) {
-
-            cf_show_content_area( array( 
-                'location' => 'sidebar',
-                'element' => 'div',
-            ) );
-
-        }
-
-    }
-
-}    
+}
 
 
 /**

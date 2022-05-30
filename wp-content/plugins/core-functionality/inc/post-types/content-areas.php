@@ -95,9 +95,8 @@
          'element'         => 'div',
          'class'           => '',
          'id'              => '',
-         'attributes'      => '',
          'prepend'         => '',
-         'append'          => ''
+         'append'          => '',
       );
 
       // Parse arguments.
@@ -125,25 +124,27 @@
          // Output ID is supplied
          $id = ( esc_attr( $args[ 'id' ] ) ) ? sprintf( 'id="%s"', esc_attr( $args[ 'id' ] ) ) : '';
          // Sanitize location name
-         $location = sanitize_key( $args[ 'location' ] );
+         $location = ' ' . sanitize_key( $args[ 'location' ] );
          // Esc class name
-         $class = sanitize_html_class( $args['class'] );
+         $class = ' ' . sanitize_html_class( $args['class'] );
+         $prepend = $args[ 'prepend' ];
+         $append = $args[ 'append' ];
 
          // Output content
          echo sprintf(
-            '<%s %s class="block-content-area %s %s">%s',
+            '<%s %s class="block-content-area%s%s">%s',
             $element,
             $id,
             $location,
             $class,
-            $args['prepend']
+            $prepend
          );
 
          echo the_content();
 
          echo sprintf(
             '%s</%s>',
-            $args[ 'append' ],
+            $append,
             $element
             
          );
