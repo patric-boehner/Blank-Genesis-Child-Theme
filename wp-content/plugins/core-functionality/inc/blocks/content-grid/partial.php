@@ -43,7 +43,9 @@ $block_id = !empty( $block['anchor'] ) ? ' id="' . esc_attr( sanitize_title( $bl
 
 // Block Settings
 $entries = get_field( 'chosen_entires' );
+$post_type = esc_attr( get_field( 'post_type' ) );
 $posts_count = esc_attr( get_field( 'number_entries' ) );
+$author = esc_attr( get_field( 'select_author' ) );
 $categories = get_field( 'from_categories' );
 $tags = get_field( 'from_tags' );
 $offset = esc_attr( get_field( 'offset_entries' ) );
@@ -62,6 +64,8 @@ $posts_limit = $posts_count + count($posts_to_exclude);
 
 
 // Default values
+$post_type = !empty( $post_type ) ? $post_type : 'post';
+$author = !empty( $author ) ? $author : '';
 $order_by = !empty( $order_by ) ? $order_by : 'date';
 $order = !empty( $order ) ? $order : 'DESC';
 $posts_in = !empty( $entries ) ? $entries : array( 0 );
@@ -111,7 +115,8 @@ if( $categories && $tags ) {
 if( $method == 'default' ) {
 
   $args = array(
-    'post_type'			  	     => 'post',
+    'post_type'			  	     => $post_type,
+    'author'                 => $author,
     'ignore_sticky_posts'    => 1,
     'order'                  => $order,
     'orderby'                => $order_by,

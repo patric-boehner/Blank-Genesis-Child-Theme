@@ -37,7 +37,7 @@ function register_acf_icon_block() {
         // Each can also be set to true or false
         'align'			          => false,
         // 'align'            => array( 'none', 'left', 'center' ),
-        'align_content'       => [ 'top', 'center', 'bottom' ], // matrix
+        'align_content'       => false, // matrix
         'customClassName'	    => true,
         'jsx' 			          => true,
         'color'               => [

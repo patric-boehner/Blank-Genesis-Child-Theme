@@ -18,6 +18,7 @@ if( !defined( 'ABSPATH' ) ) exit;;
 
 //**********************
 
+
 // Add the simple_role. 
 
 /**
@@ -145,8 +146,8 @@ function cf_contributor_user_role() {
  * instead of doing it programaticaly, that forces other developer to have to figure 
  * out how you removed the items rather then just switching user roles.
  * 
- * https://developer.wordpress.org/reference/functions/add_role/
- * https://wordpress.org/support/article/roles-and-capabilities/#capability-vs-role-table
+ * @link https://developer.wordpress.org/plugins/users/roles-and-capabilities/
+ * @link https://wordpress.org/support/article/roles-and-capabilities/#capability-vs-role-table
  * 
 */
 
@@ -159,6 +160,11 @@ function cf_developer_user_role() {
         get_role( 'administrator' )->capabilities
 
     );
+
+}
+
+
+function cf_developer_user_role_update() {
 
     // Get the developer user role
     $role = get_role(  'developer' );
@@ -181,4 +187,3 @@ function cf_developer_user_role() {
     }
 
 }
-

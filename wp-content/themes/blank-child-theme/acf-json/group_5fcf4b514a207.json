@@ -29,29 +29,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_5fcf57cdf48aa",
-            "label": "Align",
-            "name": "icon_align",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "top": "Top",
-                "left": "Left",
-                "center": "Center"
-            },
-            "allow_null": 0,
-            "default_value": "top",
-            "layout": "horizontal",
-            "return_format": "value"
-        },
-        {
             "key": "field_5fcf4c54022bb",
             "label": "Size",
             "name": "icon_size",
@@ -93,5 +70,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645842447
+    "modified": 1655943055
 }
