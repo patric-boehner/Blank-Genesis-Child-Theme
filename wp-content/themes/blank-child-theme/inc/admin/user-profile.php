@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Add User contact Methods
+ * Modify user profile
  *
  * @package Blank Child Theme
  * @author  Patrick Boehner
@@ -13,7 +13,3 @@
 // If this file is called directly, abort.
 //**********************
 if( !defined( 'ABSPATH' ) ) exit;
-
-
-// Disable application passwords
-add_filter( 'wp_is_application_passwords_available', '__return_false' );

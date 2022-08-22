@@ -141,10 +141,7 @@ function cf_core_functionality_activate_hook() {
 	cf_contributor_user_role();
 
 	// Developer user role
-	// cf_developer_user_role();
-
-	// Update Developer role
-	cf_developer_user_role_update();
+	cf_developer_user_role();
 
 }
 
@@ -157,10 +154,3 @@ function cf_core_functionality_deactivation_hook() {
 	wp_clear_scheduled_hook( 'cf_cron_email_test' );
 
 }
-
-
-// Plugin Uninstall Hook
-// register_uninstall_hook(  __FILE__, 'cf_core_functionality_uninstall_hook' );
-// function cf_core_functionality_uninstall_hook() {
-
-// }

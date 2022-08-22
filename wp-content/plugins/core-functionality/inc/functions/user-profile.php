@@ -16,6 +16,25 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 
+
+// Disable color options
+add_action( 'admin_init', 'cf_remove_user_profile_color_settings', 10 );
+function cf_remove_user_profile_color_settings() {
+
+	remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+
+}
+
+
+// Remove genesis archive fields
+remove_action( 'show_user_profile', 'genesis_user_archive_fields' );
+remove_action( 'edit_user_profile', 'genesis_user_archive_fields' );
+
+
+// Disable application passwords
+add_filter( 'wp_is_application_passwords_available', '__return_false' );
+
+
 // Register User Contact Methods
 add_filter( 'user_contactmethods', 'cf_custom_user_contact_methods' );
 function cf_custom_user_contact_methods( $user_contact_method ) {

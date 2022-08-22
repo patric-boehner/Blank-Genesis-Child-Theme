@@ -19,8 +19,6 @@ if( !defined( 'ABSPATH' ) ) exit;;
 //**********************
 
 
-// Add the simple_role. 
-
 /**
  * Alter the admin role capabilities
  * 
@@ -137,6 +135,7 @@ function cf_contributor_user_role() {
 }
 
 
+
 /** 
  * Add Developer User Role
  * 
@@ -157,14 +156,7 @@ function cf_developer_user_role() {
         'developer', // System name for the role
         __( 'Developer', 'core-functionality' ), // Display name for the role
 
-        get_role( 'administrator' )->capabilities
-
     );
-
-}
-
-
-function cf_developer_user_role_update() {
 
     // Get the developer user role
     $role = get_role(  'developer' );
@@ -179,11 +171,42 @@ function cf_developer_user_role_update() {
         'publish_content_areas',
         'read_private_content_areas',        
         'create_content_aresas',
+        'manage_admin_columns'
     );
 
      // Add all the capabilities by looping through them
      foreach ( $caps as $cap ) {
         $role->add_cap( $cap );
     }
+
+}
+
+
+
+/**
+ * Allows an administrator or Developer to update there profile as well as all other
+ * user profiles.
+ *
+ * @link https://tommcfarlin.com/update-user-profiles-in-wordpress/
+ * @param int $user_id The ID of the user profile being edited.
+ */
+
+add_action( 'personal_options_update',  'cf_update_admin_to_developer_role' );
+add_action( 'edit_user_profile_update', 'cf_update_admin_to_developer_role' );
+
+function cf_update_admin_to_developer_role() {
+
+    // If the current user doesn't have administrative priveleges and isn't loged in, exit.
+	if ( ! current_user_can( 'delete_content_area' ) && ! is_user_logged_in() ) {
+		return;
+	}
+
+    // Get user ID
+    $user_id = get_current_user_id();
+    $user = new WP_User( $user_id );
+
+    // Add two roles
+    $user->add_role( 'administrator' );
+    $user->add_role( 'developer' );
 
 }
