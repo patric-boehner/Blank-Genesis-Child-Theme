@@ -3,10 +3,10 @@
 /**
  * Related Posts Strucutre
  *
- * @package Blank Child Theme
- * @author  Patrick Boehner
- * @license GPL-2.0+
- * @link    http://example.com/
+ * @package    CoreFunctionality
+ * @since      2.0.0
+ * @copyright  Copyright (c) 2022, Patrick Boehner
+ * @license    GPL-2.0+
  */
 
 
@@ -20,7 +20,7 @@ if( !defined( 'ABSPATH' ) ) exit;
  * 
  * Returns a formated list of 3 posts
  */
-function pb_output_related_posts() {
+function cf_output_related_posts() {
 
     // Variables
     $category = get_the_category();
@@ -37,7 +37,7 @@ function pb_output_related_posts() {
     ) );
 
     // Exit Early
-    if( pb_post_has_cateogry() == false ) {
+    if( cf_get_post_category() == false ) {
         return;
     }
     
@@ -47,14 +47,14 @@ function pb_output_related_posts() {
         /**
          * Create a filterable headline text
          * 
-         * Use 'pb_related_posts_title' as the hook for the callback function
+         * Use 'cf_related_posts_title' as the hook for the callback function
          * when you want to chnage the title.
          * Default priority is 10.
          * 
          * @link https://developer.wordpress.org/reference/functions/add_filter/
          */
-        $title = esc_html__( 'Related Posts', 'blank-child-theme');
-        $section_heading = apply_filters( 'pb_related_posts_title', $title );
+        $title = esc_html__( 'Related Posts', 'core-functionality');
+        $section_heading = apply_filters( 'cf_related_posts_title', $title );
 
         // Opening Strcutre
         echo sprintf(
@@ -71,7 +71,7 @@ function pb_output_related_posts() {
             }
 
             // Post Strucutre
-            get_template_part( 'inc/partials/content-related', 'posts' );
+            include CORE_DIR . '/inc/pluggable/related-posts/view.php';
 
         endwhile;
     endif;
@@ -90,9 +90,9 @@ function pb_output_related_posts() {
 /**
  * Check if the post in the loop has a cateogry
  * 
- * If that that isn't the default cateogry, return true
+ * If the cateogry isn't the default cateogry, return true
  */
-function pb_post_has_cateogry() {
+function cf_get_post_category() {
     
     // Get the current posts cateory slugs
     $category = wp_get_post_categories( get_the_ID(), array( 'fields' => 'ids' ) );

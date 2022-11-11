@@ -1,0 +1,61 @@
+// Variables & Resets
+//**********************************************
+
+// Icon Size
+.icon-size-default .icon
+    --icon--size: var(--wp--custom--icon--normal)
+    width: var(--icon--size)
+    height: var(--icon--size)
+
+.icon-size-small .icon
+    --icon--size: var(--wp--custom--icon--small)
+    width: var(--icon--size)
+    height: var(--icon--size)
+
+.icon-size-large .icon
+    --icon--size: var(--wp--custom--icon--large)
+    width: var(--icon--size)
+    height: var(--icon--size)
+
+
+// Icon Block
+.icon-block
+    display: flex
+    flex-wrap: nowrap
+    gap: var(--wp--custom--spacing--small)
+    margin-bottom: var(--wp--custom--spacing--small)
+
+    .icon
+        fill: currentColor
+
+    &.icon-align-top,
+    &.icon-align-center
+        flex-direction: column
+
+    &.icon-align-left
+        flex-direction: row
+
+    &.icon-align-top .icon
+        align-self: start
+
+    &.icon-align-center .icon
+        align-self: center
+
+    &.is-vertically-aligned-center
+        align-items: center
+
+    &.is-vertically-aligned-top
+        align-items: flex-start
+        
+    &.is-vertically-aligned-bottom
+        align-items: flex-end
+
+
+    & > .block__inner
+        display: block
+        width: 100%
+        flex-grow: 1
+        flex-basis: min-content
+
+        > *:last-child:first-child
+            margin-bottom: 0

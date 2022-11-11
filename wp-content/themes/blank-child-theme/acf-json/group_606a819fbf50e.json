@@ -6,6 +6,7 @@
             "key": "field_606a81e5da839",
             "label": "Heading",
             "name": "heading",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -25,6 +26,7 @@
             "key": "field_606bef04eceb5",
             "label": "Heading Level",
             "name": "heading_level",
+            "aria-label": "",
             "type": "button_group",
             "instructions": "",
             "required": 0,
@@ -50,7 +52,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/toggle-block"
+                "value": "cf\/toggle"
             }
         ]
     ],
@@ -62,5 +64,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623010474
+    "show_in_rest": 0,
+    "modified": 1667691216
 }

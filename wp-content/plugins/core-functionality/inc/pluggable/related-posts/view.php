@@ -23,7 +23,7 @@ if( function_exists( 'pb_custom_excerpt' ) ) {
         array(
             'length' => 15,
             'more'   => '...',
-            'post'   =>  $post->ID,
+            'post'   =>  get_the_ID(),
             )
     );
 }

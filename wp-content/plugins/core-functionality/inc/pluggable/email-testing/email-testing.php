@@ -12,6 +12,8 @@
 * The cron wont run if the email isn't defined or if the site isn't live.
 * The cron will be removed when the plugin is deleated but not deactivated.
 *
+* Add define( 'CRON_EMAIL', 'test@example.com' ); to your wp-config.php
+*
 * @package    CoreFunctionality
 * @since      2.0.0
 * @copyright  Copyright (c) 2022, Patrick Boehner
@@ -49,7 +51,6 @@ function cf_add_cron_event_email_test() {
 	if ( !defined( 'CRON_EMAIL' ) || ( cf_is_local_dev_site() || cf_is_development_staging_site() || cf_is_staging_site() ) ) {
         return;
     }
-
 
 	// Check the task is not allready schedualed
 	if ( ! wp_next_scheduled( 'cf_cron_email_test' ) ) {

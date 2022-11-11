@@ -1,0 +1,31 @@
+{
+    "name": "cf/video",
+    "title": "Optimized Video",
+    "description": "A block for embeding a video from youtube or vimeo for faster page speed",
+    "style": "block-video",
+    "script": "block-video",
+    "category": "media",
+    "icon": "video-alt3",
+    "apiVersion": 2,
+    "keywords": [ "video", "youtube", "vimeo" ],
+    "postTypes": ["post", "page", "content_area"],
+    "acf": {
+        "mode": "preview",
+	    "renderTemplate": "render.php"
+    },
+    "supports": {
+        "mode": false,
+        "align": [ "wide" ],
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

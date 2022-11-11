@@ -119,8 +119,8 @@ function pb_after_post_block_area() {
 	
 	}
 
-	if( function_exists( 'pb_output_related_posts' ) ) {
-		pb_output_related_posts();
+	if( function_exists( 'cf_output_related_posts' ) ) {
+		cf_output_related_posts();
 	}
 
 }

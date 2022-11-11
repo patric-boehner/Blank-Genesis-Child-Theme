@@ -242,10 +242,14 @@ function pb_block_editor_title_class( $classes ) {
 add_action( 'init', 'pb_simplify_editing_screens' );
 function pb_simplify_editing_screens() {
 
-	// Posts
-	remove_post_type_support( 'post' , 'genesis-scripts' );
+	// Remove post type support for commnets
+	foreach ( get_post_types() as $post_type ) {
 
-	//Pages
-	remove_post_type_support( 'page' , 'genesis-scripts' );
+		// remove all comments/trackbacks from tabels
+		remove_post_type_support( $post_type, 'genesis-title-toggle' );
+		remove_post_type_support( $post_type, 'genesis-footer-widgets-toggle' );
+		remove_post_type_support( $post_type, 'custom-fields' );
+		remove_post_type_support( $post_type, 'genesis-scripts' );
+	}
 
 }

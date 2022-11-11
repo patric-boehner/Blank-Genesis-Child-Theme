@@ -6,6 +6,7 @@
             "key": "field_60b5cf6bb846b",
             "label": "Video URL",
             "name": "video_iframe",
+            "aria-label": "",
             "type": "oembed",
             "instructions": "Paste a link to the youtube or vimeo content you want to display on your site.",
             "required": 1,
@@ -22,6 +23,7 @@
             "key": "field_606a22be94c19",
             "label": "Video Title",
             "name": "video_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "Add the title of the video",
             "required": 1,
@@ -43,7 +45,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/video-block"
+                "value": "cf\/video"
             }
         ]
     ],
@@ -55,5 +57,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623010473
+    "show_in_rest": 0,
+    "modified": 1667961921
 }

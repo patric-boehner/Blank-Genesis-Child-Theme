@@ -1,0 +1,33 @@
+{
+    "name": "cf/toggle",
+    "title": "Toggle",
+    "description": "A block for creating an toggle element that you can add other blocks into",
+    "style": "block-toggle",
+    "script": "block-toggle",
+    "category": "common",
+    "icon": "arrow-right-alt2",
+    "apiVersion": 2,
+    "keywords": [ "toggle", "accordion", "faq" ],
+    "postTypes": ["post", "page", "content_area"],
+    "acf": {
+        "mode": "preview",
+	    "renderTemplate": "render.php"
+    },
+    "supports": {
+        "mode": false,
+        "align": false,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false,
+        "alignContent": false,
+        "jsx": true
+    },
+    "attributes": {
+	}
+}

@@ -76,10 +76,6 @@ include_once( CHILD_DIR . '/inc/functions/js-body-class.php' );
 include_once( CHILD_DIR . '/inc/functions/inline-svg.php' );
 
 
-// Pluggable
-include_once( CHILD_DIR . '/inc/pluggable/related-posts.php' );
-
-
 // Blocks
 include_once( CHILD_DIR . '/inc/blocks/paragraphs.php' );
 include_once( CHILD_DIR . '/inc/blocks/cover-block.php' );

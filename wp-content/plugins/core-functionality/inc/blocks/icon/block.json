@@ -1,0 +1,31 @@
+{
+    "name": "cf/icon",
+    "title": "Icon",
+    "description": "A block for adding an icon and can be used with additional blocks",
+    "style": "block-icon",
+    "script": "",
+    "category": "common",
+    "icon": "carrot",
+    "apiVersion": 2,
+    "keywords": [ "icon" ],
+    "postTypes": ["post", "page","content_area"],
+    "acf": {
+        "mode": "preview",
+	    "renderTemplate": "render.php"
+    },
+    "supports": {
+        "mode": false,
+        "align": false,
+        "anchor": false,
+        "alignContent": true,
+        "color": {
+            "text": true,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

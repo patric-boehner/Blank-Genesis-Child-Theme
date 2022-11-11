@@ -3,7 +3,7 @@
  * Plugin Name: Core Functionality
  * Plugin URI: https://btsadventures.com
  * Description: This custom plugin is a companion to your websites. It contains all your site's core functionality so that it is independent of your theme. For your site to have all its intended functionality, this plugin must be active.
- * Version: 1.1.7
+ * Version: 1.1.8
  * Author: Patrick Boehner
  * Author URI: http://www.patrickboehner.com
  *
@@ -42,18 +42,12 @@ if ( !defined( 'CORE_FILE' ) ) {
 	define( 'CORE_FILE', __FILE__ );
 }
 
-// Cron test email
-if( !defined( 'CRON_EMAIL' ) ) {
-	define( 'CRON_EMAIL', 'test@example.com' );
-}
-
-
 
 //* Version Numbers
 //**********************
 
 // If debug is on return version number as time, otherwsie return static number
-define ('CF_VERSION', '1.1.5');
+define ('CF_VERSION', '1.1.8');
 
 // Cache Busting
 function cf_cf_version_id() {
@@ -101,13 +95,16 @@ require_once( CORE_DIR . 'inc/post-types/blocks.php' );
 
 
 // Blocks
-require_once( CORE_DIR . 'inc/blocks/categories.php' );
-require_once( CORE_DIR . 'inc/blocks/content-grid/block.php' );
-require_once( CORE_DIR . 'inc/blocks/taxonomy-grid/block.php' );
-require_once( CORE_DIR . 'inc/blocks/icon/block.php' );
-require_once( CORE_DIR . 'inc/blocks/video/block.php' );
-require_once( CORE_DIR . 'inc/blocks/toggle/block.php' );
+// require_once( CORE_DIR . 'inc/blocks/categories.php' );s
+// require_once( CORE_DIR . 'inc/blocks/content-grid/block.php' );
+// require_once( CORE_DIR . 'inc/blocks/taxonomy-grid/block.php' );
+// require_once( CORE_DIR . 'inc/blocks/icon/block.php' );
+// require_once( CORE_DIR . 'inc/blocks/video/block.php' );
+// require_once( CORE_DIR . 'inc/blocks/toggle/block.php' );
 // require_once( CORE_DIR . 'inc/blocks/custom-block/custom-block.php' );
+
+
+require_once( CORE_DIR . 'inc/blocks/register-blocks.php' );
 
 
 // Plugible
@@ -115,6 +112,8 @@ require_once( CORE_DIR . 'inc/pluggable/social-share/social-share.php' );
 require_once( CORE_DIR . 'inc/pluggable/email-testing/email-testing.php' );
 require_once( CORE_DIR . 'inc/pluggable/user-profile-image/user-profile-image.php' );
 require_once( CORE_DIR . 'inc/pluggable/banner/banner.php' );
+require_once( CORE_DIR . 'inc/pluggable/related-posts/related-posts.php' );
+require_once( CORE_DIR . 'inc/pluggable/events/plugin.php' );
 
 
 
@@ -122,8 +121,9 @@ require_once( CORE_DIR . 'inc/pluggable/banner/banner.php' );
 register_activation_hook( __FILE__, 'cf_core_functionality_activate_hook' );
 function cf_core_functionality_activate_hook() {
 
-	// Clear the permalinks after the post type has been registered.
-	flush_rewrite_rules();
+	// Register custom post types
+	cf_register_cpt_content_areas();
+	cf_register_cpt_events();
 
 	// Add Cron Events
 	cf_add_cron_event_email_test();
@@ -143,6 +143,9 @@ function cf_core_functionality_activate_hook() {
 	// Developer user role
 	cf_developer_user_role();
 
+	// Clear the permalinks after the post type has been registered.
+	flush_rewrite_rules();
+
 }
 
 
@@ -150,7 +153,14 @@ function cf_core_functionality_activate_hook() {
 register_deactivation_hook(  __FILE__, 'cf_core_functionality_deactivation_hook' );
 function cf_core_functionality_deactivation_hook() {
 
+	// Unregister post types
+	unregister_post_type( 'content_area' );
+	unregister_post_type( 'events' );
+
 	// Remove testing cron schedual
 	wp_clear_scheduled_hook( 'cf_cron_email_test' );
+
+	// Clear the permalinks after the post type has been registered.
+	flush_rewrite_rules();
 
 }

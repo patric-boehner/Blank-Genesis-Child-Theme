@@ -6,6 +6,7 @@
             "key": "field_615106b4445bd",
             "label": "Icon",
             "name": "icon_select",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 1,
@@ -32,6 +33,7 @@
             "key": "field_5fcf4c54022bb",
             "label": "Size",
             "name": "icon_size",
+            "aria-label": "",
             "type": "button_group",
             "instructions": "",
             "required": 0,
@@ -57,7 +59,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/icon-block"
+                "value": "cf\/icon"
             }
         ]
     ],
@@ -70,5 +72,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655943055
+    "modified": 1667690488
 }
